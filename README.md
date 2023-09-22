@@ -1,6 +1,6 @@
-## Goldlabel. Open Source and Forever Free
+## Goldlabel
 
-Built on the shoulders of giants
+Open Source and Forever Free. Built on the shoulders of giants
 
 #### Get started
 
