@@ -1,11 +1,11 @@
 import {ConfigShape} from "./types"
 
 export const goldlabelConfig: ConfigShape = {
-    siteUrl: "https://listingslab.com",
+    siteUrl: "https://github.com/listingslab-software/open-source",
     siteDefaultLocale: "en",
     siteTitle: "Open Source",
     siteDescription: "Fullstack JavaScript Since 1998",
-    siteImage: "/png/goldlabel.png",
+    siteImage: "/png/default.png",
     siteIcon: "/svg/iOS.svg",
     siteTwitter: "@machine_v4",
     siteTheme: "#121212",
