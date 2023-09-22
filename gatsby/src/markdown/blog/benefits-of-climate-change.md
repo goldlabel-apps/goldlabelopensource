@@ -4,7 +4,7 @@ featured: false
 category: "blog"
 slug: "/blog/benefits-of-climate-change"
 title: "Benefits of climate change"
-description: "During the early 2020s"
+description: "An essay by Cheng Xin (aged 16)"
 keywords: "weather, climate change, sci-fi"
 icon: "map"
 image: "/jpg/blog/climate-change.jpg"

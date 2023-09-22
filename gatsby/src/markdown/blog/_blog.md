@@ -8,7 +8,7 @@ title: "Blog"
 description: "Work, Life, Balance"
 keywords: "Work, Life, Balance"
 icon: "star"
-image: "/png/timemachine.png"
+image: "/png/default.png"
 date: "Today"
 phone: "no fone"
 ---
