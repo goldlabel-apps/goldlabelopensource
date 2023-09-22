@@ -1,5 +1,8 @@
 .DS_Store
-
+# Firebase
+.firebase
+.firebaserc
+firebase.json
 # Logs
 logs
 *.log
@@ -9,8 +12,7 @@ yarn-error.log*
 firebase-debug.log*
 firebase-debug.*.log*
 
-# Firebase cache
-.firebase/
+
 
 # Firebase config
 
