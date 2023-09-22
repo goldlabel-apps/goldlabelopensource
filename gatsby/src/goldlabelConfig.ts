@@ -20,6 +20,7 @@ export const goldlabelConfig: ConfigShape = {
             slug: "goldlabel",
             primaryColor: "#C09F52",
             secondaryColor: "#87703B",
+            font:"noka",
         },
     ],
     localeList: ["en", "mt", "de", "cn"],

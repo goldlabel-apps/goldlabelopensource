@@ -8,26 +8,26 @@ export const useFeatured = () => {
         node {
           frontmatter {
             draft
-          order
-          cover
-          featured
-          category
-          slug
-          title
-          description
-          date
-          flash
-          keywords
-          image
-          icon
-          placename
-          lat
-          lng
-          zoom
-          website
-          email
-          facebook
-          phone
+            order
+            cover
+            featured
+            category
+            slug
+            title
+            description
+            date
+            flash
+            keywords
+            image
+            icon
+            placename
+            lat
+            lng
+            zoom
+            website
+            email
+            facebook
+            phone
           }
           html
           excerpt

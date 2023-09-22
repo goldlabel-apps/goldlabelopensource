@@ -1,7 +1,5 @@
 import * as React from "react"
-import PimoroniIcon from './SVGIcons/PimoroniIcon'
 import GoldenticketIcon from './SVGIcons/GoldenticketIcon'
-
 import BlokeyIcon from './SVGIcons/BlokeyIcon'
 import PharmacyIcon from "@mui/icons-material/LocalHospitalOutlined"
 import GoldlabelIcon from './SVGIcons/GoldenticketIcon'
@@ -11,7 +9,6 @@ import BarIcon from "@mui/icons-material/LocalBar"
 import DiveshopIcon from "@mui/icons-material/RecommendOutlined"
 import TreeIcon from "@mui/icons-material/Park"
 import EatingIcon from "@mui/icons-material/Restaurant"
-
 import BusinessIcon from "@mui/icons-material/Business"
 import FavoriteIcon from "@mui/icons-material/Favorite"
 import AddYourselfIcon from "@mui/icons-material/AddBusiness"
@@ -213,10 +210,6 @@ export default function Icon(props: any) {
       case "shop":
         iconFragment = <ShopIcon color={color} />
         break
-
-      case "pimoroni":
-      iconFragment = <PimoroniIcon color={color} />
-      break
 
       case "holiday":
         iconFragment = <HolidayIcon color={color} />

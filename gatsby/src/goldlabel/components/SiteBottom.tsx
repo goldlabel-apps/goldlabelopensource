@@ -14,7 +14,7 @@ import {
   selectPWA,
   navigate,
 } from "../../goldlabel"
-import {getTranslation} from "../../translations"
+import {getTranslation} from "../../mods/Lingua"
 
 export default function SiteBottom(props: any) {
   const dispatch = usePwaDispatch()

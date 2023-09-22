@@ -1,8 +1,6 @@
 import React from "react"
 import {
-  Box,
   useTheme,
-  Container,
   AppBar,
   Toolbar,
 } from "@mui/material"
@@ -10,8 +8,8 @@ import {
   usePwaSelect,
   selectPWA,
   TopNav,
-} from "../../"
-import {getTranslation} from "../../arkdown/translations"
+} from "../../goldlabel"
+import {getTranslation} from "../../mods/Lingua"
 
 export default function TopAppbar(props:any) {
   const theme = useTheme()

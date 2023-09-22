@@ -2,7 +2,6 @@ import * as React from 'react'
 import { useTheme, SvgIcon } from '@mui/material'
 
 export default function BlokeyIcon(props: any) {
-    // const { color } = props
     const theme = useTheme()
     let color1 = theme.palette.primary.main
 

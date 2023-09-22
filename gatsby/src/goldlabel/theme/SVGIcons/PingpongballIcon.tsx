@@ -4,8 +4,8 @@ import { useTheme, SvgIcon } from '@mui/material'
 export default function PingpongballIcon(props: any) {
     let mainColor = 'black'
     const theme = useTheme()
-    // mainColor = theme.palette.primary.main
-    let color2 = theme.palette.primary.main
+    mainColor = theme.palette.primary.main
+    let color2 = theme.palette.secondary.main
 
     return (
         <SvgIcon {...props}>

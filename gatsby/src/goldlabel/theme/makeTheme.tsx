@@ -11,9 +11,6 @@ export function makeTheme(
       primary: {
         main: primary,
       },
-      // background: {
-      //   default: "#fcfcfc", //"#fcfcfc",
-      // },
       secondary: {
         main: secondary,
       },

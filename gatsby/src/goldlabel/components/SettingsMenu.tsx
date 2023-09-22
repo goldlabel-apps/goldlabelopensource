@@ -16,7 +16,7 @@ import {
   toggleDarkmode,
   resetRedux,
 } from "../../goldlabel"
-import { getTranslation } from "../../translations"
+import { getTranslation } from "../../mods/Lingua"
 
 export default function SettingsMenu() {
   const dispatch = usePwaDispatch()

@@ -1,9 +1,6 @@
-import {ThemeShape} from "../../types"
+import {ThemeShape} from "../../../types"
 import React from "react"
 import {goldlabelConfig} from "./../../goldlabelConfig"
-import {
-  makeTheme,
-} from "../../"
 import {
   createTheme,
   ThemeProvider,
@@ -11,7 +8,8 @@ import {
 import {
   usePwaSelect,
   selectPWA,
-} from "../../"
+  makeTheme,
+} from "../../goldlabel"
 
 
 export default function MuiTheme(props: any) {
