@@ -10,4 +10,5 @@ keywords: "Work, Life, Balance"
 icon: "star"
 image: "/png/timemachine.png"
 date: "Today"
+phone: "no fone"
 ---

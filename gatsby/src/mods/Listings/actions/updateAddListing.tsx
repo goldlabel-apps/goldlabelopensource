@@ -2,7 +2,7 @@ import {
   notify,
   store,
   setPwaKey,
-} from "../../../../"
+} from "../../../goldlabel"
 import {validateAddListing} from "../"
 
 export const updateAddListing = (

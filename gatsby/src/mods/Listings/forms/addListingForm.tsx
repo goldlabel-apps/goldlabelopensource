@@ -1,6 +1,6 @@
 import {cancelAddListing} from "../actions/cancelAddListing"
 import {updateAddListing} from "../actions/updateAddListing"
-import {store} from "../../../../"
+import {store} from "../../../goldlabel"
 
 const title: string = "Add Business"
 const description = "Listing your business here is free. Extras are extra."
@@ -14,8 +14,6 @@ export const onCancel = () => {
   store.dispatch(cancelAddListing())
   return true
 }
-
-
 
 export const onUpdate = (
   key: string,

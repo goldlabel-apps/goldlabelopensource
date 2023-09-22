@@ -47,7 +47,6 @@ import {setFrontmatter} from "./actions/setFrontmatter"
 import {scrollUp} from "./actions/scrollUp"
 
 // Theme
-import ThemeContext from "./theme/ThemeContext"
 import MuiTheme from "./theme/MuiTheme"
 import {makeTheme} from "./theme/makeTheme"
 import Icon from "./theme/Icon"
@@ -87,7 +86,6 @@ export { // Goldlabel
 }
 
 export { // Theme
-  ThemeContext,
   MuiTheme,
   makeTheme,
   Icon,

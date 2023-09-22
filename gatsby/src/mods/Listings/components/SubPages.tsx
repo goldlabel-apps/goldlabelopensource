@@ -17,10 +17,9 @@ import {
   usePagesByCategory,
   navigate,
   toggleCategories,
-  // Icon,
   Image,
-} from "../../../../"
-import {fadeDiv} from "../../../packages/Flash"
+} from "../../../goldlabel"
+import {fadeDiv} from "../../Flash"
 
 export default function SubPages() {
   const dispatch = usePwaDispatch()

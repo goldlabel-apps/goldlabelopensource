@@ -3,22 +3,18 @@ import {goldlabelConfig} from "../../goldlabelConfig"
 import {
   Avatar,
   useTheme,
-  IconButton,
   List,
   ListItemButton,
   ListItemAvatar,
   ListItemText,
-  CardHeader,
 } from "@mui/material"
 import {
   usePwaDispatch,
   usePwaSelect,
   selectPWA,
   setLingua,
-  Icon,
-  navigate,
   Font,
-} from "../../../"
+} from "../../goldlabel"
 
 export default function Lingua () {
   const pwa = usePwaSelect(selectPWA)
@@ -26,7 +22,6 @@ export default function Lingua () {
   const theme = useTheme()
   const dispatch = usePwaDispatch()
   const {localeList, localeMeta} = goldlabelConfig
-  // let linguaStr: string = getTranslation("LINGUA", locale)
 
   return (
       <>        

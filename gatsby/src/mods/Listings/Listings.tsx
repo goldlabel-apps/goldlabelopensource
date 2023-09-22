@@ -13,12 +13,11 @@ import {
   selectPWA,
   Font,
   Featured,
-} from "../../../"
+} from "../../goldlabel"
 import {
   SubPages,
   MainMenu,
   Markdown,
-  ListingMap,
   ListingLinks,
 } from "./"
 
@@ -35,14 +34,10 @@ export default function Listings (props: any) {
     website,
     facebook,
     email,
-    lat,
-    lng,
     title,
   } = frontmatter
-  if (!website && !facebook && !email && !lat && !lng) noMeta = true
+  if (!website && !facebook && !email) noMeta = true
   if(cover) notCover = false
-  let hasMap = false
-  if (lat && lng) hasMap = true
 
   return <>
           <Container>
@@ -61,7 +56,7 @@ export default function Listings (props: any) {
                 
                 <Grid container spacing={1}>
 
-                  <Grid item xs={12} md={!hasMap ? 12 : 6}>
+                  <Grid item xs={12} md={12}>
                     <Box>
                         <Image options={{
                           src: frontmatter.image,
@@ -71,14 +66,9 @@ export default function Listings (props: any) {
                       />
                     </Box> 
                   </Grid>
-                  {hasMap ? <Grid item xs={12} md={6}>
-                            <Box sx={{}}>
-                              <ListingMap frontmatter={frontmatter}/>
-                            </Box>
-                  </Grid>: null }
+                  
                   {cover ? null: <ListingLinks frontmatter={frontmatter}/>}
                 </Grid>
-                
                 { cover ? <SubPages /> : null }
                 <Box sx={{}}>
                   <Markdown html={html} />
@@ -93,7 +83,3 @@ export default function Listings (props: any) {
           
         </>
 }
-
-/*
-<pre>pages: {JSON.stringify(pages, null, 2)}</pre>
-*/

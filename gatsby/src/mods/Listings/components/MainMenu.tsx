@@ -19,8 +19,8 @@ import {
   useCategories,
   navigate,
   toggleCategories,
-} from "../../../../"
-import {fadeDiv} from "../../../packages/Flash"
+} from "../../../goldlabel"
+import {fadeDiv} from "../../Flash"
 
 export default function MainMenu() {
   const dispatch = usePwaDispatch()

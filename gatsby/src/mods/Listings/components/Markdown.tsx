@@ -4,7 +4,7 @@ import {
 } from "@mui/material"
 import {
   Font,
-} from "../../../../"
+} from "../../../goldlabel"
 
 export default function Markdown(props: any) {
   const {html} = props

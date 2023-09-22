@@ -14,9 +14,7 @@ import {
   Notifyer,
   SiteBottom,
   Settings,
-} from "../"
-import {authListener} from "./packages/Auth"
-import {Geolocator} from "./packages/Geolocator"
+} from "../goldlabel"
 
 export default function App(props: any) {
   const dispatch = usePwaDispatch()
@@ -37,7 +35,6 @@ export default function App(props: any) {
   const darkmode = usePwaSelect(selectDarkMode)
   
   React.useEffect(() => {
-    authListener()
     dispatch(setFrontmatter(frontmatter))
     dispatch(boot(isBig))
     if (!systemPref && prefersDarkMode !== darkmode){
@@ -48,7 +45,6 @@ export default function App(props: any) {
   return (<>
             <Notifyer />
             <Settings />
-            <Geolocator />
             <SiteBottom>              
               {children}
             </SiteBottom>

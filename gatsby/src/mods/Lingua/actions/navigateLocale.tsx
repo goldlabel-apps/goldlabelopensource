@@ -2,7 +2,7 @@ import {
   notify,
   setPwaKey,
   store,
-} from "../../../../"
+} from "../../../goldlabel"
 
 export const navigateLocale =
   (

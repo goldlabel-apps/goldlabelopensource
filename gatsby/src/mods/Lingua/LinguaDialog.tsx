@@ -24,13 +24,11 @@ import {
   setLingua,
   Icon,
   Font,
-} from "../../../"
+} from "../../goldlabel"
 import {
   toggleLingua,
-} from "../Lingua"
-import {
   getTranslation,
-} from "../../../translations"
+} from "../Lingua"
 
 export default function LinguaDialog () {
   const pwa = usePwaSelect(selectPWA)

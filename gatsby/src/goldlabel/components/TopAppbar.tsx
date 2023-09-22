@@ -21,7 +21,7 @@ export default function TopAppbar(props:any) {
   return (<>
             <AppBar 
                 sx={{
-                  border: "1px solid blue",
+                  // border: "1px solid blue",
                   boxShadow: "none", 
                   background: theme.palette.background.default,
                 }}>

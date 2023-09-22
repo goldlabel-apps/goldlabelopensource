@@ -1,7 +1,7 @@
 import {
     AlertColor,
 } from "@mui/material"
-import { setPwaKey } from "../../goldlabel
+import { setPwaKey } from "../../goldlabel"
 
 export const notify =
   (severity: AlertColor, message: string): any =>

@@ -12,7 +12,7 @@ import {
   useAllMarkdown,
   Font,
 } from "../goldlabel"
-import {getTranslation} from "../translations"
+import {getTranslation} from "../mods/Lingua"
 export default function NotFoundPage(data: any) {
   /*
    send a notification ting whenever this page is hit, 

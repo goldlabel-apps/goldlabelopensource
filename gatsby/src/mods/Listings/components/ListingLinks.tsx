@@ -1,8 +1,6 @@
 import * as React from "react"
 import {
   Box,
-  Button,
-  Avatar,
   Chip,
 } from "@mui/material"
 import {
@@ -10,7 +8,7 @@ import {
   Font,
   usePwaDispatch,
   navigate,
-} from "../../../../"
+} from "../../../goldlabel"
 
 export default function ListingLinks(props: any) {
   const dispatch = usePwaDispatch()

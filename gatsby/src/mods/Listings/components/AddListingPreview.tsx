@@ -9,10 +9,7 @@ import {
   Font,
   usePwaSelect,
   selectPWA,
-} from "../../../../"
-// import {
-//   getTranslation,
-// } from '../../../../translations'
+} from "../../../goldlabel"
 
 export default function AddListingPreview () {
   let valid = false

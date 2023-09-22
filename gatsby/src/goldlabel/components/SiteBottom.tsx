@@ -29,7 +29,7 @@ export default function SiteBottom(props: any) {
     <>
       <TopAppbar />
       <Box sx={{ 
-        border: "1px solid red",
+        // border: "1px solid red",
         pt: "60px", 
         pb:"60px" 
       }}>
@@ -40,7 +40,7 @@ export default function SiteBottom(props: any) {
         color={"primary"}
         position="fixed"
         sx={{ 
-          border: "1px solid green",
+          // border: "1px solid green",
           top: "auto", 
           bottom: 0,
           boxShadow: "none",

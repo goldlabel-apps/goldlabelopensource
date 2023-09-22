@@ -2,7 +2,7 @@ import {
     notify,
     store,
     setPwaKey,
-} from "../../../../"
+} from "../../../goldlabel"
 
 
 export const validateEmail = (email) => {
