@@ -1,6 +1,6 @@
 import {GatsbyShape} from "./types"
 import type { GatsbyConfig } from "gatsby"
-import {goldlabelConfig} from ".//goldlabelConfig"
+import {goldlabelConfig} from "./src/goldlabelConfig"
 
 const siteTitle = goldlabelConfig.siteTitle
 const siteDescription = goldlabelConfig.siteDescription

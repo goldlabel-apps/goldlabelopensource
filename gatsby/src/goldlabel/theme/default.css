@@ -1,0 +1,63 @@
+html {
+  --scrollbarBG: none;
+  --thumbBG: #C09F52;
+}
+a {
+  color: #C09F52;
+  text-decoration: none;
+}
+a:hover {
+  color: #e8c062;
+}
+html, body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ul, li {
+  list-style-type:none;
+  margin: 2px;
+  padding: 2px;
+}
+pre {
+  font-size: 0.6rem;
+}
+
+body {
+  /* background: #C09F52;
+  background: linear-gradient(0deg, #C09F52 0%, #87703B 75%); */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body {
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+body::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 4px;
+  border: 3px solid var(--scrollbarBG);
+}
+.mapboxgl-ctrl-bottom-right, .mapboxgl-ctrl-attrib-inner, .mapboxgl-ctrl-bottom-left {
+  display: none;
+}

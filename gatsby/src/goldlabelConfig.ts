@@ -1,15 +1,20 @@
-import {ConfigShape} from "./types"
+import {ConfigShape} from "../types"
 
 export const goldlabelConfig: ConfigShape = {
     siteUrl: "https://github.com/listingslab-software/open-source",
     siteDefaultLocale: "en",
     siteTitle: "Open Source",
-    siteDescription: "Fullstack JavaScript Since 1998",
+    siteDescription: "Forever Free",
     siteImage: "/png/default.png",
     siteIcon: "/svg/iOS.svg",
-    siteTwitter: "@machine_v4",
+    siteTwitter: "@listingslab",
     siteTheme: "#121212",
-    siteKeywords: "listingslab, goldlabel, opensource, fullstack, react, javascript, node, pwa, free, github",
+    siteKeywords: "goldlabel, opensource, free, github",
+    features: [
+        {
+            slug: "lingua"
+        }
+    ],
     themes: [
         {
             slug: "goldlabel",
