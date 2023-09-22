@@ -1,0 +1,13 @@
+{
+  "name": "listingslab-software-open-source",
+  "version": "2.0.0",
+  "repository": {
+    "url": "https://github.com/listingslab-software/open-source"
+  },
+  "scripts": {
+    "start": "clear && cd gatsby && npm run clean && npm run develop",
+    "clean": "clear && cd gatsby && npm run clean",
+    "deploy": "clear && npm run clean && cd gatsby && npm run build && firebase deploy"
+  },
+  "license": "MIT"
+}
