@@ -8,7 +8,7 @@ import {
 import {
   Font,
   Icon,
-} from "../../"
+} from "../../goldlabel"
 
 export default function CTA(props: any) {
   const {options} = props
@@ -16,7 +16,6 @@ export default function CTA(props: any) {
   let ctaIcon: string = "star"
   let ctaLabel: string = "CTA Label"
   let ctaCallback = () => {}
-  
   const {
     label,
     icon,

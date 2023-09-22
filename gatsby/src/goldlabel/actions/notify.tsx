@@ -1,7 +1,7 @@
 import {
     AlertColor,
 } from "@mui/material"
-import { setPwaKey } from "../../"
+import { setPwaKey } from "../../goldlabel
 
 export const notify =
   (severity: AlertColor, message: string): any =>
@@ -13,6 +13,6 @@ export const notify =
         }
         dispatch(setPwaKey({ key: "notifyer", value: notifyObj }))
     } catch (error: any) {
-      console.log("Action error: notify", error)
+      dispatch(setPwaKey({ key: "notifyer", value: error.toString() }))
     }
   }

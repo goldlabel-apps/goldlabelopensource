@@ -13,9 +13,10 @@ import {
   toggleCategories,
   toggleSettings,
   scrollUp,
-} from "../../"
+} from "../../goldlabel"
 
-export default function PWANav() {
+export default function 
+() {
   const hideAdd = false
   const dispatch = usePwaDispatch()
   const pwa = usePwaSelect(selectPWA)

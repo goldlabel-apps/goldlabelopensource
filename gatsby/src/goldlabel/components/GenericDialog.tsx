@@ -1,6 +1,5 @@
 import * as React from 'react'
 import {
-  Container,
   Box,
   Dialog,
   DialogTitle,
@@ -12,7 +11,7 @@ import {
 import {
   Icon,
   Font,
-} from "../../"
+} from "../../goldlabel"
 
 export default function GenericDialog (props: any) {
   const {

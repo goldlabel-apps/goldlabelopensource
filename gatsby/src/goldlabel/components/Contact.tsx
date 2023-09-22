@@ -3,7 +3,6 @@ import {
 Avatar,
   Box,
   Button,
-  Card,
   CardContent,
   CardHeader,
   CardMedia,
@@ -11,7 +10,7 @@ Avatar,
 } from "@mui/material"
 import {
   Font,
-} from "../../"
+} from "../../goldlabel"
 
 export default function Contact() {
 

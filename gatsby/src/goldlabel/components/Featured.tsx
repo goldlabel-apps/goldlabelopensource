@@ -3,24 +3,20 @@ import {
   useTheme,
   useMediaQuery,
   Box,
-  CardHeader,
   Alert,
   AlertTitle,
   CardActionArea,
   Grid,
-  IconButton,
 } from "@mui/material"
 import {
   Font,
   Icon,
-  Image,
   useFeatured,
   usePwaDispatch,
   navigate,
-} from "../../"
+} from "../../goldlabel"
 
 export default function Featured() {
-  
   const dispatch = usePwaDispatch()
   const theme = useTheme()
   const isBig = useMediaQuery(theme.breakpoints.up("md"))
@@ -37,7 +33,7 @@ export default function Featured() {
       } = item
       const {
         title,
-        // description,
+        description,
         slug,
         icon,
       } = frontmatter
@@ -63,7 +59,7 @@ export default function Featured() {
                             <Font>{title}</Font>
                           </Box>
                         </AlertTitle>
-                          {/* <Font variant="small">{description}</Font> */}
+                          <Font variant="small">{description}</Font>
                         </Alert>                    
                   </CardActionArea>
                   </Box>
@@ -73,12 +69,3 @@ export default function Featured() {
     </>
   )
 }
-
-/*
-
-<pre>{JSON.stringify(featured, null, 2)}</pre>
-
-
-
-
-*/

@@ -13,7 +13,7 @@ import {
   usePwaDispatch,
   selectPWA,
   navigate,
-} from "../../"
+} from "../../goldlabel"
 import {getTranslation} from "../../translations"
 
 export default function SiteBottom(props: any) {

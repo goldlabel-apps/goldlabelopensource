@@ -22,7 +22,7 @@ import {
   useSiteMetadata,
   selectPWA,
   setShare,
-} from "../../"
+} from "../../goldlabel"
 
 export default function Share(props: any) {
   const {title} = props

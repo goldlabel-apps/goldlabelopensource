@@ -9,7 +9,7 @@ import {
   usePwaSelect,
   selectPWA,
   setPwaKey,
-} from "../../"
+} from "../../goldlabel"
 
 export default function Notifyer() {
   const dispatch = usePwaDispatch()

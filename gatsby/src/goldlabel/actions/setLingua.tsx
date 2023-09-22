@@ -1,7 +1,7 @@
 import { 
   setPwaKey,
-  navigate,
-} from "../../"
+  // navigate,
+} from "../../goldlabel"
 
 export const setLingua =
   (value: string): any =>

@@ -10,14 +10,12 @@ import {
   selectPWA,
   toggleSettings,
   GenericDialog,
-  AuthedNav,
-  SettingsNav,
-} from "../../"
-import {Lingua} from "../packages/Lingua"
-import {Signin} from "../packages/Auth"
+  SettingsMenu,
+} from "../../goldlabel"
 import {
+  Lingua,
   getTranslation,
-} from "../../translations"
+} from "../../mods/Lingua"
 
 export default function Settings() {
   const dispatch = usePwaDispatch()
@@ -37,8 +35,7 @@ export default function Settings() {
           <Container maxWidth="md">
             <Grid container spacing={1}>   
               <Grid item xs={12} md={7}>
-                <SettingsNav /> 
-                { !authed ? <Signin /> :<AuthedNav /> }
+                <SettingsMenu /> 
               </Grid>
               <Grid item xs={12} md={5}>
                 <Box sx={{}}>

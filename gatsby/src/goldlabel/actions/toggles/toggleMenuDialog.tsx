@@ -1,5 +1,5 @@
 import { AppThunk } from "../../redux/store"
-import { setPwaKey } from "../../../"
+import { setPwaKey } from "../../../goldlabel"
 
 export const toggleMenuDialog =
   (menuDialog: boolean): any =>

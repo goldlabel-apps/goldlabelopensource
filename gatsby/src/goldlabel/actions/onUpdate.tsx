@@ -1,7 +1,7 @@
 import { 
   setPwaKey, 
   store,
-} from "../../"
+} from "../../goldlabel"
 
 export const onUpdate =
   (data: any): any =>

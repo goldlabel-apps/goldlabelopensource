@@ -1,3 +1,6 @@
+import {
+  notify,
+} from "../../goldlabel"
 export const resetRedux = (): any => async (dispatch: any) => {
     try {
         localStorage.removeItem("persist:goldlabel")
@@ -6,6 +9,6 @@ export const resetRedux = (): any => async (dispatch: any) => {
           // window.open("/", "_self")
         }, 200)
     } catch (error: any) {
-      console.log("Action error: resetRedux", error)
+      dispatch(notify("error", error))
     }
   }

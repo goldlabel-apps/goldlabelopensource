@@ -1,6 +1,6 @@
 import { 
   setPwaKey,
-} from "../../../"
+} from "../../../goldlabel"
 
 export const toggleGenericDialog =
   (value: boolean): any =>

@@ -30,10 +30,8 @@ import {boot} from "./actions/boot"
 import {onUpdate} from "./actions/onUpdate"
 import {updateHistory} from "./actions/updateHistory"
 import {notify} from "./actions/notify"
-import {goAuth} from "./actions/goAuth"
 import {navigate} from "./actions/navigate"
 import {resetRedux} from "./actions/resetRedux"
-import {setRoute} from "./actions/setRoute"
 import {setShare} from "./actions/setShare"
 import {setLingua} from "./actions/setLingua"
 import {toggleCategories} from "./actions/toggles/toggleCategories"
@@ -62,13 +60,11 @@ import GenericDialog from "./components/GenericDialog"
 import Notifyer from "./components/Notifyer"
 import TopAppbar from "./components/TopAppbar"
 import SiteBottom from "./components/SiteBottom"
-import PWANav from "./components/PWANav"
-import AuthedNav from "./components/AuthedNav"
-import SettingsNav from "./components/SettingsNav"
+import TopNav from "./components/TopNav"
+import SettingsMenu from "./components/SettingsMenu"
 import Share from "./components/Share"
 import Settings from "./components/Settings"
 import Image from "./components/Image"
-import PageTitle from "./components/PageTitle"
 import Featured from "./components/Featured"
 
 export { // Goldlabel
@@ -81,13 +77,11 @@ export { // Goldlabel
   Notifyer,
   Settings,
   SiteBottom,
-  PWANav,
-  AuthedNav,
-  SettingsNav,
+  TopNav,
+  SettingsMenu,
   GenericDialog,
   Share,
   Title,
-  PageTitle,
   Image,
   Featured,
 }
@@ -108,13 +102,11 @@ export { // Redux
   selectPWA,
   onUpdate,
   notify,
-  goAuth,
   navigate,
   boot,
   updateHistory,
   resetRedux,
   setShare,
-  setRoute,
   setLingua,
   toggleCategories,
   togglePages,

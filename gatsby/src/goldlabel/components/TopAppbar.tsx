@@ -9,7 +9,7 @@ import {
 import {
   usePwaSelect,
   selectPWA,
-  PWANav,
+  TopNav,
 } from "../../"
 import {getTranslation} from "../../arkdown/translations"
 
@@ -28,7 +28,7 @@ export default function TopAppbar(props:any) {
                   background: theme.palette.background.default,
                 }}>
             <Toolbar>
-              <PWANav />
+              <TopNav />
             </Toolbar>
         </AppBar>
       </>)

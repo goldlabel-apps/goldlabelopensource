@@ -1,13 +1,11 @@
 import * as React from "react"
 import {
-  Box,
   CardHeader,
 } from "@mui/material"
 import {
   Font,
-  Icon,
   Share,
-} from "../../"
+} from "../../goldlabel"
 
 export default function Title(props: any) {
   const {frontmatter} = props

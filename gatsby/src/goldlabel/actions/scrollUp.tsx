@@ -1,3 +1,7 @@
+import {
+  notify,
+} from "../../goldlabel"
+
 export const scrollUp =
   (): any =>
   async (dispatch: any) => {
@@ -11,7 +15,7 @@ export const scrollUp =
         });
       }
     } catch (error: any) {
-      console.log("Action error: scrollUp", error)
+      dispatch(notify("error", error))
     }
   }
 

@@ -1,4 +1,7 @@
-import { setShare } from "../../"
+import { 
+  setShare,
+  notify,
+} from "../../goldlabel"
 
 export const navigate =
   (url: string, target: string): any =>
@@ -9,7 +12,7 @@ export const navigate =
         window.open(url, target)
       }, 250)
     } catch (error: any) {
-      console.log("Action error: navigate", error)
+      dispatch(notify("error", error))
     }
   }
 

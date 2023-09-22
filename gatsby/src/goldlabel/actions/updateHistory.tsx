@@ -1,5 +1,5 @@
 // import { AppThunk } from "../store"
-import { setPwaKey, notify } from "../../"
+import { setPwaKey, notify } from "../../goldlabel"
 
 export const updateHistory =
   (
