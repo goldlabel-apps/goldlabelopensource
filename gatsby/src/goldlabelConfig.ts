@@ -17,9 +17,9 @@ export const goldlabelConfig: ConfigShape = {
     ],
     themes: [
         {
-            slug: "goldlabel",
-            primaryColor: "#C09F52",
-            secondaryColor: "#87703B",
+            slug: "greylabel",
+            primaryColor: "#8A8A8A",
+            secondaryColor: "#C5C5C5",
             font:"noka",
         },
     ],
