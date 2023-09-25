@@ -1,19 +1,19 @@
 ---
-order: 15
-featured: false
-category: "blog"
+order: 10
 parentSlug: "/blog"
+category: "blog"
 slug: "/blog/benefits-of-climate-change"
 title: "Benefits of climate change"
-description: "During the early 2020s"
+description: "An essay by Cheng Xin (aged 16)"
 keywords: "weather, climate change, sci-fi"
-icon: "balance"
-image: "/jpg/blog/climate-change.jpg"
+icon: "map"
+image: "/jpg/climate-change.jpg"
 date: "1st Aug 2023"
 ---
 GCSE History  
 Cheng Xin (aged 16)  
 19th July 2094
+
 ---
 During the early 2000s global weather started to be politicised in Western thinking, which had dominated humanity for centuries. The Common Era was coming to an end, but there still existed countries with borders and individual laws and customs
 
