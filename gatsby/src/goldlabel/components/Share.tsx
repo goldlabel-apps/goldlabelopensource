@@ -4,8 +4,8 @@ import {
   FacebookIcon,
   TwitterShareButton,
   TwitterIcon,
-  LinkedinShareButton,
-  LinkedinIcon,
+  // LinkedinShareButton,
+  // LinkedinIcon,
   EmailShareButton,
   EmailIcon,
 } from 'react-share';
@@ -70,7 +70,7 @@ export default function Share(props: any) {
             />
           </TwitterShareButton>
 
-          <LinkedinShareButton 
+          {/* <LinkedinShareButton 
             url={shareUrl}
           >
             <LinkedinIcon
@@ -79,7 +79,7 @@ export default function Share(props: any) {
               size={40}
               round
             />
-          </LinkedinShareButton>
+          </LinkedinShareButton> */}
 
           <EmailShareButton
             url={shareUrl}

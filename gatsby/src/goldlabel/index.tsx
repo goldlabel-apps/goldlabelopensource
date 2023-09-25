@@ -11,6 +11,7 @@ import {usePwaDispatch} from "./hooks/usePwaDispatch"
 import {useAllMarkdown} from "./hooks/useAllMarkdown"
 import {useCategories} from "./hooks/useCategories"
 import {usePagesByCategory} from "./hooks/usePagesByCategory"
+import {useChildPages} from "./hooks/useChildPages"
 import {useFeatured} from "./hooks/useFeatured"
 
 // Redux
@@ -132,4 +133,5 @@ export { // Hooks
   useCategories,
   usePagesByCategory,
   useFeatured,
+  useChildPages,
 }

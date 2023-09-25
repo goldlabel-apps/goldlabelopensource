@@ -1,9 +1,8 @@
 import * as React from "react"
 import {
-  useTheme,
-  useMediaQuery,
   Box,
   IconButton,
+  Container,
 } from "@mui/material"
 import {
   Icon,
@@ -11,46 +10,29 @@ import {
   usePwaSelect,
   selectPWA,
   toggleCategories,
-  toggleSettings,
   scrollUp,
 } from "../../goldlabel"
 
-export default function 
-() {
+export default function TopNav() {
   const hideAdd = false
   const dispatch = usePwaDispatch()
   const pwa = usePwaSelect(selectPWA)
-  const theme = useTheme()
-  const isBig = useMediaQuery(theme.breakpoints.up("sm"))
-  const {categories, frontmatter, locale} = pwa
-  // let homeBtn = true
-  // if (isBig && frontmatter) homeBtn = false
-  return (
-    <>
-    <Box sx={{display: "flex", flexGrow:1, maxWidth: 1100, margin:"auto"}}>
-       <Box>
-          <IconButton 
-            sx={{}}
-            onClick={() => {
-              dispatch(toggleCategories(!categories))
-              dispatch(scrollUp())
-            }}
-            color="primary">
-              <Icon icon="menu" color="primary" />
-          </IconButton>
-        </Box>
-        <Box sx={{flexGrow:1}} />
-        <Box sx={{}}>
-          <IconButton 
-            sx={{}}
-            onClick={() => {
-              dispatch(toggleSettings(true))
-            }}
-            color="primary">
-              <Icon icon="settings" />
-          </IconButton>
-        </Box>
-      </Box>
+  const {categories} = pwa
+  return (<>
+        <Container maxWidth="md">
+          <Box sx={{display: "flex", flexGrow:1}}>
+            <IconButton 
+              sx={{}}
+              onClick={() => {
+                dispatch(toggleCategories(!categories))
+                dispatch(scrollUp())
+              }}
+              color="primary">
+                <Icon icon="menu" color="primary" />
+            </IconButton>
+          </Box>
+          <Box sx={{flexGrow:1}} />
+        </Container>
     </>
   )
 }

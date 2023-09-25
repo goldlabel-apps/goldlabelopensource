@@ -1,13 +1,13 @@
 html {
   --scrollbarBG: none;
-  --thumbBG: #8A8A8A;
+  --thumbBG: #C09F52;
 }
 a {
-  color: #8A8A8A;
+  color: #C09F52;
   text-decoration: none;
 }
 a:hover {
-  color: #C5C5C5;
+  color: #e8c062;
 }
 html, body {
   height: 100vh;

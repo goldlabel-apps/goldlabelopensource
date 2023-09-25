@@ -9,10 +9,10 @@ import {goldlabelConfig} from "../goldlabelConfig"
 const initialState: any = {
   bootTime: Date.now(),
   fbId: null,
-  darkmode: true,
+  darkmode: false,
   frontmatter: null,
   locale: goldlabelConfig.siteDefaultLocale || "en",
-  categories: true,
+  categories: false,
   settings: false,
   listings: listingsState,
 }

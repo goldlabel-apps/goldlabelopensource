@@ -32,7 +32,7 @@ export default function Settings() {
         title={title.toUpperCase()}
         closeStr={closeStr}
         onClose={() => dispatch(toggleSettings(false))}>
-          <Container maxWidth="md">
+          <Container maxWidth="sm">
             <Grid container spacing={1}>   
               <Grid item xs={12} md={7}>
                 <SettingsMenu /> 

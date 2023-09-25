@@ -12,6 +12,7 @@ export const useFeatured = () => {
             cover
             featured
             category
+            parentSlug
             slug
             title
             description

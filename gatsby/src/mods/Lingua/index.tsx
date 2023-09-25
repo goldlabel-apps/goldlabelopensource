@@ -18,7 +18,7 @@ export {
 
 export const getTranslation = (slug: string, locale: string) => {
     const hasEntry = translations[slug]
-    if (!hasEntry) return `No slug ${slug}`
+    if (!hasEntry) return `No translation ${slug}`
     const hasTranslation = translations[slug][locale]
     if (!hasTranslation) return `No locale ${locale}, ${slug}`
     return translations[slug][locale]

@@ -10,6 +10,7 @@ import {
 } from "@mui/material"
 import {
   Font,
+  Icon,
   usePwaDispatch,
   usePwaSelect,
   selectPWA,
@@ -39,20 +40,19 @@ export default function SubPages() {
   return (
     <Box sx={{}}>
         
-          <Grid container>
+          <Grid container sx={{mt:1}}>
             {allSiblings.map((item: any, i: number) => {
                 const {
                   title,
                   slug,
-                  // icon,
-                  image,
+                  icon,
+                  // image,
                   category,
                   description,
               } = item 
               if(frontmatter.category !== category) return null
               if(frontmatter.slug === slug) return null
-              return <Grid item xs={12} md={6} key={`book_${i}`}>
-                          <Box sx={{}}>
+              return <Grid item xs={12} md={6} key={`book_${i}`} sx={{p:0.5}}>
                             <CardActionArea
                               onClick={() => {
                                 if (!isBig) dispatch(toggleCategories(false))
@@ -62,13 +62,7 @@ export default function SubPages() {
                               <Alert
                                 severity={"success"}
                                 iconMapping={{
-                                  success: <><Image options={{
-                                    src: image,
-                                    height: 65,
-                                    width: 65,
-                                    alt: description,
-                                  }}
-                                /></>
+                                  success: <><Icon icon={icon} /></>
                                 }}>
                                   <AlertTitle>
                                     <Font>{title}</Font>
@@ -76,7 +70,6 @@ export default function SubPages() {
                                   <Font variant="small">{description}</Font>
                               </Alert>                              
                             </CardActionArea>
-                          </Box>
                       </Grid>
             })}
           </Grid>

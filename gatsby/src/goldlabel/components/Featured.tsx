@@ -1,5 +1,6 @@
 import * as React from "react"
 import {
+  Divider,
   useTheme,
   useMediaQuery,
   Box,
@@ -22,8 +23,8 @@ export default function Featured() {
   const isBig = useMediaQuery(theme.breakpoints.up("md"))
   const featured = useFeatured()
   if (!featured.length) return null
-  let max: number = 1
-  if (isBig) max = 9
+  let max: number = 10
+  // if (isBig) max = 9
   
   return (<>  
   <Grid container spacing={1}>
@@ -40,8 +41,8 @@ export default function Featured() {
       if (i > max-1) return null
       if (isBig && !frontmatter) console.log("isBig", isBig)
 
-      return <Grid item xs={12} md={4} key={`featuredItem_${i}`}>
-                  <Box sx={{}}>
+      return <Grid sx={{mt:0.5}} item xs={12} md={6} key={`featuredItem_${i}`}>
+                  <Box sx={{mt:0.5}}>
                   <CardActionArea
                     onClick={() => {
                       dispatch(navigate(slug, "_self"))
@@ -55,11 +56,9 @@ export default function Featured() {
                         }}
                       >
                         <AlertTitle>
-                          <Box sx={{}}>
                             <Font>{title}</Font>
-                          </Box>
                         </AlertTitle>
-                          <Font variant="small">{description}</Font>
+                        <Font variant="small">{description}</Font>
                         </Alert>                    
                   </CardActionArea>
                   </Box>

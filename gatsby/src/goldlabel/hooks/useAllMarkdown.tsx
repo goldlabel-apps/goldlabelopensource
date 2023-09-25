@@ -12,6 +12,7 @@ export const useAllMarkdown = () => {
             cover
             featured
             category
+            parentSlug
             slug
             title
             description
