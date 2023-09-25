@@ -14,6 +14,7 @@ import {
   Notifyer,
   SiteBottom,
   Settings,
+  togglePages,
 } from "../goldlabel"
 
 export default function App(props: any) {
@@ -40,8 +41,7 @@ export default function App(props: any) {
     if (!systemPref && prefersDarkMode !== darkmode){
       dispatch(toggleDarkmode(prefersDarkMode))
     }
-  }, [prefersDarkMode, darkmode, systemPref, frontmatter, location, dispatch])
-
+  }, [isBig, prefersDarkMode, darkmode, systemPref, frontmatter, location, dispatch])
   return (<>
             <Notifyer />
             <Settings />

@@ -1,5 +1,8 @@
 import * as React from "react"
 import GoldenticketIcon from './SVGIcons/GoldenticketIcon'
+import GoldlabelOutlined from './SVGIcons/GoldlabelOutlined'
+import GraphqlIcon from './SVGIcons/GraphqlIcon'
+import WordpressIcon from './SVGIcons/WordpressIcon'
 import BlokeyIcon from './SVGIcons/BlokeyIcon'
 import PharmacyIcon from "@mui/icons-material/LocalHospitalOutlined"
 import GoldlabelIcon from './SVGIcons/GoldenticketIcon'
@@ -25,7 +28,7 @@ import MinimiseIcon from "@mui/icons-material/Minimize"
 import LinguaIcon from "@mui/icons-material/Translate"
 import JavascriptIcon from "@mui/icons-material/Javascript"
 import MaximiseIcon from "@mui/icons-material/Maximize"
-import ContactIcon from "@mui/icons-material/Message"
+import ContactIcon from "@mui/icons-material/ConnectWithoutContact"
 import BatteryIcon from "@mui/icons-material/BatteryAlert"
 import GoodBatteryIcon from "@mui/icons-material/BatteryChargingFull"
 import MailIcon from "@mui/icons-material/Mail"
@@ -83,6 +86,11 @@ import MenuIcon from "@mui/icons-material/Menu"
 import TrashIcon from "@mui/icons-material/DeleteOutlined"
 import VisibilityIcon from "@mui/icons-material/Visibility"
 import ExitIcon from "@mui/icons-material/ExitToAppRounded"
+
+import WorkIcon from "@mui/icons-material/WorkOutline"
+import LifeIcon from "@mui/icons-material/PsychologyOutlined"
+import BalanceIcon from "@mui/icons-material/BeachAccessOutlined"
+
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff"
 import FilebrowserIcon from "@mui/icons-material/Attachment"
 import ImagefileIcon from "@mui/icons-material/Image"
@@ -197,6 +205,24 @@ export default function Icon(props: any) {
       case "firebase":
       iconFragment = <GCPIcon color={color} />
       break
+
+      
+      case "wordpress":
+        iconFragment = <WordpressIcon color={color} />
+        break
+      case "work":
+        iconFragment = <WorkIcon color={color} />
+        break
+
+      case "life":
+        iconFragment = <LifeIcon color={color} />
+        break
+
+      case "balance":
+      iconFragment = <BalanceIcon color={color} />
+      break
+
+
       
       case "addYourself":
         iconFragment = <AddYourselfIcon color={color} />
@@ -240,6 +266,19 @@ export default function Icon(props: any) {
       case "goldenticket":
         iconFragment = <GoldlabelIcon color={color} />
         break
+
+
+        
+
+        case "graphql":
+          iconFragment = <GraphqlIcon color={color} />
+          break
+
+
+        case "goldlabelOutlined":
+          iconFragment = <GoldlabelOutlined color={color} />
+          break
+
 
       case "techstack":
         iconFragment = <TechstackIcon color={color} />
@@ -440,7 +479,7 @@ export default function Icon(props: any) {
       break
 
       case "contact":
-        iconFragment = <SendIcon color={color} />
+        iconFragment = <ContactIcon color={color} />
         break
 
 

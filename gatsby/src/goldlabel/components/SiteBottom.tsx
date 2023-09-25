@@ -3,15 +3,18 @@ import {
   useTheme,
   AppBar,
   Box,
-  Link,
   Container,
+  IconButton,
+  Tooltip,
 } from "@mui/material"
 import {
-  Font,
+  toggleSettings,
+  Icon,
   TopAppbar,
   usePwaSelect,
   usePwaDispatch,
   selectPWA,
+  selectLocale,
   navigate,
 } from "../../goldlabel"
 import {getTranslation} from "../../mods/Lingua"
@@ -20,10 +23,7 @@ export default function SiteBottom(props: any) {
   const dispatch = usePwaDispatch()
   const {children} = props
   const theme = useTheme()
-  const linkColor = theme.palette.text.secondary
-  const pwa = usePwaSelect(selectPWA)
-  const {locale} = pwa
-  const showFooterText = true
+  const locale = usePwaSelect(selectLocale)
 
   return (
     <>
@@ -46,25 +46,18 @@ export default function SiteBottom(props: any) {
           boxShadow: "none",
           background: theme.palette.background.paper,
         }}>
-          <Container maxWidth="lg">
+          <Container maxWidth="md">
           <Box sx={{display: "flex"}}>
+            <Box sx={{flexGrow:1}} />
+              <IconButton 
+                sx={{}}
+                onClick={() => {
+                  dispatch(toggleSettings(true))
+                }}
+                color="primary">
+                  <Icon icon="settings" />
+              </IconButton>
             
-            {showFooterText ? <Box sx={{}}>
-              <Font variant="small">
-                <Link 
-                  onClick={(e: React.MouseEvent) => {
-                    e.preventDefault()
-                    dispatch(navigate("https://github.com/listingslab-software/open-source", "_blank"))
-                  }}
-                  sx={{
-                    cursor: "pointer", 
-                    textDecoration: "none",
-                    color: linkColor,
-                  }}>
-                { getTranslation("FOOTER", locale) }
-                </Link>
-              </Font>
-            </Box> : null}
             <Box sx={{flexGrow:1}} />
           </Box>
           </Container>

@@ -21,8 +21,13 @@ export default function Lingua () {
   const {locale} = pwa
   const theme = useTheme()
   const dispatch = usePwaDispatch()
-  const {localeList, localeMeta} = goldlabelConfig
-
+  const {features} = goldlabelConfig
+  const {lingua} = features
+  const {
+    localeList,
+    localeMeta,
+  } = lingua
+  
   return (
       <>        
         

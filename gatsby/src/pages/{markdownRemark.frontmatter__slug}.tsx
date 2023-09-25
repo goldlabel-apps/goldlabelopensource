@@ -75,6 +75,7 @@ export const pageQuery = graphql`
         cover
         featured
         category
+        parentSlug
         slug
         title
         description

@@ -32,10 +32,15 @@ import {
 
 export default function LinguaDialog () {
   const pwa = usePwaSelect(selectPWA)
-  const {locale, lingua} = pwa
+  const {locale} = pwa
   const theme = useTheme()
   const dispatch = usePwaDispatch()
-  const {localeList, localeMeta} = goldlabelConfig
+  const {features} = goldlabelConfig
+  const {lingua} = features
+  const {
+    localeList,
+    localeMeta,
+  } = lingua
   let linguaStr: string = getTranslation("LINGUA", locale)
   
   const onOpenLingua = () => {

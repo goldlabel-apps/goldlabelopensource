@@ -12,13 +12,15 @@ import {
   usePwaSelect,
   selectPWA,
   Font,
-  Featured,
+  useAllMarkdown,
+  useChildPages,
 } from "../../goldlabel"
 import {
-  SubPages,
   MainMenu,
   Markdown,
   ListingLinks,
+  SiblingList,
+  ChildList,
 } from "./"
 
 export default function Listings (props: any) {
@@ -26,38 +28,37 @@ export default function Listings (props: any) {
   const theme = useTheme()
   const isBig = useMediaQuery(theme.breakpoints.up("md"))
   const {categories} = pwa
-  const {frontmatter, html, excerpt} = props
-  let noMeta = false
-  let notCover = true 
+  const {frontmatter, html} = props
   const {
     cover,
     website,
     facebook,
     email,
+    phone,
     title,
+    parentSlug,
   } = frontmatter
-  if (!website && !facebook && !email) noMeta = true
-  if(cover) notCover = false
+  const allMarkdown = useAllMarkdown()
+  const allChildren = useChildPages(parentSlug, allMarkdown)  
+  let hasChildren = false
+  if (allChildren.length) hasChildren = true
+  let noMeta = false
+  if (!website && !facebook && !email && !phone) noMeta = true
 
   return <>
-          <Container>
+          <Container maxWidth="md">
             <Grid id="listings" container spacing={1}>
               {categories ? <Grid item xs={12} md={3}>
                 <MainMenu />
               </Grid> : null }
-
               <Grid item xs={12} md={categories ? 9 : 12}>
-                
                 <Title frontmatter={frontmatter}/>
-                
                 {title !== "Home" ? <Box sx={{mx:2, mb:2}}>
                   <Font>{frontmatter.description}</Font>
                 </Box> : null }
-                
                 <Grid container spacing={1}>
-
-                  <Grid item xs={12} md={12}>
-                    <Box>
+                  <Grid item xs={12} md={6}>
+                    <Box sx={{mx:0.5}}>
                         <Image options={{
                           src: frontmatter.image,
                           height: isBig ? 270 : 135,
@@ -66,20 +67,23 @@ export default function Listings (props: any) {
                       />
                     </Box> 
                   </Grid>
+                  <Grid item xs={12} md={6}>
+                    {hasChildren ? <ChildList frontmatter={frontmatter}/> : null}
+                    {cover ? <SiblingList /> : <ListingLinks frontmatter={frontmatter}/>}
+
+                    { !hasChildren && !cover ? <>
+                      <SiblingList />
+                    </> : null }
+
+                    
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Markdown html={html} />
+                  </Grid>
                   
-                  {cover ? null: <ListingLinks frontmatter={frontmatter}/>}
-                </Grid>
-                { cover ? <SubPages /> : null }
-                <Box sx={{}}>
-                  <Markdown html={html} />
-                </Box>
-                {cover ? null : <SubPages /> }
-                <Box sx={{}}>
-                  <Featured />    
-                </Box>                
+                </Grid>                
               </Grid>
             </Grid>
           </Container>
-          
         </>
 }

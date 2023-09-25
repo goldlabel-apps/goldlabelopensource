@@ -15,6 +15,7 @@ import {
   selectDarkMode,
   toggleDarkmode,
   resetRedux,
+  navigate,
 } from "../../goldlabel"
 import { getTranslation } from "../../mods/Lingua"
 
@@ -56,6 +57,36 @@ export default function SettingsMenu() {
                   primary={<Font variant="small">{resetStr}</Font>}
                 />
               </ListItemButton>
+
+              <ListItemButton
+                onClick={(e:React.MouseEvent) => {
+                  e.preventDefault()
+                  dispatch(navigate("https://github.com/listingslab-software/open-source", "_blank"))
+                }}>
+                <ListItemIcon>
+                  <Icon icon="github" color="primary"/>
+                </ListItemIcon>
+                <ListItemText
+                  primary={<Font variant="small">{getTranslation("FOOTER", locale)}</Font>}
+                />
+              </ListItemButton>
+
+              <ListItemButton
+                onClick={(e:React.MouseEvent) => {
+                  e.preventDefault()
+                  dispatch(toggleSettings(false))
+                  dispatch(navigate("/sitemap", "_self"))
+                }}>
+                <ListItemIcon>
+                  <Icon icon="site" color="primary"/>
+                </ListItemIcon>
+                <ListItemText
+                  primary={<Font variant="small">
+                            {getTranslation("SITEMAP", locale)}
+                            </Font>}
+                />
+              </ListItemButton>
+
           </>
   )
 }

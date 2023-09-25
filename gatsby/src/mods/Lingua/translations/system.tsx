@@ -1,4 +1,10 @@
 export const system: any = {
+    SITEMAP: {
+        en: "Site map",
+        mt: "Mappa tas-sit",
+        de: "Seitenverzeichnis",
+        cn: "站点地图",
+    },
     CANCEL: {
         en: "Cancel",
     },
