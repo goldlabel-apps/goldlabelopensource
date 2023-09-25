@@ -4,10 +4,10 @@ order: 10
 cover: true
 featured: false
 category: "listingslab"
-title: "Goldlabel"
-description: "An alternative to WordPress"
+title: "Open Source"
+description: "A modern alternative to WordPress"
 slug: "/"
-icon: "diving"
+icon: "home"
 image: "/png/default.png"
 keywords: "JavaScript, Gatsby, React, Progressive Web App, MUI"
 email: "ai@listingslab.com"
