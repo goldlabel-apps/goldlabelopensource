@@ -12,6 +12,7 @@ export type WeatherShape = {
     showError: boolean
     fullscreen: boolean
     forecast: any
+    wind: "open" | "closed" | "hidden"
     active: "temperature" | "wind" | "outlook" | null
     blinking: boolean
     initted: boolean
@@ -20,6 +21,7 @@ export type WeatherShape = {
 
 export const weatherState: WeatherShape = {
     error: null,
+    wind: "open",
     initted: false,
     flyTo: null,
     blinking: false,

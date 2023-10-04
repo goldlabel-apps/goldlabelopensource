@@ -13,13 +13,14 @@ import {
   usePwaDispatch,
   usePwaSelect,
   selectWeather,
+  selectLocale,
 } from "../../../goldlabel"
 import {
   toggleWeather,
 } from "../../Weather"
-// import {
-//   getTranslation,
-// } from "../../Lingua"
+import {
+  getTranslation,
+} from "../../Lingua"
 import {meta} from "../../Lingua/translations/weather"
 
 const makeSkyConditions = (pc: number) => {
@@ -60,7 +61,7 @@ const findClosestIndex = (numbers:Array<number>) => {
 export default function WeatherCTA() {
   let icon = "outlook"
   const severity: AlertColor = "success"
-  // const locale = usePwaSelect(selectLocale)
+  const locale = usePwaSelect(selectLocale)
   const dispatch = usePwaDispatch()
   const ctaCallback = () => dispatch(toggleWeather(true))
   const weather = usePwaSelect(selectWeather)
@@ -87,6 +88,7 @@ export default function WeatherCTA() {
   const skyConditions = makeSkyConditions(hour.cloudCover[0].value)
   // ${getTranslation("CURRENT_WEATHER", locale)}
   const label = `
+  ${getTranslation("CURRENT_WEATHER",locale)}
   ${timeStr}. 
   ${skyConditions},
   ${hour.airTemperature[0].value} ${airTemperature.suffix}, 

@@ -11,8 +11,6 @@ export {
     geolocatorState,
     MiniMarker,
     MiniMap,
-    BasicMap,
-    BasicMarker,
     SelectedLocation,
     selectLocation,
     blinkMap,

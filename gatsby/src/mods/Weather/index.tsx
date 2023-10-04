@@ -11,6 +11,8 @@ import WeatherButton from "./components/WeatherButton"
 import WeatherError from "./components/WeatherError"
 import WeatherCTA from "./components/WeatherCTA"
 import ZoomMapClip from "./components/ZoomMapClip"
+import WindClip from "./components/WindClip"
+
 
 import {weatherState} from "./weatherState"
 import {fetchWeather} from "./actions/fetchWeather"
@@ -34,6 +36,7 @@ export {
     ZoomMapClip,
     DiveSitesClip,
     DiveShopsClip,
+    WindClip,
 }
 export {
     weatherState,

@@ -39,7 +39,7 @@ export default function SettingsMenu() {
 
   return (<>
             <List dense>
-              <ListItemButton
+              {/* <ListItemButton
                 onClick={(e:React.MouseEvent) => {
                   e.preventDefault()
                   dispatch(toggleSettings(false))
@@ -54,7 +54,7 @@ export default function SettingsMenu() {
                             {getTranslation("SWITCH_MAP", locale)}
                             </Font>}
                 />
-              </ListItemButton>
+              </ListItemButton> */}
               <ListItemButton
                   onClick={(e:React.MouseEvent) => {
                     e.preventDefault()
