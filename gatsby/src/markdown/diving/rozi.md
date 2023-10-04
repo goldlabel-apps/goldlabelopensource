@@ -1,4 +1,5 @@
 ---
+draft: false
 category: "diving"
 title: "The Tugboat Rozi"
 description: "Amazing wreck in Cirkewwa"
