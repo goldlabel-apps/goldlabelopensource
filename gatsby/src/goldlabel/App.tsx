@@ -14,8 +14,10 @@ import {
   Notifyer,
   SiteBottom,
   Settings,
-  togglePages,
+  setType,
 } from "../goldlabel"
+import {Add} from "../mods/Listings"
+import {Weather} from "../mods/Weather"
 
 export default function App(props: any) {
   const dispatch = usePwaDispatch()
@@ -25,6 +27,7 @@ export default function App(props: any) {
     location,
     children,
     appData,
+    type,
   } = props
   let frontmatter: any = null
   if (appData.data){
@@ -41,11 +44,15 @@ export default function App(props: any) {
     if (!systemPref && prefersDarkMode !== darkmode){
       dispatch(toggleDarkmode(prefersDarkMode))
     }
-  }, [isBig, prefersDarkMode, darkmode, systemPref, frontmatter, location, dispatch])
+    dispatch(setType(type))
+  }, [type, isBig, prefersDarkMode, darkmode, systemPref, frontmatter, location, dispatch])
+
   return (<>
             <Notifyer />
             <Settings />
-            <SiteBottom>              
+            <Weather />
+            <SiteBottom>       
+              {type === "add-listing" ? <Add /> : null }    
               {children}
             </SiteBottom>
           </>)

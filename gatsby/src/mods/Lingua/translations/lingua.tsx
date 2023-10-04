@@ -1,8 +1,18 @@
 export const lingua: any = {
-    LINGUA_BLURB: {
-        en: "Lingua is our multi language translation package. Localisation is very difficult and not something you want to simply bolt onto a website at the end. Users will do that themselves if they cared enough about reading anything you have written. Which they don't",
-        mt: "Lingua huwa l-pakkett tagħna ta' traduzzjoni b'ħafna lingwi. Il-lokalizzazzjoni hija diffiċli ħafna u mhux xi ħaġa li trid sempliċement tiddawwar fuq websajt fl-aħħar. L-utenti jagħmlu dan huma stess jekk jimpurtahom biżżejjed biex jaqraw xi ħaġa li ktibt. Li ma jagħmlux",
-        de: "Lingua ist unser mehrsprachiges Übersetzungspaket. Die Lokalisierung ist sehr schwierig und nicht etwas, das man am Ende einfach in eine Website einbauen möchte. Benutzer werden dies selbst tun, wenn ihnen die Lektüre Ihrer Texte wichtig genug ist. Was sie nicht tun",
-        cn: "Lingua 是我们的多语言翻译包。 本地化非常困难，您不想最后简单地将其固定在网站上。 如果用户足够关心阅读您所写的任何内容，他们就会自己这样做。 他们没有",
+    LINGUA: {
+        en: "Localize your website to expand your global reach. Tailor content to local audiences. Enhance user experience, boost SEO, and drive business growth",
+        it: "Localizza il tuo sito web per espandere la tua portata globale. Adatta i contenuti al pubblico locale. Migliora l'esperienza utente, potenzia la SEO e promuovi la crescita del business",
+        mt: "Lokalizza l-websajt tiegħek biex tespandi l-firxa globali tiegħek. Il-kontenut apposta għall-udjenzi lokali. Ittejjeb l-esperjenza tal-utent, saħħaħ is-SEO, u tmexxi t-tkabbir tan-negozju",
+        de: "Lokalisieren Sie Ihre Website, um Ihre globale Reichweite zu vergrößern. Passen Sie Inhalte an das lokale Publikum an. Verbessern Sie das Benutzererlebnis, steigern Sie SEO und fördern Sie das Geschäftswachstum",
+        cn: "本地化您的网站以扩大您的全球影响力。 为当地受众量身定制内容。 增强用户体验，促进搜索引擎优化，推动业务增长",
+        pi: "Localize yer website t' expand yer global reach. Tailor content t' local audiences. Enhance user experience, boost SEO, 'n drive business growth",
     },
 }
+
+/*
+en: "",
+it: "",
+mt: "",
+de: "",
+cn: "",
+*/

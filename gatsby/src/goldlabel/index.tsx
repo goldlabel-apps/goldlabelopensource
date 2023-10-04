@@ -13,16 +13,22 @@ import {useCategories} from "./hooks/useCategories"
 import {usePagesByCategory} from "./hooks/usePagesByCategory"
 import {useChildPages} from "./hooks/useChildPages"
 import {useFeatured} from "./hooks/useFeatured"
+import {useSameParent} from "./hooks/useSameParent"
+import {useScreensize} from "./hooks/useScreensize"
 
 // Redux
 import {
   selectPWA, 
   setPwaKey,
   selectDarkMode,
-  selectGeo,
   selectLocale,
   selectAuth,
   selectTings,
+  selectCategories,
+  selectType,
+  selectGeolocator,
+  selectFrontmatter,
+  selectWeather,
 } from "./reducer"
 
 import {WrapRedux} from "./redux/WrapRedux"
@@ -47,6 +53,9 @@ import {toggleGenericDialog} from "./actions/toggles/toggleGenericDialog"
 import {setFrontmatter} from "./actions/setFrontmatter"
 import {scrollUp} from "./actions/scrollUp"
 
+// Setters
+import {setType} from "./actions/setters/setType"
+
 // Theme
 import MuiTheme from "./theme/MuiTheme"
 import {makeTheme} from "./theme/makeTheme"
@@ -62,10 +71,13 @@ import TopAppbar from "./components/TopAppbar"
 import SiteBottom from "./components/SiteBottom"
 import TopNav from "./components/TopNav"
 import SettingsMenu from "./components/SettingsMenu"
-import Share from "./components/Share"
+import ShareMenu from "./components/ShareMenu"
 import Settings from "./components/Settings"
 import Image from "./components/Image"
 import Featured from "./components/Featured"
+import CatNav from "./components/CatNav"
+import MiniSettings from "./components/MiniSettings"
+
 
 export { // Goldlabel
   goldlabelConfig,
@@ -80,10 +92,12 @@ export { // Goldlabel
   TopNav,
   SettingsMenu,
   GenericDialog,
-  Share,
   Title,
   Image,
   Featured,
+  CatNav,
+  ShareMenu,
+  MiniSettings,
 }
 
 export { // Theme
@@ -118,12 +132,24 @@ export { // Redux
   toggleGenericDialog,
   setFrontmatter,
   scrollUp,
+}
+
+export { // Selectors
   selectDarkMode,
-  selectGeo,
   selectLocale,
   selectAuth,
   selectTings,
+  selectCategories,
+  selectType,
+  selectGeolocator,
+  selectFrontmatter,
+  selectWeather,
 }
+
+export { // Setters
+  setType,
+}
+
 
 export { // Hooks
   usePwaSelect,
@@ -134,4 +160,6 @@ export { // Hooks
   usePagesByCategory,
   useFeatured,
   useChildPages,
+  useSameParent,
+  useScreensize,
 }

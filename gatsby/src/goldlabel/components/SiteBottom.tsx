@@ -5,37 +5,31 @@ import {
   Box,
   Container,
   IconButton,
-  Tooltip,
 } from "@mui/material"
 import {
   toggleSettings,
   Icon,
   TopAppbar,
-  usePwaSelect,
   usePwaDispatch,
-  selectPWA,
-  selectLocale,
-  navigate,
 } from "../../goldlabel"
-import {getTranslation} from "../../mods/Lingua"
+import {WeatherButton} from "../../mods/Weather"
 
 export default function SiteBottom(props: any) {
   const dispatch = usePwaDispatch()
   const {children} = props
   const theme = useTheme()
-  const locale = usePwaSelect(selectLocale)
 
   return (
     <>
       <TopAppbar />
-      <Box sx={{ 
-        // border: "1px solid red",
-        pt: "60px", 
-        pb:"60px" 
-      }}>
-        <div id="scrollIntoView" />
-        {children}
-      </Box>
+        <Box sx={{ 
+          // border: "1px solid red",
+          pt: "65px", 
+          pb:"60px" 
+        }}>
+          <div id="scrollIntoView" />
+          {children}
+        </Box>
       <AppBar 
         color={"primary"}
         position="fixed"
@@ -50,17 +44,16 @@ export default function SiteBottom(props: any) {
           <Box sx={{display: "flex"}}>
             <Box sx={{flexGrow:1}} />
               <IconButton 
-                sx={{}}
+                color="primary"
+                sx={{mb:1}}
                 onClick={() => {
                   dispatch(toggleSettings(true))
-                }}
-                color="primary">
-                  <Icon icon="settings" />
+                }}>
+                  <Icon icon="menu"/>
               </IconButton>
-            
             <Box sx={{flexGrow:1}} />
           </Box>
-          </Container>
+        </Container>
       </AppBar>
     </>
   )

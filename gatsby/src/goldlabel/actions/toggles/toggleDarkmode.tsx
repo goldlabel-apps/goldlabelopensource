@@ -8,6 +8,7 @@ export const toggleDarkmode =
 ): any =>
   async (dispatch: any) => {
     try {
+      console.log("HEY.")
       dispatch(setPwaKey({ key: "darkmode", value}))
       dispatch(setPwaKey({ key: "systemPref", value: true}))
     } catch (error: any) {

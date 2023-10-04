@@ -2,7 +2,6 @@ import * as React from "react"
 import {
   CardHeader,
   CardActionArea,
-  Alert,
   Container,
   Grid,
 } from "@mui/material"
@@ -18,14 +17,9 @@ export default function SitemapPage(data: any) {
   const locale = "en"
   const allMarkdown = useAllMarkdown()
 
-  return <AppShell appData={{...data}} type="404">
-            <Container maxWidth="lg">
-              <Alert
-                sx={{m:2}}
-                severity="success">
-                  <Font>Sitemap</Font>
-            </Alert>
-
+  return <AppShell appData={{...data}} type="sitemap">
+            <Container maxWidth="md">
+              
             <Grid id="allDocs" container spacing={1}>
               {allMarkdown.map((item: any, i: number) => {
                 
@@ -40,23 +34,23 @@ export default function SitemapPage(data: any) {
                 let linguaTitle = title
                 if (title === "<HOME>") linguaTitle = getTranslation("HOME", locale)
 
-                return <Grid item xs={12} md={6} lg={4} key={`doc_${i}`}>
+                return <Grid item xs={12} md={4}  key={`doc_${i}`}>
                         <CardActionArea 
-                                  onClick={() => {
-                                    window.open(slug, "_self")
-                                  }}>
-                                  <CardHeader 
-                                    avatar={<Image options={{
-                                      src: image,
-                                      width: 75,
-                                      height: 75,
-                                      alt: frontmatter.description,
-                                    }}
-                                  />}
-                                    title={<Font>{linguaTitle}</Font>}
-                                    subheader={<Font variant="small">{description}</Font>}
-                                  />
-                                </CardActionArea>
+                          onClick={() => {
+                            window.open(slug, "_self")
+                          }}>
+                          <CardHeader 
+                            avatar={<Image options={{
+                              src: image,
+                              width: 50,
+                              height: 50,
+                              alt: frontmatter.description,
+                            }}
+                          />}
+                            title={<Font>{linguaTitle}</Font>}
+                            // subheader={<Font variant="small">{description}</Font>}
+                          />
+                        </CardActionArea>
                       </Grid>                  
                   })}
                 </Grid>

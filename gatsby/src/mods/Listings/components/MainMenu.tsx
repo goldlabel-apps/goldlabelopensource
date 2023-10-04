@@ -38,23 +38,22 @@ export default function MainMenu() {
   return (
     <Box sx={{ display: "block"}}>
         <Collapse in={categories} timeout="auto" unmountOnExit>
-          <List>
+          <List dense sx={{ml:-2}}>
             {allBooks.map((category: any, i: number) => {
                 const {
                   slug,
                   icon,
                   title,
               } = category
-
-              return <Box key={`book_${i}`}>
-                        <ListItemButton
+              return <ListItemButton
+                          key={`book_${i}`}
                           onClick={() => {
                             if (!isBig) dispatch(toggleCategories(false))
                             dispatch(fadeDiv("listings"))
                             dispatch(navigate(slug, "_self"))
                           }}>
-                          <ListItemIcon>
-                            <Icon icon={title !== "Home" ? icon : "home"} color="primary"/>
+                          <ListItemIcon sx={{ml:-0.5}}>
+                            <Icon icon={icon} color="primary"/>
                           </ListItemIcon>
                           <ListItemText 
                             primary={<Font variant="small">
@@ -62,7 +61,6 @@ export default function MainMenu() {
                                     </Font>}
                           />
                         </ListItemButton>
-                      </Box>
             })}
           </List>
         </Collapse>

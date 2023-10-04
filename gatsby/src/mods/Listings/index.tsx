@@ -1,10 +1,11 @@
 import Listings from "./Listings"
+import Add from "./components/Add"
 import {addListingForm} from "./forms/addListingForm"
-import AddListingPreview from "./components/AddListingPreview"
-import ListingLinks from "./components/ListingLinks"
+import Preview from "./components/Preview"
+import MoreLikeThis from "./components/MoreLikeThis"
+import MetaButtons from "./components/MetaButtons"
 import Markdown from "./components/Markdown"
-import SubPages from "./components/SubPages"
-import ChildList from "./components/ChildList"
+import SameParent from "./components/SameParent"
 import SiblingList from "./components/SiblingList"
 import MainMenu from "./components/MainMenu"
 import {cancelAddListing} from "./actions/cancelAddListing"
@@ -13,12 +14,13 @@ import {validateAddListing} from "./actions/validateAddListing"
 export {
     addListingForm,
     Listings,
-    AddListingPreview,
-    ListingLinks,
+    Add,
+    Preview,
+    MoreLikeThis,
+    MetaButtons,
     Markdown,
-    SubPages,
     SiblingList,
-    ChildList,
+    SameParent,
     MainMenu,
     cancelAddListing,
     validateAddListing,

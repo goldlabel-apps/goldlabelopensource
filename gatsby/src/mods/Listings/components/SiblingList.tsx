@@ -36,7 +36,7 @@ export default function SiblingList() {
   if (allSiblings.length < 2) showFeatured = true
   
   return (
-    <List dense>    
+    <List dense sx={{ml: !isBig ? -2 : 0, mt: isBig ? -2 : 0}}>    
       {allSiblings.map((item: any, i: number) => {
           const {
             title,
@@ -45,16 +45,17 @@ export default function SiblingList() {
             category,
         } = item 
         if(frontmatter.category !== category) return null
+        if(frontmatter.slug === slug) return null
+
         return <ListItemButton
                   key={`book_${i}`}
                   onClick={() => {
                     if (!isBig) dispatch(toggleCategories(false))
                     dispatch(fadeDiv("listings"))
                     dispatch(navigate(slug, "_self"))
-                  }}
-                >
+                  }}>
                   <ListItemIcon>
-                    <Icon icon={icon} color="primary"/>
+                    <Icon icon={icon} color="primary" />
                   </ListItemIcon>
                   <ListItemText 
                     primary={<Font>{title}</Font>}

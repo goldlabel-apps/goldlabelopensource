@@ -2,6 +2,7 @@ import * as React from "react"
 import {
   Box,
   Alert,
+  AlertTitle,
   CardActionArea,
   AlertColor,
 } from "@mui/material"
@@ -28,20 +29,21 @@ export default function CTA(props: any) {
   if (callback) ctaCallback = callback
 
   return (<><CardActionArea
-                sx={{}}
+                
                 onClick={ctaCallback}>
                 <Alert
+                  sx={{pt:1.5}}
                   severity={ctaSeverity}
                   iconMapping={{
                     success: <Box sx={{}}>
                               <Icon icon={ctaIcon} />
                             </Box>,
                   }}>
-                    <Box sx={{m:0.33}}>
-                      <Font>
+                    <AlertTitle>
+                      <Font variant="title">
                         {ctaLabel}
                       </Font>
-                    </Box>
+                    </AlertTitle>
                   </Alert>
               </CardActionArea>
     </>
