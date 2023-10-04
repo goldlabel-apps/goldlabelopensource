@@ -7,7 +7,7 @@ parentSlug: "/goldlabel"
 title: "Geolocator"
 description: "An old fashioned Mashup"
 keywords: "weathermap, mapbox, mashup"
-icon: "weathermap"
+icon: "map"
 image: "/png/default.png"
 placename: "Spinola Bay, Malta"
 lat: 35.919837943466604

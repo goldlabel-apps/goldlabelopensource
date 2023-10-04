@@ -12,9 +12,9 @@ export const goldlabelConfig: ConfigShape = {
     siteKeywords: "listingslab, goldlabel, opensource, fullstack, react, javascript, node, pwa, free, github",
     themes: [
         {
-            slug: "goldlabel",
-            primaryColor: "#C09F52",
-            secondaryColor: "#87703B",
+            slug: "opensource",
+            primaryColor: "#A3A3A3",
+            secondaryColor: "#C5C5C5",
         },
     ],
     features: {
