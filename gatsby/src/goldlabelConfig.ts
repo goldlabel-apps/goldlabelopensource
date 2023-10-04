@@ -1,25 +1,25 @@
 import {ConfigShape} from "../types"
 
 export const goldlabelConfig: ConfigShape = {
-    siteUrl: "https://listingslab.com",
+    siteUrl: "https://github.com/listingslab-software/open-source",
     siteDefaultLocale: "en",
-    siteTitle: "Listingslab",
-    siteDescription: "Fullstack JavaScript Since 1998",
-    siteImage: "/png/features/goldlabel.png",
+    siteTitle: "Open Source",
+    siteDescription: "Forever free",
+    siteImage: "/png/town.png",
     siteIcon: "/svg/iOS.svg",
     siteTwitter: "@machine_v4",
-    siteTheme: "#FFFFFF", // #121212
+    siteTheme: "#FFFFFF",
     siteKeywords: "listingslab, goldlabel, opensource, fullstack, react, javascript, node, pwa, free, github",
     themes: [
         {
-            slug: "goldlabel",
-            primaryColor: "#C09F52",
-            secondaryColor: "#87703B",
+            slug: "opensource",
+            primaryColor: "#C5C5C5",
+            secondaryColor: "#616161",
         },
     ],
     features: {
         lingua: {
-            localeList: ["en", "mt", "de", "cn"], // "es"
+            localeList: ["en", "pi", "mt", "de", "cn"], // "es"
             localeMeta: {
                 en: {
                     default: "English",
@@ -40,6 +40,10 @@ export const goldlabelConfig: ConfigShape = {
                 mt: {
                     default: "Malti",
                     localised: "Ittraduci ghall-Malti",
+                },
+                pi: {
+                    default: "Pirate",
+                    localised: "Translate to Pirate",
                 },
             },
         }

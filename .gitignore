@@ -69,3 +69,7 @@ node_modules/
 # dotenv environment variables file
 .env
 
+gatsby/static/png/.DS_Store
+gatsby/static/jpg/.DS_Store
+gatsby/static/png/.DS_Store
+gatsby/.env.example

@@ -21,10 +21,8 @@ export const useFeatured = () => {
             keywords
             image
             icon
-            placename
             lat
             lng
-            zoom
             website
             email
             facebook

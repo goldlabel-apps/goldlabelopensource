@@ -28,7 +28,7 @@ export default function Notifyer() {
     <Snackbar
       open
       anchorOrigin={{ 
-        vertical:"top", 
+        vertical:"bottom", 
         horizontal:"center" 
       }}
       autoHideDuration={3500}

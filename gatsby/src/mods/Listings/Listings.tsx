@@ -1,7 +1,5 @@
 import * as React from 'react'
 import {
-  useTheme,
-  useMediaQuery,
   Container,
   Grid,
   Box,
@@ -10,24 +8,31 @@ import {
   Image,
   Title,
   usePwaSelect,
-  selectPWA,
+  usePwaDispatch,
   Font,
-  useAllMarkdown,
-  useChildPages,
+  selectCategories,
 } from "../../goldlabel"
 import {
   MainMenu,
   Markdown,
-  ListingLinks,
+  MetaButtons,
   SiblingList,
-  ChildList,
-} from "./"
+  MoreLikeThis,
+} from "../Listings"
+import {
+  MiniMap,
+} from "../Geolocator"
+import {
+  toggleWeather,
+  useCurrentWeather,
+  WeatherCTA,
+} from "../Weather"
+import { TryOutlined } from '@mui/icons-material'
 
 export default function Listings (props: any) {
-  const pwa = usePwaSelect(selectPWA)
-  const theme = useTheme()
-  const isBig = useMediaQuery(theme.breakpoints.up("md"))
-  const {categories} = pwa
+  const dispatch = usePwaDispatch()
+  const currentWeather = useCurrentWeather()
+  const categories = usePwaSelect(selectCategories)
   const {frontmatter, html} = props
   const {
     cover,
@@ -36,15 +41,21 @@ export default function Listings (props: any) {
     email,
     phone,
     title,
-    parentSlug,
+    slug,
+    lat,
+    lng,
   } = frontmatter
-  const allMarkdown = useAllMarkdown()
-  const allChildren = useChildPages(parentSlug, allMarkdown)  
-  let hasChildren = false
-  if (allChildren.length) hasChildren = true
-  let noMeta = false
+  let showCTA: boolean = false
+  let showMoreLikeThis: boolean = false
+  let noMeta: boolean = false
+  let noMap: boolean = true
   if (!website && !facebook && !email && !phone) noMeta = true
-
+  if (lat && lng) noMap = false
+  if (slug === "/") showCTA = TryOutlined
+  const {
+    currentWeatherStr,
+    icon,
+  } = currentWeather
   return <>
           <Container maxWidth="md">
             <Grid id="listings" container spacing={1}>
@@ -52,35 +63,62 @@ export default function Listings (props: any) {
                 <MainMenu />
               </Grid> : null }
               <Grid item xs={12} md={categories ? 9 : 12}>
-                <Title frontmatter={frontmatter}/>
-                {title !== "Home" ? <Box sx={{mx:2, mb:2}}>
-                  <Font>{frontmatter.description}</Font>
-                </Box> : null }
+              
+                <Box sx={{mb:2, mx:0.25}}>
+                  <Title frontmatter={frontmatter}/>
+                  {title !== "Home" ? 
+                    <Font>{frontmatter.description}</Font>
+                  : null }
+                </Box>
+                
+                {/* <Box sx={{mb:2}}>
+                  <WeatherCTA />
+                </Box> */}
+                
                 <Grid container spacing={1}>
+                
+                {!noMap ? <Grid item xs={12} md={6}>
+                          <Image 
+                            options={{
+                              src: frontmatter.image,
+                              height: 213,
+                              alt: frontmatter.description,
+                            }}
+                          /></Grid> : null}
+
                   <Grid item xs={12} md={6}>
-                    <Box sx={{mx:0.5}}>
-                        <Image options={{
-                          src: frontmatter.image,
-                          height: isBig ? 270 : 135,
-                          alt: frontmatter.description,
-                        }}
-                      />
+                    <Box sx={{mx:0}}>
+                        {noMap ? <Image 
+                          options={{
+                            src: frontmatter.image,
+                            height: 213,
+                            alt: frontmatter.description,
+                          }}
+                        /> : <MiniMap frontmatter={frontmatter}/> }
+                        
                     </Box> 
                   </Grid>
+
+                  
+
                   <Grid item xs={12} md={6}>
-                    {hasChildren ? <ChildList frontmatter={frontmatter}/> : null}
-                    {cover ? <SiblingList /> : <ListingLinks frontmatter={frontmatter}/>}
-
-                    { !hasChildren && !cover ? <>
-                      <SiblingList />
-                    </> : null }
-
-                    
+                    {cover ? <SiblingList /> : null }
                   </Grid>
+
+                  {!noMeta ? <Grid item xs={12}>
+                    <Box sx={{mt:3}}>
+                      <MetaButtons frontmatter={frontmatter}/>
+                    </Box>
+                  </Grid> : null }
+
+                  {showMoreLikeThis ? <Grid item xs={12}>
+                      <MoreLikeThis frontmatter={frontmatter}/>
+                  </Grid> : null}
+                  
                   <Grid item xs={12}>
                     <Markdown html={html} />
                   </Grid>
-                  
+
                 </Grid>                
               </Grid>
             </Grid>

@@ -5,6 +5,7 @@ import {
   Grid,
 } from "@mui/material"
 import {
+  Font,
   usePwaDispatch,
   usePwaSelect,
   selectPWA,
@@ -27,21 +28,31 @@ export default function Settings() {
   return (
     <Box sx={{ display: "block"}}>
       <GenericDialog 
-        fullScreen
         open={settings}
+        fullScreen
         title={title.toUpperCase()}
         closeStr={closeStr}
         onClose={() => dispatch(toggleSettings(false))}>
           <Container maxWidth="sm">
-            <Grid container spacing={1}>   
-              <Grid item xs={12} md={7}>
+            <Grid container spacing={1}>
+               
+              
+              <Grid item xs={12} md={6}>
                 <SettingsMenu /> 
               </Grid>
-              <Grid item xs={12} md={5}>
+
+              <Grid item xs={12} md={6}>
                 <Box sx={{}}>
                   <Lingua />
                 </Box>
+              </Grid>  
+              
+              <Grid item xs={12}>
+                <Font variant="small">
+                  {getTranslation("LINGUA", locale)}
+                </Font>
               </Grid>
+              
           </Grid>
         </Container>
       </GenericDialog>

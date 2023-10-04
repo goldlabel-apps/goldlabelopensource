@@ -30,7 +30,7 @@ export default function GenericDialog (props: any) {
               onClose={closeGenericDialog}
               fullScreen={fullScreen}
               fullWidth
-              maxWidth="md"
+              maxWidth="sm"
             >
               {title ? <DialogTitle sx={{margin:"auto"}}>
                   <CardHeader title={<Font>{title} </Font>}/>
@@ -52,9 +52,10 @@ export default function GenericDialog (props: any) {
                           {closeStr || "Close"}
                         </Font>
                       </Box>
-                      <Icon icon="tick" color="primary" />
+                      <Icon icon="tick" />
                   </Button>
                 </Box>
+                <Box sx={{flexGrow:1}} />
               </DialogActions>
           </Dialog>
         </>
