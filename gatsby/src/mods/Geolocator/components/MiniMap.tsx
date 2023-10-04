@@ -18,20 +18,16 @@ import {
 
 export default function MiniMap(props: any) {
   const dispatch = usePwaDispatch()
-  const {
-    frontmatter,
-  } = props
+  const { frontmatter} = props
   const geolocator = usePwaSelect(selectGeolocator)
   const {blinking} = geolocator
   if (blinking) return null
-  
   const mapRef: any = React.useRef(null)
   const defaultCenter = {
-    lat: 35.95,
-    lng: 14.43,
-    zoom: 8.5,
+    lat: frontmatter.lat,
+    lng: frontmatter.lng,
+    zoom: 9,
   }
-  const [zoomedIn, setZoomedIn] = React.useState<boolean>(false);
   const darkmode = usePwaSelect(selectDarkMode)
   let exitEarly = false
   const {

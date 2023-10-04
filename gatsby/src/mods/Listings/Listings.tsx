@@ -45,13 +45,13 @@ export default function Listings (props: any) {
     lat,
     lng,
   } = frontmatter
-  let showCTA: boolean = false
   let showMoreLikeThis: boolean = false
   let noMeta: boolean = false
   let noMap: boolean = true
   if (!website && !facebook && !email && !phone) noMeta = true
   if (lat && lng) noMap = false
-  if (slug === "/") showCTA = TryOutlined
+  let showCTA = false
+  if (slug === "/") showCTA = true
   const {
     currentWeatherStr,
     icon,
@@ -72,8 +72,12 @@ export default function Listings (props: any) {
                 </Box>
                 
                 {/* <Box sx={{mb:2}}>
-                  <WeatherCTA />
+                  
                 </Box> */}
+
+{showCTA ? <Box sx={{mb:2}}>
+<WeatherCTA />
+</Box> : null }
                 
                 <Grid container spacing={1}>
                 

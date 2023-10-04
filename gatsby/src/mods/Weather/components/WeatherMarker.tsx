@@ -85,6 +85,29 @@ export function WeatherMarker(props:any) {
                                 width: 250, 
                                 display:"flex",
                               }}>
+                  
+                  <Box sx={{margin: "auto", px:1}}>
+                    <Font>
+                      {title}
+                    </Font>
+                    <IconButton
+                      sx={{
+                        background: "rgba(255,255,255,0.8)", 
+                        border: "1px solid " + borColor,
+                        mt:2,
+                      }}
+                      color="primary"
+                      onClick={(e: React.MouseEvent) => {
+                        e.preventDefault()
+                        dispatch(flyToLocation(null))
+                        dispatch(toggleWeather(false))
+                        dispatch(fadeDiv("listings"))
+                        dispatch(navigate(slug, "_self"))
+                      }}
+                    >
+                    <Icon icon="link"/>
+                    </IconButton>
+                  </Box>
                   {image ? <><Box>
                     <CardMedia 
                       sx={{mr:1, borderRadius: 1, border: "1px solid " + borColor,}}
@@ -94,27 +117,6 @@ export function WeatherMarker(props:any) {
                       alt={title}
                     />
                   </Box></> : null }
-                  <Box sx={{margin: "auto", px:1}}>
-                    <Font>
-                      {title}
-                    </Font>
-                    <Button
-                      sx={{mt:2}}
-                      size="small"
-                      color="secondary"
-                      variant="contained"
-                      onClick={(e: React.MouseEvent) => {
-                        e.preventDefault()
-                        dispatch(flyToLocation(null))
-                        dispatch(toggleWeather(false))
-                        dispatch(fadeDiv("listings"))
-                        dispatch(navigate(slug, "_self"))
-                      }}
-                    >
-                    More
-                    </Button>
-                  </Box>
-                  
                   
                 </Box> : null }
 
