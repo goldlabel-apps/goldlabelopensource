@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>iOS</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="98.6232517%" id="linearGradient-1">
+            <stop stop-color="#C5C5C5" offset="0%"></stop>
+            <stop stop-color="#8A8A8A" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iOS">
+            <rect id="Rectangle" x="0" y="0" width="512" height="512"></rect>
+            <g id="greylabel" transform="translate(61, 103)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+                <path d="M396,153 L303.05,283.596428 C298.283333,290.153572 292.6,295.526786 286,299.716072 C279.4,303.905357 272.066667,306 264,306 L33,306 C23.9250003,306 16.15625,302.789732 9.69375003,296.369196 C3.23124998,289.94866 0,282.230358 0,273.214286 L0,32.7857141 C0,23.7696424 3.23124998,16.0513396 9.69375003,9.63080379 C16.15625,3.21026793 23.9250003,0 33,0 L264,0 C272.066667,0 279.4,2.09464276 286,6.28392829 C292.6,10.4732138 298.283333,15.8464283 303.05,22.4035717 L396,153 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>

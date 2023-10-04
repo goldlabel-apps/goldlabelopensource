@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>512Grid</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="512Grid">
+            <rect id="whitetrans" fill-opacity="0.01" fill="#FFFFFF" x="0" y="0" width="512" height="512"></rect>
+            <g id="Mobile" transform="translate(136.000000, 54.000000)" fill="#000000" fill-rule="nonzero">
+                <g id="apple">
+                    <path d="M193.846154,0 L46.1538461,0 C20.6769231,0 0,20.6181819 0,46.0227273 L0,358.977273 C0,384.381819 20.6769231,405 46.1538461,405 L193.846154,405 C219.323077,405 240,384.381819 240,358.977273 L240,46.0227273 C240,20.6181819 219.323077,0 193.846154,0 Z M203.076922,312.954545 L36.9230769,312.954545 L36.9230769,55.2272727 L203.076922,55.2272727 L203.076922,312.954545 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

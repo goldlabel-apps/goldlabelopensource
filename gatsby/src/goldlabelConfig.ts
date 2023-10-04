@@ -1,20 +1,20 @@
 import {ConfigShape} from "../types"
 
 export const goldlabelConfig: ConfigShape = {
-    siteUrl: "https://divemalta.app",
-    siteTitle: "Divemalta",
-    siteDescription: "Diving Holiday Guide for the Maltese Islands",
-    siteKeywords: "diving, travel, guide, weather, malta",
+    siteUrl: "https://github.com/listingslab-software/open-source",
+    siteDefaultLocale: "en",
+    siteTitle: "Open Source",
+    siteDescription: "Fullstack JavaScript Since 1998",
     siteImage: "/png/default.png",
     siteIcon: "/svg/iOS.svg",
-    siteTwitter: "@visitmalta",
-    siteTheme: "#FFFFFF",
-    siteDefaultLocale: "en",
+    siteTwitter: "@machine_v4",
+    siteTheme: "#121212",
+    siteKeywords: "listingslab, goldlabel, opensource, fullstack, react, javascript, node, pwa, free, github",
     themes: [
         {
-            slug: "seagreen",
-            primaryColor: "#24C3B2",
-            secondaryColor: "#1e1e1e",
+            slug: "goldlabel",
+            primaryColor: "#C09F52",
+            secondaryColor: "#87703B",
         },
     ],
     features: {
