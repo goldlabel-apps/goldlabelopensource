@@ -8,7 +8,7 @@ title: "Geolocator"
 description: "An old fashioned Mashup"
 keywords: "weathermap, mapbox, mashup"
 icon: "map"
-image: "/png/default.png"
+image: "/png/flash.png"
 placename: "Spinola Bay, Malta"
 lat: 35.919837943466604
 lng: 14.493106168762859
