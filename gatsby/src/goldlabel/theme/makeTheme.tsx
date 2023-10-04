@@ -18,7 +18,10 @@ export function makeTheme(
         main: primary,
       },
       info: {
-        main: "#C09F52",
+        main: primary,
+      },
+      action: {
+        active: mode === "dark" ? primary : secondary,
       },
     },
   }

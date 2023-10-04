@@ -8,31 +8,40 @@ import {
   Icon,
   usePwaDispatch,
   usePwaSelect,
-  selectPWA,
   toggleCategories,
   scrollUp,
+  selectCategories,
+  selectType,
+  CatNav,
+  ShareMenu,
 } from "../../goldlabel"
 
 export default function TopNav() {
-  const hideAdd = false
+  const type = usePwaSelect(selectType)
   const dispatch = usePwaDispatch()
-  const pwa = usePwaSelect(selectPWA)
-  const {categories} = pwa
-  return (<>
-        <Container maxWidth="md">
-          <Box sx={{display: "flex", flexGrow:1}}>
-            <IconButton 
-              sx={{}}
-              onClick={() => {
-                dispatch(toggleCategories(!categories))
-                dispatch(scrollUp())
-              }}
-              color="primary">
-                <Icon icon="menu" color="primary" />
-            </IconButton>
-          </Box>
-          <Box sx={{flexGrow:1}} />
-        </Container>
-    </>
-  )
+  const categories = usePwaSelect(selectCategories)
+  let showHome = false
+  if (type !== "markdown") showHome = true 
+  return (
+    <Box sx={{display: "block", width: "100%", maxWidth:880, margin: "auto"}}>
+            <Box sx={{display: "flex"}}>
+              <Box>
+                <IconButton
+                  onClick={() => {
+                    dispatch(toggleCategories(!categories))
+                    dispatch(scrollUp())
+                  }}>
+                  <Icon icon={categories ? "menu-up" : "menu-down" } color="primary"/>
+                </IconButton>
+              </Box>
+              <Box sx={{flexGrow:1}} />
+              <Box sx={{}}>
+                <CatNav />
+              </Box>
+              <Box sx={{mr:1}}>
+                <ShareMenu />
+              </Box>
+            </Box>
+            </Box>
+    )
 }

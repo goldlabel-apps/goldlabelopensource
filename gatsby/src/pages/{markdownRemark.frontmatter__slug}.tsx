@@ -15,6 +15,7 @@ import {
   AppShell,
 } from "../goldlabel"
 import {Listings} from "../mods/Listings"
+import {Weather} from "../mods/Weather"
 
 export default function MarkdownPage(data: any) {
   const { markdownRemark } = data.data
@@ -47,7 +48,8 @@ export default function MarkdownPage(data: any) {
 
   return (<>
       <SEO appData={{...data}}/>
-      <AppShell appData={{...data}}>
+      <AppShell appData={{...data}} type="markdown">
+        
         <Container maxWidth={"lg"}>
           <Grid container spacing={1}>
             <Grid item xs={12}>   
@@ -84,10 +86,8 @@ export const pageQuery = graphql`
         keywords
         image
         icon
-        placename
         lat
         lng
-        zoom
         website
         email
         facebook

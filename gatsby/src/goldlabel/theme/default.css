@@ -1,13 +1,13 @@
 html {
   --scrollbarBG: none;
-  --thumbBG: #C09F52;
+  --thumbBG: #24C3B2;
 }
 a {
-  color: #C09F52;
+  color: #07A090;
   text-decoration: none;
 }
 a:hover {
-  color: #e8c062;
+  color: #24C3B2;
 }
 html, body {
   height: 100vh;
@@ -26,7 +26,7 @@ ul, li {
   padding: 2px;
 }
 pre {
-  font-size: 0.6rem;
+  font-size: 1rem;
 }
 
 body {

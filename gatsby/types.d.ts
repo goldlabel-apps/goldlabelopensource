@@ -14,14 +14,16 @@ export type GatsbyShape = {
   siteDefaultLocale?: string
 }
 
-export type FeatureShape = {
-  slug: string
-  
+export type FormsShape = {
+  initted?: boolean
+}
+
+export type GeolocatorShape = {
+  blinking: boolean
 }
 
 export type ConfigShape = {
   siteTitle: string
-  
   siteDescription: string
   siteUrl: string
   siteImage: string
@@ -31,14 +33,11 @@ export type ConfigShape = {
   siteKeywords: string
   siteFooterUrl?: string
   siteDefaultLocale?: string
-  localeList: any
-  localeMeta: any
   themes: Array<ThemeShape>
-  features: Array<FeatureShape>
+  features: any
 }
 
 export type ThemeShape = {
-  title?: string
   slug: string
   primaryColor: string
   secondaryColor: string

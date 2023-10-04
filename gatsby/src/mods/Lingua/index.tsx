@@ -1,6 +1,5 @@
-
 import Lingua from "./Lingua"
-import LinguaDialog from "./LinguaDialog"
+import MiniLinguaMenu from "./MiniLinguaMenu"
 import {toggleLingua} from "./actions/toggleLingua"
 import {auth} from "./translations/auth"
 import {lingua} from "./translations/lingua"
@@ -10,9 +9,10 @@ import {theme} from "./translations/theme"
 import {addListing} from "./translations/addListing"
 import {tings} from "./translations/tings"
 import {other} from "./translations/other"
+import {weather} from "./translations/weather"
 export {
     Lingua,
-    LinguaDialog,
+    MiniLinguaMenu,
     toggleLingua,
 }
 
@@ -30,6 +30,8 @@ export const translations: any = {
         mt: "Dar",
         de: "Heim",
         cn: "家",
+        it: "Casa",
+        pi: "Smuggler's Den",
     },
     ...auth,
     ...contact,
@@ -39,4 +41,5 @@ export const translations: any = {
     ...addListing,
     ...tings,
     ...other,
+    ...weather,
 }

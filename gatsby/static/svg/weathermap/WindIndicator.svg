@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="274px" height="167px" viewBox="0 0 274 167" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>WindIndicator</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="WindIndicator" fill="#ADCBBC" fill-rule="nonzero">
+            <polyline id="Fill-60" points="212 105.959913 0 128 0 40 212 62.0349145 212 105.959913"></polyline>
+            <polyline id="Fill-61" points="190.002591 0 106 0 181.364486 83.4974035 106 167 190.002591 167 274 83.4974035 190.002591 0"></polyline>
+        </g>
+    </g>
+</svg>

@@ -1,12 +1,15 @@
 import * as React from "react"
 import GoldenticketIcon from './SVGIcons/GoldenticketIcon'
 import GoldlabelOutlined from './SVGIcons/GoldlabelOutlined'
+import PimoroniIcon from './SVGIcons/PimoroniIcon'
 import GraphqlIcon from './SVGIcons/GraphqlIcon'
 import WordpressIcon from './SVGIcons/WordpressIcon'
 import BlokeyIcon from './SVGIcons/BlokeyIcon'
 import PharmacyIcon from "@mui/icons-material/LocalHospitalOutlined"
 import GoldlabelIcon from './SVGIcons/GoldenticketIcon'
 import BedIcon from "@mui/icons-material/Bed"
+import WindIcon from "@mui/icons-material/Air"
+import OutlookIcon from "@mui/icons-material/WbSunny"
 import BikeIcon from "@mui/icons-material/Moped"
 import BarIcon from "@mui/icons-material/LocalBar"
 import DiveshopIcon from "@mui/icons-material/RecommendOutlined"
@@ -14,7 +17,13 @@ import TreeIcon from "@mui/icons-material/Park"
 import EatingIcon from "@mui/icons-material/Restaurant"
 import BusinessIcon from "@mui/icons-material/Business"
 import FavoriteIcon from "@mui/icons-material/Favorite"
+
+import ScooterIcon from "@mui/icons-material/Moped"
+import BusIcon from "@mui/icons-material/BusAlert"
+
 import AddYourselfIcon from "@mui/icons-material/AddBusiness"
+import ZoomInIcon from "@mui/icons-material/ZoomIn"
+import ZoomOutIcon from "@mui/icons-material/ZoomOut"
 import BuyIcon from "@mui/icons-material/ShoppingCart"
 import PauseIcon from "@mui/icons-material/Pause"
 import SupermarketIcon from "@mui/icons-material/Storefront"
@@ -37,7 +46,7 @@ import HomeIcon from "@mui/icons-material/HomeOutlined"
 import AgileIcon from "@mui/icons-material/Agriculture"
 import NotifyrIcon from "@mui/icons-material/ChatBubble"
 import TingsIcon from "@mui/icons-material/MarkUnreadChatAltOutlined"
-import WeathermapIcon from "@mui/icons-material/TravelExploreOutlined"
+import WeatherIcon from "@mui/icons-material/WbSunny"
 import CompanyIcon from "@mui/icons-material/Business"
 import UnlockIcon from "@mui/icons-material/LockOpen"
 import ShopIcon from "@mui/icons-material/Storefront"
@@ -80,17 +89,17 @@ import SaveIcon from "@mui/icons-material/Save"
 import DeleteIcon from "@mui/icons-material/DeleteOutline"
 import SeedIcon from "@mui/icons-material/Spa"
 import FlyIcon from "@mui/icons-material/LocalAirportRounded"
-import RefreshIcon from "@mui/icons-material/Refresh"
+import RefreshIcon from "@mui/icons-material/Replay"
 import MapIcon from "@mui/icons-material/Explore"
 import MenuIcon from "@mui/icons-material/Menu"
+import MenuDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown"
+import MenuUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp"
 import TrashIcon from "@mui/icons-material/DeleteOutlined"
 import VisibilityIcon from "@mui/icons-material/Visibility"
 import ExitIcon from "@mui/icons-material/ExitToAppRounded"
-
 import WorkIcon from "@mui/icons-material/WorkOutline"
 import LifeIcon from "@mui/icons-material/PsychologyOutlined"
 import BalanceIcon from "@mui/icons-material/BeachAccessOutlined"
-
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff"
 import FilebrowserIcon from "@mui/icons-material/Attachment"
 import ImagefileIcon from "@mui/icons-material/Image"
@@ -101,7 +110,7 @@ import GitHubIcon from "@mui/icons-material/GitHub"
 import WalkthroughIcon from "@mui/icons-material/Accessibility"
 import DocIcon from "@mui/icons-material/MenuBook"
 import PageIcon from "@mui/icons-material/Description"
-import SharedIcon from "@mui/icons-material/Share"
+import SharedIcon from "@mui/icons-material/ShareOutlined"
 import ErrorIcon from "@mui/icons-material/NewReleases"
 import GestureIcon from "@mui/icons-material/Gesture"
 import SectionIcon from "@mui/icons-material/Assignment"
@@ -127,7 +136,7 @@ import TypeScriptIcon from "@mui/icons-material/IntegrationInstructions"
 import DesignIcon from "@mui/icons-material/PaletteOutlined"
 import ReduxIcon from "@mui/icons-material/PlaylistRemove"
 import LinkIcon from "@mui/icons-material/Link"
-import RouterIcon from "@mui/icons-material/DynamicForm"
+import RouterIcon from "@mui/icons-material/DynamicFormOutlined"
 import NewsIcon from "@mui/icons-material/Newspaper"
 import NewIcon from "@mui/icons-material/Add"
 import HolidayIcon from "@mui/icons-material/BeachAccess"
@@ -148,6 +157,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import TwitterIcon from "@mui/icons-material/Twitter"
 import YouTubeIcon from "@mui/icons-material/YouTube"
 import FullscreenIcon from "@mui/icons-material/Fullscreen"
+import FullscreenExitIcon from "@mui/icons-material/FullscreenExit"
 import AccExpandIcon from "@mui/icons-material/ExpandMore"
 import ArchiveIcon from "@mui/icons-material/ArchiveOutlined"
 import SkiingIcon from "@mui/icons-material/DownhillSkiing"
@@ -169,9 +179,18 @@ export default function Icon(props: any) {
 
   switch (icon) {
 
+    case "wind":
+      iconFragment = <WindIcon color={color} />
+      break
+    
     case "tricks":
       iconFragment = <TricksIcon color={color} />
       break
+
+      case "pimoroni":
+        iconFragment = <PimoroniIcon color={color} />
+        break
+      
 
       case "buy":
         iconFragment = <BuyIcon color={color} />
@@ -201,12 +220,34 @@ export default function Icon(props: any) {
       case "car":
         iconFragment = <CarIcon color={color} />
         break
+        case "bus":
+          iconFragment = <BusIcon color={color} />
+          break
+  
+        
+
+        case "outlook":
+          iconFragment = <OutlookIcon color={color} />
+          break
 
       case "firebase":
       iconFragment = <GCPIcon color={color} />
       break
 
-      
+      case "zoomin":
+        iconFragment = <ZoomInIcon color={color} />
+        break
+
+        case "zoomout":
+          iconFragment = <ZoomOutIcon color={color} />
+          break
+
+          case "scooter":
+            iconFragment = <ScooterIcon color={color} />
+            break
+
+
+
       case "wordpress":
         iconFragment = <WordpressIcon color={color} />
         break
@@ -339,8 +380,8 @@ export default function Icon(props: any) {
         iconFragment = <TingsIcon color={color} />
         break
 
-      case "weathermap":
-        iconFragment = <WeathermapIcon color={color} />
+      case "weather":
+        iconFragment = <WeatherIcon color={color} />
         break
               
       case "agile":
@@ -599,7 +640,9 @@ export default function Icon(props: any) {
       iconFragment = <CSVIcon color={color} />
       break
 
-    case "list":
+
+
+      case "list":
       iconFragment = <ListIcon color={color} />
       break
 
@@ -618,6 +661,10 @@ export default function Icon(props: any) {
     case "fullscreen":
       iconFragment = <FullscreenIcon color={color} />
       break
+
+      case "fullscreenExit":
+        iconFragment = <FullscreenExitIcon color={color} />
+        break
 
     case "twitter":
       iconFragment = <TwitterIcon color={color} />
@@ -731,6 +778,12 @@ export default function Icon(props: any) {
     case "ward":
       iconFragment = <WardsIcon color={color} />
       break
+
+    case "medical":
+      iconFragment = <ClinicsIcon color={color} />
+      break
+
+
     case "clinics":
       iconFragment = <ClinicsIcon color={color} />
       break
@@ -944,6 +997,14 @@ export default function Icon(props: any) {
       iconFragment = <MenuIcon color={color} />
       break
 
+      case "menu-up":
+        iconFragment = <MenuUpIcon color={color} />
+        break
+
+        case "menu-down":
+          iconFragment = <MenuDownIcon color={color} />
+          break
+
     case "walkthrough":
       iconFragment = <WalkthroughIcon color={color} />
       break
@@ -979,6 +1040,10 @@ export default function Icon(props: any) {
     case "refresh":
       iconFragment = <RefreshIcon color={color} />
       break
+
+      case "reset":
+        iconFragment = <RefreshIcon color={color} />
+        break
 
     case "table":
       iconFragment = <TableChartIcon color={color} />

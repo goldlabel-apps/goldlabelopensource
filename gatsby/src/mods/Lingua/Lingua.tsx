@@ -7,18 +7,23 @@ import {
   ListItemButton,
   ListItemAvatar,
   ListItemText,
+  // CardHeader,
 } from "@mui/material"
 import {
   usePwaDispatch,
   usePwaSelect,
   selectPWA,
+  selectLocale,
   setLingua,
   Font,
+  Icon,
 } from "../../goldlabel"
+import {
+  getTranslation,
+} from "../Lingua"
 
 export default function Lingua () {
-  const pwa = usePwaSelect(selectPWA)
-  const {locale} = pwa
+  const locale = usePwaSelect(selectLocale)
   const theme = useTheme()
   const dispatch = usePwaDispatch()
   const {features} = goldlabelConfig
@@ -30,13 +35,19 @@ export default function Lingua () {
   
   return (
       <>        
-        
+        {/* <CardHeader 
+          avatar={<Icon icon="lingua" />}
+          title={<Font>
+                  Lingua
+                </Font>}
+        /> */}
           <List>
             { localeList.map((item: string, i: number) => {
               return <ListItemButton
                         key={`locale_${i}`}
                         sx={{
-                          borderLeft: item === locale ? "1px solid "+ theme.palette.primary.main : "none"
+                          borderLeft: item === locale ? 
+                          "1px solid "+ theme.palette.primary.main : "none"
                         }}
                         onClick={(e:React.MouseEvent) => {
                           e.preventDefault()
@@ -62,28 +73,7 @@ export default function Lingua () {
                       </ListItemButton>
             }) }
           </List>
-
+          
       </>
   );
 }
-
-/*
-<CardHeader 
-          avatar={<IconButton
-                    sx={{ml:-1}}
-                    color="primary"
-                    onClick={() => {
-                      dispatch(navigate("https://listingslab.com/products/lingua/", "_blank"))
-                    }}
-                  >
-                    <Icon icon={"lingua"} />
-                  </IconButton>}
-          title={<Font>
-                    Lingua
-                  </Font>}/>
-<CardContent>
-                    <Font variant="small">
-                      {linguaStr}
-                    </Font>
-                  </CardContent>
-*/

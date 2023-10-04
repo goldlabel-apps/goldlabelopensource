@@ -4,7 +4,6 @@ import {
 } from "@mui/material"
 import {
   Font,
-  Share,
 } from "../../goldlabel"
 
 export default function Title(props: any) {
@@ -17,12 +16,9 @@ export default function Title(props: any) {
   let displayTitle = title
   if(title === "Home") displayTitle = description
   return (<>
-          <CardHeader 
-            title={<Font variant="title">
-                    {displayTitle} 
-                  </Font>}
-            action={<Share />}
-          />
-    </>
+            <Font variant="title">
+              {displayTitle} 
+            </Font>
+          </>
   )
 }

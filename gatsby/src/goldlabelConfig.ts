@@ -1,25 +1,25 @@
 import {ConfigShape} from "../types"
 
 export const goldlabelConfig: ConfigShape = {
-    siteUrl: "https://listingslab.com",
-    siteDefaultLocale: "en",
-    siteTitle: "Listingslab",
-    siteDescription: "Fullstack JavaScript Since 1998",
-    siteImage: "/png/features/goldlabel.png",
+    siteUrl: "https://divemalta.app",
+    siteTitle: "Divemalta",
+    siteDescription: "Diving Holiday Guide for the Maltese Islands",
+    siteKeywords: "diving, travel, guide, weather, malta",
+    siteImage: "/png/default.png",
     siteIcon: "/svg/iOS.svg",
-    siteTwitter: "@machine_v4",
-    siteTheme: "#FFFFFF", // #121212
-    siteKeywords: "listingslab, goldlabel, opensource, fullstack, react, javascript, node, pwa, free, github",
+    siteTwitter: "@visitmalta",
+    siteTheme: "#FFFFFF",
+    siteDefaultLocale: "en",
     themes: [
         {
-            slug: "goldlabel",
-            primaryColor: "#C09F52",
-            secondaryColor: "#87703B",
+            slug: "seagreen",
+            primaryColor: "#24C3B2",
+            secondaryColor: "#1e1e1e",
         },
     ],
     features: {
         lingua: {
-            localeList: ["en", "mt", "de", "cn"], // "es"
+            localeList: ["en", "pi", "mt", "de", "cn"], // "es"
             localeMeta: {
                 en: {
                     default: "English",
@@ -40,6 +40,10 @@ export const goldlabelConfig: ConfigShape = {
                 mt: {
                     default: "Malti",
                     localised: "Ittraduci ghall-Malti",
+                },
+                pi: {
+                    default: "Pirate",
+                    localised: "Translate to Pirate",
                 },
             },
         }

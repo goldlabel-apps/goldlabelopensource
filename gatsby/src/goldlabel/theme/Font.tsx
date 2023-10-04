@@ -26,6 +26,7 @@ export function Font(props: any) {
   if (color) c = color
   if (color === "primary") c = theme.palette.primary.main
   if (color === "secondary") c = theme.palette.secondary.main
+  if (color === "muted") c = theme.palette.text.disabled
   if (width) w = width
   let textfontSize: any = "1.0rem"
   textfontSize = isBig ? "1.0rem" : "0.8rem"
@@ -37,8 +38,14 @@ export function Font(props: any) {
   if (variant === "small") {
     textfontSize = isBig ? "0.8rem" : "0.8rem"
   }
+
+  if (variant === "tiny") {
+    textfontSize = isBig ? "0.6rem" : "0.6rem"
+  }
+
+
   if (variant === "giant") {
-    textfontSize = isBig ? "1rem" : "0.9rem"
+    textfontSize = isBig ? "1.5rem" : "1.25rem"
   }
   if (fontSize) textfontSize = fontSize
   if (fixedH) fH = fixedH
