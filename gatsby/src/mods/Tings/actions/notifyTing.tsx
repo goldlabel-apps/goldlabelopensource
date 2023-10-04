@@ -9,15 +9,15 @@ export const notifyTing = (
 ): any =>
   async (dispatch: any) => {
     try {
-      const {tings, fbId} = store.getState()
-      const {fingerprint} = tings
+      const {tings} = store.getState()
+      const {host} = tings
+      // const {country_name_official} = ipGeo
+      // console.log("ipGeo", ipGeo)
       const ep = `${process.env.REACT_APP_API}notifyr/new`
       const payload = {
-        code: "TING",
+        code: `${host}`,
         severity: "success",
         message,
-        fbId,
-        fingerprint,
       }
       axios.post(ep, payload)
         .then(function (response) {
