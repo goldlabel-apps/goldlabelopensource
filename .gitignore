@@ -72,3 +72,4 @@ node_modules/
 gatsby/static/png/.DS_Store
 gatsby/static/jpg/.DS_Store
 gatsby/static/png/.DS_Store
+gatsby/.env.example

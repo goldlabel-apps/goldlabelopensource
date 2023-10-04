@@ -1,13 +1,12 @@
 ---
 order: 10
 slug: "/goldlabel"
-title: "Why Goldlabel?"
+title: "Goldlabel"
 description: "An option if you're thinking of updating a tired old WordPress site"
-cover: true
-featured: false
+cover: false
 category: "goldlabel"
 icon: "goldlabelOutlined"
-image: "/png/features/goldlabel.png"
+image: "/png/town.png"
 keywords: "goldlabel, product, pwa, Static Site Generation, SSR, free"
 ---
 Goldlabel software is an easy to implement framework that can take your slow old wordpress site and make it not only super fast, but rank better in Google

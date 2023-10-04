@@ -3,12 +3,12 @@ order: 20
 featured: false
 category: "goldlabel"
 slug: "/goldlabel/geolocator"
-parentSlug: "/goldlabel"
+parentSlug: "/"
 title: "Geolocator"
 description: "An old fashioned Mashup"
 keywords: "weathermap, mapbox, mashup"
 icon: "map"
-image: "/png/flash.png"
+image: "/png/town.png"
 placename: "Spinola Bay, Malta"
 lat: 35.919837943466604
 lng: 14.493106168762859

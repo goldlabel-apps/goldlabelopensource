@@ -4,17 +4,17 @@ export const goldlabelConfig: ConfigShape = {
     siteUrl: "https://github.com/listingslab-software/open-source",
     siteDefaultLocale: "en",
     siteTitle: "Open Source",
-    siteDescription: "Fullstack JavaScript Since 1998",
-    siteImage: "/png/default.png",
+    siteDescription: "Forever free",
+    siteImage: "/png/town.png",
     siteIcon: "/svg/iOS.svg",
     siteTwitter: "@machine_v4",
-    siteTheme: "#121212",
+    siteTheme: "#FFFFFF",
     siteKeywords: "listingslab, goldlabel, opensource, fullstack, react, javascript, node, pwa, free, github",
     themes: [
         {
             slug: "opensource",
-            primaryColor: "#A3A3A3",
-            secondaryColor: "#C5C5C5",
+            primaryColor: "#C5C5C5",
+            secondaryColor: "#616161",
         },
     ],
     features: {

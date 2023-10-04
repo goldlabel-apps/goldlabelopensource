@@ -4,7 +4,7 @@ featured: true
 category: "goldlabel"
 slug: "/goldlabel/flash"
 parentSlug: "/goldlabel"
-image: "/png/features/flash.png"
+image: "/png/flash.png"
 title: "Flash"
 description: "A ridiculous and pointless reinvention"
 keywords: "flash, feature"

@@ -3,12 +3,12 @@ order: 60
 featured: false
 category: "goldlabel"
 slug: "/goldlabel/tings"
-parentSlug: "/goldlabel"
+parentSlug: "/"
 title: "Tings"
 description: "A perfect view of your users"
 keywords: "tings, product, Firebase"
 icon: "tings"
-image: "/png/ting.png"
+image: "/png/town.png"
 ---
 Tings combines analytics with messaging allowing website owners to talk directly to their users in real time
 

@@ -3,12 +3,12 @@ order: 15
 featured: true
 category: "goldlabel"
 slug: "/goldlabel/lingua"
-parentSlug: "/goldlabel"
+parentSlug: "/"
 title: "Lingua"
 description: "Might as well be in Chinese, right?"
 keywords: "Localisation, language, Lingua, translation"
 icon: "lingua"
-image: "/png/features/lingua.png"
+image: "/png/town.png"
 ---
 Lingua is our multi language translation package. Localisation is not something you want to simply bolt onto a website at the end. Users will do that themselves if they cared enough about reading anything you have written. Which they don't. Lingua makes the user feel the app is aimed for them. It's a trust thing
 

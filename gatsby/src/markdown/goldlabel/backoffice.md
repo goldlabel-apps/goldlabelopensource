@@ -3,8 +3,8 @@ order: 12
 featured: false
 category: "goldlabel"
 slug: "/goldlabel/backoffice"
-parentSlug: "/goldlabel"
-image: "/png/default.png"
+parentSlug: "/"
+image: "/png/town.png"
 title: "Backoffice"
 description: "Don't reinvent the space ship"
 keywords: "Goldlabel, Database, Firebase, Backoffice"
