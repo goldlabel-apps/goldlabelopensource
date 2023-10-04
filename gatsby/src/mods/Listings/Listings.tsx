@@ -23,15 +23,11 @@ import {
   MiniMap,
 } from "../Geolocator"
 import {
-  toggleWeather,
   useCurrentWeather,
   WeatherCTA,
 } from "../Weather"
-import { TryOutlined } from '@mui/icons-material'
 
 export default function Listings (props: any) {
-  const dispatch = usePwaDispatch()
-  const currentWeather = useCurrentWeather()
   const categories = usePwaSelect(selectCategories)
   const {frontmatter, html} = props
   const {
@@ -52,10 +48,6 @@ export default function Listings (props: any) {
   if (lat && lng) noMap = false
   let showCTA = false
   if (slug === "/") showCTA = true
-  const {
-    currentWeatherStr,
-    icon,
-  } = currentWeather
   return <>
           <Container maxWidth="md">
             <Grid id="listings" container spacing={1}>
@@ -71,13 +63,9 @@ export default function Listings (props: any) {
                   : null }
                 </Box>
                 
-                {/* <Box sx={{mb:2}}>
-                  
-                </Box> */}
-
-{showCTA ? <Box sx={{mb:2}}>
-<WeatherCTA />
-</Box> : null }
+                {showCTA ? <Box sx={{mb:2}}>
+                  <WeatherCTA />
+                </Box> : null }
                 
                 <Grid container spacing={1}>
                 
@@ -106,7 +94,8 @@ export default function Listings (props: any) {
                   
 
                   <Grid item xs={12} md={6}>
-                    {cover ? <SiblingList /> : null }
+                  <SiblingList />
+                    {/* {cover ? <SiblingList /> : null } */}
                   </Grid>
 
                   {!noMeta ? <Grid item xs={12}>

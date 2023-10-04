@@ -30,10 +30,11 @@ export default function CatNav() {
     if(parentSlug === allMarkdown[i].frontmatter.slug)
     parent = allMarkdown[i]
   }
-  
+  let isHome = false
+  if (slug === "/") isHome = true
   return (
       <Breadcrumbs aria-label="breadcrumb">
-        <Link
+        {!isHome ? <Link
           underline="hover"
           sx={{ 
             display: 'flex', 
@@ -49,7 +50,8 @@ export default function CatNav() {
             Home
           </Font> : null }
           
-        </Link>
+        </Link> : null }
+        
         {parent ? <Link
           underline="hover"
           sx={{ display: 'flex', alignItems: 'center', cursor: "pointer" }}
