@@ -6,9 +6,9 @@ export const goldlabelConfig: ConfigShape = {
     siteDefaultLocale: "en",
     siteTitle: "Open Source",
     siteDescription: "Forever free",
-    siteImage: "/png/town.png",
+    siteImage: "/png/mapbox.png",
     siteIcon: "/svg/iOS.svg",
-    siteTwitter: "@machine_v4",
+    siteTwitter: "@listingslab",
     siteTheme: "#FFFFFF",
     siteKeywords: "listingslab, goldlabel, opensource, fullstack, react, javascript, node, pwa, free, github",
     themes: [
