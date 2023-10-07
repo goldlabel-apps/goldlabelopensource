@@ -1,7 +1,7 @@
 import {ConfigShape} from "../types"
 
 export const goldlabelConfig: ConfigShape = {
-    goldlabelVersion: "1.0.0",
+    goldlabelVersion: "1.0.1",
     siteUrl: "https://github.com/listingslab-software/open-source",
     siteDefaultLocale: "en",
     siteTitle: "Open Source",
