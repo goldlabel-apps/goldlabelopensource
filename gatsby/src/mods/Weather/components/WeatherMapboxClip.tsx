@@ -22,9 +22,10 @@ export default function WeatherMapboxClip() {
   let flyTos: Array<any> = []
   for(let i=0; i<allMarkdown.length; i++){
     const {frontmatter} = allMarkdown[i]
-    const {lat, lng, title, icon, slug, category, image} = frontmatter
+    const {lat, lng, title, icon, slug, category, image, description} = frontmatter
     if (lat && lng) flyTos.push({
       title,
+      description,
       lat,
       lng,
       icon,

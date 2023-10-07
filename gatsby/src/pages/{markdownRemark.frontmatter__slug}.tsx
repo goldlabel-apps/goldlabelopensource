@@ -72,19 +72,18 @@ export const pageQuery = graphql`
       html
       excerpt
       frontmatter {
+        paid
         draft
         order
         cover
-        featured
         category
         parentSlug
         slug
         title
         description
-        date
-        flash
         keywords
         image
+        youtube
         icon
         lat
         lng

@@ -1,11 +1,12 @@
 import {geolocatorState} from "./geolocatorState"
 import MiniMap from "./components/MiniMap"
-import BasicMap from "./components/BasicMap"
-import {BasicMarker} from "./components/BasicMarker"
 import SelectedLocation from "./components/SelectedLocation"
 import {MiniMarker} from "./components/MiniMarker"
 import {selectLocation} from "./actions/selectLocation"
 import {blinkMap} from "./actions/blinkMap"
+import {formatCardinal} from "./helpers/formatCardinal"
+import {formatSky} from "./helpers/formatSky"
+import {formatWind} from "./helpers/formatWind"
 
 export {
     geolocatorState,
@@ -14,4 +15,7 @@ export {
     SelectedLocation,
     selectLocation,
     blinkMap,
+    formatCardinal,
+    formatWind,
+    formatSky,
 }

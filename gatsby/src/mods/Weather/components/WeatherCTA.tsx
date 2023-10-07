@@ -13,30 +13,16 @@ import {
   usePwaDispatch,
   usePwaSelect,
   selectWeather,
-  selectLocale,
 } from "../../../goldlabel"
 import {
   toggleWeather,
 } from "../../Weather"
 import {
-  getTranslation,
-} from "../../Lingua"
+  formatWind,
+  formatCardinal,
+  formatSky,
+} from "../../Geolocator"
 import {meta} from "../../Lingua/translations/weather"
-
-const makeSkyConditions = (pc: number) => {
-  let skyConditions = "Blue Sky!"
-  if(pc > 5) skyConditions = "Mostly Sunny"
-  if(pc > 40) skyConditions = "Partly Cloudy"
-  if(pc > 50) skyConditions = "Mostly Cloudy"
-  if(pc > 80) skyConditions = "Overcast"
-  return skyConditions
-}
-
-const makeCardinal = (degrees: number) => {
-    var val = Math.floor((degrees / 22.5) + 0.5);
-    var arr = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
-    return arr[(val % 16)];
-}
 
 const findClosestIndex = (numbers:Array<number>) => {
     if (numbers.length === 0) return 0
@@ -55,17 +41,18 @@ const findClosestIndex = (numbers:Array<number>) => {
             closestIndex = i
         }
     }
-    return closestIndex
+    return closestIndex + 1
 }
 
 export default function WeatherCTA() {
   let icon = "outlook"
   const severity: AlertColor = "success"
-  const locale = usePwaSelect(selectLocale)
   const dispatch = usePwaDispatch()
   const ctaCallback = () => dispatch(toggleWeather(true))
   const weather = usePwaSelect(selectWeather)
-  const {forecast, fullscreen} = weather
+  const {fullscreen, data} = weather
+  if (!data) return null
+  const {forecast} = data.data
   if (!forecast) return null
   const {hours} = forecast
   const now = Date.now()/1000
@@ -76,26 +63,19 @@ export default function WeatherCTA() {
   }
   const closestIndex = findClosestIndex(unixArr)
   const hour = hours[closestIndex]
-  const {time} = hour
-  let timeStr: any = moment((time)).utc().unix()
-  timeStr = moment.unix(timeStr).format("h:mm a, dddd")
-
   const {
     airTemperature,
-    windSpeed,
   } = meta
+  const {time} = hour
+  let timeStr:any = moment((time)).utc().unix()
+  timeStr = moment.unix(timeStr).format("h a")
+  const skyConditions = formatSky(hour.cloudCover[0].value)
+  const windStrength = formatWind(hour.windSpeed[0].value)
+  const windCardinal = formatCardinal(hour.windDirection[0].value)
+  const label = `At ${timeStr} it will be ${Math.floor(hour.airTemperature[0].value*10)/10} ${airTemperature.suffix}, 
+  ${windStrength} from the ${windCardinal} & 
+  ${skyConditions}`
 
-  const skyConditions = makeSkyConditions(hour.cloudCover[0].value)
-  // ${getTranslation("CURRENT_WEATHER", locale)}
-  const label = `
-  ${getTranslation("CURRENT_WEATHER",locale)}
-  ${timeStr}. 
-  ${skyConditions},
-  ${hour.airTemperature[0].value} ${airTemperature.suffix}, 
- wind ${hour.windSpeed[0].value} ${windSpeed.suffix} from 
-  the ${makeCardinal(hour.windDirection[0].value)}
-  
-  `
   return (<><CardActionArea
                 disabled={fullscreen}
                 onClick={ctaCallback}>

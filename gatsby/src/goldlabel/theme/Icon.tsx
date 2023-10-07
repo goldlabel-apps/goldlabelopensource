@@ -5,18 +5,21 @@ import PimoroniIcon from './SVGIcons/PimoroniIcon'
 import GraphqlIcon from './SVGIcons/GraphqlIcon'
 import WordpressIcon from './SVGIcons/WordpressIcon'
 import BlokeyIcon from './SVGIcons/BlokeyIcon'
-import PharmacyIcon from "@mui/icons-material/LocalHospitalOutlined"
+import PharmacyIcon from "@mui/icons-material/Healing"
 import GoldlabelIcon from './SVGIcons/GoldenticketIcon'
 import BedIcon from "@mui/icons-material/Bed"
 import WindIcon from "@mui/icons-material/Air"
 import OutlookIcon from "@mui/icons-material/WbSunny"
 import BikeIcon from "@mui/icons-material/Moped"
+import SwimIcon from "@mui/icons-material/Pool"
+
 import BarIcon from "@mui/icons-material/LocalBar"
 import DiveshopIcon from "@mui/icons-material/RecommendOutlined"
 import TreeIcon from "@mui/icons-material/Park"
 import EatingIcon from "@mui/icons-material/Restaurant"
 import BusinessIcon from "@mui/icons-material/Business"
 import FavoriteIcon from "@mui/icons-material/Favorite"
+import ActivityIcon from "@mui/icons-material/DirectionsRun"
 import ScooterIcon from "@mui/icons-material/Moped"
 import BusIcon from "@mui/icons-material/BusAlert"
 import AddYourselfIcon from "@mui/icons-material/AddBusiness"
@@ -59,7 +62,7 @@ import WarningIcon from "@mui/icons-material/Warning"
 import TimeIcon from "@mui/icons-material/Watch"
 import WhatsApp from "@mui/icons-material/WhatsApp"
 import CTAIcon from "@mui/icons-material/MyLocation"
-import FishIcon from "@mui/icons-material/SetMeal"
+import FishIcon from "@mui/icons-material/Phishing"
 import RegionIcon from "@mui/icons-material/LocationCity"
 import VersionIcon from "@mui/icons-material/ElectricBolt"
 import LogoIcon from "@mui/icons-material/Image"
@@ -139,10 +142,10 @@ import NewsIcon from "@mui/icons-material/Newspaper"
 import NewIcon from "@mui/icons-material/Add"
 import HolidayIcon from "@mui/icons-material/BeachAccess"
 import QuitIcon from "@mui/icons-material/ExitToApp"
-import TickIcon from "@mui/icons-material/Check"
+import TickIcon from "@mui/icons-material/CheckOutlined"
 import PersonIcon from "@mui/icons-material/AccessibilityNew"
 import WardsIcon from "@mui/icons-material/AirlineSeatFlat"
-import ClinicsIcon from "@mui/icons-material/MedicalServices"
+import ClinicsIcon from "@mui/icons-material/MedicalServicesOutlined"
 import DashboardIcon from "@mui/icons-material/Dashboard"
 import PatientsIcon from "@mui/icons-material/People"
 import FilterIcon from "@mui/icons-material/Sort"
@@ -188,8 +191,12 @@ export default function Icon(props: any) {
       case "pimoroni":
         iconFragment = <PimoroniIcon color={color} />
         break
-      
+  
+        case "swim":
+          iconFragment = <SwimIcon color={color} />
+          break
 
+        
       case "buy":
         iconFragment = <BuyIcon color={color} />
         break
@@ -244,6 +251,14 @@ export default function Icon(props: any) {
             iconFragment = <ScooterIcon color={color} />
             break
 
+
+            case "activities":
+              iconFragment = <ActivityIcon color={color} />
+              break
+
+              case "activity":
+                iconFragment = <ActivityIcon color={color} />
+                break
 
 
       case "wordpress":

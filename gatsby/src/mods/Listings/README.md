@@ -1,4 +1,4 @@
-## Tings
+## Listings
 
 If you're a legit developer, you are welcome to acccess. It just isn't yet Open Source because it's not cleaned up, bullet proof and easily installable
 

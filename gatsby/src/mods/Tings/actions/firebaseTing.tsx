@@ -6,6 +6,7 @@ import { getFirestore } from "firebase/firestore";
 import { 
   notify,
   store,
+  updateTing,
 } from "../../../goldlabel"
 import {notifyTing} from "../"
 
@@ -40,11 +41,12 @@ export const firebaseTing = (): any =>
             ...ipGeo, 
             ...userAgent,
           }
+          // console.log("firebaseTing", newTing)
+          // dispatch(updateTing(newTing))
           if (host !== "localhost:8000"){
             const db = getFirestore()
             await addDoc(collection(db, "tings"), newTing)
-            const message = `${title}<br />
-            ${location.protocol + '//' + location.host}/tings/?fingerprint=${fingerprint}`
+            const message = `${title}<br />${fingerprint}`
             dispatch(notifyTing(message))
           }
         }
@@ -55,5 +57,8 @@ export const firebaseTing = (): any =>
 }
 
 /*
+
+${location.protocol + '//' + location.host}/tings/?fingerprint=
+
 https://listingslab.com/svg/flags/de${ipGeo.country_name.tolowerCase()}.svg
 */

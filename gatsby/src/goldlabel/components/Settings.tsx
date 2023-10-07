@@ -33,28 +33,20 @@ export default function Settings() {
         title={title.toUpperCase()}
         closeStr={closeStr}
         onClose={() => dispatch(toggleSettings(false))}>
-          <Container maxWidth="sm">
             <Grid container spacing={1}>
-               
-              
               <Grid item xs={12} md={6}>
                 <SettingsMenu /> 
               </Grid>
-
               <Grid item xs={12} md={6}>
                 <Box sx={{}}>
                   <Lingua />
+                  <Font variant="small">
+                    {getTranslation("LINGUA", locale)}
+                  </Font>
+                  
                 </Box>
-              </Grid>  
-              
-              <Grid item xs={12}>
-                <Font variant="small">
-                  {getTranslation("LINGUA", locale)}
-                </Font>
               </Grid>
-              
           </Grid>
-        </Container>
       </GenericDialog>
     </Box>
   );

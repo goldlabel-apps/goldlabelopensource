@@ -6,6 +6,7 @@ import {
   ListItemText,
   Menu,
   ListItemButton,
+  Tooltip,
 } from "@mui/material"
 import {
   Icon,
@@ -49,15 +50,17 @@ export default function DiveShopsClip() {
             position: "absolute",
             opacity: 1,
             zIndex: 733,
-            bottom: 184,
-            right: 8,
+            bottom: 50,
+            right: 80,
           }}>
             {flyTos.length ? <>
-              <Fab
-                color="primary"
-                onClick={handleClick}>
-                <Icon icon="diveshop" color="secondary" />
-              </Fab>
+              <Tooltip title="Dive Shops">
+                <Fab
+                  color="secondary"
+                  onClick={handleClick}>
+                  <Icon icon="diveshop" />
+                </Fab>
+              </Tooltip>
               <Menu
                  sx={{mt:2}}
                 id="menuDiveShops-menu"

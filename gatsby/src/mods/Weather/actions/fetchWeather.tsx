@@ -4,7 +4,6 @@ import {
   setPwaKey,
   notify,
 } from "../../../goldlabel"
-import {forecast} from "../forecast"
 
 export const fetchWeather = (): any =>
   async (dispatch: any) => {
@@ -23,8 +22,7 @@ export const fetchWeather = (): any =>
             loading: false,
             loaded: true,
             lastLoad: Date.now(),
-            weatherDoc: response.data.data.doc,
-            forecast,
+            data: response.data.data.doc,
           }}))
         })
         .catch((error) => {
@@ -35,7 +33,7 @@ export const fetchWeather = (): any =>
             loaded: true,
             lastLoaded: Date.now(),
           }}))
-          dispatch(notify("info", "Error loading weather forecast :("))
+          dispatch(notify("warning", "Weather forecast error :("))
         })
       }, 1000)
       

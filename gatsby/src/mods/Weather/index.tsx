@@ -13,7 +13,6 @@ import WeatherCTA from "./components/WeatherCTA"
 import ZoomMapClip from "./components/ZoomMapClip"
 import WindClip from "./components/WindClip"
 
-
 import {weatherState} from "./weatherState"
 import {fetchWeather} from "./actions/fetchWeather"
 import {resetWeather} from "./actions/resetWeather"
@@ -23,6 +22,7 @@ import {setHourIndex} from "./actions/setHourIndex"
 import {switchActive} from "./actions/switchActive"
 import {flyToLocation} from "./actions/flyToLocation"
 import {updateDisplay} from "./actions/updateDisplay"
+import {makeCardinal} from "./actions/makeCardinal"
 
 import {useCurrentWeather} from "./hooks/useCurrentWeather"
 
@@ -49,6 +49,7 @@ export {
     useCurrentWeather,
 }
 export {
+    makeCardinal,
     fetchWeather,
     resetWeather,
     setWeatherKey,

@@ -14,18 +14,20 @@ import {
   selectType,
   CatNav,
   ShareMenu,
+  navigate,
 } from "../../goldlabel"
+import {fadeDiv} from "../../mods/Flash"
 
 export default function TopNav() {
   const type = usePwaSelect(selectType)
   const dispatch = usePwaDispatch()
   const categories = usePwaSelect(selectCategories)
-  let showHome = false
-  if (type !== "markdown") showHome = true 
+  let showMenuToggle = true
+  if (type !== "markdown") showMenuToggle = false 
   return (
     <Box sx={{display: "block", width: "100%", maxWidth:880, margin: "auto"}}>
             <Box sx={{display: "flex"}}>
-              <Box>
+              {showMenuToggle ? <Box>
                 <IconButton
                   onClick={() => {
                     dispatch(toggleCategories(!categories))
@@ -33,7 +35,14 @@ export default function TopNav() {
                   }}>
                   <Icon icon={categories ? "menu-up" : "menu-down" } color="primary"/>
                 </IconButton>
-              </Box>
+              </Box> : <IconButton
+                  onClick={() => {
+                    dispatch(fadeDiv("listings"))
+                    dispatch(navigate("/", "_self"))
+                  }}>
+                  <Icon icon={"home" } color="primary"/>
+                </IconButton> }
+              
               <Box sx={{flexGrow:1}} />
               <Box sx={{}}>
                 <CatNav />
