@@ -9,6 +9,7 @@ image: "/jpg/diving/rozi.jpg"
 order: 110
 lat: 35.989207091077496
 lng: 14.327206013356422
+youtube: "FlRjPGh81H8"
 ---
 The Rozi is one of the two wrecks in Cirkewwa on the northwest side of Malta, and one of the most popular dive sites in the Maltese islands. Rozi was a former tugboat that operated in Grand Harbour of Valletta. She was scuttled in 1992 as an underwater tourist attraction for submarine tours, and also became an artificial reef for scuba divers. Tugboat Rozi wreck is easily dived from the shore, and is located close to Patrol Boat P29 wreck.
 
