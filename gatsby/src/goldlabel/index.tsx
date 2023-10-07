@@ -16,7 +16,7 @@ import {useFeatured} from "./hooks/useFeatured"
 import {useSameParent} from "./hooks/useSameParent"
 import {useScreensize} from "./hooks/useScreensize"
 
-// Redux
+// Selectors
 import {
   selectPWA, 
   setPwaKey,
@@ -35,6 +35,7 @@ import {WrapRedux} from "./redux/WrapRedux"
 import {store, persistor} from "./redux/store"
 import {boot} from "./actions/boot"
 import {onUpdate} from "./actions/onUpdate"
+import {updateTing} from "./actions/updateTing"
 import {updateHistory} from "./actions/updateHistory"
 import {notify} from "./actions/notify"
 import {navigate} from "./actions/navigate"
@@ -77,7 +78,8 @@ import Image from "./components/Image"
 import Featured from "./components/Featured"
 import CatNav from "./components/CatNav"
 import MiniSettings from "./components/MiniSettings"
-
+import PublicTing from "./components/PublicTing"
+import YouTubePlayer from "./components/YouTubePlayer"
 
 export { // Goldlabel
   goldlabelConfig,
@@ -98,6 +100,8 @@ export { // Goldlabel
   CatNav,
   ShareMenu,
   MiniSettings,
+  PublicTing,
+  YouTubePlayer,
 }
 
 export { // Theme
@@ -132,6 +136,7 @@ export { // Redux
   toggleGenericDialog,
   setFrontmatter,
   scrollUp,
+  updateTing,
 }
 
 export { // Selectors

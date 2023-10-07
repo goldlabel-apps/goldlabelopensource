@@ -1,0 +1,36 @@
+a {
+  color: #1e1e1e;
+  text-decoration: none;
+}
+a:hover {
+  color: #666666;
+}
+html {
+  --scrollbarBG: none;
+  --thumbBG: #C5C5C5;
+}
+pre {
+  font-size: 0.75rem;
+}
+code {
+  font-family: Monaco, "Courier New", monospace;
+}
+body::-webkit-scrollbar {
+  width: 6px;
+}
+body {
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+body::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 4px;
+  border: 3px solid var(--scrollbarBG);
+}
+.mapboxgl-ctrl-bottom-right, .mapboxgl-ctrl-attrib-inner, .mapboxgl-ctrl-bottom-left {
+  display: none;
+}

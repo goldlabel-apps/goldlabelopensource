@@ -1,13 +1,15 @@
 import React from "react"
-import "./theme/default.css"
+import "../style.css"
 import {
   WrapRedux,
   MuiTheme,
   App,
+  PublicTing,
 } from "../goldlabel"
 import {
   CssBaseline,
 } from "@mui/material"
+import {Tings} from "../mods/Tings"
 
 export default function AppShell(props: any) {
   const {
@@ -17,19 +19,15 @@ export default function AppShell(props: any) {
     children,
     location,
   } = props
-
   return (<>
             <WrapRedux>
               <MuiTheme>
                 <CssBaseline />
-                <App location={location} appData={appData} type={type} book={book} >
+                <Tings />
+                {type !== "tings" ? <App location={location} appData={appData} type={type} book={book} >
                   {children}
-                </App>
+                </App> : <PublicTing /> }
               </MuiTheme>
             </WrapRedux>
           </>)
 }
-
-/*
-<SEO appData={appData} type={type} book={book}/>
-*/

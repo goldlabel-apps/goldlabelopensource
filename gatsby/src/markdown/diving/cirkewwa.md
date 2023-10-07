@@ -11,6 +11,7 @@ image: "/jpg/diving/cirkewwa.jpg"
 lat: 35.988681939025646
 lng: 14.32732412782047
 website: "https://maltadives.com/sites/cirkewwa/en"
+phone: "+"
 ---
 Cirkewwa is one of the most popular scuba diving sites on the Maltese islands for good reason. It is located on the north west coast of Malta next to the Gozo ferry
 

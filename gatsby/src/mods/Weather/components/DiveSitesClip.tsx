@@ -6,16 +6,23 @@ import {
   ListItemText,
   Menu,
   ListItemButton,
+  ListItemIcon,
+  Tooltip,
 } from "@mui/material"
 import {
   Icon,
   Font,
   useAllMarkdown,
   usePwaDispatch,
+  navigate,
 } from "../../../goldlabel"
 import {
   flyToLocation,
+  toggleWeather,
 } from "../../Weather"
+import {
+  fadeDiv,
+} from "../../Flash"
 
 export default function DiveSitesClip() {
   const dispatch = usePwaDispatch()
@@ -48,17 +55,19 @@ export default function DiveSitesClip() {
             position: "absolute",
             opacity: 1,
             zIndex: 701,
-            bottom: 115,
+            bottom: 50,
             right: 8,
           }}>
             {flyTos.length ? <>
-              <Fab
-                color="primary"
-                onClick={handleClick}>
-                <Icon icon="diving" color="secondary" />
-              </Fab>
+              <Tooltip title="Dive Sites">
+                <Fab
+                  color="secondary"
+                  onClick={handleClick}>
+                  <Icon icon="diving" />
+                </Fab>
+              </Tooltip>
               <Menu
-                 sx={{mt:2}}
+                 sx={{}}
                 id="menuDiveSites-menu"
                 anchorEl={anchorEl}
                 open={open}
@@ -66,16 +75,30 @@ export default function DiveSitesClip() {
                 MenuListProps={{
                   'aria-labelledby': 'menuDiveSites-button',
                 }}>
+                  <Box sx={{m:2, width: 200}} />
                   <List dense>
-                    <Box sx={{m:2, width: 200}}>
-                      <Font variant="title">
-                        Dive Sites
-                      </Font>
-                    </Box>
+                    <ListItemButton
+                      onClick={(e: React.MouseEvent) => {
+                        e.preventDefault()
+                        dispatch(toggleWeather(false))
+                        dispatch(fadeDiv("listings"))
+                        dispatch(navigate("/diving", "_self"))
+                        handleClose()
+                      }}
+                    >
+                      <ListItemIcon>
+                        <Icon icon="diving" />
+                      </ListItemIcon>
+                      <ListItemText 
+                          primary={<Font variant="title">
+                                      Dive Sites
+                                    </Font>}
+                        />
+                    </ListItemButton>
+                    
                 {flyTos.map((item: any, i: number) => {
                   const {
                     title,
-
                   } = item
                   return <ListItemButton 
                             key={`menuDiveSites_${i}`}

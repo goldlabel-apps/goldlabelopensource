@@ -28,8 +28,8 @@ export default function BottomRightClip() {
             right: 18,
           }}>
           <Button
-            variant="text"
-            color={"primary"}
+            variant="outlined"
+            color={"secondary"}
             onClick={() => {
               dispatch(toggleWeather(false))
               dispatch(flyToLocation(null))

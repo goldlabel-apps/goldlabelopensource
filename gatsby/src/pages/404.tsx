@@ -44,7 +44,7 @@ export default function NotFoundPage(data: any) {
                 let linguaTitle = title
                 if (title === "<HOME>") linguaTitle = getTranslation("HOME", locale)
 
-                return <Grid item xs={12} md={6} lg={4} key={`doc_${i}`}>
+                return <Grid item xs={12} md={4} key={`doc_${i}`}>
                         <CardActionArea 
                                   onClick={() => {
                                     window.open(slug, "_self")

@@ -39,6 +39,7 @@
     "react-redux": "8.0.7",
     "react-share": "4.4.1",
     "react-swipeable-views": "0.14.0",
+    "react-youtube": "10.1.0",
     "recharts": "2.6.2",
     "redux-persist": "6.0.0"
   },

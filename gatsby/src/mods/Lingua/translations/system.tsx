@@ -1,4 +1,5 @@
 export const system: any = {
+    
     SITEMAP: {
         en: "Site map",
         mt: "Mappa tas-sit",

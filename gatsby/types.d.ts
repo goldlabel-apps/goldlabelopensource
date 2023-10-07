@@ -23,6 +23,7 @@ export type GeolocatorShape = {
 }
 
 export type ConfigShape = {
+  goldlabelVersion: string
   siteTitle: string
   siteDescription: string
   siteUrl: string

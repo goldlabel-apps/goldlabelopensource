@@ -15,7 +15,6 @@ import {
   CloseClip,
   DiveSitesClip,
   DebuggerClip,
-  ZoomMapClip,
   DiveShopsClip,
   WindClip,
 } from "../Weather"
@@ -39,10 +38,8 @@ export default function WeatherFlash() {
       <Box sx={{position: "relative", flexGrow: 1}}>
         {debug ? <DebuggerClip output={geolocator}/> : null }
         <WindClip />
-        <ZoomMapClip />
         <DiveShopsClip />
         <DiveSitesClip />
-
         <CloseClip />
         {!blinking ? <WeatherMapboxClip /> : null }
       </Box>

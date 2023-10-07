@@ -9,6 +9,7 @@ icon: "diving"
 image: "/jpg/diving/um-el-faroud.jpg"
 lat: 35.819178510581054
 lng: 14.448531136303123
+youtube: "RRjX-c8DXNA"
 ---
 The Um El Faroud wreck lies parallel to the West Reef, her stern closest to the valley and starboard side towards the reef. The wreck is located approximately 150 m southwest from the entry/exit point in Wied iz-Zurrieq and is usually dived from the shore. Halfway to the wreck is a diving helmet statue as a landmark.
 

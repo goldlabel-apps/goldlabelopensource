@@ -3,7 +3,7 @@ order: 15
 featured: true
 category: "goldlabel"
 slug: "/goldlabel/lingua"
-parentSlug: "/"
+parentSlug: "/goldlabel"
 title: "Lingua"
 description: "Might as well be in Chinese, right?"
 keywords: "Localisation, language, Lingua, translation"

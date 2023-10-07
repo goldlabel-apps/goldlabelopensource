@@ -6,7 +6,9 @@ import {
   IconButton,
   Box,
   CardMedia,
-  Button,
+  CardHeader,
+  CardContent,
+  Card,
 } from "@mui/material"
 import {
   Icon,
@@ -22,7 +24,6 @@ import {
   flyToLocation,
 } from "../../Weather"
 import {fadeDiv} from "../../Flash"
-
 
 export function WeatherMarker(props:any) {  
 
@@ -50,9 +51,11 @@ export function WeatherMarker(props:any) {
     lng,
     icon,
     title,
+    description,
     slug,
     image,
   } = options  
+  // console.log("description", description)
   if (!lat || !lng) return null
   let isMe = false
   if (flyTo){
@@ -65,7 +68,7 @@ export function WeatherMarker(props:any) {
               latitude={lat} 
               longitude={lng}>
                 <Box sx={{
-                      width: 250, 
+                      width: 300, 
                       textAlign: "center",
                     }}>
                     <IconButton
@@ -76,49 +79,51 @@ export function WeatherMarker(props:any) {
                                 background: bgColor,
                                 width: 35, 
                                 height: 35}}>
-                            <Icon icon={icon} color="primary"/>
+                            <Icon icon={flyTo ? "close" : icon} color="primary"/>
                           </Avatar>                    
                     </IconButton>
                 </Box>
-                {flyTo ? <Box sx={{
-                                background: "rgba(255,255,255,0.2)", 
-                                width: 250, 
-                                display:"flex",
+                {flyTo ? <Card sx={{
+                                width: 300,
                               }}>
                   
-                  <Box sx={{margin: "auto", px:1}}>
-                    <Font>
-                      {title}
-                    </Font>
-                    <IconButton
-                      sx={{
-                        background: "rgba(255,255,255,0.8)", 
-                        border: "1px solid " + borColor,
-                        mt:2,
-                      }}
-                      color="primary"
-                      onClick={(e: React.MouseEvent) => {
-                        e.preventDefault()
-                        dispatch(flyToLocation(null))
-                        dispatch(toggleWeather(false))
-                        dispatch(fadeDiv("listings"))
-                        dispatch(navigate(slug, "_self"))
-                      }}
-                    >
-                    <Icon icon="link"/>
-                    </IconButton>
-                  </Box>
-                  {image ? <><Box>
+                    <CardHeader 
+                      action={<>
+                                <IconButton
+                                  sx={{}}
+                                  color="primary"
+                                  onClick={(e: React.MouseEvent) => {
+                                    e.preventDefault()
+                                    dispatch(flyToLocation(null))
+                                    dispatch(toggleWeather(false))
+                                    dispatch(fadeDiv("listings"))
+                                    dispatch(navigate(slug, "_self"))
+                                  }}>
+                                  <Icon icon="link"/>
+                                </IconButton>
+                              </>}
+                      title={<Font>
+                        {title}
+                      </Font>}
+                    />
+                    
+                    {image ? <>
                     <CardMedia 
-                      sx={{mr:1, borderRadius: 1, border: "1px solid " + borColor,}}
+                      sx={{mr:1, borderRadius: 1}}
                       component={"img"}
                       height={100}
                       src={image}
                       alt={title}
                     />
-                  </Box></> : null }
+                    
+                  </> : null }
+                  <CardContent>
+                    <Font>
+                      {description}
+                    </Font>
+                  </CardContent>
                   
-                </Box> : null }
+                </Card> : null }
 
                 
           </Marker> 

@@ -32,23 +32,14 @@ export default function SameParent() {
   }
   return (
     <>
-      <ListItemButton
-        onClick={() => {
-          dispatch(fadeDiv("listings"))
-          dispatch(navigate(parentSlug, "_self"))
-        }}>
-        <ListItemText 
-          primary={<Font>{parent.frontmatter.title}</Font>}
-          // secondary={<Font variant="small">{parent.frontmatter.description}</Font>}
-        />
-      </ListItemButton>
       {sameParent.length ? <>
         {sameParent.map((sibling: any, i: number) => {
           const {
             title,
             icon,
+            
           } = sibling
-          
+          if (slug === sibling.slug) return null
           return <ListItemButton 
                   key={`sibling_${i}`}
                   onClick={() => {
