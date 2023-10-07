@@ -29,7 +29,7 @@ export default function Settings() {
     <Box sx={{ display: "block"}}>
       <GenericDialog 
         open={settings}
-        fullScreen
+        fullScreen={false}
         title={title.toUpperCase()}
         closeStr={closeStr}
         onClose={() => dispatch(toggleSettings(false))}>

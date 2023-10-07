@@ -1,20 +1,20 @@
 ---
 order: 20
-featured: false
 category: "goldlabel"
 slug: "/goldlabel/geolocator"
-parentSlug: "/"
+parentSlug: "/goldlabel"
 title: "Geolocator"
-description: "An old fashioned Mashup"
+description: "An old fashioned Mashup using Mapbox"
 keywords: "weathermap, mapbox, mashup"
 icon: "map"
-image: "/png/town.png"
-placename: "Spinola Bay, Malta"
+image: "/png/mapbox.png"
 lat: 35.919837943466604
 lng: 14.493106168762859
-zoom: 15
+website: "https://divemalta.app/dive-shops/abc-diving/?geolocator"
 ---
-### An old fashioned Mashup, like from the mid 2000's
+## An old fashioned Services Mashup
+
+like from the mid 2000's
 
 In the context of web apps, mashups refer to the practice of combining data or functionalities from two or more different sources to create a new, integrated application or service. The term "mashup" originated from the music industry, where it referred to a blend of two or more songs to create a new composition.
 
@@ -26,19 +26,17 @@ Mashups gained popularity in the mid-2000s, when there was a surge in the availa
 
 > Malta is a small island and an independent country which can be found in the Mediterranean Sea, located 50 miles south of Italy about 175 miles north of Tunisia. The total area of Malta island is close to 122 square miles. Malta island is a part of an archipelago, which includes three inhabited and plenty of small uninhabited islands
 
-## Storm Glass API
+#### Stormglass [Docs](https://docs.stormglass.io)
 
-GET https://api.stormglass.io/v1/weather/point?lat=35.917973&lng=14.409943&source=sg&params=airTemperature,pressure,cloudCover,currentDirection,currentSpeed,gust,humidity,iceCover,precipitation,snowDepth,swellDirection,swellHeight,visibility,waterTemperature,waveDirection,waveHeight,wavePeriod,windDirection,windSpeed
+`GET https://api.stormglass.io/v1/weather/point?lat=35.917973&lng=14.409943&source=sg&params=airTemperature,pressure,cloudCover,currentDirection,currentSpeed,gust,humidity,iceCover,precipitation,snowDepth,swellDirection,swellHeight,visibility,waterTemperature,waveDirection,waveHeight,wavePeriod,windDirection,windSpeed`
 
-Header: Authorization `process.env.REACT_APP_STORMGLASS`
-
-https://docs.stormglass.io/#/
+`Header: Authorization `process.env.REACT_APP_STORMGLASS` (you will need one of these)
 
 The weather request is used to fetch weather data for a point. The Storm Glass API provides marine weather as well as global weather for land and lakes.
 
 To get marine data you include a coordinate at sea in your request, and to get data for land and lakes - simply send in a coordinate located on land or on a lake
 
-Point Request 
+#### Point Request 
 
 Point Requests are used to retrieve data for a single coordinate.
 
@@ -58,12 +56,15 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
 });
 ```
 
-Response Format 
+#### Response Format 
+
 The response will be sent back in the form of a JSON object. 
 The resource root contains two objects - hours and meta.
 
-Meta
+#### Meta
+
 The meta object contains information about the API request. Such as requested latitude and longitude, your daily quota and how many requests you have made so far today.
 
-Hours
+#### Hours
+
 The data object contains the actual weather data on an hourly basis

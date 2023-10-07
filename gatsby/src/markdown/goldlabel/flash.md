@@ -9,7 +9,7 @@ title: "Flash"
 description: "A ridiculous and pointless reinvention"
 keywords: "flash, feature"
 icon: "flash"
-flash: "ReinventingFlash"
+
 ---
 We have ridiculously and pointlessly reinvented MacroMedia Flash with React JS so you'll never have to. You're welcome
 

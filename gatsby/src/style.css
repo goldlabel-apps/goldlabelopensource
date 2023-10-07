@@ -1,13 +1,13 @@
 a {
-  color: #236a1a;
+  color: #1e1e1e;
   text-decoration: none;
 }
 a:hover {
-  color: #36C324;
+  color: #666666;
 }
 html {
   --scrollbarBG: none;
-  --thumbBG: #36C324;
+  --thumbBG: #C5C5C5;
 }
 pre {
   font-size: 0.75rem;
