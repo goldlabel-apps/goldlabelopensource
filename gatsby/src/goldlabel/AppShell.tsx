@@ -1,33 +1,40 @@
 import React from "react"
 import "../style.css"
 import {
+  CssBaseline,
+} from "@mui/material"
+import {
   WrapRedux,
   MuiTheme,
   App,
-  PublicTing,
+  Notifyer,
 } from "../goldlabel"
-import {
-  CssBaseline,
-} from "@mui/material"
 import {Tings} from "../mods/Tings"
+import {Backoffice} from "../mods/Backoffice"
+import {AccountPage} from "../goldlabel"
 
 export default function AppShell(props: any) {
   const {
     appData,
     type,
-    book,
     children,
     location,
   } = props
-  return (<>
+  return <>
             <WrapRedux>
               <MuiTheme>
                 <CssBaseline />
                 <Tings />
-                {type !== "tings" ? <App location={location} appData={appData} type={type} book={book} >
-                  {children}
-                </App> : <PublicTing /> }
+                {type === "backoffice" ? <Backoffice /> : null }
+                {type === "accountPage" ? <><Notifyer /><AccountPage /></> : null }
+                {type === "markdown" ? <App location={location} appData={appData} type={type}>
+                                        {children}
+                                      </App> : null }
               </MuiTheme>
             </WrapRedux>
-          </>)
+          </>
 }
+
+/*
+
+*/

@@ -2,20 +2,21 @@ import { getAuth } from "firebase/auth"
 import { 
   setPwaKey,
   notify,
-  toggleAccount,
-} from "../../../../"
+  store,
+} from "../../../goldlabel"
 
 export const firebaseSignout = (): any =>
   async (dispatch: any) => {
     try {
-      console.log("firebaseSignout")
-      
-      const auth = getAuth()
-      auth.signOut()
+      const {auth} = store.getState()
+      const fBauth = getAuth()
+      fBauth.signOut()
         .then (() => {
-          dispatch(setPwaKey({ key: "user", value: null}))
+          dispatch(setPwaKey({ key: "auth", value: {
+            ...auth,
+            user: null,
+          }}))
           dispatch(notify("success", "Goodbye"))
-          dispatch(toggleAccount(false))
         })
         .catch((error) => {
           dispatch(notify("info", error))

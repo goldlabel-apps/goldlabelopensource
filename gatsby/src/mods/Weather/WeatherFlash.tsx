@@ -30,7 +30,7 @@ export default function WeatherFlash() {
   
   return (
     <Dialog 
-      open={fullscreen}
+      open={true}
       fullScreen
       onClose={() => {
         dispatch(toggleWeather(false))

@@ -5,6 +5,7 @@ import {
 import {Font} from "../../../goldlabel"
 import {
   InputString,
+  InputCheckbox,
   FormButton,
   FormIconButton,
 } from "../../Forms"
@@ -23,6 +24,15 @@ export function SwitchInput(props: any) {
   if (action) inputType = action.type
   if (field) inputType = field.type
   
+  if (inputType === "InputCheckbox") return <InputCheckbox 
+                                              defaultValue={defaultValue}
+                                              value={value}
+                                              field={field} 
+                                              onUpdate={onUpdate}
+                                              helperText={"Looks good."}
+                                              validation={validation}
+                                            /> 
+
   if (inputType === "InputString") return <InputString 
                                             defaultValue={defaultValue}
                                             value={value}

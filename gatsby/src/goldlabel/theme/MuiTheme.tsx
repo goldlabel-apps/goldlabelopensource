@@ -8,33 +8,31 @@ import {
 import {
   usePwaSelect,
   selectPWA,
+  selectDarkMode,
   makeTheme,
 } from "../../goldlabel"
 
 
 export default function MuiTheme(props: any) {
   const {
-    themes
+    theme
   } = goldlabelConfig
   const {
     slug,
-    font,
     primaryColor,
     secondaryColor,
-  } = themes[0]
-  const pwa = usePwaSelect(selectPWA)
-  const {darkmode} = pwa
-  const theme: ThemeShape = {
+  } = theme
+  const darkmode = usePwaSelect(selectDarkMode)
+  const thisTheme: ThemeShape = {
     slug,
-    font,
     primaryColor,
     secondaryColor,
   }
   const {children} = props
   const customTheme = makeTheme(
     darkmode ? "dark" : "light", 
-    theme.primaryColor, 
-    theme.secondaryColor
+    thisTheme.primaryColor, 
+    thisTheme.secondaryColor
   )
   return (
     <>

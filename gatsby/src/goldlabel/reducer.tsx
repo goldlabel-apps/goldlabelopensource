@@ -3,14 +3,19 @@ import {
 } from "../../types"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "./redux/store"
+
+import {authState} from "./Auth/authState"
+
 import {listingsState} from "../mods/Listings/listingsState"
 import {geolocatorState} from "../mods/Geolocator/geolocatorState"
 import {weatherState} from "../mods/Weather/"
 import {tingsState} from "../mods/Tings/tingsState"
+import {backofficeState} from "../mods/Backoffice"
 import {goldlabelConfig} from "../goldlabelConfig"
 
 const initialState: any = {
   bootTime: Date.now(),
+  auth: authState,
   categories: true,
   type: null,
   fbId: null,
@@ -18,6 +23,7 @@ const initialState: any = {
   frontmatter: null,
   locale: goldlabelConfig.siteDefaultLocale || "en",
   settings: false,
+  backoffice: backofficeState,
   listings: listingsState,
   geolocator: geolocatorState,
   weather: weatherState,
@@ -37,9 +43,10 @@ export const pwaSlice = createSlice({
 })
 
 export const selectPWA = (state: RootState) => state
+export const selectBackoffice = (state: RootState) => state.backoffice
 export const selectDarkMode = (state: RootState) => state.darkmode
 export const selectLocale = (state: RootState) => state.locale
-export const selectAuth = (state: RootState) => state.authed
+export const selectAuth = (state: RootState) => state.auth
 export const selectCategories = (state: RootState) => state.categories
 export const selectType = (state: RootState) => state.type
 export const selectGeolocator = (state: RootState) => state.geolocator

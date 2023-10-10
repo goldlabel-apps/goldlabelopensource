@@ -1,5 +1,6 @@
 import * as React from "react"
 import GoldenticketIcon from './SVGIcons/GoldenticketIcon'
+import CannabisIcon from './SVGIcons/CannabisIcon'
 import GoldlabelOutlined from './SVGIcons/GoldlabelOutlined'
 import PimoroniIcon from './SVGIcons/PimoroniIcon'
 import GraphqlIcon from './SVGIcons/GraphqlIcon'
@@ -12,7 +13,11 @@ import WindIcon from "@mui/icons-material/Air"
 import OutlookIcon from "@mui/icons-material/WbSunny"
 import BikeIcon from "@mui/icons-material/Moped"
 import SwimIcon from "@mui/icons-material/Pool"
-
+import FingerprintIcon from "@mui/icons-material/Fingerprint"
+import ForecastsIcon from "@mui/icons-material/Explore"
+import SignupIcon from "@mui/icons-material/HowToReg"
+import YesIcon from "@mui/icons-material/CheckCircle"
+import NoIcon from "@mui/icons-material/Close"
 import BarIcon from "@mui/icons-material/LocalBar"
 import DiveshopIcon from "@mui/icons-material/RecommendOutlined"
 import TreeIcon from "@mui/icons-material/Park"
@@ -180,6 +185,32 @@ export default function Icon(props: any) {
 
   switch (icon) {
 
+    case "yes":
+      iconFragment = <YesIcon color={color} />
+      break
+    
+      case "no":
+        iconFragment = <NoIcon color={color} />
+        break
+
+        case "signup":
+          iconFragment = <SignupIcon color={color} />
+          break
+
+          case "fingerprint":
+            iconFragment = <FingerprintIcon color={color} />
+            break
+            case "fingerprints":
+              iconFragment = <FingerprintIcon color={color} />
+              break
+    
+            case "forecast":
+              iconFragment = <ForecastsIcon color={color} />
+              break
+              case "forecasts":
+                iconFragment = <ForecastsIcon color={color} />
+                break
+        
     case "wind":
       iconFragment = <WindIcon color={color} />
       break
@@ -277,7 +308,6 @@ export default function Icon(props: any) {
       break
 
 
-      
       case "addYourself":
         iconFragment = <AddYourselfIcon color={color} />
         break
@@ -286,6 +316,10 @@ export default function Icon(props: any) {
     case "addListing":
       iconFragment = <AddYourselfIcon color={color} />
       break 
+
+      case "listings":
+        iconFragment = <AddYourselfIcon color={color} />
+        break 
 
       case "shop":
         iconFragment = <ShopIcon color={color} />
@@ -316,6 +350,11 @@ export default function Icon(props: any) {
       case "ball":
         iconFragment = <GoldenticketIcon color={color} />
         break
+        
+        case "cannabis":
+          iconFragment = <CannabisIcon color={color} />
+          break
+        
 
       case "goldenticket":
         iconFragment = <GoldlabelIcon color={color} />
@@ -501,6 +540,10 @@ export default function Icon(props: any) {
       case "restaurant":
         iconFragment = <EatIcon color={color} />
         break
+
+        case "spies":
+          iconFragment = <SpyIcon color={color} />
+          break
 
       case "spy":
         iconFragment = <SpyIcon color={color} />

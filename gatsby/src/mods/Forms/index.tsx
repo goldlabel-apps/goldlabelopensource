@@ -6,7 +6,7 @@ import {FormIconButton} from "./components/FormIconButton"
 import {InputString} from "./components/InputString"
 import {InputPassword} from "./components/InputPassword"
 import {InputEmail} from "./components/InputEmail"
-
+import {InputCheckbox} from "./components/InputCheckbox"
 
 
 export {
@@ -18,4 +18,5 @@ export {
     InputString,
     InputEmail,
     InputPassword,
+    InputCheckbox,
 }

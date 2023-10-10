@@ -1,4 +1,5 @@
 import {Tings} from "./Tings"
+import PublicTing from "./components/PublicTing"
 import {startTing} from "./actions/startTing"
 import {resetTing} from "./actions/resetTing"
 import {makeFingerprint} from "./actions/makeFingerprint"
@@ -11,6 +12,7 @@ import {notifyTing} from "./actions/notifyTing"
 
 export {
     Tings,
+    PublicTing,
     resetTing,
     firebaseTing,
     startTing,
