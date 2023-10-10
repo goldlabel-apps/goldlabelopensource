@@ -1,5 +1,5 @@
 import React from "react"
-import { GatsbySeo } from 'gatsby-plugin-next-seo';
+import { GatsbySeo } from 'gatsby-plugin-next-seo'
 import { useSiteMetadata } from "../goldlabel"
 
 export const SEO = (props: any) => {

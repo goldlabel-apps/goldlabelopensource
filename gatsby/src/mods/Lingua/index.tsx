@@ -1,7 +1,8 @@
 import Lingua from "./Lingua"
 import MiniLinguaMenu from "./MiniLinguaMenu"
 import {toggleLingua} from "./actions/toggleLingua"
-import {auth} from "./translations/auth"
+import {auth} from "../../goldlabel/Auth/translations"
+import {backoffice} from "../../mods/Backoffice/translations"
 import {lingua} from "./translations/lingua"
 import {contact} from "./translations/contact"
 import {system} from "./translations/system"
@@ -34,6 +35,7 @@ export const translations: any = {
         pi: "Smuggler's Den",
     },
     ...auth,
+    ...backoffice,
     ...contact,
     ...system,
     ...lingua,

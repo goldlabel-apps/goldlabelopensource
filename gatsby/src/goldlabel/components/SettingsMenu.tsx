@@ -15,11 +15,12 @@ import {
   selectLocale,
   selectDarkMode,
   toggleDarkmode,
-  resetRedux,
+  // resetRedux,
   navigate,
 } from "../../goldlabel"
 import {fadeDiv} from "../../mods/Flash"
 import { getTranslation } from "../../mods/Lingua"
+import { firebaseSignout } from "../Auth"
 
 export default function SettingsMenu() {
   const dispatch = usePwaDispatch()
@@ -38,8 +39,6 @@ export default function SettingsMenu() {
             <ListItemButton
               onClick={(e:React.MouseEvent) => {
                 e.preventDefault()
-                dispatch(toggleSettings(false))
-                dispatch(fadeDiv("listings"))
                 dispatch(navigate("/", "_self"))
               }}>
               <ListItemIcon>
@@ -47,7 +46,7 @@ export default function SettingsMenu() {
               </ListItemIcon>
               <ListItemText
                 primary={<Font variant="small">
-                          {getTranslation("HOME", locale)}
+                            {getTranslation("HOME", locale)}
                           </Font>}
               />
             </ListItemButton>
@@ -57,44 +56,20 @@ export default function SettingsMenu() {
                 e.preventDefault()
                 dispatch(toggleSettings(false))
                 dispatch(fadeDiv("listings"))
-                dispatch(navigate("/tings", "_self"))
+                dispatch(navigate("/backoffice", "_self"))
               }}>
               <ListItemIcon>
-                <Icon icon="tings" color="primary"/>
+                <Icon icon="backoffice" color="primary"/>
               </ListItemIcon>
               <ListItemText
                 primary={<Font variant="small">
-                          {getTranslation("TINGS", locale)}
+                          {getTranslation("BACKOFFICE", locale)}
                           </Font>}
               />
             </ListItemButton>
               
-            <ListItemButton
-              onClick={() => {
-                dispatch(toggleSettings(false))
-                dispatch(toggleDarkmode(!darkmode))
-              }}>
-              <ListItemIcon>
-                <Icon icon={darkmode ? "light" : "dark"} color="primary"/>
-              </ListItemIcon>
-              <ListItemText 
-                primary={<Font variant="small">{!darkmode ? darkStr : lightStr}</Font>}
-              />
-            </ListItemButton>
+            
 
-            <ListItemButton
-              onClick={(e:React.MouseEvent) => {
-                e.preventDefault()
-                dispatch(navigate("https://github.com/listingslab-software/open-source", "_blank"))
-              }}>
-              <ListItemIcon>
-                <Icon icon="github" color="primary"/>
-              </ListItemIcon>
-              <ListItemText
-                primary={<Font variant="small">{getTranslation("GITHUB", locale)}</Font>}
-              />
-            </ListItemButton>
-                
             <ListItemButton
               onClick={(e:React.MouseEvent) => {
                 e.preventDefault()
@@ -111,16 +86,18 @@ export default function SettingsMenu() {
                           </Font>}
               />
             </ListItemButton>
-
+                
+            
             <ListItemButton
               onClick={() => {
-                dispatch(resetRedux())
+                dispatch(toggleSettings(false))
+                dispatch(toggleDarkmode(!darkmode))
               }}>
               <ListItemIcon>
-                <Icon icon="refresh" color="primary"/>
+                <Icon icon={darkmode ? "light" : "dark"} color="primary"/>
               </ListItemIcon>
-              <ListItemText
-                primary={<Font variant="small">{resetStr}</Font>}
+              <ListItemText 
+                primary={<Font variant="small">{!darkmode ? darkStr : lightStr}</Font>}
               />
             </ListItemButton>
 

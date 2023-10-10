@@ -13,8 +13,8 @@ import {
     usePwaSelect,
     selectTings,
     selectLocale,
-} from "../../goldlabel"
-import {getTranslation} from "../../mods/Lingua"
+} from "../../../goldlabel"
+import {getTranslation} from "../../../mods/Lingua"
 export default function PublicTing() {
     const tings = usePwaSelect(selectTings)
     const {fingerprint} = tings
@@ -36,7 +36,7 @@ export default function PublicTing() {
                         {getTranslation("TINGS", locale)}
                     </Font>}
             subheader={<Font>
-                        What this App has learned about you so far
+                        What this App has learned about you so far, {fingerprint}
                     </Font>}
         />
         <CardContent>

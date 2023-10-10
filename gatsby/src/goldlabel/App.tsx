@@ -16,8 +16,6 @@ import {
   Settings,
   setType,
 } from "../goldlabel"
-import {Add} from "../mods/Listings"
-import {Weather} from "../mods/Weather"
 
 export default function App(props: any) {
   const dispatch = usePwaDispatch()
@@ -50,8 +48,7 @@ export default function App(props: any) {
   return (<>
             <Notifyer />
             <Settings />
-            <SiteBottom>       
-              {type === "add-listing" ? <Add /> : null }    
+            <SiteBottom>
               {children}
             </SiteBottom>
           </>)

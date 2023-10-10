@@ -34,7 +34,7 @@ export type ConfigShape = {
   siteKeywords: string
   siteFooterUrl?: string
   siteDefaultLocale?: string
-  themes: Array<ThemeShape>
+  theme: ThemeShape
   features: any
 }
 
@@ -43,7 +43,6 @@ export type ThemeShape = {
   primaryColor: string
   secondaryColor: string
   backgroundColor?: string
-  font?: string
 }
 
 export type AuthShape = {

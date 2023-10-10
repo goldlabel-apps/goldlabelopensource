@@ -6,11 +6,13 @@ import {
 export function InputEmail(props: any) {
   const {
     onChange,
+    autoFocus,
   } = props
   
   return (<>
           <Box sx={{m:0}}>
             <TextField 
+              autoFocus={autoFocus}
               fullWidth
               label="Email"
               onChange={(e:any) => {

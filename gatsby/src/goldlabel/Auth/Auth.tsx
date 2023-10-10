@@ -1,32 +1,27 @@
 import React from "react"
 import {
-  Box,
-} from "@mui/material"
-import {
-  Font,
-  Icon,
   usePwaSelect,
-  selectPWA,
-} from "../../../"
-import {Signin} from "./"
-// import {getTranslation} from "../../../translations"
+  selectAuth,
+} from "../../goldlabel"
+import {
+  Signin,
+  // authListener,
+} from "../Auth"
 
 export function Auth(props: any) {
-  const {children, location} = props
+  const {children} = props
+  const auth = usePwaSelect(selectAuth)
+  const {user} = auth
 
-  // console.log("location", location)
-  // const dispatch = usePwaDispatch()
-  const pwa = usePwaSelect(selectPWA)
-  const {locale, authed} = pwa
-  if (!authed) return <Signin />
-  
-  return (<>
-            <Box sx={{}}>
-              {children}
-            </Box>
-          </>
-  )
-}
+  // React.useEffect(() => {
+  //   authListener()
+  // }, [])
+
+  if (!user) return <Signin />
+  return <>{children}</>
+} 
+
 /*
   <pre>{JSON.stringify(auth, null, 2)}</pre>
+  Signed in <pre>{JSON.stringify(auth, null, 2)}</pre>
 */

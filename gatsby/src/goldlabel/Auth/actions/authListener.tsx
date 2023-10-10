@@ -1,15 +1,25 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth"
-import { setPwaKey } from "../../../../"
-import {store} from "../../../redux/store"
+import { 
+  notify,
+  store,
+  setPwaKey,
+} from "../../../goldlabel"
 
 export const authListener = () => {
-    const auth = getAuth()
-    onAuthStateChanged(auth, (user) => {
-        // console.log("onAuthStateChanged user", user)
+    const fBauth = getAuth()
+    onAuthStateChanged(fBauth, (user) => {
+        const {auth} = store.getState()
         if (user) {
-          store.dispatch(setPwaKey({ key: "authed", value: user}))
+          console.log("onAuthStateChanged user", user)
+          store.dispatch(setPwaKey({ key: "auth", value: {
+            ...auth,
+            user,
+          }}))
         } else {
-          store.dispatch(setPwaKey({ key: "authed", value: null}))
+          store.dispatch(setPwaKey({ key: "auth", value: {
+            ...auth,
+            user: null,
+          }}))
         }
       });
     return true

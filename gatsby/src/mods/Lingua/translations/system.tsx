@@ -1,5 +1,18 @@
 export const system: any = {
-    
+    YES: {
+        en: "YES",
+        mt: "YES",
+        de: "YES",
+        cn: "YES",
+        pi: "YES",
+    },
+    NO: {
+        en: "NO",
+        mt: "NO",
+        de: "NO",
+        cn: "NO",
+        pi: "NO",
+    },
     SITEMAP: {
         en: "Site map",
         mt: "Mappa tas-sit",
@@ -54,7 +67,7 @@ export const system: any = {
         pi: "Send",
     },
     RESET: {
-        en: "Factory settings",
+        en: "Reset",
         mt: "Irrisettja tal-fabbrika",
         de: "Werkseinstellungen",
         cn: "重置为出厂设置",

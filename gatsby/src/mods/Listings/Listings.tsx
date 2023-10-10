@@ -84,8 +84,6 @@ export default function Listings (props: any) {
                     </Box>
                   </Grid>
 
-                  
-                  
                   {!noMeta ? <Grid item xs={12}>
                     <Box sx={{mt:3}}>
                       <MetaButtons frontmatter={frontmatter}/>
@@ -96,11 +94,11 @@ export default function Listings (props: any) {
                     <Markdown html={html} />
                   </Grid>
 
-                  { geolocator ? <>
+                  {/* { geolocator ? <>
                     {noMap ? null : <Grid item xs={12}>
                       <MiniMap frontmatter={frontmatter}/>
                     </Grid>}
-                  </> : null }
+                  </> : null } */}
                   
 
                   {showMoreLikeThis ? <Grid item xs={12}>

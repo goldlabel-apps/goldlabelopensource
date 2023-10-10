@@ -1,15 +1,24 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
+import { 
+  getAuth, 
+  signInWithEmailAndPassword,
+} from "firebase/auth"
 import {
   notify,
-} from "../../../../"
+  store,
+  setPwaKey,
+} from "../../../goldlabel"
 
 export const firebaseSignin = (email: string, password: string): any =>
   async (dispatch: any) => {
     try {
-      const auth = getAuth()
-      signInWithEmailAndPassword(auth, email, password)
+      const fBauth = getAuth()
+      const {auth} = store.getState()
+      signInWithEmailAndPassword(fBauth, email, password)
         .then((user) => {
-          if (!user) console.log("signin", user)
+          dispatch(setPwaKey({ key: "auth", value: {
+            ...auth,
+            user,
+          }}))
         })
         .catch((error) => {
           let message = error.message

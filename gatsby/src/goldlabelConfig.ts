@@ -1,24 +1,29 @@
 import {ConfigShape} from "../types"
 
 export const goldlabelConfig: ConfigShape = {
-    goldlabelVersion: "1.0.0",
+    goldlabelVersion: "1.0.5",
     siteUrl: "https://github.com/listingslab-software/open-source",
     siteDefaultLocale: "en",
     siteTitle: "Open Source",
     siteDescription: "Forever free",
-    siteImage: "/png/town.png",
+    siteImage: "/png/mapbox.png",
     siteIcon: "/svg/iOS.svg",
-    siteTwitter: "@machine_v4",
+    siteTwitter: "@listingslab",
     siteTheme: "#FFFFFF",
     siteKeywords: "listingslab, goldlabel, opensource, fullstack, react, javascript, node, pwa, free, github",
-    themes: [
-        {
-            slug: "opensource",
-            primaryColor: "#C5C5C5",
-            secondaryColor: "#616161",
-        },
-    ],
+    theme: {
+        slug: "opensource",
+        primaryColor: "#C5C5C5",
+        secondaryColor: "#616161",
+    },
     features: {
+        backoffice: {
+            enabled: true,
+            collections: [
+                "Tings",
+                "Listings",
+            ]
+        },
         lingua: {
             localeList: ["en", "pi", "mt", "de", "cn"], // "es"
             localeMeta: {
