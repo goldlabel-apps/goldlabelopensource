@@ -4,6 +4,7 @@ featured: true
 category: "diving"
 title: "Cirkewwa"
 slug: "/diving/cirkewwa"
+parentSlug: "/diving"
 description: "There's something for everyone at Cirkewwa"
 keywords: "Snorkelling, Cave, Reef, Wall, Wreck, freedive, scuba"
 icon: "map"

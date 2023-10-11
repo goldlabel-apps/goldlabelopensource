@@ -4,6 +4,7 @@ category: "diving"
 title: "The Tugboat Rozi"
 description: "Amazing wreck in Cirkewwa"
 slug: "/diving/rozi"
+parentSlug: "/diving"
 icon: "diving"
 image: "/jpg/diving/rozi.jpg"
 order: 110

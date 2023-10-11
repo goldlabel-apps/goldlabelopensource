@@ -24,6 +24,19 @@ export const goldlabelConfig: ConfigShape = {
                 "Listings",
             ]
         },
+        geolocator: {
+            enabled: true,
+            mapbox: {
+                enabled: true,
+                lightTheme: "mapbox://styles/listingslab/clmm7rfpk01u801pj5gf51dr5",
+                darkTheme: "mapbox://styles/listingslab/clmq3wus3020o01nzdlm4gvmh",
+                apiKey: process.env.REACT_APP_MAPBOX
+            },
+            weather: {
+                enabled: false,
+                fbId: "CTKHpFCdRd1FNLG6Be8X",
+            },
+        },
         lingua: {
             localeList: ["en", "pi", "mt", "de", "cn"], // "es"
             localeMeta: {
