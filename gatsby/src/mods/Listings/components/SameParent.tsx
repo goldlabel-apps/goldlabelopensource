@@ -50,7 +50,7 @@ export default function SameParent() {
                     <Icon icon={icon} color="primary" />
                   </ListItemIcon>
                   <ListItemText 
-                    primary={<Font>{title}</Font>}
+                    primary={<Font variant="small">{title}</Font>}
                   />
                 </ListItemButton>
         })}
@@ -72,7 +72,7 @@ export default function SameParent() {
                     <Icon icon={icon} color="primary" />
                   </ListItemIcon>
                   <ListItemText 
-                    primary={<Font>{title}</Font>}
+                    primary={<Font variant="small">{title}</Font>}
                   />
                 </ListItemButton>
         })}

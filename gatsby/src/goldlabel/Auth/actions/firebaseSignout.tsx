@@ -3,6 +3,7 @@ import {
   setPwaKey,
   notify,
   store,
+  navigate,
 } from "../../../goldlabel"
 
 export const firebaseSignout = (): any =>
@@ -17,6 +18,7 @@ export const firebaseSignout = (): any =>
             user: null,
           }}))
           dispatch(notify("success", "Goodbye"))
+          dispatch(navigate("/", "_self"))
         })
         .catch((error) => {
           dispatch(notify("info", error))

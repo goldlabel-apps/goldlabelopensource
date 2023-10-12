@@ -21,10 +21,10 @@ async (dispatch: any) => {
         }}))
         dispatch(getUserAgent())
       })
-      .catch(function (error) {
-        dispatch(notify("error", `${error.toString()}`))
+      .catch(function (e) {
+        dispatch(notify("error", `getIPGeo ${e.toString()}`))
       })
-  } catch (error: any) {
-    console.log("Action error: getHost", error)
+  } catch (e: any) {
+    dispatch(notify("error", `getIPGeo ${e.toString()}`))
   }
 }

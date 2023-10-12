@@ -12,27 +12,25 @@ import {
 } from "../../../goldlabel"
 import {getTranslation} from "../../Lingua"
 import {
-  toggleWeather,
-  flyToLocation,
-} from "../../Weather"
+  toggleBigMap,
+} from "../../Geolocator"
 
 export default function BottomRightClip() {
   const dispatch = usePwaDispatch()
   const locale = usePwaSelect(selectLocale)
   return (
-        <Box id="bottomRightClip"
+        <Box id="closeClip"
           sx={{
             position: "absolute",
             zIndex: 2000,
-            bottom: 4,
-            right: 18,
+            top: 8,
+            right: 8,
           }}>
           <Button
             variant="outlined"
             color={"secondary"}
             onClick={() => {
-              dispatch(toggleWeather(false))
-              dispatch(flyToLocation(null))
+              dispatch(toggleBigMap(false))
             }}>                      
               <Box sx={{mr:2}}>
                 <Font variant="small">

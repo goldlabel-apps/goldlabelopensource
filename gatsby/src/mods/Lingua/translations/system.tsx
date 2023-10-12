@@ -67,7 +67,7 @@ export const system: any = {
         pi: "Send",
     },
     RESET: {
-        en: "Reset",
+        en: "Reset Redux",
         mt: "Irrisettja tal-fabbrika",
         de: "Werkseinstellungen",
         cn: "重置为出厂设置",

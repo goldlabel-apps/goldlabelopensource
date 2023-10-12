@@ -9,37 +9,20 @@ import {
   selectDarkMode,
   useScreensize,
   selectGeolocator,
-  selectWeather,
-  useAllMarkdown,
+  selectFrontmatter,
 } from "../../../goldlabel"
-import {WeatherMarker} from "../../Weather"
+import {
+  BigMarker,
+} from "../../Geolocator"
 
-export default function WeatherMapboxClip() {  
+export default function BigMap() {  
   const geolocator = usePwaSelect(selectGeolocator)
-  const allMarkdown = useAllMarkdown()
-  const weather = usePwaSelect(selectWeather)
-  // const {flyTo} = weather
-  let flyTos: Array<any> = []
-  for(let i=0; i<allMarkdown.length; i++){
-    const {frontmatter} = allMarkdown[i]
-    const {lat, lng, title, icon, slug, category, image, description} = frontmatter
-    if (lat && lng) flyTos.push({
-      title,
-      description,
-      lat,
-      lng,
-      icon,
-      slug,
-      category,
-      image,
-    })
-  }
+  const frontmatter = usePwaSelect(selectFrontmatter)
   const mapRef: any = React.useRef(null)
   const darkmode = usePwaSelect(selectDarkMode)
   const screensize = useScreensize()
-  const {blinking} = geolocator
+  const {blinking, } = geolocator
   if (blinking) return null
-  
   const {h, w} = screensize
   let adjustedZoom = 10.2
   if (w < 600) adjustedZoom = 9.25
@@ -54,33 +37,26 @@ export default function WeatherMapboxClip() {
   if (darkmode) style = process.env.REACT_APP_MAPBOX_STYLE_DARK
 
   React.useEffect(() => {
-    if(mapRef.current){
-      const {flyTo} = weather
-      if (flyTo){
-        const {lat, lng} = flyTo
-        mapRef.current.flyTo({
-          center: [parseFloat(lng), parseFloat(lat)],
-          duration: 5000,
-          // minZoom: adjustedZoom,
-          zoom: 14,
-        })
-      } else{
-        mapRef.current.flyTo({
-          center: [defaultCenter.lng, defaultCenter.lat],
-          duration: 2500,
-          zoom: defaultCenter.zoom,
-        })
-      }
+    const {flyTo} = geolocator
+    if (flyTo){
+      setTimeout(() => {
+        if(mapRef.current){
+          const {lat, lng} = flyTo
+          mapRef.current.flyTo({
+            center: [parseFloat(lng), parseFloat(lat)],
+            duration: 5000,
+            zoom: 14,
+          })
+        } 
+      }, 500)
     }
-    
-  }, [defaultCenter, weather, mapRef])
+   
+  }, [defaultCenter, geolocator, mapRef])
 
-
-  return <Box id="weatherMapboxClip"
+  return <Box id="bigMapClip"
             sx={{
               position: "absolute",
               width: "100%",
-              height: h,
               zIndex: 1,
             }}>
             <Box sx={{ display: "block" }}>          
@@ -95,14 +71,13 @@ export default function WeatherMapboxClip() {
                     latitude: defaultCenter.lat,
                     longitude: defaultCenter.lng,
                     zoom: defaultCenter.zoom,
-                  }}
-                >
-                  {flyTos.map((item, i) => {
-                    return <WeatherMarker 
-                                key={`flyTo_${i}`}
-                                options={item}
-                              />
-                  })}
+                  }}>
+                  
+                    <BigMarker 
+                      onMarkerClick={() => {
+                        console.log("clicked")
+                      }} 
+                      frontmatter={frontmatter} />
                 </Map>
               </Box>
             </Box>

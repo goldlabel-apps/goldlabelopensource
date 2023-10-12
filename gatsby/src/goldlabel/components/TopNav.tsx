@@ -17,7 +17,6 @@ import {
   navigate,
 } from "../../goldlabel"
 import {fadeDiv} from "../../mods/Flash"
-import {AuthChip} from "../../goldlabel"
 
 export default function TopNav() {
 
@@ -48,9 +47,7 @@ export default function TopNav() {
               <Box sx={{}}>
                 <CatNav />
               </Box>
-              <Box sx={{mr:1, mt:0.5}}>
-                <AuthChip />
-              </Box>
+              
               <Box sx={{mr:1.5}}>
                 <ShareMenu />
               </Box>

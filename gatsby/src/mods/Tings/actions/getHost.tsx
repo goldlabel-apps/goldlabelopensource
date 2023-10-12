@@ -1,6 +1,7 @@
 import { 
   store, 
   setPwaKey,
+  notify,
 } from "../../../goldlabel"
 import {
   makeFingerprint,
@@ -18,7 +19,7 @@ async (dispatch: any) => {
       docTitle: document.title,
     }}))
     dispatch(makeFingerprint())
-  } catch (error: any) {
-    console.log("Action error: getHost", error)
+  } catch (e: any) {
+    dispatch(notify("error", `getHost ${e.toString()}`))
   }
 }

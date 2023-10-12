@@ -13,7 +13,6 @@ export const SEO = (props: any) => {
     siteImage,
     siteTitle,
     siteDescription,
-    siteDefaultLocale,
   } = siteMetadata
   const siteName = defaultTitle
   const seo = {
@@ -23,7 +22,6 @@ export const SEO = (props: any) => {
     url: siteUrl,
     twitterUsername,
     keywords: siteKeywords,
-    lingua: siteDefaultLocale,
   }
   if (appData){
     if (appData.data){
@@ -39,15 +37,14 @@ export const SEO = (props: any) => {
           if(title === "Home") seo.title = description
           seo.description = description
           seo.image = `${siteUrl}${image}`
-          seo.keywords = keywords
-          seo.lingua = lingua        
+          seo.keywords = keywords 
         }
       }
     }
   }
   const x = {
-    handle: '@machine_v4',
-    site: '@machine_v4',
+    handle: '@listingslab',
+    site: '@listingslab',
     cardType: 'summary_large_image',
   }
 

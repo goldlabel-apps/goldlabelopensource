@@ -3,21 +3,25 @@ import {
     Auth,
     Notifyer,
     useIsBig,
+    usePwaSelect,
+    selectBackoffice,
 } from "../../goldlabel"
 import {
     Desktop,
+    Mobile,
     ConfirmDialog,
 } from "../Backoffice"
 
 export default function Backoffice() {
-    const big = useIsBig()
-    if (!big) console.log("big", big)
+    const {isBig} = useIsBig()
+    const backoffice = usePwaSelect(selectBackoffice)
+    if(!backoffice) console.log("backoffice", backoffice)
     return (<>
                 <Notifyer />
                 <ConfirmDialog />
                 <Auth> 
-                    <div id="backoffice">      
-                        <Desktop />
+                    <div id="backoffice">   
+                        {isBig ? <Desktop /> : <Mobile /> }      
                     </div> 
                 </Auth>
             </>)

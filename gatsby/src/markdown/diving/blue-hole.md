@@ -1,10 +1,10 @@
 ---
 order: 65
 category: "diving"
-featured: true
 title: "The Blue Hole"
 description: "Dwerja"
 slug: "/diving/blue-hole"
+parentSlug: "/diving"
 keywords: "scuba, cave, swimming, snorkeling, freediving"
 icon: "diving"
 image: "/jpg/diving/bluehole.jpg"
@@ -13,7 +13,6 @@ lng: 14.199126860089175
 website: "https://maltadives.com/sites/bluehole-dwejra/en"
 youtube: "ltXx8dVXFsI"
 ---
-
 The Blue Hole in Dwerja is probably the most famous scuba dive site in Malta, and one of the most beautiful dives of the Maltese Islands. This is nice place for swimming, snorkeling, and freediving too.
 
 

@@ -3,30 +3,28 @@ import {
 } from "../../types"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "./redux/store"
-
 import {authState} from "./Auth/authState"
-
 import {listingsState} from "../mods/Listings/listingsState"
 import {geolocatorState} from "../mods/Geolocator/geolocatorState"
-import {weatherState} from "../mods/Weather/"
 import {tingsState} from "../mods/Tings/tingsState"
 import {backofficeState} from "../mods/Backoffice"
 import {goldlabelConfig} from "../goldlabelConfig"
 
 const initialState: any = {
   bootTime: Date.now(),
+  goldlabelConfig,
   auth: authState,
   categories: true,
   type: null,
   fbId: null,
   darkmode: false,
+  systemPref: null,
   frontmatter: null,
-  locale: goldlabelConfig.siteDefaultLocale || "en",
+  locale: "en",
   settings: false,
   backoffice: backofficeState,
   listings: listingsState,
   geolocator: geolocatorState,
-  weather: weatherState,
   tings: tingsState,
 }
 
@@ -53,6 +51,8 @@ export const selectGeolocator = (state: RootState) => state.geolocator
 export const selectFrontmatter = (state: RootState) => state.frontmatter
 export const selectWeather = (state: RootState) => state.weather
 export const selectTings = (state: RootState) => state.tings
+export const selectSettings = (state: RootState) => state.settings
+export const selectSystemPref = (state: RootState) => state.systemPref
 
 export const { setPwaKey } = pwaSlice.actions
 export default pwaSlice.reducer

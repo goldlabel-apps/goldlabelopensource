@@ -1,7 +1,7 @@
 import {ConfigShape} from "../types"
 
 export const goldlabelConfig: ConfigShape = {
-    goldlabelVersion: "1.0.5",
+    goldlabelVersion: "1.0.7",
     siteUrl: "https://github.com/listingslab-software/open-source",
     siteDefaultLocale: "en",
     siteTitle: "Open Source",
@@ -20,9 +20,28 @@ export const goldlabelConfig: ConfigShape = {
         backoffice: {
             enabled: true,
             collections: [
-                "Tings",
-                "Listings",
+                {
+                    title: "Fingerprints",
+                    description: "Unique app visitors",
+                    collectionName: "fingerprints",
+                    icon: "fingerprints",
+                },
             ]
+        },
+        geolocator: {
+            enabled: true,
+            options:{
+                weather: {
+                    enabled: true,
+                    fbId: "CTKHpFCdRd1FNLG6Be8X",
+                },
+                mapbox: {
+                    enabled: true,
+                    lightTheme: "mapbox://styles/listingslab/clmm7rfpk01u801pj5gf51dr5",
+                    darkTheme: "mapbox://styles/listingslab/clmq3wus3020o01nzdlm4gvmh",
+                    apiKey: process.env.REACT_APP_MAPBOX
+                },
+            },
         },
         lingua: {
             localeList: ["en", "pi", "mt", "de", "cn"], // "es"

@@ -1,12 +1,12 @@
 import React from "react"
+// import {
+//   Box,
+//   Container,
+// } from "@mui/material"
 import {
-  Box,
-  Container,
-} from "@mui/material"
-import {
-  Icon,
-  Font,
-  getTranslation,
+  // Icon,
+  // Font,
+  // getTranslation,
   usePwaDispatch,
   usePwaSelect,
   selectLocale,
@@ -18,7 +18,13 @@ export function Signup() {
   const locale = usePwaSelect(selectLocale)
   
   return (<>
-            <Container maxWidth="xs">
+            Sign up
+        </>
+  )
+}
+/*
+
+<Container maxWidth="xs">
               <Box sx={{my:1, margin: "auto"}}>
                 <Box sx={{my:2}}>
                     <Box>
@@ -29,9 +35,7 @@ export function Signup() {
                 </Box>
               </Box>
             </Container>
-        </>
-  )
-}
-/*
+
+            
 <pre>authed: {JSON.stringify(authed, null, 2)}</pre>
 */

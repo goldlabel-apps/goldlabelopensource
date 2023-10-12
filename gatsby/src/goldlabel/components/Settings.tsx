@@ -1,27 +1,27 @@
 import * as React from "react"
 import {
   Box,
-  Container,
   Grid,
 } from "@mui/material"
 import {
   Font,
   usePwaDispatch,
   usePwaSelect,
-  selectPWA,
   toggleSettings,
   GenericDialog,
   SettingsMenu,
+  selectSettings,
+  selectLocale,
+  getTranslation,
 } from "../../goldlabel"
 import {
   Lingua,
-  getTranslation,
 } from "../../mods/Lingua"
 
 export default function Settings() {
   const dispatch = usePwaDispatch()
-  const pwa = usePwaSelect(selectPWA)
-  const {settings, locale, authed} = pwa
+  const settings = usePwaSelect(selectSettings)
+  const locale = usePwaSelect(selectLocale)
   let title: string = getTranslation("SETTINGS", locale)
   let closeStr: string = getTranslation("CLOSE", locale)
 
@@ -43,7 +43,6 @@ export default function Settings() {
                   <Font variant="small">
                     {getTranslation("LINGUA", locale)}
                   </Font>
-                  
                 </Box>
               </Grid>
           </Grid>

@@ -7,15 +7,17 @@ import {
   boot,
   usePwaSelect,
   usePwaDispatch,
-  selectPWA,
+  selectCategories,
   setFrontmatter,
   selectDarkMode,
-  toggleDarkmode,
+  selectSystemPref,
+  toggleCategories,
   Notifyer,
   SiteBottom,
   Settings,
   setType,
 } from "../goldlabel"
+import {Geolocator} from "../mods/Geolocator"
 
 export default function App(props: any) {
   const dispatch = usePwaDispatch()
@@ -31,25 +33,40 @@ export default function App(props: any) {
   if (appData.data){
     frontmatter = appData.data.markdownRemark.frontmatter
   }
-  const pwa = usePwaSelect(selectPWA)
-  const {systemPref} = pwa
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)")
+  const systemPref = usePwaSelect(selectSystemPref)
+  // const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)")
   const darkmode = usePwaSelect(selectDarkMode)
-  
+  const menuOpen = usePwaSelect(selectCategories)
+
   React.useEffect(() => {
     dispatch(setFrontmatter(frontmatter))
     dispatch(boot(isBig))
-    if (!systemPref && prefersDarkMode !== darkmode){
-      dispatch(toggleDarkmode(prefersDarkMode))
-    }
+    // if (!systemPref && prefersDarkMode !== darkmode){
+    //   dispatch(toggleDarkmode(prefersDarkMode))
+    // }
     dispatch(setType(type))
-  }, [type, isBig, prefersDarkMode, darkmode, systemPref, frontmatter, location, dispatch])
+    if (!menuOpen && window.location.pathname === "/" && isBig){
+      dispatch(toggleCategories(true))
+    }
+  }, [
+    type, 
+    isBig, 
+    // prefersDarkMode, 
+    darkmode, 
+    systemPref, 
+    frontmatter, 
+    location, 
+    menuOpen,
+    dispatch,
+  ])
 
   return (<>
             <Notifyer />
             <Settings />
+            
             <SiteBottom>
               {children}
+              <Geolocator />
             </SiteBottom>
           </>)
 }

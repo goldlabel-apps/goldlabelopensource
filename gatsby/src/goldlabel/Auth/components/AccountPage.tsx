@@ -1,5 +1,6 @@
 import React from "react"
 import {
+    Box,
     Container,
     Grid,
     CardHeader,
@@ -9,27 +10,28 @@ import {
     Icon,
     getTranslation,
     usePwaDispatch,
-    navigate,
-    Signin,
-    Signup,
+    // navigate,
+    SigninOrSignup,
     usePwaSelect,
     selectAuth,
+    selectTings,
     selectLocale,
     AccountMenu,
 } from "../../../goldlabel"
 export default function AccountPage() {
     const dispatch = usePwaDispatch()
     const auth = usePwaSelect(selectAuth)
+    const tings = usePwaSelect(selectTings)
+    if(!tings) return null
+    const {fingerprint} = tings
     const locale = usePwaSelect(selectLocale)
     const {user} = auth
     let isSignedIn = false
     let email: string|null = null
-
-    const goDashboard = (e: React.MouseEvent) => {
-        e.preventDefault()
-        dispatch(navigate("/backoffice", "_self"))
-    }
-
+    // const goDashboard = (e: React.MouseEvent) => {
+    //     e.preventDefault()
+    //     dispatch(navigate("/backoffice", "_self"))
+    // }
     if (user){
         isSignedIn = true
         email = user.user.email
@@ -38,48 +40,37 @@ export default function AccountPage() {
 
     return <>
             <Container maxWidth="md">
-                <Grid container>
-
-                    <Grid item xs={12}>
-                        <CardHeader
-                            avatar={<Icon icon="user" color="primary" />}
-                            title={<Font variant="giant">
-                                    {getTranslation("YOUR_ACCOUNT", locale)}
-                                </Font>}
-                            subheader={<Font variant="small">
-                                {email}
-                            </Font>}
-                        />
-                    </Grid>
-                    {!isSignedIn ? <>
-                        <Grid item xs={12} md={6}>
-                            <Signin />
-                        </Grid> 
-                        {/* <Grid item xs={12} md={6}>
-                            <Signup />
-                        </Grid>  */}
-                    </>: null }
-
-                    <Grid item xs={12} md={6}>
-                        <AccountMenu />
-                        {!isSignedIn ? <Signup /> : null}
-                        
-                    </Grid>
-
+                <CardHeader
+                    avatar={<Icon icon="user" color="primary" />}
+                    title={<Font>{getTranslation("YOUR_ACCOUNT", locale)}</Font>}
+                    subheader={<Font variant="small">
+                        {email}
+                    </Font>}
+                />
+                    <Grid container>
+                        {isSignedIn ? <>
+                            <Grid item xs={12} md={6}>
+                                <AccountMenu />
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                <Box sx={{m:2}}>
+                                <Font>{getTranslation("YOUR_FINGERPRINT", locale)}</Font>
+                                    <Font variant="small">
+                                        {fingerprint}
+                                    </Font>
+                                    {/* <pre>{JSON.stringify(tings, null, 2)}</pre>  */}
+                                </Box>
+                            </Grid>
+                        </> : <Grid item xs={12}>
+                                    <SigninOrSignup />
+                                </Grid> }
+                    
                 </Grid>
-
             </Container>
-            
         </>
 }
 
 
 /* 
-
-
-
 <pre>user {JSON.stringify(user, null, 2)}</pre> 
-
-
-
 */

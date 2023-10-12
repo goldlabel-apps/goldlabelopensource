@@ -7,6 +7,7 @@ import GraphqlIcon from './SVGIcons/GraphqlIcon'
 import WordpressIcon from './SVGIcons/WordpressIcon'
 import BlokeyIcon from './SVGIcons/BlokeyIcon'
 import PharmacyIcon from "@mui/icons-material/Healing"
+import TrashCanIcon from "@mui/icons-material/DeleteForever"
 import GoldlabelIcon from './SVGIcons/GoldenticketIcon'
 import BedIcon from "@mui/icons-material/Bed"
 import WindIcon from "@mui/icons-material/Air"
@@ -193,23 +194,23 @@ export default function Icon(props: any) {
         iconFragment = <NoIcon color={color} />
         break
 
-        case "signup":
-          iconFragment = <SignupIcon color={color} />
-          break
+      case "signup":
+        iconFragment = <SignupIcon color={color} />
+        break
 
-          case "fingerprint":
-            iconFragment = <FingerprintIcon color={color} />
-            break
-            case "fingerprints":
-              iconFragment = <FingerprintIcon color={color} />
-              break
-    
-            case "forecast":
-              iconFragment = <ForecastsIcon color={color} />
-              break
-              case "forecasts":
-                iconFragment = <ForecastsIcon color={color} />
-                break
+      case "fingerprint":
+        iconFragment = <FingerprintIcon color={color} />
+        break
+      case "fingerprints":
+        iconFragment = <FingerprintIcon color={color} />
+        break
+
+      case "forecast":
+        iconFragment = <ForecastsIcon color={color} />
+        break
+      case "forecasts":
+        iconFragment = <ForecastsIcon color={color} />
+        break
         
     case "wind":
       iconFragment = <WindIcon color={color} />
@@ -360,8 +361,6 @@ export default function Icon(props: any) {
         iconFragment = <GoldlabelIcon color={color} />
         break
 
-
-        
 
         case "graphql":
           iconFragment = <GraphqlIcon color={color} />
@@ -804,6 +803,10 @@ export default function Icon(props: any) {
     case "clear":
       iconFragment = <TrashIcon color={color} />
       break
+      case "trash":
+        iconFragment = <TrashCanIcon color={color} />
+        break
+      
 
     case "error":
       iconFragment = <ErrorIcon color={color} />

@@ -6,20 +6,18 @@ import {
 } from "../../goldlabel"
 import {
   startTing, 
-  firebaseTing,
+  dbFingerprint,
 } from "../Tings"
 
 export function Tings() {
   const dispatch = usePwaDispatch()
   const tings = usePwaSelect(selectTings)
   React.useEffect(() => {
-    // const {finished} = tings
     if (!tings){ 
       dispatch(startTing())
     }
-    dispatch (firebaseTing())
+    dispatch (dbFingerprint())
   }, [tings, dispatch])
   
   return null
-  return <><pre>{JSON.stringify(tings, null, 2)}</pre></>
 }

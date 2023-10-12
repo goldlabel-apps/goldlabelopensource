@@ -11,6 +11,7 @@ import {
 import {
   Icon,
   Font,
+  useIsBig,
 } from "../../goldlabel"
 
 export default function GenericDialog (props: any) {
@@ -20,21 +21,21 @@ export default function GenericDialog (props: any) {
     children,
     open,
     closeStr,
-    fullScreen,
   } = props
+  const isBig = useIsBig().isBig
   const closeGenericDialog = () => onClose()
 
   return (<>
             <Dialog 
               open={open}
               onClose={closeGenericDialog}
-              fullScreen={fullScreen}
+              fullScreen={!isBig}
               fullWidth
-              maxWidth="sm"
-            >
+              maxWidth="sm">
+                
               {title ? <DialogTitle sx={{margin:"auto"}}>
-                  <CardHeader title={<Font>{title} </Font>}/>
-              </DialogTitle> : null }
+                          <CardHeader title={<Font>{title} </Font>}/>
+                      </DialogTitle> : null }
 
               <DialogContent>
                 {children}
@@ -44,7 +45,6 @@ export default function GenericDialog (props: any) {
                 <Box sx={{flexGrow:1}} />
                 <Box sx={{mx:4}}>
                   <Button
-                    // variant="outlined"
                     color={"inherit"}
                     onClick={closeGenericDialog}>                      
                       <Box sx={{mx:1}}>
@@ -52,11 +52,12 @@ export default function GenericDialog (props: any) {
                           {closeStr || "Close"}
                         </Font>
                       </Box>
-                      <Icon icon="tick" />
+                      <Icon icon="tick" color="primary"/>
                   </Button>
                 </Box>
                 <Box sx={{flexGrow:1}} />
               </DialogActions>
+
           </Dialog>
         </>
     );

@@ -58,7 +58,7 @@ export default function SiblingList() {
                     <Icon icon={icon} color="primary" />
                   </ListItemIcon>
                   <ListItemText 
-                    primary={<Font>{title}</Font>}
+                    primary={<Font variant="small">{title}</Font>}
                   />
                 </ListItemButton>
             })}

@@ -1,5 +1,6 @@
 import React from "react"
 import {
+  Grid,
   ListItemText,
   ListItemIcon,
   List,
@@ -10,10 +11,10 @@ import {
   Icon,
   Font,
   getTranslation,
-  notify,
   usePwaDispatch,
   usePwaSelect,
   selectLocale,
+  resetRedux,
   navigate,
   firebaseSignout,
   selectAuth,
@@ -25,67 +26,83 @@ export function AccountMenu() {
   const auth = usePwaSelect(selectAuth)
   const {user} = auth
   let isSignedIn = false
+  let providerData = null
+  let uid = null
   if (user){
     isSignedIn = true
+    providerData = user.user.providerData
+    uid = user.user.uid
   }
   const onSignup = () => {
     console.log("onSignup")
-
   }
-
   return (<>
-          <List>
-            {isSignedIn ? <>
+          <Grid container spacing={1}>
+            <Grid item xs={12} md={6}>
+              <List>
+                
+                <ListItem disablePadding sx={{ display: 'block' }}>
+                  <ListItemButton
+                    onClick={() => {
+                      dispatch(navigate("/", "_self"))
+                    }}>
+                    <ListItemIcon>
+                      <Icon icon={"home"} color="primary"/>
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={<Font variant="small">{getTranslation("HOME", locale)}</Font>}
+                    />
+                  </ListItemButton>
+                </ListItem>
 
-            <ListItem disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                onClick={() => {
-                  dispatch(navigate("/", "_self"))
-                }}>
-                <ListItemIcon>
-                  <Icon icon={"home"} color="primary"/>
-                </ListItemIcon>
-                <ListItemText
-                  primary={<Font>Home</Font>}
-                />
-              </ListItemButton>
-            </ListItem>
+                {isSignedIn ? <>
+                
+                  <ListItem disablePadding sx={{ display: 'block' }}>
+                    <ListItemButton
+                      onClick={() => {
+                        dispatch(navigate("/backoffice", "_self"))
+                      }}>
+                      <ListItemIcon>
+                        <Icon icon={"dashboard"} color="primary"/>
+                      </ListItemIcon>
+                      <ListItemText
+                        primary={<Font variant="small">{getTranslation("DASHBOARD", locale)}</Font>}
+                      />
+                    </ListItemButton>
+                  </ListItem>
 
-            
-            <ListItem disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                onClick={() => {
-                  dispatch(navigate("/backoffice", "_self"))
-                }}>
-                <ListItemIcon>
-                  <Icon icon={"dashboard"} color="primary"/>
-                </ListItemIcon>
-                <ListItemText
-                  primary={<Font>Dashboard</Font>}
-                />
-              </ListItemButton>
-            </ListItem>
+                  <ListItem disablePadding sx={{ display: 'block' }}>
+                    <ListItemButton
+                      onClick={() => {
+                        dispatch(resetRedux())
+                      }}>
+                      <ListItemIcon>
+                        <Icon icon={"reset"} color="primary"/>
+                      </ListItemIcon>
+                      <ListItemText
+                        primary={<Font variant="small">{getTranslation("RESET", locale)}</Font>}
+                      />
+                    </ListItemButton>
+                  </ListItem>
+                  
 
-            <ListItem disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                onClick={() => {
-                  dispatch(firebaseSignout())
-                }}>
-                <ListItemIcon>
-                  <Icon icon={"exit"} color="primary"/>
-                </ListItemIcon>
-                <ListItemText
-                  primary={<Font>{getTranslation("SIGNOUT", locale)}</Font>}
-                />
-              </ListItemButton>
-            </ListItem>
-
-            </> : null }
-            
-
-            
-
-          </List>
+                  <ListItem disablePadding sx={{ display: 'block' }}>
+                    <ListItemButton
+                      onClick={() => {
+                        dispatch(firebaseSignout())
+                      }}>
+                      <ListItemIcon>
+                        <Icon icon={"exit"} color="primary"/>
+                      </ListItemIcon>
+                      <ListItemText
+                        primary={<Font variant="small">{getTranslation("SIGNOUT", locale)}</Font>}
+                      />
+                    </ListItemButton>
+                  </ListItem>
+                </> : null }
+              </List>
+            </Grid>
+          </Grid>      
         </>
   )
 }

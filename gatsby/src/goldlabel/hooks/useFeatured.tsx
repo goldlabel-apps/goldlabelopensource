@@ -26,6 +26,8 @@ export const useFeatured = () => {
             email
             facebook
             phone
+            twitter
+            hideImage
           }
           html
           excerpt
