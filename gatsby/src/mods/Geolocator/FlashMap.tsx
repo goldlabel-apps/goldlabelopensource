@@ -6,25 +6,17 @@ import {
 import {
   usePwaDispatch,
   usePwaSelect,
-  selectWeather,
   selectGeolocator,
 } from "../../goldlabel"
 import {
-  toggleWeather,
-  WeatherMapboxClip,
+  toggleBigMap,
+  BigMap,
   CloseClip,
-  DiveSitesClip,
-  DebuggerClip,
-  DiveShopsClip,
-  WindClip,
-} from "../Weather"
+} from "../Geolocator"
 
-export default function WeatherFlash() {
-  const debug = false
+export default function FlashMap() {
   const dispatch = usePwaDispatch()
-  const weather = usePwaSelect(selectWeather)
   const geolocator = usePwaSelect(selectGeolocator)
-  const {fullscreen} = weather
   const {blinking} = geolocator
   if (blinking) return null
   
@@ -33,15 +25,11 @@ export default function WeatherFlash() {
       open={true}
       fullScreen
       onClose={() => {
-        dispatch(toggleWeather(false))
+        dispatch(toggleBigMap(false))
       }}>
       <Box sx={{position: "relative", flexGrow: 1}}>
-        {debug ? <DebuggerClip output={geolocator}/> : null }
-        <WindClip />
-        <DiveShopsClip />
-        <DiveSitesClip />
         <CloseClip />
-        {!blinking ? <WeatherMapboxClip /> : null }
+        {!blinking ? <BigMap /> : null }
       </Box>
     </Dialog>
   )

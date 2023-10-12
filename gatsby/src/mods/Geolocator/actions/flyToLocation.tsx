@@ -4,14 +4,13 @@ import {
   notify,
 } from "../../../goldlabel"
 
-export const toggleWeather =
-  (fullscreen: boolean): any =>
+export const flyToLocation = (flyTo: any): any =>
   async (dispatch: any) => {
     try {
-      const {weather} = store.getState()
-      dispatch(setPwaKey({ key: "weather", value: {
-        ...weather, 
-        fullscreen,
+      const {geolocator} = store.getState()
+      dispatch(setPwaKey({ key: "geolocator", value: {
+        ...geolocator, 
+        flyTo,
       }}))
     } catch (error: any) {
       dispatch(notify("error", `${error.toString()}`))

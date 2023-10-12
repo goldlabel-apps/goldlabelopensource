@@ -2,8 +2,10 @@ import FingerprintJS from "@fingerprintjs/fingerprintjs"
 import { 
   store, 
   setPwaKey,
+  notify,
 } from "../../../goldlabel"
 import {getIPGeo} from "../"
+
 export const makeFingerprint = (): any =>
 async (dispatch: any) => {
   try {
@@ -15,7 +17,7 @@ async (dispatch: any) => {
       fingerprint: visitorId,
     }}))
     dispatch(getIPGeo())
-  } catch (error: any) {
-    console.log("Action error: makeFingerprint", error)
+  } catch (e: any) {
+    dispatch(notify("error", `makeFingerprint ${e.toString()}`))
   }
 }

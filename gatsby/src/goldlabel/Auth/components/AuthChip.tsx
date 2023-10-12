@@ -33,7 +33,9 @@ export default function AuthChip() {
 
     return <>
             {user ? <Chip
-                        sx={{height: 30, ml:1.5}}
+                        variant="outlined"
+                        color="primary"
+                        sx={{height: 30, ml:1.5, border: "none"}}
                         icon={<Icon icon="user" />}
                         label={<Font>{email}</Font>}
                         onClick={goAccount}
@@ -44,10 +46,10 @@ export default function AuthChip() {
 
 /*
 <Tooltip title="Sign in to Backoffice">
-                        <IconButton 
-                            color="primary"
-                            onClick={goBackoffice}>
-                            <Icon icon="backoffice" />
-                        </IconButton>
-                    </Tooltip>
+    <IconButton 
+        color="primary"
+        onClick={goBackoffice}>
+        <Icon icon="backoffice" />
+    </IconButton>
+</Tooltip>
 */

@@ -12,9 +12,9 @@ import {
   selectGeolocator,
 } from "../../../goldlabel"
 import {
-  toggleWeather,
+  toggleBigMap,
   flyToLocation,
-} from "../../Weather"
+} from "../../Geolocator"
 
 export default function MiniMap(props: any) {
   const dispatch = usePwaDispatch()
@@ -40,11 +40,8 @@ export default function MiniMap(props: any) {
   if (darkmode) style = process.env.REACT_APP_MAPBOX_STYLE_DARK
 
   const onMarkerClick = () => {
-    dispatch (toggleWeather(true))
-    setTimeout(() => {
-      dispatch (flyToLocation(frontmatter))
-    }, 250)
-    
+    dispatch (toggleBigMap(true))
+    // dispatch(flyToLocation(frontmatter))
   }
 
   return <Box sx={{

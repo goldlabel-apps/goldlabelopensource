@@ -91,6 +91,8 @@ export const pageQuery = graphql`
         email
         facebook
         phone
+        twitter
+        hideImage
       }
     }
   }

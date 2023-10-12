@@ -9,17 +9,15 @@ import {
   Icon,
   usePwaSelect,
   selectDarkMode,
-  usePwaDispatch,
 } from "../../../goldlabel"
-import {
-  selectLocation,
-} from "../../Geolocator"
 
 export function MiniMarker(props:any) {
-  const dispatch = usePwaDispatch()
-  
+  // const dispatch = usePwaDispatch()
   const theme = useTheme()
-  const {frontmatter, onMarkerClick} = props
+  const {
+    frontmatter, 
+    onMarkerClick
+  } = props
   const darkmode = usePwaSelect(selectDarkMode)
   let borColor = theme.palette.primary.main
   let bgColor = "rgba(255,255,255,0.8)"
@@ -42,7 +40,7 @@ export function MiniMarker(props:any) {
                   onClick={onMarkerClick}>
                     <Avatar
                       sx={{
-                        border: "2px solid " + borColor,
+                        border: "1px solid " + borColor,
                         background: bgColor,
                         width: 50, 
                         height: 50,

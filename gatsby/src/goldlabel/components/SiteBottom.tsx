@@ -11,6 +11,7 @@ import {
   Icon,
   TopAppbar,
   usePwaDispatch,
+  AuthChip,
 } from "../../goldlabel"
 import {WeatherButton} from "../../mods/Weather"
 
@@ -18,6 +19,7 @@ export default function SiteBottom(props: any) {
   const dispatch = usePwaDispatch()
   const {children} = props
   const theme = useTheme()
+
 
   return (
     <>
@@ -43,14 +45,22 @@ export default function SiteBottom(props: any) {
           <Container maxWidth="md">
           <Box sx={{display: "flex"}}>
             <Box sx={{flexGrow:1}} />
-              <IconButton 
-                color="primary"
-                sx={{mb:1}}
-                onClick={() => {
-                  dispatch(toggleSettings(true))
-                }}>
-                  <Icon icon="menu"/>
-              </IconButton>
+           
+              <Box sx={{mt:0.5}}>
+                <AuthChip />
+              </Box>
+
+              <Box>
+                <IconButton 
+                  color="primary"
+                  sx={{mb:1}}
+                  onClick={() => {
+                    dispatch(toggleSettings(true))
+                  }}>
+                    <Icon icon="settings"/>
+                </IconButton>
+              </Box>
+              
             <Box sx={{flexGrow:1}} />
           </Box>
         </Container>

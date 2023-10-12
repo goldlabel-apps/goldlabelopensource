@@ -16,46 +16,31 @@ import {
     usePwaSelect,
     selectLocale,
     navigate,
+    resetRedux,
 } from "../../../../goldlabel"
 import {
-  selectCollection,
+  setActiveCollection,
 } from "../../../Backoffice"
 import {
   hideDiv,
 } from "../../../Flash"
 
-export default function Sidebar(props: any) {
-  const {open} = props
+export default function GameMenu() {
   const dispatch = usePwaDispatch()
   const locale = usePwaSelect(selectLocale)
   const {collections} = goldlabelConfig.features.backoffice
-  
   return (<>
     <Box sx={{}}>
         {collections ? <>
             <List>
-              <ListItem 
-                disablePadding sx={{ display: 'block' }}>
-                <ListItemButton
-                  onClick={() => {
-                    dispatch(selectCollection(null, null))
-                    dispatch(hideDiv("backoffice"))
-                    dispatch(navigate("/", "_self"))
-                  }}>
-                  <ListItemIcon>
-                    <Icon icon={"home"} color="primary"/>
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={<Font>{getTranslation("HOME", locale)}</Font>}
-                  />
-                </ListItemButton>
-              </ListItem>
+
+
 
               <ListItem 
                 disablePadding sx={{ display: 'block' }}>
                 <ListItemButton
                   onClick={() => {
-                    dispatch(selectCollection(null, null))
+                    dispatch(setActiveCollection(null))
                     dispatch(hideDiv("backoffice"))
                     dispatch(navigate("/backoffice", "_self"))
                   }}>
@@ -63,25 +48,59 @@ export default function Sidebar(props: any) {
                     <Icon icon={"dashboard"} color="primary"/>
                   </ListItemIcon>
                   <ListItemText
-                    primary={<Font>{getTranslation("DASHBOARD", locale)}</Font>}
+                    primary={<Font variant="small">
+                      {getTranslation("DASHBOARD", locale)}</Font>}
                   />
                 </ListItemButton>
               </ListItem>
+
+              <ListItem disablePadding sx={{ display: 'block' }}>
+                <ListItemButton
+                  onClick={() => {
+                    dispatch(setActiveCollection(null))
+                    dispatch(hideDiv("backoffice"))
+                    dispatch(navigate("/account", "_self"))
+                  }}>
+                  <ListItemIcon>
+                    <Icon icon={"user"} color="primary"/>
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={<Font variant="small">{getTranslation("YOUR_ACCOUNT", locale)}</Font>}
+                  />
+                </ListItemButton>
+              </ListItem>
+
+              {/* <ListItem 
+                disablePadding sx={{ display: 'block' }}>
+                <ListItemButton
+                  onClick={() => {
+                    dispatch(resetRedux())
+                  }}>
+                  <ListItemIcon>
+                    <Icon icon={"reset"} color="primary"/>
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={<Font>{getTranslation("RESET", locale)}</Font>}
+                  />
+                </ListItemButton>
+              </ListItem> */}
            
-              {collections.map((item: string, i: number) => {
+              {collections.map((item: any, i: number) => {
+                if (!item) return null
+                const {icon, title} = item
                 return <ListItem 
-                        key={`collection_${i}`}
-                        disablePadding sx={{ display: 'block' }}>
+                          key={`collection_${i}`}
+                          disablePadding sx={{ display: 'block' }}>
                         <ListItemButton
                           onClick={() => {
-                            dispatch(selectCollection(item))
+                            dispatch(setActiveCollection(item))
                           }}>
                           <ListItemIcon>
-                            <Icon icon={item.toLowerCase()} color="primary"/>
+                            <Icon icon={icon} color="primary"/>
                           </ListItemIcon>
                           <ListItemText
-                            primary={<Font>
-                                        {item}
+                            primary={<Font variant="small">
+                                        {title}
                                     </Font>}
                           />
                         </ListItemButton>

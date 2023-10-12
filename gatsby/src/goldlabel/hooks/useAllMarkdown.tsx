@@ -26,6 +26,8 @@ export const useAllMarkdown = () => {
             email
             facebook
             phone
+            twitter
+            hideImage
           }
           html
           excerpt

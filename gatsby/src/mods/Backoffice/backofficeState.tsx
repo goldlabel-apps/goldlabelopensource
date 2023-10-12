@@ -7,7 +7,7 @@ export type BusShape = {
 }
 
 export type BackofficeShape = {
-    collection: string|null
+    activeCollection: any
     busSlug: string|null
     confirming: boolean
     addDoc: any
@@ -16,7 +16,7 @@ export type BackofficeShape = {
 }
 
 export const backofficeState: BackofficeShape = {
-    collection: null,
+    activeCollection: null,
     busSlug: null,
     confirming: false,
     addDoc: null,

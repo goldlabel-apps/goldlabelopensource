@@ -24,7 +24,7 @@ export const startTing = (): any =>
         ],
       }}))
       dispatch(getHost())
-    } catch (error: any) {
-      dispatch(notify("warning", error))
+    } catch (e: any) {
+      dispatch(notify("error", `startTing ${e.toString()}`))
     }
 }

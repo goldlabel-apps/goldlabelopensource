@@ -10,29 +10,29 @@ import {
   Font,
   usePwaDispatch,
   usePwaSelect,
-  selectPWA,
   toggleSettings,
   selectLocale,
   selectDarkMode,
   toggleDarkmode,
-  // resetRedux,
+  fadeDiv,
+  selectAuth,
   navigate,
+  firebaseSignout,
+  getTranslation,
 } from "../../goldlabel"
-import {fadeDiv} from "../../mods/Flash"
-import { getTranslation } from "../../mods/Lingua"
-import { firebaseSignout } from "../Auth"
 
 export default function SettingsMenu() {
   const dispatch = usePwaDispatch()
-  const pwa = usePwaSelect(selectPWA)
+  const auth = usePwaSelect(selectAuth)
+  const {user} = auth
+  let isSignedIn = false
+  if (user){
+    isSignedIn = true
+  }
   const darkmode = usePwaSelect(selectDarkMode)
   const locale = usePwaSelect(selectLocale)
   let lightStr: string = getTranslation("LIGHTMODE", locale)
   let darkStr: string = getTranslation("DARKMODE", locale)
-  let resetStr: string = getTranslation("RESET", locale)
-  const {frontmatter} = pwa
-  let homeBtn = true
-  if (frontmatter) homeBtn = false
 
   return <List dense>
 
@@ -56,7 +56,24 @@ export default function SettingsMenu() {
                 e.preventDefault()
                 dispatch(toggleSettings(false))
                 dispatch(fadeDiv("listings"))
-                dispatch(navigate("/backoffice", "_self"))
+                dispatch(navigate("/account", "_self"))
+              }}>
+              <ListItemIcon>
+                <Icon icon="user" color="primary"/>
+              </ListItemIcon>
+              <ListItemText
+                primary={<Font variant="small">
+                          {getTranslation("YOUR_ACCOUNT", locale)}
+                          </Font>}
+              />
+            </ListItemButton>
+
+            <ListItemButton
+              onClick={(e:React.MouseEvent) => {
+                e.preventDefault()
+                dispatch(toggleSettings(false))
+                dispatch(fadeDiv("listings"))
+                dispatch(navigate(isSignedIn ? "/backoffice" : "/account", "_self"))
               }}>
               <ListItemIcon>
                 <Icon icon="backoffice" color="primary"/>
@@ -69,24 +86,6 @@ export default function SettingsMenu() {
             </ListItemButton>
               
             
-
-            <ListItemButton
-              onClick={(e:React.MouseEvent) => {
-                e.preventDefault()
-                dispatch(toggleSettings(false))
-                dispatch(fadeDiv("listings"))
-                dispatch(navigate("/sitemap", "_self"))
-              }}>
-              <ListItemIcon>
-                <Icon icon="site" color="primary"/>
-              </ListItemIcon>
-              <ListItemText
-                primary={<Font variant="small">
-                          {getTranslation("SITEMAP", locale)}
-                          </Font>}
-              />
-            </ListItemButton>
-                
             
             <ListItemButton
               onClick={() => {
@@ -100,6 +99,20 @@ export default function SettingsMenu() {
                 primary={<Font variant="small">{!darkmode ? darkStr : lightStr}</Font>}
               />
             </ListItemButton>
+
+            {isSignedIn ? <>
+              <ListItemButton
+                onClick={() => {
+                  dispatch(firebaseSignout())
+                }}>
+                <ListItemIcon>
+                  <Icon icon="exit"/>
+                </ListItemIcon>
+                <ListItemText 
+                  primary={<Font variant="small">Sign out</Font>}
+                />
+              </ListItemButton>
+            </> : null }
 
           </List>
 }

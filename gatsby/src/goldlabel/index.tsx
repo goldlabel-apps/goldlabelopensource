@@ -15,8 +15,14 @@ import {
   AccountPage,
   Signin,
   Signup,
+  SigninOrSignup,
   AccountMenu,
 } from "./Auth"
+
+import {
+  hideDiv,
+  fadeDiv,
+} from "../mods/Flash"
 
 // Hooks
 import {useSiteMetadata} from "./hooks/useSiteMetadata"
@@ -46,6 +52,8 @@ import {
   selectFrontmatter,
   selectWeather,
   selectBackoffice,
+  selectSettings,
+  selectSystemPref,
 } from "./reducer"
 
 import {WrapRedux} from "./redux/WrapRedux"
@@ -102,12 +110,17 @@ export { // Auth
   AuthChip,
   Signin,
   Signup,
+  SigninOrSignup,
   AccountPage,
   AccountMenu,
   firebaseSignout,
   firebaseSignin,
-  
 }
+export { // Flash
+  hideDiv,
+  fadeDiv,
+}
+
 export { // Goldlabel
   goldlabelConfig,
   getTranslation,
@@ -179,6 +192,8 @@ export { // Selectors
   selectFrontmatter,
   selectWeather,
   selectBackoffice,
+  selectSettings,
+  selectSystemPref,
 }
 
 export { // Setters

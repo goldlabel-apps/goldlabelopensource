@@ -12,4 +12,3 @@ If you're a legit developer, you are welcome to acccess. It just isn't yet Open 
 - Lingua
 - Listings
 - Tings
-- Weather

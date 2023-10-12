@@ -4,6 +4,7 @@ import {firebaseSignout} from "./actions/firebaseSignout"
 import {authListener} from "./actions/authListener"
 import {Signin} from "./components/Signin"
 import {Signup} from "./components/Signup"
+import {SigninOrSignup} from "./components/SigninOrSignup"
 import AuthChip from "./components/AuthChip"
 import AccountPage from "./components/AccountPage"
 import {AccountMenu} from "./components/AccountMenu"
@@ -15,6 +16,7 @@ export {
     firebaseSignout,
     Signin,
     Signup,
+    SigninOrSignup,
     AuthChip,
     AccountPage,
     AccountMenu,

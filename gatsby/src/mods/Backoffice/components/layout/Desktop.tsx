@@ -13,8 +13,7 @@ import {
   selectBackoffice,
 } from "../../../../goldlabel"
 import {
-  Dashboard,
-  Sidebar,
+  GameMenu,
   AddDoc,
   ChangeDoc,
   TopRight,
@@ -25,29 +24,17 @@ import {
 } from "../../../Backoffice"
 
 export default function Desktop() {
-
     const backoffice = usePwaSelect(selectBackoffice)
     const theme = useTheme()
     const [open, setOpen] = React.useState(true)
-    const handleDrawerOpen = () => setOpen(true)
     const handleDrawerClose = () => setOpen(false)
-    let appShellTitle: any = "Backoffice"
-    let content: any = null
-    const {collection} = backoffice
-    if (!collection) {
-      appShellTitle = "Backoffice Dashboard"
-      content = <Dashboard />
+    let title: any = "Desktop"
+    const {activeCollection} = backoffice
+    if(activeCollection){
+      title = activeCollection.title
     } else {
-      appShellTitle = collection
-      content = <Collection />
-    }  
-    const {collections} = goldlabelConfig.features.backoffice
-    for(let i=0; i<collections.length; i++){
-      if (collections[i] === collection) {
-        appShellTitle = `Backoffice ${collection}`
-      }
+      title = "Dashboard"
     }
-
     return (
       <>
         <Box sx={{ display: "flex" }}>
@@ -58,21 +45,9 @@ export default function Desktop() {
             position="fixed" 
             open={open}>
             <Toolbar>
-              <IconButton
-                onClick={handleDrawerOpen}
-                edge="start"
-                sx={{
-                  marginRight: 5,
-                  ...(open && { display: "none" }),
-                }}>
-                <Icon icon="right" color="secondary"/>
-              </IconButton>
-              <Font variant="title">
-                {appShellTitle}
+              <Font>
+                {title}
               </Font>
-              <Box>
-                <TopRight />
-              </Box>
             </Toolbar>
           </StyledAppBar>
           
@@ -86,14 +61,14 @@ export default function Desktop() {
                 </>}
               </IconButton>
             </StyledDrawerHeader>
-            <Sidebar open={open}/>
+            <GameMenu/>
           </StyledDrawer>
           
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <StyledDrawerHeader />
             <AddDoc />
             <ChangeDoc />
-            {content}
+            {/* <pre>activeCollection: {JSON.stringify(activeCollection, null, 2)}</pre> */}
           </Box>
           
         </Box>
@@ -102,5 +77,19 @@ export default function Desktop() {
 }
 
 /* 
-<pre>{JSON.stringify(backoffice, null, 2)}</pre>
+
+<IconButton
+                onClick={handleDrawerOpen}
+                edge="start"
+                sx={{
+                  marginRight: 5,
+                  ...(open && { display: "none" }),
+                }}>
+                <Icon icon="right" color="secondary"/>
+              </IconButton>
+              
+              <Box>
+                <TopRight />
+              </Box>
+
 */

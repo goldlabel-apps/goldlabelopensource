@@ -2,6 +2,7 @@ import { UAParser } from 'ua-parser-js';
 import { 
     store, 
     setPwaKey,
+    notify,
 } from "../../../goldlabel"
 
 export const getUserAgent = (): any =>
@@ -16,8 +17,8 @@ export const getUserAgent = (): any =>
         ...tings,
         userAgent,
       }}))
-    } catch (error: any) {
-      console.log("Action error: getUserAgent", error)
+    } catch (e: any) {
+      dispatch(notify("error", `getUserAgent ${e.toString()}`))
     }
   }
   

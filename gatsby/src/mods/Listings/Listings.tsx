@@ -33,6 +33,7 @@ export default function Listings (props: any) {
     cover,
     hideImage,
     website,
+    slug,
     facebook,
     email,
     phone,
@@ -87,14 +88,14 @@ export default function Listings (props: any) {
                   </Grid> : null }
                   
                   
-                  
-
-                  <Grid item xs={12} md={6}>
+                  {slug !== "/" && !paid ? <Grid item xs={12} md={6}>
                     <Box sx={{mt:2}}>
                       {cover ? <SiblingList /> : null }
                       {!paid ? <SameParent /> : null }
                     </Box>
-                  </Grid>
+                  </Grid> : null }
+
+                  
 
                   
 

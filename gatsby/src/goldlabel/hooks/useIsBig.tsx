@@ -2,15 +2,16 @@ export type IsBigShape = {
     isBig: boolean
     w: number
     h: number
-    landscape: boolean
 }
 
-export const useIsBig = () => {    
+export const useIsBig = () => {   
+    let isBig = true 
+    let w = window.innerWidth
+    if (w < 700) isBig = false
+    let h = window.innerWidth
     return {
-        isBig: true,
-        w: 1024,
-        h: 800,
-        landscape: true,
+        isBig,
+        w,
+        h,
     }
-
 }

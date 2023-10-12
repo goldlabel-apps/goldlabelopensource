@@ -26,7 +26,7 @@ import {
   // InputCheckbox,
 } from "../../../mods/Forms"
 
-export function Signin() {
+export function SigninOrSignup() {
   const dispatch = usePwaDispatch()
   const locale = usePwaSelect(selectLocale)
   const [email, setEmail] = React.useState<string>("")

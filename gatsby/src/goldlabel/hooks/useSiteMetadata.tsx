@@ -16,7 +16,6 @@ export const useSiteMetadata = () => {
           siteTheme
           siteTitle
           siteTwitter
-          siteDefaultLocale
         }
       }
     }
