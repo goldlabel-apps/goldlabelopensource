@@ -7,7 +7,7 @@ slug: "/diving/cirkewwa"
 parentSlug: "/diving"
 description: "There's something for everyone at Cirkewwa"
 keywords: "Snorkelling, Cave, Reef, Wall, Wreck, freedive, scuba"
-icon: "map"
+icon: "diving"
 image: "/jpg/diving/cirkewwa.jpg"
 lat: 35.988681939025646
 lng: 14.32732412782047

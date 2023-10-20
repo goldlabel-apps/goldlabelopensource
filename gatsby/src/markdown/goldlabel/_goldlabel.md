@@ -5,7 +5,7 @@ title: "Features"
 description: "An option if you're thinking of updating a tired old WordPress site"
 cover: false
 category: "goldlabel"
-icon: "goldlabelOutlined"
+icon: "goldlabel"
 image: "/png/goldlabel.png"
 keywords: "goldlabel, product, pwa, Static Site Generation, SSR, free"
 hideImage: true

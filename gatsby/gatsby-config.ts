@@ -1,19 +1,24 @@
-import {GatsbyShape} from "./types"
+import {glConfig} from "./src/core/config"
+import {GatsbyShape} from "./src/core/types"
 import type { GatsbyConfig } from "gatsby"
-import {goldlabelConfig} from "./src/goldlabelConfig"
 
-const siteTitle = goldlabelConfig.siteTitle
-const siteDescription = goldlabelConfig.siteDescription
-const siteUrl = goldlabelConfig.siteUrl
-const siteIcon = goldlabelConfig.siteIcon
-const siteImage = goldlabelConfig.siteImage
-const siteTwitter = goldlabelConfig.siteTwitter
-const siteTheme = goldlabelConfig.siteTheme
-const siteKeywords = goldlabelConfig.siteKeywords
-const siteDefaultLocale = goldlabelConfig.siteDefaultLocale
+const siteTitle = glConfig.siteTitle
+const siteDescription = glConfig.siteDescription
+const siteUrl = glConfig.siteUrl
+const siteIcon = glConfig.siteIcon
+const siteImage = glConfig.siteImage
+const siteTwitter = glConfig.siteTwitter
+const siteFacebook = glConfig.siteFacebook
+const siteTheme = glConfig.siteTheme
+const siteKeywords = glConfig.siteKeywords
+const siteDefaultLocale = glConfig.siteDefaultLocale
+const siteEmail = glConfig.siteEmail
+const siteDisplayname = glConfig.siteDisplayname
 
 const siteMetadata: GatsbyShape =  {
   siteTitle,
+  siteEmail,
+  siteDisplayname,
   title: siteTitle,
   siteUrl,
   siteDescription,
@@ -25,6 +30,7 @@ const siteMetadata: GatsbyShape =  {
   siteTwitter,
   twitterUsername: siteTwitter,
   siteTheme,
+  siteFacebook,
   siteDefaultLocale,
 }
 

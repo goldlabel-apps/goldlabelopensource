@@ -7,7 +7,7 @@ parentSlug: "/goldlabel"
 title: "Tings"
 description: "A perfect view of your users"
 keywords: "tings, product, Firebase"
-icon: "tings"
+icon: "goldlabel"
 image: "/png/tings.png"
 ---
 Tings combines analytics with messaging allowing website owners to talk directly to their users in real time

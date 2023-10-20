@@ -13,6 +13,7 @@ email: "ai@listingslab.com"
 website: "https://github.com/listingslab-software/open-source"
 facebook: "https://www.facebook.com/listingslabspage"
 phone: "+356-9964-2755"
+flag: "mt"
 ---
 ### [About Goldlabel](/goldlabel)
 
