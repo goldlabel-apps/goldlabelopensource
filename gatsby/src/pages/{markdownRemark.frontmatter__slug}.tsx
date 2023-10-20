@@ -1,21 +1,17 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import {
-  Box,
   Alert,
   AlertTitle,
+  Box,
   IconButton,
-  Container,
-  Grid,
 } from "@mui/material"
 import {
+  PWA,
   Icon,
   Font,
   SEO,
-  AppShell,
-} from "../goldlabel"
-import {Listings} from "../mods/Listings"
-import {Weather} from "../mods/Weather"
+} from "../core"
 
 export default function MarkdownPage(data: any) {
   const { markdownRemark } = data.data
@@ -28,8 +24,7 @@ export default function MarkdownPage(data: any) {
                   <IconButton
                     onClick={() => {
                       window.open("/", "_self")
-                    }}
-                  >
+                    }}>
                     <Icon icon={"home"} />
                   </IconButton>
                 </Box>
@@ -47,22 +42,9 @@ export default function MarkdownPage(data: any) {
   </>
 
   return (<>
-      <SEO appData={{...data}}/>
-      <AppShell appData={{...data}} type="markdown">
-        
-        <Container maxWidth={"lg"}>
-          <Grid container spacing={1}>
-            <Grid item xs={12}>   
-              <Listings 
-                frontmatter={{...data.data.markdownRemark.frontmatter}} 
-                html={markdownRemark.html}
-                excerpt={markdownRemark.excerpt}
-              />
-            </Grid>
-          </Grid>
-        </Container>
-      </AppShell>
-    </>
+            <SEO appData={{...data}}/>
+            <PWA appData={{...data}} />
+          </>
   )
 }
 
@@ -73,6 +55,7 @@ export const pageQuery = graphql`
       excerpt
       frontmatter {
         paid
+        flag
         draft
         order
         cover
