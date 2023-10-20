@@ -6,7 +6,7 @@ parentSlug: "/goldlabel"
 title: "Geolocator"
 description: "An old fashioned Mashup using Mapbox"
 keywords: "weathermap, mapbox, mashup"
-icon: "map"
+icon: "goldlabel"
 image: "/png/mapbox.png"
 lat: 35.919837943466604
 lng: 14.493106168762859
