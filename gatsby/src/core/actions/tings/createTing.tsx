@@ -38,7 +38,7 @@ export const createTing = (tings: any): any =>
         url,
       }
       const db = getFirestore()
-      await addDoc(collection(db, "pingpong"), {
+      await addDoc(collection(db, "tings"), {
         uid,
         created,
         host,
@@ -61,7 +61,7 @@ export const createTing = (tings: any): any =>
       dispatch(notifyTing({
         code: "NEW TING",
         severity: "success",
-        message: `uid ${uid}`,
+        message: `<a href="https://listingslab.com/backoffice?uid=${uid}">${uid}</a>`,
       }))
     } catch (e: any) {
       dispatch(notify(

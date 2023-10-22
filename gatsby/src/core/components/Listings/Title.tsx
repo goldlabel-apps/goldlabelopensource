@@ -1,6 +1,6 @@
 import * as React from "react"
+import {glConfig} from "../../config"
 import {
-    Avatar,
     Box, 
     CardHeader,
     IconButton,
@@ -33,12 +33,18 @@ export default function Title(props: any) {
             title={<Font variant="title">
                 {title}
             </Font>}
-            action={<>
-                <Meta frontmatter={frontmatter}/>
-            </>}
-            // subheader={<Font variant="small">
-            //     {description}
-            // </Font>  }
+            action={<Box sx={{display: "flex"}}>
+
+                        <Box sx={{m:1.5}}>
+                            <Font variant="small">
+                                {glConfig.glVersion}
+                            </Font>
+                        </Box>
+                        <Box>
+                            <Meta frontmatter={frontmatter}/>
+                        </Box>
+                
+                    </Box>}
         />
     </Box>
 }

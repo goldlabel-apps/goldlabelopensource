@@ -3,7 +3,7 @@ import {
   store, 
   setPwaKey,
   notify,
-  getUserAgent,
+  makeFingerprint,
 } from "../../../core"
 
 export const getIPGeo = (): any => async (dispatch: any) => {
@@ -20,7 +20,7 @@ export const getIPGeo = (): any => async (dispatch: any) => {
             ipGeo: {...res.data},
           }
         }}))
-        dispatch(getUserAgent())
+        dispatch(makeFingerprint())
       })
       .catch(function (e) {
         dispatch(notify(
