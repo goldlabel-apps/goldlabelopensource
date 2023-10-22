@@ -11,10 +11,12 @@ import DivingIcon from "@mui/icons-material/ScubaDiving"
 import DiveshopIcon from "@mui/icons-material/RecommendOutlined"
 import CategoryIcon from "@mui/icons-material/CategoryOutlined"
 import DefaultIcon from "@mui/icons-material/DisabledByDefault"
+import LeafIcon from "@mui/icons-material/EnergySavingsLeafOutlined"
 import ApiIcon from "@mui/icons-material/Code"
 import SuccessIcon from "@mui/icons-material/Check"
 import InfoIcon from "@mui/icons-material/Help"
 import EmailIcon from "@mui/icons-material/EmailOutlined"
+import SpyIcon from "@mui/icons-material/RemoveRedEye"
 import ShareIcon from "@mui/icons-material/Share"
 import WarningIcon from "@mui/icons-material/Warning"
 import ErrorIcon from "@mui/icons-material/Error"
@@ -36,6 +38,7 @@ import ExpandIcon from "@mui/icons-material/MenuOpen"
 import WhereIcon from "@mui/icons-material/LocationOnOutlined"
 import TechstackIcon from "@mui/icons-material/CodeOutlined"
 import BlogIcon from "@mui/icons-material/NewspaperOutlined"
+import FishIcon from "@mui/icons-material/Phishing"
 
 export default function Icon(props: any) {
   let { icon, color } = props
@@ -44,6 +47,12 @@ export default function Icon(props: any) {
   switch (icon) {
     case "home":
       iconFragment = <HomeIcon color={color} />
+      break
+    case "fish":
+      iconFragment = <FishIcon color={color} />
+      break
+    case "spy":
+      iconFragment = <SpyIcon color={color} />
       break
     case "blog":
       iconFragment = <BlogIcon color={color} />
@@ -89,6 +98,9 @@ export default function Icon(props: any) {
       break
     case "share":
       iconFragment = <ShareIcon color={color} />
+      break
+    case "leaf":
+      iconFragment = <LeafIcon color={color} />
       break
     case "star":
       iconFragment = <StarIcon color={color} />

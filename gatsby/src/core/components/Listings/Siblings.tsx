@@ -34,7 +34,6 @@ export default function Siblings(props: any) {
   const siblings = useSiblings(slug, parentSlug ,allMarkdown)
   
   return <>
-  
   <List dense>
     {siblings.map((item: any, i: number) => {
       const {

@@ -2,7 +2,7 @@ import {
   notify,
   store,
   setPwaKey,
-  makeFingerprint,
+  getIPGeo,
 } from "../../../core"
 
 export const startTing = (): any => async (dispatch: any) => {
@@ -19,7 +19,7 @@ export const startTing = (): any => async (dispatch: any) => {
           docTitle: document.title,
         }
       }}))
-      dispatch(makeFingerprint())
+      dispatch(getIPGeo())
     } catch (e: any) {
       dispatch(notify(
         "TING202",

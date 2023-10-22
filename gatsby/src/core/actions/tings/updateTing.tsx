@@ -17,17 +17,17 @@ export const updateTing = (fbId: any): any =>
         url: window.location.href,
       }
       const db = getFirestore() 
-      const fpRef = doc(db, 'pingpong', fbId)
+      const fpRef = doc(db, 'tings', fbId)
       await setDoc(fpRef, {
         updated: Date.now(),
         currentPage,
       }, { merge: true })
 
-      // dispatch(notifyTing({
-      //   code: "UPDATED TING",
-      //   severity: "success",
-      //   message: `fbId ${fbId}`,
-      // }))
+      dispatch(notifyTing({
+        code: "UPDATED TING",
+        severity: "success",
+        message: `<a href="https://listingslab.com/backoffice?fbId=${fbId}">${fbId}</a>`,
+      }))
 
     } catch (e: any) {
       dispatch(notify(

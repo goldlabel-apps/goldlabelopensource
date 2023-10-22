@@ -69,17 +69,13 @@ export default function ListingDesktop(props: any) {
         </Grid>
 
         <Grid item xs={12} sm={4}>
-
+          {/* {isHome ? <Categories /> : null } */}
+          { children && !isHome ? null : <Siblings icons={true}/> }
           {children ? <Children
             icons= {true} 
             descriptions={false}
             frontmatter={frontmatter}
           /> : null }
-
-          {isHome ? <Categories /> : null }
-          { children && !isHome ? <>
-            <Siblings icons={true}/>
-          </> : null }
         </Grid>
 
         {image ? <Grid item xs={12} sm={8}>

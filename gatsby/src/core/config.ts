@@ -1,7 +1,7 @@
 import {ConfigShape} from "./types"
 
 export const glConfig: ConfigShape = {
-    glVersion: "3.0.5",
+    glVersion: "3.1.3",
     siteEmail: "listingslab@gmail.com",
     siteDisplayname: "Milky",
     siteUrl: "https://github.com/listingslab-software/open-source",

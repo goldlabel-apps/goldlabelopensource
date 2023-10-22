@@ -19,7 +19,7 @@ export const checkTing = (): any => async (dispatch: any) => {
         const {host, fingerprint, ipGeo} = tings
         const uid = `${host}_${ipGeo.ip}_${fingerprint}`
         const db = getFirestore()
-        const q = query(collection(db, "pingpong"), where("uid", "==", uid))
+        const q = query(collection(db, "tings"), where("uid", "==", uid))
         const snap = await getDocs(q)
         let existing: any = null
         snap.forEach((doc) => {
@@ -28,7 +28,7 @@ export const checkTing = (): any => async (dispatch: any) => {
             ...doc.data(),
           }
         })
-        if(host !== "localhost:8000"){
+        if (host !== "localhost:8000"){
           if (!existing){
             dispatch(createTing(tings))
           } else {
