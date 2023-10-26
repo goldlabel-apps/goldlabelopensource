@@ -10,6 +10,7 @@ import {
   usePwaSelect,
   selectFrontmatter,
   navigate,
+  ShareMenu,
 } from "../../../core"
 
 export default function Meta(props: any) {
@@ -69,14 +70,7 @@ export default function Meta(props: any) {
             <Icon icon="twitter" />
           </IconButton> : null }
           
-
-          <IconButton
-            color="primary"
-            onClick={() => {
-              console.log("share")
-            }}>
-            <Icon icon="share" />
-          </IconButton>
+          <ShareMenu />
 
         </Box>
 }

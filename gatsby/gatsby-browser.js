@@ -1,6 +1,7 @@
 exports.onServiceWorkerUpdateReady = () => {
-  const answer = window.confirm("version 2.0.8")
-  if (answer === true) {
-    window.location.reload()
-  }
+  window.location.reload()
+  // const answer = window.confirm("Update Goldlabel?")
+  // if (answer === true) {
+  //   window.location.reload()
+  // }
 }

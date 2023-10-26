@@ -43,7 +43,7 @@ export default function MarkdownPage(data: any) {
 
   return (<>
             <SEO appData={{...data}}/>
-            <PWA appData={{...data}} />
+            <PWA appData={{...data}} type={"markdown"} />
           </>
   )
 }

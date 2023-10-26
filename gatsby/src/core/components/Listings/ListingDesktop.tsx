@@ -1,4 +1,5 @@
 import * as React from "react"
+import {glConfig} from "../../../config"
 import {
   Box,
   Grid,
@@ -11,23 +12,33 @@ import {
   selectFrontmatter,
   Title,
   Children,
-  Categories,
+  Meta,
   Siblings,
   Markdown,
   Font,
   CatNav,
+  ScrollButton,
 } from "../../../core"
 
 export default function ListingDesktop(props: any) {
   const frontmatter = usePwaSelect(selectFrontmatter)
   const {appData} = props
   const siteMeta = useSiteMetadata()
+  const {plugins} = glConfig
+  const {backoffice} = plugins
+  let hasBackoffice = false
+  if (backoffice) hasBackoffice = true
+  const {
+    version,
+    siteTitle,
+    siteDescription,
+  } = siteMeta
   let isHome = false
   if (appData.path === "/") isHome = true
   let children: any = false
   let doc: any = null
-  let title = siteMeta.siteTitle
-  let description = siteMeta.siteDescription
+  let title = siteTitle
+  let description = siteDescription
   let html: any = null 
   let parentSlug: any = null 
   let image: any = null
@@ -55,7 +66,7 @@ export default function ListingDesktop(props: any) {
 
   return <>
     <Container maxWidth="md">
-      
+      <div id="topAnchor" />
       <Grid container spacing={1}>
       
         <Grid item xs={12}>
@@ -69,13 +80,20 @@ export default function ListingDesktop(props: any) {
         </Grid>
 
         <Grid item xs={12} sm={4}>
-          {/* {isHome ? <Categories /> : null } */}
-          { children && !isHome ? null : <Siblings icons={true}/> }
+          
+        
+
+          <Siblings 
+            frontmatter={frontmatter}
+            icons= {true}  
+          />
+          
           {children ? <Children
             icons= {true} 
             descriptions={false}
             frontmatter={frontmatter}
           /> : null }
+
         </Grid>
 
         {image ? <Grid item xs={12} sm={8}>
@@ -84,26 +102,50 @@ export default function ListingDesktop(props: any) {
                 {description}
               </Font>
             </Box> : null }
-
-              <Box sx={{display: "flex"}}>
-                <Box sx={{mt:2}}>
-                  <CatNav />
-                </Box>
-                <Box sx={{flexGrow:1}}/>
-              </Box>
-
               <Box sx={{mt:2}}>
                 <Image 
                   alt={`${title}. ${description}`}
                   src={image}
                   height={250}
                 />
-                {html ? <Markdown html={html}/> : null }
-            </Box>
-            
+              </Box>
+              <Box sx={{display: "flex"}}>
+                <Box sx={{mt:2}}>
+                  <CatNav />
+                </Box>
+                <Box sx={{flexGrow:1}}/>
+                <Box sx={{mt:1}}>
+                  <Meta frontmatter={frontmatter}/>
+                </Box>
+              </Box>
+              {html ? <Markdown html={html}/> : null }
           </Grid> : null }
       </Grid>
 
+      <Grid item xs={12}>
+        <Box sx={{m:1.5, display: "flex"}}>
+            <Box sx={{flexGrow:1}} />
+            <Box sx={{m:1.5}}>
+            
+              {hasBackoffice ? <>
+                <a href="/backoffice" title="Backoffice">
+                <Font variant="small" color="muted">
+                  Backoffice {version}
+                </Font>
+              </a>
+              </> : <>
+                <Font variant="small" color="muted">
+                    Backoffice {version}
+                </Font>
+              </> }
+            </Box>
+            <Box>
+              <ScrollButton />
+            </Box>
+        </Box>
+      </Grid>
+      
+      <div id="bottomAnchor" />
     </Container>
   </>
 }

@@ -1,15 +1,30 @@
 import {
   KeyValueShape,
 } from "../types"
-import {glConfig} from "../config"
+import {glConfig} from "../../config"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "./store"
 import {coreState} from "./coreState"
+import {pluginsState} from "../../plugins/pluginsState"
 
-const initialState: any = {
+type PluginsShape = {
+  backoffice: any
+  lingua: any
+}
+type CoreReducerShape = {
+  bootTime: number
+  config: any
+  core: any
+  auth: any
+  plugins: PluginsShape
+}
+
+const initialState: CoreReducerShape = {
   bootTime: Date.now(),
+  auth: null,
   config: glConfig,
   core: coreState,
+  plugins: pluginsState,
 }
 
 export const pwaSlice = createSlice({
@@ -31,6 +46,7 @@ export const selectNotifyr = (state: RootState) => state.core.notifyr
 export const selectTings = (state: RootState) => state.core.tings
 export const selectDisplay = (state: RootState) => state.core.display
 export const selectFrontmatter = (state: RootState) => state.core.frontmatter
+export const selectAuth = (state: RootState) => state.auth
 
 export const { setPwaKey } = pwaSlice.actions
 export default pwaSlice.reducer

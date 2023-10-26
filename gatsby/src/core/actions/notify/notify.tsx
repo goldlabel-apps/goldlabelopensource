@@ -4,7 +4,7 @@ import {
 import {
   store,
   setPwaKey,
-} from "../../core"
+} from "../../../core"
 
 export const notify = (
   code: string,

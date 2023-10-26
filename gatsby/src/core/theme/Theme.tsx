@@ -1,5 +1,5 @@
 import React from "react"
-import {glConfig} from "../../core/config"
+import {glConfig} from "../../config"
 import {ThemeShape} from "../types"
 import {
   createTheme,

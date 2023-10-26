@@ -2,20 +2,24 @@ import {
     AlertColor,
 } from "@mui/material"
 
+export type FieldShape = {
+    title: string
+    slug: string
+}
+
 export type CoreShape = {
     user: any
+    scrollDirection: "up" | "down"
     frontmatter: any
-    tings: any
     authed: boolean
     authing: boolean
     display: any
     notifyr: any
-    desktopDrawer: boolean
-    mobileMenu: boolean
     activeCategory: string|null
 }
 
 export type GatsbyShape = {
+    version: string
     siteUrl: string
     siteEmail: string
     siteDisplayname: string
@@ -133,9 +137,4 @@ export type CollectionShape = {
     fsUrl: string
     apiUrl?: string
     fields: Array<FieldShape>
-}
-
-export type FieldShape = {
-    title: string
-    slug: string
 }

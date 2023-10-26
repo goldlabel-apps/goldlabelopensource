@@ -1,4 +1,5 @@
-import {glConfig} from "./src/core/config"
+import pJSON from "./src/core/package.json"
+import {glConfig} from "./src/config"
 import {GatsbyShape} from "./src/core/types"
 import type { GatsbyConfig } from "gatsby"
 
@@ -16,6 +17,7 @@ const siteEmail = glConfig.siteEmail
 const siteDisplayname = glConfig.siteDisplayname
 
 const siteMetadata: GatsbyShape =  {
+  version: pJSON.version,
   siteTitle,
   siteEmail,
   siteDisplayname,
@@ -29,18 +31,16 @@ const siteMetadata: GatsbyShape =  {
   siteKeywords,
   siteTwitter,
   twitterUsername: siteTwitter,
-  siteTheme,
   siteFacebook,
+  siteTheme,
   siteDefaultLocale,
 }
-
 const config: GatsbyConfig = {
   siteMetadata,
   graphqlTypegen: false,
   plugins: [
     { resolve: 'gatsby-plugin-next-seo'},
-    {
-      resolve: 'gatsby-plugin-manifest',
+    { resolve: 'gatsby-plugin-manifest',
       options: {
         start_url: `/`,
         display: `standalone`,
@@ -51,19 +51,16 @@ const config: GatsbyConfig = {
         theme_color: siteTheme,
       }
     },
-    {
-      resolve: `gatsby-plugin-offline`,
+    { resolve: `gatsby-plugin-offline`,
     },
-    {
-      resolve: `gatsby-source-filesystem`,
+    { resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown`,
         path: `${__dirname}/src/markdown`,
       },
       __key: "markdown"
     },
-    {
-      resolve: 'gatsby-source-filesystem',
+    { resolve: 'gatsby-source-filesystem',
       options: {
         "name": "pages",
         "path": "./src/pages/"
