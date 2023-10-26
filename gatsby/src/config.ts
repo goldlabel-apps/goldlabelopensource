@@ -1,7 +1,6 @@
-import {ConfigShape} from "./types"
+import {ConfigShape} from "../types"
 
 export const glConfig: ConfigShape = {
-    glVersion: "3.1.3",
     siteEmail: "listingslab@gmail.com",
     siteDisplayname: "Milky",
     siteUrl: "https://github.com/listingslab-software/open-source",
@@ -18,8 +17,12 @@ export const glConfig: ConfigShape = {
         primaryColor: "#C5C5C5",
         secondaryColor: "#616161",
     },
-    features: {
+    plugins: {
+        backoffice: {
+            enabled: true,
+        },
         lingua: {
+            enabled: false,
             localeList: ["en", "pi", "mt", "de", "cn", "es"],
             localeMeta: {
                 en: {

@@ -33,6 +33,7 @@ export default function CatNav() {
   let isHome = false
   if (slug === "/") isHome = true
   if (isHome) return null
+  // console.log("parent?", parent)
   return (
       <Breadcrumbs aria-label="breadcrumb">
         {!isHome ? <Link
@@ -52,24 +53,23 @@ export default function CatNav() {
           </Font> : null }
           
         </Link> : null }
-        {isHome ? <>
-          {parent ? <Link
-            underline="hover"
-            sx={{ display: 'flex', alignItems: 'center', cursor: "pointer" }}
-            color="inherit"
-            onClick={(e: React.MouseEvent) => {
-              e.preventDefault()
-              dispatch(navigate(parent.frontmatter.slug, "_self"))
-            }}
-          >
-              <Box sx={{ pt: 0.5, pr: 1 }}>
-                <Icon icon={parent.frontmatter.icon} color="primary"  />
-              </Box>
-              {isBig ? <Font variant="small">
-                {parent.frontmatter.title}
-              </Font> : null }
-          </Link> : null }
-        </> : null}
+        
+        {/* {parent ? <Link
+          underline="hover"
+          sx={{ display: 'flex', alignItems: 'center', cursor: "pointer" }}
+          color="inherit"
+          onClick={(e: React.MouseEvent) => {
+            e.preventDefault()
+            dispatch(navigate(parent.frontmatter.slug, "_self"))
+          }}
+        >
+            <Box sx={{ pt: 0.5, pr: 1 }}>
+              <Icon icon={parent.frontmatter.icon || "left"} color="primary"  />
+            </Box>
+            {isBig ? <Font variant="small">
+              {parent.frontmatter.title || "Back"}
+            </Font> : null }
+        </Link> : null } */}
         
 
         {slug !== "/" ? <Box

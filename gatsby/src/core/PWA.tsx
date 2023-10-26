@@ -1,5 +1,5 @@
 import React from "react"
-import "./theme/style.css"
+import "../styles.css"
 import {
   CssBaseline,
 } from "@mui/material"
@@ -12,23 +12,15 @@ import {
 export default function PWA(props: any) {
   const {
     appData,
+    type,
   } = props
 
   return <>
             <WrapState>
               <Theme>
                 <CssBaseline />
-                {/* <Tings /> */}
-                <App appData={appData} />
-                
+                <App appData={appData} type={type} />
               </Theme>
             </WrapState>
           </>
 }
-
-/*
-
-<App location={location} appData={appData} type={type}>
-  {children}
-</App>
-*/

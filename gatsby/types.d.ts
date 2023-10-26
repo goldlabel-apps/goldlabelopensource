@@ -1,5 +1,19 @@
+export type GeolocatorShape = {
+  blinking: boolean
+  bigMapOpen: boolean
+  flyTo?: any
+  config: FeatureCongigShape
+}
+
+export type FeatureCongigShape = {
+  enabled: boolean
+  options: any
+}
+
 export type GatsbyShape = {
   siteUrl: string
+  siteEmail: string
+  siteDisplayname: string
   siteIcon: string
   siteTitle: string
   title: string
@@ -18,15 +32,13 @@ export type FormsShape = {
   initted?: boolean
 }
 
-export type GeolocatorShape = {
-  blinking: boolean
-}
-
 export type ConfigShape = {
-  goldlabelVersion: string
   siteTitle: string
   siteDescription: string
   siteUrl: string
+  siteDisplayname: string
+  siteFacebook: string
+  siteEmail: string
   siteImage: string
   siteIcon: string
   siteTwitter: string
@@ -35,7 +47,7 @@ export type ConfigShape = {
   siteFooterUrl?: string
   siteDefaultLocale?: string
   theme: ThemeShape
-  features: any
+  plugins: any
 }
 
 export type ThemeShape = {

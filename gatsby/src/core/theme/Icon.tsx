@@ -3,19 +3,26 @@ import BlokeyIcon from "./SVGIcons/BlokeyIcon"
 import WordpressIcon from "./SVGIcons/WordpressIcon"
 import GoldlabelIcon from "./SVGIcons/GoldlabelOutlined"
 import HomeIcon from "@mui/icons-material/HomeOutlined"
-import NewsIcon from "@mui/icons-material/AttachFile"
+import NewsIcon from "@mui/icons-material/GradeOutlined"
 import ExampleIcon from "@mui/icons-material/RocketLaunch"
 import MedicalIcon from "@mui/icons-material/MedicalServicesOutlined"
 import ActivitesIcon from "@mui/icons-material/DirectionsRun"
 import DivingIcon from "@mui/icons-material/ScubaDiving"
 import DiveshopIcon from "@mui/icons-material/RecommendOutlined"
+import CancelIcon from "@mui/icons-material/CancelOutlined"
+import SearchIcon from "@mui/icons-material/SearchOutlined"
 import CategoryIcon from "@mui/icons-material/CategoryOutlined"
-import DefaultIcon from "@mui/icons-material/DisabledByDefault"
+import WorkIcon from "@mui/icons-material/WorkHistoryOutlined"
+import EditIcon from "@mui/icons-material/EditOutlined"
 import LeafIcon from "@mui/icons-material/EnergySavingsLeafOutlined"
 import ApiIcon from "@mui/icons-material/Code"
+import TingsIcon from "@mui/icons-material/MarkUnreadChatAltOutlined"
+import SignoutIcon from "@mui/icons-material/ExitToAppOutlined"
+import DeleteIcon from "@mui/icons-material/DeleteOutline"
 import SuccessIcon from "@mui/icons-material/Check"
 import InfoIcon from "@mui/icons-material/Help"
 import EmailIcon from "@mui/icons-material/EmailOutlined"
+import SigninIcon from "@mui/icons-material/LoginOutlined"
 import SpyIcon from "@mui/icons-material/RemoveRedEye"
 import ShareIcon from "@mui/icons-material/Share"
 import WarningIcon from "@mui/icons-material/Warning"
@@ -39,6 +46,7 @@ import WhereIcon from "@mui/icons-material/LocationOnOutlined"
 import TechstackIcon from "@mui/icons-material/CodeOutlined"
 import BlogIcon from "@mui/icons-material/NewspaperOutlined"
 import FishIcon from "@mui/icons-material/Phishing"
+import BackofficeIcon from "@mui/icons-material/SecurityOutlined"
 
 export default function Icon(props: any) {
   let { icon, color } = props
@@ -55,10 +63,25 @@ export default function Icon(props: any) {
       iconFragment = <SpyIcon color={color} />
       break
     case "blog":
-      iconFragment = <BlogIcon color={color} />
+      iconFragment = <NewsIcon color={color} />
+      break
+    case "search":
+      iconFragment = <SearchIcon color={color} />
+      break
+    case "cancel":
+      iconFragment = <CancelIcon color={color} />
+      break
+    case "delete":
+      iconFragment = <DeleteIcon color={color} />
       break
     case "techstack":
       iconFragment = <TechstackIcon color={color} />
+      break
+    case "backoffice":
+      iconFragment = <BackofficeIcon color={color} />
+      break
+    case "edit":
+      iconFragment = <EditIcon color={color} />
       break
     case "example":
       iconFragment = <ExampleIcon color={color} />
@@ -150,6 +173,9 @@ export default function Icon(props: any) {
     case "category":
       iconFragment = <CategoryIcon color={color} />
       break
+    case "tings":
+      iconFragment = <TingsIcon color={color} />
+      break
     case "info":
       iconFragment = <InfoIcon color={color} />
       break
@@ -159,14 +185,23 @@ export default function Icon(props: any) {
     case "error":
       iconFragment = <ErrorIcon color={color} />
       break
+    case "signout":
+      iconFragment = <SignoutIcon color={color} />
+      break
     case "api":
       iconFragment = <ApiIcon color={color} />
+      break
+    case "work":
+      iconFragment = <WorkIcon color={color} />
+      break
+    case "signin":
+      iconFragment = <SigninIcon color={color} />
       break
     case "blokey":
       iconFragment = <BlokeyIcon color={color} />
       break
     default:
-      iconFragment = <DefaultIcon color="error" />
+      iconFragment = <GoldlabelIcon color={color} />
   }
   
   return <>{iconFragment}</>

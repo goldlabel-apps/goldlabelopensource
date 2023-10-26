@@ -14,6 +14,7 @@ import {
   usePwaDispatch,
   usePwaSelect,
   selectFrontmatter,
+  // useParent,
 } from "../../../core"
 
 export default function Siblings(props: any) {
@@ -22,7 +23,6 @@ export default function Siblings(props: any) {
     icons,
   } = props
   const frontmatter = usePwaSelect(selectFrontmatter)
-  // console.log("frontmatter", frontmatter)
   if(!frontmatter) return null
   const dispatch = usePwaDispatch()
   if (!frontmatter) return null
@@ -32,9 +32,30 @@ export default function Siblings(props: any) {
   } = frontmatter
   const allMarkdown = useAllMarkdown()
   const siblings = useSiblings(slug, parentSlug ,allMarkdown)
-  
+  // const parent = useParent(parentSlug, allMarkdown)
   return <>
-  <List dense>
+
+            {/* <pre>parentSlug: {JSON.stringify(parentSlug, null, 2)}</pre> */}
+            <List dense>
+                {parentSlug ? <ListItemButton
+                  color="primary"
+                  onClick={() => {
+                  dispatch(navigate(parentSlug, "_self"))
+                }}>
+                  {icons ? <ListItemIcon>
+                  <Icon icon={"left"} color="primary"/>
+                </ListItemIcon> : null }
+                {/* <ListItemText
+                  primary={<Font variant={!descriptions ? "small" : ""}>
+                              {title}
+                            </Font> }
+                  
+                /> */}
+              </ListItemButton> : null }
+                
+
+              
+
     {siblings.map((item: any, i: number) => {
       const {
         title,
