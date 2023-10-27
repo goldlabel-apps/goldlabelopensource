@@ -136,6 +136,7 @@ const SingleTing = () => {
                 <Box sx={{display: "flex"}}>
                   <Box sx={{my:2}}>
                   <Avatar sx={{
+                    m:1,
                     width: 32, 
                     height: 32,
                   }} 
