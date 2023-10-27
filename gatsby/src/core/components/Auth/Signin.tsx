@@ -71,16 +71,7 @@ export function Signin() {
                     </Font>
                   </Box>
                   <Box sx={{my:2}}>
-                  <Button 
-                      color="primary"
-                      onClick={(e: React.MouseEvent) => {
-                        e.preventDefault()
-                          dispatch(navigate("https://listingslab.com/goldlabel/backoffice/", "_blank"))
-                      }}>
-                        <Font variant="small">
-                          About
-                        </Font>
-                    </Button>
+                  
                     <Button 
                       color="primary"
                       onClick={(e: React.MouseEvent) => {

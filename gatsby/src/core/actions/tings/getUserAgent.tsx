@@ -19,6 +19,7 @@ export const getUserAgent = (): any => async (dispatch: any) => {
           ...tings, 
           userAgent,
           complete: true,
+          tingtime: Date.now(),
         }
       }}))
     } catch (e: any) {

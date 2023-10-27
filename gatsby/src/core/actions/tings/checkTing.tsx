@@ -28,13 +28,14 @@ export const checkTing = (): any => async (dispatch: any) => {
             ...doc.data(),
           }
         })
-        if (host !== "localhost:8000"){
+        // let hideLocal = true
+        // if (host !== "localhost:8000"){
           if (!existing){
             dispatch(createTing(tings))
           } else {
             dispatch(updateTing(existing.fbId))
           }
-        }
+        // }
     } catch (e: any) {
       dispatch(notify(
         "TC 0",

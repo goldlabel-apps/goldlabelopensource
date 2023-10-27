@@ -13,7 +13,7 @@ import {
     scrollTo,
 } from "../../../core"
 import {
-  SubscribeTings,
+  ViewTings,
 } from "../../Backoffice"
 
 export default function Appshell() {
@@ -24,7 +24,7 @@ export default function Appshell() {
     <React.Fragment>
       <div id="topAnchor" />
 
-      {mode === "tings" ? <SubscribeTings /> : null }
+      {mode === "tings" ? <ViewTings /> : null }
 
       <AppBar position="fixed" color="inherit" sx={{ top: "auto", bottom: 0 }}>
         <Toolbar>

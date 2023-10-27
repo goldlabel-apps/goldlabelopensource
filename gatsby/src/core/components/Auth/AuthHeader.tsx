@@ -1,5 +1,6 @@
 import React from "react"
 import {
+    Avatar,
     Box,
     IconButton,
 } from "@mui/material"
@@ -25,11 +26,11 @@ export default function AuthHeader({title}) {
                         e.preventDefault()
                         dispatch(navigate("/", "_self"))
                     }} >
-                    <Icon icon="backoffice" />
+                    <Avatar src="/svg/iOS.svg"/>
                 </IconButton>
                     
                 </Box>
-                <Box sx={{mt:1}}>
+                <Box sx={{mt:2.5}}>
                     <Font variant="title">
                         {title}
                     </Font>

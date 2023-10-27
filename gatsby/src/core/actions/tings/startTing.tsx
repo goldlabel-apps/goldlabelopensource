@@ -12,7 +12,8 @@ export const startTing = (): any => async (dispatch: any) => {
       dispatch(setPwaKey({ key: "core", value: {
         ...core,
         tings: {
-          ...tings, 
+          ...tings,
+          tingTime: Date.now(), 
           host: window.location.host,
           slug: window.location.pathname,
           href: window.location.href,

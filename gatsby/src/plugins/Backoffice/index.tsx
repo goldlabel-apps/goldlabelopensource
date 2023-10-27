@@ -2,7 +2,8 @@ import {Backoffice} from "./Backoffice"
 import {BackofficeSEO} from "./components/BackofficeSEO"
 import Appshell from "./components/Appshell"
 import {TingListItem} from "./components/TingListItem"
-import SubscribeTings from "./components/SubscribeTings"
+import {Device} from "./components/Device"
+import ViewTings from "./components/ViewTings"
 import SingleTing from "./components/SingleTing"
 import {setBackofficeKey} from "./actions/setBackofficeKey"
 import {uidSelect} from "./actions/uidSelect"
@@ -16,11 +17,12 @@ export {
     selectBackoffice,
     BackofficeSEO,
     Appshell,
+    Device,
     TingListItem,
     setBackofficeKey,
     deleteTing,
     uidSelect,
-    SubscribeTings,
+    ViewTings,
     SingleTing,
     
 }
