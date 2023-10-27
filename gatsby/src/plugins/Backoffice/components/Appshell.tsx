@@ -28,7 +28,7 @@ export default function Appshell() {
 
       <AppBar position="fixed" color="inherit" sx={{ top: "auto", bottom: 0 }}>
         <Toolbar>
-          <IconButton 
+          {/* <IconButton 
             color="primary"
             aria-label="signout"
             onClick={(e: React.MouseEvent) => {
@@ -36,7 +36,19 @@ export default function Appshell() {
               dispatch(firebaseSignout())
             }}>
             <Icon icon="signout" />
+          </IconButton> */}
+
+          <IconButton 
+            color="primary"
+            aria-label="home"
+            onClick={(e: React.MouseEvent) => {
+              e.preventDefault()
+              dispatch(navigate("/", "_self"))
+            }}>
+            <Icon icon="home" />
           </IconButton>
+
+
           <Box sx={{ flexGrow: 1 }} />  
           
 
@@ -51,15 +63,7 @@ export default function Appshell() {
             <Icon icon="up" />
           </IconButton>
 
-          <IconButton 
-            color="primary"
-            aria-label="home"
-            onClick={(e: React.MouseEvent) => {
-              e.preventDefault()
-              dispatch(navigate("/", "_self"))
-            }}>
-            <Icon icon="home" />
-          </IconButton>
+          
 
         </Toolbar>
       </AppBar>

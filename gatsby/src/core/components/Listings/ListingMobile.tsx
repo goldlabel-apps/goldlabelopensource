@@ -115,12 +115,12 @@ export default function ListingMobile(props: any) {
                 {hasBackoffice ? <>
                   <a href="/backoffice" title="Backoffice">
                   <Font variant="small" color="muted">
-                    Backoffice {version}
+                    {version}
                   </Font>
                 </a>
                 </> : <>
                   <Font variant="small" color="muted">
-                    Backoffice {version}
+                    {version}
                   </Font>
                 </> }
               </Box>
