@@ -2,6 +2,19 @@ import * as React from "react"
 import BlokeyIcon from "./SVGIcons/BlokeyIcon"
 import WordpressIcon from "./SVGIcons/WordpressIcon"
 import GoldlabelIcon from "./SVGIcons/GoldlabelOutlined"
+import ChromeIcon from "./SVGIcons/devices/ChromeIcon"
+import SafariIcon from "./SVGIcons/devices/SafariIcon"
+import EdgeIcon from "./SVGIcons/devices/EdgeIcon"
+import FirefoxIcon from "./SVGIcons/devices/FirefoxIcon"
+import IphoneIcon from "./SVGIcons/devices/IphoneIcon"
+import LinuxIcon from "./SVGIcons/devices/LinuxIcon"
+import MacIcon from "./SVGIcons/devices/MacIcon"
+import WindowsIcon from "./SVGIcons/devices/WindowsIcon"
+import XboxIcon from "./SVGIcons/devices/XboxIcon"
+import AndroidIcon from "@mui/icons-material/Android"
+import DesktopMacIcon from "@mui/icons-material/DesktopMacOutlined"
+import DesktopIcon from "@mui/icons-material/DesktopWindowsOutlined"
+import MobileIcon from "@mui/icons-material/PhoneAndroid"
 import HomeIcon from "@mui/icons-material/HomeOutlined"
 import NewsIcon from "@mui/icons-material/GradeOutlined"
 import ExampleIcon from "@mui/icons-material/RocketLaunch"
@@ -44,9 +57,72 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp"
 import ExpandIcon from "@mui/icons-material/MenuOpen"
 import WhereIcon from "@mui/icons-material/LocationOnOutlined"
 import TechstackIcon from "@mui/icons-material/CodeOutlined"
-import BlogIcon from "@mui/icons-material/NewspaperOutlined"
 import FishIcon from "@mui/icons-material/Phishing"
 import BackofficeIcon from "@mui/icons-material/SecurityOutlined"
+
+/*
+home,
+fish,
+mobile
+blog,
+search,
+cancel,
+delete,
+techstack,
+backoffice,      
+edit,
+example,
+goldlabel,
+wordpress
+where,
+whatsapp,
+expand,
+web,
+twitter
+facebook,
+ting,
+settings,
+email,
+share,
+leaf,
+star,
+food,
+medical,
+scooter,
+diveshop,
+diving,
+news,
+activities
+left,
+down,
+up,
+right,
+menu,
+success,
+categories,
+category,
+tings,
+info,
+warning,
+error,
+signout,
+api,
+work,
+signin,
+blokey,
+android,
+chrome,
+desktop,
+desktopmac,
+edge,
+linux,
+windows,
+xbox,
+mac,
+iphone,
+safari,
+firefox
+*/
 
 export default function Icon(props: any) {
   let { icon, color } = props
@@ -58,6 +134,9 @@ export default function Icon(props: any) {
       break
     case "fish":
       iconFragment = <FishIcon color={color} />
+      break
+    case "mobile":
+      iconFragment = <MobileIcon color={color} />
       break
     case "spy":
       iconFragment = <SpyIcon color={color} />
@@ -200,9 +279,44 @@ export default function Icon(props: any) {
     case "blokey":
       iconFragment = <BlokeyIcon color={color} />
       break
+    case "android":
+      iconFragment = <AndroidIcon color={color} />
+      break
+    case "chrome":
+      iconFragment = <ChromeIcon color={color} />
+      break
+    case "desktop":
+      iconFragment = <DesktopIcon color={color} />
+      break
+    case "desktopmac":
+      iconFragment = <DesktopMacIcon color={color} />
+      break
+    case "edge":
+      iconFragment = <EdgeIcon color={color} />
+      break
+    case "firefox":
+        iconFragment = <FirefoxIcon color={color} />
+        break
+    case "safari":
+      iconFragment = <SafariIcon color={color} />
+      break
+    case "iphone":
+      iconFragment = <IphoneIcon color={color} />
+      break
+    case "mac":
+      iconFragment = <MacIcon color={color} />
+      break
+    case "xbox":
+      iconFragment = <XboxIcon color={color} />
+      break
+    case "windows":
+      iconFragment = <WindowsIcon color={color} />
+      break
+    case "linux":
+      iconFragment = <LinuxIcon color={color} />
+      break
     default:
-      iconFragment = <GoldlabelIcon color={color} />
-  }
-  
+      iconFragment = <ErrorIcon color={"warning"} />
+  }  
   return <>{iconFragment}</>
 }
