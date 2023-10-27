@@ -1,7 +1,7 @@
 ---
 order: 10
 slug: "/goldlabel"
-title: "Features"
+title: "Goldlabel"
 description: "An option if you're thinking of updating a tired old WordPress site"
 cover: false
 category: "goldlabel"

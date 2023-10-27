@@ -15,11 +15,6 @@ facebook: "https://www.facebook.com/listingslabspage"
 phone: "+356-9964-2755"
 flag: "mt"
 ---
-### [About Goldlabel](/goldlabel)
-
-- [Tings](/goldlabel/tings/)
-- [Flash](/goldlabel/flash/)
-
-### [Malta Diving](/diving)
+### [An alternative to WordPress](/goldlabel)
 
 Goldlabel Open Source is a modern alternative to WordPress. It's Open Source & free. You don’t have to pay for it. Which is how it should be. Should you do us the honour of trying it out and deciding that it’s an approach which suits you, then there are pathways for you to do that without suddenly being charged an arm and a leg
