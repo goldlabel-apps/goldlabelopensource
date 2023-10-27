@@ -1,0 +1,10 @@
+{
+  "name": "goldlabel-core",
+  "version": "3.2.3",
+  "description": "Artificially Intelligent Multiple Progressive Web Apps",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@listingslab",
+  "license": "MIT"
+}

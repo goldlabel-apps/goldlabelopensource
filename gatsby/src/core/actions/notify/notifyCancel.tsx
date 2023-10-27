@@ -2,7 +2,7 @@ import {
   notify,
   store,
   setPwaKey,
-} from "../../core"
+} from "../../../core"
 
 export const notifyCancel = (): any =>
   async (dispatch: any) => {

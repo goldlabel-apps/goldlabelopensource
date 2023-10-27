@@ -1,4 +1,4 @@
-import { PaletteMode } from "@mui/material"
+import { PaletteMode, lighten } from "@mui/material"
 
 export function makeTheme(
   mode: PaletteMode,
@@ -20,9 +20,10 @@ export function makeTheme(
       info: {
         main: primary,
       },
-      // action: {
-      //   active: mode === "dark" ? primary : secondary,
-      // },
+      background: {
+        // default: lighten(secondary, 0.99),
+        // paper: lighten(secondary, 0.95),
+      },
     },
   }
 }

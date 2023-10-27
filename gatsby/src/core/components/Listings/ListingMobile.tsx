@@ -1,6 +1,6 @@
 import * as React from 'react'
+import {glConfig} from "../../../config"
 import {
-  IconButton,
   AppBar,
   Box,
   Toolbar,
@@ -8,7 +8,7 @@ import {
 } from "@mui/material"
 import {
   Image,
-  Icon,
+  Font,
   TitleMobile,
   useSiteMetadata,
   Children,
@@ -16,18 +16,25 @@ import {
   Markdown,
   Siblings,
   usePwaDispatch,
+  usePwaSelect,
+  selectCore,
   Meta,
-  scrollTop,
   CatNav,
+  getIsElementInView,
+  ScrollButton,
 } from "../../../core"
 
-export default function ListingMobile(props: any) {
+export default function ListingMobile(props: any) {  
   const {appData} = props
-  const dispatch = usePwaDispatch()
+  const core = usePwaSelect(selectCore)
   const siteMeta = useSiteMetadata()
   let isHome = false
   if (appData.path === "/")isHome = true
-
+  const {plugins} = glConfig
+  const {backoffice} = plugins
+  let hasBackoffice = false
+  const {version} = siteMeta
+  if (backoffice) hasBackoffice = true
   let title = siteMeta.siteTitle
   let description = siteMeta.siteDescription
   let doc: any = null
@@ -52,15 +59,16 @@ export default function ListingMobile(props: any) {
   if (!paid){
     children = true
   }
+  
   return <>
           <Container maxWidth="md">
-          <div id="top" />
-          <Box sx={{ pb: '50px' }}>
+            <div id="topAnchor" />
+            <Box sx={{ pb: '50px' }}>
 
-            <TitleMobile
-              title={title}
-              description={description}
-            />
+              <TitleMobile
+                title={title}
+                description={description}
+              />
 
               {image ? <>
                 <Box>
@@ -83,52 +91,62 @@ export default function ListingMobile(props: any) {
               </Box>
               
             
-            {children ? <Box sx={{}}>
-              <Children 
-                icons= {true} 
-                frontmatter={frontmatter}
-              />
-            </Box> : null }
+              {children ? <Box sx={{}}>
+                <Children 
+                  icons= {true} 
+                  frontmatter={frontmatter}
+                />
+              </Box> : null }
 
-            {/* <Siblings frontmatter={frontmatter}/> */}
+              {html ? <Box sx={{}}>
+                <Markdown html={html}/>
+              </Box> : null }
+              
+              {!isHome ? <Siblings 
+                      frontmatter={frontmatter}
+                      icons= {false}  
+                    /> : <>
+                <Categories />
+              </> }
 
-            {html ? <Box sx={{}}>
-              <Markdown html={html}/>
-            </Box> : null }
-            
-            
-            {!isHome ? <Siblings 
-                    frontmatter={frontmatter}
-                    icons= {true}  
-                  /> : <>
-              <Categories />
-            </> }
-
+            <Box sx={{m:1.5, display: "flex"}}>
+              <Box sx={{flexGrow:1}} />
+              <Box>
+                {hasBackoffice ? <>
+                  <a href="/backoffice" title="Backoffice">
+                  <Font variant="small" color="muted">
+                    Backoffice {version}
+                  </Font>
+                </a>
+                </> : <>
+                  <Font variant="small" color="muted">
+                    Backoffice {version}
+                  </Font>
+                </> }
+              </Box>
+            </Box>
+            <Box sx={{height: 70}} />
+            <div id="bottomAnchor" />
           </Box>
 
-        <AppBar 
-          position="fixed" 
-          color="inherit" 
-          sx={{ 
-            boxShadow:0, 
-            border: 0,
-            top: 'auto', 
-            bottom: 0, 
-          }}>
-          <Toolbar>
-            <Box sx={{flexGrow:1}} />
-            <IconButton 
-              color="inherit"
-              aria-label="Scroll to top"
-              onClick={(e: React.MouseEvent) => {
-                e.preventDefault()
-                dispatch(scrollTop())
-              }}>
-              <Icon icon="up" color="primary" />
-            </IconButton>
-            <Box sx={{ flexGrow: 1 }} />
-          </Toolbar>
-        </AppBar>
+          <AppBar 
+            position="fixed" 
+            color="inherit" 
+            sx={{ 
+              boxShadow:0, 
+              border: 0,
+              top: 'auto', 
+              bottom: 0, 
+            }}>
+              <Toolbar>
+                <Box sx={{flexGrow:1}} />
+                <Box sx={{ flexGrow: 1 }} />
+                <Box>
+                  <ScrollButton />
+                </Box>
+              </Toolbar>
+            </AppBar>
+            
         </Container>
       </>
 }

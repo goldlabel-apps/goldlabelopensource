@@ -5,21 +5,28 @@ import {
 } from "@mui/material"
 import {
   boot,
+  Signup,
   Tings,
   ListingDesktop,
   ListingMobile,
   Notifyer,
   usePwaDispatch,
+  usePwaSelect,
+  selectDisplay,
   setFrontmatter,
-  useDisplay,
+  WindowResizeListener,
 } from "../core"
+
+import {Backoffice} from "../plugins/Backoffice"
 
 export default function App(props: any) {
   const dispatch = usePwaDispatch()
-  const display = useDisplay()
-  const {mobile} = display
+  const d = usePwaSelect(selectDisplay)
+  let mobile = true
+  if (d) mobile = d.mobile
   const {
     appData,
+    type,
   } = props
   let frontmatter: any = null
   if (appData.pageResources.json.data){
@@ -29,14 +36,23 @@ export default function App(props: any) {
   React.useEffect(() => {
     dispatch(boot())
     dispatch(setFrontmatter(frontmatter))
-  }, [frontmatter, display, dispatch])
+  }, [frontmatter, dispatch])
 
   return (<Box>
+            <WindowResizeListener />
             <Tings />
             <Notifyer />
             <Container>
-              {mobile ? <ListingMobile appData={appData}/> 
-              : <ListingDesktop appData={appData}/> }
+              {type === "signup" ? <>
+                <Signup />
+              </> : null}
+              {type === "backoffice" ? <>
+                <Backoffice />
+              </> : null}
+              {type === "markdown" ? <>
+                {mobile ? <ListingMobile appData={appData}/> 
+                  : <ListingDesktop appData={appData}/> }
+              </> : null}
             </Container>
           </Box>)
 }

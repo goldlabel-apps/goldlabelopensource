@@ -1,13 +1,15 @@
 import * as React from "react"
 import {
   PWA,
-  SEO,
 } from "../core"
+import {
+  BackofficeSEO,
+} from "../plugins/Backoffice"
 
 export default function NotFoundPage(data: any) {
 
   return  <>
-            <SEO appData={{...data}}/>
-            <PWA appData={{...data}} type="markdown" />
+            <BackofficeSEO />
+            <PWA appData={{...data}} type="404" />
           </>
 }

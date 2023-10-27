@@ -28,24 +28,14 @@ export function Font(props: any) {
   if (color === "secondary") c = theme.palette.secondary.main
   if (color === "muted") c = theme.palette.text.disabled
   if (width) w = width
-  let textfontSize: any = "1.0rem"
-  textfontSize = isBig ? "1.0rem" : "0.8rem"
-
+  let textfontSize: any = "0.9rem"
+  textfontSize = isBig ? "0.9rem" : "0.8rem"
   if (align) textAlign = align
   if (variant === "title") {
-    textfontSize = isBig ? "1.25rem" : "1rem"
+    textfontSize = isBig ? "1.2rem" : "1rem"
   }
   if (variant === "small") {
-    textfontSize = isBig ? "0.8rem" : "0.8rem"
-  }
-
-  if (variant === "tiny") {
-    textfontSize = isBig ? "0.6rem" : "0.6rem"
-  }
-
-
-  if (variant === "giant") {
-    textfontSize = isBig ? "1.4rem" : "1.25rem"
+    textfontSize = isBig ? "0.65rem" : "0.7rem"
   }
   if (fontSize) textfontSize = fontSize
   if (fixedH) fH = fixedH

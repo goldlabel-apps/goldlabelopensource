@@ -1,5 +1,7 @@
 import {
   notify,
+  store,
+  setPwaKey,
 } from "../../core"
 
 export const navigate = (
@@ -10,8 +12,13 @@ export const navigate = (
     try {
       setTimeout(() => {
         window.open(url, target)
-      }, 200)
-    } catch (error: any) {
+      }, 180)
+      const {core} = store.getState()
+      dispatch(setPwaKey({key: "core", value: {
+        ...core,
+        scrollDirection: "down",
+      }}))
+    } catch (e: any) {
       dispatch(notify(
         "NAV101",
         "error", 

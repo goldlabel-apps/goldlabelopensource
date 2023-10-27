@@ -1,11 +1,10 @@
-// import { AppThunk } from "../state/store"
 import {
   setPwaKey,
   store,
   notify,
 } from "../../core"
 
-export const toggleDesktopDrawer = (
+export const toggleFSDialog = (
     open: boolean,
 ): any => async (dispatch: any) => {
     try {
@@ -16,7 +15,7 @@ export const toggleDesktopDrawer = (
         } })) 
     } catch (e: any) {
       dispatch(notify(
-        "TGL101",
+        "toggleFSDialog",
         "error", 
         `boot ${e.toString()}`
       ))
