@@ -135,13 +135,12 @@ const SingleTing = () => {
               <Grid item xs={12} sm={6}>
                 <Box sx={{display: "flex"}}>
                   <Box sx={{my:2}}>
-                  <Avatar sx={{
-                    m:1,
-                    width: 32, 
-                    height: 32,
-                  }} 
-                  src={`/svg/flags/${countryCode || "none"}.svg`} />
-                    
+                    <Avatar sx={{
+                      m:1,
+                      width: 32, 
+                      height: 32,
+                    }} 
+                    src={`/svg/flags/${countryCode || "none"}.svg`} />
                   </Box>
 
                   <Box sx={{my:2}}>
@@ -156,12 +155,6 @@ const SingleTing = () => {
                 </Box>
               </Grid>
             </Grid>
-
-            
-            
-            
-            
-            
 
             <Accordion sx={{boxShadow:0}}>
               <AccordionSummary expandIcon={<Icon icon="expand" color="primary"/>} />
