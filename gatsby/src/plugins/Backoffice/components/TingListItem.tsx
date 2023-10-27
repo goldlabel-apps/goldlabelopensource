@@ -1,18 +1,17 @@
 import React from "react"
+import moment from "moment"
 import {
-  Card,
   Box,
-  ButtonBase,
   Avatar,
   CardHeader,
 } from "@mui/material"
 import {
-  Icon,
   Font,
   usePwaDispatch,
 } from "../../../core"
 import {
   uidSelect,
+  Device,
 } from "../../Backoffice"
 
 export type TingShape = {
@@ -22,15 +21,19 @@ export type TingShape = {
 export function TingListItem({ting}: TingShape) {
   const dispatch = usePwaDispatch()
   const {
-    browser,
-    currentPage,
-    countryCode,
     uid,
+    created,
+    updated,
+    browser,
+    // countryName,
+    countryCode,
     device,
+    os,
+    host, 
+    slug,
   } = ting
-  const {title} = currentPage
-  
-  const {updated, created, host} = ting
+  let lastSeen = updated
+  if (!lastSeen) lastSeen = created
   let time = updated
   if (!updated) time = created
   let hostSrc = "opensource.svg"
@@ -42,29 +45,34 @@ export function TingListItem({ting}: TingShape) {
   if (host === "goldlabel-open-source.web.app") hostSrc = "opensource.svg"
 
   return (<>
-            <ButtonBase 
+            <Box 
               sx={{
                 width: "100%",
                 display: "block",
-                borderBottom: "1px solid #ccc",
+                border: "1px solid #ccc",
               }}
-              onClick={(e: React.MouseEvent) => {
-                e.preventDefault()
-                dispatch(uidSelect(uid))
-              }}>
+              // onClick={(e: React.MouseEvent) => {
+              //   e.preventDefault()
+              //   
+              // }}
+            >
                 <Box>
                   
-                  <CardHeader 
-                    avatar={<>
-                              <Box sx={{m:0}}>
-                                <Icon icon="blokey" color="primary"/>
-                              </Box>
-                            </>}
+                  <CardHeader
                     title={<Font fixedH={22}>
-                            {title}
+                              <a 
+                                onClick={(e: React.MouseEvent)=> {
+                                  e.preventDefault()
+                                  dispatch(uidSelect(uid))
+                                }}
+                              
+                                href={slug}>{host}{slug}</a>
                           </Font>}
-                    subheader={<Font variant="small">{host}</Font>}
+                    subheader={<Font variant="small">
+                                Last seen {moment(lastSeen).fromNow()}
+                              </Font>}
                     action={<>
+                    
                       <Avatar 
                         src={`/svg/flags/${countryCode || "none"}.svg`}
                         sx={{
@@ -72,15 +80,24 @@ export function TingListItem({ting}: TingShape) {
                           width: 24, 
                           height: 24,
                         }}/>
+                        
                     </>}
                   />
                 </Box>
-            </ButtonBase>
+                <Box sx={{m:1}}>
+                  <Device 
+                    os={os}
+                    device={device}
+                    browser={browser}
+                  />
+                </Box>
+            </Box>
           </>
   )
 }
 
 /*
+<Tooltip title={countryName}></Tooltip>
 <Avatar sx={{width: 24, height: 24, mr:1}} src={`/svg/hosts/${hostSrc}`}/> 
 <pre>ting: {JSON.stringify(ting, null, 2)}</pre>
 */

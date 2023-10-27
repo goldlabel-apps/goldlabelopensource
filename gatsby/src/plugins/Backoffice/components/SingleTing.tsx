@@ -1,12 +1,11 @@
 import React, { useEffect } from "react"
 import moment from "moment"
+
 import {
   AppBar,
   Toolbar,
-  CardContent,
   Grid,
   CardHeader,
-  CardActions,
   Accordion,
   AccordionSummary,
   AccordionDetails,
@@ -31,14 +30,13 @@ import {
   selectBackoffice,
   setBackofficeKey,
   uidSelect,
-  deleteTing,
+  Device,
 } from "../../Backoffice"
 
 const SingleTing = () => {
   const dispatch = usePwaDispatch()
   const backoffice = usePwaSelect(selectBackoffice)
   const {uid, ting} = backoffice
-  // console.log("SingleTing", ting )
 
   useEffect(() => {
     const db = getFirestore()
@@ -60,7 +58,6 @@ const SingleTing = () => {
   }, [dispatch])
   if (!ting) return null
   const {
-    fbId,
     locationStr,
     timeZone,
     os,
@@ -69,12 +66,16 @@ const SingleTing = () => {
     browser,
     currentPage,
     countryCode,
+    countryName,
     updated,
     created,
+    url,
   } = ting
+  // console.log("ting", ting)
   let lastSeen = updated
   if (!lastSeen) lastSeen = created
-
+  let title= ""
+  if (currentPage) title = currentPage.title
   let hostSrc = "opensource.svg"
   if (host === "listingslab.com") hostSrc = "listingslab.svg"
   if (host === "legalweed.world") hostSrc = "legalweed.svg"
@@ -95,12 +96,13 @@ const SingleTing = () => {
                       }}>
                       <Icon icon={"left"} />
                     </IconButton>
-                    <IconButton>
-                      <Icon icon="blokey" color="primary" />
-                    </IconButton>
+                    
                   </>}
                   title={<Font variant="title">
-                            Ting
+                            {title}
+                          </Font>}
+                  subheader={<Font variant="small">
+                            Last seen {moment(lastSeen).fromNow()}
                           </Font>}
                 />
                 </Toolbar>
@@ -108,66 +110,57 @@ const SingleTing = () => {
           
           <Box sx={{mt:"80px", pb: "100px"}}>
             <Grid container spacing={1}>
-
-              
-
               <Grid item xs={12} sm={6}>
-              <CardHeader 
-                  avatar={<IconButton
-                            color="inherit"
-                            onClick={() => {
-                              dispatch(uidSelect(null))
-                            }}>
-                              
-                            <Avatar sx={{}} src={`/svg/hosts/${hostSrc}`}/>
-                          </IconButton>}
-                  title={<Font variant="title">
-                            {host}
-                          </Font>}
+                <IconButton
+                  color="inherit"
+                  onClick={() => {
+                    dispatch(uidSelect(null))
+                  }}>
+                  <Avatar sx={{
+                    width: 32, 
+                    height: 32,
+                  }} src={`/svg/hosts/${hostSrc}`}/>
+                </IconButton>
+                <Device 
+                  os={os}
+                  browser={browser}
+                  device={device}
                 />
-              <CardActions sx={{my:1}}>
-                    
-                    <IconButton
-                      color="primary"
-                      onClick={() => {
-                        dispatch(deleteTing(fbId))
-                      }}>
-                      <Icon icon={"delete"} />
-                    </IconButton>
-
-                    <IconButton
-                      color="primary"
-                      onClick={() => {
-                        // dispatch(deleteTing(fbId))
-                      }}>
-                      <Icon icon={"edit"} />
-                    </IconButton>
-
-                  </CardActions>
-                
-                  
+                <Box sx={{m:1}}>
+                  <Font>
+                    {url}
+                  </Font>
+                </Box>
               </Grid>
               <Grid item xs={12} sm={6}>
-                
-                
-                <CardContent>
-                  <Font>{device} {browser} {os}</Font>
-                  <Font variant="small">
-                    Last Seen {moment(lastSeen).fromNow()}
-                  </Font>  
-                </CardContent>
+                <Box sx={{display: "flex"}}>
+                  <Box sx={{my:2}}>
+                  <Avatar sx={{
+                    width: 32, 
+                    height: 32,
+                  }} 
+                  src={`/svg/flags/${countryCode || "none"}.svg`} />
+                    
+                  </Box>
 
-                <CardHeader 
-                  avatar={<Avatar sx={{width: 32, height: 32}} src={`/svg/flags/${countryCode || "none"}.svg`} />}
-                  title={<Font>
-                          {locationStr}
-                        </Font>}
-                  subheader={<Font>
-                              {timeZone}
-                            </Font>}/>
+                  <Box sx={{my:2}}>
+                    <Font>
+                      {timeZone}
+                    </Font>
+                    <Font>
+                      {locationStr}
+                    </Font>
+                  </Box>
+                  
+                </Box>
               </Grid>
-              
             </Grid>
+
+            
+            
+            
+            
+            
 
             <Accordion sx={{boxShadow:0}}>
               <AccordionSummary expandIcon={<Icon icon="expand" color="primary"/>} />
@@ -181,3 +174,22 @@ const SingleTing = () => {
 }
 
 export default SingleTing
+
+/* 
+<CardActions sx={{my:1}}>       
+  <IconButton
+    color="primary"
+    onClick={() => {
+      dispatch(deleteTing(fbId))
+    }}>
+    <Icon icon={"delete"} />
+  </IconButton>
+  <IconButton
+    color="primary"
+    onClick={() => {
+      // dispatch(deleteTing(fbId))
+    }}>
+    <Icon icon={"edit"} />
+  </IconButton>
+</CardActions> 
+*/

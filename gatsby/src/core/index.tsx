@@ -91,6 +91,7 @@ import {Signin} from "./components/Auth/Signin"
 import {Signup} from "./components/Auth/Signup"
 
 // System
+import MultiSelect from "./components/System/MultiSelect"
 import Notifyer from "./components/System/Notifyer"
 import PopupMenu from "./components/System/PopupMenu"
 import ScrollButton from "./components/System/ScrollButton"
@@ -114,6 +115,7 @@ export {
 }
 // System
 export {
+    MultiSelect,
     Notifyer,
     selectNotifyr,
     PopupMenu,

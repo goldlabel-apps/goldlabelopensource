@@ -1,0 +1,15 @@
+{
+  "name": "backoffice",
+  "version": "1.0.1",
+  "description": "Logged in users can view tings for their app",
+  "main": "index.tsx",
+  "scripts": {
+    "test": "echo \"LGTM\" && exit 1"
+  },
+  "keywords": [
+    "auth",
+    "users"
+  ],
+  "author": "@listingslab",
+  "license": "MIT"
+}
