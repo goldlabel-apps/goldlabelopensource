@@ -6,7 +6,6 @@ import {
 import {
   boot,
   Signup,
-  Tings,
   ListingDesktop,
   ListingMobile,
   Notifyer,
@@ -16,8 +15,6 @@ import {
   setFrontmatter,
   WindowResizeListener,
 } from "../core"
-
-import {Backoffice} from "../plugins/Backoffice"
 
 export default function App(props: any) {
   const dispatch = usePwaDispatch()
@@ -40,14 +37,10 @@ export default function App(props: any) {
 
   return (<Box>
             <WindowResizeListener />
-            <Tings />
             <Notifyer />
             <Container>
               {type === "signup" ? <>
                 <Signup />
-              </> : null}
-              {type === "backoffice" ? <>
-                <Backoffice />
               </> : null}
               {type === "markdown" ? <>
                 {mobile ? <ListingMobile appData={appData}/> 

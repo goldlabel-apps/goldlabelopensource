@@ -1,10 +1,9 @@
 import * as React from "react"
 import {
   PWA,
-} from "../core"
-import {
   BackofficeSEO,
-} from "../plugins/Backoffice"
+} from "../core"
+
 
 export default function AuthPage(data: any) {
   return  <>

@@ -1,5 +1,4 @@
 import * as React from "react"
-import {glConfig} from "../../../config"
 import {
   Box,
   Grid,
@@ -24,10 +23,6 @@ export default function ListingDesktop(props: any) {
   const frontmatter = usePwaSelect(selectFrontmatter)
   const {appData} = props
   const siteMeta = useSiteMetadata()
-  const {plugins} = glConfig
-  const {backoffice} = plugins
-  let hasBackoffice = false
-  if (backoffice) hasBackoffice = true
   const {
     version,
     siteTitle,
@@ -81,8 +76,6 @@ export default function ListingDesktop(props: any) {
 
         <Grid item xs={12} sm={4}>
           
-        
-
           <Siblings 
             frontmatter={frontmatter}
             icons= {true}  
@@ -98,7 +91,7 @@ export default function ListingDesktop(props: any) {
 
         {image ? <Grid item xs={12} sm={8}>
           {description ? <Box>
-              <Font variant="giant">
+              <Font variant="title">
                 {description}
               </Font>
             </Box> : null }
@@ -127,17 +120,9 @@ export default function ListingDesktop(props: any) {
             <Box sx={{flexGrow:1}} />
             <Box sx={{m:1.5}}>
             
-              {hasBackoffice ? <>
-                <a href="/backoffice" title="Backoffice">
                 <Font variant="small" color="muted">
                   {version}
                 </Font>
-              </a>
-              </> : <>
-                <Font variant="small" color="muted">
-                  {version}
-                </Font>
-              </> }
             </Box>
             <Box>
               <ScrollButton />

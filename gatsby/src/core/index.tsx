@@ -1,23 +1,12 @@
 // Main
 import {SEO} from "../core/SEO"
+import {BackofficeSEO} from "../core/components/SEO/BackofficeSEO"
 import PWA from "../core/PWA"
 import App from "./App"
 import {Auth} from "./Auth"
-// Tings
-import Tings from "./components/Tings/Tings"
-import {getIPGeo} from "./actions/tings/getIPGeo"
-import {getUserAgent} from "./actions/tings/getUserAgent"
-import {makeFingerprint} from "./actions/tings/makeFingerprint"
-import {notifyTing} from "./actions/tings/notifyTing"
-import {resetTing} from "./actions/tings/resetTing"
-import {startTing} from "./actions/tings/startTing"
-import {checkTing} from "./actions/tings/checkTing"
-import {createTing} from "./actions/tings/createTing"
-import {updateTing} from "./actions/tings/updateTing"
 import {firebaseSignin} from "./actions/firebase/firebaseSignin"
 import {firebaseSignout} from "./actions/firebase/firebaseSignout"
 import {setDisplay} from "./actions/setDisplay"
-
 
 // State
 import {WrapState} from "./state/WrapState"
@@ -29,7 +18,6 @@ import {
     selectCore,
     selectNotifyr,
     selectDisplay,
-    selectTings,
     selectFrontmatter,
     selectAuth,
 } from "./state/reducer"
@@ -99,20 +87,6 @@ import WindowResizeListener from "./components/System/WindowResizeListener"
 
 
 ///////////////////
-// Tings
-export {
-    startTing,
-    Tings,
-    selectTings,
-    getIPGeo,
-    getUserAgent,
-    makeFingerprint,
-    notifyTing,
-    resetTing,
-    checkTing,
-    createTing,
-    updateTing,
-}
 // System
 export {
     MultiSelect,
@@ -153,6 +127,7 @@ export {
     PWA,
     App,
     SEO,
+    BackofficeSEO,
 }
 // Hooks
 export {

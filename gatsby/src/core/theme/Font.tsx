@@ -1,5 +1,5 @@
 import React from "react"
-import "./fonts/noka.css"
+import "./fonts/quicksand.css"
 import { 
   useTheme,
   useMediaQuery,
@@ -7,7 +7,7 @@ import {
 } from "@mui/material"
 
 export function Font(props: any) {
-  const textFont = "noka"
+  const textFont = "Quicksand-Regular"
   const theme = useTheme()
   const isBig = useMediaQuery(theme.breakpoints.up("sm"))
   const { 
@@ -48,6 +48,7 @@ export function Font(props: any) {
         display: "block",
         overflow: "hidden",
         textAlign,
+        fontWeight: "bold",
         fontFamily: textFont,
         fontSize: textfontSize,
         color: c,

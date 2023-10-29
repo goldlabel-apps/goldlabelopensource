@@ -59,8 +59,24 @@ import WhereIcon from "@mui/icons-material/LocationOnOutlined"
 import TechstackIcon from "@mui/icons-material/CodeOutlined"
 import FishIcon from "@mui/icons-material/Phishing"
 import BackofficeIcon from "@mui/icons-material/SecurityOutlined"
+import ShopIcon from "@mui/icons-material/ShoppingBasketOutlined"
+import BarIcon from "@mui/icons-material/LocalBarOutlined"
+import CarIcon from "@mui/icons-material/DirectionsCarOutlined"
+import BoatIcon from "@mui/icons-material/DirectionsBoatOutlined"
+import BusIcon from "@mui/icons-material/DirectionsBusOutlined"
+import PoolIcon from "@mui/icons-material/PoolOutlined"
+
+export type IconShape = {
+  icon: "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ting" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox"
+  color?: any
+}
 
 /*
+pool,
+boat,
+car,
+bar,
+shop,
 home,
 fish,
 mobile
@@ -124,13 +140,30 @@ safari,
 firefox
 */
 
-export default function Icon(props: any) {
-  let { icon, color } = props
+export default function Icon({icon, color}: IconShape) {
   if (!color) color = "inherit"
   let iconFragment: JSX.Element = <React.Fragment />
   switch (icon) {
     case "home":
       iconFragment = <HomeIcon color={color} />
+      break
+    case "pool":
+      iconFragment = <PoolIcon color={color} />
+      break
+    case "bus":
+      iconFragment = <BusIcon color={color} />
+      break
+    case "boat":
+      iconFragment = <BoatIcon color={color} />
+      break
+    case "bar":
+      iconFragment = <BarIcon color={color} />
+      break
+    case "car":
+      iconFragment = <CarIcon color={color} />
+      break
+    case "shop":
+      iconFragment = <ShopIcon color={color} />
       break
     case "fish":
       iconFragment = <FishIcon color={color} />
@@ -295,8 +328,8 @@ export default function Icon(props: any) {
       iconFragment = <EdgeIcon color={color} />
       break
     case "firefox":
-        iconFragment = <FirefoxIcon color={color} />
-        break
+      iconFragment = <FirefoxIcon color={color} />
+      break
     case "safari":
       iconFragment = <SafariIcon color={color} />
       break

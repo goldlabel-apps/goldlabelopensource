@@ -18,14 +18,13 @@ import {
 } from "../../../core"
 
 export default function Siblings(props: any) {
+  const dispatch = usePwaDispatch()
   const {
     descriptions,
     icons,
   } = props
   const frontmatter = usePwaSelect(selectFrontmatter)
   if(!frontmatter) return null
-  const dispatch = usePwaDispatch()
-  if (!frontmatter) return null
   const {
     slug,
     parentSlug,
