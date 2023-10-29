@@ -9,6 +9,7 @@ export type FieldShape = {
 
 export type CoreShape = {
     user: any
+    allHosts: Array<any>
     scrollDirection: "up" | "down"
     frontmatter: any
     authed: boolean

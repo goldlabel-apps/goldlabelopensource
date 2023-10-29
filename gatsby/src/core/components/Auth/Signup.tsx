@@ -45,43 +45,37 @@ export function Signup() {
                 </Box>
                 <Box sx={{my:2}}>
                   <Alert>
-                    New memberships are currently hard closed
+                    New memberships are currently available
                   </Alert>
                 </Box>
-                  {/* <Box sx={{my:2}}>
+
+                  <Box sx={{my:2}}>
                     <InputEmail autoFocus onChange={setEmail} />
                   </Box>
-                  <Box sx={{my:2}}>
-                    <InputPassword onChange={setPassword}/>
-                  </Box> */}
+
+        
                   <Box sx={{my:3, display: "flex"}}>
                     <Box sx={{flexGrow:1}}/>
-                    {/* <Button 
-                      variant="outlined"
-                      color="primary"
-                      onClick={() => {}}>
-                        <Font variant="small">
-                          Sign Up
-                        </Font>
-                        <Box sx={{ml:2, mt:0.5}}>
-                          <Icon icon="right" />
-                        </Box>
-                    </Button> */}
+                    <Box sx={{my:2}}>
+                      <Button 
+                          color="primary"
+                          onClick={(e: React.MouseEvent) => {
+                            e.preventDefault()
+                              dispatch(navigate("/signin", "_self"))
+                          }}>
+                            <Font variant="small" color="muted">
+                              Sign in
+                            </Font>
+                        </Button>
+                      </Box> 
                   </Box>
-                  <Box sx={{my:2}}>
-                    <Button 
-                      color="primary"
-                      onClick={(e: React.MouseEvent) => {
-                        e.preventDefault()
-                          dispatch(navigate("/backoffice", "_self"))
-                      }}>
-                        <Font variant="small" color="muted">
-                          Sign in
-                        </Font>
-                    </Button>
-                  </Box>
+                  {/* */}
               </Box>
             </Container>
         </>
   )
 }
+
+/*
+
+*/

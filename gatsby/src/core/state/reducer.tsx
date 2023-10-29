@@ -7,16 +7,12 @@ import { RootState } from "./store"
 import {coreState} from "./coreState"
 import {pluginsState} from "../../plugins/pluginsState"
 
-type PluginsShape = {
-  backoffice: any
-  lingua: any
-}
 type CoreReducerShape = {
   bootTime: number
   config: any
   core: any
   auth: any
-  plugins: PluginsShape
+  plugins: any
 }
 
 const initialState: CoreReducerShape = {
@@ -28,7 +24,7 @@ const initialState: CoreReducerShape = {
 }
 
 export const pwaSlice = createSlice({
-  name: "gl-core",
+  name: "goldlabel-core",
   initialState,
   reducers: {
     setPwaKey: (state, action: PayloadAction<KeyValueShape>) => {
@@ -43,7 +39,6 @@ export const selectBootTime = (state: RootState) => state.bootTime
 export const selectConfig = (state: RootState) => state.config
 export const selectCore = (state: RootState) => state.core
 export const selectNotifyr = (state: RootState) => state.core.notifyr
-export const selectTings = (state: RootState) => state.core.tings
 export const selectDisplay = (state: RootState) => state.core.display
 export const selectFrontmatter = (state: RootState) => state.core.frontmatter
 export const selectAuth = (state: RootState) => state.auth

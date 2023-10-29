@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "Quicksand_Dash";
+  src: url("./quicksand/Quicksand_Dash.otf");
+}
+
+@font-face {
+  font-family: "Quicksand-Bold";
+  src: url("./quicksand/Quicksand-Bold.otf");
+}
+
+@font-face {
+  font-family: "Quicksand-BoldItalic";
+  src: url("./quicksand/Quicksand-BoldItalic.otf");
+}
+
+@font-face {
+  font-family: "Quicksand-Italic";
+  src: url("./quicksand/Quicksand-Italic.otf");
+}
+
+@font-face {
+  font-family: "Quicksand-Light";
+  src: url("./quicksand/Quicksand-Light.otf");
+}
+
+@font-face {
+  font-family: "Quicksand-LightItalic";
+  src: url("./quicksand/Quicksand-LightItalic.otf");
+}
+
+@font-face {
+  font-family: "Quicksand-Regular";
+  src: url("./quicksand/Quicksand-Regular.otf");
+}

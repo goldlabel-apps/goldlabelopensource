@@ -15,12 +15,10 @@ import {
   Categories,
   Markdown,
   Siblings,
-  usePwaDispatch,
   usePwaSelect,
   selectCore,
   Meta,
   CatNav,
-  getIsElementInView,
   ScrollButton,
 } from "../../../core"
 
@@ -30,11 +28,7 @@ export default function ListingMobile(props: any) {
   const siteMeta = useSiteMetadata()
   let isHome = false
   if (appData.path === "/")isHome = true
-  const {plugins} = glConfig
-  const {backoffice} = plugins
-  let hasBackoffice = false
   const {version} = siteMeta
-  if (backoffice) hasBackoffice = true
   let title = siteMeta.siteTitle
   let description = siteMeta.siteDescription
   let doc: any = null
@@ -63,7 +57,7 @@ export default function ListingMobile(props: any) {
   return <>
           <Container maxWidth="md">
             <div id="topAnchor" />
-            <Box sx={{ pb: '50px' }}>
+            <Box sx={{  }}>
 
               <TitleMobile
                 title={title}
@@ -112,17 +106,10 @@ export default function ListingMobile(props: any) {
             <Box sx={{m:1.5, display: "flex"}}>
               <Box sx={{flexGrow:1}} />
               <Box>
-                {hasBackoffice ? <>
-                  <a href="/backoffice" title="Backoffice">
+                
                   <Font variant="small" color="muted">
                     {version}
                   </Font>
-                </a>
-                </> : <>
-                  <Font variant="small" color="muted">
-                    {version}
-                  </Font>
-                </> }
               </Box>
             </Box>
             <Box sx={{height: 70}} />

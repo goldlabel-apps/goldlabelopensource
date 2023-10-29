@@ -12,20 +12,21 @@ export function InputCheckbox(props: any) {
     onChange,
     label,
     defaultChecked,
+    checked,
   } = props
   
   return (<>
           <Box sx={{display: "flex"}}>
-            <Checkbox 
-              onChange={onChange} 
-              defaultChecked={defaultChecked}
-            />
-            <Box sx={{mt: 1.5}}>
+          <Box sx={{mt: 1.5}}>
               <Font variant="small">
                 {label}
               </Font>
             </Box>
-            
+            <Checkbox 
+              onChange={onChange} 
+              defaultChecked={defaultChecked}
+              checked={checked}
+            />
           </Box>
         </>
   )
