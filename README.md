@@ -13,10 +13,33 @@ cd <your-project>
 cd gatsby
 npm install
 cd ../
-npm start
 ```
+
+Open and configure `gatsby/src/config`
+
+```javascript
+export const glConfig: ConfigShape = {
+    siteDisplayname: "Display Name", 
+    siteUrl: "https://yourdomain.com",
+    siteEmail: "you@yourdomain.com",
+    siteFacebook: "https://www.facebook.com/yourfacebook",
+    siteTitle: "Your Site Name",
+    siteDescription: "Tagline,
+    siteKeywords: "default, keywords",
+    siteImage: "/jpg/default.jpg",
+    siteIcon: "/svg/iOS.svg",
+    siteTwitter: "@yourtwitter",
+    siteTheme: "#C5C5C5",
+    theme: {
+        slug: "opensource",
+        primaryColor: "#C5C5C5",
+        secondaryColor: "#616161",
+    },
+    plugins: ["Geolocator", "Lingua", "Tings"],
+```
+
+
+Start with the command `npm start`
 
 When Gatsby has finished starting the dev server, it's available on 
 http://localhost:8000
-
-Open and configure `gatsby/src/goldlabelConfig`
