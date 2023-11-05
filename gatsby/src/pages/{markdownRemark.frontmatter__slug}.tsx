@@ -75,7 +75,6 @@ export const pageQuery = graphql`
         facebook
         phone
         twitter
-        hideImage
       }
     }
   }

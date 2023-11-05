@@ -11,7 +11,7 @@ import {
 } from "../../../core"
 
 
-export default function ScrollButton() {
+export default function ScrollUp() {
   const dispatch = usePwaDispatch()
   const core = usePwaSelect(selectCore)
   const {scrollDirection} = core
@@ -23,8 +23,6 @@ export default function ScrollButton() {
               onClick={(e: React.MouseEvent) => {
                 e.preventDefault()
                 let el: any = document.getElementById("topAnchor")
-                // if (scrollDirection === "up") el = document.getElementById("topAnchor")
-                // if (scrollDirection === "down") el = document.getElementById("bottomAnchor")
                 if (el) dispatch(scrollTo(el))
               }}>
               <Icon icon={"up"} color="primary" />

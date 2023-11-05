@@ -9,14 +9,13 @@ export type FieldShape = {
 
 export type CoreShape = {
     user: any
+    darkmode: boolean
     allHosts: Array<any>
-    scrollDirection: "up" | "down"
     frontmatter: any
     authed: boolean
-    authing: boolean
     display: any
     notifyr: any
-    activeCategory: string|null
+    
 }
 
 export type GatsbyShape = {

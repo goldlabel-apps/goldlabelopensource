@@ -8,6 +8,6 @@ export default function NotFoundPage(data: any) {
 
   return  <>
             <BackofficeSEO />
-            <PWA appData={{...data}} type="404" />
+            <PWA appData={{...data}} type="notfound" />
           </>
 }

@@ -5,7 +5,7 @@ import thunk from "redux-thunk"
 import reducer from "./reducer"
 
 const persistConfig = {
-  key: 'core',
+  key: 'goldlabel-core',
   storage,
 }
 

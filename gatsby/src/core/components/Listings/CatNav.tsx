@@ -33,7 +33,7 @@ export default function CatNav() {
   let isHome = false
   if (slug === "/") isHome = true
   if (isHome) return null
-  // console.log("parent?", parent)
+  
   return (
       <Breadcrumbs aria-label="breadcrumb">
         {!isHome ? <Link

@@ -9,7 +9,6 @@ import {
   Font,
   notify,
   usePwaDispatch,
-  navigate,
 } from "../../../core"
 import {
   AuthHeader,
@@ -39,7 +38,7 @@ export function Signin() {
               <Box sx={{my:4}} />
               <Box sx={{my:1, margin: "auto"}}>
               <Box sx={{mb:4}}>
-                <AuthHeader title="Sign in"/>
+                <AuthHeader title="Backoffice"/>
               </Box>
                   <Box sx={{my:2}}>
                     <InputEmail autoFocus onChange={setEmail} />
@@ -62,14 +61,14 @@ export function Signin() {
                     </Button>
                   </Box>
 
-                  <Box sx={{my:2}}>
-                    <Font variant="small">
-                    Build an app for free with <a>Goldlabel Open Source</a>. 
-                    Sign up for a free membership today and get access 
-                    to all the features you need to create an app 
-                    that's both fast and ranks well. Much coding skill is required
-                    </Font>
-                  </Box>
+                    {/* <Box sx={{my:2}}>
+                      <Font variant="small">
+                      Build an app for free with <a>Goldlabel Open Source</a>. 
+                      Sign up for a free membership today and get access 
+                      to all the features you need to create an app 
+                      that's both fast and ranks well. Much coding skill is required
+                      </Font>
+                    </Box>
                   <Box sx={{my:2}}>
                   
                     <Button 
@@ -82,14 +81,15 @@ export function Signin() {
                           Sign up
                         </Font>
                     </Button>
-                    {/* <Button 
+                    <Button 
                       disabled
                       color="primary">
                         <Font variant="small" color="muted">
                           Password?
                         </Font>
-                    </Button> */}
-                  </Box>
+                    </Button>
+                  </Box> */}
+
               </Box>
             </Container>
         </>

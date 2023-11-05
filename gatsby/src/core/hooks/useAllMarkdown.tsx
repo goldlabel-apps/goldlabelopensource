@@ -30,7 +30,6 @@ export const useAllMarkdown = () => {
             facebook
             phone
             twitter
-            hideImage
           }
         }
       }

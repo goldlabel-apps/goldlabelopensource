@@ -11,8 +11,10 @@ import {
     usePwaDispatch,
     useSiteMetadata,
     navigate,
-    ScrollButton,
+    DarkmodeToggle,
+    ShareMenu,
 } from "../../../core"
+import {You} from "../../../plugins/Pingpong"
 
 export default function Title(props: any) {
     const dispatch = usePwaDispatch()
@@ -26,7 +28,6 @@ export default function Title(props: any) {
     if (h1 === "Home") h1 = siteTitle
     return <Box sx={{my: 1}}>
         <CardHeader 
-            action={<ScrollButton />}
             avatar={<IconButton 
                         sx={{ml:-1}}
                         onClick={(e: React.MouseEvent) => {
@@ -38,6 +39,9 @@ export default function Title(props: any) {
             title={<Font variant="title">
                 {h1}
             </Font>}
-        />
+             subheader={<Font variant="small">
+                {description}
+            </Font>}
+            />
     </Box>
 }

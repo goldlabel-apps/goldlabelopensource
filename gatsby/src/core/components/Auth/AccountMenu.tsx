@@ -54,20 +54,6 @@ export function AccountMenu() {
 
                 {isSignedIn ? <>
                 
-                  {/* <ListItem disablePadding sx={{ display: 'block' }}>
-                    <ListItemButton
-                      onClick={() => {
-                        dispatch(navigate("/backoffice", "_self"))
-                      }}>
-                      <ListItemIcon>
-                        <Icon icon={"backoffice"} color="primary"/>
-                      </ListItemIcon>
-                      <ListItemText
-                        primary={<Font variant="small">{getTranslation("BACKOFFICE", locale)}</Font>}
-                      />
-                    </ListItemButton>
-                  </ListItem>                   */}
-
                   <ListItem disablePadding sx={{ display: 'block' }}>
                     <ListItemButton
                       onClick={() => {
