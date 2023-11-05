@@ -30,7 +30,7 @@ export default function AuthHeader({title}) {
                 </IconButton>
                     
                 </Box>
-                <Box sx={{mt:2.5}}>
+                <Box sx={{mt:2}}>
                     <Font variant="title">
                         {title}
                     </Font>

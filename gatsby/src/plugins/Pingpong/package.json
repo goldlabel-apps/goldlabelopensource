@@ -1,0 +1,10 @@
+{
+  "name": "goldlabel-plugin-pingpong",
+  "version": "1.0.4",
+  "description": "Perfect visibility on visitors",
+  "scripts": {
+    "test": "echo \"LGTM\" && exit 1"
+  },
+  "author": "@listingslab",
+  "license": "MIT"
+}

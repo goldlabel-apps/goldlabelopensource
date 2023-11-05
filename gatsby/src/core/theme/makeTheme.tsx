@@ -1,4 +1,4 @@
-import { PaletteMode, lighten } from "@mui/material"
+import { PaletteMode } from "@mui/material"
 
 export function makeTheme(
   mode: PaletteMode,

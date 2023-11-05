@@ -5,14 +5,14 @@ import {glConfig} from "../../config"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "./store"
 import {coreState} from "./coreState"
-import {pluginsState} from "../../plugins/pluginsState"
+import {pingpongState} from "../../plugins/Pingpong"
 
 type CoreReducerShape = {
   bootTime: number
   config: any
   core: any
   auth: any
-  plugins: any
+  pingpong: any
 }
 
 const initialState: CoreReducerShape = {
@@ -20,7 +20,7 @@ const initialState: CoreReducerShape = {
   auth: null,
   config: glConfig,
   core: coreState,
-  plugins: pluginsState,
+  pingpong: pingpongState,
 }
 
 export const pwaSlice = createSlice({
@@ -42,6 +42,7 @@ export const selectNotifyr = (state: RootState) => state.core.notifyr
 export const selectDisplay = (state: RootState) => state.core.display
 export const selectFrontmatter = (state: RootState) => state.core.frontmatter
 export const selectAuth = (state: RootState) => state.auth
+export const selectPingpong = (state: RootState) => state.pingpong
 
 export const { setPwaKey } = pwaSlice.actions
 export default pwaSlice.reducer

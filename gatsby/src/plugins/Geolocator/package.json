@@ -1,11 +1,10 @@
 {
-  "name": "geolocator",
-  "version": "1.0.0",
-  "description": "### An old fashioned Mashup, like from the mid 2000's",
-  "main": "index.js",
+  "name": "goldlabel-plugin-geolocator",
+  "version": "1.0.1",
+  "description": "Old fashioned Mashup, like from the mid 2000's",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"LGTMd\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "@listingslab",
+  "license": "MIT"
 }

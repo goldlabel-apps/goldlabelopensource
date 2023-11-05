@@ -6,9 +6,14 @@ import {
   ThemeProvider,
 } from "@mui/material"
 import {makeTheme} from "../theme/makeTheme"
+import {
+  usePwaSelect,
+  selectCore,
+} from "../../core"
 
-export default function Theme(props: any) {
-  const darkmode = false
+export default function Theme({children}: any) {
+  const core = usePwaSelect(selectCore)
+  const {darkmode} = core
   const {
     theme
   } = glConfig
@@ -23,7 +28,6 @@ export default function Theme(props: any) {
     primaryColor,
     secondaryColor,
   }
-  const {children} = props
   const customTheme = makeTheme(
     darkmode ? "dark" : "light", 
     thisTheme.primaryColor, 

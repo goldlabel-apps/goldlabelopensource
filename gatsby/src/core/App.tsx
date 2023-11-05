@@ -5,7 +5,6 @@ import {
 } from "@mui/material"
 import {
   boot,
-  Signup,
   ListingDesktop,
   ListingMobile,
   Notifyer,
@@ -14,7 +13,9 @@ import {
   selectDisplay,
   setFrontmatter,
   WindowResizeListener,
+  NotFound,
 } from "../core"
+import {Pingpong} from "../plugins/Pingpong"
 
 export default function App(props: any) {
   const dispatch = usePwaDispatch()
@@ -36,12 +37,11 @@ export default function App(props: any) {
   }, [frontmatter, dispatch])
 
   return (<Box>
+            <Pingpong />
             <WindowResizeListener />
             <Notifyer />
             <Container>
-              {type === "signup" ? <>
-                <Signup />
-              </> : null}
+              {type === "notfound" ? <NotFound /> : null}
               {type === "markdown" ? <>
                 {mobile ? <ListingMobile appData={appData}/> 
                   : <ListingDesktop appData={appData}/> }

@@ -23,6 +23,10 @@ const WindowResizeListener = () => {
   }, 125)
 
   useEffect(() => {
+    dispatch(setDisplay())
+  }, [])
+
+  useEffect(() => {
     window.addEventListener("resize", onResize)
     return () => window.removeEventListener("resize", onResize)
   }, [])

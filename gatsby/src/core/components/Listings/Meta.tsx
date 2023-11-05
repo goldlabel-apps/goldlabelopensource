@@ -10,7 +10,6 @@ import {
   usePwaSelect,
   selectFrontmatter,
   navigate,
-  ShareMenu,
 } from "../../../core"
 
 export default function Meta(props: any) {
@@ -20,21 +19,20 @@ export default function Meta(props: any) {
   // console.log("siteMeta", siteMetadata)
   if (!frontmatter) return null
   let facebook: any = siteMetadata.siteFacebook
-  if(frontmatter.facebook) facebook = frontmatter.facebook
-
-  let website: any = null
-  if(frontmatter.website) website = frontmatter.website
-  
+  let website: any = null  
   let phone: any = null
-  if(frontmatter.phone) phone = frontmatter.phone
-
   let twitter: any = null
+
+  if(frontmatter.facebook) facebook = frontmatter.facebook
+  if(frontmatter.website) website = frontmatter.website
   if(frontmatter.twitter) twitter = frontmatter.twitter
+  if(frontmatter.phone) phone = frontmatter.phone
 
   return <Box sx={{ display: "flex" }}>
           <Box sx={{ flexGrow:1}} />
           
           {facebook ? <IconButton
+            aria-label="Facebook"
             color="primary"
             onClick={() => {
               dispatch(navigate(facebook, "_blank"))
@@ -44,6 +42,7 @@ export default function Meta(props: any) {
           
           
           {website ? <IconButton
+            aria-label="Web"
             color="primary"
             onClick={() => {
               dispatch(navigate(website, "_blank"))
@@ -52,6 +51,7 @@ export default function Meta(props: any) {
           </IconButton> : null}
 
           {phone ? <IconButton
+            aria-label="WhatsApp"
             color="primary"
             onClick={() => {
               dispatch(navigate(`tel:${phone}`, "_blank"))
@@ -59,8 +59,8 @@ export default function Meta(props: any) {
             <Icon icon="whatsapp" />
           </IconButton> : null}
           
-
           {twitter ? <IconButton
+            aria-label="Twitter"
             color="primary"
             onClick={() => {
               console.log("twitter")
@@ -69,9 +69,7 @@ export default function Meta(props: any) {
             }}>
             <Icon icon="twitter" />
           </IconButton> : null }
-          
-          <ShareMenu />
-
+        
         </Box>
 }
 
