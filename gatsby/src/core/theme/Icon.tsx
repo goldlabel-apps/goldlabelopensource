@@ -1,4 +1,5 @@
 import * as React from "react"
+import PingpongballIcon from "./SVGIcons/PingpongballIcon"
 import BlokeyIcon from "./SVGIcons/BlokeyIcon"
 import WordpressIcon from "./SVGIcons/WordpressIcon"
 import GoldlabelIcon from "./SVGIcons/GoldlabelOutlined"
@@ -11,14 +12,19 @@ import LinuxIcon from "./SVGIcons/devices/LinuxIcon"
 import MacIcon from "./SVGIcons/devices/MacIcon"
 import WindowsIcon from "./SVGIcons/devices/WindowsIcon"
 import XboxIcon from "./SVGIcons/devices/XboxIcon"
+import MembersIcon from "@mui/icons-material//SupervisedUserCircle"
 import AndroidIcon from "@mui/icons-material/Android"
 import DesktopMacIcon from "@mui/icons-material/DesktopMacOutlined"
 import DesktopIcon from "@mui/icons-material/DesktopWindowsOutlined"
+import GithubIcon from "@mui/icons-material/GitHub"
 import MobileIcon from "@mui/icons-material/PhoneAndroid"
+import NotifyrIcon from "@mui/icons-material/MarkUnreadChatAlt"
 import HomeIcon from "@mui/icons-material/HomeOutlined"
 import NewsIcon from "@mui/icons-material/GradeOutlined"
 import ExampleIcon from "@mui/icons-material/RocketLaunch"
 import MedicalIcon from "@mui/icons-material/MedicalServicesOutlined"
+import DarkmodeIcon from "@mui/icons-material/DarkModeOutlined"
+import LightModeIcon from "@mui/icons-material/LightModeOutlined"
 import ActivitesIcon from "@mui/icons-material/DirectionsRun"
 import DivingIcon from "@mui/icons-material/ScubaDiving"
 import DiveshopIcon from "@mui/icons-material/RecommendOutlined"
@@ -49,7 +55,7 @@ import ScooterIcon from "@mui/icons-material/Moped"
 import FoodIcon from "@mui/icons-material/Restaurant"
 import StarIcon from "@mui/icons-material/StarOutlined"
 import SettingsIcon from "@mui/icons-material/SettingsOutlined"
-import TingIcon from "@mui/icons-material/Fingerprint"
+import PingIcon from "@mui/icons-material/Fingerprint"
 import FacebookIcon from "@mui/icons-material/FacebookOutlined"
 import TwitterIcon from "@mui/icons-material/Twitter"
 import WebIcon from "@mui/icons-material/Language"
@@ -65,80 +71,12 @@ import CarIcon from "@mui/icons-material/DirectionsCarOutlined"
 import BoatIcon from "@mui/icons-material/DirectionsBoatOutlined"
 import BusIcon from "@mui/icons-material/DirectionsBusOutlined"
 import PoolIcon from "@mui/icons-material/PoolOutlined"
+import CloseIcon from "@mui/icons-material/Close"
 
 export type IconShape = {
-  icon: "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ting" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox"
+  icon: "spy" | "seed" | "github" | "members" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ping" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox"
   color?: any
 }
-
-/*
-pool,
-boat,
-car,
-bar,
-shop,
-home,
-fish,
-mobile
-blog,
-search,
-cancel,
-delete,
-techstack,
-backoffice,      
-edit,
-example,
-goldlabel,
-wordpress
-where,
-whatsapp,
-expand,
-web,
-twitter
-facebook,
-ting,
-settings,
-email,
-share,
-leaf,
-star,
-food,
-medical,
-scooter,
-diveshop,
-diving,
-news,
-activities
-left,
-down,
-up,
-right,
-menu,
-success,
-categories,
-category,
-tings,
-info,
-warning,
-error,
-signout,
-api,
-work,
-signin,
-blokey,
-android,
-chrome,
-desktop,
-desktopmac,
-edge,
-linux,
-windows,
-xbox,
-mac,
-iphone,
-safari,
-firefox
-*/
 
 export default function Icon({icon, color}: IconShape) {
   if (!color) color = "inherit"
@@ -146,6 +84,18 @@ export default function Icon({icon, color}: IconShape) {
   switch (icon) {
     case "home":
       iconFragment = <HomeIcon color={color} />
+      break
+    case "github":
+      iconFragment = <GithubIcon color={color} />
+      break
+    case "close":
+      iconFragment = <CloseIcon color={color} />
+      break    
+    case "darkmode":
+      iconFragment = <DarkmodeIcon color={color} />
+      break
+    case "lightmode":
+      iconFragment = <LightModeIcon color={color} />
       break
     case "pool":
       iconFragment = <PoolIcon color={color} />
@@ -172,6 +122,9 @@ export default function Icon({icon, color}: IconShape) {
       iconFragment = <MobileIcon color={color} />
       break
     case "spy":
+      iconFragment = <SpyIcon color={color} />
+      break
+    case "seed":
       iconFragment = <SpyIcon color={color} />
       break
     case "blog":
@@ -222,8 +175,8 @@ export default function Icon({icon, color}: IconShape) {
     case "facebook":
       iconFragment = <FacebookIcon color={color} />
       break
-    case "ting":
-      iconFragment = <TingIcon color={color} />
+    case "ping":
+      iconFragment = <PingIcon color={color} />
       break
     case "settings":
       iconFragment = <SettingsIcon color={color} />
@@ -285,7 +238,7 @@ export default function Icon({icon, color}: IconShape) {
     case "category":
       iconFragment = <CategoryIcon color={color} />
       break
-    case "tings":
+    case "pings":
       iconFragment = <TingsIcon color={color} />
       break
     case "info":
@@ -347,6 +300,15 @@ export default function Icon({icon, color}: IconShape) {
       break
     case "linux":
       iconFragment = <LinuxIcon color={color} />
+      break
+    case "pingpong":
+      iconFragment = <PingpongballIcon color={color} />
+      break
+    case "members":
+      iconFragment = <MembersIcon color={color} />
+      break
+    case "notifyr":
+      iconFragment = <NotifyrIcon color={color} />
       break
     default:
       iconFragment = <ErrorIcon color={"warning"} />

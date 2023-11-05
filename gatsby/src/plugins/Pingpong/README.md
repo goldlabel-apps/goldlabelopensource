@@ -1,5 +1,8 @@
-## Tings (RESTful version)
+## Pingpong 
 
+> RESTful & Firebase versions
+
+If you want to use your own Firebase project, you will need to create the correct environment files before youo can start to use this kind of code
 
 ```javascript
 
@@ -17,25 +20,22 @@ const firebaseConfig = {
 }
 export const fbApp = initializeApp(firebaseConfig)
 export const fsDb = getFirestore(fbApp)
-```
 
-
-```javascript
-import Tings from "./components/Tings/Tings"
+import Pings from "./components/Pings/Pings"
 import {getIPGeo} from "./actions/tings/getIPGeo"
 import {getUserAgent} from "./actions/tings/getUserAgent"
 import {makeFingerprint} from "./actions/tings/makeFingerprint"
-import {notifyTing} from "./actions/tings/notifyTing"
-import {resetTing} from "./actions/tings/resetTing"
-import {startTing} from "./actions/tings/startTing"
-import {checkTing} from "./actions/tings/checkTing"
-import {createTing} from "./actions/tings/createTing"
-import {updateTing} from "./actions/tings/updateTing"
+import {notifyPing} from "./actions/tings/notifyPing"
+import {resetPing} from "./actions/tings/resetPing"
+import {startPing} from "./actions/tings/startPing"
+import {checkPing} from "./actions/tings/checkPing"
+import {createPing} from "./actions/tings/createPing"
+import {updatePing} from "./actions/tings/updatePing"
 ```
 
 > A perfect view of your users
 
-Tings combines analytics with messaging allowing website owners to talk directly to their users in real time
+Pings combines analytics with messaging allowing website owners to talk directly to their users in real time
 
 #### Firestore Database
 
@@ -73,10 +73,10 @@ Firebase's Firestore Database is a cloud-hosted NoSQL database provided by Googl
 
 8. **Additional Features:** Depending on your requirements, you can add features like multimedia support (images, videos), message status (delivered, sent), message reactions, etc.
 
-#### TingShape
+#### PingShape
 
 ```javascript
-const ting: TingShape: {
+const ting: PingShape: {
   {
     "host": "localhost:8000",
     "fingerprint": "a34d12ce04049f496442ab851c00fe49",
@@ -103,20 +103,6 @@ const ting: TingShape: {
     "isp": "Melita Limited",
     "connection_type": "",
     "organization": "Melita Limited",
-    "currency": {
-        "code": "EUR",
-        "name": "Euro",
-        "symbol": "€"
-    },
-    "time_zone": {
-        "name": "Europe/Malta",
-        "offset": 1,
-        "offset_with_dst": 2,
-        "current_time": "2023-09-09 12:53:50.493+0200",
-        "current_time_unix": 1694256830.493,
-        "is_dst": true,
-        "dst_savings": 1
-    },
     "browser": {
         "name": "Chrome",
         "version": "116.0.0.0",
@@ -134,7 +120,6 @@ const ting: TingShape: {
         "vendor": "Apple",
         "model": "Macintosh"
     },
-    "cpu": {}
 }
 ```
 

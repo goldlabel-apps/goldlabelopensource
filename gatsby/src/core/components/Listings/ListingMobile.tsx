@@ -1,6 +1,6 @@
-import * as React from 'react'
-import {glConfig} from "../../../config"
+import * as React from "react"
 import {
+  useTheme,
   AppBar,
   Box,
   Toolbar,
@@ -15,16 +15,17 @@ import {
   Categories,
   Markdown,
   Siblings,
-  usePwaSelect,
-  selectCore,
   Meta,
   CatNav,
-  ScrollButton,
+  ScrollUp,
+  DarkmodeToggle,
+  ShareMenu,
 } from "../../../core"
+import {You} from "../../../plugins/Pingpong"
 
 export default function ListingMobile(props: any) {  
   const {appData} = props
-  const core = usePwaSelect(selectCore)
+  const bgCol = useTheme().palette.background.default
   const siteMeta = useSiteMetadata()
   let isHome = false
   if (appData.path === "/")isHome = true
@@ -55,14 +56,16 @@ export default function ListingMobile(props: any) {
   }
   
   return <>
-          <Container maxWidth="md">
-            <div id="topAnchor" />
-            <Box sx={{  }}>
-
+          <div id="topAnchor" />
+          <Container>  
+            <Box sx={{}}>
               <TitleMobile
                 title={title}
                 description={description}
               />
+              <Box sx={{mb:2}}>
+                <CatNav />
+              </Box>
 
               {image ? <>
                 <Box>
@@ -73,24 +76,25 @@ export default function ListingMobile(props: any) {
                   />
                 </Box>
               </> : null }
+              <Box sx={{mt:1.5}}>
+                    <Meta frontmatter={frontmatter}/>
+                  </Box>
 
-              <Box sx={{display: "flex"}}>
+              <Box sx={{display: "flex"}}>                
                 <Box sx={{mt:2}}>
-                  <CatNav />
+                  <Font variant="title">
+                    {description}
+                  </Font>
                 </Box>
                 <Box sx={{flexGrow:1}}/>
-                <Box sx={{mt:1.5}}>
-                  <Meta frontmatter={frontmatter}/>
+                  
                 </Box>
-              </Box>
-              
-            
-              {children ? <Box sx={{}}>
-                <Children 
-                  icons= {true} 
-                  frontmatter={frontmatter}
-                />
-              </Box> : null }
+                {children ? <Box sx={{}}>
+                  <Children 
+                    icons= {true} 
+                    frontmatter={frontmatter}
+                  />
+                </Box> : null }
 
               {html ? <Box sx={{}}>
                 <Markdown html={html}/>
@@ -102,16 +106,6 @@ export default function ListingMobile(props: any) {
                     /> : <>
                 <Categories />
               </> }
-
-            <Box sx={{m:1.5, display: "flex"}}>
-              <Box sx={{flexGrow:1}} />
-              <Box>
-                
-                  <Font variant="small" color="muted">
-                    {version}
-                  </Font>
-              </Box>
-            </Box>
             <Box sx={{height: 70}} />
             <div id="bottomAnchor" />
           </Box>
@@ -120,16 +114,26 @@ export default function ListingMobile(props: any) {
             position="fixed" 
             color="inherit" 
             sx={{ 
-              boxShadow:0, 
+              background: bgCol,
+              boxShadow:0,
               border: 0,
               top: 'auto', 
               bottom: 0, 
             }}>
-              <Toolbar>
-                <Box sx={{flexGrow:1}} />
-                <Box sx={{ flexGrow: 1 }} />
-                <Box>
-                  <ScrollButton />
+              <Toolbar>            
+                <Box sx={{display: "flex"}}>
+                  <Box sx={{m:1.5}}>
+                      <Font variant="small" color="muted">
+                        {version}
+                      </Font>
+                  </Box>
+                  <Box sx={{flexGrow:1}} />
+                  <Box>
+                    <You />
+                    <DarkmodeToggle />
+                    <ShareMenu />
+                    <ScrollUp />
+                  </Box>
                 </Box>
               </Toolbar>
             </AppBar>

@@ -3,10 +3,17 @@ export const allHosts = [
       label: "Listingslab",
       host: "listingslab.com",
       url: "https://listingslab.com/",
-      icon: "https://listingslab.com/svg/iOS.svg",
+      icon: "/svg/hosts/listingslab.svg",
       onClick: () => {
         console.log("Listingslab")
       },
+
+    },
+    {
+      label: "Listingslab",
+      host: "listingslab-gatsby.web.app",
+      url: "https://listingslab-gatsby.web.app/",
+      icon: "/svg/hosts/listingslab.svg",
     },
     {
       label: "Growspy",
@@ -18,24 +25,38 @@ export const allHosts = [
       label: "Legalweed",
       host: "legalweed.world",
       url: "https://legalweed.world/",
-      icon: "https://legalweed.world/svg/iOS.svg"
+      icon: "/svg/hosts/legalweedLabel.svg"
     },
+    {
+      label: "Legalweed",
+      host: "legal-weed-world.web.app",
+      url: "https://legal-weed-world.web.app/",
+      icon: "/svg/hosts/legalweedLabel.svg"
+    },
+
+    
     {
       label: "Divemalta",
       host: "divemalta.app",
       url: "https://divemalta.app/",
-      icon: "https://divemalta.app/svg/iOS.svg"
+      icon: "/svg/hosts/divemaltaLabel.svg"
+    },
+    {
+      label: "Divemalta",
+      host: "divemalta-app.web.app",
+      url: "https://divemalta-app.web.app/",
+      icon: "/svg/hosts/divemaltaLabel.svg"
     },
     {
       label: "Open Source",
       host: "goldlabel-open-source.web.app",
       url: "https://goldlabel-open-source.web.app/",
-      icon: "https://goldlabel-open-source.web.app/svg/iOS.svg"
+      icon: "/svg/hosts/opensourceLabel.svg"
     },
     {
       label: "Localhost",
       host: "localhost:8000",
       url: "http://localhost:8000/",
-      icon: "http://localhost:8000/svg/iOS.svg"
+      icon: "/svg/hosts/opensourceLabel.svg"
     },
   ]

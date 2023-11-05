@@ -35,7 +35,7 @@ export function Font(props: any) {
     textfontSize = isBig ? "1.2rem" : "1rem"
   }
   if (variant === "small") {
-    textfontSize = isBig ? "0.65rem" : "0.7rem"
+    textfontSize = isBig ? "0.70rem" : "0.75rem"
   }
   if (fontSize) textfontSize = fontSize
   if (fixedH) fH = fixedH

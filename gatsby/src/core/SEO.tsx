@@ -30,10 +30,10 @@ export const SEO = (props: any) => {
         const {frontmatter} = markdownRemark
         if (frontmatter){
           const { path, title, description,
-            keywords, lingua, image,
+            keywords, image,
           } = frontmatter
           seo.url = `${siteUrl}${path}`
-          seo.title = `${title}. ${description}`
+          seo.title = `${title} ${description}`
           if(title === "Home") seo.title = description
           seo.description = description
           seo.image = `${siteUrl}${image}`
