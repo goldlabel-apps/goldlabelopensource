@@ -4,8 +4,8 @@ import {BackofficeSEO} from "../core/components/SEO/BackofficeSEO"
 import PWA from "../core/PWA"
 import App from "./App"
 import {Auth} from "./Auth"
-import {firebaseSignin} from "./actions/firebase/firebaseSignin"
-import {firebaseSignout} from "./actions/firebase/firebaseSignout"
+import {firebaseSignin} from "./actions/auth/firebaseSignin"
+import {firebaseSignout} from "./actions/auth/firebaseSignout"
 import {setDisplay} from "./actions/setDisplay"
 import {setCoreKey} from "./actions/setCoreKey"
 // State
@@ -16,11 +16,12 @@ import {
     selectBootTime,
     selectConfig,
     selectCore,
-    selectNotifyr,
+    selectNotifyer,
     selectDisplay,
     selectFrontmatter,
     selectAuth,
     selectPingpong,
+    selectBackoffice,
 } from "./state/reducer"
 // Theme
 import Theme from "../core/theme/Theme"
@@ -60,7 +61,6 @@ import {toggleFSDialog} from "./actions/toggleFSDialog"
 import {scrollTo} from "./actions/scrollTo"
 // Listings
 import Markdown from "./components/Listings/Markdown"
-import Paid from "./components/Listings/Paid"
 import CatNav from "./components/Listings/CatNav"
 import Meta from "./components/Listings/Meta"
 import ShareMenu from "./components/Listings/ShareMenu"
@@ -80,9 +80,10 @@ import {Signup} from "./components/Auth/Signup"
 // System
 import MultiSelect from "./components/System/MultiSelect"
 import DarkmodeToggle from "./components/System/DarkmodeToggle"
-import Notifyer from "./components/System/Notifyer"
+import NotifyerSnack from "./components/System/NotifyerSnack"
 import PopupMenu from "./components/System/PopupMenu"
 import ScrollUp from "./components/System/ScrollUp"
+import FooterMenu from "./components/System/FooterMenu"
 import NotFound from "./components/System/NotFound"
 import WindowResizeListener from "./components/System/WindowResizeListener"
 
@@ -91,16 +92,16 @@ import WindowResizeListener from "./components/System/WindowResizeListener"
 export {
     DarkmodeToggle,
     MultiSelect,
-    Notifyer,
-    selectNotifyr,
+    NotifyerSnack,
+    selectNotifyer,
     PopupMenu,
     ScrollUp,
     WindowResizeListener,
     NotFound,
+    FooterMenu,
 }
 // Listings
 export {
-    Paid,
     CatNav,
     Markdown,
     Meta,
@@ -176,6 +177,7 @@ export {
     selectFrontmatter,
     selectAuth,
     selectPingpong,
+    selectBackoffice,
 }
 // Actions
 export {

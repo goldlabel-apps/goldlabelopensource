@@ -2,11 +2,6 @@ import {
     AlertColor,
 } from "@mui/material"
 
-export type FieldShape = {
-    title: string
-    slug: string
-}
-
 export type CoreShape = {
     user: any
     darkmode: boolean
@@ -14,8 +9,14 @@ export type CoreShape = {
     frontmatter: any
     authed: boolean
     display: any
-    notifyr: any
-    
+    notifyer: any
+    footerMenuOpen: boolean
+    scroll: boolean
+}
+
+export type FieldShape = {
+    title: string
+    slug: string
 }
 
 export type GatsbyShape = {

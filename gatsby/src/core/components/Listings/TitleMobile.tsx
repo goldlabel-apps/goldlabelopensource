@@ -18,7 +18,7 @@ export default function TitleMobile(props: any) {
         title,
         description,
     } = props
-    return <Box sx={{my: 1}}>
+    return <Box sx={{}}>
                 <CardHeader 
                     avatar={<IconButton 
                                 color="primary"

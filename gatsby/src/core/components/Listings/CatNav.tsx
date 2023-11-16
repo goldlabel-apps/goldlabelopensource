@@ -36,7 +36,7 @@ export default function CatNav() {
   
   return (
       <Breadcrumbs aria-label="breadcrumb">
-        {!isHome ? <Link
+        <Link
           underline="hover"
           sx={{ 
             display: 'flex', 
@@ -52,25 +52,23 @@ export default function CatNav() {
             Home
           </Font> : null }
           
-        </Link> : null }
+        </Link>
         
-        {/* {parent ? <Link
+        {/* <Link
           underline="hover"
           sx={{ display: 'flex', alignItems: 'center', cursor: "pointer" }}
           color="inherit"
           onClick={(e: React.MouseEvent) => {
             e.preventDefault()
-            dispatch(navigate(parent.frontmatter.slug, "_self"))
           }}
         >
             <Box sx={{ pt: 0.5, pr: 1 }}>
-              <Icon icon={parent.frontmatter.icon || "left"} color="primary"  />
+              <Icon icon={"left"} color="primary"  />
             </Box>
             {isBig ? <Font variant="small">
-              {parent.frontmatter.title || "Back"}
+              Thing
             </Font> : null }
-        </Link> : null } */}
-        
+        </Link> */}
 
         {slug !== "/" ? <Box
           sx={{ display: 'flex', alignItems: 'center' }}

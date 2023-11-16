@@ -11,6 +11,8 @@ import {
   Font,
   TitleMobile,
   useSiteMetadata,
+  usePwaSelect,
+  selectCore,
   Children,
   Categories,
   Markdown,
@@ -18,15 +20,17 @@ import {
   Meta,
   CatNav,
   ScrollUp,
-  DarkmodeToggle,
+  FooterMenu,
   ShareMenu,
 } from "../../../core"
-import {You} from "../../../plugins/Pingpong"
 
 export default function ListingMobile(props: any) {  
   const {appData} = props
   const bgCol = useTheme().palette.background.default
   const siteMeta = useSiteMetadata()
+  const core = usePwaSelect(selectCore)
+  const {scroll} = core
+  
   let isHome = false
   if (appData.path === "/")isHome = true
   const {version} = siteMeta
@@ -37,9 +41,9 @@ export default function ListingMobile(props: any) {
   let html: any = null 
   let excerpt: any = null 
   let image: any = null
-  let icon: any = null
   let paid: any = true
   let children: any = false
+
   if (appData.pageResources.json.data){
     doc = appData.pageResources.json.data.markdownRemark
     frontmatter = doc.frontmatter
@@ -48,24 +52,32 @@ export default function ListingMobile(props: any) {
     image = frontmatter.image
     html = doc.html
     excerpt = doc.excerpt
-    icon = frontmatter.icon
     paid = frontmatter.paid
   }
-  if (!paid){
-    children = true
-  }
+  if (!paid) children = true
   
   return <>
           <div id="topAnchor" />
           <Container>  
             <Box sx={{}}>
+              
               <TitleMobile
                 title={title}
                 description={description}
               />
-              <Box sx={{mb:2}}>
-                <CatNav />
+
+              <Box sx={{display: "flex", mb:2}}>
+                  <Box sx={{}}>
+                    <ShareMenu />
+                  </Box>
+                  <Box sx={{}}>
+                    <Meta frontmatter={frontmatter}/>
+                  </Box>
+                  <Box sx={{mt:0.5, ml:1}}>
+                    <CatNav />
+                  </Box>
               </Box>
+
 
               {image ? <>
                 <Box>
@@ -76,9 +88,6 @@ export default function ListingMobile(props: any) {
                   />
                 </Box>
               </> : null }
-              <Box sx={{mt:1.5}}>
-                    <Meta frontmatter={frontmatter}/>
-                  </Box>
 
               <Box sx={{display: "flex"}}>                
                 <Box sx={{mt:2}}>
@@ -113,31 +122,29 @@ export default function ListingMobile(props: any) {
           <AppBar 
             position="fixed" 
             color="inherit" 
-            sx={{ 
+            sx={{
               background: bgCol,
               boxShadow:0,
               border: 0,
               top: 'auto', 
               bottom: 0, 
             }}>
+              <Box sx={{flexGrow:1}} />
               <Toolbar>            
-                <Box sx={{display: "flex"}}>
-                  <Box sx={{m:1.5}}>
-                      <Font variant="small" color="muted">
-                        {version}
-                      </Font>
-                  </Box>
+                <Box sx={{
+                  width: "100%",
+                  display: "flex"}}
+                >
                   <Box sx={{flexGrow:1}} />
-                  <Box>
-                    <You />
-                    <DarkmodeToggle />
-                    <ShareMenu />
+                  {scroll ? <Box>
                     <ScrollUp />
+                  </Box> : null }
+                  <Box>
+                    <FooterMenu />
                   </Box>
                 </Box>
               </Toolbar>
             </AppBar>
-            
         </Container>
       </>
 }

@@ -1,7 +1,5 @@
 import {
   notify,
-  setPwaKey,
-  store,
 } from "../../core"
 
 export const scrollTo = (el: HTMLElement): any =>
@@ -14,12 +12,6 @@ export const scrollTo = (el: HTMLElement): any =>
           inline: "nearest",
         });
       }
-      const {core} = store.getState()
-      const {scrollDirection} = core
-      dispatch(setPwaKey({key: "core", value: {
-        ...core,
-        scrollDirection: scrollDirection === "up" ? "down" : "up", 
-      }}))
     } catch (e: any) {
       dispatch(notify(
         "VANILLA JS 101",

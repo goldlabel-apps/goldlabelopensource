@@ -49,7 +49,7 @@ export function Signin() {
                   <Box sx={{my:3, display: "flex"}}>
                     <Box sx={{flexGrow:1}}/>
                     <Button 
-                      variant="outlined"
+                      // variant="outlined"
                       color="primary"
                       onClick={validate}>
                         <Font variant="small">

@@ -7,37 +7,39 @@ import {
 import {
   saveHost,
   makeFingerprint,
-  setPingpongKey,
   fetchIPGeo,
   saveUid,
-  restfulPing,
+  sortPing,
 } from "../Pingpong"
 
 export default function Pingpong() {
   const dispatch = usePwaDispatch()
   const pingpong = usePwaSelect(selectPingpong)
-
+  const {lastSaved} = pingpong
+  
   React.useEffect(() => {
     const {
       uid,
-      created,
+      lastSaved,
       host, 
       fingerprint,
       ipGeo,
       ip,
       ipGeoFetching,
-      pinged,
-      pinging,
     } = pingpong
-    if (created === 0) dispatch(setPingpongKey("created", Date.now()))
+    // if (Date.now()-lastSaved > 2000) dispatch(resetPingpong())
     if (!fingerprint) dispatch(makeFingerprint())
     if (!host) dispatch(saveHost())
     if (!ipGeo && !ipGeoFetching) dispatch(fetchIPGeo())
     if (!uid && host && fingerprint && ip ){
       dispatch(saveUid(host, ip, fingerprint))
-      if (!pinged && !pinging) dispatch(restfulPing())
     }
+    if(uid) dispatch(sortPing(uid))
   }, [pingpong, dispatch])
 
+  // return <>
+  //         last saved {Date.now() - lastSaved}
+  //         <pre>lastSaved: {JSON.stringify(lastSaved, null, 2)}</pre>  
+  //       </>
   return null
 }

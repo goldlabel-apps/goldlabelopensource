@@ -1,0 +1,14 @@
+{
+  "name": "goldlabel-plugin-forms",
+  "version": "1.0.0",
+  "description": "Generic React implemention of input forms",
+  "scripts": {
+    "test": "echo \"LGTM\" && exit 1"
+  },
+  "keywords": [
+    "forms",
+    "react"
+  ],
+  "author": "@listingslab",
+  "license": "MIT"
+}

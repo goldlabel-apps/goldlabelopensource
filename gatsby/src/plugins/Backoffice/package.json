@@ -1,0 +1,16 @@
+{
+  "name": "goldlabel-plugin-backoffice",
+  "version": "1.0.6",
+  "description": "Logged in users can view ",
+  "scripts": {
+    "test": "echo \"LGTM\" && exit 1"
+  },
+  "keywords": [
+    "plugin",
+    "backoffice",
+    "auth",
+    "users"
+  ],
+  "author": "@listingslab",
+  "license": "MIT"
+}

@@ -14,7 +14,6 @@ import {
   usePwaDispatch,
   usePwaSelect,
   selectFrontmatter,
-  // useParent,
 } from "../../../core"
 
 export default function Siblings(props: any) {
@@ -31,65 +30,57 @@ export default function Siblings(props: any) {
   } = frontmatter
   const allMarkdown = useAllMarkdown()
   const siblings = useSiblings(slug, parentSlug ,allMarkdown)
-
+  let parentTitle = ""
+  for (let i=0; i < allMarkdown.length; i++){
+    if (allMarkdown[i].frontmatter.slug === parentSlug){
+      parentTitle = allMarkdown[i].frontmatter.title
+    }
+  }
   return <>
-            {/* <pre>parentSlug: {JSON.stringify(parentSlug, null, 2)}</pre> */}
-            <List dense>
-                {parentSlug ? <ListItemButton
-                  sx={{mb:1}}
-                  color="primary"
-                  onClick={() => {
-                  dispatch(navigate(parentSlug, "_self"))
-                }}>
-                  {icons ? <ListItemIcon>
-                            <Icon icon={"left"} color="primary"/>
-                          </ListItemIcon> : null }
-              </ListItemButton> : null }
-                
-    {siblings.map((item: any, i: number) => {
-      const {
-        title,
-        description,
-        icon,
-      } = item
-      if (!title) return null
-      return <ListItemButton
+          <List dense>
+              {parentSlug ? <ListItemButton
+                sx={{mb:1}}
                 color="primary"
-                key={`childDoc_${i}`}
                 onClick={() => {
-                  dispatch(navigate(item.slug, "_self"))
-                }}>
-                  {icons ? <ListItemIcon>
-                  <Icon icon={icon} color="primary"/>
-                </ListItemIcon> : null }
+                dispatch(navigate(parentSlug, "_self"))
+              }}>
                 <ListItemText
                   primary={<Font variant={!descriptions ? "small" : ""}>
-                              {title}
+                              {parentTitle}
                             </Font> }
-                  secondary={descriptions ? <Font variant="small">
-                              {description}
-                            </Font> : null }
                 />
-              </ListItemButton>
-    })}
-  </List>
+                {icons ? <ListItemIcon>
+                  <Icon icon={"left"} color="primary"/>
+                </ListItemIcon> : null }
+            </ListItemButton> : null }
+                
+            {siblings.map((item: any, i: number) => {
+              const {
+                title,
+                description,
+                icon,
+              } = item
+              if (!title) return null
+              return <ListItemButton
+                        color="primary"
+                        key={`childDoc_${i}`}
+                        onClick={() => {
+                          dispatch(navigate(item.slug, "_self"))
+                        }}>
+                          
+                        <ListItemText
+                          primary={<Font variant={!descriptions ? "small" : ""}>
+                                      {title}
+                                    </Font> }
+                          secondary={descriptions ? <Font variant="small">
+                                      {description}
+                                    </Font> : null }
+                        />
+                        {icons ? <ListItemIcon>
+                          <Icon icon={icon} color="primary"/>
+                        </ListItemIcon> : null }
+                      </ListItemButton>
+            })}
+          </List>
   </>
-  
-
 }
-
-
-/*
-
-{flags && flag ? <ListItemAvatar>
-                    <Avatar src={`/svg/flags/${flag || "eu"}.svg`} />
-                  </ListItemAvatar> : null }
-  <pre>{JSON.stringify(childDocs.length, null, 2)}</pre>
-
-  <ListItemText
-                  primary={<Font variant={!descriptions ? "small" : ""}>
-                              Back
-                            </Font> }
-                  
-                />
-*/

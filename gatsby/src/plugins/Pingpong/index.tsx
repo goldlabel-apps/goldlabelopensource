@@ -7,6 +7,9 @@ import {makeFingerprint} from "./actions/makeFingerprint"
 import {fetchIPGeo} from "./actions/fetchIPGeo"
 import {saveUid} from "./actions/saveUid"
 import {restfulPing} from "./actions/restfulPing"
+import {sortPing} from "./actions/sortPing"
+import {newPing} from "./actions/newPing"
+import {updatePing} from "./actions/updatePing"
 
 export {
     pingpongState,
@@ -18,4 +21,7 @@ export {
     fetchIPGeo,
     saveUid,
     restfulPing,
+    sortPing,
+    newPing,
+    updatePing,
 }
