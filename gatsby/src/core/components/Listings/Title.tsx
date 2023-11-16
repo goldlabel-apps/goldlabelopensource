@@ -29,7 +29,7 @@ export default function Title(props: any) {
     return <Box sx={{my: 1}}>
         <CardHeader 
             avatar={<IconButton 
-                        sx={{ml:-1}}
+                        sx={{ml:-3}}
                         onClick={(e: React.MouseEvent) => {
                             e.preventDefault()
                             dispatch(navigate("/", "_self"))

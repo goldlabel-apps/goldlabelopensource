@@ -8,7 +8,6 @@ import {
     Font,
     usePwaDispatch,
     navigate,
-    Icon,
 } from "../../../core"
 
 export default function AuthHeader({title}) {
@@ -30,11 +29,11 @@ export default function AuthHeader({title}) {
                 </IconButton>
                     
                 </Box>
-                <Box sx={{mt:2}}>
+                {/* <Box sx={{mt:2}}>
                     <Font variant="title">
                         {title}
                     </Font>
-                </Box>
+                </Box> */}
                 <Box sx={{flexGrow:1}} />
         </Box>
     </>

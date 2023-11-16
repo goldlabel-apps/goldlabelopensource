@@ -17,7 +17,7 @@ export const setCoreKey = (
         }}))
     } catch (e: any) {
       dispatch(notify(
-        "Core 500",
+        "BACKOFFICE 500",
         "error", 
         `setCoreKey ${e.toString()}`
       ))

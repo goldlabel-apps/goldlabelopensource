@@ -7,13 +7,13 @@ import {
   Font,
   usePwaDispatch,
   usePwaSelect,
-  selectNotifyr,
+  selectNotifyer,
   setPwaKey,
   notifyCancel,
   selectCore,
 } from "../../../core"
 
-export default function Notifyer() {
+export default function NotifyerSnack() {
   const dispatch = usePwaDispatch()
   const core = usePwaSelect(selectCore)
   const {notifyer} = core

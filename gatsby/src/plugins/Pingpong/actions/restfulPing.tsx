@@ -1,4 +1,5 @@
 import axios from "axios"
+
 import { 
   store, 
   notify,
@@ -68,6 +69,7 @@ export const restfulPing = (): any => async (dispatch: any) => {
         }
         dispatch(setPingpongKey("pinging", false))
         dispatch(setPingpongKey("pinged", true))
+        dispatch(setPingpongKey("lastSaved", Date.now()))
         dispatch(notify(
           "Ping",
           "success", 
@@ -76,7 +78,7 @@ export const restfulPing = (): any => async (dispatch: any) => {
       })
       .catch(function (e) {
         let message = e.toString()
-        if (message === "Error: Network Error") message = "API not found"
+        if (message === "Error: Network Error") message = "API not running"
         dispatch(notify(
           "Listingslab API 522",
           "info", 

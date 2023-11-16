@@ -1,13 +1,14 @@
 type PingpongShape = {
-    created: number
+    lastSaved: number
     pingpongDialog: boolean
     ipGeo: any
     ipGeoFetching: boolean
+    
 }
 
 export const pingpongState: PingpongShape = {
     pingpongDialog: false,
-    created: 0,
+    lastSaved: 0,
     ipGeo: null,
     ipGeoFetching: false,
 }

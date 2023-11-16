@@ -18,7 +18,7 @@ export default function Meta(props: any) {
   const siteMetadata = useSiteMetadata()
   // console.log("siteMeta", siteMetadata)
   if (!frontmatter) return null
-  let facebook: any = siteMetadata.siteFacebook
+  let facebook: any = null
   let website: any = null  
   let phone: any = null
   let twitter: any = null

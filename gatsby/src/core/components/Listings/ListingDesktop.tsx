@@ -17,21 +17,21 @@ import {
   Meta,
   Siblings,
   Markdown,
-  Font,
   CatNav,
   ScrollUp,
-  DarkmodeToggle,
   ShareMenu,
+  FooterMenu,
+  selectCore,
 } from "../../../core"
-import {You} from "../../../plugins/Pingpong"
 
 export default function ListingDesktop(props: any) {
   const bgCol = useTheme().palette.background.default
   const frontmatter = usePwaSelect(selectFrontmatter)
+  const core = usePwaSelect(selectCore)
+  const {scroll} = core
   const {appData} = props
   const siteMeta = useSiteMetadata()
   const {
-    version,
     siteTitle,
     siteDescription,
   } = siteMeta
@@ -39,8 +39,7 @@ export default function ListingDesktop(props: any) {
   let doc: any = null
   let title = siteTitle
   let description = siteDescription
-  let html: any = null 
-  let parentSlug: any = null 
+  let html: any = null
   let image: any = null
   let icon: any = null
   let paid: any  = true
@@ -53,16 +52,13 @@ export default function ListingDesktop(props: any) {
   if (frontmatter){
     paid = frontmatter.paid
     slug = frontmatter.slug
-    parentSlug = frontmatter.parentSlug
     title = frontmatter.title
     description = frontmatter.description
     image = frontmatter.image
     icon = frontmatter.icon
     flag = frontmatter.flag
   }
-  if (!paid){
-    children = true
-  }
+  if (!paid) children = true
 
   return <>
     <Container maxWidth="md" sx={{mb: "100px"}}>
@@ -79,22 +75,20 @@ export default function ListingDesktop(props: any) {
           />
         </Grid>
 
-        <Grid item xs={12} sm={4}>
-          <Siblings 
-            frontmatter={frontmatter}
-            icons= {true}  
-          />
-        </Grid>
-
         {image ? <Grid item xs={12} sm={8}>
+
               <Box sx={{display: "flex"}}>
-                <Box sx={{mt:0}}>
+                <Box sx={{mr:0.5}}>
+                  <ShareMenu />
+                </Box>
+                <Box sx={{mr:0.5}}>
+                  <Meta frontmatter={frontmatter}/>
+                </Box>
+                <Box sx={{m:0.5}}>
                   <CatNav />
                 </Box>
                 <Box sx={{flexGrow:1}}/>
-                <Box sx={{mt:0}}>
-                  <Meta frontmatter={frontmatter}/>
-                </Box>
+                
               </Box>
               
               <Box sx={{mt:2}}>
@@ -105,20 +99,27 @@ export default function ListingDesktop(props: any) {
                 />
               </Box>
 
-              {children ? <Box sx={{mt:2}}><Children
+              {html ? <Markdown html={html}/> : null }
+
+              {children ? <Box sx={{mt:1}}><Children
                 icons= {true} 
                 descriptions={false}
                 frontmatter={frontmatter}
               /></Box> : null }
               
-              {html ? <Markdown html={html}/> : null }
           </Grid> : null }
-          
+
+          <Grid item xs={12} sm={4}>
+            <Box sx={{mt:6}}>
+              <Siblings 
+                frontmatter={frontmatter}
+                icons= {true}  
+              />
+            </Box>
+          </Grid>
           
       </Grid>
 
-
-      
           <AppBar 
             position="fixed" 
             color="inherit" 
@@ -132,20 +133,12 @@ export default function ListingDesktop(props: any) {
               <Toolbar>
                 <Container maxWidth="md">               
                   <Box sx={{display: "flex"}}>
-                    <Box sx={{m:1.5}}>
-                        <Font variant="small" color="muted">
-                          {version}
-                        </Font>
-                    </Box>
-                    <Box>
-                    
-                      <You />
-                      <DarkmodeToggle />
-                      <ShareMenu />
-                    </Box>
                     <Box sx={{flexGrow: 1}} />
-                    <Box>
+                    {scroll ? <Box>
                       <ScrollUp />
+                    </Box> : null }
+                    <Box sx={{mr:4}}>
+                      <FooterMenu />
                     </Box>
                   </Box>
                 </Container> 
@@ -156,3 +149,4 @@ export default function ListingDesktop(props: any) {
     </Container>
   </>
 }
+

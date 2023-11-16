@@ -24,6 +24,7 @@ import NewsIcon from "@mui/icons-material/GradeOutlined"
 import ExampleIcon from "@mui/icons-material/RocketLaunch"
 import MedicalIcon from "@mui/icons-material/MedicalServicesOutlined"
 import DarkmodeIcon from "@mui/icons-material/DarkModeOutlined"
+import AccommodationIcon from "@mui/icons-material/Bed"
 import LightModeIcon from "@mui/icons-material/LightModeOutlined"
 import ActivitesIcon from "@mui/icons-material/DirectionsRun"
 import DivingIcon from "@mui/icons-material/ScubaDiving"
@@ -74,7 +75,7 @@ import PoolIcon from "@mui/icons-material/PoolOutlined"
 import CloseIcon from "@mui/icons-material/Close"
 
 export type IconShape = {
-  icon: "spy" | "seed" | "github" | "members" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ping" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox"
+  icon: "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ping" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox"
   color?: any
 }
 
@@ -129,6 +130,9 @@ export default function Icon({icon, color}: IconShape) {
       break
     case "blog":
       iconFragment = <NewsIcon color={color} />
+      break
+    case "accommodation":
+      iconFragment = <AccommodationIcon color={color} />
       break
     case "search":
       iconFragment = <SearchIcon color={color} />
@@ -306,6 +310,9 @@ export default function Icon({icon, color}: IconShape) {
       break
     case "members":
       iconFragment = <MembersIcon color={color} />
+      break
+    case "notifyer":
+      iconFragment = <NotifyrIcon color={color} />
       break
     case "notifyr":
       iconFragment = <NotifyrIcon color={color} />
