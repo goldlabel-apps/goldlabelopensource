@@ -17,6 +17,9 @@ export const glConfig: ConfigShape = {
         primaryColor: "#C5C5C5",
         secondaryColor: "#616161",
     },
-    plugins: ["Geolocator", "Lingua", "Tings"],
+    mapbox: {
+        light: "mapbox://styles/listingslab/clmrnpplw00ej01nsfv8l4q25",
+        dark: "mapbox://styles/listingslab/clmrnt68o02a801qxevn0bt6u"
+    }
 }
 

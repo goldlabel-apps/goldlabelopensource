@@ -47,7 +47,7 @@ export type ConfigShape = {
   siteFooterUrl?: string
   siteDefaultLocale?: string
   theme: ThemeShape
-  plugins: any
+  mapbox: any
 }
 
 export type ThemeShape = {
