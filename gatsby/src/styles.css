@@ -1,5 +1,5 @@
-a { color: #616161; text-decoration: none; cursor: pointer; }
-a:hover { color: #9a9a9a; }
+a { color: #C09F52; text-decoration: none; cursor: pointer; }
+a:hover { color: #e1ba60; }
 /* ul li::before {
   color: #C5C5C5;
   content: "\2022";
@@ -9,13 +9,13 @@ a:hover { color: #9a9a9a; }
   margin-left: -1em;
 } */
 blockquote {
-  border-left: 3px solid #C5C5C5;
+  border-left: 3px solid #C09F52;
   margin: 0;
   padding: 0;
   padding-left: 16px;
 }
 html {
-  --thumbBG: #C5C5C5;
+  --thumbBG: #C09F52;
   --scrollbarBG: none;
 }
 pre {

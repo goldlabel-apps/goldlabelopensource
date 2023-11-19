@@ -33,8 +33,6 @@ export const allHosts = [
       url: "https://legal-weed-world.web.app/",
       icon: "/svg/hosts/legalweedLabel.svg"
     },
-
-    
     {
       label: "Divemalta",
       host: "divemalta.app",
@@ -51,12 +49,12 @@ export const allHosts = [
       label: "Open Source",
       host: "goldlabel-open-source.web.app",
       url: "https://goldlabel-open-source.web.app/",
-      icon: "/svg/hosts/opensourceLabel.svg"
+      icon: "https://goldlabel-open-source.web.app/svg/iOS.svg"
     },
     {
       label: "Localhost",
       host: "localhost:8000",
       url: "http://localhost:8000/",
-      icon: "/svg/hosts/opensourceLabel.svg"
+      icon: "/svg/hosts/localhost.svg"
     },
   ]
