@@ -21,7 +21,6 @@ import {
   selectPingpong,
   selectDisplay,
   selectAuth,
-  navigate,
 } from "../../core"
 import {
   saveHost,
@@ -42,7 +41,7 @@ export default function Pingpong() {
   const auth = usePwaSelect(selectAuth)
   const pingpong = usePwaSelect(selectPingpong)
   const display = usePwaSelect(selectDisplay)
-  const {lastSaved, myPing, myPingOpen, unread} = pingpong
+  const {myPing, myPingOpen, unread} = pingpong
 
   let lng, lat, city, province, countryName, continent, ip, flag = ""
   if (myPing){
@@ -58,11 +57,10 @@ export default function Pingpong() {
   let user: any = null
   if(auth) user = auth.user
   
-  let messages = 0
+  let messages = 1
   if (unread) messages = unread
   let isBig = false
   if (display) isBig = !display.mobile
-  isBig = false
   
   const openMyPing = () =>{
     dispatch(setPingpongKey("myPingOpen", true))
@@ -108,6 +106,9 @@ export default function Pingpong() {
               onClose={closeMyPing}>
                 <DialogTitle>
                   <CardHeader 
+                  title={<Font variant="title">
+                            You
+                        </Font>}
                     avatar={<Badge badgeContent={messages} color="secondary">
                             <Icon icon="pingpong" />
                             </Badge>}
@@ -117,9 +118,7 @@ export default function Pingpong() {
                     >
                       <Icon icon={"close"} color="primary"/>
                     </IconButton>}
-                    title={<Font variant="title">
-                        Pingpong
-                    </Font>}
+                    
                   
                   />
                 </DialogTitle>
@@ -143,20 +142,8 @@ export default function Pingpong() {
                 
                 <DialogActions sx={{display: "block"}}>
                 
-                  <List>
-                    <ListItemButton
-                        sx={{mb:1}}
-                        color="primary"
-                        onClick={closeMyPing}>
-                      <ListItemIcon>
-                        <Icon icon={"close"} color="primary"/>
-                      </ListItemIcon>
-                      <ListItemText
-                        primary={<Font>
-                                   Close
-                                  </Font> }/>
-                      </ListItemButton>
-                  </List>
+                  
+
                 </DialogActions>
             
               </Dialog>

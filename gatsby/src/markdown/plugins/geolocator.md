@@ -1,12 +1,12 @@
 ---
-order: 20
-category: "goldlabel"
-slug: "/goldlabel/geolocator"
-parentSlug: "/goldlabel"
+order: 30
+category: "plugins"
+slug: "/plugins/geolocator"
+parentSlug: "/plugins"
 title: "Geolocator"
-description: "An old fashioned Mashup using Mapbox"
+description: "Requires a Mapbox API key"
 keywords: "weathermap, mapbox, mashup"
-icon: "goldlabel"
+icon: "plugin"
 image: "/png/mapbox.png"
 lat: 35.919837943466604
 lng: 14.493106168762859

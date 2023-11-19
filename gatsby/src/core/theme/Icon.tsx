@@ -14,6 +14,8 @@ import WindowsIcon from "./SVGIcons/devices/WindowsIcon"
 import XboxIcon from "./SVGIcons/devices/XboxIcon"
 import MembersIcon from "@mui/icons-material//SupervisedUserCircle"
 import AndroidIcon from "@mui/icons-material/Android"
+import CloseIcon from "@mui/icons-material/CloseOutlined"
+
 import DesktopMacIcon from "@mui/icons-material/DesktopMacOutlined"
 import DesktopIcon from "@mui/icons-material/DesktopWindowsOutlined"
 import GithubIcon from "@mui/icons-material/GitHub"
@@ -73,10 +75,11 @@ import CarIcon from "@mui/icons-material/DirectionsCarOutlined"
 import BoatIcon from "@mui/icons-material/DirectionsBoatOutlined"
 import BusIcon from "@mui/icons-material/DirectionsBusOutlined"
 import PoolIcon from "@mui/icons-material/PoolOutlined"
-import CloseIcon from "@mui/icons-material/Close"
+import DocIcon from "@mui/icons-material/ArticleOutlined"
+import PluginIcon from "@mui/icons-material/ExtensionOutlined"
 
 export type IconShape = {
-  icon: "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ping" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox"
+  icon: "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ping" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox"
   color?: any
 }
 
@@ -86,6 +89,12 @@ export default function Icon({icon, color}: IconShape) {
   switch (icon) {
     case "home":
       iconFragment = <HomeIcon color={color} />
+      break
+    case "plugin":
+      iconFragment = <PluginIcon color={color} />
+      break
+    case "doc":
+      iconFragment = <DocIcon color={color} />
       break
     case "reset":
       iconFragment = <ResetIcon color={color} />

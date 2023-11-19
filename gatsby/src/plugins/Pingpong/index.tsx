@@ -9,6 +9,8 @@ import {sortPing} from "./actions/sortPing"
 import {newPing} from "./actions/newPing"
 import {updatePing} from "./actions/updatePing"
 import {resetPingpong} from "./actions/resetPingpong"
+import PingpongListMenu from "./components/PingpongListMenu"
+import PingpongIconMenu from "./components/PingpongIconMenu"
 
 export {
     pingpongState,
@@ -22,4 +24,6 @@ export {
     newPing,
     updatePing,
     resetPingpong,
+    PingpongIconMenu,
+    PingpongListMenu,
 }

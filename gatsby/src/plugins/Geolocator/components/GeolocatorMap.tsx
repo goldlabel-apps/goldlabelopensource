@@ -19,7 +19,7 @@ export default function GeolocatorMap(props: any) {
   const dispatch = usePwaDispatch()
   const {mapbox} = glConfig
   const mode = useTheme().palette.mode
-  console.log("mode", mode)
+  // console.log("mode", mode)
 
   const mapRef: any = React.useRef(null)
   const defaultCenter = {
