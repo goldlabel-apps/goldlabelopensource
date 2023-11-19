@@ -103,7 +103,7 @@ export default function Pingpong() {
                 <DialogTitle>
                   <CardHeader 
                   title={<Font variant="title">
-                            You
+                            Ping
                         </Font>}
                     avatar={<Badge badgeContent={messages} color="secondary">
                             <Icon icon="pingpong" />

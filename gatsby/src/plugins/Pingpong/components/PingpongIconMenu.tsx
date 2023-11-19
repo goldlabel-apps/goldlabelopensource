@@ -1,15 +1,11 @@
 import React from "react"
 import {
   IconButton,
-  List,
-  ListItemButton,
-  ListItemText,
-  ListItemIcon,
 } from "@mui/material"
 import {
   Icon,
-  Font,
   usePwaDispatch,
+  resetLocalstorage,
 } from "../../../core"
 
 
@@ -18,14 +14,13 @@ export default function PingpongIconMenu() {
   return <>
             
             <IconButton
-                sx={{mb:1}}
-                color="primary"
-                onClick={() => {
-                    console.log("reset redux")
-                }}>
+              sx={{}}
+              color="primary"
+              onClick={() => {
+                  console.log("reset redux")
+              }}>
                 <Icon icon={"reset"} color="primary"/>
-                
-                </IconButton>
+            </IconButton>
            
 
         </>

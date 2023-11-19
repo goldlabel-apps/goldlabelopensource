@@ -6,10 +6,10 @@ import {
 
 export const resetLocalstorage = (): any => async (dispatch: any) => {
     try {
-        console.log("resetLocalstorage")
+        console.log("Redux Localstorage 101")
     } catch (e: any) {
         dispatch(notify(
-            "Redux 101",
+            "Redux Localstorage 101",
             "error", 
             `resetLocalstorage ${e.toString()}`
         ))

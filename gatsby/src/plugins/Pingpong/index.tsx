@@ -11,9 +11,13 @@ import {updatePing} from "./actions/updatePing"
 import {resetPingpong} from "./actions/resetPingpong"
 import PingpongListMenu from "./components/PingpongListMenu"
 import PingpongIconMenu from "./components/PingpongIconMenu"
+import Ping from "./components/Ping"
+import Pings from "./components/Pings"
 
 export {
     pingpongState,
+    Ping,
+    Pings,
     Pingpong,
     saveHost,
     setPingpongKey,

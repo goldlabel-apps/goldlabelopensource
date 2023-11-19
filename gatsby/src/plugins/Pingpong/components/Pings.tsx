@@ -21,11 +21,11 @@ import {
   usePwaDispatch,
   selectBackoffice,
   selectDisplay,
-} from "../../../../core"
+} from "../../../core"
 import {
   updateFbId,
   Ping,
-} from "../../../Backoffice"
+} from "../../Backoffice"
 
 const iconFromHost = (
   host: string, 
