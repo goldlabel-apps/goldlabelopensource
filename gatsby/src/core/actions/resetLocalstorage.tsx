@@ -5,17 +5,12 @@ import {
 
 export const resetLocalstorage = (): any => async (dispatch: any) => {
     try {
-        // console.log("resetLocalstorage")
-        let localStorageEnabled = false
-        try { 
-            localStorageEnabled = !!localStorage 
-            if (localStorageEnabled){
-                localStorage.clear.bind(localStorage)
-            }
-            setTimeout(()=>{
-                dispatch(navigate("/", "_self"))
-            }, 1000)
-        } catch(e) {};
+        setTimeout(() => {
+        localStorage.removeItem("persist:goldlabel-core")
+        setTimeout(() => {
+            window.location.reload()
+        }, 250)
+        }, 250)
     } catch (e: any) {
         dispatch(notify(
             "Redux Localstorage 101",

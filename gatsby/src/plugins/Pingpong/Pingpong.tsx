@@ -38,7 +38,7 @@ export default function Pingpong() {
   const pingpong = usePwaSelect(selectPingpong)
   const display = usePwaSelect(selectDisplay)
   const {myPing, myPingOpen, unread} = pingpong
-  let hideBtn = true
+  let hideBtn = false
   let messages = 0
   let lng, lat, city, province, countryName, continent, ip, flag = ""
   if (myPing){
