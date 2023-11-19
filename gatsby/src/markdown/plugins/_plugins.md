@@ -1,16 +1,18 @@
 ---
+paid: false
+cover: true
 order: 10
-slug: "/goldlabel"
-title: "Goldlabel"
+slug: "/plugins"
+title: "Plugins"
 description: "An option if you're thinking of updating a tired old WordPress site"
-cover: false
-category: "goldlabel"
-icon: "goldlabel"
+category: "plugins"
+icon: "right"
 image: "/png/goldlabel.png"
-keywords: "goldlabel, product, pwa, Static Site Generation, SSR, free"
+keywords: "goldlabel, plugins, product, pwa, Static Site Generation, SSR, free"
 hideImage: true
 twitter: "@listingslab"
 ---
+
 Goldlabel software is an easy to implement framework that can take your slow old wordpress site and make it not only super fast, but rank better in Google
 
 Modular additions to a Gatsby/NextJS static site generating frontend developed by Listingslab. To use them you need to install them carefully into your project and update them periodically. This is the stuff which is not Open Source. If you a legit developer, you are welcome to acccess. The only reason it isn't yet Open Source is because it's not cleaned up, bullet proof and easily installable.
