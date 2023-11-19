@@ -16,7 +16,7 @@ export const glConfig: ConfigShape = {
         slug: "goldlabel",
         primaryColor: "#C09F52",
         secondaryColor: "#e1ba60",
-        defaultDarkmode: false,
+        defaultDarkmode: true,
     },
     mapbox: {
         light: "mapbox://styles/listingslab/clmrnpplw00ej01nsfv8l4q25",
