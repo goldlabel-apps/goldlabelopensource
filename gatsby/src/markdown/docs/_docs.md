@@ -3,7 +3,7 @@ paid: false
 cover: true
 order: 10
 slug: "/docs"
-title: "Docs"
+title: "Documentation"
 description: "All you need to know"
 category: "docs"
 icon: "doc"

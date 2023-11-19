@@ -26,7 +26,7 @@ code {
   font-family: Monaco, "Courier New", monospace;
 }
 body::-webkit-scrollbar {
-  width: 4px;
+  width: 8px;
 }
 body {
   overflow-y: scroll;

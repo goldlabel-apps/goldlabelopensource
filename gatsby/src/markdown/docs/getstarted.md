@@ -7,7 +7,7 @@ parentSlug: "/docs"
 title: "Getting Started"
 description: "Developer? Start by cloning the repo"
 keywords: "developer"
-icon: "doc"
+icon: "github"
 image: "/jpg/ukmap.jpg"
 ---
 Identify where you're going to clone the repository. We'll call this `<working-repo>`. Decide on the machine readable name `<your-project>`. Clone the repo and install dependencies
