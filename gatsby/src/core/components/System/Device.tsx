@@ -1,5 +1,6 @@
 import React from "react"
 import {
+  Box,
   IconButton,
   Tooltip,
 } from "@mui/material"
@@ -38,6 +39,7 @@ export function Device({os, browser, device}: DeviceShape) {
   if (device.includes("Chromium")) iconDevice = "chrome"
 
   return (<>
+        <Box>
           { browser !== " " ? <Tooltip title={browser}>
               <IconButton
                 color="primary"
@@ -72,7 +74,7 @@ export function Device({os, browser, device}: DeviceShape) {
                 <Icon icon={iconOs}/>
               </IconButton>
             </Tooltip> : null }
-            
+            </Box>
           </>
   )
 }

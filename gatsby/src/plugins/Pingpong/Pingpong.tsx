@@ -43,16 +43,16 @@ export default function Pingpong() {
   let messages = 0
   let lng, lat, city, province, countryName, device, browser, os, ip, flag = ""
   if (myPing){
-    ip = myPing.ip
-    device = myPing.device
-    browser = myPing.browser
-    os = myPing.os
-    countryName = myPing.countryName
-    province = myPing.province
-    city = myPing.city
-    lat = myPing.lat
-    lng = myPing.lng
-    flag = myPing.flag
+    ip = myPing.ip || ""
+    device = `${myPing.deviceVendor || ""} ${myPing.deviceModel || ""}`
+    browser = myPing.browser || ""
+    os = myPing.os || ""
+    countryName = myPing.countryName || ""
+    province = myPing.province || ""
+    city = myPing.city || ""
+    lat = myPing.lat || 0
+    lng = myPing.lng || 0
+    flag = myPing.flag || ""
   }
   let user: any = null
   if(auth) user = auth.user
@@ -119,14 +119,21 @@ export default function Pingpong() {
                   />
                 </DialogTitle>
                 <DialogContent sx={{mx:2}}>
-
-                  <Device os={os} device={device} browser={browser}/>
+                  
 
                   <GeolocatorMap options={{
                     flag,
                     lat,
                     lng,
                   }}/>
+
+                  <Box sx={{mt:2}}>
+                    <Device 
+                      os={os}
+                      // @ts-ignore
+                      device={device} 
+                      browser={browser}/>
+                  </Box>
 
                   <Box sx={{mt:2}}>
                     <Font>
