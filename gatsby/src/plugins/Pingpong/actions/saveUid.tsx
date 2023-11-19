@@ -11,7 +11,6 @@ export const saveUid = (
   async (dispatch: any) => {
     try {
       dispatch(setPingpongKey("uid", `${host}_${ip}_${fingerprint}`))
-      dispatch(setPingpongKey("lastSaved", Date.now()))
     } catch (e: any) {
       dispatch(notify(
         "Pingpong 500",
