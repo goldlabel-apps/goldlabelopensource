@@ -11,7 +11,7 @@ import {
 export default function PingpongIconMenu() {
   const dispatch = usePwaDispatch()
   return <>
-          <IconButton
+          {/* <IconButton
             sx={{}}
             color="primary"
             onClick={(e: React.MouseEvent) => {
@@ -19,7 +19,7 @@ export default function PingpongIconMenu() {
               dispatch(resetLocalstorage())
             }}>
               <Icon icon={"reset"} color="primary"/>
-          </IconButton>
+          </IconButton> */}
         </>
 }
 

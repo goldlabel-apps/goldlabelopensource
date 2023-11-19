@@ -88,7 +88,7 @@ import SystemMenu from "./components/System/SystemMenu"
 import NotFound from "./components/System/NotFound"
 import WindowResizeListener from "./components/System/WindowResizeListener"
 import BottomBar from "./components/System/BottomBar"
-
+import {Device} from "./components/System/Device"
 
 ///////////////////
 // System
@@ -103,6 +103,7 @@ export {
     NotFound,
     SystemMenu,
     BottomBar,
+    Device,
 }
 // Listings
 export {

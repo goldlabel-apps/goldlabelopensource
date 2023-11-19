@@ -17,6 +17,7 @@ import {
   selectPingpong,
   selectDisplay,
   selectAuth,
+  Device,
 } from "../../core"
 import {
   saveHost,
@@ -40,10 +41,12 @@ export default function Pingpong() {
   const {myPing, myPingOpen, unread} = pingpong
   let hideBtn = false
   let messages = 0
-  let lng, lat, city, province, countryName, continent, ip, flag = ""
+  let lng, lat, city, province, countryName, device, browser, os, ip, flag = ""
   if (myPing){
     ip = myPing.ip
-    continent = myPing.continent
+    device = myPing.device
+    browser = myPing.browser
+    os = myPing.os
     countryName = myPing.countryName
     province = myPing.province
     city = myPing.city
@@ -116,6 +119,8 @@ export default function Pingpong() {
                   />
                 </DialogTitle>
                 <DialogContent sx={{mx:2}}>
+
+                  <Device os={os} device={device} browser={browser}/>
 
                   <GeolocatorMap options={{
                     flag,

@@ -26,6 +26,11 @@ const collectionList = [
   //   collection: "members",
   //   icon: "members",
   // },
+  {
+    label: "Google",
+    collection: "google",
+    icon: "google",
+  },
 ]
 
 export default function CollectionSelect() {

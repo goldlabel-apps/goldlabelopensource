@@ -1,5 +1,4 @@
 import * as React from "react"
-import moment from "moment"
 import {
   Avatar,
   Button,
@@ -21,6 +20,7 @@ import {
   usePwaDispatch,
   selectBackoffice,
   selectDisplay,
+  Device,
 } from "../../../core"
 import {
   updateFbId,
@@ -68,56 +68,23 @@ export default function Pings({data}: any) {
         <Avatar sx={{width: "22px", height: "22px", }} src={`/svg/flags/${params.row.flag}.svg`} />
       ),
     },
-    {
-      field: 'host',
-      headerName: '',
-      sortable: true,
-      width: 40,
-      renderCell: (params: GridValueGetterParams) => {
-        return  (<Avatar sx={{width: "28px", height: "28px", }} src={iconFromHost(params.row.host, allHosts)} />)
-      },
-    },
-    {
-      field: 'browser',
-      headerName: '',
-      sortable: true,
-      renderCell: (params: GridRenderCellParams<any, Date>) => (
-        <Font variant="small">{`${params.row.browser}`}</Font>
-      ),
-    },
-
-    {
-      field: 'os',
-      headerName: '',
-      sortable: true,
-      renderCell: (params: GridRenderCellParams<any, Date>) => (
-        <Font variant="small">{`${params.row.os}`}</Font>
-      ),
-    },
-
+    
     {
       field: 'device',
       headerName: '',
+      width: 200,
       sortable: true,
       renderCell: (params: GridRenderCellParams<any, Date>) => (
-        <Font variant="small">{`${params.row.deviceVendor} ${params.row.deviceModel || ""}`}</Font>
+        <Device os={params.row.os} browser={params.row.browser} device={params.row.deviceVendor} />
       ),
     },
 
-    // {
-    //   field: 'hostname',
-    //   headerName: '',
-    //   sortable: true,
-    //   renderCell: (params: GridRenderCellParams<any, Date>) => (
-    //     <Font variant="small">{params.row.host}</Font>
-    //   ),
-    // },
     // {
     //   field: 'city',
     //   headerName: '',
     //   sortable: true,
     //   renderCell: (params: GridRenderCellParams<any, Date>) => (
-    //     <Font variant="small">{params.row.city}</Font>
+    //     <Font variant="small">{params.row.city || ""}</Font>
     //   ),
     // },
     // {
@@ -125,13 +92,27 @@ export default function Pings({data}: any) {
     //   headerName: '',
     //   sortable: true,
     //   renderCell: (params: GridRenderCellParams<any, Date>) => (
-    //     <Font variant="small">{`${params.row.slug}`}</Font>
+    //     <Font variant="small">{`${params.row.slug || ""}`}</Font>
     //   ),
     // },
+
+    // {
+    //   field: 'host',
+    //   headerName: '',
+    //   sortable: true,
+    //   width: 40,
+    //   renderCell: (params: GridValueGetterParams) => {
+    //     return  (<Avatar sx={{width: "28px", height: "28px", }} src={iconFromHost(params.row.host, allHosts)} />)
+    //   },
+    // },
+    
   ]
   if (!data) return null
   for (let i = 0; i <data.length; i++){
-    // if (i === 0) console.log ("data[i]", data[i])
+    const {
+      city,
+    } = data[i]
+    if (city === "Mountain View") break
     docs.push({
       id: data[i].fbId,
       time: data[i].time,
