@@ -4,6 +4,7 @@ import {BackofficeSEO} from "../core/components/SEO/BackofficeSEO"
 import PWA from "../core/PWA"
 import App from "./App"
 import {Auth} from "./Auth"
+import {Pingpong} from "../plugins/Pingpong"
 import {firebaseSignin} from "./actions/auth/firebaseSignin"
 import {firebaseSignout} from "./actions/auth/firebaseSignout"
 import {setDisplay} from "./actions/setDisplay"
@@ -70,7 +71,6 @@ import Categories from "../core/components/Listings/Categories"
 import Children from "../core/components/Listings/Children"
 import Siblings from "../core/components/Listings/Siblings"
 import Image from "./components/Listings/Image"
-import Title from "./components/Listings/Title"
 import TitleMobile from "./components/Listings/TitleMobile"
 import AuthChip from "./components/Auth/AuthChip"
 import AuthHeader from "./components/Auth/AuthHeader"
@@ -83,9 +83,11 @@ import DarkmodeToggle from "./components/System/DarkmodeToggle"
 import NotifyerSnack from "./components/System/NotifyerSnack"
 import PopupMenu from "./components/System/PopupMenu"
 import ScrollUp from "./components/System/ScrollUp"
-import FooterMenu from "./components/System/FooterMenu"
+import SystemMenu from "./components/System/SystemMenu"
 import NotFound from "./components/System/NotFound"
 import WindowResizeListener from "./components/System/WindowResizeListener"
+import BottomBar from "./components/System/BottomBar"
+
 
 ///////////////////
 // System
@@ -98,7 +100,8 @@ export {
     ScrollUp,
     WindowResizeListener,
     NotFound,
-    FooterMenu,
+    SystemMenu,
+    BottomBar,
 }
 // Listings
 export {
@@ -112,7 +115,6 @@ export {
     Children,
     Siblings,
     Image,
-    Title,
     TitleMobile,
 }
 // Auth
@@ -130,6 +132,7 @@ export {
     App,
     SEO,
     BackofficeSEO,
+    Pingpong,
 }
 // Hooks
 export {

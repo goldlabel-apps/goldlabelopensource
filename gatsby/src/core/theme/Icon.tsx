@@ -19,6 +19,7 @@ import DesktopIcon from "@mui/icons-material/DesktopWindowsOutlined"
 import GithubIcon from "@mui/icons-material/GitHub"
 import MobileIcon from "@mui/icons-material/PhoneAndroid"
 import NotifyrIcon from "@mui/icons-material/MarkUnreadChatAlt"
+import ResetIcon from "@mui/icons-material/Refresh"
 import HomeIcon from "@mui/icons-material/HomeOutlined"
 import NewsIcon from "@mui/icons-material/GradeOutlined"
 import ExampleIcon from "@mui/icons-material/RocketLaunch"
@@ -75,7 +76,7 @@ import PoolIcon from "@mui/icons-material/PoolOutlined"
 import CloseIcon from "@mui/icons-material/Close"
 
 export type IconShape = {
-  icon: "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ping" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox"
+  icon: "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ping" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox"
   color?: any
 }
 
@@ -85,6 +86,9 @@ export default function Icon({icon, color}: IconShape) {
   switch (icon) {
     case "home":
       iconFragment = <HomeIcon color={color} />
+      break
+    case "reset":
+      iconFragment = <ResetIcon color={color} />
       break
     case "github":
       iconFragment = <GithubIcon color={color} />

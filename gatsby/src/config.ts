@@ -13,10 +13,13 @@ export const glConfig: ConfigShape = {
     siteTwitter: "@listingslab",
     siteTheme: "#C5C5C5",
     theme: {
-        slug: "opensource",
-        primaryColor: "#C5C5C5",
-        secondaryColor: "#616161",
+        slug: "goldlabel",
+        primaryColor: "#C09F52",
+        secondaryColor: "#F0BE4B",
     },
-    plugins: ["Geolocator", "Lingua", "Tings"],
+    mapbox: {
+        light: "mapbox://styles/listingslab/clmrnpplw00ej01nsfv8l4q25",
+        dark: "mapbox://styles/listingslab/clmrnt68o02a801qxevn0bt6u"
+    }
 }
 

@@ -1,7 +1,7 @@
 {
   "name": "goldlabel-plugin-geolocator",
-  "version": "1.0.1",
-  "description": "Old fashioned Mashup, like from the mid 2000's",
+  "version": "1.0.2",
+  "description": "Requires Mapbox API key",
   "scripts": {
     "test": "echo \"LGTMd\" && exit 1"
   },

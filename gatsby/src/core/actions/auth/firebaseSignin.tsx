@@ -20,9 +20,9 @@ export const firebaseSignin = (email: string, password: string): any =>
             user,
           }}))
           dispatch(notify(
-            "FB 103",
+            "Auth 200",
             "success", 
-            `${email} has control, sir`
+            `Hi, ${email}. You have control, sir`
           ))
         })
         .catch((e) => {

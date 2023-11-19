@@ -15,25 +15,16 @@ export default function AuthHeader({title}) {
 
     return <>
         <Box sx={{ display: "flex", my:2}}>
-                <Box sx={{mr:2}}>
-                <IconButton
-                    size="large"
-                    edge="end"
-                    color="secondary"
-                    aria-label="home button"
-                    onClick={(e: React.MouseEvent) => {
-                        e.preventDefault()
-                        dispatch(navigate("/", "_self"))
-                    }} >
+                <Box sx={{mr:2, mt:1}}>
+                
                     <Avatar src="/svg/iOS.svg"/>
-                </IconButton>
                     
                 </Box>
-                {/* <Box sx={{mt:2}}>
+                <Box sx={{mt:2}}>
                     <Font variant="title">
                         {title}
                     </Font>
-                </Box> */}
+                </Box>
                 <Box sx={{flexGrow:1}} />
         </Box>
     </>

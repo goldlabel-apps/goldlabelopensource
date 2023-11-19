@@ -21,11 +21,11 @@ const collectionList = [
     collection: "pingpong",
     icon: "pingpong",
   },
-  {
-    label: "Members",
-    collection: "members",
-    icon: "members",
-  },
+  // {
+  //   label: "Members",
+  //   collection: "members",
+  //   icon: "members",
+  // },
 ]
 
 export default function CollectionSelect() {
