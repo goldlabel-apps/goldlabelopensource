@@ -8,24 +8,20 @@ import {
   resetLocalstorage,
 } from "../../../core"
 
-
 export default function PingpongIconMenu() {
   const dispatch = usePwaDispatch()
   return <>
-            
-            <IconButton
-              sx={{}}
-              color="primary"
-              onClick={() => {
-                  console.log("reset redux")
-              }}>
-                <Icon icon={"reset"} color="primary"/>
-            </IconButton>
-           
-
+          <IconButton
+            sx={{}}
+            color="primary"
+            onClick={(e: React.MouseEvent) => {
+              e.preventDefault()
+              dispatch(resetLocalstorage())
+            }}>
+              <Icon icon={"reset"} color="primary"/>
+          </IconButton>
         </>
 }
-
 
 /*
   myPing: {

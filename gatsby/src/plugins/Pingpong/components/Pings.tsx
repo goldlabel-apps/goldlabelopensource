@@ -24,8 +24,11 @@ import {
 } from "../../../core"
 import {
   updateFbId,
-  Ping,
 } from "../../Backoffice"
+import {
+  Ping,
+} from "../../Pingpong"
+
 
 const iconFromHost = (
   host: string, 
@@ -178,7 +181,6 @@ export default function Pings({data}: any) {
             const fbId: any = row[0]
             onFbIdSelect(fbId)
           }}
-          
         />
       </Box>
     </>

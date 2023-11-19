@@ -22,7 +22,6 @@ import {
 } from "../../../core"
 import {
   CollectionSelect,
-  Pingpong,
 } from "../../Backoffice"
 
 export default function Appshell() {
@@ -45,7 +44,7 @@ export default function Appshell() {
             <CollectionSelect />
           </Grid> */}
           <Grid item xs={12}>
-            {collection === "pingpong" ? <Pingpong /> : null }
+            {collection === "pingpong" ? <>Pingpong</> : null }
           </Grid>
         </Grid>  
         

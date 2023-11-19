@@ -38,7 +38,7 @@ export default function Pingpong() {
   const pingpong = usePwaSelect(selectPingpong)
   const display = usePwaSelect(selectDisplay)
   const {myPing, myPingOpen, unread} = pingpong
-
+  let messages = 0
   let lng, lat, city, province, countryName, continent, ip, flag = ""
   if (myPing){
     ip = myPing.ip
@@ -52,8 +52,6 @@ export default function Pingpong() {
   }
   let user: any = null
   if(auth) user = auth.user
-  
-  let messages = 2
   if (unread) messages = unread
   let isBig = false
   if (display) isBig = !display.mobile
@@ -114,8 +112,6 @@ export default function Pingpong() {
                     >
                       <Icon icon={"close"} color="primary"/>
                     </IconButton>}
-                    
-                  
                   />
                 </DialogTitle>
                 <DialogContent sx={{mx:2}}>
