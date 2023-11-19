@@ -51,7 +51,11 @@ const config: GatsbyConfig = {
         theme_color: siteTheme,
       }
     },
-    { resolve: `gatsby-plugin-offline`,
+    { 
+      resolve: `gatsby-plugin-offline`,
+      // options: {
+      //   appendScript: require.resolve(`./src/custom-sw-code.js`),
+      // },
     },
     { resolve: `gatsby-source-filesystem`,
       options: {
