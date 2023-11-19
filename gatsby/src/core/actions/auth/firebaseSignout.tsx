@@ -3,7 +3,6 @@ import {
   setPwaKey,
   notify,
   store,
-  navigate,
 } from "../../../core"
 
 export const firebaseSignout = (): any =>
@@ -17,6 +16,11 @@ export const firebaseSignout = (): any =>
             ...auth,
             user: null,
           }}))
+          dispatch(notify(
+            "Auth 200",
+            "success", 
+            "Goodbye sir"
+          ))
         })
         .catch((e) => {
           dispatch(notify(

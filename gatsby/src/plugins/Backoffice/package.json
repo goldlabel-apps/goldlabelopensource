@@ -1,12 +1,13 @@
 {
   "name": "goldlabel-plugin-backoffice",
-  "version": "1.0.6",
-  "description": "Logged in users can view ",
+  "version": "1.0.7",
+  "description": "Members can view pings",
   "scripts": {
     "test": "echo \"LGTM\" && exit 1"
   },
   "keywords": [
     "plugin",
+    "members",
     "backoffice",
     "auth",
     "users"

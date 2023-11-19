@@ -1,7 +1,5 @@
 import * as React from "react"
 import pJSON from "../../../Pingpong/package.json"
-
-// /plugins/Pingpong/package.json"
 import { 
   getFirestore,
   query,
@@ -54,7 +52,7 @@ export default function Pingpong() {
 
   return <>
           <CardHeader 
-            title={<Font variant="title">
+            title={<Font variant="small">
                       Pingpong {pJSON.version}
                     </Font>}
             avatar={<>

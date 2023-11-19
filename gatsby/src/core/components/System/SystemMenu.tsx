@@ -22,18 +22,22 @@ import {
   setCoreKey,
   selectDisplay,
   navigate,
+  firebaseSignout,
+  selectAuth,
 } from "../../../core"
 
-export default function FooterMenu() {
+export default function SystemMenu() {
+  const auth = usePwaSelect(selectAuth)
   const dispatch = usePwaDispatch()
   const core = usePwaSelect(selectCore)
   const display = usePwaSelect(selectDisplay)
   const siteMeta = useSiteMetadata()
-  const {version, siteTitle, siteDescription} = siteMeta
+  const {version, siteTitle} = siteMeta
   let isBig = false
   if (display) isBig = !display.mobile
   const {footerMenuOpen, darkmode} = core
-  // console.log("isBig", isBig)
+  let user: any = null
+  if(auth) user = auth.user
 
   return (<>
           <IconButton 
@@ -67,18 +71,36 @@ export default function FooterMenu() {
                 title={<Font variant="title">
                     {siteTitle}
                 </Font>}
-              subheader={<Font variant="small">
-                  {siteDescription}
-              </Font>}
+              
               />
             </DialogTitle>
             <DialogContent>
               <List>
+
+              <ListItemButton
+                  sx={{mb:1}}
+                  color="primary"
+                  onClick={(e: React.MouseEvent) => {
+                    e.preventDefault()
+                    dispatch(setCoreKey("footerMenuOpen", false))
+                    dispatch(navigate("/", "_self"))
+                  }}>
+                <ListItemIcon>
+                  <Icon icon={"home"} color="primary"/>
+                </ListItemIcon>
+                <ListItemText
+                  primary={<Font>
+                              Home
+                            </Font> }/>
+                </ListItemButton>
+
+
                 <ListItemButton
                   sx={{mb:1}}
                   color="primary"
                   onClick={(e: React.MouseEvent) => {
                     e.preventDefault()
+                    dispatch(setCoreKey("footerMenuOpen", false))
                     dispatch(navigate("/backoffice", "_self"))
                   }}>
                 <ListItemIcon>
@@ -89,11 +111,13 @@ export default function FooterMenu() {
                               Backoffice
                             </Font> }/>
                 </ListItemButton>
+
                 <ListItemButton
                   sx={{mb:1}}
                   color="primary"
                   onClick={(e: React.MouseEvent) => {
                     e.preventDefault()
+                    dispatch(setCoreKey("footerMenuOpen", false))
                     dispatch(setCoreKey("darkmode", !darkmode))
                   }}>
                 <ListItemIcon>
@@ -104,6 +128,45 @@ export default function FooterMenu() {
                               {darkmode ? "Light mode" : "Dark mode"}
                             </Font> }/>
                 </ListItemButton>
+
+
+                {user ? <>
+                  <ListItemButton
+                    sx={{mb:1}}
+                    color="primary"
+                    onClick={(e: React.MouseEvent) => {
+                      e.preventDefault()
+                      dispatch(setCoreKey("footerMenuOpen", false))
+                      dispatch(firebaseSignout())
+                    }}>
+                  <ListItemIcon>
+                    <Icon icon={"signout"} color="primary"/>
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={<Font>
+                                Sign out
+                              </Font> }/>
+                  </ListItemButton>
+                </> : null }
+
+                <ListItemButton
+                  sx={{mb:1}}
+                  color="primary"
+                  onClick={(e: React.MouseEvent) => {
+                    e.preventDefault()
+                    dispatch(setCoreKey("footerMenuOpen", false))
+                    dispatch(navigate("https://github.com/listingslab-software/open-source", "_blank"))
+                  }}>
+                <ListItemIcon>
+                  <Icon icon={"github"} color="primary"/>
+                </ListItemIcon>
+                <ListItemText
+                  primary={<Font>
+                              Open Source
+                            </Font> }/>
+                </ListItemButton>
+
+
               </List>
             </DialogContent>
 
@@ -111,7 +174,7 @@ export default function FooterMenu() {
               <Box sx={{flexGrow:1}} />
               <Box sx={{m:1}}>
                 <Font variant="small" color="muted">
-                  {version}
+                  Goldlabel {version}
                 </Font>
               </Box>
             </DialogActions>

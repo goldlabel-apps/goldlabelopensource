@@ -17,7 +17,6 @@ import {
   WindowResizeListener,
   NotFound,
 } from "../core"
-import {Pingpong} from "../plugins/Pingpong"
 import {Backoffice} from "../plugins/Backoffice"
 
 export default function App(props: any) {
@@ -54,7 +53,6 @@ export default function App(props: any) {
 
 
   return (<Box>
-            <Pingpong />
             <WindowResizeListener />
             <NotifyerSnack />
             <Container>

@@ -96,7 +96,6 @@ export default function Ping() {
             </>}
           />
           
-
           <CardContent>
             <pre>ping: {JSON.stringify(ping, null, 2)}</pre>
           </CardContent>

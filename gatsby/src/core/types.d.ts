@@ -55,7 +55,7 @@ export type ConfigShape = {
     siteFooterUrl?: string
     siteDefaultLocale?: string
     theme: ThemeShape
-    features: any
+    mapbox?: any
 }
 
 export type LinkShape = {

@@ -20,8 +20,9 @@ import {
   Meta,
   CatNav,
   ScrollUp,
-  FooterMenu,
+  SystemMenu,
   ShareMenu,
+  BottomBar,
 } from "../../../core"
 
 export default function ListingMobile(props: any) {  
@@ -109,42 +110,23 @@ export default function ListingMobile(props: any) {
                 <Markdown html={html}/>
               </Box> : null }
               
-              {!isHome ? <Siblings 
+              <Categories />
+              
+              {/* {!isHome ? <Siblings 
                       frontmatter={frontmatter}
                       icons= {false}  
                     /> : <>
                 <Categories />
-              </> }
+              </> } */}
+
+           
             <Box sx={{height: 70}} />
             <div id="bottomAnchor" />
           </Box>
 
-          <AppBar 
-            position="fixed" 
-            color="inherit" 
-            sx={{
-              background: bgCol,
-              boxShadow:0,
-              border: 0,
-              top: 'auto', 
-              bottom: 0, 
-            }}>
-              <Box sx={{flexGrow:1}} />
-              <Toolbar>            
-                <Box sx={{
-                  width: "100%",
-                  display: "flex"}}
-                >
-                  <Box sx={{flexGrow:1}} />
-                  {scroll ? <Box>
-                    <ScrollUp />
-                  </Box> : null }
-                  <Box>
-                    <FooterMenu />
-                  </Box>
-                </Box>
-              </Toolbar>
-            </AppBar>
+          <BottomBar />
+
+         
         </Container>
       </>
 }

@@ -18,7 +18,7 @@ import {
   ScrollUp,
 } from "../../../core"
 
-export default function NotFound() {
+export default function DocGrid() {
   const dispatch = usePwaDispatch()
   const siteMeta = useSiteMetadata()
   const allMarkdown = useAllMarkdown()

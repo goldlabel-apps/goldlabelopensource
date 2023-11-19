@@ -3,6 +3,7 @@ import {
   store,
   notify,
 } from "../../../core"
+import {setPingpongKey} from "../../Pingpong"
 
 import {
   UAParser,
@@ -76,20 +77,20 @@ export const newPing = (): any => async (dispatch: any) => {
   try {
     const ep = `${process.env.REACT_APP_API}pingpong/create`
     const ping = compilePing()
-    console.log("ping", ping)
+    dispatch(setPingpongKey("myPing", ping))
     axios.post(ep, ping)
         .then(function (res) {
             let fbId: string | null = null
-            let message = "Create Ping"
+            let message = ""
             if (res.data){ 
                 fbId = res.data.data.data.fbId
                 message = res.data.data.data.message
             }
-            dispatch(notify(
-                "Pingpong 200",
-                "success", 
-                "Pinged",
-            ))
+            // dispatch(notify(
+            //     "Pingpong 200",
+            //     "success", 
+            //     "Pinged",
+            // ))
         })
     .catch(function (e) {
       let message = e.toString()

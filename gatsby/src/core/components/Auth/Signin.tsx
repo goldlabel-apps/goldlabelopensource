@@ -15,6 +15,7 @@ import {
   firebaseSignin,
   InputEmail,
   InputPassword,
+  BottomBar,
 } from "../../../core"
 
 export function Signin() {
@@ -49,7 +50,6 @@ export function Signin() {
                   <Box sx={{my:3, display: "flex"}}>
                     <Box sx={{flexGrow:1}}/>
                     <Button 
-                      // variant="outlined"
                       color="primary"
                       onClick={validate}>
                         <Font variant="small">
@@ -60,7 +60,7 @@ export function Signin() {
                         </Box>
                     </Button>
                   </Box>
-
+                  <BottomBar />
                     {/* <Box sx={{my:2}}>
                       <Font variant="small">
                       Build an app for free with <a>Goldlabel Open Source</a>. 

@@ -1,36 +1,40 @@
 import * as React from "react"
 import {
-  useTheme,
   Box,
   Grid,
   Container,
-  AppBar,
-  Toolbar,
+  CardHeader,
+  IconButton,
+  Avatar,
 } from "@mui/material"
 import {
   Image,
+  Font,
+  navigate,
   useSiteMetadata,
   usePwaSelect,
+  usePwaDispatch,
   selectFrontmatter,
-  Title,
   Children,
+  Categories,
   Meta,
-  Siblings,
   Markdown,
   CatNav,
-  ScrollUp,
   ShareMenu,
-  FooterMenu,
-  selectCore,
+  BottomBar,
+  useAllMarkdown,
+  useChildren,
 } from "../../../core"
 
 export default function ListingDesktop(props: any) {
-  const bgCol = useTheme().palette.background.default
+  const dispatch = usePwaDispatch()
   const frontmatter = usePwaSelect(selectFrontmatter)
-  const core = usePwaSelect(selectCore)
-  const {scroll} = core
   const {appData} = props
   const siteMeta = useSiteMetadata()
+  const allMarkdown = useAllMarkdown()
+  const thisSlug = frontmatter.slug
+  const childrenArr = useChildren(thisSlug, allMarkdown)
+  // console.log("childrenArr", childrenArr)
   const {
     siteTitle,
     siteDescription,
@@ -66,29 +70,41 @@ export default function ListingDesktop(props: any) {
       <Grid container spacing={1}>
       
         <Grid item xs={12}>
-          <Title 
-            title={title}
-            description={description}
-            flag={flag}
-            icon={icon}
-            frontmatter={frontmatter}
-          />
+        
+          <Box sx={{my: 1}}>
+            <CardHeader 
+              avatar={<IconButton 
+                          sx={{ml:-3}}
+                          onClick={(e: React.MouseEvent) => {
+                              e.preventDefault()
+                              dispatch(navigate("/", "_self"))
+                          }}>
+                          <Avatar src="/svg/iOS.svg" alt={`${title} ${description}`} />
+                      </IconButton>}
+              title={<Font variant="title">
+                  {title}
+              </Font>}
+              subheader={<Font variant="small">
+                  {description}
+              </Font>}
+            />
+          </Box>
         </Grid>
 
         {image ? <Grid item xs={12} sm={8}>
 
               <Box sx={{display: "flex"}}>
-                <Box sx={{mr:0.5}}>
-                  <ShareMenu />
+                <Box sx={{m:0.5}}>
+                  <CatNav />
                 </Box>
                 <Box sx={{mr:0.5}}>
                   <Meta frontmatter={frontmatter}/>
                 </Box>
-                <Box sx={{m:0.5}}>
-                  <CatNav />
+                
+                <Box sx={{mr:0.5}}>
+                  <ShareMenu />
                 </Box>
                 <Box sx={{flexGrow:1}}/>
-                
               </Box>
               
               <Box sx={{mt:2}}>
@@ -101,50 +117,23 @@ export default function ListingDesktop(props: any) {
 
               {html ? <Markdown html={html}/> : null }
 
-              {children ? <Box sx={{mt:1}}><Children
-                icons= {true} 
-                descriptions={false}
-                frontmatter={frontmatter}
-              /></Box> : null }
+              
               
           </Grid> : null }
 
           <Grid item xs={12} sm={4}>
-            <Box sx={{mt:6}}>
-              <Siblings 
+
+            {childrenArr.length ? <Box sx={{mt:1}}><Children
+                icons= {true} 
+                descriptions={false}
                 frontmatter={frontmatter}
-                icons= {true}  
-              />
-            </Box>
+              /></Box> : <Categories /> }
+
+            
           </Grid>
           
       </Grid>
-
-          <AppBar 
-            position="fixed" 
-            color="inherit" 
-            sx={{ 
-              background: bgCol,
-              boxShadow:0,
-              border: 0,
-              top: 'auto', 
-              bottom: 0, 
-            }}>
-              <Toolbar>
-                <Container maxWidth="md">               
-                  <Box sx={{display: "flex"}}>
-                    <Box sx={{flexGrow: 1}} />
-                    {scroll ? <Box>
-                      <ScrollUp />
-                    </Box> : null }
-                    <Box sx={{mr:4}}>
-                      <FooterMenu />
-                    </Box>
-                  </Box>
-                </Container> 
-              </Toolbar>
-            </AppBar>
-
+      <BottomBar />
       <div id="bottomAnchor" />
     </Container>
   </>

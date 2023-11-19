@@ -8,5 +8,5 @@ type BackofficeShape = {
 export const backofficeState: BackofficeShape = {
     fbId: null,
     ping: null,
-    collection: null,
+    collection: "pingpong",
 }

@@ -75,22 +75,6 @@ export default function Pings({data}: any) {
       },
     },
     {
-      field: 'city',
-      headerName: '',
-      sortable: true,
-      renderCell: (params: GridRenderCellParams<any, Date>) => (
-        <Font variant="small">{params.row.city}</Font>
-      ),
-    },
-    {
-      field: 'slug',
-      headerName: '',
-      sortable: true,
-      renderCell: (params: GridRenderCellParams<any, Date>) => (
-        <Font variant="small">{`${params.row.slug}`}</Font>
-      ),
-    },
-    {
       field: 'browser',
       headerName: '',
       sortable: true,
@@ -98,6 +82,7 @@ export default function Pings({data}: any) {
         <Font variant="small">{`${params.row.browser}`}</Font>
       ),
     },
+
     {
       field: 'os',
       headerName: '',
@@ -106,6 +91,7 @@ export default function Pings({data}: any) {
         <Font variant="small">{`${params.row.os}`}</Font>
       ),
     },
+
     {
       field: 'device',
       headerName: '',
@@ -114,6 +100,31 @@ export default function Pings({data}: any) {
         <Font variant="small">{`${params.row.deviceVendor} ${params.row.deviceModel || ""}`}</Font>
       ),
     },
+
+    // {
+    //   field: 'hostname',
+    //   headerName: '',
+    //   sortable: true,
+    //   renderCell: (params: GridRenderCellParams<any, Date>) => (
+    //     <Font variant="small">{params.row.host}</Font>
+    //   ),
+    // },
+    // {
+    //   field: 'city',
+    //   headerName: '',
+    //   sortable: true,
+    //   renderCell: (params: GridRenderCellParams<any, Date>) => (
+    //     <Font variant="small">{params.row.city}</Font>
+    //   ),
+    // },
+    // {
+    //   field: 'slug',
+    //   headerName: '',
+    //   sortable: true,
+    //   renderCell: (params: GridRenderCellParams<any, Date>) => (
+    //     <Font variant="small">{`${params.row.slug}`}</Font>
+    //   ),
+    // },
   ]
   if (!data) return null
   for (let i = 0; i <data.length; i++){
@@ -143,12 +154,10 @@ export default function Pings({data}: any) {
           
           <Button
             color="secondary"
-            variant="outlined"
             onClick={(e: React.MouseEvent) => {
               e.preventDefault()
               onFbIdSelect(null)
             }}>
-              
               <Font variant="small">
                 Close
               </Font>
