@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>iOS</title>
+    <title>localhost</title>
     <defs>
         <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
             <stop stop-color="#C5C5C5" offset="0%"></stop>
             <stop stop-color="#616161" offset="100%"></stop>
         </linearGradient>
     </defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="iOS" fill="url(#linearGradient-1)" fill-rule="nonzero">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.01">
+        <g id="localhost" fill="url(#linearGradient-1)" fill-rule="nonzero">
             <path d="M146.141456,0 L365.858544,0 C416.675112,0 435.102427,5.29105984 453.680205,15.2265641 C472.257983,25.1620684 486.837932,39.7420171 496.773436,58.3197949 C506.70894,76.8975727 512,95.3248882 512,146.141456 L512,365.858544 C512,416.675112 506.70894,435.102427 496.773436,453.680205 C486.837932,472.257983 472.257983,486.837932 453.680205,496.773436 C435.102427,506.70894 416.675112,512 365.858544,512 L146.141456,512 C95.3248882,512 76.8975727,506.70894 58.3197949,496.773436 C39.7420171,486.837932 25.1620684,472.257983 15.2265641,453.680205 C5.29105984,435.102427 0,416.675112 0,365.858544 L0,146.141456 C0,95.3248882 5.29105984,76.8975727 15.2265641,58.3197949 C25.1620684,39.7420171 39.7420171,25.1620684 58.3197949,15.2265641 C76.8975727,5.29105984 95.3248882,0 146.141456,0 Z" id="colorBg"></path>
         </g>
     </g>

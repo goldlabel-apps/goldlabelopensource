@@ -70,6 +70,26 @@ const compilePing = () => {
     timeZone: time_zone.name,
     diallingCode: calling_code,
     is_eu,
+    hits: 1,
+    messages: [
+      {
+        message: "Well shit. that worked",
+        to: {
+          displayName: "",
+          email: "",
+          avatar: "",
+        },
+        from: {
+          displayName: "",
+          email: "",
+          avatar: "",
+          
+        },
+        time: Date.now(),
+        
+        seen: false,
+      }
+    ]
   }
 }
 
@@ -86,18 +106,18 @@ export const newPing = (): any => async (dispatch: any) => {
                 fbId = res.data.data.data.fbId
                 message = res.data.data.data.message
             }
-            // dispatch(notify(
-            //     "Pingpong 200",
-            //     "success", 
-            //     "Pinged",
-            // ))
+            dispatch(notify(
+                "Pingpong 200",
+                "success", 
+                `fbId ${fbId}`,
+            ))
         })
     .catch(function (e) {
       let message = e.toString()
       // if (message === "Error: Network Error") message = "API not running"
       dispatch(notify(
         "Listingslab API 522",
-        "info", 
+        "error", 
         message,
       ))
     })

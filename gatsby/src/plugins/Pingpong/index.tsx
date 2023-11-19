@@ -13,10 +13,12 @@ import PingpongListMenu from "./components/PingpongListMenu"
 import PingpongIconMenu from "./components/PingpongIconMenu"
 import Ping from "./components/Ping"
 import Pings from "./components/Pings"
+import PingpongSubscribe from "./components/PingpongSubscribe"
 
 export {
     pingpongState,
     Ping,
+    PingpongSubscribe,
     Pings,
     Pingpong,
     saveHost,

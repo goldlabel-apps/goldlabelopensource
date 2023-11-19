@@ -18,7 +18,7 @@ code {
   font-family: Monaco, "Courier New", monospace;
 }
 body::-webkit-scrollbar {
-  width: 8px;
+  width: 20px;
 }
 body {
   overflow-y: scroll;

@@ -7,7 +7,7 @@ title: "Plugins"
 description: "Modular additions to a Gatsby & React"
 category: "plugins"
 icon: "plugin"
-image: "/jpg/ukmap.jpg"
+image: "/png/flash.png"
 keywords: "goldlabel, plugins, product, pwa, Static Site Generation, SSR, free"
 hideImage: true
 twitter: "@listingslab"

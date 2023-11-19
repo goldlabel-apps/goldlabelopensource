@@ -17,6 +17,7 @@ import {
   selectPingpong,
   selectDisplay,
   selectAuth,
+  Device,
 } from "../../core"
 import {
   saveHost,
@@ -38,18 +39,20 @@ export default function Pingpong() {
   const pingpong = usePwaSelect(selectPingpong)
   const display = usePwaSelect(selectDisplay)
   const {myPing, myPingOpen, unread} = pingpong
-  let hideBtn = true
+  let hideBtn = false
   let messages = 0
-  let lng, lat, city, province, countryName, continent, ip, flag = ""
+  let lng, lat, city, province, countryName, device, browser, os, ip, flag = ""
   if (myPing){
-    ip = myPing.ip
-    continent = myPing.continent
-    countryName = myPing.countryName
-    province = myPing.province
-    city = myPing.city
-    lat = myPing.lat
-    lng = myPing.lng
-    flag = myPing.flag
+    ip = myPing.ip || ""
+    device = `${myPing.deviceVendor || ""} ${myPing.deviceModel || ""}`
+    browser = myPing.browser || ""
+    os = myPing.os || ""
+    countryName = myPing.countryName || ""
+    province = myPing.province || ""
+    city = myPing.city || ""
+    lat = myPing.lat || 0
+    lng = myPing.lng || 0
+    flag = myPing.flag || ""
   }
   let user: any = null
   if(auth) user = auth.user
@@ -116,12 +119,21 @@ export default function Pingpong() {
                   />
                 </DialogTitle>
                 <DialogContent sx={{mx:2}}>
+                  
 
                   <GeolocatorMap options={{
                     flag,
                     lat,
                     lng,
                   }}/>
+
+                  <Box sx={{mt:2}}>
+                    <Device 
+                      os={os}
+                      // @ts-ignore
+                      device={device} 
+                      browser={browser}/>
+                  </Box>
 
                   <Box sx={{mt:2}}>
                     <Font>
