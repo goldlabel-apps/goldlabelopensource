@@ -38,6 +38,7 @@ export default function Pingpong() {
   const pingpong = usePwaSelect(selectPingpong)
   const display = usePwaSelect(selectDisplay)
   const {myPing, myPingOpen, unread} = pingpong
+  let hideBtn = true
   let messages = 0
   let lng, lat, city, province, countryName, continent, ip, flag = ""
   if (myPing){
@@ -85,13 +86,13 @@ export default function Pingpong() {
   }, [pingpong, dispatch])
   
   return <>
-            <IconButton
+            {!hideBtn ? <IconButton
               onClick={openMyPing}>
               <Badge badgeContent={messages} color="secondary">
                 <Icon icon="pingpong" />
               </Badge>
-            </IconButton>
-
+            </IconButton> : null}
+            
             <Dialog 
               open={myPingOpen}
               fullWidth

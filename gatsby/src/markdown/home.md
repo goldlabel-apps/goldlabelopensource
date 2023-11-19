@@ -5,7 +5,7 @@ order: 1
 cover: true
 slug: "/"
 category: "goldlabel"
-title: "Home"
+title: "Goldlabel Free"
 description: "Open Source & Free Forever"
 icon: "home"
 image: "/jpg/ukmap.jpg"
@@ -17,9 +17,8 @@ phone: "+356-9964-2755"
 flag: "mt"
 youtube: ""
 ---
-
-Goldlabel software is an easy to implement framework that can take your slow old wordpress site and make it not only super fast, but rank better in Google
-
 > Looking for an alternative to WordPress?
 
-Goldlabel Open Source is a modern alternative to WordPress. It's Free. Should you do us the honour of trying it out and deciding that it’s an approach which suits you, then there are pathways for you to do that without suddenly being charged an arm and a leg
+Goldlabel is easy to implement JavaScript that can take your slow old WordPress site and make it not only super fast, but rank better in Google
+
+Goldlabel Free is a modern alternative to WordPress which uses React and Gatsby. It's Free. Should you do us the honour of trying it out and deciding that it’s an approach which suits you, then there are pathways for you to do that without suddenly being charged an arm and a leg

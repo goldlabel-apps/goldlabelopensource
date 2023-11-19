@@ -8,7 +8,7 @@ import {saveUid} from "./actions/saveUid"
 import {sortPing} from "./actions/sortPing"
 import {newPing} from "./actions/newPing"
 import {updatePing} from "./actions/updatePing"
-import {resetPingpong} from "./actions/resetPingpong"
+import {togglePingpongDialog} from "./actions/togglePingpongDialog"
 import PingpongListMenu from "./components/PingpongListMenu"
 import PingpongIconMenu from "./components/PingpongIconMenu"
 import Ping from "./components/Ping"
@@ -27,7 +27,7 @@ export {
     sortPing,
     newPing,
     updatePing,
-    resetPingpong,
+    togglePingpongDialog,
     PingpongIconMenu,
     PingpongListMenu,
 }

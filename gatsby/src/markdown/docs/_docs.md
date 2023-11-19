@@ -14,8 +14,8 @@ twitter: "@listingslab"
 Q) What other services are needed to use all features? 
 A)
 - [Firebase](https://console.firebase.google.com/) (Gmail)
-- Mapbox
-- Listingslab
+- [Mapbox](https://studio.mapbox.com/)
+- [Listingslab API](https://api.listingslab.com)
 
 > FAQ? No. Nobody ever asks these questions, but we sure wish they would
 

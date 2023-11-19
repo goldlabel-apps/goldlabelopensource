@@ -1,13 +1,5 @@
 a { color: #C09F52; text-decoration: none; cursor: pointer; }
 a:hover { color: #e1ba60; }
-/* ul li::before {
-  color: #C5C5C5;
-  content: "\2022";
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-} */
 blockquote {
   border-left: 3px solid #C09F52;
   margin: 0;
@@ -44,8 +36,3 @@ body::-webkit-scrollbar-thumb {
 .mapboxgl-ctrl-bottom-right, .mapboxgl-ctrl-attrib-inner, .mapboxgl-ctrl-bottom-left {
   display: none;
 }
-/* 
-  h1, h2, h3, h4, h5, h6 {
-
-  } 
-*/

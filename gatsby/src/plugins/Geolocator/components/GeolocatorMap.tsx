@@ -15,26 +15,28 @@ import {
 } from "../../Geolocator"
 
 export default function GeolocatorMap(props: any) {
-  const {options} = props
   const dispatch = usePwaDispatch()
+  const {options} = props
+
+  const {
+    lat, 
+    lng,
+    zoom,
+    onMarkerClick,
+  } = options
+
   const {mapbox} = glConfig
   const mode = useTheme().palette.mode
   // console.log("mode", mode)
-
   const mapRef: any = React.useRef(null)
   const defaultCenter = {
     lat: options.lat,
     lng: options.lng,
-    zoom: 6,
+    zoom: zoom || 4,
     flag: "eu",
   }
   let exitEarly = false
-  const {
-    lat, 
-    lng,
-    flag,
-    onMarkerClick,
-  } = options
+
   if (!lat || !lng) exitEarly = true
   if (exitEarly) return null 
 
