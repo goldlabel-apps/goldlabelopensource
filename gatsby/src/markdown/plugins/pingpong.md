@@ -7,7 +7,7 @@ parentSlug: "/plugins"
 title: "Pingpong"
 description: "A perfect view of your users"
 keywords: "plugins, pingpong, tings, product, Firebase"
-icon: "plugin"
+icon: "pingpong"
 image: "/jpg/network.jpg"
 ---
 > Pingpong combines analytics with messaging allowing website owners to talk directly to their users in real time

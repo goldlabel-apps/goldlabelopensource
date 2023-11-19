@@ -1,5 +1,6 @@
 import React from "react"
 import {
+  IconButton,
   List,
   ListItemButton,
   ListItemText,
@@ -15,38 +16,17 @@ import {
 export default function PingpongIconMenu() {
   const dispatch = usePwaDispatch()
   return <>
-            <List>
             
-            <ListItemButton
+            <IconButton
                 sx={{mb:1}}
                 color="primary"
                 onClick={() => {
                     console.log("reset redux")
                 }}>
-                <ListItemIcon>
                 <Icon icon={"reset"} color="primary"/>
-                </ListItemIcon>
-                <ListItemText
-                primary={<Font>
-                            Refresh
-                            </Font> }/>
-                </ListItemButton>
-            
-            <ListItemButton
-                sx={{mb:1}}
-                color="primary"
-                onClick={() => {
-                    console.log("close")
-                }}>
-                <ListItemIcon>
-                <Icon icon={"close"} color="primary"/>
-                </ListItemIcon>
-                <ListItemText
-                primary={<Font>
-                            Close
-                            </Font> }/>
-                </ListItemButton>
-            </List>
+                
+                </IconButton>
+           
 
         </>
 }

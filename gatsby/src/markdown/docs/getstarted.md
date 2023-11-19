@@ -1,5 +1,6 @@
 ---
 order: 10
+cover: true
 category: "docs"
 slug: "/docs/getting-started"
 parentSlug: "/docs"

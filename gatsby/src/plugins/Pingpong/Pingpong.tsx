@@ -8,10 +8,6 @@ import {
   DialogContent,
   DialogActions,
   Badge,
-  List,
-  ListItemButton,
-  ListItemText,
-  ListItemIcon,
 } from "@mui/material"
 import {
   Icon,
@@ -29,7 +25,7 @@ import {
   saveUid,
   sortPing,
   setPingpongKey,
-  // resetPingpong,
+  PingpongIconMenu,
 } from "../Pingpong"
 import {
   GeolocatorMap,
@@ -57,7 +53,7 @@ export default function Pingpong() {
   let user: any = null
   if(auth) user = auth.user
   
-  let messages = 1
+  let messages = 2
   if (unread) messages = unread
   let isBig = false
   if (display) isBig = !display.mobile
@@ -140,12 +136,9 @@ export default function Pingpong() {
                   </Box>
                 </DialogContent>
                 
-                <DialogActions sx={{display: "block"}}>
-                
-                  
-
+                <DialogActions>
+                  <PingpongIconMenu />
                 </DialogActions>
-            
               </Dialog>
         </>
 }

@@ -9,6 +9,7 @@ import {firebaseSignin} from "./actions/auth/firebaseSignin"
 import {firebaseSignout} from "./actions/auth/firebaseSignout"
 import {setDisplay} from "./actions/setDisplay"
 import {setCoreKey} from "./actions/setCoreKey"
+import {resetLocalstorage} from "./actions/resetLocalstorage"
 // State
 import {WrapState} from "./state/WrapState"
 import {store, persistor} from "./state/store"
@@ -195,4 +196,5 @@ export {
     firebaseSignout,
     setDisplay,
     setCoreKey,
+    resetLocalstorage,
 }
