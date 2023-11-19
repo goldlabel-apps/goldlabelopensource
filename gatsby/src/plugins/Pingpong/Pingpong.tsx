@@ -8,10 +8,6 @@ import {
   DialogContent,
   DialogActions,
   Badge,
-  List,
-  ListItemButton,
-  ListItemText,
-  ListItemIcon,
 } from "@mui/material"
 import {
   Icon,
@@ -21,7 +17,6 @@ import {
   selectPingpong,
   selectDisplay,
   selectAuth,
-  navigate,
 } from "../../core"
 import {
   saveHost,
@@ -30,7 +25,7 @@ import {
   saveUid,
   sortPing,
   setPingpongKey,
-  // resetPingpong,
+  PingpongIconMenu,
 } from "../Pingpong"
 import {
   GeolocatorMap,
@@ -42,8 +37,9 @@ export default function Pingpong() {
   const auth = usePwaSelect(selectAuth)
   const pingpong = usePwaSelect(selectPingpong)
   const display = usePwaSelect(selectDisplay)
-  const {lastSaved, myPing, myPingOpen, unread} = pingpong
-
+  const {myPing, myPingOpen, unread} = pingpong
+  let hideBtn = true
+  let messages = 0
   let lng, lat, city, province, countryName, continent, ip, flag = ""
   if (myPing){
     ip = myPing.ip
@@ -57,12 +53,9 @@ export default function Pingpong() {
   }
   let user: any = null
   if(auth) user = auth.user
-  
-  let messages = 0
   if (unread) messages = unread
   let isBig = false
   if (display) isBig = !display.mobile
-  isBig = false
   
   const openMyPing = () =>{
     dispatch(setPingpongKey("myPingOpen", true))
@@ -93,13 +86,13 @@ export default function Pingpong() {
   }, [pingpong, dispatch])
   
   return <>
-            <IconButton
+            {!hideBtn ? <IconButton
               onClick={openMyPing}>
               <Badge badgeContent={messages} color="secondary">
                 <Icon icon="pingpong" />
               </Badge>
-            </IconButton>
-
+            </IconButton> : null}
+            
             <Dialog 
               open={myPingOpen}
               fullWidth
@@ -108,6 +101,9 @@ export default function Pingpong() {
               onClose={closeMyPing}>
                 <DialogTitle>
                   <CardHeader 
+                  title={<Font variant="title">
+                            Ping
+                        </Font>}
                     avatar={<Badge badgeContent={messages} color="secondary">
                             <Icon icon="pingpong" />
                             </Badge>}
@@ -117,10 +113,6 @@ export default function Pingpong() {
                     >
                       <Icon icon={"close"} color="primary"/>
                     </IconButton>}
-                    title={<Font variant="title">
-                        Pingpong
-                    </Font>}
-                  
                   />
                 </DialogTitle>
                 <DialogContent sx={{mx:2}}>
@@ -141,24 +133,9 @@ export default function Pingpong() {
                   </Box>
                 </DialogContent>
                 
-                <DialogActions sx={{display: "block"}}>
-                
-                  <List>
-                    <ListItemButton
-                        sx={{mb:1}}
-                        color="primary"
-                        onClick={closeMyPing}>
-                      <ListItemIcon>
-                        <Icon icon={"close"} color="primary"/>
-                      </ListItemIcon>
-                      <ListItemText
-                        primary={<Font>
-                                   Close
-                                  </Font> }/>
-                      </ListItemButton>
-                  </List>
+                <DialogActions>
+                  <PingpongIconMenu />
                 </DialogActions>
-            
               </Dialog>
         </>
 }

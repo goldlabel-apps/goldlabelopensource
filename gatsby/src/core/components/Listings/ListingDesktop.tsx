@@ -32,7 +32,8 @@ export default function ListingDesktop(props: any) {
   const {appData} = props
   const siteMeta = useSiteMetadata()
   const allMarkdown = useAllMarkdown()
-  const thisSlug = frontmatter.slug
+  let thisSlug = "/"
+  if (frontmatter) thisSlug = frontmatter.slug
   const childrenArr = useChildren(thisSlug, allMarkdown)
   // console.log("childrenArr", childrenArr)
   const {

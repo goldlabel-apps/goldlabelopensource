@@ -3,19 +3,17 @@ import {
 } from "../../../core"
 import {setPingpongKey} from "../../Pingpong"
 
-export const saveUid = (
-    host: string,
-    ip: string,
-    fingerprint: string,
+export const togglePingpongDialog = (
+  open: boolean
 ): any =>
   async (dispatch: any) => {
     try {
-      dispatch(setPingpongKey("uid", `${host}_${ip}_${fingerprint}`))
+        dispatch(setPingpongKey("pingpongDialog", open))
     } catch (e: any) {
       dispatch(notify(
         "Pingpong 500",
         "error", 
-        `saveUid ${e.toString()}`
+        `togglePingpongDialog ${e.toString()}`
       ))
     }
 }

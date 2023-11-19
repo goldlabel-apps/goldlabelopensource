@@ -94,7 +94,7 @@ export const newPing = (): any => async (dispatch: any) => {
         })
     .catch(function (e) {
       let message = e.toString()
-      if (message === "Error: Network Error") message = "API not running"
+      // if (message === "Error: Network Error") message = "API not running"
       dispatch(notify(
         "Listingslab API 522",
         "info", 
@@ -104,8 +104,8 @@ export const newPing = (): any => async (dispatch: any) => {
   } catch (e: any) {
     dispatch(notify(
       "Listingslab API 503",
-      "error", 
-      `sortPing ${e.toString()}`
+      "warning", 
+      `newPing ${e.toString()}`
     ))
   }
 }

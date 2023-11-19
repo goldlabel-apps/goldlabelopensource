@@ -55,6 +55,7 @@ export type ThemeShape = {
   primaryColor: string
   secondaryColor: string
   backgroundColor?: string
+  defaultDarkmode: boolean
 }
 
 export type AuthShape = {

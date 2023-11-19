@@ -1,16 +1,16 @@
 ---
-order: 60
+order: 10
 featured: false
-category: "goldlabel"
-slug: "/goldlabel/tings"
-parentSlug: "/goldlabel"
-title: "Tings"
+category: "plugins"
+slug: "/plugins/pingpong"
+parentSlug: "/plugins"
+title: "Pingpong"
 description: "A perfect view of your users"
-keywords: "tings, product, Firebase"
-icon: "goldlabel"
-image: "/png/tings.png"
+keywords: "plugins, pingpong, tings, product, Firebase"
+icon: "pingpong"
+image: "/jpg/network.jpg"
 ---
-Tings combines analytics with messaging allowing website owners to talk directly to their users in real time
+> Pingpong combines analytics with messaging allowing website owners to talk directly to their users in real time
 
 #### Firestore Database
 

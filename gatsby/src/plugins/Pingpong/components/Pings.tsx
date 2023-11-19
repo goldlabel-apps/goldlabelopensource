@@ -21,11 +21,14 @@ import {
   usePwaDispatch,
   selectBackoffice,
   selectDisplay,
-} from "../../../../core"
+} from "../../../core"
 import {
   updateFbId,
+} from "../../Backoffice"
+import {
   Ping,
-} from "../../../Backoffice"
+} from "../../Pingpong"
+
 
 const iconFromHost = (
   host: string, 
@@ -178,7 +181,6 @@ export default function Pings({data}: any) {
             const fbId: any = row[0]
             onFbIdSelect(fbId)
           }}
-          
         />
       </Box>
     </>

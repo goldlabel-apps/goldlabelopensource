@@ -5,10 +5,10 @@ order: 1
 cover: true
 slug: "/"
 category: "goldlabel"
-title: "Open Source"
-description: "Goldlabel's Forever Free Version"
+title: "Goldlabel Free"
+description: "Open Source & Free Forever"
 icon: "home"
-image: "/jpg/wordpress.jpg"
+image: "/jpg/ukmap.jpg"
 keywords: "JavaScript, Gatsby, React, Progressive Web App, MUI"
 email: "ai@listingslab.com"
 website: "https://github.com/listingslab-software/open-source"
@@ -17,9 +17,8 @@ phone: "+356-9964-2755"
 flag: "mt"
 youtube: ""
 ---
+> Looking for an alternative to WordPress?
 
+Goldlabel is easy to implement JavaScript that can take your slow old WordPress site and make it not only super fast, but rank better in Google
 
-
-### [An alternative to WordPress](/goldlabel)
-
-Goldlabel Open Source is a modern alternative to WordPress. It's Open Source & free. You don’t have to pay for it. Which is how it should be. Should you do us the honour of trying it out and deciding that it’s an approach which suits you, then there are pathways for you to do that without suddenly being charged an arm and a leg
+Goldlabel Free is a modern alternative to WordPress which uses React and Gatsby. It's Free. Should you do us the honour of trying it out and deciding that it’s an approach which suits you, then there are pathways for you to do that without suddenly being charged an arm and a leg

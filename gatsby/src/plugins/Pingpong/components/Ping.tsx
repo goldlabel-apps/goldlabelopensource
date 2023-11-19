@@ -18,12 +18,12 @@ import {
   usePwaSelect,
   selectBackoffice,
   selectCore,
-} from "../../../../core"
+} from "../../../core"
 import {
   setBackofficeKey,
   deleteFbId,
   updateFbId,
-} from "../../../Backoffice"
+} from "../../Backoffice"
 
 export default function Ping() {
   const dispatch = usePwaDispatch()
@@ -47,10 +47,10 @@ export default function Ping() {
     host: string, 
     allHosts: any,
   ) => {
-    for (let i=0; i<allHosts.length; i++){
+    for (let i=0; i < allHosts.length; i++){
       if(host === allHosts[i].host) return allHosts[i].icon
     }
-    return "/svg/hosts/opensourceLabel.svg"
+    return "/svg/hosts/opensource.svg"
   }
   if (!ping) return null
   const {
