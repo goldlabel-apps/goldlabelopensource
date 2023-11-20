@@ -86,14 +86,13 @@ const compilePing = () => {
           
         },
         time: Date.now(),
-        
         seen: false,
       }
     ]
   }
 }
 
-export const newPing = (): any => async (dispatch: any) => {
+export const frebaseNew = (): any => async (dispatch: any) => {
   try {
     const ep = `${process.env.REACT_APP_API}pingpong/create`
     const ping = compilePing()
@@ -125,7 +124,7 @@ export const newPing = (): any => async (dispatch: any) => {
     dispatch(notify(
       "Listingslab API 503",
       "warning", 
-      `newPing ${e.toString()}`
+      `frebaseNew ${e.toString()}`
     ))
   }
 }

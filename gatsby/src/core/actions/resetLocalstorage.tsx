@@ -6,7 +6,7 @@ import {
 export const resetLocalstorage = (): any => async (dispatch: any) => {
     try {
         setTimeout(() => {
-        localStorage.removeItem("persist:goldlabel-core")
+        localStorage.removeItem("persist:goldlabel")
         setTimeout(() => {
             window.location.reload()
         }, 250)

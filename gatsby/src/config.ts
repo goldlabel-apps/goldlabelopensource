@@ -11,12 +11,12 @@ export const glConfig: ConfigShape = {
     siteImage: "/jpg/ukmap.jpg",
     siteIcon: "/svg/iOS.svg",
     siteTwitter: "@listingslab",
-    siteTheme: "#FFFFFF",
+    siteTheme: "#000000",
     theme: {
         slug: "goldlabelDefault",
         primaryColor: "#C09F52",
         secondaryColor: "#e1ba60",
-        defaultDarkmode: false,
+        defaultDarkmode: true,
     },
     mapbox: {
         light: "mapbox://styles/listingslab/clmrnpplw00ej01nsfv8l4q25",
