@@ -4,11 +4,11 @@ import {
   notify,
 } from "../../../core"
 import {
-  newPing,
-  updatePing,
+  frebaseNew,
+  firebaseUpdate,
 } from "../../Pingpong"
 
-export const sortPing = (
+export const firebaseDecide = (
   uid: string,
 ): any => async (dispatch: any) => {
 
@@ -19,15 +19,15 @@ export const sortPing = (
       let message = "Existing UID"
       if (res.data){ message = res.data.data.data.message}
       const exists = res.data.data.data.exists
-      if (!exists) dispatch(newPing())
-      if (exists) dispatch(updatePing())
+      if (!exists) dispatch(frebaseNew())
+      if (exists) dispatch(firebaseUpdate())
     })
     .catch(function (e) {
       let message = e.toString()
-      if (message === "Error: Network Error") message = "API not running"
+      // if (message === "Error: Network Error") message = "API not running"
       dispatch(notify(
         "Listingslab API 522",
-        "info", 
+        "error", 
         message,
       ))
     })
@@ -35,7 +35,7 @@ export const sortPing = (
     dispatch(notify(
       "Listingslab API 503",
       "error", 
-      `sortPing ${e.toString()}`
+      `firebaseDecide ${e.toString()}`
     ))
   }
 }

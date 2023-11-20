@@ -16,7 +16,6 @@ import {
   usePwaSelect,
   selectPingpong,
   selectDisplay,
-  selectAuth,
   Device,
 } from "../../core"
 import {
@@ -24,7 +23,7 @@ import {
   makeFingerprint,
   fetchIPGeo,
   saveUid,
-  sortPing,
+  firebaseDecide,
   setPingpongKey,
   PingpongIconMenu,
 } from "../Pingpong"
@@ -35,11 +34,10 @@ import {
 export default function Pingpong() {
   
   const dispatch = usePwaDispatch()
-  const auth = usePwaSelect(selectAuth)
   const pingpong = usePwaSelect(selectPingpong)
   const display = usePwaSelect(selectDisplay)
   const {myPing, myPingOpen, unread} = pingpong
-  let hideBtn = false
+  let pingReady = false
   let messages = 0
   let lng, lat, city, province, countryName, device, browser, os, ip, flag = ""
   if (myPing){
@@ -54,11 +52,11 @@ export default function Pingpong() {
     lng = myPing.lng || 0
     flag = myPing.flag || ""
   }
-  let user: any = null
-  if(auth) user = auth.user
   if (unread) messages = unread
   let isBig = false
   if (display) isBig = !display.mobile
+
+  if (ip !== "") pingReady = true
   
   const openMyPing = () =>{
     dispatch(setPingpongKey("myPingOpen", true))
@@ -85,11 +83,11 @@ export default function Pingpong() {
     if (!uid && host && fingerprint && ip ){
       dispatch(saveUid(host, ip, fingerprint))
     }
-    if(uid) dispatch(sortPing(uid))
+    if(uid) dispatch(firebaseDecide(uid))
   }, [pingpong, dispatch])
   
   return <>
-            {!hideBtn ? <IconButton
+            {pingReady ? <IconButton
               onClick={openMyPing}>
               <Badge badgeContent={messages} color="secondary">
                 <Icon icon="pingpong" />

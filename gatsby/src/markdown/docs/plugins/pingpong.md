@@ -2,8 +2,8 @@
 order: 10
 featured: false
 category: "plugins"
-slug: "/plugins/pingpong"
-parentSlug: "/plugins"
+slug: "/docs/plugins/pingpong"
+parentSlug: "/docs/plugins"
 title: "Pingpong"
 description: "A perfect view of your users"
 keywords: "plugins, pingpong, tings, product, Firebase"

@@ -27,7 +27,7 @@ const initialState: CoreReducerShape = {
 }
 
 export const pwaSlice = createSlice({
-  name: "goldlabel-core",
+  name: "goldlabel",
   initialState,
   reducers: {
     setPwaKey: (state, action: PayloadAction<KeyValueShape>) => {

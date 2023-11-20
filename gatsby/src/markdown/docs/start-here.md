@@ -2,15 +2,17 @@
 order: 10
 cover: true
 category: "docs"
-slug: "/docs/getting-started"
+slug: "/docs/start-here"
 parentSlug: "/docs"
-title: "Getting Started"
-description: "Developer? Start by cloning the repo"
+title: "Start here"
+description: "Get started by cloning the repo"
 keywords: "developer"
 icon: "github"
 image: "/jpg/ukmap.jpg"
 ---
-Identify where you're going to clone the repository. We'll call this `<working-repo>`. Decide on the machine readable name `<your-project>`. Clone the repo and install dependencies
+### Step 1
+
+Identify where you're going to clone the [repository](https://github.com/listingslab-software/open-source). We'll call this `<working-repo>`. Decide on the machine readable name `<your-project>`. Clone the repo and install dependencies
 
 ```bash
 cd <working-dir>
@@ -20,6 +22,8 @@ cd gatsby
 npm install
 cd ../
 ```
+
+### Step 2
 
 Open and configure `gatsby/src/config`
 
