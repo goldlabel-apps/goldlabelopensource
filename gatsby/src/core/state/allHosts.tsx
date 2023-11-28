@@ -25,13 +25,13 @@ export const allHosts = [
       label: "Legalweed",
       host: "legalweed.world",
       url: "https://legalweed.world/",
-      icon: "/svg/hosts/legalweedLabel.svg"
+      icon: "https://legalweed.world/svg/iOS.svg"
     },
     {
       label: "Legalweed",
       host: "legal-weed-world.web.app",
       url: "https://legal-weed-world.web.app/",
-      icon: "/svg/hosts/legalweedLabel.svg"
+      icon: "https://legalweed.world/svg/iOS.svg"
     },
     {
       label: "Divemalta",

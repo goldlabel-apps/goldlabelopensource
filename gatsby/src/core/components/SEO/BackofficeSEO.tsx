@@ -15,7 +15,7 @@ export const BackofficeSEO = () => {
   } = siteMetadata
   const siteName = defaultTitle
   const seo = {
-    title: `${siteTitle}`,
+    title: `Backoffice`,
     description: siteDescription,
     image: siteImage,
     url: siteUrl,

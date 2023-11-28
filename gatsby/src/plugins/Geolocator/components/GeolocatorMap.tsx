@@ -1,3 +1,4 @@
+import {GeolocatorShape} from "../types"
 import * as React from "react"
 import {glConfig} from "../../../config"
 import "mapbox-gl/dist/mapbox-gl.css"
@@ -6,34 +7,17 @@ import {
   Box,
   useTheme,
 } from "@mui/material"
-import {
-  usePwaSelect,
-  usePwaDispatch,
-} from "../../../core"
-import {
-  Label,
-} from "../../Geolocator"
 
-export default function GeolocatorMap(props: any) {
-  const dispatch = usePwaDispatch()
-  const {options} = props
-
-  const {
-    lat, 
-    lng,
-    zoom,
-    onMarkerClick,
-  } = options
+export default function GeolocatorMap(lat, lng, icon: GeolocatorShape) {
 
   const {mapbox} = glConfig
   const mode = useTheme().palette.mode
-  // console.log("mode", mode)
   const mapRef: any = React.useRef(null)
   const defaultCenter = {
-    lat: options.lat,
-    lng: options.lng,
-    zoom: zoom || 4,
-    flag: "eu",
+    lat,
+    lng,
+    zoom: 4,
+    icon,
   }
   let exitEarly = false
 
@@ -52,21 +36,21 @@ export default function GeolocatorMap(props: any) {
             display: "block",
           }}>
             <Map
+              mapStyle={style}
+              mapboxAccessToken={process.env.REACT_APP_MAPBOX}
               ref={mapRef}
               style={{height: 320}}
               initialViewState={{
                 // @ts-ignore
-                interactive: true,
-                latitude: defaultCenter.lat,
-                longitude: defaultCenter.lng,
-                zoom: defaultCenter.zoom,
-              }}
-              mapStyle={style}
-              mapboxAccessToken={process.env.REACT_APP_MAPBOX}>
-                <Label 
+                interactive: false,
+                latitude: defaultCenter.lat || 0,
+                longitude: defaultCenter.lng || 0,
+                zoom: defaultCenter.zoom || 4,
+              }}>
+                {/* <Label 
                   options={options}
                   onMarkerClick={onMarkerClick}
-                />
+                /> */}
             </Map>
           </Box>
 }

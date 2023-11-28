@@ -1,15 +1,3 @@
-export type GeolocatorShape = {
-  blinking: boolean
-  bigMapOpen: boolean
-  flyTo?: any
-  config: FeatureCongigShape
-}
-
-export type FeatureCongigShape = {
-  enabled: boolean
-  options: any
-}
-
 export type GatsbyShape = {
   siteUrl: string
   siteEmail: string
@@ -25,11 +13,6 @@ export type GatsbyShape = {
   siteTwitter: string
   twitterUsername: string
   siteTheme: string
-  siteDefaultLocale?: string
-}
-
-export type FormsShape = {
-  initted?: boolean
 }
 
 export type ConfigShape = {
@@ -37,25 +20,71 @@ export type ConfigShape = {
   siteDescription: string
   siteUrl: string
   siteDisplayname: string
-  siteFacebook: string
   siteEmail: string
   siteImage: string
   siteIcon: string
+  siteFacebook: string
   siteTwitter: string
   siteTheme: string
+  sharing: boolean
   siteKeywords: string
   siteFooterUrl?: string
   siteDefaultLocale?: string
   theme: ThemeShape
-  mapbox: any
+  mapbox?: any
+  membersOnly?: boolean
+  backoffice?: any
+  darkmodeEnabled: boolean
+  debuggerEnabled: boolean
+}
+
+export type CoreShape = {
+  user: any
+  darkmode: boolean
+  debuggerOpen: any
+  allHosts: Array<any>
+  frontmatter: any
+  authed: boolean
+  authing: boolean
+  display: any
+  notifyer: any
+  footerMenuOpen: boolean
+  scroll: boolean
+  signinOpen: boolean
+  accountDialogOpen: boolean
+}
+
+export type GeolocatorShape = {
+  blinking: boolean
+  bigMapOpen: boolean
+  flyTo?: any
+  config: FeatureCongigShape
+}
+
+export type PingpongShape = {
+  fbId: string | null
+  publicPing: any
+  ipGeo: any
+  ipGeoFetching: boolean
+  uidChecking: boolean
+  exists: boolean
+  device: any
+}
+
+export type FeatureCongigShape = {
+  enabled: boolean
+  options: any
+}
+
+export type FormsShape = {
+  initted?: boolean
 }
 
 export type ThemeShape = {
   slug: string
   primaryColor: string
   secondaryColor: string
-  backgroundColor?: string
-  defaultDarkmode: boolean
+  defaultDarkmode?: boolean
 }
 
 export type AuthShape = {

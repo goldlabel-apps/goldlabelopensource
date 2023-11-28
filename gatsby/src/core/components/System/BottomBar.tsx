@@ -2,26 +2,26 @@ import * as React from "react"
 import {
   useTheme,
   Box,
-  IconButton,
-  Badge,
   AppBar,
 } from "@mui/material"
 import {
-  Icon,
-  usePwaDispatch,
   usePwaSelect,
-  setCoreKey,
   selectCore,
   ScrollUp,
   SystemMenu,
-  Pingpong,
+  selectAuth,
+  usePwaDispatch,
 } from "../../../core"
 
 export default function BottomBar() {
   const dispatch = usePwaDispatch()
   const bgCol = useTheme().palette.background.default
   const core = usePwaSelect(selectCore)
-  const {darkmode, scroll} = core
+  const auth = usePwaSelect(selectAuth)
+  let user: any = null
+  if(auth) user = auth.user
+  const {scroll} = core
+  const showMenu = true
 
   return <>
           <AppBar 
@@ -36,12 +36,11 @@ export default function BottomBar() {
             }}>      
               <Box sx={{display: "flex"}}>
                 <Box sx={{flexGrow: 1}} />
-                <Box>
-                  <Pingpong />
-                </Box>
-                <Box sx={{}}>
+                
+                { showMenu ? <Box sx={{}}>
                   <SystemMenu />
-                </Box>
+                </Box> : null}
+
                 
                 {scroll ? <Box>
                   <ScrollUp />

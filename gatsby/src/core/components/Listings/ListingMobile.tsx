@@ -1,37 +1,33 @@
 import * as React from "react"
+import {glConfig} from "../../../config"
 import {
-  useTheme,
-  AppBar,
   Box,
-  Toolbar,
   Container,
+  CardHeader,
+  IconButton,
+  Avatar,
 } from "@mui/material"
 import {
   Image,
   Font,
-  TitleMobile,
+  Pingpong,
   useSiteMetadata,
-  usePwaSelect,
-  selectCore,
   Children,
   Categories,
   Markdown,
-  Siblings,
   Meta,
   CatNav,
-  ScrollUp,
-  SystemMenu,
   ShareMenu,
   BottomBar,
+  usePwaDispatch,
+  navigate,
+  Debugger,
 } from "../../../core"
 
 export default function ListingMobile(props: any) {  
+  const dispatch = usePwaDispatch()
   const {appData} = props
-  const bgCol = useTheme().palette.background.default
-  const siteMeta = useSiteMetadata()
-  const core = usePwaSelect(selectCore)
-  const {scroll} = core
-  
+  const siteMeta = useSiteMetadata()  
   let isHome = false
   if (appData.path === "/")isHome = true
   const {version} = siteMeta
@@ -44,42 +40,44 @@ export default function ListingMobile(props: any) {
   let image: any = null
   let paid: any = true
   let children: any = false
-
+  let lat: any = null
+  let lng: any = null
+  let icon: any = null
   if (appData.pageResources.json.data){
     doc = appData.pageResources.json.data.markdownRemark
     frontmatter = doc.frontmatter
     title = frontmatter.title
     description = frontmatter.description
+    icon = frontmatter.icon
+    lat = frontmatter.lat
+    lng = frontmatter.lng
     image = frontmatter.image
     html = doc.html
     excerpt = doc.excerpt
     paid = frontmatter.paid
   }
   if (!paid) children = true
+  const {sharing} = glConfig
   
   return <>
           <div id="topAnchor" />
           <Container>  
             <Box sx={{}}>
-              
-              <TitleMobile
-                title={title}
-                description={description}
+            
+              <CardHeader 
+                action={<Pingpong />}
+                avatar={<IconButton 
+                            color="primary"
+                            sx={{ml:-3}}
+                            onClick={(e: React.MouseEvent) => {
+                                e.preventDefault()
+                                dispatch(navigate("/", "_self"))
+                            }}>
+                            <Avatar src="/svg/iOS.svg" alt={`${title} ${description}`} />
+                        </IconButton>}
+                
               />
-
-              <Box sx={{display: "flex", mb:2}}>
-                  <Box sx={{}}>
-                    <ShareMenu />
-                  </Box>
-                  <Box sx={{}}>
-                    <Meta frontmatter={frontmatter}/>
-                  </Box>
-                  <Box sx={{mt:0.5, ml:1}}>
-                    <CatNav />
-                  </Box>
-              </Box>
-
-
+              <Debugger />
               {image ? <>
                 <Box>
                   <Image 
@@ -90,43 +88,53 @@ export default function ListingMobile(props: any) {
                 </Box>
               </> : null }
 
-              <Box sx={{display: "flex"}}>                
-                <Box sx={{mt:2}}>
+              <Box sx={{display: "flex", my:2}}>                
+                <Box sx={{}}>
                   <Font variant="title">
+                      {title}
+                  </Font>
+                  <Font>
                     {description}
                   </Font>
                 </Box>
-                <Box sx={{flexGrow:1}}/>
-                  
+                <Box sx={{flexGrow:1}}/>    
+              </Box>
+
+              
+
+
+              <Box sx={{display: "flex"}}>
+                <Box sx={{m:0.5}}>
+                  <CatNav />
                 </Box>
-                {children ? <Box sx={{}}>
+                <Box sx={{mr:0.5}}>
+                  <Meta frontmatter={frontmatter}/>
+                </Box>
+                {sharing ? <Box sx={{mr:0.5}}>
+                    <ShareMenu />
+                  </Box> : null}
+                <Box sx={{flexGrow:1}}/>
+              </Box>
+
+              {html ? <Box sx={{}}>
+                <Markdown html={html}/>
+              </Box> : null }
+
+              {children ? <Box sx={{}}>
                   <Children 
                     icons= {true} 
                     frontmatter={frontmatter}
                   />
                 </Box> : null }
-
-              {html ? <Box sx={{}}>
-                <Markdown html={html}/>
-              </Box> : null }
               
               <Categories />
               
-              {/* {!isHome ? <Siblings 
-                      frontmatter={frontmatter}
-                      icons= {false}  
-                    /> : <>
-                <Categories />
-              </> } */}
-
-           
             <Box sx={{height: 70}} />
             <div id="bottomAnchor" />
           </Box>
 
           <BottomBar />
 
-         
         </Container>
       </>
 }
