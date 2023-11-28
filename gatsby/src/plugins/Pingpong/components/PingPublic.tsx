@@ -41,26 +41,38 @@ export default function PingPublic() {
           <CardHeader 
             avatar={<>
               <Box sx={{display: "flex"}}>
-
-                <Tooltip title={`${city}, ${country}`}>              
-                  <Avatar 
-                    sx={{width: "26px", height: "26px", mt:0.5, mr:1.5}} 
-                    src={`/svg/flags/${flag}.svg`} 
-                  />
-                </Tooltip>
-                
+                <Box sx={{ml: -0.5}}>
                 <Tooltip title={`${host}`}>  
                   <Avatar
-                    sx={{width: "32px", height: "32px", mt:0.5, mx:1.5}} 
+                    sx={{
+                      width: "30px", 
+                      height: "30px", 
+                      mt: 0.5, 
+                      mr: 1
+                    }} 
                     src={iconFromHost(host, allHosts)} />
                 </Tooltip>
-
+                </Box>
+                <Box>
                 <Device 
                   osName={osName} 
                   browserName={browserName} 
                   vendor={vendor}
                 />
-
+                </Box>
+                <Box>
+                <Tooltip title={`${city}, ${country}`}>              
+                  <Avatar 
+                    sx={{
+                      width: "24px", 
+                      height: "24px", 
+                      mt: 1, 
+                      ml: 1
+                    }} 
+                    src={`/svg/flags/${flag}.svg`} 
+                  />
+                </Tooltip>
+                </Box>
               </Box>
             </>}
           />
