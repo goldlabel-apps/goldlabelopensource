@@ -1,6 +1,6 @@
 {
   "name": "goldlabel-core",
-  "version": "3.6.4",
+  "version": "3.6.5",
   "scripts": {
     "test": "echo \"LGTM\" && exit 1"
   },
