@@ -8,7 +8,6 @@ export const makeFingerprint = (): any => async (dispatch: any) => {
   try {
     const fp = await FingerprintJS.load()
     const {visitorId} = await fp.get()
-    // console.log("visitorId", visitorId)
     dispatch(setPingpongKey("fingerprint", visitorId))
   } catch (e: any) {
     dispatch(notify(

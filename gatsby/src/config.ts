@@ -1,4 +1,4 @@
-import {ConfigShape} from "../types"
+import {ConfigShape} from "./types"
 
 export const glConfig: ConfigShape = {
     siteTitle: "Goldlabel Free",
@@ -21,5 +21,10 @@ export const glConfig: ConfigShape = {
     mapbox: {
         light: "mapbox://styles/listingslab/clmrnpplw00ej01nsfv8l4q25",
         dark: "mapbox://styles/listingslab/clmrnt68o02a801qxevn0bt6u"
-    }
+    },
+    debuggerEnabled: true,
+    darkmodeEnabled: true,
+    membersOnly: false,
+    sharing: true,
 }
+

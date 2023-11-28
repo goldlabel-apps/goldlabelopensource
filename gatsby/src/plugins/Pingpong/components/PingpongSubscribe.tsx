@@ -53,16 +53,6 @@ export default function PingpongSubscribe() {
   }, [dispatch])
 
   return <>
-          <CardHeader 
-            title={<Font variant="small">
-                      Pingpong {pJSON.version}
-                    </Font>}
-            avatar={<>
-              <Box sx={{mt:1}}>
-                <Icon icon="pingpong" color="primary" />
-              </Box>
-            </>}
-          />
           <Pings data={pingpong}/>
         </>
 }

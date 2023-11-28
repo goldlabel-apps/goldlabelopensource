@@ -24,16 +24,10 @@ import {
   deleteFbId,
   updateFbId,
 } from "../../Backoffice"
+import {iconFromHost} from "../utils"
 
 export default function Ping() {
   const dispatch = usePwaDispatch()
-  const backoffice = usePwaSelect(selectBackoffice)
-  const core = usePwaSelect(selectCore)
-  const {allHosts} = core
-  const {
-    fbId,
-    ping,
-  } = backoffice
 
   React.useEffect(() => {
     const db = getFirestore()
@@ -43,15 +37,13 @@ export default function Ping() {
     return () => unsubscribe()
   }, [dispatch])
 
-  const iconFromHost = (
-    host: string, 
-    allHosts: any,
-  ) => {
-    for (let i=0; i < allHosts.length; i++){
-      if(host === allHosts[i].host) return allHosts[i].icon
-    }
-    return "/svg/hosts/opensource.svg"
-  }
+  const backoffice = usePwaSelect(selectBackoffice)
+  const core = usePwaSelect(selectCore)
+  const {allHosts} = core
+  const {
+    fbId,
+    ping,
+  } = backoffice
   if (!ping) return null
   const {
     title,
@@ -75,7 +67,6 @@ export default function Ping() {
               >
                 <Icon icon="left" />
               </IconButton>
-
                 <Avatar 
                   sx={{width: "32px", height: "32px", mt:0.5}} 
                   src={`/svg/flags/${flag}.svg`} 
@@ -95,11 +86,9 @@ export default function Ping() {
               </IconButton>
             </>}
           />
-          
-          <CardContent>
+          {/* <CardContent>
             <pre>ping: {JSON.stringify(ping, null, 2)}</pre>
-          </CardContent>
-          
+          </CardContent> */}
         </>
 }
 

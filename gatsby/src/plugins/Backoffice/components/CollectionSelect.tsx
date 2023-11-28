@@ -6,6 +6,10 @@ import {
   ListItemText,
   ListItemButton,
   IconButton,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Typography,
 } from "@mui/material"
 import {
   Icon,
@@ -15,20 +19,22 @@ import {
   selectBackoffice,
 } from "../../../core"
 import {setBackofficeKey} from "../../Backoffice"
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 const collectionList = [
   {
     label: "Pingpong",
     collection: "pingpong",
     icon: "pingpong",
   },
-  // {
-  //   label: "Members",
-  //   collection: "members",
-  //   icon: "members",
-  // },
   {
-    label: "Google",
-    collection: "google",
+    label: "Members",
+    collection: "members",
+    icon: "members",
+  },
+  {
+    label: "Spider Bites",
+    collection: "spiders",
     icon: "google",
   },
 ]
@@ -36,7 +42,15 @@ const collectionList = [
 export default function CollectionSelect() {
   const dispatch = usePwaDispatch()
   const backoffice = usePwaSelect(selectBackoffice)
+
   return <>
+
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
           <CardHeader 
             title={<Font variant="title">Backoffice</Font>}
             avatar={<>
@@ -52,7 +66,9 @@ export default function CollectionSelect() {
               </IconButton>
             </>}
           />
-           <List>
+        </AccordionSummary>
+        <AccordionDetails>
+          <List>
             {collectionList.map((item: any, i: number) => {
               const {
                 label,
@@ -75,6 +91,13 @@ export default function CollectionSelect() {
                         />
                       </ListItemButton>
             })}
-          </List>          
+          </List> 
+
+        </AccordionDetails>
+      </Accordion>
+
+
+          
+                    
           </>
 }

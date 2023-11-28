@@ -5,21 +5,23 @@ import {
 import {
   Icon,
   usePwaDispatch,
-  resetLocalstorage,
 } from "../../../core"
+import {
+  setPingpongKey,
+} from "../../Pingpong"
 
 export default function PingpongIconMenu() {
   const dispatch = usePwaDispatch()
   return <>
-          {/* <IconButton
+          <IconButton
             sx={{}}
             color="primary"
             onClick={(e: React.MouseEvent) => {
               e.preventDefault()
-              dispatch(resetLocalstorage())
+              dispatch(setPingpongKey("pingFbId", null))
             }}>
-              <Icon icon={"reset"} color="primary"/>
-          </IconButton> */}
+              <Icon icon={"close"} color="primary"/>
+          </IconButton>
         </>
 }
 

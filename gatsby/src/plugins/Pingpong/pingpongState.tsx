@@ -1,17 +1,11 @@
-type PingpongShape = {
-    pingpongDialog: boolean
-    ipGeo: any
-    ipGeoFetching: boolean
-    myPingOpen: boolean
-    myPing: any
-    unread: number
-}
+import {PingpongShape} from "../../types"
 
 export const pingpongState: PingpongShape = {
-    pingpongDialog: false,
+    fbId: null,
+    publicPing: null,
     ipGeo: null,
     ipGeoFetching: false,
-    myPingOpen: false,
-    myPing: null,
-    unread: 0,
+    uidChecking: false,
+    exists: false,
+    device: null,
 }

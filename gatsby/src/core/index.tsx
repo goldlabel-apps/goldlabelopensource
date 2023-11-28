@@ -4,7 +4,10 @@ import {BackofficeSEO} from "../core/components/SEO/BackofficeSEO"
 import PWA from "../core/PWA"
 import App from "./App"
 import {Auth} from "./Auth"
-import {Pingpong} from "../plugins/Pingpong"
+import {
+    Pingpong,
+    PingPublic,
+} from "../plugins/Pingpong"
 import {firebaseSignin} from "./actions/auth/firebaseSignin"
 import {firebaseSignout} from "./actions/auth/firebaseSignout"
 import {setDisplay} from "./actions/setDisplay"
@@ -46,6 +49,7 @@ import {
     translations,
     getTranslation,
 } from "./state/translation"
+import Debugger from "./components/Debugger"
 // Forms
 import {FormButton} from "./components/Inputs/FormButton"
 import {FormIconButton} from "./components/Inputs/FormIconButton"
@@ -73,10 +77,10 @@ import Children from "../core/components/Listings/Children"
 import Siblings from "../core/components/Listings/Siblings"
 import Image from "./components/Listings/Image"
 import TitleMobile from "./components/Listings/TitleMobile"
-import AuthChip from "./components/Auth/AuthChip"
-import AuthHeader from "./components/Auth/AuthHeader"
+import {AuthedDialog} from "./components/Auth/AuthedDialog"
 import {Signin} from "./components/Auth/Signin"
 import {Signup} from "./components/Auth/Signup"
+import {AccountMenu} from "./components/Auth/AccountMenu"
 
 // System
 import MultiSelect from "./components/System/MultiSelect"
@@ -93,6 +97,7 @@ import {Device} from "./components/System/Device"
 ///////////////////
 // System
 export {
+    Debugger,
     DarkmodeToggle,
     MultiSelect,
     NotifyerSnack,
@@ -122,10 +127,10 @@ export {
 // Auth
 export {
     Auth,
-    AuthChip,
-    AuthHeader,
+    AuthedDialog,
     Signin,
     Signup,
+    AccountMenu,
 }
 
 // Main
@@ -135,6 +140,7 @@ export {
     SEO,
     BackofficeSEO,
     Pingpong,
+    PingPublic,
 }
 // Hooks
 export {

@@ -1,6 +1,6 @@
 {
   "name": "goldlabel-plugin-pingpong",
-  "version": "1.1.6",
+  "version": "1.1.9",
   "description": "Real time communication with your visitors",
   "scripts": {
     "test": "echo \"LGTM\" && exit 1"

@@ -1,6 +1,7 @@
 import * as React from "react"
 import PingpongballIcon from "./SVGIcons/PingpongballIcon"
 import BlokeyIcon from "./SVGIcons/BlokeyIcon"
+import CanaryIcon from "./SVGIcons/CanaryIcon"
 import WordpressIcon from "./SVGIcons/WordpressIcon"
 import GoldlabelIcon from "./SVGIcons/GoldlabelOutlined"
 import ChromeIcon from "./SVGIcons/devices/ChromeIcon"
@@ -15,7 +16,8 @@ import XboxIcon from "./SVGIcons/devices/XboxIcon"
 import MembersIcon from "@mui/icons-material//SupervisedUserCircle"
 import AndroidIcon from "@mui/icons-material/Android"
 import CloseIcon from "@mui/icons-material/CloseOutlined"
-
+import BugIcon from "@mui/icons-material/BugReportOutlined"
+import GeolocatorIcon from "@mui/icons-material/Public"
 import DesktopMacIcon from "@mui/icons-material/DesktopMacOutlined"
 import DesktopIcon from "@mui/icons-material/DesktopWindowsOutlined"
 import GithubIcon from "@mui/icons-material/GitHub"
@@ -43,7 +45,7 @@ import TingsIcon from "@mui/icons-material/MarkUnreadChatAltOutlined"
 import SignoutIcon from "@mui/icons-material/ExitToAppOutlined"
 import DeleteIcon from "@mui/icons-material/DeleteOutline"
 import SuccessIcon from "@mui/icons-material/Check"
-import InfoIcon from "@mui/icons-material/Help"
+import InfoIcon from "@mui/icons-material/HelpOutline"
 import EmailIcon from "@mui/icons-material/EmailOutlined"
 import SigninIcon from "@mui/icons-material/LoginOutlined"
 import SpyIcon from "@mui/icons-material/RemoveRedEye"
@@ -81,7 +83,7 @@ import LinguaIcon from "@mui/icons-material/TranslateOutlined"
 import GoogleIcon from "@mui/icons-material/Google"
 
 export type IconShape = {
-  icon: "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ping" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox"
+  icon: "bug" | "canary" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ping" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox"
   color?: any
 }
 
@@ -92,8 +94,14 @@ export default function Icon({icon, color}: IconShape) {
     case "home":
       iconFragment = <HomeIcon color={color} />
       break
+    case "canary":
+      iconFragment = <CanaryIcon color={color} />
+      break 
     case "google":
       iconFragment = <GoogleIcon color={color} />
+      break
+    case "bug":
+      iconFragment = <BugIcon color={color} />
       break
     case "lingua":
       iconFragment = <LinguaIcon color={color} />
@@ -112,7 +120,10 @@ export default function Icon({icon, color}: IconShape) {
       break
     case "close":
       iconFragment = <CloseIcon color={color} />
-      break    
+      break
+    case "geolocator":
+      iconFragment = <GeolocatorIcon color={color} />
+      break
     case "darkmode":
       iconFragment = <DarkmodeIcon color={color} />
       break
@@ -262,9 +273,6 @@ export default function Icon({icon, color}: IconShape) {
       break
     case "category":
       iconFragment = <CategoryIcon color={color} />
-      break
-    case "pings":
-      iconFragment = <TingsIcon color={color} />
       break
     case "info":
       iconFragment = <InfoIcon color={color} />

@@ -1,27 +1,41 @@
 import React from "react"
 import {
   Box,
-  Container,
   Button,
+  Avatar,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  CardHeader,
+  IconButton,
+  LinearProgress,
 } from "@mui/material"
 import {
   Icon,
   Font,
   notify,
   usePwaDispatch,
+  usePwaSelect,
+  selectCore,
+  setCoreKey,
 } from "../../../core"
 import {
-  AuthHeader,
   firebaseSignin,
   InputEmail,
   InputPassword,
-  BottomBar,
+  selectDisplay,
 } from "../../../core"
 
 export function Signin() {
   const dispatch = usePwaDispatch()
+  const core = usePwaSelect(selectCore)
+  const display = usePwaSelect(selectDisplay)
   const [email, setEmail] = React.useState<string>("")
   const [password, setPassword] = React.useState<string>("")
+  const {signinOpen, authing} = core
+  let isBig = false
+  if (display) isBig = !display.mobile
 
   const validate = () => {
     if (email !== "" && password !== ""){
@@ -34,64 +48,72 @@ export function Signin() {
       ))
     }
   }
+
+  const closeSignin = () =>{
+    dispatch(setCoreKey("signinOpen", false))
+    return true
+  }
+
   return (<>
-            <Container maxWidth="xs">
-              <Box sx={{my:4}} />
-              <Box sx={{my:1, margin: "auto"}}>
-              <Box sx={{mb:4}}>
-                <AuthHeader title="Backoffice"/>
-              </Box>
-                  <Box sx={{my:2}}>
-                    <InputEmail autoFocus onChange={setEmail} />
-                  </Box>
-                  <Box sx={{my:2}}>
+
+
+          <Dialog 
+              open={signinOpen}
+              fullWidth
+              maxWidth={"xs"}
+              fullScreen={!isBig}
+              onClose={closeSignin}>
+              <DialogTitle>
+                <CardHeader 
+                  avatar={<Avatar src={"/svg/iOS.svg"} />}
+                  action={<IconButton
+                    sx={{m:1}}
+                    onClick={() => {
+                      dispatch(setCoreKey("signinOpen", false))
+                    }}>
+                    <Icon icon={"close"} color="primary"/>
+                  </IconButton>}
+                  title={<Font variant="title">
+                      Sign In
+                  </Font>}
+                />
+              </DialogTitle>
+
+              {authing ? <>
+                <LinearProgress /> 
+              </> :  <>
+              
+              <DialogContent>
+                <Box sx={{my:2}}>
+                  <InputEmail autoFocus onChange={setEmail} />
+                </Box>
+                <Box sx={{my:2}}>
                     <InputPassword onChange={setPassword}/>
                   </Box>
-                  <Box sx={{my:3, display: "flex"}}>
-                    <Box sx={{flexGrow:1}}/>
-                    <Button 
-                      color="primary"
-                      onClick={validate}>
-                        <Font variant="small">
-                          Sign In
-                        </Font>
-                        <Box sx={{ml:2, mt:0.5}}>
-                          <Icon icon="signin" />
-                        </Box>
-                    </Button>
-                  </Box>
-                  <BottomBar />
-                    {/* <Box sx={{my:2}}>
-                      <Font variant="small">
-                      Build an app for free with <a>Goldlabel Open Source</a>. 
-                      Sign up for a free membership today and get access 
-                      to all the features you need to create an app 
-                      that's both fast and ranks well. Much coding skill is required
-                      </Font>
-                    </Box>
-                  <Box sx={{my:2}}>
-                  
-                    <Button 
-                      color="primary"
-                      onClick={(e: React.MouseEvent) => {
-                        e.preventDefault()
-                          dispatch(navigate("/signup", "_self"))
-                      }}>
-                        <Font variant="small">
-                          Sign up
-                        </Font>
-                    </Button>
-                    <Button 
-                      disabled
-                      color="primary">
-                        <Font variant="small" color="muted">
-                          Password?
-                        </Font>
-                    </Button>
-                  </Box> */}
+              </DialogContent>
 
-              </Box>
-            </Container>
+              <DialogActions>
+                <Button
+                  className="enterable"
+                  color="primary"
+                  onClick={validate}>
+                    <Font variant="small">
+                      Sign In
+                    </Font>
+                    <Box sx={{ml:2, mt:0.5}}>
+                      <Icon icon="signin" />
+                    </Box>
+                </Button>
+              </DialogActions>
+              </>}
+
+             
+          </Dialog>
+
         </>
   )
 }
+
+/*
+  <pre>{JSON.stringify(signinOpen, null, 2)}</pre>
+*/

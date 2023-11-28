@@ -13,7 +13,6 @@ import {
   navigate,
 } from "../../../core"
 import {
-  AuthHeader,
   firebaseSignin,
   InputEmail,
   InputPassword,
@@ -40,9 +39,7 @@ export function Signup() {
               <Box sx={{my:4}} />
               
               <Box sx={{my:1, margin: "auto"}}>
-                <Box sx={{mb:4}}>
-                  <AuthHeader title="Sign up"/>
-                </Box>
+                
                 <Box sx={{my:2}}>
                   <Alert>
                     New memberships are currently available

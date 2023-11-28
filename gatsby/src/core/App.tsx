@@ -1,4 +1,5 @@
 import React from "react"
+import {glConfig} from "../config"
 import {
   Box,
   Container,
@@ -16,6 +17,9 @@ import {
   setFrontmatter,
   WindowResizeListener,
   NotFound,
+  Auth,
+  Signin,
+  AuthedDialog,
 } from "../core"
 import {Backoffice} from "../plugins/Backoffice"
 
@@ -37,30 +41,39 @@ export default function App(props: any) {
   if (appData.pageResources.json.data){
     frontmatter = appData.pageResources.json.data.markdownRemark.frontmatter
   }
-
+  // const {membersOnly} = glConfig
+  const membersOnly = false
+  
   React.useEffect(() => {
-    dispatch(setCoreKey("scroll", false))
     dispatch(boot())
+    dispatch(setCoreKey("scroll", false))
     dispatch(setFrontmatter(frontmatter))
   }, [frontmatter, dispatch])
 
   React.useEffect(() => {
+    // enterable
     window.addEventListener('scroll', onScroll);
     return () => {
       window.removeEventListener('scroll', onScroll)
     }
   }, [])
 
-
   return (<Box>
             <WindowResizeListener />
             <NotifyerSnack />
+            <Signin />
+            <AuthedDialog />
             <Container>
               {type === "notfound" ? <NotFound /> : null}
               {type === "backoffice" ? <Backoffice /> : null}
               {type === "markdown" ? <>
-                {mobile ? <ListingMobile appData={appData}/> 
-                  : <ListingDesktop appData={appData}/> }
+                {membersOnly ? <Auth>
+                  { mobile ? <ListingMobile appData={appData}/> 
+                    : <ListingDesktop appData={appData}/> }
+                </Auth> : <>
+                  { mobile ? <ListingMobile appData={appData}/> 
+                    : <ListingDesktop appData={appData}/> }
+                </>}
               </> : null}
             </Container>
           </Box>)
