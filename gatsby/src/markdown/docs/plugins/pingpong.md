@@ -12,6 +12,14 @@ image: "/jpg/network.jpg"
 ---
 > Pingpong combines analytics with messaging allowing website owners to talk directly to their users in real time
 
+## PingDialog.tsx
+
+Takes fbId: string | null
+
+When the value of `pingFbId` is null, the Ping Dialog is closed, unmounted and not subscribed to the firebase document matching `fbId`. 
+
+When the fbId is a correctly formatted string and exists in the collection we subscribe to the document with the uid in firestore in cleaned up React effect hook
+
 #### Firestore Database
 
 Firebase's Firestore Database is a cloud-hosted NoSQL database provided by Google. Developers can build event based applications by synchronizing data between clients and database with no server layer requirement
