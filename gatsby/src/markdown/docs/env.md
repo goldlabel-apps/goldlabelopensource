@@ -7,7 +7,7 @@ title: "Environment Variables"
 description: "(env)"
 keywords: "developer"
 icon: "doc"
-image: "/jpg/network.jpg"
+image: "/png/goldlabel.png"
 ---
 copy `.env.sample` as `.env.development` and `.env.production` and fill in the blanks
 

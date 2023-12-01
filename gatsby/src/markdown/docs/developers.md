@@ -27,7 +27,7 @@ cd ../
 
 ### Step 2
 
-Open and configure `gatsby/src/config`
+> Open and configure `gatsby/src/config`
 
 ```javascript
 export const glConfig: ConfigShape = {
@@ -58,7 +58,7 @@ export const glConfig: ConfigShape = {
 Copy `/gatsby/.env.sample` to `.env.production` & `.env.development`. Filling in the details requires a Gmail account and access to a Firebase Project
 
 ### Step 4
-Start with the command `npm start`
+> Start with the command `npm start`
 
 When Gatsby has finished starting the dev server, it's available on 
 http://localhost:8000

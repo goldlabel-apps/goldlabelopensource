@@ -7,7 +7,7 @@ title: "Backoffice"
 description: ""
 keywords: "plugins, backoffice"
 icon: "backoffice"
-image: "/jpg/network.jpg"
+image: "/png/goldlabel.png"
 ---
 ### Authentication
 

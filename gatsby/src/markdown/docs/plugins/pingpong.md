@@ -8,7 +8,7 @@ title: "Pingpong"
 description: "A perfect view of your users"
 keywords: "plugins, pingpong, tings, product, Firebase"
 icon: "pingpong"
-image: "/jpg/network.jpg"
+image: "/png/goldlabel.png"
 ---
 > Pingpong combines analytics with messaging allowing website owners to talk directly to their users in real time
 

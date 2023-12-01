@@ -7,7 +7,7 @@ title: "Geolocator"
 description: "Requires a Mapbox API key"
 keywords: "weathermap, mapbox, mashup"
 icon: "plugin"
-image: "/png/mapbox.png"
+image: "/png/goldlabel.png"
 lat: 35.919837943466604
 lng: 14.493106168762859
 website: "https://divemalta.app/dive-shops/abc-diving/?geolocator"

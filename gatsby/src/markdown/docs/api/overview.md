@@ -2,7 +2,7 @@
 order: 10
 cover: false
 parentSlug: "/docs/api"
-slug: "/docs/api/open-source-api"
+slug: "/docs/api/overview"
 title: "Overview"
 description: "Firebase Cloud Functions"
 category: "api"
@@ -11,7 +11,12 @@ image: "/jpg/climate-change.jpg"
 keywords: "api"
 twitter: "@listingslab"
 ---
-# Open Source API
+## Open Source API
+
+#### What's an API?
+
+An [application programming interface](https://en.wikipedia.org/wiki/API) (API) is a way for two or more computer programs to communicate with each other. It is a type of software interface, offering a service to other pieces of software.[1] A document or standard that describes how to build or use such a connection or interface is called an API specification. A computer system that meets this standard is said to implement or expose an API. The term API may refer either to the specification or to the implementation. Whereas a system's user interface dictates how its end-users interact with the system in question, its API dictates how to write code that takes advantage of that system's capabilities.
+
 
 ## TypeScript
 
