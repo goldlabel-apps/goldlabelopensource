@@ -1,5 +1,4 @@
 ---
-paid: false
 cover: true
 order: 10
 slug: "/docs"

@@ -4,7 +4,7 @@ import express, {Request, Response} from "express";
 import cors from "cors";
 import moment from "moment";
 
-const version = "2.0.4";
+const version = "2.0.5";
 const app = express();
 app.use(cors({credentials: true}));
 

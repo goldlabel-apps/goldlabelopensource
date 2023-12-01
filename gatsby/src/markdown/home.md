@@ -2,7 +2,7 @@
 draft: false
 paid: true
 order: 1
-cover: true
+cover: false
 slug: "/"
 category: "goldlabel"
 title: "Staging"
