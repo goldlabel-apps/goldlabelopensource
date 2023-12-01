@@ -41,8 +41,7 @@ export default function App(props: any) {
   if (appData.pageResources.json.data){
     frontmatter = appData.pageResources.json.data.markdownRemark.frontmatter
   }
-  // const {membersOnly} = glConfig
-  const membersOnly = false
+  const {membersOnly} = glConfig
   
   React.useEffect(() => {
     dispatch(boot())

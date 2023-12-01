@@ -94,7 +94,7 @@ export default function SystemMenu() {
                     color="primary"
                     onClick={(e: React.MouseEvent) => {
                       e.preventDefault()
-                      dispatch(setCoreKey("accountDialogOpen", false))
+                      dispatch(setCoreKey("footerMenuOpen", false))
                       dispatch(navigate("/", "_self"))
                     }}>
                   <ListItemIcon>

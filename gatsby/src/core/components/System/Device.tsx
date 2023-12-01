@@ -40,28 +40,8 @@ export function Device({osName, browserName, vendor}: DeviceShape) {
 
   return (<>
         <Box>
-          { browserName !== " " ? <Tooltip title={browserName}>
-              <IconButton
-                color="primary"
-                onClick={(e: React.MouseEvent)=> {
-                  e.preventDefault()
-                  // dispatch(uidSelect(uid))
-                }}
-              >
-                <Icon icon={iconBrowser}/>
-              </IconButton>
-            </Tooltip> : null }
-          { vendor !== " " ? <Tooltip title={vendor === " " ? "Generic" : vendor}>
-              <IconButton
-                color="primary"
-                onClick={(e: React.MouseEvent)=> {
-                  e.preventDefault()
-                  // dispatch(uidSelect(uid))
-                }}
-              >
-                <Icon icon={iconDevice} />
-              </IconButton>
-            </Tooltip> : null }
+          
+          
 
             { osName !== " " ? <Tooltip title={osName}>
               <IconButton
@@ -74,8 +54,33 @@ export function Device({osName, browserName, vendor}: DeviceShape) {
                 <Icon icon={iconOs}/>
               </IconButton>
             </Tooltip> : null }
+
+            { browserName !== " " ? <Tooltip title={browserName}>
+              <IconButton
+                color="primary"
+                onClick={(e: React.MouseEvent)=> {
+                  e.preventDefault()
+                  // dispatch(uidSelect(uid))
+                }}
+              >
+                <Icon icon={iconBrowser}/>
+              </IconButton>
+            </Tooltip> : null }
             </Box>
           </>
   )
 }
 
+/*
+{ vendor !== " " ? <Tooltip title={vendor === " " ? "Generic" : vendor}>
+              <IconButton
+                color="primary"
+                onClick={(e: React.MouseEvent)=> {
+                  e.preventDefault()
+                  // dispatch(uidSelect(uid))
+                }}
+              >
+                <Icon icon={iconDevice} />
+              </IconButton>
+            </Tooltip> : null }
+*/

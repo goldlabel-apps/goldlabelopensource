@@ -9,6 +9,7 @@ import {
 import {
   updateFbId,
 } from "../../Backoffice"
+
 export const deleteFbId = (
     collection: string,
     fbId: string,
@@ -17,12 +18,11 @@ export const deleteFbId = (
     try {
       const db = getFirestore()
       await deleteDoc(doc(db, collection, fbId))
-      // console.log("deleteFbId", collection, fbId)
       dispatch(updateFbId(null))
       dispatch(notify(
-        "Backoffice 200",
+        `Backoffice 200 ${fbId}`,
         "success", 
-        `Deleted ${fbId}`
+        "Deleted."
       ))
 
     } catch (e: any) {

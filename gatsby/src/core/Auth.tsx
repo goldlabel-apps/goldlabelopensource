@@ -4,7 +4,7 @@ import {
   selectAuth,
 } from "../core"
 import {
-  Signin
+  MembersOnly,
 } from "../core"
 
 export function Auth(props: any) {
@@ -12,6 +12,6 @@ export function Auth(props: any) {
   const auth = usePwaSelect(selectAuth)
   let user: any = null
   if (auth) user = auth.user
-  if (!user) return <Signin />
+  if (!user) return <MembersOnly />
   return <>{children}</>
 } 
