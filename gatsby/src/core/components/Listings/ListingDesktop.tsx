@@ -74,6 +74,7 @@ export default function ListingDesktop(props: any) {
     flag = frontmatter.flag
   }
   const {sharing} = glConfig
+  const flash = false
 
   return <>
     <Container maxWidth="md" sx={{mb: "100px"}}>
@@ -105,19 +106,21 @@ export default function ListingDesktop(props: any) {
 
         {image ? <Grid item xs={12} sm={8}>
               <Debugger />
-              
-              <Flash 
-                flashId="test"
-                height={250}
-              >
-                Flash
-              </Flash>
               <Box sx={{mb:2}}>
-                <Image 
-                  alt={`${title}. ${description}`}
-                  src={image}
-                  height={250}
-                />
+                { flash ? <>
+                  <Flash 
+                    flashId="test"
+                    height={250}
+                  >
+                    Flash
+                  </Flash>
+                </> : <>
+                  <Image 
+                    alt={`${title}. ${description}`}
+                    src={image}
+                    height={250}
+                  />
+                </> }
               </Box>
 
               <Box sx={{display: "flex"}}>
