@@ -6,8 +6,8 @@ slug: "/docs/developers"
 parentSlug: "/docs"
 title: "Developers"
 description: "Start here"
-keywords: "developer"
-icon: "github"
+keywords: "api"
+icon: "doc"
 image: "/png/github.png"
 ---
 > Get started by cloning the [repository](https://github.com/listingslab-software/open-source) from GitHub

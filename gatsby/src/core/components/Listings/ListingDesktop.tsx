@@ -106,7 +106,7 @@ export default function ListingDesktop(props: any) {
         </Grid>
 
         {image ? <Grid item xs={12} sm={8}>
-              <Debugger />
+              
               <Box sx={{mb:2}}>
                 { flash ? <>
                   <Flash 
@@ -138,7 +138,7 @@ export default function ListingDesktop(props: any) {
               </Box>
               
               {html ? <Markdown html={html}/> : null }
-              
+              <Debugger />
           </Grid> : null }
 
           <Grid item xs={12} sm={4}>

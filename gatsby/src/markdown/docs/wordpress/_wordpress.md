@@ -1,12 +1,12 @@
 ---
-order: 10
+order: 100
 cover: true
 parentSlug: "/docs"
 slug: "/docs/wordpress"
 title: "WordPress"
 description: "What's wrong with WordPress?"
 category: "wordpress"
-icon: "wordpress"
+icon: "doc"
 phone: ""
 image: "/jpg/wordpress.jpg"
 keywords: "goldlabel, plugins, product, pwa, Static Site Generation, SSR, free"

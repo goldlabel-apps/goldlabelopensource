@@ -2,12 +2,12 @@
 order: 10
 featured: false
 category: "plugins"
-slug: "/docs/plugins/pingpong"
-parentSlug: "/docs/plugins"
+slug: "/plugins/pingpong"
+parentSlug: "/plugins"
 title: "Pingpong"
 description: "A perfect view of your users"
 keywords: "plugins, pingpong, tings, product, Firebase"
-icon: "pingpong"
+icon: "doc"
 image: "/png/goldlabel.png"
 ---
 > Pingpong combines analytics with messaging allowing website owners to talk directly to their users in real time

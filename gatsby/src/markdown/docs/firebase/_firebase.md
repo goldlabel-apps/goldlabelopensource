@@ -1,12 +1,12 @@
 ---
 order: 50
-cover: true
+cover: false
 parentSlug: "/docs"
 slug: "/docs/firebase"
 title: "Firebase"
 description: "Free Google Services"
 category: "api"
-icon: "api"
+icon: "doc"
 image: "/jpg/climate-change.jpg"
 keywords: "api, firebase, poc"
 ---

@@ -1,12 +1,11 @@
 ---
-paid: false
 order: 10
-parentSlug: "/docs"
-slug: "/docs/plugins"
+cover: true
+slug: "/plugins"
 title: "Plugins"
 description: "Modular additions to a Gatsby & React"
 category: "plugins"
-icon: "plugin"
+icon: "doc"
 image: "/png/goldlabel.png"
 keywords: "goldlabel, plugins, product, pwa, Static Site Generation, SSR, free"
 hideImage: true

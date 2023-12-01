@@ -1,12 +1,12 @@
 ---
 order: 30
 category: "plugins"
-slug: "/docs/plugins/geolocator"
-parentSlug: "/docs/plugins"
+slug: "/plugins/geolocator"
+parentSlug: "/plugins"
 title: "Geolocator"
 description: "Requires a Mapbox API key"
 keywords: "weathermap, mapbox, mashup"
-icon: "plugin"
+icon: "doc"
 image: "/png/goldlabel.png"
 lat: 35.919837943466604
 lng: 14.493106168762859

@@ -7,7 +7,7 @@ slug: "/"
 category: "goldlabel"
 title: "Goldlabel"
 description: "Open Source"
-icon: "home"
+icon: "doc"
 image: "/png/goldlabel.png"
 keywords: "JavaScript, Gatsby, React, Progressive Web App, MUI"
 ---

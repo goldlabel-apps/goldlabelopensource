@@ -1,12 +1,12 @@
 ---
 order: 40
-cover: true
+cover: false
 parentSlug: "/docs"
 slug: "/docs/api"
-title: "API"
+title: "RESTful API"
 description: "Application Programming Interface"
 category: "api"
-icon: "api"
+icon: "doc"
 image: "/jpg/climate-change.jpg"
 keywords: "api"
 twitter: "@listingslab"

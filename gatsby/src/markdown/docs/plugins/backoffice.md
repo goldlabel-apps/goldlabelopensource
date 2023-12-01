@@ -1,12 +1,12 @@
 ---
 order: 5
 category: "plugins"
-slug: "/docs/plugins/backoffice"
-parentSlug: "/docs/plugins"
+slug: "/plugins/backoffice"
+parentSlug: "/plugins"
 title: "Backoffice"
 description: ""
 keywords: "plugins, backoffice"
-icon: "backoffice"
+icon: "doc"
 image: "/png/goldlabel.png"
 ---
 ### Authentication
