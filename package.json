@@ -6,7 +6,11 @@
   "scripts": {
     "start": "clear && cd gatsby && npm run clean && npm run develop",
     "clean": "clear && cd gatsby && npm run clean",
-    "deploy": "clear && npm run clean && cd gatsby && npm run build && firebase deploy"
+    "api": "cd functions && npm run serve",
+    "watch": "clear && cd ./functions && npm run build:watch",
+    "lint": "clear && cd ./functions && npm run lint",
+    "deploy": "clear && npm run clean && cd gatsby && npm run build && firebase deploy --only hosting",
+    "deploy:api": "clear && firebase deploy --only functions"
   },
   "license": "MIT"
 }

@@ -1,6 +1,6 @@
-## Goldlabel
+## Open Source
 
-Open Source and Forever Free. Built on the shoulders of giants
+> This software is Open Source and Free
 
 #### Get started
 
@@ -37,7 +37,6 @@ export const glConfig: ConfigShape = {
     },
     plugins: ["Geolocator", "Lingua", "Tings"],
 ```
-
 
 Start with the command `npm start`
 

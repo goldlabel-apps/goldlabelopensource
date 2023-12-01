@@ -1,4 +1,15 @@
 
+## TypeScript
+
+OpenSource Shape
+
+```javascript
+  "compilerOptions": {
+    "esModuleInterop": true,
+```
+
+
+
 ## Express
 
 ```javascript
