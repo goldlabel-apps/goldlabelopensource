@@ -1,5 +1,5 @@
 export type OpenSourceShape = {
-    output: {
+    notification?: {
         code: string
         status: string
         message: string

@@ -8,7 +8,7 @@ title: "Developers"
 description: "Start here"
 keywords: "developer"
 icon: "github"
-image: "/jpg/ukmap.jpg"
+image: "/png/github.png"
 ---
 > Get started by cloning the [repository](https://github.com/listingslab-software/open-source) from GitHub
 
