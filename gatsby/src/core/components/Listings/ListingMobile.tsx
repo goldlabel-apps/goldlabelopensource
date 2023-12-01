@@ -23,6 +23,10 @@ import {
   navigate,
   Debugger,
 } from "../../../core"
+import {
+  Flash,
+  MovieClip,
+} from "../../../plugins/Flash"
 
 export default function ListingMobile(props: any) {  
   const dispatch = usePwaDispatch()
@@ -58,7 +62,8 @@ export default function ListingMobile(props: any) {
   }
   if (!paid) children = true
   const {sharing} = glConfig
-  
+  const flash = false
+
   return <>
           <div id="topAnchor" />
           <Container>  
@@ -78,15 +83,23 @@ export default function ListingMobile(props: any) {
                 
               />
               <Debugger />
-              {image ? <>
-                <Box>
+
+              <Box sx={{mb:2}}>
+                { flash ? <>
+                  <Flash 
+                    flashId="test"
+                    height={250}
+                  >
+                    Flash
+                  </Flash>
+                </> : <>
                   <Image 
                     alt={`${title}. ${description}`}
                     src={image}
-                    height={200}
+                    height={250}
                   />
-                </Box>
-              </> : null }
+                </> }
+              </Box>
 
               <Box sx={{display: "flex", my:2}}>                
                 <Box sx={{}}>
