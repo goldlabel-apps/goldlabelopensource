@@ -5,8 +5,8 @@ order: 1
 cover: true
 slug: "/"
 category: "goldlabel"
-title: "Goldlabel Staging"
-description: "Open Source & Free Forever"
+title: "Staging"
+description: "Goldlabel Open Source"
 icon: "home"
 image: "/jpg/where/shenzhen.jpg"
 keywords: "JavaScript, Gatsby, React, Progressive Web App, MUI"
