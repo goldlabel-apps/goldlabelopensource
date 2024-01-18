@@ -120,31 +120,14 @@ export default function ListingDesktop(props: any) {
         {image ? <Grid item xs={12} sm={8}>
           <Debugger />
 
-          {slug === "/" ? <>
-          
-          <Grid container spacing={1}>
-            <Grid item xs={12} md={6}>
-              <Markdown html={html} /> 
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Image 
-                alt={`${title}. ${description}`}
-                src={image}
-                height={225}
-              />
-            </Grid>            
-          </Grid>
-            
-          </> : <Box sx={{mb:2}}>
+          <Box sx={{mb:2}}>
             <Image 
               alt={`${title}. ${description}`}
               src={image}
               height={225}
             />
             <Markdown html={html} /> 
-          </Box> }
-
-          
+          </Box>
     
           </Grid> : null }
 

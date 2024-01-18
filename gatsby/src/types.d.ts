@@ -81,7 +81,6 @@ export type FormsShape = {
 }
 
 export type ThemeShape = {
-  slug: string
   primaryColor: string
   secondaryColor: string
   defaultDarkmode?: boolean
