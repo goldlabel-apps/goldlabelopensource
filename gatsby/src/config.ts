@@ -8,13 +8,13 @@ export const glConfig: ConfigShape = {
     siteUrl: "https://goldlabel-open-source.web.app/",
     siteFacebook: "https://www.facebook.com/listingslabspage",
     siteKeywords: "listingslab, goldlabel, opensource, fullstack, react, javascript, node, pwa, free, github",
-    siteImage: "/png/goldlabel.png",
+    siteImage: "/png/everybody.png",
     siteIcon: "/svg/iOS.svg",
     siteTwitter: "@listingslab",
     siteTheme: "#22939C",
     theme: {
-        primaryColor: "#22939C",
-        secondaryColor: "#126970",
+        primaryColor: "#C09F52",
+        secondaryColor: "#DBB14D",
         defaultDarkmode: false,
     },
     mapbox: {

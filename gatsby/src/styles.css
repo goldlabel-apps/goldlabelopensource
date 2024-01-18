@@ -1,13 +1,13 @@
-a { color: #22939C; text-decoration: none; cursor: pointer; }
-a:hover { color: #126970; }
+a { color: #C09F52; text-decoration: none; cursor: pointer; }
+a:hover { color: #DBB14D; }
 blockquote {
-  border-left: 3px solid #22939C;
+  border-left: 3px solid #C09F52;
   margin: 0;
   padding: 0;
   padding-left: 16px;
 }
 html {
-  --thumbBG: #22939C;
+  --thumbBG: #C09F52;
   --scrollbarBG: none;
 }
 pre {
