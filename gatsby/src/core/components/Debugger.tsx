@@ -2,10 +2,10 @@ import * as React from "react"
 import {
   Box,
   Button,
-  Card,
   CardHeader,
   CardContent,
   CardActions,
+  Divider,
 } from "@mui/material"
 import {
   Font,
@@ -42,15 +42,17 @@ export default function Debugger() {
   }
 
   return (<>
-            <Card sx={{my:1}}>
+            <Box sx={{my:1}}>
+              <Divider />
               <CardHeader 
                 avatar={<Icon icon="bug" color="primary"/>}
                 title={<Font>Debugger</Font>}
               />
-              {/* <CardContent>
-                <pre>uid {JSON.stringify(uid, null, 2)}</pre>
-                <pre>fbId {JSON.stringify(fbId, null, 2)}</pre>
-              </CardContent> */}
+              <CardContent>
+                <Font variant="small">
+                  Reset the redux store by tapping purge
+                </Font>
+              </CardContent>
               <CardActions>
                 <Box sx={{flexGrow: 1}}/>
                 <Button 
@@ -74,11 +76,12 @@ export default function Debugger() {
                       <Icon icon="close" />
                     </Box>
                     <Font variant="small">
-                      Close
+                      Cancel
                     </Font>
                 </Button>
               </CardActions>
-            </Card>
+              <Divider />
+            </Box>
         </>
   )
 }

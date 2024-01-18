@@ -1,7 +1,8 @@
 import * as React from "react"
 import PingpongballIcon from "./SVGIcons/PingpongballIcon"
+import OliverIcon from "./SVGIcons/OliverIcon"
+import OpenAIIcon from "./SVGIcons/OpenAIIcon"
 import BlokeyIcon from "./SVGIcons/BlokeyIcon"
-import CanaryIcon from "./SVGIcons/CanaryIcon"
 import WordpressIcon from "./SVGIcons/WordpressIcon"
 import GoldlabelIcon from "./SVGIcons/GoldlabelOutlined"
 import ChromeIcon from "./SVGIcons/devices/ChromeIcon"
@@ -37,11 +38,9 @@ import DiveshopIcon from "@mui/icons-material/RecommendOutlined"
 import CancelIcon from "@mui/icons-material/CancelOutlined"
 import SearchIcon from "@mui/icons-material/SearchOutlined"
 import CategoryIcon from "@mui/icons-material/CategoryOutlined"
-import WorkIcon from "@mui/icons-material/WorkHistoryOutlined"
 import EditIcon from "@mui/icons-material/EditOutlined"
 import LeafIcon from "@mui/icons-material/EnergySavingsLeafOutlined"
 import ApiIcon from "@mui/icons-material/Code"
-import TingsIcon from "@mui/icons-material/MarkUnreadChatAltOutlined"
 import SignoutIcon from "@mui/icons-material/ExitToAppOutlined"
 import DeleteIcon from "@mui/icons-material/DeleteOutline"
 import SuccessIcon from "@mui/icons-material/Check"
@@ -81,9 +80,15 @@ import DocIcon from "@mui/icons-material/ArticleOutlined"
 import PluginIcon from "@mui/icons-material/ExtensionOutlined"
 import LinguaIcon from "@mui/icons-material/TranslateOutlined"
 import GoogleIcon from "@mui/icons-material/Google"
+import WorkIcon from "@mui/icons-material/BuildOutlined"
+import LifeIcon from "@mui/icons-material/Sledding"
+import BalanceIcon from "@mui/icons-material/Balance"
+import JavascriptIcon from "@mui/icons-material/JavascriptOutlined"
+import ScubaIcon from "@mui/icons-material/ScubaDivingOutlined"
+import DockerIcon from "@mui/icons-material/StorageOutlined"
 
 export type IconShape = {
-  icon: "bug" | "canary" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ping" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox"
+  icon: "docker" | "scuba" | "js" | "javascript" | "oliver" | "life" | "balance" | "bug" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ping" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "chatgpt" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox"
   color?: any
 }
 
@@ -94,9 +99,21 @@ export default function Icon({icon, color}: IconShape) {
     case "home":
       iconFragment = <HomeIcon color={color} />
       break
-    case "canary":
-      iconFragment = <CanaryIcon color={color} />
-      break 
+    case "scuba":
+      iconFragment = <ScubaIcon color={color} />
+      break
+    case "docker":
+      iconFragment = <DockerIcon color={color} />
+      break
+    case "js":
+      iconFragment = <JavascriptIcon color={color} />
+      break
+    case "javascript":
+      iconFragment = <JavascriptIcon color={color} />
+      break
+    case "oliver":
+      iconFragment = <OliverIcon color={color} />
+      break
     case "google":
       iconFragment = <GoogleIcon color={color} />
       break
@@ -292,6 +309,12 @@ export default function Icon({icon, color}: IconShape) {
     case "work":
       iconFragment = <WorkIcon color={color} />
       break
+    case "life":
+      iconFragment = <LifeIcon color={color} />
+      break
+    case "balance":
+      iconFragment = <BalanceIcon color={color} />
+      break
     case "signin":
       iconFragment = <SigninIcon color={color} />
       break
@@ -300,6 +323,9 @@ export default function Icon({icon, color}: IconShape) {
       break
     case "android":
       iconFragment = <AndroidIcon color={color} />
+      break
+    case "chatgpt":
+      iconFragment = <OpenAIIcon color={color} />
       break
     case "chrome":
       iconFragment = <ChromeIcon color={color} />

@@ -1,6 +1,6 @@
 {
   "name": "goldlabel-plugin-backoffice",
-  "version": "1.0.7",
+  "version": "2.0.8",
   "description": "Members can view pings",
   "scripts": {
     "test": "echo \"LGTM\" && exit 1"

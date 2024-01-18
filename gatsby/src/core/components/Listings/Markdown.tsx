@@ -10,7 +10,7 @@ export default function Markdown(props: any) {
   const {html} = props
   return <Box sx={{}}>
             <Font>
-            <span dangerouslySetInnerHTML={{ __html: html }}/>
+              <span dangerouslySetInnerHTML={{ __html: html }}/>
             </Font>
         </Box>
 }

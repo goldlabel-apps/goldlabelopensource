@@ -1,14 +1,16 @@
 import * as React from "react"
 import {glConfig} from "../../../config"
 import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
   Box,
   Container,
-  CardHeader,
-  IconButton,
-  Avatar,
+  useTheme,
 } from "@mui/material"
 import {
   Image,
+  Icon,
   Font,
   Pingpong,
   useSiteMetadata,
@@ -20,16 +22,14 @@ import {
   ShareMenu,
   BottomBar,
   usePwaDispatch,
-  navigate,
   Debugger,
 } from "../../../core"
-import {
-  Flash,
-  MovieClip,
-} from "../../../plugins/Flash"
+import {AskOliver} from "../../../plugins/AskOliver"
 
 export default function ListingMobile(props: any) {  
   const dispatch = usePwaDispatch()
+  const theme = useTheme()
+  const lightDark = theme.palette.mode
   const {appData} = props
   const siteMeta = useSiteMetadata()  
   let isHome = false
@@ -47,6 +47,7 @@ export default function ListingMobile(props: any) {
   let lat: any = null
   let lng: any = null
   let icon: any = null
+  let slug: any = null
   if (appData.pageResources.json.data){
     doc = appData.pageResources.json.data.markdownRemark
     frontmatter = doc.frontmatter
@@ -59,49 +60,36 @@ export default function ListingMobile(props: any) {
     html = doc.html
     excerpt = doc.excerpt
     paid = frontmatter.paid
+    slug = frontmatter.slug
   }
   if (!paid) children = true
   const {sharing} = glConfig
-  const flash = false
-
+  
   return <>
           <div id="topAnchor" />
-          <Container>  
-            <Box sx={{}}>
-            
-              <CardHeader 
-                action={<Pingpong />}
-                avatar={<IconButton 
-                            color="primary"
-                            sx={{ml:-3}}
-                            onClick={(e: React.MouseEvent) => {
-                                e.preventDefault()
-                                dispatch(navigate("/", "_self"))
-                            }}>
-                            <Avatar src="/svg/iOS.svg" alt={`${title} ${description}`} />
-                        </IconButton>}
-                
-              />
-              <Debugger />
-
-              <Box sx={{mb:2}}>
-                { flash ? <>
-                  <Flash 
-                    flashId="test"
-                    height={250}
-                  >
-                    Flash
-                  </Flash>
-                </> : <>
-                  <Image 
-                    alt={`${title}. ${description}`}
-                    src={image}
-                    height={250}
+          <Accordion sx={{boxShadow:0}}>
+            <AccordionSummary>
+              <Box sx={{flexGrow:1}}/>
+              <Icon icon="menu" />
+            </AccordionSummary>
+            <AccordionDetails>
+              <Categories />
+              {children ? <Box sx={{}}>
+                  <Children 
+                    icons= {true} 
+                    frontmatter={frontmatter}
                   />
-                </> }
-              </Box>
+                </Box> : null }
+            </AccordionDetails>
+          </Accordion>
+          
+          <Container>  
+            
+            <Box sx={{}}>
+              <Debugger />
+              <Pingpong />
 
-              <Box sx={{display: "flex", my:2}}>                
+              <Box sx={{display: "flex", mt:0}}>     
                 <Box sx={{}}>
                   <Font variant="title">
                       {title}
@@ -110,44 +98,38 @@ export default function ListingMobile(props: any) {
                     {description}
                   </Font>
                 </Box>
-                <Box sx={{flexGrow:1}}/>    
+                <Box sx={{flexGrow:1}}/>
               </Box>
 
-              
-
-
-              <Box sx={{display: "flex"}}>
-                <Box sx={{m:0.5}}>
+              <Box sx={{display: "flex", m:1}}>
+                <Box sx={{}}>
                   <CatNav />
                 </Box>
-                <Box sx={{mr:0.5}}>
+                <Box sx={{mr:0.5, mt: -0.5}}>
                   <Meta frontmatter={frontmatter}/>
                 </Box>
-                {sharing ? <Box sx={{mr:0.5}}>
+
+                {sharing ? <Box sx={{mt: -0.5}}>
                     <ShareMenu />
                   </Box> : null}
                 <Box sx={{flexGrow:1}}/>
               </Box>
-
-              {html ? <Box sx={{}}>
-                <Markdown html={html}/>
-              </Box> : null }
-
-              {children ? <Box sx={{}}>
-                  <Children 
-                    icons= {true} 
-                    frontmatter={frontmatter}
+ 
+              <Box>
+                  <Image 
+                    alt={`${title}. ${description}`}
+                    src={image}
+                    height={150}
                   />
-                </Box> : null }
+                </Box>
               
-              <Categories />
+
+              <Markdown html={html} />
               
             <Box sx={{height: 70}} />
             <div id="bottomAnchor" />
           </Box>
-
           <BottomBar />
-
         </Container>
       </>
 }

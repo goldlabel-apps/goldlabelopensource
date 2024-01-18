@@ -2,6 +2,7 @@ import React from "react"
 import {
   Box,
   Button,
+  IconButton,
   Avatar,
   Container,
   DialogTitle,
@@ -23,6 +24,7 @@ import {
   InputEmail,
   InputPassword,
   selectDisplay,
+  navigate,
 } from "../../../core"
 
 export function MembersOnly() {
@@ -50,14 +52,14 @@ export function MembersOnly() {
   return (<>
         <Container maxWidth="xs">
           <DialogTitle>
-                <CardHeader 
-                  avatar={<Avatar src={"/svg/iOS.svg"} />}
-                  
-                  title={<Font variant="title">
-                            Members Only
-                        </Font>}
-                />
-              </DialogTitle>
+          <IconButton
+                  sx={{m:1}}
+                  onClick={() => {
+                    dispatch(navigate("/", "_self"))
+                  }}>
+                    <Avatar src={"/svg/iOS.svg"} />
+                    </IconButton>
+            </DialogTitle>
 
               {authing ? <>
                 <LinearProgress /> 
@@ -74,6 +76,7 @@ export function MembersOnly() {
 
               <DialogActions>
                 <Button
+                
                   className="enterable"
                   color="primary"
                   onClick={validate}>
@@ -86,20 +89,7 @@ export function MembersOnly() {
                 </Button>
               </DialogActions>
               </>}
-
-
            </Container>
         </>
   )
 }
-
-/*
-  <pre>{JSON.stringify(signinOpen, null, 2)}</pre>
-  action={<IconButton
-                    sx={{m:1}}
-                    onClick={() => {
-                      dispatch(setCoreKey("signinOpen", false))
-                    }}>
-                    <Icon icon={"close"} color="primary"/>
-                  </IconButton>}
-*/

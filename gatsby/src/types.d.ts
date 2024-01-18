@@ -132,7 +132,7 @@ export type FieldShape = {
   slug: string
 } 
 
-export type KeyValueShape {
+export type KeyValueShape = {
   key: string
   value: any
 }

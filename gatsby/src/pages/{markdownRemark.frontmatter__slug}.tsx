@@ -53,6 +53,7 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       excerpt
+      rawMarkdownBody
       frontmatter {
         paid
         flag
@@ -75,6 +76,7 @@ export const pageQuery = graphql`
         facebook
         phone
         twitter
+        password,
       }
     }
   }

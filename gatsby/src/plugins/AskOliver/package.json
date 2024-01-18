@@ -1,0 +1,10 @@
+{
+  "name": "askoliver",
+  "version": "2.0.1",
+  "description": "Ask Oliver",
+  "scripts": {
+    "test": "echo \"LGTMd\" && exit 1"
+  },
+  "author": "@listingslab",
+  "license": "MIT"
+}

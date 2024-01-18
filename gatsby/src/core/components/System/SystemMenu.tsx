@@ -2,7 +2,7 @@ import * as React from "react"
 import {glConfig} from "../../../config"
 import {
   Box,
-  CardHeader,
+  Badge,
   IconButton,
   List,
   ListItemButton,
@@ -16,6 +16,7 @@ import {
 import {
   Icon,
   Font,
+  persistor,
   usePwaSelect,
   usePwaDispatch,
   useSiteMetadata,
@@ -25,6 +26,7 @@ import {
   navigate,
   selectAuth,
   PingPublic,
+  firebaseSignout,
 } from "../../../core"
 
 export default function SystemMenu() {
@@ -33,13 +35,12 @@ export default function SystemMenu() {
   const core = usePwaSelect(selectCore)
   const display = usePwaSelect(selectDisplay)
   const siteMeta = useSiteMetadata()
-  const {version, siteTitle} = siteMeta
+  const {version} = siteMeta
   let isBig = false
   if (display) isBig = !display.mobile
   const {
     footerMenuOpen, 
     darkmode,
-    debuggerOpen,
   } = core
   let user: any = null
   if(auth) user = auth.user
@@ -47,8 +48,20 @@ export default function SystemMenu() {
     darkmodeEnabled,
     debuggerEnabled,
   } = glConfig
+
+  const purgeRedux = () => {
+    console.log("purgeRedux")
+    persistor.pause();
+    persistor.flush().then(() => {
+      setTimeout(() => {
+        window.location.reload();
+      }, 500)
+      return persistor.purge()
+    })
+  }
   
   return (<>
+        <Badge badgeContent={0} color="secondary">
           <IconButton 
             color="inherit"
             aria-label="Open settings"
@@ -58,6 +71,7 @@ export default function SystemMenu() {
             }}>
             <Icon icon={"settings"} color="primary" />
           </IconButton>
+        </Badge>
         
           <Dialog 
             open={footerMenuOpen}
@@ -70,8 +84,13 @@ export default function SystemMenu() {
               
             <DialogTitle>
               <Box sx={{display:"flex"}}>
-                <PingPublic />
+                <Box sx={{mt:2.5, ml:2}}> 
+                  <Font variant="title">
+                    Settings
+                  </Font>
+                </Box>
                 <Box sx={{flexGrow:1}}/>
+                
                 <Box>
                   <IconButton
                     sx={{mt:2}}
@@ -84,11 +103,10 @@ export default function SystemMenu() {
               </Box>
             </DialogTitle>
             <DialogContent>
-              
-            
             
               <List dense>
-  
+                
+
                 <ListItemButton
                     sx={{mb:1}}
                     color="primary"
@@ -106,23 +124,22 @@ export default function SystemMenu() {
                               </Font> }/>
                   </ListItemButton>
 
-                { debuggerEnabled ? <ListItemButton
+                  <ListItemButton
                     sx={{mb:1}}
                     color="primary"
                     onClick={(e: React.MouseEvent) => {
                       e.preventDefault()
                       dispatch(setCoreKey("footerMenuOpen", false))
-                      dispatch(setCoreKey("debuggerOpen", !debuggerOpen))
+                      dispatch(navigate("/backoffice", "_self"))
                     }}>
                   <ListItemIcon>
-                    <Icon icon="bug" color="primary"/>
+                    <Icon icon={"backoffice"} color="primary"/>
                   </ListItemIcon>
                   <ListItemText
                     primary={<Font>
-                                Debugger
+                                Backoffice
                               </Font> }/>
-                  </ListItemButton> : null }
-                
+                  </ListItemButton>
 
                 {darkmodeEnabled ? <>
                   <ListItemButton
@@ -138,13 +155,64 @@ export default function SystemMenu() {
                   </ListItemIcon>
                   <ListItemText
                     primary={<Font>
-                                {darkmode ? "Light" : "Dark"}
+                                {darkmode ? "Light" : "Dark"} mode
                               </Font> }/>
                   </ListItemButton>
                 </> : null } 
-              
-              </List>
 
+                <ListItemButton
+                    sx={{mb:1}}
+                    color="primary"
+                    onClick={(e: React.MouseEvent) => {
+                      e.preventDefault()
+                      dispatch(setCoreKey("footerMenuOpen", false))
+                      dispatch(navigate("https://github.com/listingslab-software/open-source", "_blank"))
+                    }}>
+                  <ListItemIcon>
+                    <Icon icon={"github"} color="primary"/>
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={<Font>
+                                Open Source
+                              </Font> }/>
+                  </ListItemButton>
+
+                { debuggerEnabled ? <ListItemButton
+                    sx={{mb:1}}
+                    color="primary"
+                    onClick={(e: React.MouseEvent) => {
+                      e.preventDefault()
+                      dispatch(setCoreKey("footerMenuOpen", false))
+                      purgeRedux()
+                    }}>
+                  <ListItemIcon>
+                    <Icon icon="bug" color="primary"/>
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={<Font>
+                                Purge & Restart
+                              </Font> }/>
+                  </ListItemButton> : null }
+
+                  {auth ? <ListItemButton
+                  sx={{mb:1}}
+                  color="primary"
+                  onClick={(e: React.MouseEvent) => {
+                    e.preventDefault()
+                    dispatch(setCoreKey("footerMenuOpen", false))
+                    dispatch(firebaseSignout())
+                  }}>
+                <ListItemIcon>
+                  <Icon icon={"signout"} color="primary"/>
+                </ListItemIcon>
+                <ListItemText
+                  primary={<Font>
+                              Sign out
+                            </Font> }/>
+                </ListItemButton> : null }
+
+              </List>
+              <PingPublic />
               
               
             </DialogContent>
@@ -163,20 +231,5 @@ export default function SystemMenu() {
 }
 
 /*
-<ListItemButton
-                    sx={{mb:1}}
-                    color="primary"
-                    onClick={(e: React.MouseEvent) => {
-                      e.preventDefault()
-                      dispatch(setCoreKey("footerMenuOpen", false))
-                      dispatch(navigate("https://github.com/listingslab-software/open-source", "_blank"))
-                    }}>
-                  <ListItemIcon>
-                    <Icon icon={"github"} color="primary"/>
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={<Font>
-                                Open Source
-                              </Font> }/>
-                  </ListItemButton>
+
                   */

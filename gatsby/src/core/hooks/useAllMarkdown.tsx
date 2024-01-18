@@ -7,6 +7,7 @@ export const useAllMarkdown = () => {
       edges {
         node {
           html
+          rawMarkdownBody
           excerpt
           frontmatter {
             paid
@@ -30,6 +31,7 @@ export const useAllMarkdown = () => {
             facebook
             phone
             twitter
+            password
           }
         }
       }

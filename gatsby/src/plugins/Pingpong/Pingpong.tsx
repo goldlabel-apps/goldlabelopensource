@@ -72,7 +72,7 @@ export default function Pingpong() {
     if (user) dispatch(setCoreKey("accountDialogOpen", true))
     return true
   }
-  
+  return null
   return <>          
           <ButtonBase
             sx={{mt:1.5, p:1, borderRadius: 1}}

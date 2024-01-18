@@ -1,4 +1,5 @@
 ---
+password: false
 draft: false
 paid: true
 order: 1

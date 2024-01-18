@@ -26,8 +26,7 @@ export default function Categories() {
   if (fm) {
     hideThisSlug = fm.slug
     pSlug = fm.parentSlug
-  } 
-  // console.log("pSlug", pSlug)
+  }
 
   return <>
           {categories.length ? <>
@@ -40,7 +39,7 @@ export default function Categories() {
                     slug,
                   } = doc
 
-                  if (hideThisSlug === slug) return null
+                  // if (hideThisSlug === slug) return null
                   return <ListItemButton
                     key={`category_${i}`}
                     onClick={(e: React.MouseEvent) => {

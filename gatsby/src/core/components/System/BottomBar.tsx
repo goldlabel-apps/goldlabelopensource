@@ -3,8 +3,10 @@ import {
   useTheme,
   Box,
   AppBar,
+  IconButton,
 } from "@mui/material"
 import {
+  Icon,
   usePwaSelect,
   selectCore,
   ScrollUp,
@@ -36,15 +38,15 @@ export default function BottomBar() {
             }}>      
               <Box sx={{display: "flex"}}>
                 <Box sx={{flexGrow: 1}} />
-                
+              
                 { showMenu ? <Box sx={{}}>
                   <SystemMenu />
                 </Box> : null}
 
-                
                 {scroll ? <Box>
                   <ScrollUp />
                 </Box> : null }
+                
                 <Box sx={{flexGrow: 1}} />
               </Box>
             </AppBar>

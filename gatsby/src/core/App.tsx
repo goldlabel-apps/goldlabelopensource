@@ -1,5 +1,4 @@
 import React from "react"
-import {glConfig} from "../config"
 import {
   Box,
   Container,
@@ -17,11 +16,14 @@ import {
   setFrontmatter,
   WindowResizeListener,
   NotFound,
-  Auth,
+  BottomBar,
   Signin,
   AuthedDialog,
+  PasswordOnly,
+  selectAuth,
 } from "../core"
 import {Backoffice} from "../plugins/Backoffice"
+import {AskOliver} from "../plugins/AskOliver"
 
 export default function App(props: any) {
   const {
@@ -30,18 +32,24 @@ export default function App(props: any) {
   } = props
   const dispatch = usePwaDispatch()
   const d = usePwaSelect(selectDisplay)
+  const auth = usePwaSelect(selectAuth)
   const core = usePwaSelect(selectCore)
-  let mobile = true
+  let frontmatter: any = null
+  let passwordOnly: boolean = false
+  let mobile: boolean = true
+  let user: any = null
+  if(auth){
+    user = auth.user
+  }
   const {scroll} = core
   const onScroll = () => {
     if (!scroll) dispatch(setCoreKey("scroll", true))
   }
   if (d) mobile = d.mobile
-  let frontmatter: any = null
   if (appData.pageResources.json.data){
     frontmatter = appData.pageResources.json.data.markdownRemark.frontmatter
+    passwordOnly = appData.pageResources.json.data.markdownRemark.frontmatter.password
   }
-  const {membersOnly} = glConfig
   
   React.useEffect(() => {
     dispatch(boot())
@@ -50,12 +58,12 @@ export default function App(props: any) {
   }, [frontmatter, dispatch])
 
   React.useEffect(() => {
-    // enterable
     window.addEventListener('scroll', onScroll);
     return () => {
       window.removeEventListener('scroll', onScroll)
     }
   }, [])
+
 
   return (<Box>
             <WindowResizeListener />
@@ -63,17 +71,36 @@ export default function App(props: any) {
             <Signin />
             <AuthedDialog />
             <Container>
+              
               {type === "notfound" ? <NotFound /> : null}
-              {type === "backoffice" ? <Backoffice /> : null}
-              {type === "markdown" ? <>
-                {membersOnly ? <Auth>
-                  { mobile ? <ListingMobile appData={appData}/> 
-                    : <ListingDesktop appData={appData}/> }
-                </Auth> : <>
-                  { mobile ? <ListingMobile appData={appData}/> 
-                    : <ListingDesktop appData={appData}/> }
-                </>}
-              </> : null}
+              {type === "backoffice" ? <>
+                  <Backoffice /> 
+                  <BottomBar />
+                </>
+              : null}
+
+              <>
+              {type !== "askoliver" && type !== "backoffice" ? <>
+                {type === "markdown" ? <>
+                    {passwordOnly ? <>
+                      {!user ? <PasswordOnly frontmatter={frontmatter} /> : <>
+                        { mobile ? <ListingMobile appData={appData} /> 
+                        : <ListingDesktop appData={appData} /> }
+                      </> }
+                    </> : <>
+                    { mobile ? <ListingMobile appData={appData} /> 
+                      : <ListingDesktop appData={appData} /> }
+                      </> }
+                  </> : <>
+                    { mobile ? <ListingMobile appData={appData} /> 
+                      : <ListingDesktop appData={appData} /> }
+                      </>}
+                </> : null}
+              </>
+              
             </Container>
           </Box>)
 }
+
+/*
+*/

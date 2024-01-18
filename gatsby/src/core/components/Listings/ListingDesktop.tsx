@@ -1,17 +1,15 @@
 import * as React from "react"
 import {glConfig} from "../../../config"
 import {
+  useTheme,
   Box,
   Grid,
   Container,
   CardHeader,
-  IconButton,
-  Avatar,
 } from "@mui/material"
 import {
   Image,
   Font,
-  navigate,
   useSiteMetadata,
   usePwaSelect,
   usePwaDispatch,
@@ -28,14 +26,12 @@ import {
   Debugger,
   Pingpong,
 } from "../../../core"
-import {
-  Flash,
-  MovieClip,
-} from "../../../plugins/Flash"
-
+import {AskOliver} from "../../../plugins/AskOliver"
 
 export default function ListingDesktop(props: any) {
   const dispatch = usePwaDispatch()
+  const theme = useTheme()
+  const lightDark = theme.palette.mode
   const frontmatter = usePwaSelect(selectFrontmatter)
   const {appData} = props
   const siteMeta = useSiteMetadata()
@@ -75,7 +71,6 @@ export default function ListingDesktop(props: any) {
     flag = frontmatter.flag
   }
   const {sharing} = glConfig
-  const flash = false
 
   return <>
     <Container maxWidth="md" sx={{mb: "100px"}}>
@@ -83,77 +78,87 @@ export default function ListingDesktop(props: any) {
       <Grid container spacing={1}>
       
         <Grid item xs={12}>
-          
-          <Box sx={{my: 1}}>
+
+          <Box>
             <CardHeader 
-              action={<Pingpong />}
-              avatar={<IconButton 
-                          sx={{ml:-3}}
-                          onClick={(e: React.MouseEvent) => {
-                              e.preventDefault()
-                              dispatch(navigate("/", "_self"))
-                          }}>
-                          <Avatar src="/svg/iOS.svg" alt={`${title} ${description}`} />
-                      </IconButton>}
+              action={<>
+              <Box sx={{display: "flex", m:1}}>
+              <Box sx={{}}>
+                <CatNav />
+              </Box>
+              <Box sx={{mr:0.5, mt: -0.5}}>
+                <Meta frontmatter={frontmatter}/>
+              </Box>
+              
+              {sharing ? <Box sx={{mt: -0.5}}>
+                  <ShareMenu />
+                </Box> : null}
+              <Box sx={{flexGrow:1}}/>
+            </Box>
+            <Pingpong />
+            </>}
               title={<Font variant="title">
-                  {title}
-              </Font>}
+                        {title}
+                    </Font>}
               subheader={<Font variant="small">
-                  {description}
-              </Font>}
+                            {description}
+                        </Font>}
             />
+            
           </Box>
+
         </Grid>
 
-        {image ? <Grid item xs={12} sm={8}>
-              
-              <Box sx={{mb:2}}>
-                { flash ? <>
-                  <Flash 
-                    flashId="test"
-                    height={250}
-                  >
-                    Flash
-                  </Flash>
-                </> : <>
-                  <Image 
-                    alt={`${title}. ${description}`}
-                    src={image}
-                    height={250}
-                  />
-                </> }
-              </Box>
-
-              <Box sx={{display: "flex"}}>
-                <Box sx={{m:0.5}}>
-                  <CatNav />
-                </Box>
-                <Box sx={{mr:0.5}}>
-                  <Meta frontmatter={frontmatter}/>
-                </Box>
-                {sharing ? <Box sx={{mr:0.5}}>
-                    <ShareMenu />
-                  </Box> : null}
-                <Box sx={{flexGrow:1}}/>
-              </Box>
-              
-              {html ? <Markdown html={html}/> : null }
-              <Debugger />
-          </Grid> : null }
-
-          <Grid item xs={12} sm={4}>
-            
+        <Grid item xs={12} sm={4}>
             {childrenArr.length ? <Box sx={{mt:1}}><Children
                 icons= {true} 
                 descriptions={false}
                 frontmatter={frontmatter}
-              /></Box> : <Categories /> }
+            /></Box> : <Categories /> }
+        </Grid>
 
-          </Grid>
+        {image ? <Grid item xs={12} sm={8}>
+          <Debugger />
+
+          {slug === "/" ? <>
           
+          <Grid container spacing={1}>
+            <Grid item xs={12} md={6}>
+              <Markdown html={html} /> 
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Image 
+                alt={`${title}. ${description}`}
+                src={image}
+                height={225}
+              />
+            </Grid>            
+          </Grid>
+            
+          </> : <Box sx={{mb:2}}>
+            <Image 
+              alt={`${title}. ${description}`}
+              src={image}
+              height={225}
+            />
+            <Markdown html={html} /> 
+          </Box> }
+
+          
+    
+          </Grid> : null }
+
+                
       </Grid>
       <BottomBar />
+      
       <div id="bottomAnchor" />
     </Container>
   </>
 }
+
+/*
+<Grid item xs={12} md={7}>
+              <AskOliver />
+            </Grid>
+*/

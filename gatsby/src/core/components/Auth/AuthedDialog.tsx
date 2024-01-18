@@ -46,6 +46,7 @@ export function AuthedDialog() {
   let isBig = false
   if (display) isBig = !display.mobile
 
+  
   const closeAccountOpen = () =>{
     dispatch(setCoreKey("accountDialogOpen", false))
     return true

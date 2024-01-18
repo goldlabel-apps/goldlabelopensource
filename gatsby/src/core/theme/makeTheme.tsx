@@ -9,17 +9,19 @@ export function makeTheme(
     palette: {
       mode,
       primary: {
-        main: primary,
+        main: mode === "light" ? primary : secondary,
+        // main: primary,
       },
       secondary: {
-        main: secondary,
+        main: mode === "light" ? secondary : primary,
+        // main: secondary,
       },
-      success: {
-        main: primary,
-      },
-      info: {
-        main: primary,
-      },
+      // success: {
+      //   main: mode === "light" ? secondary : primary,
+      // },
+      // info: {
+      //   main: mode === "light" ? primary : secondary,
+      // },
       background: {
         // default: lighten(secondary, 0.99),
         // paper: lighten(secondary, 0.95),
