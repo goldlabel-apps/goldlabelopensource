@@ -20,7 +20,7 @@ export default function Navigator() {
   const dispatch = usePwaDispatch()
   const allMarkdown = useAllMarkdown()
   const frontmatter = usePwaSelect(selectFrontmatter)
-  const nextDoc = null
+  if(!frontmatter) return null
   let parentDoc: any = null
   const {slug, parentSlug} = frontmatter
   const children: any = []
@@ -37,33 +37,23 @@ export default function Navigator() {
           <Box sx={{}}>
             <List>
 
-            <ListItemButton
-                disabled
-                onClick={() => {
-                  dispatch(navigate(frontmatter.slug, "_self"))
-                }}
-              >
-                <ListItemIcon>
-                  <Icon icon={frontmatter.icon} />
-                </ListItemIcon>
-                <ListItemText 
-                  primary={<Font>{frontmatter.title}</Font>}
-                />
-              </ListItemButton>
+            
 
+              {slug !== "/" ? <>
+                <ListItemButton
+                  onClick={() => {
+                    dispatch(navigate("/", "_self"))
+                  }}
+                >
+                  <ListItemIcon>
+                    <Icon icon="home" />
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary={<Font>Home</Font>}
+                  />
+                </ListItemButton>
+              </> : null}
               
-              <ListItemButton
-                onClick={() => {
-                  dispatch(navigate("/", "_self"))
-                }}
-              >
-                <ListItemIcon>
-                  <Icon icon="home" />
-                </ListItemIcon>
-                <ListItemText 
-                  primary={<Font>Home</Font>}
-                />
-              </ListItemButton>
               
               {parentDoc ? <>
                 <ListItemButton
@@ -78,6 +68,20 @@ export default function Navigator() {
                   />
                 </ListItemButton>
               </> : null }
+
+              <ListItemButton
+                disabled
+                onClick={() => {
+                  dispatch(navigate(frontmatter.slug, "_self"))
+                }}
+              >
+                <ListItemIcon>
+                  <Icon icon={frontmatter.icon} />
+                </ListItemIcon>
+                <ListItemText 
+                  primary={<Font>{frontmatter.title}</Font>}
+                />
+              </ListItemButton>
         
               {children.length ? <>
               
@@ -105,15 +109,6 @@ export default function Navigator() {
                 </pre>
               </Box> */}
               
-              {/* Get children of this page.  */}
-              {nextDoc ? <ListItemButton>
-                <ListItemText 
-                  primary={<Font>Next</Font>}
-                />
-                <ListItemIcon>
-                  <Icon icon="right" />
-                </ListItemIcon>
-              </ListItemButton> : null }
               
             </List>
           </Box>
