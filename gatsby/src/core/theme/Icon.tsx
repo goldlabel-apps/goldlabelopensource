@@ -88,7 +88,7 @@ import ScubaIcon from "@mui/icons-material/ScubaDivingOutlined"
 import DockerIcon from "@mui/icons-material/StorageOutlined"
 
 export type IconShape = {
-  icon: "docker" | "scuba" | "js" | "javascript" | "oliver" | "life" | "balance" | "bug" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ping" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "chatgpt" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox"
+  icon: "docker" | "scuba" | "js" | "javascript" | "oliver" | "life" | "balance" | "bug" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ping" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "openai" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox"
   color?: any
 }
 
@@ -324,7 +324,7 @@ export default function Icon({icon, color}: IconShape) {
     case "android":
       iconFragment = <AndroidIcon color={color} />
       break
-    case "chatgpt":
+    case "openai":
       iconFragment = <OpenAIIcon color={color} />
       break
     case "chrome":

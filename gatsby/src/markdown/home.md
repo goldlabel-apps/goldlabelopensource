@@ -1,5 +1,6 @@
 ---
 password: false
+flag: uk
 draft: false
 paid: true
 order: 1
@@ -10,11 +11,17 @@ title: "Goldlabel Pro"
 description: "A modern alternative to WordPress"
 icon: "doc"
 image: "/png/everybody.png"
+youtube: ""
+lat: ""
+lng: ""
+website: ""
+email: ""
+facebook: ""
+phone: ""
+twitter: ""
 keywords: "JavaScript, WordPress, Goldlabel, Gatsby React, Progressive Web App, MUI"
 ---
 > Choosing Goldlabel for static site generation can offer a more performant, scalable, and SEO-friendly solution for a company website, aligning well with Google's preferences for fast and well-optimized sites. However, the choice depends on specific business requirements, available resources, and the comfort level of the development team with different technologies
-
-When comparing static site generation with Goldlabel to WordPress for a company website aiming to rank well in Google, several business-related factors come into play:
 
 ## Performance and Speed
 #### Goldlabel
@@ -60,3 +67,5 @@ Goldlabel allows for a modern and flexible development approach using React, Gra
 #### WordPress
 
 WordPress, while highly customizable through themes and plugins, may require more effort to achieve certain design and functionality goals, and developers may need to navigate a more extensive codebase.
+
+When comparing static site generation with Goldlabel to WordPress for a company website aiming to rank well in Google, several business-related factors come into play
