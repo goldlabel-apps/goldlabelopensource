@@ -100,6 +100,13 @@ import WindowResizeListener from "./components/System/WindowResizeListener"
 import BottomBar from "./components/System/BottomBar"
 import {Device} from "./components/System/Device"
 
+// System
+import Navigator from "./components/Navigater/Navigator"
+
+// Translation
+export {
+    Navigator,
+}
 ///////////////////
 // System
 export {

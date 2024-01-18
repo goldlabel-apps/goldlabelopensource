@@ -10,7 +10,6 @@ export const useAllMarkdown = () => {
           rawMarkdownBody
           excerpt
           frontmatter {
-            paid
             flag
             draft
             order

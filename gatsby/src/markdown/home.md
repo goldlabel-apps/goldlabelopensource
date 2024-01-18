@@ -2,7 +2,6 @@
 password: false
 flag: uk
 draft: false
-paid: true
 order: 1
 cover: false
 slug: "/"

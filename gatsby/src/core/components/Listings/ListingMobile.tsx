@@ -14,8 +14,7 @@ import {
   Font,
   Pingpong,
   useSiteMetadata,
-  Children,
-  Categories,
+  Navigator,
   Markdown,
   Meta,
   CatNav,
@@ -42,7 +41,6 @@ export default function ListingMobile(props: any) {
   let html: any = null 
   let excerpt: any = null 
   let image: any = null
-  let paid: any = true
   let children: any = false
   let lat: any = null
   let lng: any = null
@@ -59,10 +57,8 @@ export default function ListingMobile(props: any) {
     image = frontmatter.image
     html = doc.html
     excerpt = doc.excerpt
-    paid = frontmatter.paid
     slug = frontmatter.slug
   }
-  if (!paid) children = true
   const {sharing} = glConfig
   
   return <>
@@ -73,13 +69,7 @@ export default function ListingMobile(props: any) {
               <Icon icon="menu" />
             </AccordionSummary>
             <AccordionDetails>
-              <Categories />
-              {children ? <Box sx={{}}>
-                  <Children 
-                    icons= {true} 
-                    frontmatter={frontmatter}
-                  />
-                </Box> : null }
+              <Navigator />
             </AccordionDetails>
           </Accordion>
           

@@ -14,8 +14,7 @@ import {
   usePwaSelect,
   usePwaDispatch,
   selectFrontmatter,
-  Children,
-  Categories,
+  Navigator,
   Meta,
   Markdown,
   CatNav,
@@ -26,7 +25,7 @@ import {
   Debugger,
   Pingpong,
 } from "../../../core"
-import {AskOliver} from "../../../plugins/AskOliver"
+// import {AskOliver} from "../../../plugins/AskOliver"
 
 export default function ListingDesktop(props: any) {
   const dispatch = usePwaDispatch()
@@ -49,7 +48,6 @@ export default function ListingDesktop(props: any) {
   let html: any = null
   let image: any = null
   let icon: any = null
-  let paid: any  = true
   let slug: any = false
   let flag: any = null
   let lat: any = null
@@ -60,7 +58,6 @@ export default function ListingDesktop(props: any) {
     html = doc.html
   }
   if (frontmatter){
-    paid = frontmatter.paid
     slug = frontmatter.slug
     lat = frontmatter.lat
     lng = frontmatter.lng
@@ -110,11 +107,7 @@ export default function ListingDesktop(props: any) {
         </Grid>
 
         <Grid item xs={12} sm={4}>
-            {childrenArr.length ? <Box sx={{mt:1}}><Children
-                icons= {true} 
-                descriptions={false}
-                frontmatter={frontmatter}
-            /></Box> : <Categories /> }
+            <Navigator />
         </Grid>
 
         {image ? <Grid item xs={12} sm={8}>
