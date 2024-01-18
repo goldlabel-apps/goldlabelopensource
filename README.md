@@ -4,7 +4,7 @@
 
 #### Get started
 
-Identify where you're going to clone the repository. We'll call this `<working-repo>`. Decide on the machine readable name `<your-project>`. Clone the repo and install dependencies
+1. Where will you clone the repository to? Call this `<working-repo>`. Decide on a machine readable name `<your-project>`. Clone the repo and install dependencies
 
 ```bash
 cd <working-dir>
@@ -13,9 +13,14 @@ cd <your-project>
 cd gatsby
 npm install
 cd ../
+npm run
 ```
 
-Open and configure `gatsby/src/config`
+2. Environment Variables
+
+Copy `gatsby/.env.sample` to `gatsby/.env.production` & `gatsby/.env.developer` and add any API keys etc
+
+3. Open and configure `gatsby/src/config`
 
 ```javascript
 export const glConfig: ConfigShape = {
@@ -40,5 +45,4 @@ export const glConfig: ConfigShape = {
 
 Start with the command `npm start`
 
-When Gatsby has finished starting the dev server, it's available on 
-http://localhost:8000
+Gatsby starts the dev server on http://localhost:8000
