@@ -7,4 +7,5 @@ icon: "star"
 image: "/png/goldlabel.png"
 keywords: "Docker, Raspberry Pi,"
 order: 15
+password: true
 ---
