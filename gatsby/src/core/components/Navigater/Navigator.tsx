@@ -81,6 +81,9 @@ export default function Navigator() {
                 <ListItemText 
                   primary={<Font>{frontmatter.title}</Font>}
                 />
+                <ListItemIcon>
+                  <Icon icon={"down"} />
+                </ListItemIcon>
               </ListItemButton>
         
               {children.length ? <>
