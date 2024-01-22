@@ -124,22 +124,7 @@ export default function SystemMenu() {
                               </Font> }/>
                   </ListItemButton>
 
-                  <ListItemButton
-                    sx={{mb:1}}
-                    color="primary"
-                    onClick={(e: React.MouseEvent) => {
-                      e.preventDefault()
-                      dispatch(setCoreKey("footerMenuOpen", false))
-                      dispatch(navigate("/backoffice", "_self"))
-                    }}>
-                  <ListItemIcon>
-                    <Icon icon={"backoffice"} color="primary"/>
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={<Font>
-                                Backoffice
-                              </Font> }/>
-                  </ListItemButton>
+                  
 
                 {darkmodeEnabled ? <>
                   <ListItemButton
@@ -212,12 +197,11 @@ export default function SystemMenu() {
                 </ListItemButton> : null }
 
               </List>
-              <PingPublic />
-              
               
             </DialogContent>
 
             <DialogActions>
+            <PingPublic />
               <Box sx={{flexGrow:1}} />
               <Box sx={{m:1}}>
                 <Font variant="small" color="muted">

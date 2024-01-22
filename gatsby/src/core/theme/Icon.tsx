@@ -1,19 +1,5 @@
 import * as React from "react"
-import PingpongballIcon from "./SVGIcons/PingpongballIcon"
-import OliverIcon from "./SVGIcons/OliverIcon"
-import OpenAIIcon from "./SVGIcons/OpenAIIcon"
-import BlokeyIcon from "./SVGIcons/BlokeyIcon"
-import WordpressIcon from "./SVGIcons/WordpressIcon"
-import GoldlabelIcon from "./SVGIcons/GoldlabelOutlined"
-import ChromeIcon from "./SVGIcons/devices/ChromeIcon"
-import SafariIcon from "./SVGIcons/devices/SafariIcon"
-import EdgeIcon from "./SVGIcons/devices/EdgeIcon"
-import FirefoxIcon from "./SVGIcons/devices/FirefoxIcon"
-import IphoneIcon from "./SVGIcons/devices/IphoneIcon"
-import LinuxIcon from "./SVGIcons/devices/LinuxIcon"
-import MacIcon from "./SVGIcons/devices/MacIcon"
-import WindowsIcon from "./SVGIcons/devices/WindowsIcon"
-import XboxIcon from "./SVGIcons/devices/XboxIcon"
+import PluginsIcon from "@mui/icons-material/ExtensionOutlined"
 import MembersIcon from "@mui/icons-material//SupervisedUserCircle"
 import AndroidIcon from "@mui/icons-material/Android"
 import CloseIcon from "@mui/icons-material/CloseOutlined"
@@ -87,8 +73,24 @@ import JavascriptIcon from "@mui/icons-material/JavascriptOutlined"
 import ScubaIcon from "@mui/icons-material/ScubaDivingOutlined"
 import DockerIcon from "@mui/icons-material/StorageOutlined"
 
+import PingpongballIcon from "./SVGIcons/PingpongballIcon"
+import OliverIcon from "./SVGIcons/OliverIcon"
+import OpenAIIcon from "./SVGIcons/OpenAIIcon"
+import BlokeyIcon from "./SVGIcons/BlokeyIcon"
+import WordpressIcon from "./SVGIcons/WordpressIcon"
+import GoldlabelIcon from "./SVGIcons/GoldlabelOutlined"
+import ChromeIcon from "./SVGIcons/devices/ChromeIcon"
+import SafariIcon from "./SVGIcons/devices/SafariIcon"
+import EdgeIcon from "./SVGIcons/devices/EdgeIcon"
+import FirefoxIcon from "./SVGIcons/devices/FirefoxIcon"
+import IphoneIcon from "./SVGIcons/devices/IphoneIcon"
+import LinuxIcon from "./SVGIcons/devices/LinuxIcon"
+import MacIcon from "./SVGIcons/devices/MacIcon"
+import WindowsIcon from "./SVGIcons/devices/WindowsIcon"
+import XboxIcon from "./SVGIcons/devices/XboxIcon"
+
 export type IconShape = {
-  icon: "docker" | "scuba" | "js" | "javascript" | "oliver" | "life" | "balance" | "bug" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ping" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "openai" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox"
+  icon: "docker" | "scuba" | "js" | "javascript" | "oliver" | "life" | "balance" | "bug" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ping" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "openai" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox" | "plugins"
   color?: any
 }
 
@@ -104,6 +106,9 @@ export default function Icon({icon, color}: IconShape) {
       break
     case "docker":
       iconFragment = <DockerIcon color={color} />
+      break
+    case "plugins":
+      iconFragment = <PluginsIcon color={color} />
       break
     case "js":
       iconFragment = <JavascriptIcon color={color} />

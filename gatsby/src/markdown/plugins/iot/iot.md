@@ -1,11 +1,11 @@
 ---
-slug: "/projects/internet-of-tings"
-parentSlug: "/projects"
+slug: "/plugins/internet-of-tings"
+parentSlug: "/plugins"
 title: "Internet of Tings"
 description: ""
-icon: "js"
+icon: "leaf"
 image: "/jpg/ukmap.jpg"
 keywords: ""
 order: 30
-category: "projects"
+category: "plugins"
 ---

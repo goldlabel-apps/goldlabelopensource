@@ -60,13 +60,12 @@ export default function Navigator() {
                   onClick={() => {
                     dispatch(navigate(parentDoc.frontmatter.slug, "_self"))
                   }}>
-                  
+                  <ListItemIcon>
+                    <Icon icon="up" color="primary"/>
+                  </ListItemIcon>
                   <ListItemText 
                     primary={<Font>{parentDoc.frontmatter.title}</Font>}
                   />
-                  <ListItemIcon>
-                    <Icon icon="up" color="inherit"/>
-                  </ListItemIcon>
                 </ListItemButton>
               </> : null }
 
@@ -77,7 +76,7 @@ export default function Navigator() {
                 }}
               >
                 <ListItemIcon>
-                  <Icon icon={frontmatter.icon} />
+                  <Icon icon={frontmatter.icon}  color="primary"/>
                 </ListItemIcon>
                 <ListItemText 
                   primary={<Font>{frontmatter.title}</Font>}
@@ -100,7 +99,7 @@ export default function Navigator() {
                           />
 
                           <ListItemIcon>
-                            <Icon icon={"right"} />
+                            <Icon icon={"right"}  color="primary" />
                           </ListItemIcon>
 
 

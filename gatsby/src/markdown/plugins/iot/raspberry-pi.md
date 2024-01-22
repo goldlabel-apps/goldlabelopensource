@@ -1,10 +1,10 @@
 ---
-slug: "/projects/fragoliver/raspberry-pi"
-parentSlug: "/projects/fragoliver"
+slug: "/plugins/iot/raspberry-pi"
+parentSlug: "/plugins/iot"
 title: "Raspberry Pi"
 description: ""
 icon: "fish"
-image: "/png/default.png"
+image: "/png/pingpong.png"
 keywords: "JavaScript, OpenAI, ChatGPT, Goldlabel"
 order: 10
 cover: false

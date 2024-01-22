@@ -63,7 +63,7 @@ export default function ListingMobile(props: any) {
   
   return <>
           <div id="topAnchor" />
-          <Accordion sx={{boxShadow:0}}>
+          <Accordion sx={{boxShadow:0}} defaultExpanded={slug === "/" ? true : false }>
             <AccordionSummary>
               <Box sx={{flexGrow:1}}/>
               <Icon icon="menu" />

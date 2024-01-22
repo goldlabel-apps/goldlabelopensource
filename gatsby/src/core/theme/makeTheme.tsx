@@ -21,8 +21,8 @@ export function makeTheme(
         main: mode === "light" ? primary : secondary,
       },
       background: {
-        default: mode === "dark" ? darken(primary, 0.6): lighten(primary, 0.9),
-        paper: mode === "dark" ? darken(primary, 0.6): lighten(primary, 0.85),
+        default: mode === "dark" ? darken(primary, 0.8): lighten(primary, 0.95),
+        paper: mode === "dark" ? darken(primary, 0.8): lighten(primary, 0.95),
       },
     },
   }

@@ -1,11 +1,11 @@
 ---
 slug: "/how-to"
 parentSlug: "/"
-title: "How to... "
+title: "How to"
 description: "Install and use Goldlabel Open Source"
-icon: "star"
-image: "/png/goldlabel.png"
-keywords: "Docker, Raspberry Pi,"
+icon: "settings"
+image: "/png/pingpong.png"
+keywords: ""
 order: 5
 password: false
 ---
