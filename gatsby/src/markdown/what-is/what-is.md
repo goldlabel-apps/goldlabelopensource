@@ -1,7 +1,7 @@
 ---
 slug: "/what-is"
 parentSlug: "/"
-title: "What is"
+title: "What is Goldlabel?"
 description: "Performance, Speed, SEO"
 icon: "life"
 image: "/png/pingpong.png"
@@ -9,7 +9,7 @@ keywords: ""
 order: 20
 password: false
 ---
-### What is Goldlabel? Performance, Speed, SEO
+### Performance, Speed, SEO
 
 > Given that 50% of the internet is made up of WordPress websites, how does Goldlabel stack up against it?
 
