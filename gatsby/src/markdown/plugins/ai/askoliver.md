@@ -1,10 +1,10 @@
 ---
-slug: "/plugins/askoliver"
+slug: "/plugins/ai"
 parentSlug: "/plugins"
-title: "Ask Oliver"
+title: "Artificial Intelligence"
 description: "Meet our Künstliche Intelligenz, Oliver"
 icon: "oliver"
-image: "/png/og.png"
+image: "/png/askoliver.png"
 keywords: "OpenAI, ChatGPT, Goldlabel, Oliver"
 order: 10
 cover: false

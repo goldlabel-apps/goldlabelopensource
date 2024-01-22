@@ -1,4 +1,5 @@
 ---
+draft: true
 slug: "/plugins/internet-of-tings"
 parentSlug: "/plugins"
 title: "Internet of Tings"

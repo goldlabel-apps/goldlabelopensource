@@ -1,4 +1,5 @@
 ---
+draft: true
 slug: "/plugins/instrumental"
 parentSlug: "/plugins"
 title: "Instrumental"

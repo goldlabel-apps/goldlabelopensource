@@ -2,6 +2,7 @@ import * as React from "react"
 import {glConfig} from "../../../config"
 import {
   useTheme,
+  ButtonBase,
   Box,
   Grid,
   Container,
@@ -9,6 +10,7 @@ import {
 } from "@mui/material"
 import {
   Image,
+  navigate,
   Font,
   useSiteMetadata,
   usePwaSelect,
@@ -94,9 +96,12 @@ export default function ListingDesktop(props: any) {
             </Box>
             <Pingpong />
             </>}
-              title={<Font variant="title">
+              title={<ButtonBase
+                      onClick={() => {
+                        dispatch(navigate("/", "_self"))
+                      }}><Font variant="title">
                         {title}
-                    </Font>}
+                    </Font></ButtonBase>}
               subheader={<Font variant="small">
                             {description}
                         </Font>}

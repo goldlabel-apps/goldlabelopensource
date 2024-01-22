@@ -69,7 +69,7 @@ export default function SystemMenu() {
               e.preventDefault()
               dispatch(setCoreKey("footerMenuOpen", true))
             }}>
-            <Icon icon={"settings"} color="primary" />
+            <Icon icon={"menu"} color="primary" />
           </IconButton>
         </Badge>
         
