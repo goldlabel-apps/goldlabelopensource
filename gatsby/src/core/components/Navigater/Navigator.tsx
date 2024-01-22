@@ -39,7 +39,7 @@ export default function Navigator() {
 
             
 
-              {slug !== "/" ? <>
+              {/* {slug !== "/" ? <>
                 <ListItemButton
                   onClick={() => {
                     dispatch(navigate("/", "_self"))
@@ -52,7 +52,7 @@ export default function Navigator() {
                     primary={<Font>Home</Font>}
                   />
                 </ListItemButton>
-              </> : null}
+              </> : null} */}
               
               
               {parentDoc ? <>
@@ -60,12 +60,13 @@ export default function Navigator() {
                   onClick={() => {
                     dispatch(navigate(parentDoc.frontmatter.slug, "_self"))
                   }}>
-                  <ListItemIcon>
-                    <Icon icon="up" color="inherit"/>
-                  </ListItemIcon>
+                  
                   <ListItemText 
                     primary={<Font>{parentDoc.frontmatter.title}</Font>}
                   />
+                  <ListItemIcon>
+                    <Icon icon="up" color="inherit"/>
+                  </ListItemIcon>
                 </ListItemButton>
               </> : null }
 
@@ -81,9 +82,7 @@ export default function Navigator() {
                 <ListItemText 
                   primary={<Font>{frontmatter.title}</Font>}
                 />
-                <ListItemIcon>
-                  <Icon icon={"down"} />
-                </ListItemIcon>
+                
               </ListItemButton>
         
               {children.length ? <>
@@ -95,12 +94,16 @@ export default function Navigator() {
                               // console.log("frontmatter", frontmatter)
                               dispatch(navigate(frontmatter.slug, "_self"))
                             }}>
-                          <ListItemIcon>
-                            <Icon icon={frontmatter.icon} />
-                          </ListItemIcon>
+                          
                           <ListItemText 
                             primary={<Font>{frontmatter.title}</Font>}
                           />
+
+                          <ListItemIcon>
+                            <Icon icon={"right"} />
+                          </ListItemIcon>
+
+
                         </ListItemButton>
                 })}
               </> : null }

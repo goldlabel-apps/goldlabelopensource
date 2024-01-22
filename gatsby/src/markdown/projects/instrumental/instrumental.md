@@ -6,7 +6,7 @@ description: "A tech test for a fullstack developer"
 icon: "js"
 image: "/jpg/cixin.jpg"
 keywords: "JavaScript, OpenAI, ChatGPT, Goldlabel"
-order: 10
+order: 20
 cover: false
 category: "projects"
 ---

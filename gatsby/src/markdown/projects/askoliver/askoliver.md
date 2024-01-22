@@ -6,7 +6,7 @@ description: "Meet our Künstliche Intelligenz, Oliver"
 icon: "oliver"
 image: "/png/OpenAI.png"
 keywords: "OpenAI, ChatGPT, Goldlabel, Oliver"
-order: 12
+order: 10
 cover: false
 category: "projects"
 ---

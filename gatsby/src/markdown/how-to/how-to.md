@@ -6,6 +6,6 @@ description: "Install and use Goldlabel Open Source"
 icon: "star"
 image: "/png/goldlabel.png"
 keywords: "Docker, Raspberry Pi,"
-order: 15
-password: true
+order: 5
+password: false
 ---
