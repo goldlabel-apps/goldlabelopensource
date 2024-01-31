@@ -1,7 +1,6 @@
 ---
-draft: true
-slug: "/plugins/internet-of-tings"
-parentSlug: "/plugins"
+slug: "/features/internet-of-tings"
+parentSlug: "/features"
 title: "Internet of Tings"
 description: ""
 icon: "leaf"

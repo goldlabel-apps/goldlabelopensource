@@ -1,7 +1,7 @@
 ---
 slug: "/what"
 parentSlug: "/"
-title: "What is Goldlabel?"
+title: "Why choose Goldlabel?"
 description: "Performance, Speed & SEO"
 icon: "life"
 image: "/png/pingpong.png"
