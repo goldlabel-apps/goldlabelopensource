@@ -4,7 +4,7 @@ import {
   GoldlabelSEO,
 } from "../goldlabel"
 
-export default function GoldlabelPage(data: any) {
+export default function StartPage(data: any) {
 
   return  <>
             <GoldlabelSEO />

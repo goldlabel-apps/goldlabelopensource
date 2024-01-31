@@ -17,32 +17,9 @@ export type Footer = Array<FooterColumn>
 
 /*
 [YouTube](https://www.youtube.com/c/listingslab) or 
-[Twitter](https://twitter.com/listingslab). 
+ 
 */
 export const footer: Footer = [
-
-  {
-    title: "Legal",
-    links: [
-      {
-        label: "Terms",
-        path: "/terms",
-      },
-      {
-        label: "Privacy",
-        path: "/privacy",
-      },
-      {
-        label: "Cookies",
-        path: "/cookies",
-      },
-      {
-        label: "GDPR",
-        path: "/gdpr",
-      },
-    ],
-  },
-
 
   {
     title: "See us socially",
@@ -67,9 +44,34 @@ export const footer: Footer = [
         path: "https://www.facebook.com/listingslabspage",
         target: "_blank"
       },
+      {
+        label: "Twitter",
+        path: "https://twitter.com/listingslab",
+        target: "_blank"
+      },
     ],
   },
-
+  {
+    title: "Legal",
+    links: [
+      {
+        label: "Terms",
+        path: "/terms",
+      },
+      {
+        label: "Privacy",
+        path: "/privacy",
+      },
+      {
+        label: "Cookies",
+        path: "/cookies",
+      },
+      {
+        label: "GDPR",
+        path: "/gdpr",
+      },
+    ],
+  },
   {
     title: "About",
     links: [
