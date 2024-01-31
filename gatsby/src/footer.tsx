@@ -71,7 +71,7 @@ export const footer: Footer = [
   },
 
   {
-    title: "Lowdown",
+    title: "About",
     links: [
       {
         label: "What is Goldlabel?",
@@ -89,7 +89,7 @@ export const footer: Footer = [
   },
 
   {
-    title: "About",
+    title: "Company",
     textLines: [
       "Goldlabel Apps Ltd",
       "321-323 High Road",

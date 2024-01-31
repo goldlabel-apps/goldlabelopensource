@@ -4,7 +4,7 @@ title: "Terms & Conditions"
 description: "Your trust means everything to us."
 slug: "/terms"
 icon: "right"
-image: "/png/cartoon/town.png"
+image: "/png/town.png"
 keywords: ""
 ---
 Thank you for choosing Goldlabel.

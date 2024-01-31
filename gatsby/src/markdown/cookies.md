@@ -3,7 +3,7 @@ order: 125
 title: "Cookies"
 slug: "/cookies"
 icon: "right"
-image: "/png/cartoon/town.png"
+image: "/png/town.png"
 keywords: ""
 ---
 While cookies have been a fundamental part of web development for many years and continue to serve important functions, there are some considerations that might lead developers to explore alternative approaches or supplementary technologies. Here are a few reasons why some developers might consider cookies as "old-fashioned" and explore alternatives:

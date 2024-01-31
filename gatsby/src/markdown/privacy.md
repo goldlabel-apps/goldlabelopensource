@@ -3,7 +3,7 @@ order: 100
 title: "Privacy"
 slug: "/privacy"
 icon: "right"
-image: "/png/cartoon/town.png"
+image: "/png/town.png"
 keywords: ""
 ---
 **Privacy Statement**

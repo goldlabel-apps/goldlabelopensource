@@ -6,6 +6,10 @@ blockquote {
   padding: 0;
   padding-left: 16px;
 }
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  color: #DBB14D;
+}
 html {
   --thumbBG: #C09F52;
   --scrollbarBG: none;
