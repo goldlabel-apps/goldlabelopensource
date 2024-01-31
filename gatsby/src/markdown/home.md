@@ -8,7 +8,7 @@ slug: "/"
 category: "goldlabel"
 title: "Goldlabel"
 description: "A modern alternative to WordPress"
-icon: "pingpong"
+icon: "goldlabel"
 image: "/png/everybody.png"
 keywords: "JavaScript, WordPress, Goldlabel, Gatsby React, Progressive Web App, MUI"
 ---

@@ -61,12 +61,14 @@ export default function App(props: any) {
     }
   }, [])
 
+  if (type === "notfound") return <NotFound />
   return (<Box>
             <WindowResizeListener />
             <NotifyerSnack />
             <Signin />
             <AuthedDialog />
             <Container>
+              
               {type === "markdown" ? <>
                   {passwordOnly ? <>
                     {!user ? <PasswordOnly frontmatter={frontmatter} /> : <>
@@ -81,12 +83,7 @@ export default function App(props: any) {
                   { mobile ? <ListingMobile type={type} appData={appData} /> 
                     : <ListingDesktop type={type} appData={appData} /> }
                     </>}
-
-                {type === "notfound" ? <NotFound /> : null}
-                
+                    
             </Container>
           </Box>)
 }
-
-/*
-*/

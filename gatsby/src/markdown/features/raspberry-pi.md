@@ -1,6 +1,6 @@
 ---
-slug: "/features/iot/raspberry-pi"
-parentSlug: "/features/iot"
+slug: "/features/raspberry-pi"
+parentSlug: "/features"
 title: "Raspberry Pi"
 description: ""
 icon: "fish"
