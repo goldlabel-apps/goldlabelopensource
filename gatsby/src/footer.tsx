@@ -25,7 +25,7 @@ export const footer: Footer = [
     title: "Legal",
     links: [
       {
-        label: "Terms & Conditions",
+        label: "Terms",
         path: "/terms",
       },
       {
@@ -74,15 +74,15 @@ export const footer: Footer = [
     title: "About",
     links: [
       {
-        label: "What is Goldlabel?",
+        label: "What?",
         path: "/what",
       },
       {
-        label: "When is Goldlabel?",
+        label: "When?",
         path: "/when",
       },
       {
-        label: "How is Goldlabel?",
+        label: "How?",
         path: "/how",
       },
     ],
