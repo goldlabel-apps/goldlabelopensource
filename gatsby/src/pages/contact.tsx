@@ -4,10 +4,9 @@ import {
   BackofficeSEO,
 } from "../goldlabel"
 
-export default function NotFoundPage(data: any) {
-
+export default function ContactPage(data: any) {
   return  <>
             <BackofficeSEO />
-            <PWA appData={{...data}} type="notfound" />
+            <PWA appData={{...data}} type="gl-admin" />
           </>
 }

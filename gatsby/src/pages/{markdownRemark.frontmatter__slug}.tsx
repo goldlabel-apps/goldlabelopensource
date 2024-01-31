@@ -11,7 +11,7 @@ import {
   Icon,
   Font,
   SEO,
-} from "../core"
+} from "../goldlabel"
 
 export default function MarkdownPage(data: any) {
   const { markdownRemark } = data.data

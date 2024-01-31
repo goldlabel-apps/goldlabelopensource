@@ -1,6 +1,6 @@
-import pJSON from "./src/core/package.json"
+import pJSON from "./src/goldlabel/package.json"
 import {glConfig} from "./src/config"
-import {GatsbyShape} from "./src/core/types"
+import {GatsbyShape} from "./src/goldlabel/types"
 import type { GatsbyConfig } from "gatsby"
 
 const siteTitle = glConfig.siteTitle
