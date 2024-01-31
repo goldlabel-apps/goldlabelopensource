@@ -93,12 +93,12 @@ export default function ListingDesktop(props: any) {
 
 
               avatar={<IconButton
-                        sx={{ml:-2}}
+                        sx={{ml:-1}}
                         onClick={() => {
                           dispatch(navigate("/", "_self"))
                         }}>
                         <Avatar 
-                          src={mode === "light" ? "/svg/iOS.svg" : "/svg/iOS_w.svg"  }
+                          src={"/svg/iOS.svg"}
                           alt={title}
                         />
                       </IconButton>
