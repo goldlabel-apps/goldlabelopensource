@@ -1,9 +1,4 @@
 {
   "name": "goldlabel",
-  "version": "3.7.9",
-  "scripts": {
-    "test": "echo \"LGTM\" && exit 1"
-  },
-  "author": "listingslab",
-  "license": "UNLICENSED"
+  "version": "3.8.0"
 }
