@@ -1,5 +1,5 @@
 {
-  "name": "functions",
+  "name": "goldlabel-api",
   "scripts": {
     "lint": "eslint --ext .js,.ts .",
     "build": "tsc",

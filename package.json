@@ -6,7 +6,7 @@
   "scripts": {
     "start": "clear && cd gatsby && npm run clean && npm run develop",
     "clean": "clear && cd gatsby && npm run clean",
-    "deploy": "clear && npm run clean && cd gatsby && npm run build && firebase deploy --only hosting"
+    "deploy": "clear && npm run clean && cd gatsby && npm run build && firebase deploy"
   },
   "license": "MIT"
 }
