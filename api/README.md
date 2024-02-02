@@ -1,4 +1,9 @@
-# 2nd gen API
+## Goldlabel API
+
+#### Firebase Functions 2nd generation API
+
+> Implementing this API alongside 
+
 
 ```javascript
 {
