@@ -1,10 +1,10 @@
 ---
 slug: "/what"
 parentSlug: "/"
-title: "Why choose Goldlabel?"
+title: "Goldlabel"
 description: "Performance, Speed & SEO"
-icon: "life"
-image: "/png/pingpong.png"
+icon: "goldlabel"
+image: "/webp/listingslab/tommyscat.webp"
 keywords: ""
 order: 20
 password: false

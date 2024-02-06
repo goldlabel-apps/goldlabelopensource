@@ -1,4 +1,3 @@
-gatsby/static/sketch
 
 .DS_Store
 # Firebase
@@ -70,12 +69,8 @@ node_modules/
 
 # dotenv environment variables file
 .env
+gatsby/.env.example
 
 gatsby/static/png/.DS_Store
 gatsby/static/jpg/.DS_Store
-gatsby/static/png/.DS_Store
-gatsby/.env.example
-gatsby/static/jpg/.DS_Store
-gatsby/static/jpg/.DS_Store
-gatsby/static/jpg/.DS_Store
-gatsby/static/jpg/.DS_Store
+gatsby/static/sketch
