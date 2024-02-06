@@ -3,12 +3,12 @@ order: 2023
 slug: "/wordpress"
 parentSlug: "/"
 title: "WordPress"
-description: "The time is in the past and the place is in the bin"
+description: "Choosing WordPress is easy. But is it the right choice?"
 keywords: "WordPress, Goldlabel"
 icon: "wordpress"
 image: "/jpg/wordpress.jpg"
 ---
-> WordPress is great but has a time and a place. The time is in the past and the place is in the bin.
+> WordPress has a time and a place. The time is in the past and the place is in the bin.
 
 Choosing WordPress for a company website is easy. It makes perfect sense. It has  versatility, ease of use, robust features, and strong community backing it. Other true reasons are User-Friendly Interface, Abundant Themes and Plugins, Scalability and Flexibility, SEO-Friendly, Community Support and Updates
 
