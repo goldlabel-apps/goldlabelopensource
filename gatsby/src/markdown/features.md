@@ -1,4 +1,5 @@
 ---
+draft: true
 slug: "/features"
 parentSlug: "/"
 title: "Features"

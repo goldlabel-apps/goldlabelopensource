@@ -3,7 +3,7 @@ order: 100
 title: "Privacy"
 slug: "/privacy"
 icon: "right"
-image: "/png/town.png"
+image: "/webp/listingslab/code.webp"
 keywords: ""
 ---
 **Privacy Statement**
