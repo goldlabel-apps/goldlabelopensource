@@ -4,7 +4,7 @@ import {
   Container,
   DialogTitle,
   DialogContent,
-  DialogActions,
+  Avatar,
   CardHeader,
   LinearProgress,
   IconButton,
@@ -19,14 +19,15 @@ import {
   firebaseSignin,
   InputPassword,
   selectDisplay,
+  navigate,
 } from "../../../goldlabel"
 
 export function PasswordOnly(props) {
+  const email: string = "listingslab@goldlabel.pro"
   const {frontmatter} = props
   const dispatch = usePwaDispatch()
   const core = usePwaSelect(selectCore)
   const display = usePwaSelect(selectDisplay)
-  const email: string = "listingslab.ai@gmail.com"
   const [password, setPassword] = React.useState<string>("")
   const {authing} = core
   let isBig = false
@@ -50,10 +51,16 @@ export function PasswordOnly(props) {
     description,
   } = frontmatter
   return (<>
-        <Container maxWidth="xs">
+        <Container maxWidth="sm">
           <DialogTitle>
                 <CardHeader 
-                  avatar={<Icon icon={"backoffice"} color="primary" />}
+                  avatar={<IconButton
+                            sx={{m:1}}
+                            onClick={() => {
+                              dispatch(navigate("/", "_self"))
+                            }}>
+                              <Avatar src={"/svg/iOS.svg"} />
+                            </IconButton>}
                   title={<Font variant="title">
                             {title}
                         </Font>}
@@ -75,14 +82,12 @@ export function PasswordOnly(props) {
                     <InputPassword autoFocus onChange={setPassword}/>
                   </Box>
 
-                  <Box sx={{mt: 1.5}}>
+                  <Box sx={{mt: 2, ml: 2}}>
                     <IconButton
                       className="enterable"
                       color="primary"
                       onClick={validate}>
-                      <Box sx={{ml:2, mt:0.5}}>
                         <Icon icon="signin" />
-                      </Box>
                     </IconButton>
                   </Box>
                 </Box>

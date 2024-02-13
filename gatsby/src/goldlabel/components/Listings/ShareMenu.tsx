@@ -47,7 +47,7 @@ export default function ShareMenu() {
   return (
     <>
       <Tooltip title={<Font color="white">
-        Tings
+        Share
       </Font>}>
         <IconButton
           color="primary"

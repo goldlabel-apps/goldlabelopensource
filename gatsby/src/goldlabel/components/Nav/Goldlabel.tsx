@@ -13,6 +13,8 @@ import {
 
 export default function Goldlabel() {
   const dispatch = usePwaDispatch()
+  const show = false
+  if (!show) return null
 
   return <>
           <Box sx={{display: "flex"}}>

@@ -12,7 +12,7 @@ export const useAllMarkdown = () => {
           frontmatter {
             draft
             order
-            cover
+            layout
             parentSlug
             slug
             title
@@ -28,7 +28,6 @@ export const useAllMarkdown = () => {
             facebook
             phone
             twitter
-            password
           }
         }
       }

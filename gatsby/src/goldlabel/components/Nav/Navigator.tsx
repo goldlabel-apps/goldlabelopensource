@@ -15,6 +15,7 @@ import {
   selectFrontmatter,
   navigate,
   useAllMarkdown,
+  setCoreKey,
 } from "../../../goldlabel"
 
 export default function Navigator() {
@@ -36,12 +37,12 @@ export default function Navigator() {
   // console.log("parent", parentDoc)
   return <>
           <Box sx={{}}>
-
-            <List>
-              {parentDoc ? <>
+            <List dense>
+              {/* {parentDoc ? <>
                 <ListItemButton
                   onClick={() => {
                     dispatch(navigate(parentDoc.frontmatter.slug, "_self"))
+                    dispatch(setCoreKey("navDialogOpen", false))
                   }}>
                   <ListItemIcon>
                     <Icon icon="up" color="primary"/>
@@ -50,12 +51,13 @@ export default function Navigator() {
                     primary={<Font variant="small">{parentDoc.frontmatter.title}</Font>}
                   />
                 </ListItemButton>
-              </> : null }
+              </> : null } */}
 
-              { slug !== "/" ? <ListItemButton
+              {/* { slug !== "/" ? <ListItemButton
                 disabled
                 onClick={() => {
                   dispatch(navigate(frontmatter.slug, "_self"))
+                  dispatch(setCoreKey("navDialogOpen", false))
                 }}
               >
                 <ListItemIcon>
@@ -65,7 +67,7 @@ export default function Navigator() {
                   primary={<Font variant="small">{frontmatter.title}</Font>}
                 />
                 
-              </ListItemButton> : null }
+              </ListItemButton> : null } */}
               
         
               {children.length ? <>
@@ -73,22 +75,19 @@ export default function Navigator() {
                   const {frontmatter} = item
                   return <ListItemButton key={`child_${i}`}
                             onClick={() => {
-                              // console.log("frontmatter", frontmatter)
+                              dispatch(setCoreKey("navDialogOpen", false))
                               dispatch(navigate(frontmatter.slug, "_self"))
                             }}>
-                          {/* <ListItemIcon>
-                            <Icon icon={"right"}  color="primary" />
-                          </ListItemIcon> */}
+                          <ListItemIcon>
+                            <Icon icon={frontmatter.icon}  color="primary" />
+                          </ListItemIcon>
                           <ListItemText 
                             primary={<Font variant="small">{frontmatter.title}</Font>}
                           />
-                          
                         </ListItemButton>
                 })}
               </> : null }
-              
             </List>
-            
           </Box>
       </>
 }

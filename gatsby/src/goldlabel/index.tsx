@@ -86,14 +86,16 @@ import WindowResizeListener from "./components/System/WindowResizeListener"
 
 import {Device} from "./components/System/Device"
 import Pricing from "./components/System/Pricing"
-import Footer from "./components/Navigater/Footer"
 
 // Navigator
-import Navigator from "./components/Navigater/Navigator"
-import Goldlabel from "./components/Navigater/Goldlabel"
-import SystemMenu from "./components/Navigater/SystemMenu"
-import PopupMenu from "./components/Navigater/PopupMenu"
-import BottomBar from "./components/Navigater/BottomBar"
+
+import NavDialog from "./components/Nav/NavDialog"
+import Footer from "./components/Nav/Footer"
+import Navigator from "./components/Nav/Navigator"
+import Goldlabel from "./components/Nav/Goldlabel"
+import SystemMenu from "./components/Nav/SystemMenu"
+import PopupMenu from "./components/Nav/PopupMenu"
+import BottomBar from "./components/Nav/BottomBar"
 
 // Tings
 import {Tings} from "./plugins/tings"
@@ -106,6 +108,7 @@ export {
     Navigator,
     PopupMenu,
     Goldlabel,
+    NavDialog,
 }
 ///////////////////
 // System

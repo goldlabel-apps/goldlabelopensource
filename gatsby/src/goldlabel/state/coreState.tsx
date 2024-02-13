@@ -16,6 +16,7 @@ export const coreState: CoreShape = {
     signinOpen: false,
     accountDialogOpen: false,
     settingsMenuOpen: false,
+    navDialogOpen: false,
     pricing,
     footer,
 }

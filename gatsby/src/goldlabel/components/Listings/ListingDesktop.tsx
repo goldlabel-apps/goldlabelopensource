@@ -3,7 +3,6 @@ import {glConfig} from "../../../config"
 import {
   useTheme,
   Avatar,
-  ButtonBase,
   IconButton,
   Box,
   Grid,
@@ -90,8 +89,6 @@ export default function ListingDesktop(props: any) {
               subheader={<Font variant="small">
                       {description}
                   </Font>}
-
-
               avatar={<IconButton
                         sx={{ml:-1}}
                         onClick={() => {
@@ -143,15 +140,19 @@ export default function ListingDesktop(props: any) {
             <Image 
               alt={`${title}. ${description}`}
               src={image}
-              height={225}
+              height={300}
             />
             {type === "goldlabel" ? null : null }
-            <Markdown html={html} />
-           
+            <Box sx={{mt:2}}>
+              <Markdown html={html} />
+            </Box>
           </Box>
           </Grid> : null }
       </Grid>
-      <Footer />
+      <Box sx={{mt:3}}>
+        <Footer />
+      </Box>
+      
       <BottomBar />
       <div id="bottomAnchor" />
     </Container>

@@ -46,7 +46,7 @@ import ScooterIcon from "@mui/icons-material/Moped"
 import FoodIcon from "@mui/icons-material/Restaurant"
 import StarIcon from "@mui/icons-material/StarOutlined"
 import SettingsIcon from "@mui/icons-material/SettingsOutlined"
-import TingIcon from "@mui/icons-material/Fingerprint"
+import FingIcon from "@mui/icons-material/Fingerprint"
 import FacebookIcon from "@mui/icons-material/FacebookOutlined"
 import TwitterIcon from "@mui/icons-material/Twitter"
 import WebIcon from "@mui/icons-material/Language"
@@ -67,12 +67,11 @@ import PluginIcon from "@mui/icons-material/ExtensionOutlined"
 import LinguaIcon from "@mui/icons-material/TranslateOutlined"
 import GoogleIcon from "@mui/icons-material/Google"
 import WorkIcon from "@mui/icons-material/BuildOutlined"
-import LifeIcon from "@mui/icons-material/Sledding"
+import LifeIcon from "@mui/icons-material/Cake"
 import BalanceIcon from "@mui/icons-material/Balance"
 import JavascriptIcon from "@mui/icons-material/JavascriptOutlined"
 import ScubaIcon from "@mui/icons-material/ScubaDivingOutlined"
 import DockerIcon from "@mui/icons-material/StorageOutlined"
-
 import PingpongballIcon from "./SVGIcons/PingpongballIcon"
 import OliverIcon from "./SVGIcons/OliverIcon"
 import OpenAIIcon from "./SVGIcons/OpenAIIcon"
@@ -90,7 +89,7 @@ import WindowsIcon from "./SVGIcons/devices/WindowsIcon"
 import XboxIcon from "./SVGIcons/devices/XboxIcon"
 
 export type IconShape = {
-  icon: "docker" | "scuba" | "js" | "javascript" | "oliver" | "life" | "balance" | "bug" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ting" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "openai" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox" | "plugins"
+  icon: "geo" | "docker" | "scuba" | "js" | "javascript" | "oliver" | "life" | "balance" | "bug" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "fing" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "fings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "openai" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox" | "plugins"
   color?: any
 }
 
@@ -215,6 +214,9 @@ export default function Icon({icon, color}: IconShape) {
     case "wordpress":
       iconFragment = <WordpressIcon color={color} />
       break
+      case "geo":
+        iconFragment = <WhereIcon color={color} />
+        break
     case "where":
       iconFragment = <WhereIcon color={color} />
       break
@@ -233,8 +235,8 @@ export default function Icon({icon, color}: IconShape) {
     case "facebook":
       iconFragment = <FacebookIcon color={color} />
       break
-    case "ting":
-      iconFragment = <TingIcon color={color} />
+    case "fing":
+      iconFragment = <FingIcon color={color} />
       break
     case "settings":
       iconFragment = <SettingsIcon color={color} />

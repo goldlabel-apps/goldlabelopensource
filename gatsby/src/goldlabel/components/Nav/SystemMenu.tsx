@@ -76,6 +76,7 @@ export default function SystemMenu() {
             </IconButton>
           </Badge>
           </Tooltip>
+          
           <Dialog 
             open={settingsMenuOpen}
             fullWidth

@@ -20,6 +20,7 @@ import {
   AuthedDialog,
   PasswordOnly,
   selectAuth,
+  NavDialog,
 } from "../goldlabel"
 
 export default function App(props: any) {
@@ -67,6 +68,7 @@ export default function App(props: any) {
             <NotifyerSnack />
             <Signin />
             <AuthedDialog />
+            <NavDialog />
             <Container>
               
               {type === "markdown" ? <>

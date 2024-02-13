@@ -34,6 +34,7 @@ export const firebaseSignin = (email: string, password: string): any =>
           if (message.includes("auth/invalid-email")) message = `Invalid Email`
           if (message.includes("auth/user-not-found")) message = `${email} not found`
           if (message.includes("auth/wrong-password")) message = "Wrong password"
+          if (message.includes("auth/invalid-login-credentials")) message = "Bad password"
           dispatch(setCoreKey("authing", false))
           dispatch(notify(
             "FIREBASE 103",

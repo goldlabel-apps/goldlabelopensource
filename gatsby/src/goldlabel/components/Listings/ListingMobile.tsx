@@ -1,20 +1,14 @@
 import * as React from "react"
 import {glConfig} from "../../../config"
 import {
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
   Box,
   Container,
 } from "@mui/material"
 import {
   Image,
   Tings,
-  Goldlabel,
-  Icon,
   Font,
   useSiteMetadata,
-  Navigator,
   Markdown,
   Meta,
   CatNav,
@@ -65,16 +59,14 @@ export default function ListingMobile(props: any) {
           <div id="topAnchor" />
 
           <Box sx={{display: "flex", m:1}}>
-                <Box sx={{mt:-0.5, mr:1}}>
-                  <Goldlabel />
-                </Box> 
+               
                 <Box sx={{}}>
                   <CatNav />
                 </Box>
-                <Box sx={{mr:0.5, mt: -0.5}}>
+                <Box sx={{mr:0.5}}>
                   <Meta frontmatter={frontmatter}/>
                 </Box>
-                {sharing ? <Box sx={{mt: -0.5}}>
+                {sharing ? <Box sx={{}}>
                     <ShareMenu />
                   </Box> : null}
 
@@ -82,21 +74,8 @@ export default function ListingMobile(props: any) {
                     <Tings mode="on"/>
                   </Box> 
 
-                  
-
                 <Box sx={{flexGrow:1}}/>
               </Box>
-
-
-          {/* <Accordion sx={{boxShadow:0}} defaultExpanded={slug === "/" ? true : false }>
-            <AccordionSummary>
-              <Box sx={{flexGrow:1}}/>
-              <Icon icon="menu" />
-            </AccordionSummary>
-            <AccordionDetails>
-              <Navigator />
-            </AccordionDetails>
-          </Accordion> */}
           
           <Container>  
             
@@ -114,7 +93,7 @@ export default function ListingMobile(props: any) {
                 <Box sx={{flexGrow:1}}/>
               </Box>
               
-              <Box sx={{mt:2}}>
+              <Box sx={{mt:2, mb:2}}>
                 <Image 
                   alt={`${title}. ${description}`}
                   src={image}
@@ -122,7 +101,9 @@ export default function ListingMobile(props: any) {
                 />
               </Box>
               <Markdown html={html} />
-              <Footer />
+              <Box sx={{mt:3}}>
+                <Footer />
+              </Box>
             <Box sx={{height: 70}} />
             <div id="bottomAnchor" />
           </Box>

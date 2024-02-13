@@ -3,6 +3,9 @@ import {
   useTheme,
   Box,
   AppBar,
+  Tooltip,
+  Badge,
+  IconButton,
 } from "@mui/material"
 import {
   usePwaSelect,
@@ -11,17 +14,20 @@ import {
   SystemMenu,
   selectAuth,
   usePwaDispatch,
+  selectDisplay,
+  setCoreKey,
+  Icon,
+  Font,
 } from "../../../goldlabel"
 
 export default function BottomBar() {
   const dispatch = usePwaDispatch()
+  const display = usePwaSelect(selectDisplay)
   const bgCol = useTheme().palette.background.default
   const core = usePwaSelect(selectCore)
-  const auth = usePwaSelect(selectAuth)
-  let user: any = null
-  if(auth) user = auth.user
   const {scroll} = core
-  const showMenu = true
+  let isBig = false
+  if (display) isBig = !display.mobile
 
   return <>
           <AppBar 
@@ -36,10 +42,28 @@ export default function BottomBar() {
             }}>      
               <Box sx={{display: "flex"}}>
                 <Box sx={{flexGrow: 1}} />
-              
-                { showMenu ? <Box sx={{}}>
+
+                <Box sx={{}}>
                   <SystemMenu />
-                </Box> : null}
+                </Box>
+
+                <Box sx={{}}>
+                  <Tooltip title={<Font color="white">
+                    Menu
+                  </Font>}>
+                    <Badge badgeContent={0}>
+                      <IconButton 
+                        color="inherit"
+                        aria-label="Open Menu"
+                        onClick={(e: React.MouseEvent) => {
+                          e.preventDefault()
+                          dispatch(setCoreKey("navDialogOpen", true))
+                        }}>
+                        <Icon icon={"menu"} color="primary" />
+                      </IconButton>
+                    </Badge>
+                  </Tooltip>
+                </Box>
 
                 {scroll ? <Box>
                   <ScrollUp />
@@ -50,7 +74,3 @@ export default function BottomBar() {
             </AppBar>
           </>
 }
-
-
-/*
-*/
