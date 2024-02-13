@@ -9,7 +9,7 @@ category: "goldlabel"
 title: "Goldlabel"
 description: "A modern alternative to WordPress"
 icon: "goldlabel"
-image: "/webp/home.webp"
+image: "/webp/therapy/tech.webp"
 keywords: "JavaScript, WordPress, Goldlabel, Gatsby React, Progressive Web App, MUI"
 layout: "home"
 ---
