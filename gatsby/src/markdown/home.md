@@ -11,6 +11,7 @@ description: "A modern alternative to WordPress"
 icon: "goldlabel"
 image: "/webp/home.webp"
 keywords: "JavaScript, WordPress, Goldlabel, Gatsby React, Progressive Web App, MUI"
+layout: "home"
 ---
 
 > Why choose WordPress?
