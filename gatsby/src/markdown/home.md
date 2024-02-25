@@ -7,9 +7,9 @@ order: 1
 slug: "/"
 category: "goldlabel"
 title: "Goldlabel"
-description: "Open Sourcex"
+description: "Open Source"
 icon: "goldlabel"
-image: "/webp/listingslab/contact.webp"
+image: "/webp/coupland/mid-twenties-breakdown.webp"
 keywords: "JavaScript, WordPress, Goldlabel, Gatsby React, Progressive Web App, MUI"
 layout: "home"
 ---

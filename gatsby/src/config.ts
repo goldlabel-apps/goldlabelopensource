@@ -12,18 +12,17 @@ export const glConfig: ConfigShape = {
     siteIcon: "/svg/iOS.svg",
     siteTwitter: "@listingslab",
     siteTheme: "#FFFFFF",
+    sharing: false,
     theme: {
         primaryColor: "#a9a9a9",
         secondaryColor: "#7d7d7d",
         defaultDarkmode: false,
     },
+    debuggerEnabled: true,
+    darkmodeEnabled: true,
     mapbox: {
         light: "mapbox://styles/listingslab/clmrnpplw00ej01nsfv8l4q25",
         dark: "mapbox://styles/listingslab/clmrnt68o02a801qxevn0bt6u"
-    },
-    debuggerEnabled: true,
-    darkmodeEnabled: true,
-    membersOnly: false,
-    sharing: true,
+    }
 }
 

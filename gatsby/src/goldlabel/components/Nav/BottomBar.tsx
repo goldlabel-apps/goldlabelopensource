@@ -3,21 +3,18 @@ import {
   useTheme,
   Box,
   AppBar,
-  Tooltip,
-  Badge,
-  IconButton,
+
 } from "@mui/material"
 import {
   usePwaSelect,
   selectCore,
   ScrollUp,
   SystemMenu,
-  selectAuth,
   usePwaDispatch,
   selectDisplay,
-  setCoreKey,
-  Icon,
-  Font,
+  // setCoreKey,
+  // Icon,
+  // Font,
 } from "../../../goldlabel"
 
 export default function BottomBar() {
@@ -47,23 +44,7 @@ export default function BottomBar() {
                   <SystemMenu />
                 </Box>
 
-                <Box sx={{}}>
-                  <Tooltip title={<Font color="white">
-                    Menu
-                  </Font>}>
-                    <Badge badgeContent={0}>
-                      <IconButton 
-                        color="inherit"
-                        aria-label="Open Menu"
-                        onClick={(e: React.MouseEvent) => {
-                          e.preventDefault()
-                          dispatch(setCoreKey("navDialogOpen", true))
-                        }}>
-                        <Icon icon={"menu"} color="primary" />
-                      </IconButton>
-                    </Badge>
-                  </Tooltip>
-                </Box>
+                
 
                 {scroll ? <Box>
                   <ScrollUp />

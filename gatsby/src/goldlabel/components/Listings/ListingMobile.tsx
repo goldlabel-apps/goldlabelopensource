@@ -3,9 +3,14 @@ import {glConfig} from "../../../config"
 import {
   Box,
   Container,
+  Tooltip,
+  Badge,
+  IconButton,
 } from "@mui/material"
 import {
   Image,
+  setCoreKey,
+  Icon,
   Tings,
   Font,
   useSiteMetadata,
@@ -20,12 +25,15 @@ import {
   usePwaSelect,
   selectDisplay,
   HomeHero,
+  usePwaDispatch,
 } from "../../../goldlabel"
 
 export default function ListingMobile(props: any) {
+  const dispatch = usePwaDispatch()
   const {appData, type} = props
   const siteMeta = useSiteMetadata()  
   const d = usePwaSelect(selectDisplay)
+  
   let layout: string = "normal"
   let isHome = false
   if (appData.path === "/")isHome = true
@@ -82,6 +90,25 @@ export default function ListingMobile(props: any) {
                 <Box sx={{mr:0.5}}>
                   <Meta frontmatter={frontmatter}/>
                 </Box>
+
+                <Box sx={{}}>
+                  <Tooltip title={<Font color="white">
+                    Menu
+                  </Font>}>
+                    <Badge badgeContent={0}>
+                      <IconButton 
+                        color="inherit"
+                        aria-label="Open Menu"
+                        onClick={(e: React.MouseEvent) => {
+                          e.preventDefault()
+                          dispatch(setCoreKey("navDialogOpen", true))
+                        }}>
+                        <Icon icon={"menu"} color="primary" />
+                      </IconButton>
+                    </Badge>
+                  </Tooltip>
+                </Box>
+
                 {sharing ? <Box sx={{}}>
                     <ShareMenu />
                   </Box> : null}
