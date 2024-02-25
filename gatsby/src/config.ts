@@ -2,9 +2,9 @@ import {ConfigShape} from "./types"
 
 export const glConfig: ConfigShape = {
     siteTitle: "goldlabelopensource",
-    siteDescription: "A modern alternative to WordPress",
-    siteEmail: "listingslab@gmail.com",
-    siteDisplayname: "Milky",
+    siteDescription: "Modern WordPress alternative",
+    siteEmail: "opensource@goldlabel.pro",
+    siteDisplayname: "opensource",
     siteUrl: "https://goldlabelopensource.web.app/",
     siteFacebook: "https://www.facebook.com/listingslabspage",
     siteKeywords: "listingslab, goldlabel, opensource, fullstack, react, javascript, node, pwa, free, github",
@@ -14,8 +14,8 @@ export const glConfig: ConfigShape = {
     siteTheme: "#FFFFFF",
     sharing: false,
     theme: {
-        primaryColor: "#a9a9a9",
-        secondaryColor: "#7d7d7d",
+        primaryColor: "#11848e",
+        secondaryColor: "#16C6D5",
         defaultDarkmode: false,
     },
     debuggerEnabled: true,

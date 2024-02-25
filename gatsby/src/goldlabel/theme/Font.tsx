@@ -1,4 +1,4 @@
-// import "./fonts/noka.css"
+import "./fonts/noka.css"
 import React from "react"
 import { 
   useTheme,
@@ -7,7 +7,7 @@ import {
 } from "@mui/material"
 
 export function Font(props: any) {
-  // const textFont = "noka"
+  const textFont = "noka"
   const theme = useTheme()
   const isBig = useMediaQuery(theme.breakpoints.up("sm"))
   const { 
@@ -46,7 +46,7 @@ export function Font(props: any) {
       overflow={"hidden"}
       sx={{
         // fontWeight: "bold",
-        // fontFamily: textFont,
+        fontFamily: textFont,
         display: "block",
         overflow: "hidden",
         textAlign,

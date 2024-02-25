@@ -13,7 +13,7 @@ image: "/webp/coupland/mid-twenties-breakdown.webp"
 keywords: "JavaScript, WordPress, Goldlabel, Gatsby React, Progressive Web App, MUI"
 layout: "home"
 ---
-## A modern alternative to WordPress
+## Modern WordPress alternative 
 
 > Why choose Goldlabel?
 

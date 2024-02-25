@@ -88,7 +88,7 @@ export default function ListingDesktop(props: any) {
         <Grid item xs={12}>
           <Box sx={{}}>
             <CardHeader 
-              title={<Font variant="title" color="secondary">
+              title={<Font variant="title" color="primary">
                   {title}
               </Font>}
               subheader={<Font variant="small">

@@ -1,17 +1,17 @@
-a { color: #a9a9a9; text-decoration: none; cursor: pointer; }
-a:hover { color: #7d7d7d; }
+a { color: #11848e; text-decoration: none; cursor: pointer; }
+a:hover { color: #16C6D5; }
 blockquote {
-  border-left: 3px solid #a9a9a9;
+  border-left: 3px solid #16C6D5;
   margin: 0;
   padding: 0;
   padding-left: 16px;
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
-  color: #7d7d7d;
+  color: #11848e;
 }
 html {
-  --thumbBG: #a9a9a9;
+  --thumbBG: #16C6D5;
   --scrollbarBG: none;
 }
 pre {
