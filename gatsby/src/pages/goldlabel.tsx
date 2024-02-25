@@ -4,8 +4,7 @@ import {
   GoldlabelSEO,
 } from "../goldlabel"
 
-export default function StartPage(data: any) {
-
+export default function GoldlabelPage(data: any) {
   return  <>
             <GoldlabelSEO />
             <PWA appData={{...data}} type="goldlabel" />

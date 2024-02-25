@@ -1,7 +1,6 @@
 import * as React from "react"
 import {glConfig} from "../../../config"
 import {
-  useTheme,
   Avatar,
   IconButton,
   Box,
@@ -12,6 +11,7 @@ import {
 import {
   Image,
   Goldlabel,
+  HomeHero,
   Tings,
   navigate,
   Pricing,
@@ -28,21 +28,20 @@ import {
   BottomBar,
   Debugger,
   Footer,
+  selectDisplay,
 } from "../../../goldlabel"
 
 export default function ListingDesktop(props: any) {
   const dispatch = usePwaDispatch()
   const frontmatter = usePwaSelect(selectFrontmatter)
-  const mode = useTheme().palette.mode
-  // console.log("mode", mode)
+  const d = usePwaSelect(selectDisplay)
   const {appData, type} = props
   const siteMeta = useSiteMetadata()
-  let thisSlug = "/"
-  if (frontmatter) thisSlug = frontmatter.slug
   const {
     siteTitle,
     siteDescription,
   } = siteMeta
+  let layout: string = "normal"
   let doc: any = null
   let title = siteTitle
   let description = siteDescription
@@ -50,100 +49,117 @@ export default function ListingDesktop(props: any) {
   let image: any = null
   let icon: any = null
   let slug: any = false
-  let lat: any = null
-  let lng: any = null
-
+  let minMdH = 0
+  const el = document.getElementById('markdown')
+  if (el && d){
+    const {h} = d
+    const rect = el.getBoundingClientRect()
+    const sT = document.documentElement.scrollTop
+    const eT = rect.top + sT;
+    minMdH = h - eT - 40
+  }
   if (appData.pageResources.json.data){
     doc = appData.pageResources.json.data.markdownRemark
     html = doc.html
   }
   if (frontmatter){
     slug = frontmatter.slug
-    lat = frontmatter.lat
-    lng = frontmatter.lng
     title = frontmatter.title
     description = frontmatter.description
     image = frontmatter.image
     icon = frontmatter.icon
+    if (frontmatter.layout) layout = frontmatter.layout
   }
   const {sharing} = glConfig
-  // console.log("type", type)
+
   if (type === "goldlabel") return <>
     <Pricing />
     <BottomBar />
   </>
 
   return <>
-    <Container maxWidth="md" sx={{mb: "100px"}}>
+    <Container maxWidth="md" sx={{
+      mb: "100px",
+      
+    }}>
       <div id="topAnchor" />
       <Grid container spacing={1}>
       
         <Grid item xs={12}>
-
-          <Box>
+          <Box sx={{}}>
             <CardHeader 
-
-              title={<Font variant="title" color="primary">
+              title={<Font variant="title" color="secondary">
                   {title}
               </Font>}
               subheader={<Font variant="small">
-                      {description}
-                  </Font>}
+                            {description}
+                        </Font>}
               avatar={<IconButton
-                        sx={{ml:-1}}
+                        sx={{
+                          ml:-1.5,
+                        }}
                         onClick={() => {
                           dispatch(navigate("/", "_self"))
                         }}>
                         <Avatar 
                           src={"/svg/iOS.svg"}
                           alt={title}
+                          sx={{
+                            height: 55,
+                            width: 55,
+                          }}
                         />
                       </IconButton>
               }
               action={<>
-              <Box sx={{display: "flex", m:1}}>
+              <Box sx={{
+                display: "flex", 
+                m:1,
+              }}>
               <Box sx={{}}>
                 <CatNav />
               </Box>
-
               <Box sx={{mr:0.5, mt: -0.5}}>
                 <Meta frontmatter={frontmatter}/>
               </Box>
-              
               {sharing ? <Box sx={{mt: -0.5}}>
                   <ShareMenu />
                 </Box> : null}
-
                 <Box sx={{mt:-0.5}}>
                   <Tings mode="on"/>
                 </Box> 
-
                 <Box sx={{mt:-0.5}}>
                   <Goldlabel />
                 </Box> 
-
               <Box sx={{flexGrow:1}}/>
             </Box>
             </>}
             />
           </Box>
-
         </Grid>
-
         <Grid item xs={12} sm={4}>
             <Navigator />
         </Grid>
-
         {image ? <Grid item xs={12} sm={8}>
           <Debugger />
-          <Box sx={{mb:2}}>
+          <Box sx={{my:2}}>
             <Image 
               alt={`${title}. ${description}`}
               src={image}
               height={300}
             />
-            {type === "goldlabel" ? null : null }
-            <Box sx={{mt:2}}>
+            {layout === "home" ? <Box 
+              id="home"
+              sx={{mt:2}}>
+                <HomeHero />
+              </Box> : null }
+            <Box 
+              id="markdown"
+              sx={{
+                mt:2,
+                // border: "1px solid green",
+                minHeight: minMdH,
+              }}>
               <Markdown html={html} />
             </Box>
           </Box>
@@ -158,6 +174,3 @@ export default function ListingDesktop(props: any) {
     </Container>
   </>
 }
-
-/*
-*/

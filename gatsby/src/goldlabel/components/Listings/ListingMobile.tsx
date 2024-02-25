@@ -17,11 +17,16 @@ import {
   Debugger,
   Pricing,
   Footer,
+  usePwaSelect,
+  selectDisplay,
+  HomeHero,
 } from "../../../goldlabel"
 
 export default function ListingMobile(props: any) {
   const {appData, type} = props
   const siteMeta = useSiteMetadata()  
+  const d = usePwaSelect(selectDisplay)
+  let layout: string = "normal"
   let isHome = false
   if (appData.path === "/")isHome = true
   let title = siteMeta.siteTitle
@@ -47,9 +52,20 @@ export default function ListingMobile(props: any) {
     html = doc.html
     excerpt = doc.excerpt
     slug = frontmatter.slug
+    if (frontmatter.layout) layout = frontmatter.layout
   }
   const {sharing} = glConfig
-  // console.log("type", type)
+  
+  let minMdH = 0
+  const el = document.getElementById('markdown')
+  if (el && d){
+    const {h} = d
+    const rect = el.getBoundingClientRect()
+    const sT = document.documentElement.scrollTop
+    const eT = rect.top + sT;
+    minMdH = h - eT - 40
+  }
+
   if (type === "goldlabel") return <>
     <Pricing />
     <BottomBar />
@@ -100,7 +116,21 @@ export default function ListingMobile(props: any) {
                   height={175}
                 />
               </Box>
-              <Markdown html={html} />
+              <Box 
+              id="markdown"
+              sx={{
+                mt:2,
+                minHeight: minMdH,
+              }}>
+                <Markdown html={html} />
+              </Box>
+
+              {layout === "home" ? <Box 
+              id="home"
+              sx={{mt:2}}>
+                <HomeHero />
+              </Box> : null }
+              
               <Box sx={{mt:3}}>
                 <Footer />
               </Box>

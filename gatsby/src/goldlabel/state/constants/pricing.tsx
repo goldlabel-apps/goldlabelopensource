@@ -1,39 +1,30 @@
 
 
 export const pricing = [
-    {
-      title: "Roll your own",
-      price: "0",
-      description: [
-        "Free",
-        "Open Source",
-        
-        "Requires skillz",
-      ],
-      buttonText: "View on GitHub",
-      buttonVariant: "outlined",
-    },
+
     {
       title: "Pay As You Go",
-      subheader: "Most popular",
-      price: "99",
+      subheader: "We'll do it all for you",
+      price: "299",
       description: [
-        "20 users included",
-        "Help center access",
-        "Priority email support",
+        "Leaves existing WordPress sites alone",
+        "Adds a Progressive Web App on top",
+        "Uses your current WordPress CMS",
       ],
       buttonText: "Get started",
       buttonVariant: "contained",
     },
     {
-      title: "Custom contract",
-      price: "X",
+      title: "Roll your own",
+      subheader: "Start with Goldlabel Open Source",
+      buttonText: "Free on GitHub",
+      price: "0",
       description: [
-        "Project planning",
-        "Scrum master help",
-        "Training",
+        "Free",
+        "Open Source",
+        "Requires skillz",
       ],
-      buttonText: "Contact us",
+      
       buttonVariant: "outlined",
     },
   ]

@@ -38,7 +38,7 @@ export default function FeaturedFooter() {
               textLines,
               links,
             } = item
-            return <Grid key={`column_${i}`} item xs={12} sm={3}>
+            return <Grid key={`column_${i}`} item xs={6} sm={3}>
                       <Font color="primary">
                         {title}
                       </Font>
@@ -93,23 +93,6 @@ export default function FeaturedFooter() {
                     </Grid>
           })}
         </Grid>
-
-        {/* <Grid container spacing={4} justifyContent="space-evenly">
-          {footer.map((item: any) => (
-            <Grid item xs={6} sm={3} key={item.title}>
-              <Font>
-                {item.title}
-              </Font>
-              <List dense>
-                {item.description.map((item: any, i: number) => {
-                  return 
-                            
-                          </ListItemButton>
-                })}
-              </List>
-            </Grid>
-          ))}
-        </Grid> */}
       </Container>
     </>
   )

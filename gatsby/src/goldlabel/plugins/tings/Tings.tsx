@@ -19,12 +19,12 @@ export function Tings({mode}) {
   const frontmatter = usePwaSelect(selectFrontmatter)
   if(!frontmatter) return null
   const {plugin} = frontmatter
-  const hide = true
+  const hide = false
   if (mode === "off" || hide) return null
 
   return (<>
           <Box sx={{}}>
-            <Tooltip title={<Font color="white">
+            {/* <Tooltip title={<Font color="white">
               Tings
             </Font>}>
               <IconButton
@@ -37,9 +37,9 @@ export function Tings({mode}) {
                     // dispatch(navigate("/work/goldlabel/plugins/tings", "_self"))
                   }
                 }}>
-                <Icon icon="ting" />
+                <Icon icon="fing" />
               </IconButton>
-            </Tooltip>
+            </Tooltip> */}
           </Box>
         </>
   )

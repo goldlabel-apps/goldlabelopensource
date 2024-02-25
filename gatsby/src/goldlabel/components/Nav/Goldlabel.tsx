@@ -25,7 +25,7 @@ export default function Goldlabel() {
                 <IconButton
                   color="primary"
                   onClick={() => {
-                    dispatch(navigate("https://goldlabel.pro/start", "_self"))
+                    dispatch(navigate("/goldlabel", "_self"))
                   }}>
                   <Icon icon="goldlabel" />
                 </IconButton>

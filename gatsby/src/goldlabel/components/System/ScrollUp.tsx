@@ -9,7 +9,6 @@ import {
   setCoreKey,
 } from "../../../goldlabel"
 
-
 export default function ScrollUp() {
   const dispatch = usePwaDispatch()
   const hideScrollBtn = false
@@ -21,7 +20,11 @@ export default function ScrollUp() {
                 e.preventDefault()
                 let el: any = document.getElementById("topAnchor")
                 if (el){
-                  dispatch(scrollTo(el))                  
+                  dispatch(scrollTo(el))
+                  setTimeout(() =>{
+                    dispatch(setCoreKey("scroll", false))
+                  }, 500)
+                  
                 }
               }}>
               <Icon icon={"up"} color="primary" />

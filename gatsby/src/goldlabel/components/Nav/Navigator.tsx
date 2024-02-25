@@ -9,7 +9,6 @@ import {
 import {
   Font,
   Icon,
-  // Goldlabel,
   usePwaDispatch,
   usePwaSelect,
   selectFrontmatter,
@@ -34,11 +33,11 @@ export default function Navigator() {
       children.push(allMarkdown[i]) 
     } 
   }
-  // console.log("parent", parentDoc)
+
   return <>
-          <Box sx={{}}>
+          <Box sx={{ml: 1}}>
             <List dense>
-              {/* {parentDoc ? <>
+              {parentDoc ? <>
                 <ListItemButton
                   onClick={() => {
                     dispatch(navigate(parentDoc.frontmatter.slug, "_self"))
@@ -51,24 +50,7 @@ export default function Navigator() {
                     primary={<Font variant="small">{parentDoc.frontmatter.title}</Font>}
                   />
                 </ListItemButton>
-              </> : null } */}
-
-              {/* { slug !== "/" ? <ListItemButton
-                disabled
-                onClick={() => {
-                  dispatch(navigate(frontmatter.slug, "_self"))
-                  dispatch(setCoreKey("navDialogOpen", false))
-                }}
-              >
-                <ListItemIcon>
-                  <Icon icon={frontmatter.icon}  color="primary"/>
-                </ListItemIcon>
-                <ListItemText 
-                  primary={<Font variant="small">{frontmatter.title}</Font>}
-                />
-                
-              </ListItemButton> : null } */}
-              
+              </> : null }            
         
               {children.length ? <>
                 {children.map((item, i) => {

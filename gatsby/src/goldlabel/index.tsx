@@ -68,6 +68,8 @@ import Children from "../goldlabel/components/Listings/Children"
 import Siblings from "../goldlabel/components/Listings/Siblings"
 import Image from "./components/Listings/Image"
 import TitleMobile from "./components/Listings/TitleMobile"
+import HomeHero from "./components/Listings/HomeHero"
+import ContentCard from "./components/Listings/ContentCard"
 
 // Auth
 import {AuthedDialog} from "./components/Auth/AuthedDialog"
@@ -140,6 +142,8 @@ export {
     Siblings,
     Image,
     TitleMobile,
+    HomeHero,
+    ContentCard,
 }
 // Auth
 export {

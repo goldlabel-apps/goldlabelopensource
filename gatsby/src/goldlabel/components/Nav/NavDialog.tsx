@@ -5,6 +5,10 @@ import {
   DialogContent,
   Box,
   IconButton,
+  List,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
 } from "@mui/material"
 import {
   Icon,
@@ -15,6 +19,7 @@ import {
   usePwaDispatch,
   selectDisplay,
   setCoreKey,
+  navigate,
 } from "../../../goldlabel"
 
 export default function NavDialog() {
@@ -55,6 +60,22 @@ export default function NavDialog() {
                 </Box>
               </DialogTitle>
               <DialogContent>
+                <Box sx={{ml: 1}}>
+                  <List dense>
+                    <ListItemButton
+                      onClick={() => {
+                        dispatch(navigate("/", "_self"))
+                        dispatch(setCoreKey("navDialogOpen", false))
+                      }}>
+                      <ListItemIcon>
+                        <Icon icon="home" color="primary"/>
+                      </ListItemIcon>
+                      <ListItemText 
+                        primary={<Font variant="small">Home</Font>}
+                      />
+                    </ListItemButton>
+                  </List>
+                </Box>
                 <Navigator /> 
               </DialogContent>
             </Dialog>

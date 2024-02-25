@@ -1,20 +1,20 @@
 import {ConfigShape} from "./types"
 
 export const glConfig: ConfigShape = {
-    siteTitle: "Goldlabel",
+    siteTitle: "goldlabelopensource",
     siteDescription: "A modern alternative to WordPress",
     siteEmail: "listingslab@gmail.com",
     siteDisplayname: "Milky",
-    siteUrl: "https://goldlabel-open-source.web.app/",
+    siteUrl: "https://goldlabelopensource.web.app/",
     siteFacebook: "https://www.facebook.com/listingslabspage",
     siteKeywords: "listingslab, goldlabel, opensource, fullstack, react, javascript, node, pwa, free, github",
-    siteImage: "/png/everybody.png",
+    siteImage: "/png/flash.png",
     siteIcon: "/svg/iOS.svg",
     siteTwitter: "@listingslab",
     siteTheme: "#FFFFFF",
     theme: {
-        primaryColor: "#C09F52",
-        secondaryColor: "#DBB14D",
+        primaryColor: "#a9a9a9",
+        secondaryColor: "#7d7d7d",
         defaultDarkmode: false,
     },
     mapbox: {

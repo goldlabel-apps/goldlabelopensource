@@ -4,9 +4,9 @@ import { GatsbySeo } from 'gatsby-plugin-next-seo'
 export const GoldlabelSEO = () => {
   const seo = {
     title: `Goldlabel`,
-    description: "A modern alternative to WordPress",
-    image: "/png/features/goldlabel.png",
-    url: "https://listingslab.com/goldlabel/",
+    description: "by listingslab",
+    image: "/webp/listingslab/contact.webp",
+    url: "https://goldlabel.pro",
     keywords: "wordpress, gatsby, react",
   }
   const x = {

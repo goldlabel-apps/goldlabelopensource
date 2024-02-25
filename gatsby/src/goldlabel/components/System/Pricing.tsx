@@ -54,7 +54,7 @@ export default function Pricing() {
               key={tier.title}
               xs={12}
               sm={tier.title === "Enterprise" ? 12 : 6}
-              md={4}>
+              md={6}>
 
               <Card>
                 <CardHeader
