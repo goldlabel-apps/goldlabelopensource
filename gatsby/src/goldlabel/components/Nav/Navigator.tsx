@@ -44,7 +44,7 @@ export default function Navigator() {
                     dispatch(setCoreKey("navDialogOpen", false))
                   }}>
                   <ListItemIcon>
-                    <Icon icon="up" color="primary"/>
+                    <Icon icon="left" color="primary"/>
                   </ListItemIcon>
                   <ListItemText 
                     primary={<Font variant="small">{parentDoc.frontmatter.title}</Font>}

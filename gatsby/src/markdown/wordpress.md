@@ -1,8 +1,8 @@
 ---
-order: 2023
+order: 123
 slug: "/wordpress"
 parentSlug: "/"
-title: "WordPress"
+title: "What is WordPress?"
 description: "Choosing WordPress is easy. But is it the right choice?"
 keywords: "WordPress, Goldlabel"
 icon: "wordpress"
