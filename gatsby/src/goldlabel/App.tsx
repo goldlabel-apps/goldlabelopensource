@@ -30,6 +30,7 @@ export default function App(props: any) {
   } = props
   const dispatch = usePwaDispatch()
   const d = usePwaSelect(selectDisplay)
+  
   const auth = usePwaSelect(selectAuth)
   const core = usePwaSelect(selectCore)
   let frontmatter: any = null

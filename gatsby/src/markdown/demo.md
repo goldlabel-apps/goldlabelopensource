@@ -1,5 +1,6 @@
 ---
 order: 200
+draft: true
 slug: "/demo"
 parentSlug: "/"
 title: "Demo"

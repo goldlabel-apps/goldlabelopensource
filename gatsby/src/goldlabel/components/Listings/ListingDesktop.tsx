@@ -89,7 +89,7 @@ export default function ListingDesktop(props: any) {
         <Grid item xs={12}>
           <Box sx={{}}>
             <CardHeader 
-              title={<Font variant="title" color="primary">
+              title={<Font variant="title">
                   {title}
               </Font>}
               subheader={<Font variant="small">
@@ -122,9 +122,7 @@ export default function ListingDesktop(props: any) {
               {sharing ? <Box sx={{mt: -0.5}}>
                   <ShareMenu />
                 </Box> : null}
-                <Box sx={{mt:-0.5}}>
-                  <Tings mode="on"/>
-                </Box> 
+                
                 <Box sx={{mt:-0.5}}>
                   <Goldlabel />
                 </Box> 

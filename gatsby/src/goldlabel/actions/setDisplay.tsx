@@ -10,7 +10,8 @@ export const setDisplay = (): any => async (dispatch: any) => {
         let mobile = false
         const w = window.innerWidth
         const h = window.innerHeight
-        if (w < 700) mobile = true
+        if (w < 800) mobile = true
+
         const display = {
             mobile,
             w,

@@ -1,5 +1,6 @@
 ---
 order: 2400
+draft: true
 slug: "/wordpres/history"
 parentSlug: "/wordpress"
 title: "History of WordPress"

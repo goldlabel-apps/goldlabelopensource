@@ -84,12 +84,18 @@ export default function ListingMobile(props: any) {
 
           <Box sx={{display: "flex", m:1}}>
                
-                <Box sx={{}}>
-                  <CatNav />
-                </Box>
-                <Box sx={{mr:0.5}}>
-                  <Meta frontmatter={frontmatter}/>
-                </Box>
+                {sharing ? <Box sx={{}}>
+                    <ShareMenu />
+                  </Box> : null}
+
+                  <Box sx={{}}>
+                    <CatNav />
+                  </Box>
+                  <Box sx={{mr:0.5}}>
+                    <Meta frontmatter={frontmatter}/>
+                  </Box>
+
+                <Box sx={{flexGrow:1}}/>
 
                 <Box sx={{}}>
                   <Tooltip title={<Font color="white">
@@ -108,16 +114,6 @@ export default function ListingMobile(props: any) {
                     </Badge>
                   </Tooltip>
                 </Box>
-
-                {sharing ? <Box sx={{}}>
-                    <ShareMenu />
-                  </Box> : null}
-
-                  <Box sx={{}}>
-                    <Tings mode="on"/>
-                  </Box> 
-
-                <Box sx={{flexGrow:1}}/>
               </Box>
           
           <Container>  
@@ -126,7 +122,7 @@ export default function ListingMobile(props: any) {
               <Debugger />
               <Box sx={{display: "flex", mt:0}}>     
                 <Box sx={{}}>
-                  <Font variant="title"  color="primary">
+                  <Font variant="title">
                       {title}
                   </Font>
                   <Font>
