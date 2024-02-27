@@ -3,7 +3,6 @@ import {
   useTheme,
   Box,
   AppBar,
-
 } from "@mui/material"
 import {
   usePwaSelect,
@@ -12,9 +11,6 @@ import {
   SystemMenu,
   usePwaDispatch,
   selectDisplay,
-  // setCoreKey,
-  // Icon,
-  // Font,
 } from "../../../goldlabel"
 
 export default function BottomBar() {
@@ -31,7 +27,7 @@ export default function BottomBar() {
             position="fixed" 
             color="inherit" 
             sx={{ 
-              background: bgCol,
+              background: "grey",
               boxShadow:0,
               border: 0,
               top: 'auto', 
@@ -39,17 +35,12 @@ export default function BottomBar() {
             }}>      
               <Box sx={{display: "flex"}}>
                 <Box sx={{flexGrow: 1}} />
-
                 <Box sx={{}}>
                   <SystemMenu />
                 </Box>
-
-                
-
                 {scroll ? <Box>
                   <ScrollUp />
                 </Box> : null }
-                
                 <Box sx={{flexGrow: 1}} />
               </Box>
             </AppBar>

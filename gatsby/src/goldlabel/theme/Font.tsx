@@ -29,10 +29,10 @@ export function Font(props: any) {
   if (color === "muted") c = theme.palette.text.disabled
   if (width) w = width
   let textfontSize: any = "0.9rem"
-  textfontSize = isBig ? "1.1rem" : "1rem"
+  textfontSize = isBig ? "1rem" : "1rem"
   if (align) textAlign = align
   if (variant === "title") {
-    textfontSize = isBig ? "1.0rem" : "1.1rem"
+    textfontSize = isBig ? "1.2rem" : "1.2rem"
   }
   if (variant === "small") {
     textfontSize = isBig ? "0.8rem" : "0.75rem"

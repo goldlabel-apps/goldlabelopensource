@@ -11,7 +11,7 @@ export const glConfig: ConfigShape = {
     siteImage: "/webp/goldlabel/era.webp",
     siteIcon: "/svg/iOS.svg",
     siteTwitter: "@listingslab",
-    siteTheme: "#C09F52",
+    siteTheme: "#FFFFFF",
     theme: {
         primaryColor: "#C09F52",
         secondaryColor: "#9e854c",

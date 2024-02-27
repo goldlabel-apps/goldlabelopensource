@@ -164,7 +164,7 @@ export default function ListingMobile(props: any) {
             <Box sx={{height: 70}} />
             <div id="bottomAnchor" />
           </Box>
-          <BottomBar />
+          {/* <BottomBar /> */}
         </Container>
       </>
 }

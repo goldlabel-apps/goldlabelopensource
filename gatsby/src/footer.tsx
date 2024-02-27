@@ -35,23 +35,23 @@ export const footer: Footer = [
       },
     ],
   },
-  {
-    title: "About",
-    links: [
-      {
-        label: "What?",
-        path: "/what",
-      },
-      {
-        label: "When?",
-        path: "/when",
-      },
-      {
-        label: "How?",
-        path: "/how",
-      },
-    ],
-  },
+  // {
+  //   title: "About",
+  //   links: [
+  //     {
+  //       label: "What?",
+  //       path: "/what",
+  //     },
+  //     {
+  //       label: "When?",
+  //       path: "/when",
+  //     },
+  //     {
+  //       label: "How?",
+  //       path: "/how",
+  //     },
+  //   ],
+  // },
 
   {
     title: "Company",

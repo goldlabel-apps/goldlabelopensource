@@ -166,7 +166,7 @@ export default function ListingDesktop(props: any) {
         <Footer />
       </Box>
       
-      <BottomBar />
+      {/* <BottomBar /> */}
       <div id="bottomAnchor" />
     </Container>
   </>
