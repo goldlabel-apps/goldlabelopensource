@@ -1,7 +1,7 @@
 {
   "name": "goldlabelopensource",
   "repository": {
-    "url": "https://github.com/listingslab-software/open-source"
+    "url": "https://github.com/listingslab-software/goldlabelopensource"
   },
   "scripts": {
     "start": "clear && cd gatsby && npm run clean && npm run develop",

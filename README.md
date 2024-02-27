@@ -1,10 +1,12 @@
-## goldlabelopensource
+## Free Goldlabel Pro
 
 > This software is Open Source and Free
 
-#### Get started
+### Get started
 
-1. Where will you clone the repository to? Call this `<working-repo>`. Decide on a machine readable name `<your-project>`. Clone the repo and install dependencies
+1. Where will you clone the repository to?  
+
+Call this `<working-repo>`. Decide on a machine readable name `<your-project>`. Clone the repo and install dependencies
 
 ```bash
 cd <working-dir>
@@ -18,7 +20,8 @@ npm run
 
 2. Environment Variables
 
-Copy `gatsby/.env.sample` to `gatsby/.env.production` & `gatsby/.env.developer` and add any API keys etc
+Copy `gatsby/.env.sample` to `gatsby/.env.production` & `gatsby/.env.developer` 
+and add the info you need
 
 3. Open and configure `gatsby/src/config`
 
