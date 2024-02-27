@@ -1,6 +1,7 @@
 import * as React from "react"
 import {glConfig} from "../../../config"
 import {
+  Avatar,
   IconButton,
   Box,
   Grid,
@@ -101,7 +102,10 @@ export default function ListingDesktop(props: any) {
                         onClick={() => {
                           dispatch(navigate("/", "_self"))
                         }}>
-                        <Icon icon={"blokey"} />
+                        <Avatar 
+                          alt={`${title} ${description}`} 
+                          src={"/svg/iOS.svg"}
+                        />
                       </IconButton>
               }
               action={<>
