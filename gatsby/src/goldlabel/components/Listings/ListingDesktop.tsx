@@ -11,7 +11,6 @@ import {
 import {
   Icon,
   Image,
-  Goldlabel,
   HomeHero,
   Tings,
   navigate,
@@ -138,11 +137,10 @@ export default function ListingDesktop(props: any) {
               src={image}
               height={300}
             />
-            {layout === "home" ? <Box 
-              id="home"
-              sx={{mt:2}}>
-                <HomeHero />
-              </Box> : null }
+            
+
+            
+
             <Box 
               id="markdown"
               sx={{
@@ -160,6 +158,7 @@ export default function ListingDesktop(props: any) {
       </Box>
       
       {/* <BottomBar /> */}
+      <Tings/>
       <div id="bottomAnchor" />
     </Container>
   </>

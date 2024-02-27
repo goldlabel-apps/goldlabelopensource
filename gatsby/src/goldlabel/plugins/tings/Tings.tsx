@@ -1,45 +1,34 @@
 import React from "react"
 import {
+  AppBar,
   Box,
-  Tooltip,
-  IconButton,
+  Container,
 } from "@mui/material"
+// import {
+//   Font,
+//   Icon,
+// } from "../../../goldlabel"
 import {
-  Font,
-  Icon,
-  usePwaDispatch,
-  usePwaSelect,
-  selectFrontmatter,
-  navigate,
-} from "../../../goldlabel"
+  Public
+} from "./"
 
-export function Tings({mode}) {
-
-  const dispatch = usePwaDispatch()
-  const frontmatter = usePwaSelect(selectFrontmatter)
-  if(!frontmatter) return null
-  const {plugin} = frontmatter
-  const hide = false
-  if (mode === "off" || hide) return null
-
+export function Tings() {
   return (<>
           <Box sx={{}}>
-            {/* <Tooltip title={<Font color="white">
-              Tings
-            </Font>}>
-              <IconButton
-                color="primary"
-                onClick={() => {
-                  console.log("do tings!")
-                  if (plugin === "tings"){
-                    
-                  } else {
-                    // dispatch(navigate("/work/goldlabel/plugins/tings", "_self"))
-                  }
-                }}>
-                <Icon icon="fing" />
-              </IconButton>
-            </Tooltip> */}
+
+          <AppBar 
+            position="fixed" 
+            color="inherit" 
+            sx={{ 
+              border: 0,
+              boxShadow: 0,
+              top: 'auto', 
+              bottom: 0, 
+            }}>      
+              <Container maxWidth={"md"}>
+                <Public />
+              </Container>
+            </AppBar>
           </Box>
         </>
   )

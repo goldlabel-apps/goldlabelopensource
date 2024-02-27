@@ -71,7 +71,6 @@ export default function App(props: any) {
             <AuthedDialog />
             <NavDialog />
             <Container>
-              
               {type === "markdown" ? <>
                   {passwordOnly ? <>
                     {!user ? <PasswordOnly frontmatter={frontmatter} /> : <>
@@ -86,7 +85,6 @@ export default function App(props: any) {
                   { mobile ? <ListingMobile type={type} appData={appData} /> 
                     : <ListingDesktop type={type} appData={appData} /> }
                     </>}
-                    
             </Container>
           </Box>)
 }

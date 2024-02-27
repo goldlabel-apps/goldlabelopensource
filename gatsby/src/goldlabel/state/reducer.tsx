@@ -12,7 +12,7 @@ type CoreReducerShape = {
   config: any
   core: any
   auth: any
-  tings?: any
+  tings: any
 }
 
 const initialState: CoreReducerShape = {

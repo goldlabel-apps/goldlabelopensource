@@ -6,6 +6,7 @@ import {
 } from "@mui/material"
 import {
   Image,
+  Tings,
   Font,
   useSiteMetadata,
   Markdown,
@@ -133,7 +134,7 @@ export default function ListingMobile(props: any) {
             <Box sx={{height: 70}} />
             <div id="bottomAnchor" />
           </Box>
-          {/* <BottomBar /> */}
+          <Tings />
         </Container>
       </>
 }
