@@ -27,7 +27,7 @@ export default function HomeHero() {
               {content.map((item: any, i: number) => {
                 return <Grid 
                         key={`content_${i}`}
-                        item xs={12} md={4}>
+                        item xs={12} sm={4}>
                         <ContentCard content={item}/>
                       </Grid>
               })}

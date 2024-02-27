@@ -76,7 +76,6 @@ export default function ListingMobile(props: any) {
 
   if (type === "goldlabel") return <>
     <Pricing />
-    <BottomBar />
   </>
 
   return <>
@@ -148,7 +147,7 @@ export default function ListingMobile(props: any) {
                 <Markdown html={html} />
               </Box>
 
-              {layout === "home" ? <Box 
+              {layout === "homeXXX" ? <Box 
               id="home"
               sx={{mt:2}}>
                 <HomeHero />

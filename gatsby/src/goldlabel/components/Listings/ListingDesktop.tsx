@@ -75,7 +75,6 @@ export default function ListingDesktop(props: any) {
 
   if (type === "goldlabel") return <>
     <Pricing />
-    <BottomBar />
   </>
 
   return <>
@@ -97,7 +96,7 @@ export default function ListingDesktop(props: any) {
                         </Font>}
               avatar={<IconButton
                         sx={{
-                          ml:-1.5,
+                          ml:-1,
                         }}
                         onClick={() => {
                           dispatch(navigate("/", "_self"))

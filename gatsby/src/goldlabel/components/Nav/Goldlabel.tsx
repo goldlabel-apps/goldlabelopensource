@@ -13,7 +13,7 @@ import {
 
 export default function Goldlabel() {
   const dispatch = usePwaDispatch()
-  const show = false
+  const show = true
   if (!show) return null
 
   return <>
