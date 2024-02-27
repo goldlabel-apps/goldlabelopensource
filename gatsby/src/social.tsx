@@ -1,5 +1,6 @@
 export const social =   {
     title: "See us socially",
+    
     links: [
     {
         label: "TikTok",
