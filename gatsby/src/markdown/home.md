@@ -9,10 +9,15 @@ category: "goldlabel"
 title: "Goldlabel"
 description: "A modern addition to WordPress"
 icon: "goldlabel"
-image: "/webp/therapy/twin-daughters.webp"
+image: "/webp/barneys.webp"
 keywords: "JavaScript, WordPress, Goldlabel, Gatsby React, Progressive Web App, MUI"
 layout: "home"
 ---
+
+> Say you're a retail shop like, say, Barneys...
+
+ Would you place a cardboard cutout robot at the door spouting some AI drivel? No. That's Zendesk
+ 
 > Why choose Goldlabel?
 
 Choosing Goldlabel gives you static site generation, offering a faster, more scalable, and more SEO-friendly solution for a company website. This caters to Google's preferences for fast and well-optimized sites. 
