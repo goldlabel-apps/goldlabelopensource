@@ -1,9 +1,9 @@
 html {
-  --thumbBG: #C09F52;
+  --thumbBG: #e9e9e9;
   --scrollbarBG: none;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C09F52;
+  background: #e9e9e9;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #C09F52;
