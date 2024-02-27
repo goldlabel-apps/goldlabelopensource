@@ -72,15 +72,14 @@ export default function ListingDesktop(props: any) {
     if (frontmatter.layout) layout = frontmatter.layout
   }
   const {sharing} = glConfig
-
+  
   if (type === "goldlabel") return <>
     <Pricing />
   </>
 
   return <>
     <Container maxWidth="md" sx={{
-      mb: "100px",
-      
+      mb: "50px",    
     }}>
       <div id="topAnchor" />
       <Grid container spacing={1}>
@@ -121,10 +120,7 @@ export default function ListingDesktop(props: any) {
               {sharing ? <Box sx={{mt: -0.5}}>
                   <ShareMenu />
                 </Box> : null}
-                
-                <Box sx={{mt:-0.5}}>
-                  <Goldlabel />
-                </Box> 
+      
               <Box sx={{flexGrow:1}}/>
             </Box>
             </>}

@@ -3,28 +3,20 @@ import {glConfig} from "../../../config"
 import {
   Box,
   Container,
-  Tooltip,
-  Badge,
-  IconButton,
 } from "@mui/material"
 import {
   Image,
-  setCoreKey,
-  Icon,
-  Tings,
   Font,
   useSiteMetadata,
   Markdown,
   Meta,
   CatNav,
   ShareMenu,
-  BottomBar,
-  Debugger,
   Pricing,
   Footer,
   usePwaSelect,
   selectDisplay,
-  HomeHero,
+  Navigator,
   usePwaDispatch,
 } from "../../../goldlabel"
 
@@ -82,52 +74,39 @@ export default function ListingMobile(props: any) {
           <div id="topAnchor" />
 
           <Box sx={{display: "flex", m:1}}>
-               
-                {sharing ? <Box sx={{}}>
-                    <ShareMenu />
-                  </Box> : null}
+          <Box sx={{flexGrow:1}}/>
 
-                  <Box sx={{}}>
+                  
+                  <Box sx={{mt: 0.25}}>
                     <CatNav />
                   </Box>
-                  <Box sx={{mr:0.5}}>
+
+                  <Box sx={{ml:1}}>
                     <Meta frontmatter={frontmatter}/>
                   </Box>
 
-                <Box sx={{flexGrow:1}}/>
 
-                <Box sx={{}}>
-                  <Tooltip title={<Font color="white">
-                    Menu
-                  </Font>}>
-                    <Badge badgeContent={0}>
-                      <IconButton 
-                        color="inherit"
-                        aria-label="Open Menu"
-                        onClick={(e: React.MouseEvent) => {
-                          e.preventDefault()
-                          dispatch(setCoreKey("navDialogOpen", true))
-                        }}>
-                        <Icon icon={"menu"} color="primary" />
-                      </IconButton>
-                    </Badge>
-                  </Tooltip>
-                </Box>
+                  {sharing ? <Box sx={{}}>
+                    <ShareMenu />
+                  </Box> : null}
               </Box>
           
           <Container>  
             
-            <Box sx={{}}>
-              <Debugger />
-              <Box sx={{display: "flex", mt:0}}>     
-                <Box sx={{}}>
+            <Box sx={{mt:2}}>
+              <Box sx={{}}>     
+                <Box sx={{mt:2}}>
                   <Font variant="title">
                       {title}
                   </Font>
+                </Box>
+
+                <Box sx={{mt:2}}>
                   <Font>
                     {description}
                   </Font>
                 </Box>
+
                 <Box sx={{flexGrow:1}}/>
               </Box>
               
@@ -135,7 +114,7 @@ export default function ListingMobile(props: any) {
                 <Image 
                   alt={`${title}. ${description}`}
                   src={image}
-                  height={175}
+                  height={300}
                 />
               </Box>
               <Box 
@@ -145,14 +124,9 @@ export default function ListingMobile(props: any) {
                 minHeight: minMdH,
               }}>
                 <Markdown html={html} />
+                <Navigator />
               </Box>
 
-              {layout === "homeXXX" ? <Box 
-              id="home"
-              sx={{mt:2}}>
-                <HomeHero />
-              </Box> : null }
-              
               <Box sx={{mt:3}}>
                 <Footer />
               </Box>

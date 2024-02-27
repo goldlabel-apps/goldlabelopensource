@@ -47,7 +47,7 @@ export default function Meta(props: any) {
             onClick={() => {
               dispatch(navigate(website, "_blank"))
             }}>
-            <Icon icon="web" />
+            <Icon icon="github" />
           </IconButton> : null}
 
           {phone ? <IconButton

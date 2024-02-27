@@ -9,9 +9,11 @@ import {
 } from "../../../goldlabel"
 
 export default function HomeHero() {
+
   const allMarkdown = useAllMarkdown()
-  const pageSlugs = ["/work", "/life", "/balance"]
+  const pageSlugs = ["/what", "/when", "/where"]
   const content: Array<any> = []
+
   for (let i=0; i<allMarkdown.length; i++){
     const {frontmatter} = allMarkdown[i]
     const {slug} = frontmatter
