@@ -1,6 +1,6 @@
 ---
 website: "https://github.com/listingslab-software/goldlabelopensource"
-draft: false
+draft: true
 slug: "/how"
 parentSlug: "/"
 title: "How?"
