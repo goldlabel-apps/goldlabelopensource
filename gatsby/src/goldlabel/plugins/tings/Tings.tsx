@@ -1,22 +1,24 @@
 import React from "react"
 import {
+  ButtonBase,
   AppBar,
   Box,
 } from "@mui/material"
-// import {
-//   Font,
-//   Icon,
-// } from "../../../goldlabel"
 import {
-  Public
-} from "./"
+  usePwaSelect,
+  
+} from "../../../goldlabel"
+// import {
+//   Public
+// } from "./"
 
 export function Tings() {
 
   
 
   return (<>
-          <Box sx={{}}>
+
+          <Box sx={{}}></Box>
 
           <AppBar 
             position="fixed"
@@ -26,9 +28,12 @@ export function Tings() {
               top: 'auto', 
               bottom: 0, 
             }}>
-              <Public />
+              <ButtonBase>
+                Your Ting
+              </ButtonBase>
+              
             </AppBar>
-          </Box>
+          
         </>
   )
 }
