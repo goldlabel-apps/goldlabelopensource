@@ -1,4 +1,4 @@
-## Free Goldlabel Pro
+## Goldlabel Free
 
 > This software is Open Source and Free
 

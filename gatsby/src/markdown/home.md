@@ -15,10 +15,10 @@ keywords: "Who, What, When, Where, Why, How, JavaScript, WordPress, Goldlabel, G
 layout: "home"
 ---
 
-- Who?
+### Who?
 
 Goldlabel is a product developed by Listingslab Software, who have been talking JavaScript since the 1990's. 
 
-- What?
+### What?
 
 > The 5W's (Who, What, When, Where, Why) help journalists create comprehensive reports that give readers a full understanding of the news story
