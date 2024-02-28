@@ -1,8 +1,8 @@
 ---
 website: "https://github.com/listingslab-software/goldlabelopensource"
 draft: false
-slug: "/why"
-parentSlug: "/"
+slug: "/the-5-ws/why"
+parentSlug: "/the-5-ws"
 title: "Why?"
 description: "Explains the reasons behind the event, the causes, and possibly the motives."
 icon: "right"

@@ -1,8 +1,8 @@
 ---
 website: "https://github.com/listingslab-software/goldlabelopensource"
 draft: true
-slug: "/how"
-parentSlug: "/"
+slug: "/the-5-ws/how"
+parentSlug: "/the-5-ws"
 title: "How?"
 description: "Describes the process or method through which the event happened, explaining how it unfolded."
 icon: "right"

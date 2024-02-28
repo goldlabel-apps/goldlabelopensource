@@ -11,9 +11,10 @@ import {
 
 export function Public() {
   return (<>
-          <Box sx={{ background: "#e9e9e9", display: "flex"}}>
+          <Box sx={{ display: "flex"}}>
+            <Box sx={{flexGrow:1}}/>
             <Box sx={{m:0}}>
-              <Tooltip title={<Font color="white">Tings</Font>}>
+              <Tooltip title={<Font>Your Ting</Font>}>
                 <IconButton
                   color="primary"
                   onClick={() => {

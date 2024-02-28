@@ -1,8 +1,8 @@
 ---
 website: "https://github.com/listingslab-software/goldlabelopensource"
 draft: false
-slug: "/when"
-parentSlug: "/"
+slug: "/the-5-ws/when"
+parentSlug: "/the-5-ws"
 title: "When?"
 description: "Provides the timing of the event, including dates, times, and the duration."
 icon: "right"

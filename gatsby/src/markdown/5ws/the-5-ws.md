@@ -1,6 +1,6 @@
 ---
 website: "https://github.com/listingslab-software/goldlabelopensource"
-draft: true
+draft: false
 slug: "/the-5-ws"
 parentSlug: "/"
 title: "The 5 Ws"

@@ -1,7 +1,7 @@
 ---
 website: "https://github.com/listingslab-software/goldlabelopensource"
-slug: "/who"
-parentSlug: "/"
+slug: "/the-5-ws/who"
+parentSlug: "/the-5-ws"
 title: "Who?"
 description: "Identifies the people involved in the story, including names, positions, and their roles."
 icon: "right"
