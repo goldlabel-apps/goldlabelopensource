@@ -10,4 +10,8 @@ keywords: "Who, What, When, Where, Why, How,"
 order: 301
 ---
 
+### Who?
+
+Goldlabel is a product developed by Listingslab Software, who have been talking JavaScript since the 1990's. 
+
 > Identifies the people involved in the story, including names, positions, and their roles.

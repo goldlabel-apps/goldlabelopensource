@@ -42,6 +42,7 @@ export const selectNotifyer = (state: RootState) => state.core.notifyer
 export const selectDisplay = (state: RootState) => state.core.display
 export const selectFrontmatter = (state: RootState) => state.core.frontmatter
 export const selectAuth = (state: RootState) => state.auth
+export const selectTings = (state: RootState) => state.tings
 
 export const { setPwaKey } = pwaSlice.actions
 export default pwaSlice.reducer

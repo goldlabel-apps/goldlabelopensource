@@ -10,5 +10,6 @@ image: "/webp/goldlabel/era.webp"
 keywords: "Who, What, When, Where, Why, How,"
 order: 302
 ---
+### What?
 
 > Describes the event or the situation, explaining what happened.

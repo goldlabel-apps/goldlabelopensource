@@ -1,6 +1,6 @@
 import {Tings} from "./Tings"
 import {Public} from "./components/Public"
-import tingsState from "./state/state"
+import tingsState from "./slice"
 import {setTingsKey} from "./actions/setTingsKey"
 export {
     Tings,

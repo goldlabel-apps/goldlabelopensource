@@ -23,6 +23,7 @@ import {
     selectDisplay,
     selectFrontmatter,
     selectAuth,
+    selectTings,
 } from "./state/reducer"
 // Theme
 import Theme from "../goldlabel/theme/Theme"
@@ -204,6 +205,7 @@ export {
     selectDisplay,
     selectFrontmatter,
     selectAuth,
+    selectTings,
 }
 // Actions
 export {
