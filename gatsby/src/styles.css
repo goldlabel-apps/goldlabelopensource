@@ -1,12 +1,12 @@
 html {
-  --thumbBG: #e9e9e9;
+  --thumbBG: #C09F52;
   --scrollbarBG: none;
 }
 ::-webkit-scrollbar-thumb {
-  background: #e9e9e9;
+  background: #C09F52;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C09F52;
+  background: #9e854c;
 }
 a { 
   color: #C09F52; 

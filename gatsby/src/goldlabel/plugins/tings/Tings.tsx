@@ -14,7 +14,7 @@ export function Tings() {
 
   const tings = usePwaSelect(selectTings)
   
-  console.log ("tings", tings)
+  // console.log ("tings", tings)
 
   const openYourTing = () => {
     console.log ("openYourTing")
@@ -23,6 +23,7 @@ export function Tings() {
   return (<>
           <Box sx={{}}></Box>
             <AppBar 
+              color="inherit"
               position="fixed"
               sx={{ 
                 top: 'auto',

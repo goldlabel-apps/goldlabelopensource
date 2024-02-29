@@ -9,9 +9,8 @@ import {
   CardHeader,
 } from "@mui/material"
 import {
-  Icon,
   Image,
-  HomeHero,
+  ResetBtn,
   Tings,
   navigate,
   Pricing,
@@ -110,12 +109,16 @@ export default function ListingDesktop(props: any) {
                 display: "flex", 
                 m:1,
               }}>
+                <Box sx={{mr:0.5, mt: -0.5}}>
+                <Meta frontmatter={frontmatter}/>
+              </Box>
               <Box sx={{}}>
                 <CatNav />
               </Box>
-              <Box sx={{mr:0.5, mt: -0.5}}>
-                <Meta frontmatter={frontmatter}/>
+              <Box sx={{}}>
+                <ResetBtn />
               </Box>
+              
               {sharing ? <Box sx={{mt: -0.5}}>
                   <ShareMenu />
                 </Box> : null}
@@ -138,9 +141,6 @@ export default function ListingDesktop(props: any) {
               height={300}
             />
             
-
-            
-
             <Box 
               id="markdown"
               sx={{

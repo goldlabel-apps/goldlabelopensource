@@ -6,6 +6,7 @@ import {
 } from "@mui/material"
 import {
   Image,
+  ResetBtn,
   Tings,
   Font,
   useSiteMetadata,
@@ -76,24 +77,22 @@ export default function ListingMobile(props: any) {
 
           <Box sx={{display: "flex", m:1}}>
           <Box sx={{flexGrow:1}}/>
-
-                  
-                  <Box sx={{mt: 0.25}}>
-                    <CatNav />
-                  </Box>
-
-                  <Box sx={{ml:1}}>
-                    <Meta frontmatter={frontmatter}/>
-                  </Box>
-
-
-                  {sharing ? <Box sx={{}}>
-                    <ShareMenu />
-                  </Box> : null}
+          <Box sx={{ml:1}}>
+                <Meta frontmatter={frontmatter}/>
               </Box>
+              <Box sx={{mt: 0.25}}>
+                <CatNav />
+              </Box>
+              <Box sx={{mt: 0.5}}>
+                <ResetBtn />
+              </Box>
+              
+              {sharing ? <Box sx={{}}>
+                <ShareMenu />
+              </Box> : null}
+          </Box>
           
-          <Container>  
-            
+          <Container>
             <Box sx={{mt:2}}>
               <Box sx={{}}>     
                 <Box sx={{mt:2}}>

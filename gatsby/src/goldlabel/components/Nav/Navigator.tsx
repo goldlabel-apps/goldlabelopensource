@@ -15,6 +15,7 @@ import {
   navigate,
   useAllMarkdown,
   setCoreKey,
+  Keywords,
 } from "../../../goldlabel"
 
 export default function Navigator() {
@@ -72,6 +73,7 @@ export default function Navigator() {
                 })}
               </> : null }
             </List>
+            <Keywords />
           </Box>
       </>
 }

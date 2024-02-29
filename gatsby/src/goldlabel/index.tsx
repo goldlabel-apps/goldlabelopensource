@@ -68,7 +68,7 @@ import Categories from "../goldlabel/components/Listings/Categories"
 import Children from "../goldlabel/components/Listings/Children"
 import Siblings from "../goldlabel/components/Listings/Siblings"
 import Image from "./components/Listings/Image"
-import TitleMobile from "./components/Listings/TitleMobile"
+import ResetBtn from "./components/Listings/ResetBtn"
 import HomeHero from "./components/Listings/HomeHero"
 import ContentCard from "./components/Listings/ContentCard"
 
@@ -99,6 +99,7 @@ import Goldlabel from "./components/Nav/Goldlabel"
 import SystemMenu from "./components/Nav/SystemMenu"
 import PopupMenu from "./components/Nav/PopupMenu"
 import BottomBar from "./components/Nav/BottomBar"
+import {Keywords} from "./components/Nav/Keywords"
 
 // Tings
 import {Tings} from "./plugins/tings"
@@ -130,8 +131,9 @@ export {
     Pricing,
     Footer,
 }
-// Listings
+// Listings & Nav
 export {
+    Keywords,
     CatNav,
     Markdown,
     Meta,
@@ -142,7 +144,7 @@ export {
     Children,
     Siblings,
     Image,
-    TitleMobile,
+    ResetBtn,
     HomeHero,
     ContentCard,
 }
