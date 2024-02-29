@@ -4,7 +4,7 @@ draft: false
 slug: "/the-5-ws/where"
 parentSlug: "/the-5-ws"
 title: "Where"
-description: "Where is Goldlabel?"
+description: "is Goldlabel?"
 icon: "info"
 image: "/webp/goldlabel/era.webp"
 keywords: "Who, What, When, Where, Why, How,"

@@ -4,10 +4,10 @@ website: "https://github.com/listingslab-software/goldlabelopensource"
 draft: false
 slug: "/the-5-ws"
 parentSlug: "/"
-title: "Overview"
+title: "About Goldlabel"
 description: "Who What When Where & Why"
-icon: "info"
-image: "/webp/goldlabel/era.webp"
+icon: "goldlabel"
+image: "/webp/5ws.webp"
 keywords: "Who, What, When, Where, Why, How,"
 ---
 
