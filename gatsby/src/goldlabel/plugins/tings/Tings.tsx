@@ -23,7 +23,7 @@ export function Tings() {
   return (<>
           <Box sx={{}}></Box>
             <AppBar 
-              color="inherit"
+              // `color="inherit"`
               position="fixed"
               sx={{ 
                 top: 'auto',
