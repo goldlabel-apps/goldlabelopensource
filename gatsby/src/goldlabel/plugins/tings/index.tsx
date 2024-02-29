@@ -1,10 +1,13 @@
-import {Tings} from "./Tings"
-import {Public} from "./components/Public"
 import tingsState from "./slice"
+import {Tings} from "./Tings"
+import {TingDialog} from "./components/TingDialog"
 import {setTingsKey} from "./actions/setTingsKey"
+import {toggleTingDialog} from "./actions/toggleTingDialog"
+
 export {
-    Tings,
-    Public,
     tingsState,
+    Tings,
+    TingDialog,
     setTingsKey,
+    toggleTingDialog,
 }
