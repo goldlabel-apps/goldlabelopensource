@@ -36,19 +36,27 @@ export const footer: Footer = [
     ],
   },
   {
-    title: "The 5Ws",
+    title: "5 Goldlabel Ws",
     links: [
       {
-        label: "What?",
+        label: "Who",
+        path: "/who",
+      },
+      {
+        label: "What",
         path: "/what",
       },
       {
-        label: "When?",
+        label: "When",
         path: "/when",
       },
       {
-        label: "How?",
-        path: "/how",
+        label: "Where",
+        path: "/where",
+      },
+      {
+        label: "Why",
+        path: "/why",
       },
     ],
   },

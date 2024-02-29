@@ -30,7 +30,7 @@ import {
   selectDisplay,
 } from "../../../goldlabel"
 
-export default function ListingDesktop(props: any) {
+export default function DesktopShell(props: any) {
   const dispatch = usePwaDispatch()
   const frontmatter = usePwaSelect(selectFrontmatter)
   const d = usePwaSelect(selectDisplay)

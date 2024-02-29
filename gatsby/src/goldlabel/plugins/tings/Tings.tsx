@@ -27,7 +27,7 @@ export function Tings() {
 
   React.useEffect(() => {
     if (!ting && status === "idle"){
-      dispatch(initTing())
+      // dispatch(initTing())
     }
     
   }, [ting, status, dispatch])
