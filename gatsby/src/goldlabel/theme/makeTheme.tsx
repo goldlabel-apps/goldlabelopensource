@@ -35,8 +35,9 @@ export function makeTheme(
         main: mode === "light" ? primary : secondary,
       },
       background: {
-        default: mode === "dark" ? darken(primary, 0.9): lighten(primary, 1),
-        paper: mode === "dark" ? darken(primary, 0.9): lighten(primary, 1),
+        // paper: primary,
+        // default: mode === "dark" ? darken(primary, 0.9): lighten(primary, 1),
+        // paper: mode === "dark" ? darken(primary, 0.9): lighten(primary, 1),
       },
     },
   }
