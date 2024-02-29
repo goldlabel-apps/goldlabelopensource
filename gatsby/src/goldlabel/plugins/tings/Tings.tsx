@@ -1,7 +1,6 @@
 import React from "react"
 import {
   ButtonBase,
-  Dialog,
   AppBar,
   Box,
 } from "@mui/material"
@@ -14,12 +13,24 @@ import {
 import {
   TingDialog,
   toggleTingDialog,
+  initTing,
 } from "./"
 
 export function Tings() {
   const dispatch = usePwaDispatch()
   const tings = usePwaSelect(selectTings)
-  // console.log ("tings", tings)
+  
+  const {
+    status,
+    ting,
+  } = tings
+
+  React.useEffect(() => {
+    if (!ting && status === "idle"){
+      // dispatch(initTing())
+    }
+    
+  }, [ting, status, dispatch])
 
 
   const openDialog = () => {
@@ -27,8 +38,7 @@ export function Tings() {
   }
 
   return (<>
-          <TingDialog />
-          <Box sx={{}}></Box>
+            <TingDialog />
             <AppBar
               color="inherit"
               position="fixed"
@@ -38,17 +48,15 @@ export function Tings() {
                 // boxShadow: 0,
                 bottom: 0, 
               }}>
-                <ButtonBase
-                  sx={{p:1}}
-                  onClick={openDialog}
-                >
-                  <Box>
-                    <Font>
-                      Open Ting
-                    </Font>
-                  </Box>
-                </ButtonBase>
-              </AppBar>          
-        </>
-  )
+              <ButtonBase
+                sx={{p:1}}
+                onClick={openDialog}>
+                <Box>
+                  <Font>
+                    Open Ting
+                  </Font>
+                </Box>
+              </ButtonBase>
+            </AppBar>          
+        </>)
 }

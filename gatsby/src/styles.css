@@ -1,12 +1,12 @@
 html {
-  --thumbBG: #C09F52;
+  --thumbBG: #eaeaea;
   --scrollbarBG: none;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C09F52;
+  background: #eaeaea;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #9e854c;
+  background: #C09F52;
 }
 a { 
   color: #C09F52; 
@@ -14,10 +14,10 @@ a {
   font-weight: bold;
 }
 a:hover { 
-  color: #9e854c;
+  color: #a3843a;
 }
 blockquote {
-  border-left: 3px solid #C09F52;
+  border-left: 3px solid #a3843a;
   margin: 0; padding: 0;
   padding-left: 16px;
 }
