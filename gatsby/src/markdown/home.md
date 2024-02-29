@@ -15,4 +15,6 @@ keywords: "Who, What, When, Where, Why, How, JavaScript, WordPress, Goldlabel, G
 layout: "home"
 ---
 
-> The 5W's help journalists create comprehensive reports that give readers a full understanding of the news story
+### Goldlabel's 5ws
+
+The 5W's help journalists create comprehensive reports that give readers a full understanding of the news story. [Who?](/the-5-ws/who/) [What?](/the-5-ws/what/)

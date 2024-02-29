@@ -9,7 +9,12 @@ keywords: "Goldlabel, free, open source, github"
 icon: "github"
 image: "/webp/barneys.webp"
 ---
-### Get started
+
+> Goldlabel Free is Open Source. You can use it to base all or part of your app on and keep it up to date manually as it develops
+
+https://github.com/listingslab-software/goldlabelopensource
+
+#### Get started
 
 Where will you clone the repository to? Call this `<working-repo>`. Decide on a machine readable name `<your-project>`. Clone the repo and install dependencies
 
@@ -22,5 +27,3 @@ npm install
 cd ../
 npm run
 ```
-
-https://github.com/listingslab-software/goldlabelopensource
