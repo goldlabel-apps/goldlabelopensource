@@ -40,23 +40,23 @@ export const footer: Footer = [
     links: [
       {
         label: "Who",
-        path: "/who",
+        path: "/the-5-ws/who",
       },
       {
         label: "What",
-        path: "/what",
+        path: "/the-5-ws/what",
       },
       {
         label: "When",
-        path: "/when",
+        path: "/the-5-ws/when",
       },
       {
         label: "Where",
-        path: "/where",
+        path: "/the-5-ws/where",
       },
       {
         label: "Why",
-        path: "/why",
+        path: "/the-5-ws/why",
       },
     ],
   },

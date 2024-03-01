@@ -7,7 +7,6 @@ export type TingsSlice = {
 
 export type Ting = {
     ip: string
-    
 }
 
 export const slice: TingsSlice = {
