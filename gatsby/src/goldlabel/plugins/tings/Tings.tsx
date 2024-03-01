@@ -26,12 +26,10 @@ export function Tings() {
   } = tings
 
   React.useEffect(() => {
-    if (!ting && status === "idle"){
-      // dispatch(initTing())
+    if (status === "idle"){
+      dispatch(initTing())
     }
-    
   }, [ting, status, dispatch])
-
 
   const openDialog = () => {
     dispatch(toggleTingDialog(true))
