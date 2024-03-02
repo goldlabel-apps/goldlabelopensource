@@ -2,7 +2,7 @@
 order: 10
 website: "https://github.com/listingslab-software/goldlabelopensource"
 draft: false
-slug: "/the-5-ws"
+slug: "/5ws"
 parentSlug: "/"
 title: "About Goldlabel"
 description: "Who What When Where & Why"
