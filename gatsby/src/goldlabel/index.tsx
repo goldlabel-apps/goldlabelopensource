@@ -62,8 +62,6 @@ import Markdown from "./components/Listings/Markdown"
 import CatNav from "./components/Listings/CatNav"
 import Meta from "./components/Listings/Meta"
 import ShareMenu from "./components/Listings/ShareMenu"
-import ListingMobile from "./components/Listings/ListingMobile"
-import ListingDesktop from "./components/Listings/ListingDesktop"
 import Categories from "../goldlabel/components/Listings/Categories"
 import Children from "../goldlabel/components/Listings/Children"
 import Siblings from "../goldlabel/components/Listings/Siblings"
@@ -103,6 +101,16 @@ import {Keywords} from "./components/Nav/Keywords"
 
 // Tings
 import {Tings} from "./plugins/tings"
+
+// Tings
+import ListingMobile from "./components/Layout/ListingMobile"
+import ListingDesktop from "./components/Layout/ListingDesktop"
+export {
+    ListingMobile,
+    ListingDesktop,
+}
+
+
 export {
     Tings,
 }
@@ -114,6 +122,7 @@ export {
     Goldlabel,
     NavDialog,
 }
+
 ///////////////////
 // System
 export {
@@ -138,8 +147,6 @@ export {
     Markdown,
     Meta,
     ShareMenu,
-    ListingDesktop,
-    ListingMobile,
     Categories,
     Children,
     Siblings,

@@ -1,7 +1,7 @@
 ---
 order: 25
-slug: "/how"
-parentSlug: "/"
+slug: "/how/ai"
+parentSlug: "/how"
 title: "How it works"
 description: "Find out about the technology"
 icon: "how"

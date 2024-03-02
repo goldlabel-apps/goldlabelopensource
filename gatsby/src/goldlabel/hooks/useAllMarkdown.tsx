@@ -12,22 +12,14 @@ export const useAllMarkdown = () => {
           frontmatter {
             draft
             order
-            layout
+            category
             parentSlug
             slug
             title
             description
             keywords
             image
-            youtube
             icon
-            lat
-            lng
-            website
-            email
-            facebook
-            phone
-            twitter
           }
         }
       }

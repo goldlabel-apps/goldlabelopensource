@@ -99,6 +99,7 @@ export default function ListingDesktop(props: any) {
                           dispatch(navigate("/", "_self"))
                         }}>
                         <Avatar 
+                          sx={{width:70, height: 70}}
                           alt={`${title} ${description}`} 
                           src={"/svg/iOS.svg"}
                         />
@@ -107,7 +108,7 @@ export default function ListingDesktop(props: any) {
               action={<>
               <Box sx={{
                 display: "flex", 
-                m:1,
+                mt:1,
               }}>
                 <Box sx={{mr:0.5, mt: -0.5}}>
                 <Meta frontmatter={frontmatter}/>
@@ -134,7 +135,7 @@ export default function ListingDesktop(props: any) {
         </Grid>
         {image ? <Grid item xs={12} sm={8}>
           <Debugger />
-          <Box sx={{my:2}}>
+          <Box sx={{my:2, mx:1}}>
             <Image 
               alt={`${title}. ${description}`}
               src={image}

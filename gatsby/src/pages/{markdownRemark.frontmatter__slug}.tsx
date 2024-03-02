@@ -55,10 +55,8 @@ export const pageQuery = graphql`
       excerpt
       rawMarkdownBody
       frontmatter {
-        flag
         draft
         order
-        cover
         category
         parentSlug
         slug
@@ -66,16 +64,7 @@ export const pageQuery = graphql`
         description
         keywords
         image
-        youtube
         icon
-        lat
-        lng
-        website
-        email
-        facebook
-        phone
-        twitter
-        password,
       }
     }
   }

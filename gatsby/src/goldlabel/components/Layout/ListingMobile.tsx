@@ -77,9 +77,9 @@ export default function ListingMobile(props: any) {
 
           <Box sx={{display: "flex", m:1}}>
           <Box sx={{flexGrow:1}}/>
-          <Box sx={{ml:1}}>
-                <Meta frontmatter={frontmatter}/>
-              </Box>
+            <Box sx={{ml:1}}>
+              <Meta frontmatter={frontmatter}/>
+            </Box>
               <Box sx={{mt: 0.25}}>
                 <CatNav />
               </Box>
@@ -93,15 +93,15 @@ export default function ListingMobile(props: any) {
           </Box>
           
           <Container>
-            <Box sx={{mt:2}}>
+            <Box sx={{mt:1}}>
               <Box sx={{}}>     
-                <Box sx={{mt:2}}>
+                <Box sx={{}}>
                   <Font variant="title">
                       {title}
                   </Font>
                 </Box>
 
-                <Box sx={{mt:2}}>
+                <Box sx={{mt:1}}>
                   <Font>
                     {description}
                   </Font>
