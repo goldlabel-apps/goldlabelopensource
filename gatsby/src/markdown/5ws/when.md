@@ -1,11 +1,11 @@
 ---
 website: "https://github.com/listingslab-software/goldlabelopensource"
 draft: false
-slug: "/the-5-ws/when"
-parentSlug: "/the-5-ws"
-title: "When"
+slug: "/5ws/when"
+parentSlug: "/5ws"
+title: "When?"
 description: "is Goldlabel?"
-icon: "info"
+icon: "when"
 image: "/webp/goldlabel/era.webp"
 keywords: "Who, What, When, Where, Why, How,"
 order: 303

@@ -4,13 +4,13 @@
 
 ### Get started
 
-1. Where will you clone the repository to?  
+1. Clone & install dependencies
 
-Call this `<working-repo>`. Decide on a machine readable name `<your-project>`. Clone the repo and install dependencies
+Where will you clone the repository to? Call this `<working-repo>`. Decide on a machine readable name `<your-project>`. Clone the repo and install dependencies
 
 ```bash
 cd <working-dir>
-git clone https://github.com/listingslab-software/open-source <your-project>
+git clone https://github.com/listingslab-software/goldlabelopensource <your-project>
 cd <your-project>
 cd gatsby
 npm install
@@ -18,7 +18,7 @@ cd ../
 npm run
 ```
 
-2. Environment Variables
+2. Create Environment Variables
 
 Copy `gatsby/.env.sample` to `gatsby/.env.production` & `gatsby/.env.developer` 
 and add the info you need

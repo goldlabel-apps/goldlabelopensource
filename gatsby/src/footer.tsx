@@ -39,24 +39,24 @@ export const footer: Footer = [
     title: "5 Goldlabel Ws",
     links: [
       {
-        label: "Who",
-        path: "/the-5-ws/who",
+        label: "Who?",
+        path: "/5ws/who",
       },
       {
-        label: "What",
-        path: "/the-5-ws/what",
+        label: "What?",
+        path: "/5ws/what",
       },
       {
-        label: "When",
-        path: "/the-5-ws/when",
+        label: "When?",
+        path: "/5ws/when",
       },
       {
-        label: "Where",
-        path: "/the-5-ws/where",
+        label: "Where?",
+        path: "/5ws/where",
       },
       {
-        label: "Why",
-        path: "/the-5-ws/why",
+        label: "Why?",
+        path: "/5ws/why",
       },
     ],
   },

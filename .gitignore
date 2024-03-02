@@ -1,6 +1,16 @@
-
+# dotenv environment variables file
+gatsby/static/sketch
 .DS_Store
-# Firebase
+
+# Firebase config
+
+# Uncomment this if you'd like others to create their own Firebase project.
+# For a team working on the same Firebase project(s), it is recommended to leave
+# it commented so all members can deploy to the same project(s) in .firebaserc.
+# .firebaserc
+
+firebase-debug.log*
+firebase-debug.*.log*
 .firebase
 .firebaserc
 firebase.json
@@ -11,15 +21,9 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-firebase-debug.log*
-firebase-debug.*.log*
 
-# Firebase config
 
-# Uncomment this if you'd like others to create their own Firebase project.
-# For a team working on the same Firebase project(s), it is recommended to leave
-# it commented so all members can deploy to the same project(s) in .firebaserc.
-# .firebaserc
+
 
 # Runtime data
 pids
@@ -66,10 +70,3 @@ node_modules/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
-.env
-gatsby/.env.example
-
-gatsby/static/png/.DS_Store
-gatsby/static/jpg/.DS_Store
-gatsby/static/sketch

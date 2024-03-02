@@ -1,7 +1,11 @@
 import * as React from "react"
 import PluginsIcon from "@mui/icons-material/ExtensionOutlined"
+import WhenIcon from "@mui/icons-material/CalendarMonthOutlined"
+import WhatIcon from "@mui/icons-material/HardwareOutlined"
 import MembersIcon from "@mui/icons-material//SupervisedUserCircle"
 import AndroidIcon from "@mui/icons-material/Android"
+import HowIcon from "@mui/icons-material/ElectricBoltOutlined"
+import WhoIcon from "@mui/icons-material/EscalatorWarningOutlined"
 import CloseIcon from "@mui/icons-material/CloseOutlined"
 import BugIcon from "@mui/icons-material/BugReportOutlined"
 import GeolocatorIcon from "@mui/icons-material/Public"
@@ -87,9 +91,10 @@ import LinuxIcon from "./SVGIcons/devices/LinuxIcon"
 import MacIcon from "./SVGIcons/devices/MacIcon"
 import WindowsIcon from "./SVGIcons/devices/WindowsIcon"
 import XboxIcon from "./SVGIcons/devices/XboxIcon"
+import SignupIcon from "@mui/icons-material/StorageOutlined"
 
 export type IconShape = {
-  icon: "geo" | "docker" | "scuba" | "js" | "javascript" | "oliver" | "life" | "balance" | "bug" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "fing" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "fings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "openai" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox" | "plugins"
+  icon: "signup" | "what" | "when" | "who" | "how" | "geo" | "docker" | "scuba" | "js" | "javascript" | "oliver" | "life" | "balance" | "bug" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "fing" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "fings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "openai" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "iphone" | "safari" | "firefox" | "plugins"
   color?: any
 }
 
@@ -100,6 +105,22 @@ export default function Icon({icon, color}: IconShape) {
     case "home":
       iconFragment = <HomeIcon color={color} />
       break
+
+    case "signup":
+      iconFragment = <SignupIcon color={color} />
+      break
+    case "what":
+      iconFragment = <WhatIcon color={color} />
+      break
+    case "how":
+      iconFragment = <HowIcon color={color} />
+      break
+    case "when":
+      iconFragment = <WhenIcon color={color} />
+      break
+    case "who":
+      iconFragment = <WhoIcon color={color} />
+      break      
     case "scuba":
       iconFragment = <ScubaIcon color={color} />
       break
