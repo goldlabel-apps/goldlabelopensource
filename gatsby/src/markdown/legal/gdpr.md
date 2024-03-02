@@ -1,6 +1,7 @@
 ---
 order: 120
 title: "GDPR"
+description: ""
 slug: "/gdpr"
 icon: "right"
 image: "/png/town.png"

@@ -1,8 +1,7 @@
 ---
 order: 123
-draft: true
-slug: "/wordpress"
-parentSlug: "/"
+slug: "/how/wordpress"
+parentSlug: "/how"
 title: "What is WordPress?"
 description: "Choosing WordPress is easy. But is it the right choice?"
 keywords: "WordPress, Goldlabel"

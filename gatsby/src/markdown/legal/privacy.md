@@ -1,6 +1,7 @@
 ---
 order: 100
 title: "Privacy"
+description: ""
 slug: "/privacy"
 icon: "right"
 image: "/webp/listingslab/code.webp"

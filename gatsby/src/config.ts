@@ -15,7 +15,7 @@ export const glConfig: ConfigShape = {
     theme: {
         defaultDarkmode: false,
         primaryColor: "#C09F52",
-        secondaryColor: "#9e854c",
+        secondaryColor: "#FFFFFF",
     },
     debuggerEnabled: true,
     darkmodeEnabled: true,

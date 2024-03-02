@@ -1,10 +1,10 @@
 ---
 order: 200
 draft: false
-slug: "/opensource"
-parentSlug: "/"
-title: "Open Source"
-description: "The history of Tings"
+slug: "/how/get-started"
+parentSlug: "/how"
+title: "Get Started"
+description: "Where will you clone the repository to?"
 keywords: "Goldlabel, free, open source, github"
 icon: "github"
 image: "/webp/barneys.webp"
