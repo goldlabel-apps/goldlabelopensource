@@ -1,12 +1,13 @@
 import React from "react"
 import {
+  Avatar,
   Dialog,
   DialogTitle,
   DialogActions,
   DialogContent,
-  Box,
   Tooltip,
   IconButton,
+  CardHeader,
 } from "@mui/material"
 import {
   Font,
@@ -14,6 +15,8 @@ import {
   usePwaDispatch,
   usePwaSelect,
   selectTings,
+  navigate,
+  resetLocalstorage,
 } from "../../../../goldlabel"
 import {
   toggleTingDialog,
@@ -35,14 +38,26 @@ export function TingDialog() {
             <Dialog 
               fullScreen
               open={dialogOpen}
-              onClose={closeDialog}
-            >
+              onClose={closeDialog}>
               <DialogTitle>
-                <Font>
-                  Ting Dialog
-                </Font>
+                <CardHeader 
+                  // title={<Font>
+                  //   Tings
+                  // </Font>}
+                  avatar={<IconButton
+                    onClick={closeDialog}>
+                    <Icon icon="ting" />
+                  </IconButton>}
+                  action={<IconButton
+                    onClick={() => {dispatch(resetLocalstorage())}}>
+                    <Icon icon="reset" />
+                  </IconButton>
+                  }
+                  
+                />
               </DialogTitle>
-              <DialogContent>
+              
+              <DialogContent>  
                 <pre>
                   {JSON.stringify(tings, null, 2)}
                 </pre>
@@ -61,20 +76,3 @@ export function TingDialog() {
         </>
   )
 }
-
-
-/*
-
-<Box sx={{ display: "flex"}}>
-            <Box sx={{flexGrow:1}}/>
-            <Box sx={{m:0}}>
-              
-            </Box>
-            <Box sx={{m:1}}>
-              <Font>
-                fingerprint...
-              </Font>
-            </Box>
-          </Box>
-
-          */

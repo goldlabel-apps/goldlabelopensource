@@ -1,3 +1,4 @@
+
 export type GatsbyShape = {
   siteUrl: string
   siteEmail: string

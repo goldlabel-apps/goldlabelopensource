@@ -1,5 +1,8 @@
 import React from "react"
 import {
+  useTheme,
+  ThemeProvider,
+  createTheme,
   ButtonBase,
   AppBar,
   Box,
@@ -7,54 +10,56 @@ import {
 import {
   usePwaDispatch,
   usePwaSelect,
-  Font,
-  selectTings,
+  Icon,
+  selectCore,
 } from "../../../goldlabel"
 import {
   TingDialog,
   toggleTingDialog,
-  initTing,
+  initTings,
 } from "./"
 
 export function Tings() {
   const dispatch = usePwaDispatch()
-  const tings = usePwaSelect(selectTings)
-  
-  const {
-    status,
-    ting,
-  } = tings
+  const core = usePwaSelect(selectCore)
+  const primaryColor = useTheme().palette.primary.main
+  const {darkmode} = core
 
   React.useEffect(() => {
-    if (status === "idle"){
-      dispatch(initTing())
-    }
-  }, [ting, status, dispatch])
+    dispatch(initTings())
+  }, [dispatch])
 
   const openDialog = () => {
     dispatch(toggleTingDialog(true))
   }
 
-  return (<>
-            <TingDialog />
-            <AppBar
-              color="inherit"
-              position="fixed"
-              sx={{ 
-                // border: 0,
-                top: 'auto',
-                // boxShadow: 0,
-                bottom: 0, 
-              }}>
-              <ButtonBase
-                sx={{p:1}}
-                onClick={openDialog}>
-                <Box>
-                  <Font>
-                    Open Ting
-                  </Font>
-                </Box>
-              </ButtonBase>
-            </AppBar>          
-        </>)
+  return <>
+          <AppBar
+            color="inherit"
+            position="fixed"
+            sx={{ 
+              border: 0, boxShadow: 0,
+              top: 'auto',
+              bottom: 0, 
+            }}>
+
+            <ButtonBase
+              sx={{p:1}}
+              onClick={openDialog}>
+              <Box>
+                <Icon icon="ting" />
+              </Box>
+            </ButtonBase>
+            
+          </AppBar> 
+          <ThemeProvider 
+            theme={createTheme({
+              palette: { 
+                mode: darkmode ? "light" : "dark",
+                background: {
+                  paper: primaryColor
+                }}})}>
+          <TingDialog />
+        </ThemeProvider> 
+        </>
 }

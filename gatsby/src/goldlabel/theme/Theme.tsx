@@ -1,6 +1,6 @@
 import React from "react"
 import {glConfig} from "../../config"
-import {ThemeShape} from "../types"
+import {ThemeShape} from "../../types"
 import {
   createTheme,
   ThemeProvider,
@@ -18,13 +18,11 @@ export default function Theme({children}: any) {
     theme
   } = glConfig
   const {
-    slug,
     primaryColor,
     secondaryColor,
   } = theme
   
   const thisTheme: ThemeShape = {
-    slug,
     primaryColor,
     secondaryColor,
   }

@@ -1,5 +1,4 @@
 ---
-draft: false
 order: 1
 slug: "/"
 category: "goldlabel"

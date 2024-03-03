@@ -2,11 +2,16 @@ export const social =   {
     title: "See us socially",
     
     links: [
-    {
+      {
         label: "TikTok",
         path: "https://www.tiktok.com/@listingslab",
         target: "_blank"
-    },
+      },
+      {
+        label: "YouTube",
+        path: "https://www.youtube.com/@listingslab",
+        target: "_blank"
+      },
       {
         label: "GitHub",
         path: "https://github.com/listingslab-software",
