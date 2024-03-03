@@ -114,7 +114,7 @@ export default function ListingMobile(props: any) {
                 <Image 
                   alt={`${title}. ${description}`}
                   src={image}
-                  height={300}
+                  height={150}
                 />
               </Box>
               <Box 

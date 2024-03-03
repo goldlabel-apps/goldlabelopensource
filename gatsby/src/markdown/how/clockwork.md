@@ -1,7 +1,7 @@
 ---
 website: "https://github.com/listingslab-software/goldlabelopensource"
 slug: "/how/clockwork"
-parentSlug: "/How"
+parentSlug: "/how"
 title: "Clockwork"
 description: "useState & useEffect hooks"
 icon: "info"
