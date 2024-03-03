@@ -7,9 +7,10 @@ import Clockwork from "./components/Clockwork"
 import {initTings} from "./actions/initTings"
 import {setTingsKey} from "./actions/setTingsKey"
 import {toggleTingDialog} from "./actions/toggleTingDialog"
-import {fetchIPGeo} from "./actions/fetchIPGeo"
+import {iPGeo} from "./actions/iPGeo"
 import {makeFingerprint} from "./actions/makeFingerprint"
 import {parseDevice} from "./actions/parseDevice"
+import {updateTing} from "./actions/updateTing"
 
 export {
     tingsState,
@@ -20,7 +21,8 @@ export {
     Clockwork,
     setTingsKey,
     toggleTingDialog,
-    fetchIPGeo,
+    updateTing,
+    iPGeo,
     makeFingerprint,
     parseDevice,
 }
