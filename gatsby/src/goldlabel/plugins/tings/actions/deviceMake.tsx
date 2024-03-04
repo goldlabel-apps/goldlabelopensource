@@ -4,11 +4,10 @@ import {
 } from "../../../../goldlabel"
 import {updateTing} from "../"
 
-export const parseDevice = (): any => async (dispatch: any) => {
+export const deviceMake = (): any => async (dispatch: any) => {
   try {
     const parser = new UAParser()
     const result = parser.getResult()
-    // console.log("result", result)
     dispatch(updateTing("browser", result.browser.name))
     dispatch(updateTing("browserVs", result.browser.version))
     dispatch(updateTing("browserEngine", result.engine.name))
@@ -18,6 +17,6 @@ export const parseDevice = (): any => async (dispatch: any) => {
     dispatch(updateTing("deviceModel", result.device.model))
     dispatch(updateTing("deviceType", result.device.type || "desktop"))
   } catch (e: any) {
-    dispatch(notify("parseDevice 500", "error", e.toString()))
+    dispatch(notify("deviceMake 500", "error", e.toString()))
   }
 }

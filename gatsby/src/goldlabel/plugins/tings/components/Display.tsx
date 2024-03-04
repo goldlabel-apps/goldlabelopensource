@@ -8,7 +8,7 @@ import {
   Icon,
 } from "../../../../goldlabel"
 
-export function TingDisplay() {
+export function Display() {
   const tings = usePwaSelect(selectTings)
   const {ting} = tings
   if (!ting) return null
@@ -31,6 +31,14 @@ export function TingDisplay() {
   if (browser.includes("Samsung")) iconBrowser = "web"
   if (browser.includes("Firefox")) iconBrowser = "firefox"
 
+
+  /*
+  let iconDevice: any = "mobile"
+  if (vendor.includes("Macintosh")) iconDevice = "desktopmac"
+  if (vendor.includes("iPhone")) iconDevice = "iphone"
+  if (vendor.includes("Chromium")) iconDevice = "chrome"
+  */
+ 
   return (<Box sx={{display: "flex"}}>
             <Box sx={{mr:2}}>
               <Icon icon={iconOs} color="secondary"/>

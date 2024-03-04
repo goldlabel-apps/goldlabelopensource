@@ -1,25 +1,27 @@
 import {Tings} from "./Tings"
 import tingsState from "./slice"
-import {TingDialog} from "./components/TingDialog"
-import {TingDisplay} from "./components/TingDisplay"
-import {initTings} from "./actions/initTings"
+import {FullScreen} from "./components/FullScreen"
+import {Display} from "./components/Display"
+import {ToggleBar} from "./components/ToggleBar"
+import {init} from "./actions/init"
 import {setTingsKey} from "./actions/setTingsKey"
-import {toggleTingDialog} from "./actions/toggleTingDialog"
+import {toggleFullScreen} from "./actions/toggleFullScreen"
 import {iPGeo} from "./actions/iPGeo"
-import {makeFingerprint} from "./actions/makeFingerprint"
-import {parseDevice} from "./actions/parseDevice"
+import {fingerprintMake} from "./actions/fingerprintMake"
+import {deviceMake} from "./actions/deviceMake"
 import {updateTing} from "./actions/updateTing"
 
 export {
     tingsState,
     Tings,
-    initTings,
-    TingDialog,
-    TingDisplay,
+    init,
+    ToggleBar,
+    FullScreen,
+    Display,
     setTingsKey,
-    toggleTingDialog,
+    toggleFullScreen,
     updateTing,
     iPGeo,
-    makeFingerprint,
-    parseDevice,
+    fingerprintMake,
+    deviceMake,
 }

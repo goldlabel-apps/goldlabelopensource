@@ -1,7 +1,8 @@
 import React from "react"
 import {
-  AppBar,
-  ButtonBase,
+  useTheme,
+  ThemeProvider,
+  createTheme,
   Box,
   Dialog,
   DialogTitle,
@@ -15,25 +16,43 @@ import {
   usePwaSelect,
   selectTings,
   resetLocalstorage,
+  selectCore,
 } from "../../../../goldlabel"
 import {
-  toggleTingDialog,
-  TingDisplay,
+  toggleFullScreen,
+  ToggleBar,
 } from "../"
 
-export function TingDialog() {
+export function FullScreen() {
 
   const dispatch = usePwaDispatch()
   const tings = usePwaSelect(selectTings)
+  const core = usePwaSelect(selectCore)
+  const primaryColor = useTheme().palette.primary.main
+  const secondaryColor = useTheme().palette.secondary.main
+  const {darkmode} = core
   const {
     dialogOpen,
   } = tings
 
   const closeDialog = () => {
-    dispatch(toggleTingDialog(false))
+    dispatch(toggleFullScreen(false))
   }
 
   return (<>
+            <ThemeProvider 
+            theme={createTheme({
+              palette: { 
+                mode: darkmode ? "light" : "dark",
+                primary: {
+                  main: secondaryColor,
+                },
+                secondary: {
+                  main: primaryColor,
+                },
+                background: {
+                  paper: primaryColor
+                }}})}>
             <Dialog 
               fullScreen
               open={dialogOpen}
@@ -44,10 +63,6 @@ export function TingDialog() {
                   <DialogTitle>
                     <CardHeader 
                       avatar={<IconButton
-                        onClick={closeDialog}>
-                        <Icon icon="ting" />
-                      </IconButton>}
-                      action={<IconButton
                         onClick={() => {dispatch(resetLocalstorage())}}>
                         <Icon icon="reset" />
                       </IconButton>
@@ -55,9 +70,10 @@ export function TingDialog() {
                     />
                   </DialogTitle>
                   <DialogContent>  
-                    
+                    <pre>{JSON.stringify(tings, null, 2)}</pre>
                   </DialogContent>
-                  <AppBar
+                  <ToggleBar />
+                  {/* <AppBar
                     color="inherit"
                     position="fixed"
                     sx={{ 
@@ -65,18 +81,13 @@ export function TingDialog() {
                       top: 'auto',
                       bottom: 0, 
                     }}>
-                    <ButtonBase
-                      sx={{p:1}}
-                      onClick={closeDialog}>
-                      <Box>
-                        <TingDisplay />
-                      </Box>
-                    </ButtonBase>
-                  </AppBar> 
+
+                  </AppBar>  */}
                 </Box>
                 <Box sx={{flexGrow:1}} />
               </Box>
-        </Dialog>          
+        </Dialog>       
+        </ThemeProvider>   
       </>
   )
 }
