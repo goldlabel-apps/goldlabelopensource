@@ -1,9 +1,7 @@
-
-import tingsState from "./slice"
 import {Tings} from "./Tings"
+import tingsState from "./slice"
 import {TingDialog} from "./components/TingDialog"
-import {TillNext} from "./components/TillNext"
-import Clockwork from "./components/Clockwork"
+import {TingDisplay} from "./components/TingDisplay"
 import {initTings} from "./actions/initTings"
 import {setTingsKey} from "./actions/setTingsKey"
 import {toggleTingDialog} from "./actions/toggleTingDialog"
@@ -17,8 +15,7 @@ export {
     Tings,
     initTings,
     TingDialog,
-    TillNext,
-    Clockwork,
+    TingDisplay,
     setTingsKey,
     toggleTingDialog,
     updateTing,

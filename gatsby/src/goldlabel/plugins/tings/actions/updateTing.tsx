@@ -10,11 +10,16 @@ export const updateTing = (
 ): any =>
   async (dispatch: any) => {
     try {
-      console.log("updateTing", key, value)
-      // const tings = store.getState().tings
-      // dispatch(setPwaKey({key: "tings", value: { ...tings,
-      //   [key]: value,
-      // }}))
+      // console.log("updateTing", key, value)
+      const tings = store.getState().tings
+      const {ting} = tings
+      dispatch(setPwaKey({key: "tings", value: { 
+        ...tings,
+        ting: {
+          ...ting,
+          [key]: value,
+        }
+      }}))
     } catch (e: any) {
       dispatch(notify("updateTing 500", "error", e.toString()))
     }
