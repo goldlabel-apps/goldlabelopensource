@@ -4,23 +4,17 @@ import {
 } from "../../../../goldlabel"
 import {
   makeFingerprint,
+  setTingsKey,
+  parseDevice,
 } from "../"
 
 export const initTings = (): any =>
   async (dispatch: any) => {
     try {
-      const tings = store.getState().tings
-      const {fingerprint} = tings
-      if (!fingerprint) {
-        
-        dispatch(makeFingerprint())
-      }
-      // dispatch(setTingsKey("status", "busy"))
-      // setTimeout(()=>{
-      //   dispatch(setTingsKey("status", "idle"))
-      // }, 1000)
-      // dispatch(fetchIPGeo())
+      dispatch(setTingsKey("subscribed", false))
+      dispatch(makeFingerprint())
+      dispatch(parseDevice())
     } catch (e: any) {
-      dispatch(notify("init 500", "error", e.toString()))
+      dispatch(notify("initTings 500", "error", e.toString()))
     }
 }

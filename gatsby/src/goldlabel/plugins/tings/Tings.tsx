@@ -10,11 +10,11 @@ import {
 import {
   usePwaDispatch,
   usePwaSelect,
-  Icon,
   selectCore,
 } from "../../../goldlabel"
 import {
   TingDialog,
+  TingDisplay,
   toggleTingDialog,
   initTings,
 } from "./"
@@ -23,15 +23,16 @@ export function Tings() {
   const dispatch = usePwaDispatch()
   const core = usePwaSelect(selectCore)
   const primaryColor = useTheme().palette.primary.main
+  const secondaryColor = useTheme().palette.secondary.main
   const {darkmode} = core
-
-  React.useEffect(() => {
-    dispatch(initTings())
-  }, [dispatch])
 
   const openDialog = () => {
     dispatch(toggleTingDialog(true))
   }
+
+  React.useEffect(() => {
+    dispatch(initTings())
+  }, [dispatch])
 
   return <>
           <AppBar
@@ -42,20 +43,24 @@ export function Tings() {
               top: 'auto',
               bottom: 0, 
             }}>
-
             <ButtonBase
               sx={{p:1}}
               onClick={openDialog}>
               <Box>
-                <Icon icon="ting" />
+                <TingDisplay />
               </Box>
-            </ButtonBase>
-            
-          </AppBar> 
+            </ButtonBase>  
+          </AppBar>
           <ThemeProvider 
             theme={createTheme({
               palette: { 
                 mode: darkmode ? "light" : "dark",
+                primary: {
+                  main: secondaryColor,
+                },
+                secondary: {
+                  main: primaryColor,
+                },
                 background: {
                   paper: primaryColor
                 }}})}>

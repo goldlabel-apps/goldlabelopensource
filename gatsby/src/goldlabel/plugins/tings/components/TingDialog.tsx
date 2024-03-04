@@ -1,25 +1,24 @@
 import React from "react"
 import {
-  Avatar,
+  AppBar,
+  ButtonBase,
+  Box,
   Dialog,
   DialogTitle,
-  DialogActions,
   DialogContent,
-  Tooltip,
   IconButton,
   CardHeader,
 } from "@mui/material"
 import {
-  Font,
   Icon,
   usePwaDispatch,
   usePwaSelect,
   selectTings,
-  navigate,
   resetLocalstorage,
 } from "../../../../goldlabel"
 import {
   toggleTingDialog,
+  TingDisplay,
 } from "../"
 
 export function TingDialog() {
@@ -39,40 +38,45 @@ export function TingDialog() {
               fullScreen
               open={dialogOpen}
               onClose={closeDialog}>
-              <DialogTitle>
-                <CardHeader 
-                  // title={<Font>
-                  //   Tings
-                  // </Font>}
-                  avatar={<IconButton
-                    onClick={closeDialog}>
-                    <Icon icon="ting" />
-                  </IconButton>}
-                  action={<IconButton
-                    onClick={() => {dispatch(resetLocalstorage())}}>
-                    <Icon icon="reset" />
-                  </IconButton>
-                  }
-                  
-                />
-              </DialogTitle>
-              
-              <DialogContent>  
-                <pre>
-                  {JSON.stringify(tings, null, 2)}
-                </pre>
-              </DialogContent>
-
-              <DialogActions>
-                <Tooltip title={<Font>Close Ting</Font>}>
-                  <IconButton
+                <Box sx={{display: "flex"}}>
+                <Box sx={{flexGrow: 1}} />
+                <Box sx={{width: 800}}>
+                  <DialogTitle>
+                    <CardHeader 
+                      avatar={<IconButton
+                        onClick={closeDialog}>
+                        <Icon icon="ting" />
+                      </IconButton>}
+                      action={<IconButton
+                        onClick={() => {dispatch(resetLocalstorage())}}>
+                        <Icon icon="reset" />
+                      </IconButton>
+                      }
+                    />
+                  </DialogTitle>
+                  <DialogContent>  
+                    
+                  </DialogContent>
+                  <AppBar
                     color="inherit"
-                    onClick={closeDialog}>
-                    <Icon icon="close" />
-                  </IconButton>
-                </Tooltip>
-              </DialogActions>
-            </Dialog>          
-        </>
+                    position="fixed"
+                    sx={{ 
+                      border: 0, boxShadow: 0,
+                      top: 'auto',
+                      bottom: 0, 
+                    }}>
+                    <ButtonBase
+                      sx={{p:1}}
+                      onClick={closeDialog}>
+                      <Box>
+                        <TingDisplay />
+                      </Box>
+                    </ButtonBase>
+                  </AppBar> 
+                </Box>
+                <Box sx={{flexGrow:1}} />
+              </Box>
+        </Dialog>          
+      </>
   )
 }

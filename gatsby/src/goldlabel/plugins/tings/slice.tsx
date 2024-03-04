@@ -1,26 +1,25 @@
 export type TingsSlice = {
-    sliceName: string
-    dialogOpen: boolean
-    status: "idle" | "busy"
     ting: Ting | null
-    tillNextTing: number
+    fbId: string | null
+    dialogOpen: boolean
+    subscribed: boolean
     fingerprint: string | null
     host: string | null
 }
 
 export type Ting = {
+    fbId: string
     ip: string
     fingerprint: string
 }
 
 export const slice: TingsSlice = {
-    sliceName: "tings",
-    dialogOpen: false,
-    status: "idle",
-    ting: null,
-    tillNextTing: 30,
-    fingerprint: null,
+    dialogOpen: true,
+    subscribed: false,
+    fbId: null,
     host: null,
+    fingerprint: null,
+    ting: null,
 }
 
 export default slice
