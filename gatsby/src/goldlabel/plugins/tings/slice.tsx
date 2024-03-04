@@ -1,23 +1,26 @@
-export type TingsSlice = {
-    ting: Ting | null
-    fbId: string | null
-    dialogOpen: boolean
-    subscribed: boolean
-    fingerprint: string | null
-    host: string | null
-}
-
 export type Ting = {
     fbId: string
     ip: string
     fingerprint: string
+    host: string
+}
+
+export type TingsSlice = {
+    initted: boolean
+    initting: boolean
+    subscribed: boolean
+    dialogOpen: boolean
+    ting: Ting | null
+    fbId: string | null
+    fingerprint: string | null
 }
 
 export const slice: TingsSlice = {
-    dialogOpen: true,
+    initted: false,
+    initting: false,
     subscribed: false,
+    dialogOpen: true,
     fbId: null,
-    host: null,
     fingerprint: null,
     ting: null,
 }
