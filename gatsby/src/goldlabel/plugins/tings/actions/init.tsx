@@ -1,31 +1,21 @@
 import { 
   notify,
-  store,
 } from "../../../../goldlabel"
 import {
   fingerprintMake,
   setTingsKey,
   deviceMake,
-  // iPGeo,
+  iPGeo,
 } from "../"
 
 export const init = (): any =>
   async (dispatch: any) => {
     try {
-      console.log("ONCE ONLY")
+      // console.log("init")
       dispatch(setTingsKey("initting", true))
-      // dispatch(fingerprintMake())      
-      // const tings = store.getState().tings
-      // const {
-      //   fingerprint,
-      // } = tings
-      // if (!fingerprint){
-      //   await 
-      // }
-      // console.log("fingerprint", fingerprint)
-      // 
-      // 
-      // dispatch(deviceMake())
+      dispatch(fingerprintMake())
+      dispatch(deviceMake())
+      dispatch(iPGeo())
     } catch (e: any) {
       dispatch(notify("init 500", "error", e.toString()))
     }

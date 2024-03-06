@@ -4,7 +4,6 @@ import {
 } from "../../../../goldlabel"
 import {
   updateTing,
-  setTingsKey,
 } from "../"
 
 export const fingerprintMake = (): any => async (dispatch: any) => {
@@ -13,7 +12,8 @@ export const fingerprintMake = (): any => async (dispatch: any) => {
     const {visitorId} = await fp.get()
     const host = window.location.host
     const fingerprint = `${host}_${visitorId}`
-    dispatch(setTingsKey("fingerprint", fingerprint))
+    dispatch(updateTing("host", host))
+    dispatch(updateTing("fingerprint", fingerprint))
   } catch (e: any) {
     dispatch(notify("fingerprintMake 500", "error", e.toString()))
   }
