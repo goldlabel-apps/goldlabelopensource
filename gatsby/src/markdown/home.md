@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 10
 slug: "/"
 category: "goldlabel"
 title: "Goldlabel Free"

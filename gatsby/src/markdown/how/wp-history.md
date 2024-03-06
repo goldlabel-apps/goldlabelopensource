@@ -1,7 +1,7 @@
 ---
 order: 2400
-slug: "/how/wordpres/history"
-parentSlug: "/how/wordpress"
+slug: "/how/wordpress-history"
+parentSlug: "/how"
 title: "History of WordPress"
 description: "WordPress dates back to the early 2000s"
 keywords: "WordPress"

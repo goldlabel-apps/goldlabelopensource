@@ -1,6 +1,6 @@
 ---
 website: "https://github.com/listingslab-software/goldlabelopensource"
-slug: "/how/ping"
+slug: "/how/what-is-a-ping"
 parentSlug: "/how"
 title: "What is a ping?"
 description: "Explain how the term ping in the context of software engineering to a 5 year old child"

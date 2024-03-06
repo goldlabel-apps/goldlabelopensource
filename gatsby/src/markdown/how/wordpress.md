@@ -1,5 +1,5 @@
 ---
-order: 123
+order: 2300
 slug: "/how/wordpress"
 parentSlug: "/how"
 title: "What is WordPress?"

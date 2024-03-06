@@ -1,5 +1,5 @@
 ---
-order: 200
+order: 1
 draft: false
 slug: "/how/get-started"
 parentSlug: "/how"
