@@ -1,19 +1,14 @@
 import React from "react"
 import {
-  useTheme,
-} from "@mui/material"
-import {
   usePwaDispatch,
   usePwaSelect,
-  selectCore,
   selectTings,
 } from "../../../goldlabel"
 import {
   FullScreen,
   ToggleBar,
-  toggleFullScreen,
   init,
-  setTingsKey,
+  saveTing,
 } from "./"
 
 export function Tings() {
@@ -23,12 +18,17 @@ export function Tings() {
     const {
       initted,
       initting,
-      subscribed,
+      ting,
     } = tings
     if (!initted && !initting) dispatch(init())
-    if (subscribed) dispatch(setTingsKey("subscribed", false))
+    if (ting){
+      const {ip} = ting
+      if (ip && !initting){
+        dispatch(saveTing(ting))
+      }
+    }
   }, [tings, dispatch])
-
+  
   return <>
           <ToggleBar />
           <FullScreen />

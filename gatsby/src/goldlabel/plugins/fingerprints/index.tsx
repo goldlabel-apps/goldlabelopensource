@@ -10,6 +10,7 @@ import {iPGeo} from "./actions/iPGeo"
 import {fingerprintMake} from "./actions/fingerprintMake"
 import {deviceMake} from "./actions/deviceMake"
 import {updateTing} from "./actions/updateTing"
+import {saveTing} from "./actions/saveTing"
 
 export {
     tingsState,
@@ -24,4 +25,5 @@ export {
     iPGeo,
     fingerprintMake,
     deviceMake,
+    saveTing,
 }
