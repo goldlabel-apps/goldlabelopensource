@@ -23,7 +23,7 @@ export function Tings() {
     if (!initted && !initting) dispatch(init())
     if (ting){
       const {ip} = ting
-      if (ip && !initting){
+      if (ip){
         dispatch(saveTing(ting))
       }
     }

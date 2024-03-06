@@ -40,10 +40,10 @@ export function Display() {
   */
  
   return (<Box sx={{display: "flex"}}>
-            <Box sx={{mr:2}}>
+            <Box sx={{ml:1}}>
               <Icon icon={iconOs} color="secondary"/>
             </Box>
-            <Box sx={{mt:0.25}}>
+            <Box sx={{mt:0.25, ml:1}}>
               <Icon icon={iconBrowser} color="secondary"/>
             </Box>
           </Box>
