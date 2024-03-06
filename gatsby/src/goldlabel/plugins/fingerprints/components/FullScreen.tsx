@@ -70,19 +70,10 @@ export function FullScreen() {
                     />
                   </DialogTitle>
                   <DialogContent>  
-                    <pre>{JSON.stringify(tings.ting, null, 2)}</pre>
+                    Here
                   </DialogContent>
                   <ToggleBar />
-                  {/* <AppBar
-                    color="inherit"
-                    position="fixed"
-                    sx={{ 
-                      border: 0, boxShadow: 0,
-                      top: 'auto',
-                      bottom: 0, 
-                    }}>
-
-                  </AppBar>  */}
+                  <pre>{JSON.stringify(tings.ting, null, 2)}</pre>
                 </Box>
                 <Box sx={{flexGrow:1}} />
               </Box>
@@ -91,3 +82,7 @@ export function FullScreen() {
       </>
   )
 }
+
+/*
+
+*/

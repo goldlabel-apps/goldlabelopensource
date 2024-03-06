@@ -5,7 +5,7 @@ import {glConfig} from "../../config"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "./store"
 import {coreState} from "./coreState"
-import {tingsState} from "../plugins/tings"
+import {tingsState} from "../plugins/fingerprints"
 
 type CoreReducerShape = {
   bootTime: number

@@ -6,12 +6,13 @@ import {
   setTingsKey,
   deviceMake,
   iPGeo,
+  updateTing,
 } from "../"
 
 export const init = (): any =>
   async (dispatch: any) => {
     try {
-      // console.log("init")
+      dispatch(updateTing("created", Date.now()))
       dispatch(setTingsKey("initting", true))
       dispatch(fingerprintMake())
       dispatch(deviceMake())

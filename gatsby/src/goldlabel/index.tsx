@@ -100,7 +100,7 @@ import BottomBar from "./components/Nav/BottomBar"
 import {Keywords} from "./components/Nav/Keywords"
 
 // Tings
-import {Tings} from "./plugins/tings"
+import {Tings} from "./plugins/fingerprints"
 
 // Tings
 import ListingMobile from "./components/Layout/ListingMobile"
