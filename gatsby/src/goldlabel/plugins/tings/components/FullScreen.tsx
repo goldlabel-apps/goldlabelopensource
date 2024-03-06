@@ -70,7 +70,7 @@ export function FullScreen() {
                     />
                   </DialogTitle>
                   <DialogContent>  
-                    <pre>{JSON.stringify(tings, null, 2)}</pre>
+                    <pre>{JSON.stringify(tings.ting, null, 2)}</pre>
                   </DialogContent>
                   <ToggleBar />
                   {/* <AppBar

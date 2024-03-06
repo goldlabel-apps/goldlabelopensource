@@ -19,7 +19,6 @@ import {
 export function Tings() {
   const dispatch = usePwaDispatch()
   const tings = usePwaSelect(selectTings)
-
   React.useEffect(() => {
     const {
       initted,
