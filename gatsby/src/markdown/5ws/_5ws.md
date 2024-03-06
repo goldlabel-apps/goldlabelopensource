@@ -3,7 +3,7 @@ order: 10
 draft: false
 slug: "/5ws"
 parentSlug: "/"
-title: "About Goldlabel"
+title: "?????"
 description: "Who What When Where & Why"
 icon: "goldlabel"
 image: "/webp/5ws.webp"
