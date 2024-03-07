@@ -1,11 +1,11 @@
 ---
-order: 10
+order: 1
 slug: "/"
 category: "goldlabel"
-title: "Goldlabel Free"
-description: "Open Source on Github"
+title: "Goldlabel"
+description: "Free & Open Source on Github"
 icon: "goldlabel"
-image: "/webp/5ws.webp"
-keywords: "Who, What, When, Where, Why, How, JavaScript, WordPress, Goldlabel, Gatsby React, Progressive Web App, MUI"
+image: "/png/og.png"
+keywords: "5Ws, Free, Open Source, Github"
 layout: "home"
 ---

@@ -1,5 +1,5 @@
 ---
-order: 90
+order: 1000
 title: "Terms & Conditions"
 description: "Your trust means everything to us."
 slug: "/terms"
