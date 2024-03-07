@@ -9,13 +9,17 @@ import {
     Font,
     usePwaDispatch,
     resetLocalstorage,
+    usePwaSelect,
+    selectTings,
 } from "../../../goldlabel"
-
 
 export default function ResetBtn() {
     const dispatch = usePwaDispatch()
+    const tings = usePwaSelect(selectTings)
+    const {ting} = tings
+    console.log("ting", ting)
     const onReset = () => {
-        dispatch(resetLocalstorage())
+        dispatch(resetLocalstorage(ting))
     }
 
     return <Box sx={{mt: -0.5}}>

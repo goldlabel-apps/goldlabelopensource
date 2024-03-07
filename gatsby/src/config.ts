@@ -4,9 +4,8 @@ export const glConfig: ConfigShape = {
     siteUrl: "https://free.goldlabel.pro",
     siteIcon: "/svg/iOS.svg",
     siteAvatar: "https://free.goldlabel.pro/svg/iOS.svg",
-    
     siteTitle: "Free",
-    siteDescription: "Goldlabel is Open Source on Github",
+    siteDescription: "Goldlabel. Free & Open Source on Github",
     siteEmail: "ai@goldlabel.pro",
     siteDisplayname: "Goldlabel AI",
     siteFacebook: "https://www.facebook.com/listingslabspage",

@@ -5,7 +5,6 @@ import {
   ThemeProvider,
   createTheme,
   Box,
-  Divider,
   Dialog,
   DialogTitle,
   DialogContent,
@@ -18,7 +17,7 @@ import {
   usePwaDispatch,
   usePwaSelect,
   selectTings,
-  resetLocalstorage,
+  // resetLocalstorage,
   selectCore,
 } from "../../../../goldlabel"
 import {
@@ -92,12 +91,13 @@ export function FullScreen() {
                                   {city}, {countryName}
                                 </Font>}
                       action={<>
-                        <IconButton
-                          onClick={() => {
-                            console.log("GDPR", fingerprint)
-                            dispatch(resetLocalstorage())}}>
-                          <Icon icon="reset" />
-                        </IconButton>
+                          {/* <IconButton
+                            onClick={() => {
+                              console.log("GDPR", fingerprint)
+                              // dispatch(resetLocalstorage())
+                            }}>
+                            <Icon icon="reset" />
+                          </IconButton> */}
                         <IconButton
                           onClick={closeDialog}>
                           <Icon icon="close" />
@@ -111,13 +111,13 @@ export function FullScreen() {
                       <Font variant="title">
                         {docTitle}
                       </Font>
-                      <Divider />
-                        <Font>{deviceVendor} {deviceModel} {deviceType} </Font>
-                        <Font>{os} {browser}</Font>
-                      <Divider />
-                        <Font>lat: {lat} lng: {lng}</Font>
+                        <Font>{deviceVendor} {deviceModel} {os} {browser} {deviceType} </Font>
+ 
+                      
                         <Font>{isp}</Font>
-                        <Font>{currency}&nbsp;&nbsp;{countryEmoji}</Font>
+                        <Font>lat: {lat} lng: {lng}</Font>
+                        
+                        <Font>{isp} {currency}&nbsp;&nbsp;{countryEmoji}</Font>
                     </Box>  
                   </DialogContent>
                   <ToggleBar />

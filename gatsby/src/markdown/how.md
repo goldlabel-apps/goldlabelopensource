@@ -1,5 +1,5 @@
 ---
-order: 500
+order: 10
 slug: "/how"
 parentSlug: "/"
 title: "How?"
