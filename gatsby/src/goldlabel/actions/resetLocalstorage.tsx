@@ -1,5 +1,6 @@
 import {
     notify,
+    notifyCancel,
     navigate,
 } from "../../goldlabel"
 
@@ -7,15 +8,16 @@ export const resetLocalstorage = (
     ting: any
 ): any => async (dispatch: any) => {
     try {
-        dispatch(notify("resetLocalstorage 200","success", "Scrubbing all traces of you"))
-        console.log("delete fb doc for this fingerprint")
-        setTimeout(() => {
+        dispatch(notify("resetLocalstorage","info", "Forgetting you... Goodbye"))
+        const {fingerprint} = ting
+        if (fingerprint){
             localStorage.removeItem("persist:goldlabel-core")
             setTimeout(() => {
-                // window.location.reload()
+                dispatch(notifyCancel())
                 dispatch(navigate("https://google.com", "_self"))
-            }, 250)
-        }, 1250)
+            }, 2000)
+        }
+        
     } catch (e: any) {
         dispatch(notify("resetLocalstorage 500","error", e.toString()))
     }

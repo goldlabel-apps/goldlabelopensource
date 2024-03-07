@@ -1,5 +1,6 @@
 ---
-order: 10
+order: 1000
+draft: true
 slug: "/how"
 parentSlug: "/"
 title: "How?"
@@ -10,6 +11,6 @@ keywords: "How"
 ---
 Get to grips with Tings. A ting is like a ping. Okay, imagine you're playing catch with your friend in a big field. You throw a ball to your friend, and when they catch it, they throw it back to you, right? [more](/how/what-is-a-ping)
 
-#### Developer?
+### Are you a Developer?
 
 - [Get Started](/how/get-started)

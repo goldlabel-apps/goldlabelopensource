@@ -115,13 +115,15 @@ export default function DesktopShell(props: any) {
               <Box sx={{}}>
                 <CatNav />
               </Box>
-              <Box sx={{}}>
-                <ResetBtn />
-              </Box>
+              
               
               {sharing ? <Box sx={{mt: -0.5}}>
                   <ShareMenu />
                 </Box> : null}
+
+                <Box sx={{}}>
+                <ResetBtn />
+              </Box>
       
               <Box sx={{flexGrow:1}}/>
             </Box>

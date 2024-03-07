@@ -3,6 +3,7 @@ import {
     Box, 
     Tooltip,
     IconButton,
+    Button,
 } from "@mui/material"
 import {
     Icon,
@@ -17,21 +18,27 @@ export default function ResetBtn() {
     const dispatch = usePwaDispatch()
     const tings = usePwaSelect(selectTings)
     const {ting} = tings
-    console.log("ting", ting)
+    // const {fingerprint} = ting
+    
     const onReset = () => {
         dispatch(resetLocalstorage(ting))
     }
-
-    return <Box sx={{mt: -0.5}}>
+    
+    return <Box sx={{ml: 1}}>
             <Tooltip title={<Font color="white">
-                Reset
+                Are you sure?
             </Font>}>
-                <IconButton
+                <Button
                     color="primary"
                     onClick={onReset}
                 >
-                <Icon icon="reset" />
-                </IconButton>
+                    <Box sx={{mr:1, mt: 0.25}}>
+                        <Font variant="small">
+                            Forget me
+                        </Font>
+                    </Box>
+                    <Icon icon="delete" />
+                </Button>
             </Tooltip>
             </Box>
 }
