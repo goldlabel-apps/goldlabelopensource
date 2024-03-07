@@ -24,6 +24,7 @@ export type ConfigShape = {
   siteEmail: string
   siteImage: string
   siteIcon: string
+  siteAvatar: string
   siteFacebook: string
   siteTwitter: string
   siteTheme: string

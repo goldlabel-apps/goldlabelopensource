@@ -1,5 +1,5 @@
 ---
-order: 25
+order: 800
 slug: "/how/ai"
 parentSlug: "/how"
 title: "Artificial Intelligence"

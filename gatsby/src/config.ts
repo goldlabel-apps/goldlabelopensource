@@ -2,6 +2,8 @@ import {ConfigShape} from "./types"
 
 export const glConfig: ConfigShape = {
     siteUrl: "https://free.goldlabel.pro",
+    siteIcon: "/svg/iOS.svg",
+    siteAvatar: "https://free.goldlabel.pro/svg/iOS.svg",
     siteTitle: "Free",
     siteDescription: "Goldlabel is Open Source on Github",
     siteEmail: "ai@goldlabel.pro",
@@ -9,7 +11,6 @@ export const glConfig: ConfigShape = {
     siteFacebook: "https://www.facebook.com/listingslabspage",
     siteKeywords: "listingslab, goldlabel, wordpress, opensource, fullstack, react, javascript, node, pwa, free, github",
     siteImage: "/webp/5ws.webp",
-    siteIcon: "/svg/iOS.svg",
     siteTwitter: "@listingslab",
     siteTheme: "#FFFFFF",
     theme: {
@@ -25,4 +26,3 @@ export const glConfig: ConfigShape = {
         dark: "mapbox://styles/listingslab/clmrnt68o02a801qxevn0bt6u"
     }
 }
-
