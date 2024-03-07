@@ -38,11 +38,10 @@ export default function FeaturedFooter() {
               textLines,
               links,
             } = item
-            return <Grid key={`column_${i}`} item xs={12} sm={4}>
+            return <Grid key={`column_${i}`} item xs={12} sm={3}>
                       <Font color="primary">
                         {title}
                       </Font>
-
                       {textLines ? <>
                         <Box sx={{my:1.5}}>
                           {textLines.map((line: string, i: number) => {

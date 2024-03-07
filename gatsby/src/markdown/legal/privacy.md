@@ -3,9 +3,9 @@ order: 100
 title: "Privacy"
 description: ""
 slug: "/privacy"
-icon: "right"
+icon: "legal"
 image: "/webp/listingslab/code.webp"
-keywords: ""
+keywords: "legal"
 ---
 **Privacy Statement**
 
