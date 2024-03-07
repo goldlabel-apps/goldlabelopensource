@@ -111,27 +111,20 @@ export function FullScreen() {
                       <Font variant="title">
                         {docTitle}
                       </Font>
-                      
                       <Divider />
                         <Font>{deviceVendor} {deviceModel} {deviceType} </Font>
                         <Font>{os} {browser}</Font>
                       <Divider />
-                      
-                        
                         <Font>lat: {lat} lng: {lng}</Font>
                         <Font>{isp}</Font>
                         <Font>{currency}&nbsp;&nbsp;{countryEmoji}</Font>
-                    
                     </Box>  
                   </DialogContent>
-                  
                   <ToggleBar />
-                  
                 </Box>
                 <Box sx={{flexGrow:1}} />
               </Box>
-              
-        </Dialog>       
+          </Dialog>       
         </ThemeProvider>   
       </>
   )
