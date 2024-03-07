@@ -1,11 +1,11 @@
 ---
-order: 90
+order: 1000
 title: "Terms & Conditions"
 description: "Your trust means everything to us."
 slug: "/terms"
-icon: "right"
+icon: "legal"
 image: "/png/town.png"
-keywords: ""
+keywords: "legal"
 ---
 Thank you for choosing Goldlabel.
 

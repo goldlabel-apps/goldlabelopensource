@@ -3,9 +3,9 @@ order: 125
 title: "Cookies"
 description: ""
 slug: "/cookies"
-icon: "right"
+icon: "legal"
 image: "/webp/listingslab/code.webp"
-keywords: ""
+keywords: "legal"
 ---
 We don't use cookies because
 

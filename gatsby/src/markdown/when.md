@@ -1,6 +1,6 @@
 ---
-slug: "/5ws/when"
-parentSlug: "/5ws"
+slug: "/when"
+parentSlug: "/"
 title: "When?"
 description: "is Goldlabel?"
 icon: "when"

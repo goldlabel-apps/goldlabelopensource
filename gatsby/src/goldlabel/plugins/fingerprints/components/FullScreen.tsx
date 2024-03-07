@@ -1,9 +1,11 @@
 import React from "react"
 import {
+  Avatar,
   useTheme,
   ThemeProvider,
   createTheme,
   Box,
+  Divider,
   Dialog,
   DialogTitle,
   DialogContent,
@@ -12,6 +14,7 @@ import {
 } from "@mui/material"
 import {
   Icon,
+  Font,
   usePwaDispatch,
   usePwaSelect,
   selectTings,
@@ -33,26 +36,45 @@ export function FullScreen() {
   const {darkmode} = core
   const {
     dialogOpen,
+    ting,
   } = tings
-
+  if (!ting) return null
+  const {
+    deviceVendor,
+    deviceModel,
+    deviceType,
+    lat,
+    lng,
+    browser,
+    os,
+    countryEmoji,
+    countryCode,
+    isp,
+    countryName,
+    city,
+    currency,
+    fingerprint,
+    docTitle,
+  } = ting
+  
   const closeDialog = () => {
     dispatch(toggleFullScreen(false))
   }
 
   return (<>
             <ThemeProvider 
-            theme={createTheme({
-              palette: { 
-                mode: darkmode ? "light" : "dark",
-                primary: {
-                  main: secondaryColor,
-                },
-                secondary: {
-                  main: primaryColor,
-                },
-                background: {
-                  paper: primaryColor
-                }}})}>
+              theme={createTheme({
+                palette: { 
+                  mode: darkmode ? "light" : "dark",
+                  primary: {
+                    main: secondaryColor,
+                  },
+                  secondary: {
+                    main: primaryColor,
+                  },
+                  background: {
+                    paper: primaryColor
+                  }}})}>
             <Dialog 
               fullScreen
               open={dialogOpen}
@@ -62,27 +84,52 @@ export function FullScreen() {
                 <Box sx={{width: 800}}>
                   <DialogTitle>
                     <CardHeader 
-                      avatar={<IconButton
-                        onClick={() => {dispatch(resetLocalstorage())}}>
-                        <Icon icon="reset" />
-                      </IconButton>
+                      avatar={<Avatar src={`/svg/flags/${countryCode}.svg`}/> }
+                      title={<Font variant="title">
+                        {`Hello Dave`}
+                      </Font>}
+                      subheader={<Font variant="small">
+                                  {city}, {countryName}
+                                </Font>}
+                      action={<>
+                        <IconButton
+                          onClick={() => {
+                            console.log("GDPR", fingerprint)
+                            dispatch(resetLocalstorage())}}>
+                          <Icon icon="reset" />
+                        </IconButton>
+                        <IconButton
+                          onClick={closeDialog}>
+                          <Icon icon="close" />
+                        </IconButton>
+                      </>
                       }
                     />
                   </DialogTitle>
-                  <DialogContent>  
-                    Here
+                  <DialogContent>
+                    <Box sx={{mx:1}}>
+                      <Font variant="title">
+                        {docTitle}
+                      </Font>
+                      <Divider />
+                        <Font>{deviceVendor} {deviceModel} {deviceType} </Font>
+                        <Font>{os} {browser}</Font>
+                      <Divider />
+                        <Font>lat: {lat} lng: {lng}</Font>
+                        <Font>{isp}</Font>
+                        <Font>{currency}&nbsp;&nbsp;{countryEmoji}</Font>
+                    </Box>  
                   </DialogContent>
                   <ToggleBar />
-                  <pre>{JSON.stringify(tings.ting, null, 2)}</pre>
                 </Box>
                 <Box sx={{flexGrow:1}} />
               </Box>
-        </Dialog>       
+          </Dialog>       
         </ThemeProvider>   
       </>
   )
 }
 
 /*
-
+<pre>{JSON.stringify(tings.ting, null, 2)}</pre>
 */

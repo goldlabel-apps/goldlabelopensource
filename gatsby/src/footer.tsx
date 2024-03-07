@@ -14,24 +14,21 @@ export type FooterColumn = {
 export type Footer = Array<FooterColumn>
 
 export const footer: Footer = [
+
   {
-    title: "Legal",
+    title: "How it works",
     links: [
       {
-        label: "Terms",
+        label: "Artificial Intelligence",
+        path: "/how/ai",
+      },
+      {
+        label: "History of WordPress",
+        path: "/how/wordpress-history/",
+      },
+      {
+        label: "Terms & Conditions",
         path: "/terms",
-      },
-      {
-        label: "Privacy",
-        path: "/privacy",
-      },
-      {
-        label: "Cookies",
-        path: "/cookies",
-      },
-      {
-        label: "GDPR",
-        path: "/gdpr",
       },
     ],
   },
@@ -71,3 +68,29 @@ export const footer: Footer = [
     ],
   },
 ]
+
+
+
+/*
+  {
+    title: "Legal",
+    links: [
+      {
+        label: "Terms",
+        path: "/terms",
+      },
+      {
+        label: "Privacy",
+        path: "/privacy",
+      },
+      {
+        label: "Cookies",
+        path: "/cookies",
+      },
+      {
+        label: "GDPR",
+        path: "/gdpr",
+      },
+    ],
+  },
+*/

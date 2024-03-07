@@ -3,9 +3,9 @@ order: 120
 title: "GDPR"
 description: ""
 slug: "/gdpr"
-icon: "right"
+icon: "legal"
 image: "/png/town.png"
-keywords: ""
+keywords: "legal"
 ---
 The "Allow cookies" pop-up you see on many websites is a result of the European Union's General Data Protection Regulation (GDPR). In simple terms, GDPR is a set of rules designed to protect the privacy of individuals when their personal data is collected and used by websites.
 

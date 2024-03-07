@@ -36,7 +36,7 @@ export function ToggleBar() {
                 sx={{p:1}}
                 onClick={toggleFullscreen}>
               <Box>
-                <Icon icon="ting" />
+                <Icon icon="ting" color="primary"/>
               </Box>
               <Box>
                 <Display />

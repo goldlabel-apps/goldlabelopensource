@@ -5,13 +5,9 @@ parentSlug: "/how"
 title: "Flash"
 description: "Pointless reinvention of MacroMedia Flash in React"
 icon: "flash"
-image: "/webp/listingslab/listingslab.webp"
+image: "/png/flash.png"
 keywords: "How, Flash"
 ---
-
-___
-**Flash Movie Script 1**
-___
 
 ## Flash Plugin by listingslab
 
@@ -52,3 +48,7 @@ Industry support: Major tech companies, including Apple and Google, openly criti
 In response to these issues and the rise of HTML5, Adobe officially announced the end of support for Flash in 2017. Major web browsers also started to phase out support for Flash, further accelerating its decline. 
 
 Modern web applications now rely on open web standards such as HTML5, CSS3, and JavaScript, which offer better security, performance, accessibility, and compatibility across a wide range of devices. With the advent of these web technologies, there is no longer a need for proprietary plugins like Flash, and its use has been almost entirely replaced by more modern and efficient alternatives.
+
+___
+Flash Movie Script 1
+___
