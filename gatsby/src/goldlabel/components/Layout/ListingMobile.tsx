@@ -83,13 +83,15 @@ export default function ListingMobile(props: any) {
               <Box sx={{mt: 0.25}}>
                 <CatNav />
               </Box>
-              <Box sx={{mt: 0.5}}>
-                <ResetBtn />
-              </Box>
+              
               
               {sharing ? <Box sx={{}}>
                 <ShareMenu />
               </Box> : null}
+
+              <Box sx={{mt: 0.5}}>
+                <ResetBtn />
+              </Box>
           </Box>
           
           <Container>

@@ -1,15 +1,23 @@
 import {
     notify,
+    notifyCancel,
+    navigate,
 } from "../../goldlabel"
 
-export const resetLocalstorage = (): any => async (dispatch: any) => {
+export const resetLocalstorage = (
+    ting: any
+): any => async (dispatch: any) => {
     try {
-        setTimeout(() => {
+        dispatch(notify("resetLocalstorage","info", "Forgetting you... Goodbye"))
+        const {fingerprint} = ting
+        if (fingerprint){
             localStorage.removeItem("persist:goldlabel-core")
             setTimeout(() => {
-                window.location.reload()
-            }, 250)
-        }, 250)
+                dispatch(notifyCancel())
+                dispatch(navigate("https://google.com", "_self"))
+            }, 2000)
+        }
+        
     } catch (e: any) {
         dispatch(notify("resetLocalstorage 500","error", e.toString()))
     }
