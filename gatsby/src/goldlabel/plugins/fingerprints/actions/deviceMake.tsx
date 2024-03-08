@@ -13,7 +13,7 @@ export const deviceMake = (): any => async (dispatch: any) => {
     dispatch(updateTing("browserEngine", result.engine.name))
     dispatch(updateTing("os", result.os.name))
     dispatch(updateTing("osVs", result.os.version))
-    dispatch(updateTing("deviceVendor", result.device.vendor))
+    dispatch(updateTing("vendor", result.device.vendor))
     dispatch(updateTing("deviceModel", result.device.model))
     dispatch(updateTing("deviceType", result.device.type || "desktop"))
   } catch (e: any) {

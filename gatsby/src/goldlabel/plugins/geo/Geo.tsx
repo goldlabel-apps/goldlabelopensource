@@ -4,16 +4,21 @@ import {
 } from "@mui/material"
 import {
   Font,
-  // Icon,  
+  // Icon,
+  usePwaSelect,
+  selectGeo,
 } from "../../../goldlabel"
 
-export function Geo() {
-
+export function Geo(props) {
+  
+  const geo = usePwaSelect(selectGeo)
+  console.log("geo", geo)
   return (<>
-          <Box sx={{}}>
+          <Box sx={{border: "1px solid green"}}>
             <Font>
-              Geo
+              MAP
             </Font>
+            <pre>{JSON.stringify(props, null, 2)}</pre>
           </Box>
         </>
   )

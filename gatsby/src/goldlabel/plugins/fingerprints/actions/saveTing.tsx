@@ -1,7 +1,7 @@
 import { getFirestore } from "firebase/firestore"
 import {
-  collection, 
-  addDoc,
+  // collection, 
+  // addDoc,
   doc,
   setDoc,
 } from "firebase/firestore"

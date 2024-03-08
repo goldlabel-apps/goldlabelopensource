@@ -1,5 +1,6 @@
 import React from "react"
 import {
+  Grid,
   Avatar,
   useTheme,
   ThemeProvider,
@@ -19,7 +20,11 @@ import {
   selectTings,
   // resetLocalstorage,
   selectCore,
+  
 } from "../../../../goldlabel"
+
+import {Geo} from "../../../plugins/geo"
+
 import {
   toggleFullScreen,
   ToggleBar,
@@ -39,7 +44,7 @@ export function FullScreen() {
   } = tings
   if (!ting) return null
   const {
-    deviceVendor,
+    vendor,
     deviceModel,
     deviceType,
     lat,
@@ -48,11 +53,11 @@ export function FullScreen() {
     os,
     countryEmoji,
     countryCode,
-    isp,
+    displayName,
     countryName,
     city,
     currency,
-    fingerprint,
+    // fingerprint,
     docTitle,
   } = ting
   
@@ -85,19 +90,9 @@ export function FullScreen() {
                     <CardHeader 
                       avatar={<Avatar src={`/svg/flags/${countryCode}.svg`}/> }
                       title={<Font variant="title">
-                        {`Hello Dave`}
+                        displayName: {displayName}
                       </Font>}
-                      subheader={<Font variant="small">
-                                  {city}, {countryName}
-                                </Font>}
                       action={<>
-                          {/* <IconButton
-                            onClick={() => {
-                              console.log("GDPR", fingerprint)
-                              // dispatch(resetLocalstorage())
-                            }}>
-                            <Icon icon="reset" />
-                          </IconButton> */}
                         <IconButton
                           onClick={closeDialog}>
                           <Icon icon="close" />
@@ -107,18 +102,19 @@ export function FullScreen() {
                     />
                   </DialogTitle>
                   <DialogContent>
-                    <Box sx={{mx:1}}>
-                      <Font variant="title">
-                        {docTitle}
-                      </Font>
-                        <Font>{deviceVendor} {deviceModel} {os} {browser} {deviceType} </Font>
- 
-                      
-                        <Font>{isp}</Font>
-                        <Font>lat: {lat} lng: {lng}</Font>
-                        
-                        <Font>{isp} {currency}&nbsp;&nbsp;{countryEmoji}</Font>
-                    </Box>  
+                    <Grid container spacing={1}>
+                      <Grid item xs={12} md={6}>
+                        <Geo defaultCenter={{lat, lng}}/>
+                      </Grid>
+                      <Grid item xs={12} md={6}>
+                        <Box sx={{}}>
+                          <Font>{city}, {countryName}</Font>
+                          {/* <Font>{isp}</Font> */}
+                          <Font>{vendor} {deviceModel} {os} {browser} {deviceType} </Font>
+                          <Font>{currency}&nbsp;&nbsp;{countryEmoji}</Font>
+                        </Box>  
+                      </Grid>
+                    </Grid>
                   </DialogContent>
                   <ToggleBar />
                 </Box>
