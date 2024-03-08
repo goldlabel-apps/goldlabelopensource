@@ -23,22 +23,32 @@ export default function ResetBtn() {
     const onReset = () => {
         dispatch(resetLocalstorage(ting))
     }
+
+    const mode = "icon"
     
+    if (mode === "icon") return <>
+        <Tooltip title={<Font color="white">Sure?</Font>}>
+            <IconButton
+                onClick={onReset}
+                color="primary">
+                <Icon icon="delete" />
+            </IconButton>
+        </Tooltip>
+    </>
+
     return <Box sx={{ml: 1}}>
-            <Tooltip title={<Font color="white">
-                Are you sure?
-            </Font>}>
+            <Tooltip title={<Font color="white">Sure?</Font>}>
                 <Button
-                    color="primary"
-                    onClick={onReset}
-                >
+                    color="secondary"
+                    variant="text"
+                    onClick={onReset}>
                     <Box sx={{mr:1, mt: 0.25}}>
                         <Font variant="small">
                             Forget me
                         </Font>
                     </Box>
-                    <Icon icon="delete" />
+                    <Icon icon="delete" color="primary" />
                 </Button>
             </Tooltip>
-            </Box>
+        </Box>
 }

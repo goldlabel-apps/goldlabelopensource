@@ -7,7 +7,7 @@ import {
   store,
   setPwaKey,
   setCoreKey,
-} from "../../../goldlabel"
+} from "../../../../goldlabel"
 
 export const firebaseSignin = (email: string, password: string): any =>
   async (dispatch: any) => {

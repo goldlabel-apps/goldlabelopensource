@@ -2,7 +2,7 @@ import {
   setPwaKey,
   store,
   notify,
-} from "../../goldlabel"
+} from "../../../goldlabel"
 
 export const toggleFSDialog = (
     open: boolean,

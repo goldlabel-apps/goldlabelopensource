@@ -1,16 +1,16 @@
 import React from "react"
 import {
+  AppBar,
+  Toolbar,
+  Button,
   Grid,
   Avatar,
-  useTheme,
-  ThemeProvider,
-  createTheme,
+  Tooltip,
   Box,
   Dialog,
   DialogTitle,
   DialogContent,
   IconButton,
-  Card,
   CardHeader,
   CardContent,
 } from "@mui/material"
@@ -20,9 +20,7 @@ import {
   usePwaDispatch,
   usePwaSelect,
   selectTings,
-  // resetLocalstorage,
-  selectCore,
-  
+  ResetBtn,
 } from "../../../../goldlabel"
 import {Iconify} from "../../../plugins/fingerprints"
 import {Geo} from "../../../plugins/geo"
@@ -36,10 +34,10 @@ export function FullScreen() {
 
   const dispatch = usePwaDispatch()
   const tings = usePwaSelect(selectTings)
-  const core = usePwaSelect(selectCore)
-  const primaryColor = useTheme().palette.primary.main
-  const secondaryColor = useTheme().palette.secondary.main
-  const {darkmode} = core
+  // const core = usePwaSelect(selectCore)
+  // const primaryColor = useTheme().palette.primary.main
+  // const secondaryColor = useTheme().palette.secondary.main
+  // const {darkmode} = core
   const {
     dialogOpen,
     ting,
@@ -48,27 +46,24 @@ export function FullScreen() {
   const {
     vendor,
     deviceModel,
-    deviceType,
-    lat,
-    lng,
     browser,
     os,
-    isp,
-    countryEmoji,
     countryCode,
     siteAvatar,
     countryName,
     city,
-    currency,
+    displayName,
   } = ting
   
   const closeDialog = () => {
     dispatch(toggleFullScreen(false))
   }
 
-  let displayNameStr = "Bob Bill"
+  let displayNameStr = ""
+  if (displayName) displayNameStr = displayName
+
   return (<>
-            <ThemeProvider 
+            {/* <ThemeProvider 
               theme={createTheme({
                 palette: { 
                   mode: darkmode ? "light" : "dark",
@@ -80,7 +75,7 @@ export function FullScreen() {
                   },
                   background: {
                     paper: primaryColor
-                  }}})}>
+                  }}})}> */}
             <Dialog 
               fullScreen
               open={dialogOpen}
@@ -89,43 +84,63 @@ export function FullScreen() {
                 <Box sx={{flexGrow: 1}} />
                 <Box sx={{width: 800}}>
                   <DialogTitle>
-                    <CardHeader 
-                      avatar={<Avatar src={siteAvatar}/> }
-                      title={<Font variant="title">
-                        Hello {displayNameStr}
-                      </Font>}
-                      action={<>
-                        <IconButton
-                          onClick={closeDialog}>
-                          <Icon icon="close" />
-                        </IconButton>
-                      </>
-                      }
-                    />
+                    <Box sx={{ flexGrow: 1 }}>
+                      <AppBar 
+                        color="secondary" 
+                        position="static"
+                        sx={{boxShadow: "none"}} 
+                      >
+                        <Toolbar>
+                          <Avatar
+                            sx={{mr:2}} 
+                            src={siteAvatar}/>
+                          
+                          <Font>
+                            Hi {displayNameStr}
+                          </Font>
+                          
+                          <ResetBtn />
+                          <Tooltip title={<Font color="white">Close</Font>}>
+                            <IconButton
+                              color="primary"
+                              edge="end"
+                              aria-label="close"
+                              onClick={closeDialog}
+                            >
+                              <Icon icon="close" />
+                            </IconButton>
+                          </Tooltip>
+                        </Toolbar>
+                      </AppBar>
+                    </Box>
                   </DialogTitle>
+                  
                   <DialogContent>
                     <Grid container spacing={1}>
-                      
-                      <Grid item xs={12} md={6}>
-                        <Card>
-                          <CardHeader 
-                            avatar={<Avatar src={`/svg/flags/${countryCode}.svg`}/> }
-                            title={<Font variant="title">{city}, {countryName}</Font>}
-                            subheader={<Font variant="small">{isp}</Font>}
-                          />
-                          <CardContent>
-                              <Iconify needle="browser" />
-                              <Font>
-                                {browser}&nbsp;
-                                {os}&nbsp;
-                                {vendor}&nbsp;
-                                {deviceModel}&nbsp;
-                              </Font>
-                          </CardContent>
-                        </Card>
-                      </Grid>
-                      <Grid item xs={12} md={6}>
+                                          
+                      <Grid item xs={12} md={8}>
                         <Geo />
+                        <CardHeader 
+                          avatar={<Avatar src={`/svg/flags/${countryCode}.svg`}/> }
+                          title={<Font variant="title">{city}</Font>}
+                          subheader={<Font variant="small">{countryName}</Font>}
+                        />
+                        <CardContent>    
+                          <Box sx={{display: "flex"}}>
+                            <Iconify needle={deviceModel} />
+                            <Iconify needle={browser} />
+                            <Iconify needle={os} />
+                            <Iconify needle={vendor} />
+                          </Box>
+                        </CardContent>      
+                      </Grid>
+
+                      <Grid item xs={12} md={4}>
+                        <Font>
+                        We don't use cookies because
+
+While cookies have been a fundamental part of web development for many years and continue to serve important functions, there are some considerations that might lead developers to explore alternative approaches or supplementary technologies. Here are a few reasons why some developers might consider cookies as "old-fashioned"
+                        </Font>
                       </Grid>
                     </Grid>
                   </DialogContent>
@@ -134,7 +149,7 @@ export function FullScreen() {
                 <Box sx={{flexGrow:1}} />
               </Box>
           </Dialog>       
-        </ThemeProvider>   
+        {/* </ThemeProvider>    */}
       </>
   )
 }

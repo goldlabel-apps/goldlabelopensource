@@ -1,6 +1,6 @@
 import {
   notify,
-} from "../../goldlabel"
+} from "../../../goldlabel"
 
 export const scrollTo = (el: HTMLElement): any =>
   async (dispatch: any) => {
