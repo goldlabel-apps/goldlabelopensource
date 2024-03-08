@@ -24,8 +24,6 @@ import {
   Markdown,
   CatNav,
   ShareMenu,
-  BottomBar,
-  Debugger,
   Footer,
   selectDisplay,
 } from "../../../goldlabel"
@@ -135,7 +133,7 @@ export default function DesktopShell(props: any) {
             <Navigator />
         </Grid>
         {image ? <Grid item xs={12} sm={8}>
-          <Debugger />
+          
           <Box sx={{my:2}}>
             <Image 
               alt={`${title}. ${description}`}

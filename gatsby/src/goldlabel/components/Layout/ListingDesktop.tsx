@@ -24,8 +24,6 @@ import {
   Markdown,
   CatNav,
   ShareMenu,
-  BottomBar,
-  Debugger,
   Footer,
   selectDisplay,
 } from "../../../goldlabel"
@@ -136,7 +134,7 @@ export default function ListingDesktop(props: any) {
             <Navigator />
         </Grid>
         {image ? <Grid item xs={12} sm={8}>
-          <Debugger />
+          
           <Box sx={{my:2, mx:1}}>
             <Image 
               alt={`${title}. ${description}`}
