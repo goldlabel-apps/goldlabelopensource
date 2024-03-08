@@ -14,8 +14,8 @@ export const saveTing = (
 ): any => async (dispatch: any) => {
   try {
     const db = getFirestore()
-    const {fingerprint} = ting
-    if (fingerprint){
+    const {fingerprint, ip} = ting
+    if (fingerprint && ip){
       await setDoc(doc(db, "fingerprints", fingerprint), {
         ...ting,
         updated: Date.now(),

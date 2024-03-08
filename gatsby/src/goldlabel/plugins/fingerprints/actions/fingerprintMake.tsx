@@ -14,6 +14,7 @@ export const fingerprintMake = (): any => async (dispatch: any) => {
     const fingerprint = `${host}_${visitorId}`
     dispatch(updateTing("host", host))
     dispatch(updateTing("fingerprint", fingerprint))
+    dispatch(updateTing("name", "random name"))
   } catch (e: any) {
     dispatch(notify("fingerprintMake 500", "error", e.toString()))
   }
