@@ -9,7 +9,7 @@ export const glConfig: ConfigShape = {
     siteEmail: "ai@goldlabel.pro",
     siteDisplayname: "Oliver",
     siteFacebook: "https://www.facebook.com/goldlabelapps",
-    siteKeywords: "listingslab, goldlabel, opensource, free, github",
+    siteKeywords: "listingslab, Goldlabel, Open Source, Free, Github",
     siteImage: "/webp/listingslab/contact.webp",
     siteTwitter: "@listingslab",
     siteTheme: "#FFFFFF",

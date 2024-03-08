@@ -11,11 +11,11 @@ export const iPGeo = (): any => async (dispatch: any) => {
     const ep = `https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.REACT_APP_IPGEO}`
     axios.get(ep)
       .then(function (iPGeo) {
+        dispatch(updateTing("displayName", `${iPGeo.data.city} Bob`))
         dispatch(updateTing("ip", iPGeo.data.ip))
         dispatch(updateTing("languages", iPGeo.data.languages))
         dispatch(updateTing("timeZone", iPGeo.data["time_zone"].name))
         dispatch(updateTing("city", iPGeo.data.city))
-        // dispatch(updateTing("name", `${iPGeo.data.city} Bob`))
         dispatch(updateTing("state", iPGeo.data["state_prov"]))
         dispatch(updateTing("countryEmoji", iPGeo.data["country_emoji"]))
         dispatch(updateTing("countryCode", iPGeo.data["country_code2"].toLowerCase()))
