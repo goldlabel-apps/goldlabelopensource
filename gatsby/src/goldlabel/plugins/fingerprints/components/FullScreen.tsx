@@ -1,5 +1,6 @@
 import React from "react"
 import {
+  Grid,
   Avatar,
   useTheme,
   ThemeProvider,
@@ -9,7 +10,9 @@ import {
   DialogTitle,
   DialogContent,
   IconButton,
+  Card,
   CardHeader,
+  CardContent,
 } from "@mui/material"
 import {
   Icon,
@@ -19,7 +22,11 @@ import {
   selectTings,
   // resetLocalstorage,
   selectCore,
+  
 } from "../../../../goldlabel"
+import {Iconify} from "../../../plugins/fingerprints"
+import {Geo} from "../../../plugins/geo"
+
 import {
   toggleFullScreen,
   ToggleBar,
@@ -39,27 +46,27 @@ export function FullScreen() {
   } = tings
   if (!ting) return null
   const {
-    deviceVendor,
+    vendor,
     deviceModel,
     deviceType,
     lat,
     lng,
     browser,
     os,
+    isp,
     countryEmoji,
     countryCode,
-    isp,
+    siteAvatar,
     countryName,
     city,
     currency,
-    fingerprint,
-    docTitle,
   } = ting
   
   const closeDialog = () => {
     dispatch(toggleFullScreen(false))
   }
 
+  let displayNameStr = "Bob Bill"
   return (<>
             <ThemeProvider 
               theme={createTheme({
@@ -83,21 +90,11 @@ export function FullScreen() {
                 <Box sx={{width: 800}}>
                   <DialogTitle>
                     <CardHeader 
-                      avatar={<Avatar src={`/svg/flags/${countryCode}.svg`}/> }
+                      avatar={<Avatar src={siteAvatar}/> }
                       title={<Font variant="title">
-                        {`Hello Dave`}
+                        Hello {displayNameStr}
                       </Font>}
-                      subheader={<Font variant="small">
-                                  {city}, {countryName}
-                                </Font>}
                       action={<>
-                          {/* <IconButton
-                            onClick={() => {
-                              console.log("GDPR", fingerprint)
-                              // dispatch(resetLocalstorage())
-                            }}>
-                            <Icon icon="reset" />
-                          </IconButton> */}
                         <IconButton
                           onClick={closeDialog}>
                           <Icon icon="close" />
@@ -107,18 +104,30 @@ export function FullScreen() {
                     />
                   </DialogTitle>
                   <DialogContent>
-                    <Box sx={{mx:1}}>
-                      <Font variant="title">
-                        {docTitle}
-                      </Font>
-                        <Font>{deviceVendor} {deviceModel} {os} {browser} {deviceType} </Font>
- 
+                    <Grid container spacing={1}>
                       
-                        <Font>{isp}</Font>
-                        <Font>lat: {lat} lng: {lng}</Font>
-                        
-                        <Font>{isp} {currency}&nbsp;&nbsp;{countryEmoji}</Font>
-                    </Box>  
+                      <Grid item xs={12} md={6}>
+                        <Card>
+                          <CardHeader 
+                            avatar={<Avatar src={`/svg/flags/${countryCode}.svg`}/> }
+                            title={<Font variant="title">{city}, {countryName}</Font>}
+                            subheader={<Font variant="small">{isp}</Font>}
+                          />
+                          <CardContent>
+                              <Iconify needle="browser" />
+                              <Font>
+                                {browser}&nbsp;
+                                {os}&nbsp;
+                                {vendor}&nbsp;
+                                {deviceModel}&nbsp;
+                              </Font>
+                          </CardContent>
+                        </Card>
+                      </Grid>
+                      <Grid item xs={12} md={6}>
+                        <Geo />
+                      </Grid>
+                    </Grid>
                   </DialogContent>
                   <ToggleBar />
                 </Box>

@@ -6,6 +6,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "./store"
 import {coreState} from "./coreState"
 import {tingsState} from "../plugins/fingerprints"
+import {geoState} from "../plugins/geo"
 
 type CoreReducerShape = {
   bootTime: number
@@ -13,6 +14,7 @@ type CoreReducerShape = {
   core: any
   auth: any
   tings: any
+  geo: any
 }
 
 const initialState: CoreReducerShape = {
@@ -21,6 +23,7 @@ const initialState: CoreReducerShape = {
   config: glConfig,
   core: coreState,
   tings: tingsState,
+  geo: geoState,
 }
 
 export const pwaSlice = createSlice({
@@ -43,6 +46,7 @@ export const selectDisplay = (state: RootState) => state.core.display
 export const selectFrontmatter = (state: RootState) => state.core.frontmatter
 export const selectAuth = (state: RootState) => state.auth
 export const selectTings = (state: RootState) => state.tings
+export const selectGeo = (state: RootState) => state.geo
 
 export const { setPwaKey } = pwaSlice.actions
 export default pwaSlice.reducer

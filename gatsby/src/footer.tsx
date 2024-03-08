@@ -7,6 +7,7 @@ export type FooterLink = {
 
 export type FooterColumn = {
   title: string
+  populate?: "sameKeywords" | "children" | "siblings"
   textLines?: Array<string>
   links?: Array<FooterLink> 
 }
@@ -14,7 +15,16 @@ export type FooterColumn = {
 export type Footer = Array<FooterColumn>
 
 export const footer: Footer = [
-
+  {
+    title: "More Like This",
+    populate: "sameKeywords",
+    links: [
+      {
+        label: "Xyz",
+        path: "/keywords/xyz",
+      },
+    ],
+  },
   {
     title: "How it works",
     links: [

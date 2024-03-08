@@ -1,6 +1,7 @@
 import {Tings} from "./Tings"
 import tingsState from "./slice"
 import {FullScreen} from "./components/FullScreen"
+import {Iconify} from "./components/Iconify"
 import {Display} from "./components/Display"
 import {ToggleBar} from "./components/ToggleBar"
 import {init} from "./actions/init"
@@ -17,6 +18,7 @@ export {
     Tings,
     init,
     ToggleBar,
+    Iconify,
     FullScreen,
     Display,
     setTingsKey,
