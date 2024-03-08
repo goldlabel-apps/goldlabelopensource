@@ -10,7 +10,9 @@ import {
   DialogTitle,
   DialogContent,
   IconButton,
+  Card,
   CardHeader,
+  CardContent,
 } from "@mui/material"
 import {
   Icon,
@@ -22,7 +24,7 @@ import {
   selectCore,
   
 } from "../../../../goldlabel"
-
+import {Iconify} from "../../../plugins/fingerprints"
 import {Geo} from "../../../plugins/geo"
 
 import {
@@ -51,20 +53,20 @@ export function FullScreen() {
     lng,
     browser,
     os,
+    isp,
     countryEmoji,
     countryCode,
-    displayName,
+    siteAvatar,
     countryName,
     city,
     currency,
-    // fingerprint,
-    docTitle,
   } = ting
   
   const closeDialog = () => {
     dispatch(toggleFullScreen(false))
   }
 
+  let displayNameStr = "Bob Bill"
   return (<>
             <ThemeProvider 
               theme={createTheme({
@@ -88,9 +90,9 @@ export function FullScreen() {
                 <Box sx={{width: 800}}>
                   <DialogTitle>
                     <CardHeader 
-                      avatar={<Avatar src={`/svg/flags/${countryCode}.svg`}/> }
+                      avatar={<Avatar src={siteAvatar}/> }
                       title={<Font variant="title">
-                        displayName: {displayName}
+                        Hello {displayNameStr}
                       </Font>}
                       action={<>
                         <IconButton
@@ -103,16 +105,27 @@ export function FullScreen() {
                   </DialogTitle>
                   <DialogContent>
                     <Grid container spacing={1}>
+                      
                       <Grid item xs={12} md={6}>
-                        <Geo defaultCenter={{lat, lng}}/>
+                        <Card>
+                          <CardHeader 
+                            avatar={<Avatar src={`/svg/flags/${countryCode}.svg`}/> }
+                            title={<Font variant="title">{city}, {countryName}</Font>}
+                            subheader={<Font variant="small">{isp}</Font>}
+                          />
+                          <CardContent>
+                              <Iconify needle="browser" />
+                              <Font>
+                                {browser}&nbsp;
+                                {os}&nbsp;
+                                {vendor}&nbsp;
+                                {deviceModel}&nbsp;
+                              </Font>
+                          </CardContent>
+                        </Card>
                       </Grid>
                       <Grid item xs={12} md={6}>
-                        <Box sx={{}}>
-                          <Font>{city}, {countryName}</Font>
-                          {/* <Font>{isp}</Font> */}
-                          <Font>{vendor} {deviceModel} {os} {browser} {deviceType} </Font>
-                          <Font>{currency}&nbsp;&nbsp;{countryEmoji}</Font>
-                        </Box>  
+                        <Geo />
                       </Grid>
                     </Grid>
                   </DialogContent>
