@@ -2,7 +2,6 @@ import React from "react"
 import {
   AppBar,
   Toolbar,
-  Button,
   List,
   ListItem,
   ListItemText,
@@ -16,7 +15,9 @@ import {
   DialogContent,
   IconButton,
   CardHeader,
-  CardContent,
+  ThemeProvider,
+  createTheme,
+  useTheme,
 } from "@mui/material"
 import {
   Icon,
@@ -24,11 +25,13 @@ import {
   usePwaDispatch,
   usePwaSelect,
   selectTings,
-  ResetBtn,
+  selectCore,
 } from "../../../../goldlabel"
-import {Iconify} from "../../../plugins/fingerprints"
-// import {Geo} from "../../../plugins/geo"
-
+import {
+  Iconify,
+  ForgetMe,
+  
+} from "../../../plugins/fingerprints"
 import {
   toggleFullScreen,
   ToggleBar,
@@ -38,10 +41,10 @@ export function FullScreen() {
 
   const dispatch = usePwaDispatch()
   const tings = usePwaSelect(selectTings)
-  // const core = usePwaSelect(selectCore)
-  // const primaryColor = useTheme().palette.primary.main
-  // const secondaryColor = useTheme().palette.secondary.main
-  // const {darkmode} = core
+  const core = usePwaSelect(selectCore)
+  const primaryColor = useTheme().palette.primary.main
+  const secondaryColor = useTheme().palette.secondary.main
+  const {darkmode} = core
   const {
     dialogOpen,
     ting,
@@ -53,7 +56,7 @@ export function FullScreen() {
     browser,
     os,
     countryCode,
-    siteAvatar,
+    ip,
     countryName,
     city,
     displayName,
@@ -67,19 +70,19 @@ export function FullScreen() {
   if (displayName) displayNameStr = displayName
 
   return (<>
-            {/* <ThemeProvider 
-              theme={createTheme({
-                palette: { 
-                  mode: darkmode ? "light" : "dark",
-                  primary: {
-                    main: secondaryColor,
-                  },
-                  secondary: {
-                    main: primaryColor,
-                  },
-                  background: {
-                    paper: primaryColor
-                  }}})}> */}
+        <ThemeProvider 
+          theme={createTheme({
+            palette: { 
+              mode: darkmode ? "light" : "dark",
+              primary: {
+                main: secondaryColor,
+              },
+              secondary: {
+                main: primaryColor,
+              },
+              background: {
+                paper: primaryColor
+              }}})}>
             <Dialog 
               fullScreen
               open={dialogOpen}
@@ -92,18 +95,13 @@ export function FullScreen() {
                       <AppBar 
                         color="inherit" 
                         position="static"
-                        sx={{boxShadow: "none"}} 
-                      >
+                        sx={{boxShadow: "none"}}>
                         <Toolbar>
-                          {/* <Avatar
-                            sx={{mr:2}} 
-                            src={siteAvatar}/> */}
                           
                           <Font>
-                            {displayName}
+                            Display Name {displayNameStr}
                           </Font>
                           
-                          <ResetBtn />
                           <Tooltip title={<Font color="white">Close</Font>}>
                             <IconButton
                               color="primary"
@@ -122,12 +120,12 @@ export function FullScreen() {
                   <DialogContent>
                     <Grid container spacing={1}>
                                           
-                      <Grid item xs={12} md={5}>
-                        {/* <Geo /> */}
+                      <Grid item xs={12} md={6}>
+
                         <CardHeader 
                           avatar={<Avatar src={`/svg/flags/${countryCode}.svg`}/> }
-                          title={<Font variant="title">{city}</Font>}
-                          subheader={<Font variant="small">{countryName}</Font>}
+                          title={<Font>{city}, {countryName}</Font>}
+                          subheader={<Font variant="small">{ip}</Font>}
                         />
                           
                           <List dense>
@@ -155,21 +153,25 @@ export function FullScreen() {
                                 primary={<Font>{browser}</Font>}
                               />
                             </ListItem>
-
-                            
-
                           </List>
-    
                       </Grid>
 
-                      <Grid item xs={12} md={7}>
+                      <Grid item xs={12} md={6}>
+                        <ForgetMe />
                         <Box sx={{mt:2}}>
                           <Font variant="small">
-                            We don't use cookies. They are old-fashioned. While they have been a fundamental part of web development for many years and continue to serve important functions, there are some considerations that might lead developers to explore alternative approaches or supplementary technologies
+                            We don't use cookies. 
+                            They are old-fashioned. 
+                            While they have been a fundamental part of web 
+                            development for many years and continue to serve 
+                            important functions, there are some considerations 
+                            that might lead developers to explore alternative 
+                            approaches or supplementary technologies
                           </Font>
                         </Box>
-                        <ResetBtn mode="forgetMe"/>
+                        <pre>{JSON.stringify(tings.ting, null, 2)}</pre>
                       </Grid>
+
                     </Grid>
                   </DialogContent>
                   <ToggleBar />
@@ -177,7 +179,7 @@ export function FullScreen() {
                 <Box sx={{flexGrow:1}} />
               </Box>
           </Dialog>       
-        {/* </ThemeProvider>    */}
+        </ThemeProvider>   
       </>
   )
 }

@@ -9,22 +9,19 @@ import {
     Icon,
     Font,
     usePwaDispatch,
-    resetLocalstorage,
-    usePwaSelect,
-    selectTings,
-} from "../../../goldlabel"
+} from "../../../../goldlabel"
+import {
+    forgetTing,
+} from "../"
 
-export default function ResetBtn(props: any) {
-    let iconMode = "icon"
+export default function ForgetMe(props: any) {
+    let iconMode = "default"
     const {mode} = props
     if (mode) iconMode = mode
     const dispatch = usePwaDispatch()
-    const tings = usePwaSelect(selectTings)
-    const {ting} = tings
-    // const {fingerprint} = ting
     
     const onReset = () => {
-        dispatch(resetLocalstorage())
+        dispatch(forgetTing())
     }
 
     if (iconMode === "icon") return <>

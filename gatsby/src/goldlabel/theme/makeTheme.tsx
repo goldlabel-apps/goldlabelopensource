@@ -29,11 +29,11 @@ export function makeTheme(
         main: mode === "light" ? secondary : primary,
       },
       success: {
-        main: mode === "light" ? secondary : primary,
-      },
-      info: {
         main: mode === "light" ? primary : secondary,
       },
+      // info: {
+      //   main: mode === "light" ? primary : secondary,
+      // },
       background: {
         // paper: primary,
         // default: mode === "dark" ? darken(primary, 0.9): lighten(primary, 1),
