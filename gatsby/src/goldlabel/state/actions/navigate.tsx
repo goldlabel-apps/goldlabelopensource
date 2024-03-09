@@ -1,7 +1,5 @@
 import {
   notify,
-  // store,
-  // setPwaKey,
 } from "../../../goldlabel"
 
 export const navigate = (
@@ -14,11 +12,6 @@ export const navigate = (
         window.open(url, target)
       }, 180)
     } catch (e: any) {
-      dispatch(notify(
-        "NAV 101",
-        "error", 
-        `navigate ${e.toString()}`
-      ))
+      dispatch(notify("navigate 500","error", e.toString()))
     }
-  }
-
+}
