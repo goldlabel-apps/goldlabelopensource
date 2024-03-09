@@ -98,8 +98,8 @@ export function FullScreen() {
                         sx={{boxShadow: "none"}}>
                         <Toolbar>
                           
-                          <Font>
-                            Display Name {displayNameStr}
+                          <Font variant="title">
+                            {displayNameStr}
                           </Font>
                           
                           <Tooltip title={<Font color="white">Close</Font>}>
@@ -169,7 +169,7 @@ export function FullScreen() {
                             approaches or supplementary technologies
                           </Font>
                         </Box>
-                        <pre>{JSON.stringify(tings.ting, null, 2)}</pre>
+                        {/* <pre>{JSON.stringify(tings.ting, null, 2)}</pre> */}
                       </Grid>
 
                     </Grid>

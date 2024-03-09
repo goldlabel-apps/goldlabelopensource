@@ -25,7 +25,7 @@ export function Iconify(props: any) {
   if (needle.includes("Android")) iconSlug = "android"
   if (needle.includes("Macintosh")) iconSlug = "desktopmac"
   if (needle.includes("iPhone")) iconSlug = "iphone"  
-  if (!iconSlug) return <><br/>{needle}</>
+  if (!iconSlug) return null
   return <Box sx={{m:1}}>
           <Icon icon={iconSlug} color="primary"/>
         </Box>

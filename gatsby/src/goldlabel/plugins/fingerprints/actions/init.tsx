@@ -17,6 +17,7 @@ export const init = (): any =>
       dispatch(updateTing("docTitle", document.title))
       dispatch(updateTing("siteAvatar", glConfig.siteAvatar))
       dispatch(updateTing("href", window.location.href))
+      dispatch(updateTing("slug", window.location.pathname))
       dispatch(setTingsKey("initting", true))
       dispatch(fingerprintMake())
       dispatch(deviceMake())
