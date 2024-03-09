@@ -44,16 +44,19 @@ export type CoreShape = {
   user: any
   darkmode: boolean
   debuggerOpen: any
-  allHosts: Array<any>
   frontmatter: any
   authed: boolean
   authing: boolean
   display: any
   notifyer: any
-  footerMenuOpen: boolean
+  footerMenuOpen?: boolean
   scroll: boolean
   signinOpen: boolean
   accountDialogOpen: boolean
+  settingsMenuOpen?: boolean
+  navDialogOpen?: boolean
+  pricing?: any
+  footer?: any
 }
 
 export type GeolocatorShape = {

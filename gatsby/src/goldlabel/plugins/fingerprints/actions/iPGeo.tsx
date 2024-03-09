@@ -12,7 +12,9 @@ export const iPGeo = (): any => async (dispatch: any) => {
     const ep = `https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.REACT_APP_IPGEO}`
     axios.get(ep)
       .then(function (iPGeo) {
-        dispatch(updateTing("displayName", `${iPGeo.data.city} Bob`))
+        const randomName = `${iPGeo.data.city} Bob`
+        console.log("random name")
+        dispatch(updateTing("displayName", randomName))
         dispatch(updateTing("ip", iPGeo.data.ip))
         dispatch(updateTing("languages", iPGeo.data.languages))
         dispatch(updateTing("timeZone", iPGeo.data["time_zone"].name))

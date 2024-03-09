@@ -14,6 +14,7 @@ export const init = (): any =>
   async (dispatch: any) => {
     try {
       dispatch(updateTing("displayName", glConfig.siteDisplayname))
+      dispatch(updateTing("hits", 1))
       dispatch(updateTing("created", Date.now()))
       dispatch(updateTing("docTitle", document.title))
       dispatch(updateTing("siteAvatar", glConfig.siteAvatar))

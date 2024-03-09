@@ -10,7 +10,6 @@ export const updateTing = (
 ): any =>
   async (dispatch: any) => {
     try {
-      // console.log("updateTing", key, value)
       const tings = store.getState().tings
       const {ting} = tings
       dispatch(setPwaKey({key: "tings", value: { 

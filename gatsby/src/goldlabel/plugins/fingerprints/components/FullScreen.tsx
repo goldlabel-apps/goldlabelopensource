@@ -3,6 +3,10 @@ import {
   AppBar,
   Toolbar,
   Button,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
   Grid,
   Avatar,
   Tooltip,
@@ -23,7 +27,7 @@ import {
   ResetBtn,
 } from "../../../../goldlabel"
 import {Iconify} from "../../../plugins/fingerprints"
-import {Geo} from "../../../plugins/geo"
+// import {Geo} from "../../../plugins/geo"
 
 import {
   toggleFullScreen,
@@ -91,12 +95,12 @@ export function FullScreen() {
                         sx={{boxShadow: "none"}} 
                       >
                         <Toolbar>
-                          <Avatar
+                          {/* <Avatar
                             sx={{mr:2}} 
-                            src={siteAvatar}/>
+                            src={siteAvatar}/> */}
                           
                           <Font>
-                            Hi {displayNameStr}
+                            
                           </Font>
                           
                           <ResetBtn />
@@ -118,29 +122,53 @@ export function FullScreen() {
                   <DialogContent>
                     <Grid container spacing={1}>
                                           
-                      <Grid item xs={12} md={8}>
-                        <Geo />
+                      <Grid item xs={12} md={5}>
+                        {/* <Geo /> */}
                         <CardHeader 
                           avatar={<Avatar src={`/svg/flags/${countryCode}.svg`}/> }
                           title={<Font variant="title">{city}</Font>}
                           subheader={<Font variant="small">{countryName}</Font>}
                         />
-                        <CardContent>    
-                          <Box sx={{display: "flex"}}>
-                            <Iconify needle={deviceModel} />
-                            <Iconify needle={browser} />
-                            <Iconify needle={os} />
-                            <Iconify needle={vendor} />
-                          </Box>
-                        </CardContent>      
+                          
+                          <List dense>
+                            <ListItem>
+                              <ListItemIcon>
+                                  <Iconify needle={deviceModel} />
+                              </ListItemIcon>
+                              <ListItemText 
+                                primary={<Font>{vendor} {deviceModel}</Font>}
+                              />
+                            </ListItem>
+                            <ListItem>
+                              <ListItemIcon>
+                                  <Iconify needle={os} />
+                              </ListItemIcon>
+                              <ListItemText 
+                                primary={<Font>{os}</Font>}
+                              />
+                            </ListItem>
+                            <ListItem>
+                              <ListItemIcon>
+                                  <Iconify needle={browser} />
+                              </ListItemIcon>
+                              <ListItemText 
+                                primary={<Font>{browser}</Font>}
+                              />
+                            </ListItem>
+
+                            
+
+                          </List>
+    
                       </Grid>
 
-                      <Grid item xs={12} md={4}>
-                        <Font>
-                        We don't use cookies because
-
-While cookies have been a fundamental part of web development for many years and continue to serve important functions, there are some considerations that might lead developers to explore alternative approaches or supplementary technologies. Here are a few reasons why some developers might consider cookies as "old-fashioned"
-                        </Font>
+                      <Grid item xs={12} md={7}>
+                        <Box sx={{mt:2}}>
+                          <Font variant="small">
+                            We don't use cookies. They are old-fashioned. While they have been a fundamental part of web development for many years and continue to serve important functions, there are some considerations that might lead developers to explore alternative approaches or supplementary technologies
+                          </Font>
+                        </Box>
+                        <ResetBtn mode="forgetMe"/>
                       </Grid>
                     </Grid>
                   </DialogContent>
