@@ -1,12 +1,14 @@
 export type Ting = {
-    fbId: string
+    fingerprint: string
+    host: string
+    displayName: string
 }
 
 export type TingsSlice = {
+    dialogOpen: boolean
     initted: boolean
     initting: boolean
     subscribed: boolean
-    dialogOpen: boolean
     ting: Ting | null
-    fbId: string | null
+    fbTing: Ting | null
 }

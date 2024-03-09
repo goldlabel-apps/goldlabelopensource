@@ -16,16 +16,6 @@ export type Footer = Array<FooterColumn>
 
 export const footer: Footer = [
   {
-    title: "More Like This",
-    populate: "sameKeywords",
-    links: [
-      {
-        label: "Xyz",
-        path: "/keywords/xyz",
-      },
-    ],
-  },
-  {
     title: "How it works",
     links: [
       {
@@ -74,33 +64,14 @@ export const footer: Footer = [
       "Goldlabel Apps Ltd",
       "321-323 High Road",
       "Chadwell Heath",
-      "Essex RM6 6AX"
+      "Essex RM6 6AX",
+      "UK Ltd Co. 15460545"
+    ],
+  },
+  {
+    title: "More Like This",
+    populate: "sameKeywords",
+    links: [
     ],
   },
 ]
-
-
-
-/*
-  {
-    title: "Legal",
-    links: [
-      {
-        label: "Terms",
-        path: "/terms",
-      },
-      {
-        label: "Privacy",
-        path: "/privacy",
-      },
-      {
-        label: "Cookies",
-        path: "/cookies",
-      },
-      {
-        label: "GDPR",
-        path: "/gdpr",
-      },
-    ],
-  },
-*/
