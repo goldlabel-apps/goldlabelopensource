@@ -22,7 +22,5 @@ npm run
 
 Where will you clone the repository to? Call this `<working-repo>`. Decide on a machine readable name `<your-project>`. Clone the repo and install dependencies
 
-> [Goldlabel Free](https://github.com/listingslab-software/goldlabelopensource) is Open Source. You can use it to base all or part of your app on and keep it up to date manually as it develops
-
 
 

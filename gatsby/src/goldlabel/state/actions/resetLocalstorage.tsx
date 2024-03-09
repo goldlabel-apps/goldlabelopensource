@@ -9,9 +9,9 @@ export const resetLocalstorage = (): any => async (dispatch: any) => {
         dispatch(notify("resetLocalstorage","info", "Forgetting you... Goodbye"))
         localStorage.removeItem("persist:goldlabel-core")
         setTimeout(() => {
-            dispatch(notifyCancel())
             dispatch(navigate("https://google.com", "_self"))
-        }, 1500)
+            dispatch(notifyCancel())
+        }, 1720)
     } catch (e: any) {
         dispatch(notify("resetLocalstorage 500","error", e.toString()))
     }

@@ -1,5 +1,5 @@
 ---
-order: 1000
+order: 40
 draft: false
 slug: "/how"
 parentSlug: "/"
