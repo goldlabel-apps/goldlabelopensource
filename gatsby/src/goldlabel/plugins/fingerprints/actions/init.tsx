@@ -8,7 +8,6 @@ import {
   deviceMake,
   iPGeo,
   updateTing,
-  postEmail,
 } from "../"
 
 export const init = (): any =>
@@ -23,7 +22,6 @@ export const init = (): any =>
       dispatch(fingerprintMake())
       dispatch(deviceMake())
       dispatch(iPGeo())
-      
     } catch (e: any) {
       dispatch(notify("init 500", "error", e.toString()))
     }
