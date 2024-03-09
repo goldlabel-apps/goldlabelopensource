@@ -1,7 +1,5 @@
 import { getFirestore } from "firebase/firestore"
 import {
-  // collection, 
-  // addDoc,
   doc,
   setDoc,
 } from "firebase/firestore"
@@ -21,6 +19,7 @@ export const saveTing = (
       await setDoc(doc(db, "fingerprints", fingerprint), {
         ...ting,
         updated: Date.now(),
+        slug: window.location.pathname,
         href: window.location.href,
         docTitle: document.title,
       })
