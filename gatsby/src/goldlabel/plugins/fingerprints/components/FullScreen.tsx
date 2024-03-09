@@ -90,7 +90,7 @@ export function FullScreen() {
                   <DialogTitle>
                     <Box sx={{ flexGrow: 1 }}>
                       <AppBar 
-                        color="secondary" 
+                        color="inherit" 
                         position="static"
                         sx={{boxShadow: "none"}} 
                       >
@@ -100,7 +100,7 @@ export function FullScreen() {
                             src={siteAvatar}/> */}
                           
                           <Font>
-                            
+                            {displayName}
                           </Font>
                           
                           <ResetBtn />

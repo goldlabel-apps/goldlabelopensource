@@ -43,7 +43,7 @@ export default function ResetBtn(props: any) {
     return <Box sx={{my: 2}}>
             <Tooltip title={<Font color="white">Sure?</Font>}>
                 <Button
-                    fullWidth
+                    // fullWidth
                     color="inherit"
                     variant="outlined"
                     onClick={onReset}>
