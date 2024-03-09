@@ -13,7 +13,6 @@ export const postEmail = (
     const ep = `${process.env.REACT_APP_API_LOCAL}email/send`
     const {ting} = store.getState().tings
     console.log("ep", ep, ting)
-
     const payload = {
       "apiKey": "wxyz-1234-abcd-5678",
       "to": "listingslab@gmail.com",

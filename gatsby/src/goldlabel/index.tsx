@@ -11,8 +11,10 @@ import {firebaseSignout} from "./state/actions/auth/firebaseSignout"
 import {setDisplay} from "./state/actions/setDisplay"
 import {setCoreKey} from "./state/actions/setCoreKey"
 import {resetLocalstorage} from "./state/actions/resetLocalstorage"
+
 // State
 import {WrapState} from "./state/WrapState"
+import {namesByLetter} from "./state/constants/namesByLetter"
 import {store, persistor} from "./state/store"
 import {
     setPwaKey,
@@ -207,6 +209,7 @@ export {
     store,
     persistor,
     setPwaKey,
+    namesByLetter,
     WrapState,
     selectBootTime,
     selectConfig,

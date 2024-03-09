@@ -11,7 +11,7 @@ import {fingerprintMake} from "./actions/fingerprintMake"
 import {deviceMake} from "./actions/deviceMake"
 import {updateTing} from "./actions/updateTing"
 import {saveTing} from "./actions/saveTing"
-import {postEmail} from "./actions/postEmail"
+import {makeRandomName} from "./actions/makeRandomName"
 
 export {
     tingsState,
@@ -27,5 +27,5 @@ export {
     fingerprintMake,
     deviceMake,
     saveTing,
-    postEmail,
+    makeRandomName,
 }

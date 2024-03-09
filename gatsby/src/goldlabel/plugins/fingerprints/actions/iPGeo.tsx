@@ -4,7 +4,7 @@ import {
 } from "../../../../goldlabel"
 import {
   updateTing,
-  postEmail,
+  makeRandomName,
 } from "../"
 
 export const iPGeo = (): any => async (dispatch: any) => {
@@ -13,7 +13,7 @@ export const iPGeo = (): any => async (dispatch: any) => {
     axios.get(ep)
       .then(function (iPGeo) {
         const randomName = `${iPGeo.data.city} Bob`
-        console.log("random name")
+        dispatch(makeRandomName())
         dispatch(updateTing("displayName", randomName))
         dispatch(updateTing("ip", iPGeo.data.ip))
         dispatch(updateTing("languages", iPGeo.data.languages))
@@ -28,8 +28,7 @@ export const iPGeo = (): any => async (dispatch: any) => {
         dispatch(updateTing("isp", iPGeo.data.isp))
         dispatch(updateTing("lat", iPGeo.data.latitude))
         dispatch(updateTing("lng", iPGeo.data.longitude))
-
-        dispatch(postEmail())
+        // dispatch(postEmail())
       })
       .catch(function (e) {
         dispatch(notify("iPGeo 500", "error", e.toString()))
