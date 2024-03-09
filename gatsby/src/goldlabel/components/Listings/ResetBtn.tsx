@@ -14,7 +14,10 @@ import {
     selectTings,
 } from "../../../goldlabel"
 
-export default function ResetBtn() {
+export default function ResetBtn(props: any) {
+    let iconMode = "icon"
+    const {mode} = props
+    if (mode) iconMode = mode
     const dispatch = usePwaDispatch()
     const tings = usePwaSelect(selectTings)
     const {ting} = tings
@@ -23,22 +26,34 @@ export default function ResetBtn() {
     const onReset = () => {
         dispatch(resetLocalstorage(ting))
     }
+
     
-    return <Box sx={{ml: 1}}>
-            <Tooltip title={<Font color="white">
-                Are you sure?
-            </Font>}>
+    if (iconMode === "icon") return <>
+        <Tooltip title={<Font color="white">
+                            Forget Me
+                        </Font>}>
+            <IconButton
+                onClick={onReset}
+                color="primary">
+                <Icon icon="delete" />
+            </IconButton>
+        </Tooltip>
+    </>
+
+    return <Box sx={{my: 2}}>
+            <Tooltip title={<Font color="white">Sure?</Font>}>
                 <Button
-                    color="primary"
-                    onClick={onReset}
-                >
+                    fullWidth
+                    color="inherit"
+                    variant="outlined"
+                    onClick={onReset}>
                     <Box sx={{mr:1, mt: 0.25}}>
                         <Font variant="small">
                             Forget me
                         </Font>
                     </Box>
-                    <Icon icon="delete" />
+                    <Icon icon="delete" color="primary" />
                 </Button>
             </Tooltip>
-            </Box>
+        </Box>
 }

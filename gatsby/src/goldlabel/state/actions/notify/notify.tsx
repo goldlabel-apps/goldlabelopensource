@@ -4,7 +4,7 @@ import {
 import {
   store,
   setPwaKey,
-} from "../../../goldlabel"
+} from "../../../../goldlabel"
 
 export const notify = (
   code: string,

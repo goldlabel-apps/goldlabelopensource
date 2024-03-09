@@ -3,7 +3,7 @@ import {
   setPwaKey,
   notify,
   store,
-} from "../../../goldlabel"
+} from "../../../../goldlabel"
 
 export const firebaseSignout = (): any =>
   async (dispatch: any) => {

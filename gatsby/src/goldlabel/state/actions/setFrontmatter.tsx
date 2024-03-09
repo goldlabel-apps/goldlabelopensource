@@ -2,7 +2,7 @@ import {
     store,
     setPwaKey,
     notify,
-} from "../../goldlabel"
+} from "../../../goldlabel"
 
 export const setFrontmatter = (
     frontmatter: any,

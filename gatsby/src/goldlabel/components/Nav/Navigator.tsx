@@ -42,7 +42,8 @@ export default function Navigator() {
   return <>
           <Box sx={{ml: 1}}>
             <List dense>
-              {frontmatter.slug !== "/" ? <ListItemButton
+              <ListItemButton
+                disabled={frontmatter.slug === "/"}
                 onClick={() => {
                   dispatch(navigate("/", "_self"))
                   dispatch(setCoreKey("navDialogOpen", false))
@@ -55,25 +56,22 @@ export default function Navigator() {
                             Home
                           </Font>}
                 />
-              </ListItemButton> : null }
-
-              
-              
-
+              </ListItemButton>
               {children.length ? <>
                 {children.map((item, i) => {
                   const {frontmatter} = item
                   return <ListItemButton key={`child_${i}`}
-                            
                             onClick={() => {
                               dispatch(setCoreKey("navDialogOpen", false))
                               dispatch(navigate(frontmatter.slug, "_self"))
                             }}>
                           <ListItemIcon>
-                            <Icon icon={frontmatter.icon}  color="primary" />
+                            <Icon icon={frontmatter.icon} color="primary" />
                           </ListItemIcon>
                           <ListItemText 
-                            primary={<Font variant="small">{frontmatter.title}</Font>}
+                            primary={<Font variant="small">
+                                      {frontmatter.title}
+                                    </Font>}
                           />
                         </ListItemButton>
                 })}

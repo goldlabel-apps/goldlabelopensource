@@ -11,7 +11,6 @@ import {
   Icon,
 } from "../../../../goldlabel"
 import {
-    Display,
     toggleFullScreen,
 } from "../"
 
@@ -37,9 +36,6 @@ export function ToggleBar() {
                 onClick={toggleFullscreen}>
               <Box>
                 <Icon icon="ting" color="primary"/>
-              </Box>
-              <Box>
-                <Display />
               </Box>
             </ButtonBase>
         </AppBar>

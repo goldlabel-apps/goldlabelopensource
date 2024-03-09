@@ -77,6 +77,7 @@ import JavascriptIcon from "@mui/icons-material/JavascriptOutlined"
 import ScubaIcon from "@mui/icons-material/ScubaDivingOutlined"
 import DockerIcon from "@mui/icons-material/StorageOutlined"
 import SignupIcon from "@mui/icons-material/StorageOutlined"
+import FullscreenIcon from "@mui/icons-material/FullscreenOutlined"
 
 import PingpongballIcon from "./SVGIcons/PingpongballIcon"
 import OliverIcon from "./SVGIcons/OliverIcon"
@@ -95,7 +96,7 @@ import WindowsIcon from "./SVGIcons/devices/WindowsIcon"
 import XboxIcon from "./SVGIcons/devices/XboxIcon"
 
 export type IconShape = {
-  icon: "signup" | "what" | "when" | "who" | "how" | "legal" | "geo" | "docker" | "scuba" | "js" | "javascript" | "oliver" | "life" | "balance" | "bug" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ting" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "openai" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "why" | "iphone" | "safari" | "firefox" | "plugins" | "flash"
+  icon: "fullscreen" | "examples" | "signup" | "what" | "when" | "who" | "how" | "legal" | "geo" | "docker" | "scuba" | "js" | "javascript" | "oliver" | "life" | "balance" | "bug" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ting" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "openai" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "why" | "iphone" | "safari" | "firefox" | "plugins" | "flash"
   color?: any
 }
 
@@ -109,10 +110,9 @@ export default function Icon({icon, color}: IconShape) {
       case "why":
         iconFragment = <SearchIcon color={color} />
         break
-      case "flash":
-        iconFragment = <HowIcon color={color} />
-        break
-
+    case "flash":
+      iconFragment = <HowIcon color={color} />
+      break
     case "signup":
       iconFragment = <SignupIcon color={color} />
       break
@@ -164,6 +164,10 @@ export default function Icon({icon, color}: IconShape) {
     case "reset":
       iconFragment = <ResetIcon color={color} />
       break
+      case "fullscreen":
+        iconFragment = <FullscreenIcon color={color} />
+        break
+      
     case "github":
       iconFragment = <GithubIcon color={color} />
       break
@@ -234,6 +238,9 @@ export default function Icon({icon, color}: IconShape) {
       iconFragment = <EditIcon color={color} />
       break
     case "example":
+      iconFragment = <ExampleIcon color={color} />
+      break
+    case "examples":
       iconFragment = <ExampleIcon color={color} />
       break
     case "goldlabel":

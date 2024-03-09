@@ -14,11 +14,14 @@ export const saveTing = (
 ): any => async (dispatch: any) => {
   try {
     const db = getFirestore()
-    const {fingerprint} = ting
-    if (fingerprint){
+    const {fingerprint, ip, hits} = ting
+    if (fingerprint && ip){
       await setDoc(doc(db, "fingerprints", fingerprint), {
         ...ting,
         updated: Date.now(),
+        href: window.location.href,
+        docTitle: document.title,
+        hits: hits + 1,
       })
     }
   } catch (e: any) {

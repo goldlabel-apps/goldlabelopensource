@@ -2,7 +2,7 @@ import {
   notify,
   store,
   setPwaKey,
-} from "../../../goldlabel"
+} from "../../../../goldlabel"
 
 export const notifyCancel = (): any =>
   async (dispatch: any) => {

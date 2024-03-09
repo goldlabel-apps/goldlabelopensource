@@ -1,14 +1,14 @@
 import React from "react"
 import {
   Box,
-  Button,
-  Card,
-  CardHeader,
+  // Button,
+  // Card,
+  // CardHeader,
+  // CardActions,
   CardContent,
-  CardActions,
 } from "@mui/material"
 import {
-  Font,
+  // Font,
   // Icon,
   usePwaSelect,
   selectGeo,
@@ -18,29 +18,32 @@ export function Geo() {
   const geo = usePwaSelect(selectGeo)
   // console.log("geo", geo)
   return (<>
-          <Card sx={{}}>
-            <CardHeader 
-              title={<Font variant="title">
-                Geo
-              </Font>}
-            />
+          
             <CardContent>
               <Box sx={{
-                border: "1px solid black", 
-                height: 230,
+                border: "1px solid lightgrey", 
+                height: 175,
               }}>
                 MAP
-                {/* <pre>{JSON.stringify(geo, null, 2)}</pre> */}
+                <pre>{JSON.stringify(geo, null, 2)}</pre>
               </Box>
             </CardContent>
-            <CardActions>
-              <Button
-                variant="text"
-              >
-              Full Screen
-              </Button>
-            </CardActions>
-          </Card>
+            {/* <CardActions>
+
+                <Button
+                    color="secondary"
+                    variant="text"
+                >
+                    <Box sx={{mr:1, mt: 0.25}}>
+                        <Font variant="small">
+                        Full Screen
+                        </Font>
+                    </Box>
+                    <Icon icon="fullscreen" color="primary" />
+                </Button>
+
+            </CardActions> */}
+            
         </>
   )
 }

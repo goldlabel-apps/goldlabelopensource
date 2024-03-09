@@ -5,7 +5,7 @@ category: "goldlabel"
 title: "Goldlabel."
 description: "Free & Open Source on Github"
 icon: "goldlabel"
-image: "/webp/listingslab/code.webp"
-keywords: "Goldlabel, 5Ws, Free, Open Source, Github"
+image: "/webp/listingslab/contact.webp"
+keywords: "Goldlabel, 5Ws, Free, Open Source, Github, contact, OPENAI"
 ---
-enter prompt...
+[OPENAI] enter prompt...
