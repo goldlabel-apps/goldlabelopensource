@@ -1,9 +1,9 @@
 import React from "react"
-import { 
-  getFirestore,
-  onSnapshot,
-  doc,
-} from "firebase/firestore"
+// import { 
+//   getFirestore,
+//   onSnapshot,
+//   doc,
+// } from "firebase/firestore"
 import {
   usePwaDispatch,
   usePwaSelect,
@@ -14,7 +14,6 @@ import {
   ToggleBar,
   init,
   saveTing,
-  updateFbTing,
 } from "./"
 
 export function Fingerprint() {
@@ -29,8 +28,6 @@ export function Fingerprint() {
     // if (ting){
     //   const {YourTing} = ting
     //   if (YourTing){
-    //     // 
-        
     //     // const db = getFirestore()
     //     // const unsubscribe = onSnapshot(doc(db, "YourTings", YourTing), (doc) => {
     //     //   // console.log("docUpdate", doc.data())

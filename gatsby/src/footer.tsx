@@ -23,8 +23,8 @@ export const footer: Footer = [
         path: "/how/ai",
       },
       {
-        label: "History of WordPress",
-        path: "/how/wordpress-history/",
+        label: "WordPress",
+        path: "/how/wordpress/",
       },
       {
         label: "Terms & Conditions",
@@ -37,23 +37,23 @@ export const footer: Footer = [
     links: [
       {
         label: "Who?",
-        path: "/5ws/who",
+        path: "/who",
       },
       {
         label: "What?",
-        path: "/5ws/what",
+        path: "/what",
       },
       {
         label: "When?",
-        path: "/5ws/when",
+        path: "/when",
       },
       {
         label: "Where?",
-        path: "/5ws/where",
+        path: "/where",
       },
       {
         label: "Why?",
-        path: "/5ws/why",
+        path: "/why",
       },
     ],
   },

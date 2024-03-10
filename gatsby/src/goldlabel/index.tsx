@@ -26,7 +26,6 @@ import {
     selectFrontmatter,
     selectAuth,
     selectTings,
-    selectGeo,
     selectFingerprint,
 } from "./state/reducer"
 // Theme
@@ -218,7 +217,6 @@ export {
     selectFrontmatter,
     selectAuth,
     selectTings,
-    selectGeo,
     selectFingerprint,
 }
 // Actions

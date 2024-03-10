@@ -30,7 +30,6 @@ export const iPGeo = (): any => async (dispatch: any) => {
         dispatch(updateTing("isp", iPGeo.data.isp))
         dispatch(updateTing("lat", iPGeo.data.latitude))
         dispatch(updateTing("lng", iPGeo.data.longitude))
-        // dispatch(postEmail())
       })
       .catch(function (e) {
         dispatch(notify("iPGeo 500", "error", e.toString()))

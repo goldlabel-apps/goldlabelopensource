@@ -7,7 +7,6 @@ import { RootState } from "./store"
 import {coreState} from "./coreState"
 import {fingerprintState} from "../plugins/Fingerprint"
 import {tingsState} from "../plugins/Fingerprint"
-import {geoState} from "../plugins/geo"
 
 type CoreReducerShape = {
   bootTime: number
@@ -16,7 +15,6 @@ type CoreReducerShape = {
   auth: any
   tings: any
   fingerprint: any
-  geo: any
 }
 
 const initialState: CoreReducerShape = {
@@ -25,7 +23,6 @@ const initialState: CoreReducerShape = {
   config: glConfig,
   core: coreState,
   tings: tingsState,
-  geo: geoState,
   fingerprint: fingerprintState,
 }
 
@@ -49,7 +46,6 @@ export const selectDisplay = (state: RootState) => state.core.display
 export const selectFrontmatter = (state: RootState) => state.core.frontmatter
 export const selectAuth = (state: RootState) => state.auth
 export const selectTings = (state: RootState) => state.tings
-export const selectGeo = (state: RootState) => state.geo
 export const selectFingerprint = (state: RootState) => state.fingerprint
 
 export const { setPwaKey } = pwaSlice.actions
