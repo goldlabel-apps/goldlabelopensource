@@ -15,8 +15,8 @@ export const forgetTing = (
     const {ting} = store.getState().tings
     if (!ting) return null
     const db = getFirestore()
-    const {YourTing} = ting
-    await deleteDoc(doc(db, "YourTings", YourTing))
+    const {fingerprint} = ting
+    await deleteDoc(doc(db, "fingerprints", fingerprint))
     dispatch(resetLocalstorage())
   } catch (e: any) {
     dispatch(notify("forgetTing 500", "error", e.toString()))
