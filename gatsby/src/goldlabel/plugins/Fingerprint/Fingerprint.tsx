@@ -25,7 +25,7 @@ export function Fingerprint() {
   } = tings
 
   React.useEffect(() => {
-    console.log("subscribe", ting.fingerprint)
+    // console.log("subscribe", ting.fingerprint)
     // if (ting){
     //   const {YourTing} = ting
     //   if (YourTing){

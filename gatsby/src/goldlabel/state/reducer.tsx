@@ -50,6 +50,7 @@ export const selectFrontmatter = (state: RootState) => state.core.frontmatter
 export const selectAuth = (state: RootState) => state.auth
 export const selectTings = (state: RootState) => state.tings
 export const selectGeo = (state: RootState) => state.geo
+export const selectFingerprint = (state: RootState) => state.fingerprint
 
 export const { setPwaKey } = pwaSlice.actions
 export default pwaSlice.reducer
