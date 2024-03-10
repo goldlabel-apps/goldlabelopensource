@@ -1,5 +1,6 @@
 import {Fingerprint} from "./Fingerprint"
 import tingsState from "./slice"
+import fingerprintState from "./sliceFingerprint"
 import {YourTing} from "./components/YourTing"
 import {Iconify} from "./components/Iconify"
 import {ToggleBar} from "./components/ToggleBar"
@@ -17,6 +18,7 @@ import {forgetTing} from "./actions/forgetTing"
 
 export {
     tingsState,
+    fingerprintState,
     Fingerprint,
     YourTing,
     ForgetMe,

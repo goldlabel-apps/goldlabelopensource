@@ -32,6 +32,7 @@ export function YourTing() {
     fbTing,
   } = tings
 
+
   const closeDialog = () => {
     dispatch(toggleFullScreen(false))
   }
@@ -68,7 +69,3 @@ export function YourTing() {
       </>
   )
 }
-
-/*
-<pre>{JSON.stringify(tings.ting, null, 2)}</pre>
-*/

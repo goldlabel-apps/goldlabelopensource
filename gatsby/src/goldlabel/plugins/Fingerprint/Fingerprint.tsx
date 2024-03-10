@@ -25,19 +25,20 @@ export function Fingerprint() {
   } = tings
 
   React.useEffect(() => {
-    if (ting){
-      const {YourTing} = ting
-      if (YourTing){
-        // console.log("subscribe", YourTing)
+    console.log("subscribe", ting.fingerprint)
+    // if (ting){
+    //   const {YourTing} = ting
+    //   if (YourTing){
+    //     // 
         
-        // const db = getFirestore()
-        // const unsubscribe = onSnapshot(doc(db, "YourTings", YourTing), (doc) => {
-        //   // console.log("docUpdate", doc.data())
-        //   // dispatch(updateFbTing(doc.data()))
-        // })
-        // return () => unsubscribe()
-      }
-    }
+    //     // const db = getFirestore()
+    //     // const unsubscribe = onSnapshot(doc(db, "YourTings", YourTing), (doc) => {
+    //     //   // console.log("docUpdate", doc.data())
+    //     //   // dispatch(updateFbTing(doc.data()))
+    //     // })
+    //     // return () => unsubscribe()
+    //   }
+    // }
   }, [ting, dispatch])
 
   React.useEffect(() => {

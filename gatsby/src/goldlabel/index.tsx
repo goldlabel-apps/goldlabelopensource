@@ -102,10 +102,9 @@ import PopupMenu from "./components/Nav/PopupMenu"
 import BottomBar from "./components/Nav/BottomBar"
 import {Keywords} from "./components/Nav/Keywords"
 
-// Tings
-import {Tings} from "./plugins/fingerprints"
+// Fingerprint
+import {Fingerprint} from "./plugins/Fingerprint"
 
-// Tings
 import ListingMobile from "./components/Layout/ListingMobile"
 import ListingDesktop from "./components/Layout/ListingDesktop"
 export {
@@ -114,7 +113,7 @@ export {
 }
 
 export {
-    Tings,
+    Fingerprint,
 }
 
 // Navigator

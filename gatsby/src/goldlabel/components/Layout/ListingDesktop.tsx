@@ -10,8 +10,7 @@ import {
 } from "@mui/material"
 import {
   Image,
-  ResetBtn,
-  Tings,
+  Fingerprint,
   navigate,
   Pricing,
   Font,
@@ -153,7 +152,7 @@ export default function ListingDesktop(props: any) {
       </Box>
       
       {/* <BottomBar /> */}
-      <Tings/>
+      <Fingerprint/>
       <div id="bottomAnchor" />
     </Container>
   </>
