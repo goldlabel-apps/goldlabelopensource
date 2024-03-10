@@ -6,8 +6,7 @@ import {
 } from "@mui/material"
 import {
   Image,
-  ResetBtn,
-  Tings,
+  Fingerprint,
   Font,
   useSiteMetadata,
   Markdown,
@@ -127,7 +126,7 @@ export default function ListingMobile(props: any) {
             <Box sx={{height: 70}} />
             <div id="bottomAnchor" />
           </Box>
-          <Tings />
+          <Fingerprint />
         </Container>
       </>
 }

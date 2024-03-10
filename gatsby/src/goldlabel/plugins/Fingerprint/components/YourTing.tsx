@@ -2,6 +2,7 @@ import React from "react"
 import {
   Box,
   Dialog,
+  DialogContent,
   ThemeProvider,
   createTheme,
   useTheme,
@@ -11,25 +12,26 @@ import {
   usePwaSelect,
   selectTings,
   selectCore,
+  selectFingerprint,
 } from "../../../../goldlabel"
 import {
   ForgetMe,
-} from "../../../plugins/fingerprints"
+} from "../../../plugins/Fingerprint"
 import {
   toggleFullScreen,
   ToggleBar,
 } from "../"
 
-export function Fingerprint() {
+export function YourTing() {
   const dispatch = usePwaDispatch()
   const tings = usePwaSelect(selectTings)
+  const fingerprint = usePwaSelect(selectFingerprint)
   const core = usePwaSelect(selectCore)
   const primaryColor = useTheme().palette.primary.main
   const secondaryColor = useTheme().palette.secondary.main
   const {darkmode} = core
   const {
     dialogOpen,
-    fbTing,
   } = tings
 
   const closeDialog = () => {
@@ -54,21 +56,19 @@ export function Fingerprint() {
               fullScreen
               open={dialogOpen}
               onClose={closeDialog}>
-              <ForgetMe />
-              <Box sx={{display: "flex"}}>
-                <Box sx={{flexGrow: 1}} />
-                <Box>
-                  <ToggleBar />
-                </Box>
-                <Box sx={{flexGrow:1}} />
-              </Box>
-              <pre>fbTing: {JSON.stringify(fbTing, null, 2)}</pre>
+                <DialogContent>
+                  <ForgetMe />
+                  <Box sx={{display: "flex"}}>
+                    <Box sx={{flexGrow: 1}} />
+                    <Box>
+                      <ToggleBar />
+                    </Box>
+                    <Box sx={{flexGrow:1}} />
+                  </Box>
+                  <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre>
+              </DialogContent>
           </Dialog>       
         </ThemeProvider>   
       </>
   )
 }
-
-/*
-<pre>{JSON.stringify(tings.ting, null, 2)}</pre>
-*/

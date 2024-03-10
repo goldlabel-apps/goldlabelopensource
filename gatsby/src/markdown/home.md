@@ -5,7 +5,7 @@ category: "goldlabel"
 title: "Goldlabel."
 description: "Free & Open Source on Github"
 icon: "goldlabel"
-image: "/webp/listingslab/contact.webp"
+image: "/webp/coupland/mcjob.webp"
 keywords: "Goldlabel, 5Ws, Free, Open Source, Github, contact, OPENAI"
 ---
-[OPENAI] enter prompt...
+> Fork Goldlabel for Free on [GitHub](https://github.com/listingslab-software/goldlabelopensource)

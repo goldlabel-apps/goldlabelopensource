@@ -2,6 +2,7 @@ import * as React from "react"
 import PluginsIcon from "@mui/icons-material/ExtensionOutlined"
 import WhenIcon from "@mui/icons-material/CalendarMonthOutlined"
 import WhatIcon from "@mui/icons-material/HardwareOutlined"
+import FilterIcon from "@mui/icons-material/FilterOutlined"
 import MembersIcon from "@mui/icons-material//SupervisedUserCircle"
 import AndroidIcon from "@mui/icons-material/Android"
 import HowIcon from "@mui/icons-material/ElectricBoltOutlined"
@@ -96,7 +97,7 @@ import WindowsIcon from "./SVGIcons/devices/WindowsIcon"
 import XboxIcon from "./SVGIcons/devices/XboxIcon"
 
 export type IconShape = {
-  icon: "fullscreen" | "examples" | "signup" | "what" | "when" | "who" | "how" | "legal" | "geo" | "docker" | "scuba" | "js" | "javascript" | "oliver" | "life" | "balance" | "bug" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ting" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "openai" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "why" | "iphone" | "safari" | "firefox" | "plugins" | "flash"
+  icon: "filters" | "filter" | "fullscreen" | "examples" | "signup" | "what" | "when" | "who" | "how" | "legal" | "geo" | "docker" | "scuba" | "js" | "javascript" | "oliver" | "life" | "balance" | "bug" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ting" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "openai" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "why" | "iphone" | "safari" | "firefox" | "plugins" | "flash"
   color?: any
 }
 
@@ -107,9 +108,15 @@ export default function Icon({icon, color}: IconShape) {
     case "home":
       iconFragment = <HomeIcon color={color} />
       break
-      case "why":
-        iconFragment = <SearchIcon color={color} />
-        break
+    case "why":
+      iconFragment = <SearchIcon color={color} />
+      break
+    case "filters":
+      iconFragment = <FilterIcon color={color} />
+      break
+    case "filter":
+      iconFragment = <FilterIcon color={color} />
+      break
     case "flash":
       iconFragment = <HowIcon color={color} />
       break

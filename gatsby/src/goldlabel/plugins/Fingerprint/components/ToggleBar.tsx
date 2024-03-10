@@ -9,6 +9,7 @@ import {
   usePwaSelect,
   selectTings,
   Icon,
+  Font,
 } from "../../../../goldlabel"
 import {
     toggleFullScreen,
@@ -17,8 +18,12 @@ import {
 export function ToggleBar() {
   const dispatch = usePwaDispatch()
   const tings = usePwaSelect(selectTings)
-  const {dialogOpen} = tings
-  
+  const {dialogOpen, ting} = tings
+  let str = ""
+  if (ting){
+    str = ting.displayName
+  }
+
   const toggleFullscreen = () => {
     dispatch(toggleFullScreen(!dialogOpen))
   }
@@ -34,8 +39,13 @@ export function ToggleBar() {
               <ButtonBase
                 sx={{p:1}}
                 onClick={toggleFullscreen}>
+              <Box sx={{mt: 0.5, mr: 1}}>
+                <Icon icon="ting" color="primary"/> 
+              </Box>
               <Box>
-                <Icon icon="ting" color="primary"/>
+                <Font noWrap>
+                  {str}
+                </Font>
               </Box>
             </ButtonBase>
         </AppBar>

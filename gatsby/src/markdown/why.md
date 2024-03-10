@@ -8,11 +8,7 @@ image: "/jpg/cixin.jpg"
 keywords: "5Ws, Why, cixin"
 order: 305
 ---
-### Reasons for Goldlabel?
-
-> Fork Goldlabel for Free from [GitHub](https://github.com/listingslab-software/goldlabelopensource)
-
-### Causes, effects and possibly motives
+### Causes, effects and possible motives
 
 - Because it’s one point oh
 - Because we can do better

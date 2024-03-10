@@ -17,9 +17,9 @@ export const postEmail = (
       "apiKey": "wxyz-1234-abcd-5678",
       "to": "listingslab@gmail.com",
       "from": "\"Goldlabel\" <ai@goldlabel.pro>",
-      "subject": "New Fingerprint ",
-      "html": "<b>Fingerprint</b> Details of new fingerprint",
-      "text": "Details of new fingerprint"
+      "subject": "New YourTing ",
+      "html": "<b>YourTing</b> Details of new YourTing",
+      "text": "Details of new YourTing"
     }
     axios.post(ep, payload)
       .then(function (res) {

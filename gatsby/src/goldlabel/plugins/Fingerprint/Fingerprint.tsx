@@ -1,23 +1,22 @@
 import React from "react"
-import { 
-  getFirestore,
-  onSnapshot,
-  doc,
-} from "firebase/firestore"
+// import { 
+//   getFirestore,
+//   onSnapshot,
+//   doc,
+// } from "firebase/firestore"
 import {
   usePwaDispatch,
   usePwaSelect,
   selectTings,
 } from "../../../goldlabel"
 import {
-  Fingerprint,
+  YourTing,
   ToggleBar,
   init,
   saveTing,
-  updateFbTing,
 } from "./"
 
-export function Tings() {
+export function Fingerprint() {
   const dispatch = usePwaDispatch()
   const tings = usePwaSelect(selectTings)
   const {
@@ -25,19 +24,18 @@ export function Tings() {
   } = tings
 
   React.useEffect(() => {
-    if (ting){
-      const {fingerprint} = ting
-      if (fingerprint){
-        // console.log("subscribe", fingerprint)
-        
-        // const db = getFirestore()
-        // const unsubscribe = onSnapshot(doc(db, "fingerprints", fingerprint), (doc) => {
-        //   // console.log("docUpdate", doc.data())
-        //   // dispatch(updateFbTing(doc.data()))
-        // })
-        // return () => unsubscribe()
-      }
-    }
+    // console.log("subscribe", ting.fingerprint)
+    // if (ting){
+    //   const {YourTing} = ting
+    //   if (YourTing){
+    //     // const db = getFirestore()
+    //     // const unsubscribe = onSnapshot(doc(db, "YourTings", YourTing), (doc) => {
+    //     //   // console.log("docUpdate", doc.data())
+    //     //   // dispatch(updateFbTing(doc.data()))
+    //     // })
+    //     // return () => unsubscribe()
+    //   }
+    // }
   }, [ting, dispatch])
 
   React.useEffect(() => {
@@ -55,6 +53,6 @@ export function Tings() {
   
   return <>
           <ToggleBar />
-          <Fingerprint />
+          <YourTing />
         </>
 }

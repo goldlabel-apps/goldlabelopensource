@@ -9,6 +9,8 @@ image: "/png/pingpong.png"
 keywords: "How, Key Concept,"
 order: 100
 ---
+### Message computers use to check another computer is ready
+
 Okay, imagine you're playing catch with your friend in a big field. You throw a ball to your friend, and when they catch it, they throw it back to you, right? 
 
 Well, in computer world, when one computer wants to check if another computer is there and ready to play, it sends a little message, like saying "Hey, are you there?" 

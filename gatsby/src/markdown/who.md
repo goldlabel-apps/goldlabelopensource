@@ -4,7 +4,7 @@ parentSlug: "/"
 title: "Who?"
 description: "is Goldlabel?"
 icon: "who"
-image: "/webp/listingslab/tommyscat.webp"
+image: "/png/everybody.png"
 keywords: "Who, What, When, Where, Why, How,"
 order: 301
 ---

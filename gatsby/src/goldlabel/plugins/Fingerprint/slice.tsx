@@ -1,6 +1,4 @@
-import {TingsSlice} from "../types"
-
-export const slice: TingsSlice = {
+export const slice: any = {
     dialogOpen: false,
     initted: false,
     initting: false,

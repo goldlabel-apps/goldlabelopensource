@@ -1,22 +1,18 @@
 ---
-order: 40
+order: 4000
 draft: false
 slug: "/how"
 parentSlug: "/"
-title: "How?"
-description: "How does Goldlabel work?"
-icon: "how"
-image: "/png/flash.png"
+title: "How does it work?"
+description: "Find out more"
+icon: "desktop"
+image: "/webp/coupland/coupland.webp"
 keywords: "How"
 ---
-### Developer?
+### How does it work?
 
-- [Get Started](/how/get-started)
+Get to grips with Tings. A ting is like a ping. Okay, imagine you're playing catch with your friend in a big field... [more](/how/what-is-a-ping)
 
-### Site Owner?
 
-Get to grips with Tings. A ting is like a ping. Okay, imagine you're playing catch with your friend in a big field. You throw a ball to your friend, and when they catch it, they throw it back to you, right?  
-
-[more](/how/what-is-a-ping)
 
 
