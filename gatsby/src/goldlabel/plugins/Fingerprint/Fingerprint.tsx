@@ -10,14 +10,14 @@ import {
   selectTings,
 } from "../../../goldlabel"
 import {
-  Fingerprint,
+  YourTing,
   ToggleBar,
   init,
   saveTing,
   updateFbTing,
 } from "./"
 
-export function Tings() {
+export function Fingerprint() {
   const dispatch = usePwaDispatch()
   const tings = usePwaSelect(selectTings)
   const {
@@ -26,12 +26,12 @@ export function Tings() {
 
   React.useEffect(() => {
     if (ting){
-      const {fingerprint} = ting
-      if (fingerprint){
-        // console.log("subscribe", fingerprint)
+      const {YourTing} = ting
+      if (YourTing){
+        // console.log("subscribe", YourTing)
         
         // const db = getFirestore()
-        // const unsubscribe = onSnapshot(doc(db, "fingerprints", fingerprint), (doc) => {
+        // const unsubscribe = onSnapshot(doc(db, "YourTings", YourTing), (doc) => {
         //   // console.log("docUpdate", doc.data())
         //   // dispatch(updateFbTing(doc.data()))
         // })
@@ -55,6 +55,6 @@ export function Tings() {
   
   return <>
           <ToggleBar />
-          <Fingerprint />
+          <YourTing />
         </>
 }

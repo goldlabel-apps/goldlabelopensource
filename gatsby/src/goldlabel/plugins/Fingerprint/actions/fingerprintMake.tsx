@@ -1,4 +1,4 @@
-import FingerprintJS from "@fingerprintjs/fingerprintjs"
+import YourTingJS from "@YourTingjs/YourTingjs"
 import { 
   notify,
 } from "../../../../goldlabel"
@@ -8,13 +8,13 @@ import {
 
 export const fingerprintMake = (): any => async (dispatch: any) => {
   try {
-    const fp = await FingerprintJS.load()
+    const fp = await YourTingJS.load()
     const {visitorId} = await fp.get()
     const host = window.location.host
-    const fingerprint = `${host}_${visitorId}`
+    const YourTing = `${host}_${visitorId}`
     dispatch(updateTing("host", host))
-    dispatch(updateTing("fingerprint", fingerprint))
+    dispatch(updateTing("YourTing", YourTing))
   } catch (e: any) {
-    dispatch(notify("fingerprintMake 500", "error", e.toString()))
+    dispatch(notify("YourTingMake 500", "error", e.toString()))
   }
 }

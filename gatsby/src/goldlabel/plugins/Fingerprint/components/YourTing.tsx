@@ -14,13 +14,13 @@ import {
 } from "../../../../goldlabel"
 import {
   ForgetMe,
-} from "../../../plugins/fingerprints"
+} from "../../../plugins/Fingerprint"
 import {
   toggleFullScreen,
   ToggleBar,
 } from "../"
 
-export function Fingerprint() {
+export function YourTing() {
   const dispatch = usePwaDispatch()
   const tings = usePwaSelect(selectTings)
   const core = usePwaSelect(selectCore)

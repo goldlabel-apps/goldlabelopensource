@@ -3,7 +3,7 @@ import {
 } from "../../../../goldlabel"
 import {glConfig} from "../../../../config"
 import {
-  fingerprintMake,
+  YourTingMake,
   setTingsKey,
   deviceMake,
   iPGeo,
@@ -19,7 +19,7 @@ export const init = (): any =>
       dispatch(updateTing("href", window.location.href))
       dispatch(updateTing("slug", window.location.pathname))
       dispatch(setTingsKey("initting", true))
-      dispatch(fingerprintMake())
+      dispatch(YourTingMake())
       dispatch(deviceMake())
       dispatch(iPGeo())
     } catch (e: any) {

@@ -14,9 +14,9 @@ export const saveTing = (
     const {ting} = store.getState().tings
     if (!ting) return null
     const db = getFirestore()
-    const {fingerprint, ip} = ting
-    if (fingerprint && ip){
-      await setDoc(doc(db, "fingerprints", fingerprint), {
+    const {YourTing, ip} = ting
+    if (YourTing && ip){
+      await setDoc(doc(db, "YourTings", YourTing), {
         ...ting,
         updated: Date.now(),
         slug: window.location.pathname,
