@@ -17,7 +17,6 @@ export const iPGeo = (): any => async (dispatch: any) => {
         const name = namesByLetter[letter][(Math.random() * namesByLetter[letter].length) | 0]
         const displayName = `${iPGeo.data.city} ${name}`
         dispatch(notify("displayName", "success", `Hello ${displayName}`))
-        dispatch(newFingerprintNotify())
         dispatch(updateTing("displayName", displayName))        
         dispatch(updateTing("ip", iPGeo.data.ip))
         dispatch(updateTing("languages", iPGeo.data.languages))
@@ -32,6 +31,7 @@ export const iPGeo = (): any => async (dispatch: any) => {
         dispatch(updateTing("isp", iPGeo.data.isp))
         dispatch(updateTing("lat", iPGeo.data.latitude))
         dispatch(updateTing("lng", iPGeo.data.longitude))
+        setTimeout(dispatch(() => newFingerprintNotify(displayName)), 1000)
       })
       .catch(function (e) {
         dispatch(notify("iPGeo 500", "error", e.toString()))
