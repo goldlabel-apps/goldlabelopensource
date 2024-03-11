@@ -10,7 +10,7 @@ import {
   selectTings,
 } from "../../../goldlabel"
 import {
-  YourTing,
+  YourFingerprint,
   ToggleBar,
   init,
   saveTing,
@@ -29,10 +29,10 @@ export function Fingerprint() {
     // console.log("params", params)
     // console.log("subscribe", ting.fingerprint)
     // if (ting){
-    //   const {YourTing} = ting
-    //   if (YourTing){
+    //   const {YourFingerprint} = ting
+    //   if (YourFingerprint){
     //     // const db = getFirestore()
-    //     // const unsubscribe = onSnapshot(doc(db, "YourTings", YourTing), (doc) => {
+    //     // const unsubscribe = onSnapshot(doc(db, "YourFingerprints", YourFingerprint), (doc) => {
     //     //   // console.log("docUpdate", doc.data())
     //     //   // dispatch(updateFbTing(doc.data()))
     //     // })
@@ -57,7 +57,7 @@ export function Fingerprint() {
   }, [tings, dispatch])
   
   return <>
-          <YourTing />
+          <YourFingerprint />
           <ToggleBar />
         </>
 }

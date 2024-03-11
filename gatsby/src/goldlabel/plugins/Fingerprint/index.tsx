@@ -3,7 +3,7 @@ import {
     tingsSlice,
     fingerprintSlice,
 } from "./fingerprintSlice"
-import {YourTing} from "./YourTing"
+import {YourFingerprint} from "./YourFingerprint"
 import {Iconify} from "./components/Iconify"
 import Controls from "./components/Controls"
 import SearchBox from "./components/SearchBox"
@@ -25,7 +25,7 @@ export {
     tingsSlice,
     fingerprintSlice,
     Fingerprint,
-    YourTing,
+    YourFingerprint,
     Controls,
     SearchBox,
     ForgetMe,

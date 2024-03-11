@@ -4,9 +4,7 @@ import {
   store,
 } from "../../../../goldlabel"
 
-export const newFingerprintNotify = (
-  displayName: string,
-): any => async (dispatch: any) => {
+export const newFingerprintNotify = (): any => async (dispatch: any) => {
   try {
     const {ting} = store.getState().tings
     const ep = `${process.env.REACT_APP_API}email/send`
@@ -14,15 +12,15 @@ export const newFingerprintNotify = (
       host,
       fingerprint,
       city,
+      displayName,
     } = ting
-
     if (city === "Mountain View") return false
 
     const email = {
       "apiKey": process.env.REACT_APP_API_KEY,
       "to": "listingslab@gmail.com",
       "from": "\"Goldlabel\" <ai@goldlabel.pro>",
-      "subject": `${host} > ${displayName}`,
+      "subject": `${host} > ${displayName || ""}`,
       "html": `<p>
                 <a href="https://goldlabel.pro/?fp=${fingerprint}">
                   View

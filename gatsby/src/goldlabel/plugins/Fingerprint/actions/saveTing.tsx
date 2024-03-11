@@ -8,6 +8,8 @@ import {
   notify,
 } from "../../../../goldlabel"
 
+
+
 export const saveTing = (
 ): any => async (dispatch: any) => {
   try {
@@ -19,9 +21,6 @@ export const saveTing = (
       const d  = await setDoc(doc(db, "fingerprints", fingerprint), {
         ...ting,
         updated: Date.now(),
-        slug: window.location.pathname,
-        href: window.location.href,
-        docTitle: document.title,
       })
     }
   } catch (e: any) {

@@ -8,6 +8,7 @@ import {
   usePwaDispatch,
   usePwaSelect,
   selectTings,
+  selectFingerprint,
   Icon,
   Font,
 } from "../../../../goldlabel"
@@ -18,12 +19,11 @@ import {
 export function ToggleBar() {
   const dispatch = usePwaDispatch()
   const tings = usePwaSelect(selectTings)
+  const fingerprint = usePwaSelect(selectFingerprint)
   const {dialogOpen, ting} = tings
   let str = ""
-  if (ting){
-    str = ting.displayName
-  }
-
+  if (fingerprint) str = fingerprint.displayName
+  
   const toggleFullscreen = () => {
     dispatch(toggleFullScreen(!dialogOpen))
   }

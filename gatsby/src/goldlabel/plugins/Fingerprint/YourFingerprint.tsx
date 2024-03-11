@@ -34,9 +34,28 @@ import {Flash} from "../Flash"
 import {Lingua} from "../Lingua"
 import {Forms} from "../Forms"
 
-export function YourTing() {
+export function YourFingerprint() {
+
+
+
   const dispatch = usePwaDispatch()
   const tings = usePwaSelect(selectTings)
+
+  React.useEffect(() => {
+    const {ting} = tings
+    if (ting){
+      const {fingerprint} = ting
+      if (fingerprint){
+        const unsubscribe = onSnapshot(
+          doc(getFirestore(), "fingerprints", fingerprint), (fp) => {
+            console.log("onSnapshot fp", fp.data())
+            dispatch(updateFbTing(fp.data()))
+          })
+        return () => unsubscribe();
+      }
+    }
+  }, [dispatch, tings])
+  
   const fingerprint = usePwaSelect(selectFingerprint)
   const core = usePwaSelect(selectCore)
   const primaryColor = useTheme().palette.primary.main
@@ -57,15 +76,7 @@ export function YourTing() {
     dispatch(toggleFullScreen(false))
   }
   
-  React.useEffect(() => {
 
-    const db = getFirestore()
-    const unsubscribe = onSnapshot(
-          doc(db, "fingerprints", tings.ting.fingerprint), (fp) => {
-            dispatch(updateFbTing(fp.data()))
-          })
-    return () => unsubscribe();
-  }, [dispatch, tings])
 
   return (<>
     <ThemeProvider 
