@@ -1,8 +1,24 @@
+---
+keywords: "JavaScript, Isomorphic, React"
+---
+
 ## Isomorphic JavaScript
 
-> In the JavaScript world, the fact that some JavaScript code can be shared across all kinds of apps and devices with any JavaScript runtime can be called "Isomorphic". Please explain this concept more fully to a Junior coder who is learning JavaScript for the first time
+### React Components
 
-### What is it?
+> [Iconify](./Iconify/README.md)
+
+### Node Components
+
+> API
+
+#### What is it?
+
+> In the world of JavaScript the fact code can be shared across devices with a JavaScript runtime could be called "Isomorphic"
+
+This package contains 
+
+#### Here's why this is useful
 
 Isomorphic JavaScript, also known as universal JavaScript, refers to the ability to write code that can run both on the client-side (in a web browser) and on the server-side (on a server). This means you can write JavaScript code that can be executed in different environments, such as in a web browser, on a server using Node.js, or even in other environments like PWAs using frameworks like React
 
