@@ -6,6 +6,7 @@ import {
 import {YourTing} from "./YourTing"
 import {Iconify} from "./components/Iconify"
 import Controls from "./components/Controls"
+import SearchBox from "./components/SearchBox"
 import {ToggleBar} from "./components/ToggleBar"
 import ForgetMe from "./components/ForgetMe"
 import {init} from "./actions/init"
@@ -26,6 +27,7 @@ export {
     Fingerprint,
     YourTing,
     Controls,
+    SearchBox,
     ForgetMe,
     init,
     ToggleBar,

@@ -1,6 +1,7 @@
 export type FingerprintSlice = {
     fullscreen: boolean
-    title: string
+    displayName: string
+    newFingerprint: boolean
 }
 
 export type FingerprintType = {
