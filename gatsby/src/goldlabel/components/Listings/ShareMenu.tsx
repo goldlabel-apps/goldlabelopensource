@@ -22,16 +22,18 @@ import {
   Icon,
   usePwaSelect,
   selectFrontmatter,
+  TogglePaletteMode,
 } from "../../../goldlabel"
 
 export default function ShareMenu() {
+
   const frontmatter = usePwaSelect(selectFrontmatter)
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const theme = useTheme()
   const open = Boolean(anchorEl)
-  let title = "Listingslab"
+  let title = "Goldlabel"
   let iconColor = theme.palette.primary.main
-  let shareUrl: string = "https://listingslab.com"
+  let shareUrl: string = "https://goldlabel.pro"
   if (window.location) shareUrl = window.location.href
   if (frontmatter){
     title = `${frontmatter.title}. ${frontmatter.description}`
@@ -47,6 +49,7 @@ export default function ShareMenu() {
   
   return (
     <>
+      <TogglePaletteMode />
       <Tooltip title={<Font color="white">
         Share
       </Font>}>

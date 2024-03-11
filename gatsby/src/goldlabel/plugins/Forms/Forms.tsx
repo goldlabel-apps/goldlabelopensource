@@ -6,17 +6,19 @@ import {
 } from "@mui/material"
 import {
   usePwaSelect,
-  selectLingua,
+  selectForms,
 } from "../../../goldlabel"
 
-export function Lingua() {
-  const lingua = usePwaSelect(selectLingua)
+export function Forms() {
+  const forms = usePwaSelect(selectForms)
   
   return (<>
             <Card sx={{m:1}}>
               <CardContent>
-                <Box sx={{}}>
-                  <pre>lingua:{JSON.stringify(lingua, null, 2)}</pre>
+                <Box sx={{
+                  
+                }}>
+                  <pre>forms:{JSON.stringify(forms, null, 2)}</pre>
                 </Box>
               </CardContent>
             </Card>

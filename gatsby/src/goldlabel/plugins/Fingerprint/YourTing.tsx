@@ -26,6 +26,7 @@ import {
 import {Geo} from "../Geo"
 import {Flash} from "../Flash"
 import {Lingua} from "../Lingua"
+import {Forms} from "../Forms"
 
 export function YourTing() {
   const dispatch = usePwaDispatch()
@@ -64,7 +65,9 @@ export function YourTing() {
               <DialogContent>
                 <Grid container spacing={1}>
                   <Grid item xs={12} md={4}>
+                    <Forms />
                     <Geo />
+                    
                   </Grid>
                   <Grid item xs={12} md={4}>
                     <Flash />

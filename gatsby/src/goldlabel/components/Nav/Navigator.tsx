@@ -5,6 +5,7 @@ import {
   ListItemIcon,
   ListItemText,
   Box,
+  ButtonBase,
 } from "@mui/material"
 import {
   Font,
@@ -15,7 +16,6 @@ import {
   navigate,
   useAllMarkdown,
   setCoreKey,
-  Keywords,
 } from "../../../goldlabel"
 
 export default function Navigator() {
@@ -39,8 +39,34 @@ export default function Navigator() {
     }
   }
 
+  const openGithubLink = () => {
+    // rel="noopener noreferrer"
+    dispatch(navigate(
+      "https://github.com/listingslab-software/goldlabelopensource", 
+      "_blank",
+    ))
+  }
+
   return <>
           <Box sx={{ml: 1}}>
+
+            <ButtonBase
+              title="Free on GitHub"
+              sx={{
+                p:1,
+              }}
+              onClick={openGithubLink}>
+                <Box sx={{mr: 1}}>
+                  <Icon icon="github" color="primary" />
+                </Box>
+                <Box sx={{}}>
+                  <Font>
+                    Download Free
+                  </Font>
+                </Box>
+            </ButtonBase>
+
+
             <List dense>
               <ListItemButton
                 disabled={frontmatter.slug === "/"}
@@ -98,33 +124,7 @@ export default function Navigator() {
 
 
             </List>
-            {/* <pre>
-              siblings: {JSON.stringify(siblings.length, null, 2)}
-            </pre> */}
-            <Keywords />
+            
           </Box>
       </>
 }
-
-/*
-  <pre>
-  thisDoc: {JSON.stringify(thisDoc, null, 2)}
-  </pre>
-
- {parentDoc ? <>
-                <ListItemButton
-                  onClick={() => {
-                    dispatch(navigate(parentDoc.frontmatter.slug, "_self"))
-                    dispatch(setCoreKey("navDialogOpen", false))
-                  }}>
-                  <ListItemIcon>
-                    <Icon icon={parentDoc.frontmatter.icon} color="primary"/>
-                  </ListItemIcon>
-                  <ListItemText 
-                    primary={<Font variant="small">
-                              { parentDoc.frontmatter.title}
-                            </Font>}
-                  />
-                </ListItemButton>
-              </> : null }
-*/

@@ -12,6 +12,7 @@ import {tingsSlice} from "../plugins/Fingerprint"
 import {geoState} from "../plugins/Geo"
 import {flashSlice} from "../plugins/Flash"
 import {linguaSlice} from "../plugins/Lingua"
+import {formsSlice} from "../plugins/Forms"
 
 type CoreReducerShape = {
   bootTime: number
@@ -23,6 +24,7 @@ type CoreReducerShape = {
   fingerprint: any
   flash: any
   lingua: any
+  forms: any
 }
 
 const initialState: CoreReducerShape = {
@@ -35,6 +37,7 @@ const initialState: CoreReducerShape = {
   geo: geoState,
   flash: flashSlice,
   lingua: linguaSlice,
+  forms: formsSlice,
 }
 
 export const pwaSlice = createSlice({
@@ -61,6 +64,7 @@ export const selectFingerprint = (state: RootState) => state.fingerprint
 export const selectGeo = (state: RootState) => state.geo
 export const selectLingua = (state: RootState) => state.lingua
 export const selectFlash = (state: RootState) => state.flash
+export const selectForms= (state: RootState) => state.forms
 
 export const { setPwaKey } = pwaSlice.actions
 export default pwaSlice.reducer

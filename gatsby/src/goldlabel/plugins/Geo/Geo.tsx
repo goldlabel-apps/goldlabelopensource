@@ -12,7 +12,7 @@ import {
 export function Geo() {
   const geo = usePwaSelect(selectGeo)
   return (<>
-            <Card>
+            <Card sx={{m:1}}>
               <CardContent>
                 <Box sx={{
                   
