@@ -1,6 +1,4 @@
-export const fingerprintSlice: any = {
-    
-}
+export const fingerprintSlice: any = null
 
 export const tingsSlice: any = {
     dialogOpen: false,

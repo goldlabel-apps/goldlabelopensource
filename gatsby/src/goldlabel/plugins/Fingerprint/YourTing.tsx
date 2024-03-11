@@ -1,4 +1,10 @@
 import React from "react"
+import { 
+  getFirestore,
+  doc,
+  onSnapshot,
+} from "firebase/firestore"
+import {glConfig} from "../../../config"
 import {
   Grid,
   Dialog,
@@ -17,10 +23,10 @@ import {
   selectFingerprint,
 } from "../../../goldlabel"
 import {
-  ForgetMe,
   Controls,
   toggleFullScreen,
   ToggleBar,
+  updateFbTing,
 } from "../../plugins/Fingerprint"
 
 import {Geo} from "../Geo"
@@ -39,48 +45,59 @@ export function YourTing() {
   const {
     dialogOpen,
   } = tings
+  const {
+    formsDefault,
+    flashDefault,
+    linguaDefault,
+    geoDefault,
+  } = glConfig
+
 
   const closeDialog = () => {
     dispatch(toggleFullScreen(false))
   }
+  
+  React.useEffect(() => {
+
+    const db = getFirestore()
+    const unsubscribe = onSnapshot(
+          doc(db, "fingerprints", tings.ting.fingerprint), (fp) => {
+            dispatch(updateFbTing(fp.data()))
+          })
+    return () => unsubscribe();
+  }, [dispatch, tings])
 
   return (<>
     <ThemeProvider 
       theme={createTheme({
         palette: { 
           mode: darkmode ? "light" : "dark",
-          primary: {
-            main: secondaryColor,
-          },
-          secondary: {
-            main: primaryColor,
-          },
-          background: {
-            paper: primaryColor
-          }}})}>
+          primary: { main: secondaryColor},
+          secondary: { main: primaryColor },
+          background: { paper: primaryColor}}})}>
         <Dialog 
           fullScreen
           open={dialogOpen}
           onClose={closeDialog}>
-            <DialogTitle>
-              <Controls />
-            </DialogTitle>
-
-            <DialogContent>
-              <Grid container spacing={1}>
-                <Grid item xs={12} md={8}>
-                  <Forms />
-                </Grid>
-                <Grid item xs={12} md={4}>
-                  <Lingua />
-                  <Geo />
-                  <Flash />
-                </Grid>
+          <DialogTitle>
+            <Controls />
+          </DialogTitle>
+          <DialogContent>
+            <Grid container spacing={1}>
+              <Grid item xs={12} md={8}>
+                {formsDefault ? <Forms /> : null }
               </Grid>
-            </DialogContent>
-            <DialogActions>
-              <ToggleBar />
-            </DialogActions>
+              <Grid item xs={12} md={4}>
+                { linguaDefault ? <Lingua /> : null }
+                { geoDefault ? <Geo /> : null }
+                { flashDefault ? <Flash /> : null }
+              </Grid>
+            </Grid>
+            <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre> 
+          </DialogContent>
+          <DialogActions>
+            <ToggleBar />
+          </DialogActions>
         </Dialog>       
       </ThemeProvider>   
     </>

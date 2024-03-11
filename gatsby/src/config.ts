@@ -1,5 +1,3 @@
-// import {ConfigShape} from "./types"
-
 export const glConfig: any = {
     siteUrl: "https://free.goldlabel.pro",
     siteIcon: "/svg/iOS.svg",
@@ -18,7 +16,11 @@ export const glConfig: any = {
         primaryColor: "#C09F52",
         secondaryColor: "#FFFFFF",
     },
-    geo: {
+    flashDefault: null,
+    formsDefault: null,
+    linguaDefault: null,
+    geoDefault: null,
+    geoDefault_: {
         lat: 35,
         lng: 14,
         zoom: 8,
