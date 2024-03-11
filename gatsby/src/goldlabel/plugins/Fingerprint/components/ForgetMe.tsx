@@ -48,7 +48,7 @@ export default function ForgetMe(props: any) {
                             Forget me
                         </Font>
                     </Box>
-                    <Icon icon="delete" color="primary" />
+                    <Icon icon="forget" color="primary" />
                 </Button>
             </Tooltip>
         </Box>

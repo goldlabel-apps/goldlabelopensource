@@ -112,9 +112,6 @@ export default function ListingDesktop(props: any) {
               <Box sx={{}}>
                 <CatNav />
               </Box>
-              <Box sx={{mt: -0.5}}>
-                <ShareMenu />
-              </Box>
               <Box sx={{flexGrow:1}}/>
             </Box>
             </>}

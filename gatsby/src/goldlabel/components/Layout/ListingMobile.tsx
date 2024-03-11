@@ -80,9 +80,6 @@ export default function ListingMobile(props: any) {
               <Box sx={{mt: 0.25}}>
                 <CatNav />
               </Box>
-              <Box sx={{}}>
-                <ShareMenu />
-              </Box>
           </Box>
           <Container>
             <Box sx={{mt:1}}>

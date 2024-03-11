@@ -37,10 +37,8 @@ export type ConfigShape = {
 }
 
 export type CoreShape = {
-  
   user: any
   darkmode: boolean
-  debuggerOpen: any
   frontmatter: any
   authed: boolean
   authing: boolean

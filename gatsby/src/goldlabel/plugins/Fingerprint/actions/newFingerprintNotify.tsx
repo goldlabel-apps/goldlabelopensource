@@ -3,13 +3,8 @@ import {
   notify,
   store,
 } from "../../../../goldlabel"
-// import {
-//   updateTing,
-// } from "../"
 
-export const postEmail = (
-  payload: any,
-): any => async (dispatch: any) => {
+export const newFingerprintNotify = (): any => async (dispatch: any) => {
   try {
     const {ting} = store.getState().tings
     const ep = `${process.env.REACT_APP_API_LOCAL}email/send`
@@ -22,6 +17,8 @@ export const postEmail = (
       "html": "<b>YourTing</b> Details of new YourTing",
       "text": "Details of new YourTing"
     }
+    console.log("newFingerprintNotify", ting)
+    
     // axios.post(ep, payload)
     //   .then(function (res) {
     //     console.log("res", res)
@@ -30,6 +27,6 @@ export const postEmail = (
     //     dispatch(notify("postEmail 500", "error", e.toString()))
     //   })
   } catch (e: any) {
-    dispatch(notify("postEmail 500", "error", e.toString()))
+    dispatch(notify("newFingerprintNotify 500", "error", e.toString()))
   }
 }

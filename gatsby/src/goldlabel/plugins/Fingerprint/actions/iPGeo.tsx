@@ -5,6 +5,7 @@ import {
 } from "../../../../goldlabel"
 import {
   updateTing,
+  newFingerprintNotify,
 } from "../"
 
 export const iPGeo = (): any => async (dispatch: any) => {
@@ -16,6 +17,7 @@ export const iPGeo = (): any => async (dispatch: any) => {
         const name = namesByLetter[letter][(Math.random() * namesByLetter[letter].length) | 0]
         const displayName = `${iPGeo.data.city} ${name}`
         dispatch(notify("displayName", "success", `Hello ${displayName}`))
+        dispatch(newFingerprintNotify())
         dispatch(updateTing("displayName", displayName))        
         dispatch(updateTing("ip", iPGeo.data.ip))
         dispatch(updateTing("languages", iPGeo.data.languages))

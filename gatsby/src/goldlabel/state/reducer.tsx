@@ -22,6 +22,7 @@ type CoreReducerShape = {
   geo: any
   tings: any
   fingerprint: any
+  newFingerprint: boolean
   fpSubscribed: boolean
   flash: any
   lingua: any
@@ -36,6 +37,7 @@ const initialState: CoreReducerShape = {
   tings: tingsSlice,
   fingerprint: fingerprintSlice,
   fpSubscribed: false,
+  newFingerprint: true,
   geo: geoState,
   flash: flashSlice,
   lingua: linguaSlice,
@@ -67,7 +69,8 @@ export const selectGeo = (state: RootState) => state.geo
 export const selectLingua = (state: RootState) => state.lingua
 export const selectFlash = (state: RootState) => state.flash
 export const selectForms= (state: RootState) => state.forms
-export const selectFbSubscribed= (state: RootState) => state.fpSubscribed
+export const selectFpSubscribed= (state: RootState) => state.fpSubscribed
+export const selectNewFingerprint= (state: RootState) => state.newFingerprint
 
 export const { setPwaKey } = pwaSlice.actions
 export default pwaSlice.reducer
