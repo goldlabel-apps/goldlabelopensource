@@ -4,8 +4,10 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Tooltip,
+  IconButton,
   Box,
-  ButtonBase,
+  Divider,
 } from "@mui/material"
 import {
   Font,
@@ -16,7 +18,11 @@ import {
   navigate,
   useAllMarkdown,
   setCoreKey,
+  ShareMenu,
 } from "../../../goldlabel"
+import {
+  forgetTing
+} from "../../plugins/Fingerprint"
 
 export default function Navigator() {
   const dispatch = usePwaDispatch()
@@ -39,6 +45,11 @@ export default function Navigator() {
     }
   }
 
+  const onForgetMe = () => {
+    let yehOK = window.confirm("Sure? You'll go away")
+    if (yehOK) dispatch(forgetTing())
+  }
+
   const openGithubLink = () => {
     // rel="noopener noreferrer"
     dispatch(navigate(
@@ -49,24 +60,7 @@ export default function Navigator() {
 
   return <>
           <Box sx={{ml: 1}}>
-
-            <ButtonBase
-              title="Free on GitHub"
-              sx={{
-                p:1,
-              }}
-              onClick={openGithubLink}>
-                <Box sx={{mr: 1}}>
-                  <Icon icon="github" color="primary" />
-                </Box>
-                <Box sx={{}}>
-                  <Font>
-                    Download Free
-                  </Font>
-                </Box>
-            </ButtonBase>
-
-
+            <Divider />
             <List dense>
               <ListItemButton
                 disabled={frontmatter.slug === "/"}
@@ -122,9 +116,32 @@ export default function Navigator() {
                 })}
               </> : null }
 
-
             </List>
-            
+            <Divider />
+            <Box sx={{m: 1}}>
+              <Tooltip title={<Font color="white">
+                Delete yourself?
+              </Font>}>
+                <IconButton
+                  color="primary"
+                  sx={{}}
+                  onClick={onForgetMe}>
+                  <Icon icon={"forget"} color="primary"/>
+                </IconButton>
+              </Tooltip>
+              <Tooltip title={<Font color="white">
+                Free from GitHub
+              </Font>}>
+                <IconButton
+                  color="primary"
+                  sx={{}}
+                  onClick={openGithubLink}>
+                  <Icon icon={"github"} color="primary"/>
+                </IconButton>
+              </Tooltip>
+              
+              <ShareMenu />
+            </Box>
           </Box>
       </>
 }

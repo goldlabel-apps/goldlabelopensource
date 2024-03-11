@@ -1,9 +1,9 @@
 import * as React from 'react'
 import {
   AppBar,
-  Box,
-  Toolbar,
   IconButton,
+  CardHeader,
+  Avatar,
 } from "@mui/material"
 import {
   Icon,
@@ -18,49 +18,52 @@ import {
 } from "../../Fingerprint"
 
 export default function Controls() {
-  const dispatch = usePwaDispatch()
-  const tings = usePwaSelect(selectTings)
-  const {ting} = tings
-  if (!ting) return null
-  // console.log("ting", ting)
-  
-  const {
-    displayName,
-  } = ting
-  
+
   const closeFingerprint = () => {
     dispatch(toggleFullScreen(false))
     return true
   }
 
-  return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar 
-        position="static" 
-        color="inherit"
-        sx={{
-          background: "none",
-          boxShadow: "none"
-        }}>
-        <Toolbar>
-          <Font variant="title" noWrap>
-            {displayName}
-          </Font>
-          
-          <Box sx={{}}>
-            <ForgetMe mode="icon"/>
-          </Box>
-          <Box sx={{}}>
-          
-            <IconButton
-              onClick={closeFingerprint}
-              color="primary">
-              <Icon icon="close" />
-            </IconButton>
-          </Box>
-          <Box sx={{ flexGrow: 1 }} />
-        </Toolbar>
-      </AppBar>
-    </Box>
-  )
+  const dispatch = usePwaDispatch()
+  const tings = usePwaSelect(selectTings)
+  const {ting} = tings
+  if (!ting) return null
+
+
+  const {
+    displayName,
+    ip,
+  } = ting
+  
+  return <AppBar 
+            position="static" 
+            color="inherit"
+            sx={{
+              background: "none",
+              boxShadow: "none"
+            }}>
+            
+              <CardHeader 
+                avatar={<IconButton
+                          onClick={closeFingerprint}
+                          color="primary">
+                          <Icon icon="left" />
+                        </IconButton>}
+                action={<>
+                  <ForgetMe mode="icon"/>
+                  <IconButton
+                    onClick={closeFingerprint}
+                    color="primary">
+                    <Icon icon="close" />
+                  </IconButton>
+                </>}
+                title={<Font noWrap>
+                        {displayName}
+                      </Font>}
+                subheader={<Font variant="small" noWrap>
+                            {ip}
+                          </Font>}
+              />
+              
+          </AppBar>
 }

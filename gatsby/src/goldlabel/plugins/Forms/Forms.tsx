@@ -1,7 +1,6 @@
 import React from "react"
 import {
   Box,
-  Card,
   CardContent,
 } from "@mui/material"
 import {
@@ -13,15 +12,13 @@ export function Forms() {
   const forms = usePwaSelect(selectForms)
   
   return (<>
-            <Card sx={{m:1}}>
+            <Box sx={{m:0}}>
               <CardContent>
-                <Box sx={{
-                  
-                }}>
+                <Box sx={{}}>
                   <pre>forms:{JSON.stringify(forms, null, 2)}</pre>
                 </Box>
               </CardContent>
-            </Card>
+            </Box>
           </>
   )
 }

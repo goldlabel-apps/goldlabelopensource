@@ -19,7 +19,7 @@ import {updateTing} from "./actions/updateTing"
 import {updateFbTing} from "./actions/updateFbTing"
 import {saveTing} from "./actions/saveTing"
 import {forgetTing} from "./actions/forgetTing"
-import {postEmail} from "./actions/postEmail"
+import {newFingerprintNotify} from "./actions/newFingerprintNotify"
 
 export {
     tingsSlice,
@@ -41,5 +41,5 @@ export {
     deviceMake,
     saveTing,
     forgetTing,
-    postEmail,
+    newFingerprintNotify,
 }

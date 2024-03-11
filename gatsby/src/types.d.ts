@@ -28,22 +28,17 @@ export type ConfigShape = {
   siteFacebook: string
   siteTwitter: string
   siteTheme: string
-  sharing: boolean
+  sharing?: boolean
   siteKeywords: string
   siteFooterUrl?: string
   siteDefaultLocale?: string
   theme: ThemeShape
-  mapbox?: any
-  membersOnly?: boolean
-  backoffice?: any
-  darkmodeEnabled: boolean
-  debuggerEnabled: boolean
+  geo?: any
 }
 
 export type CoreShape = {
   user: any
   darkmode: boolean
-  debuggerOpen: any
   frontmatter: any
   authed: boolean
   authing: boolean

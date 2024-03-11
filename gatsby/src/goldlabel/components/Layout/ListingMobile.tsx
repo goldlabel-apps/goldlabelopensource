@@ -55,7 +55,6 @@ export default function ListingMobile(props: any) {
     slug = frontmatter.slug
     if (frontmatter.layout) layout = frontmatter.layout
   }
-  const {sharing} = glConfig
   
   let minMdH = 0
   const el = document.getElementById('markdown')
@@ -73,7 +72,6 @@ export default function ListingMobile(props: any) {
 
   return <>
           <div id="topAnchor" />
-
           <Box sx={{display: "flex", m:1}}>
           <Box sx={{flexGrow:1}}/>
             <Box sx={{ml:1}}>
@@ -82,11 +80,7 @@ export default function ListingMobile(props: any) {
               <Box sx={{mt: 0.25}}>
                 <CatNav />
               </Box>
-              {sharing ? <Box sx={{}}>
-                <ShareMenu />
-              </Box> : null}
           </Box>
-          
           <Container>
             <Box sx={{mt:1}}>
               <Box sx={{}}>     

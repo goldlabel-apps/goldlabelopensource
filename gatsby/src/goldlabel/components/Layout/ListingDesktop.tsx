@@ -66,7 +66,7 @@ export default function ListingDesktop(props: any) {
     icon = frontmatter.icon
     if (frontmatter.layout) layout = frontmatter.layout
   }
-  const {sharing} = glConfig
+
   
   if (type === "goldlabel") return <>
     <Pricing />
@@ -78,7 +78,6 @@ export default function ListingDesktop(props: any) {
     }}>
       <div id="topAnchor" />
       <Grid container spacing={1}>
-      
         <Grid item xs={12}>
           <Box sx={{}}>
             <CardHeader 
@@ -113,10 +112,6 @@ export default function ListingDesktop(props: any) {
               <Box sx={{}}>
                 <CatNav />
               </Box>
-              
-              {sharing ? <Box sx={{mt: -0.5}}>
-                  <ShareMenu />
-                </Box> : null}
               <Box sx={{flexGrow:1}}/>
             </Box>
             </>}

@@ -9,8 +9,7 @@ import {
   resetLocalstorage,
 } from "../../../../goldlabel"
 
-export const forgetTing = (
-): any => async (dispatch: any) => {
+export const forgetTing = (): any => async (dispatch: any) => {
   try {
     const {ting} = store.getState().tings
     if (!ting) return null
