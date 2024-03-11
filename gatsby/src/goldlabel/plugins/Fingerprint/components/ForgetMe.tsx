@@ -19,9 +19,9 @@ export default function ForgetMe(props: any) {
     const {mode} = props
     if (mode) iconMode = mode
     const dispatch = usePwaDispatch()
-    
     const onReset = () => {
-        dispatch(forgetTing())
+        let yehOK = window.confirm("Remove all trace of your visit?")
+        if (yehOK) dispatch(forgetTing())
     }
 
     if (iconMode === "icon") return <>
@@ -31,7 +31,7 @@ export default function ForgetMe(props: any) {
             <IconButton
                 onClick={onReset}
                 color="primary">
-                <Icon icon="delete" />
+                <Icon icon="forget" />
             </IconButton>
         </Tooltip>
     </>
