@@ -12,7 +12,7 @@ import {
 export function Flash() {
   const flash = usePwaSelect(selectFlash)
   return (<>
-            <Card>
+            <Card sx={{m:1}}>
               <CardContent>
                 <Box sx={{
                   

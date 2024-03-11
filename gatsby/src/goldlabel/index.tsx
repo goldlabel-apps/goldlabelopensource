@@ -30,6 +30,7 @@ import {
     selectGeo,
     selectFlash,
     selectLingua,
+    selectForms,
 } from "./state/reducer"
 // Theme
 import Theme from "../goldlabel/theme/Theme"
@@ -88,6 +89,8 @@ import MultiSelect from "./components/System/MultiSelect"
 import DarkmodeToggle from "./components/System/DarkmodeToggle"
 import NotifyerSnack from "./components/System/NotifyerSnack"
 import ScrollUp from "./components/System/ScrollUp"
+import TogglePaletteMode from "./components/System/TogglePaletteMode"
+
 import NotFound from "./components/System/NotFound"
 import WindowResizeListener from "./components/System/WindowResizeListener"
 
@@ -136,6 +139,7 @@ export {
     NotifyerSnack,
     selectNotifyer,
     ScrollUp,
+    TogglePaletteMode,
     WindowResizeListener,
     NotFound,
     SystemMenu,
@@ -224,6 +228,7 @@ export {
     selectGeo,
     selectFlash,
     selectLingua,
+    selectForms,
 }
 // Actions
 export {
