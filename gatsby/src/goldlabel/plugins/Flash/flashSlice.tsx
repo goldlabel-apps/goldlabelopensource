@@ -1,11 +1,8 @@
-export type FlashSlice = {
-    fullscreenFlash: boolean
-    currentText: string
-}
+import {FlashSlice} from "./types"
 
 export const flashSlice: FlashSlice = {
-    fullscreenFlash: false,
-    currentText: "Oi oi saveloy",
+    fullscreen: false,
+    title: "This is Flash. Hello.",
 }
 
 export default flashSlice

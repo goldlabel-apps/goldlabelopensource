@@ -1,14 +1,7 @@
-export type GeoSlice = {
-    fullscreenMap: boolean
-    default: {
-        lat: number
-        lng: number
-        zoom: number
-    }
-}
+import {GeoSlice} from "./types"
 
 export const geoSlice: GeoSlice = {
-    fullscreenMap: false,
+    fullscreen: false,
     default: {
         lat: 35.872015923874095,
         lng: 14.440090918742467,

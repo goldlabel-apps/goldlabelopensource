@@ -11,11 +11,6 @@ import {
 
 export function Geo() {
   const geo = usePwaSelect(selectGeo)
-  
-  let lat = 0
-  let lng = 0
-  let zoom = 10
-
   return (<>
             <Card>
               <CardContent>

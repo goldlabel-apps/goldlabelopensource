@@ -1,8 +1,9 @@
 import React from "react"
 import {
-  Box,
+  Grid,
   Dialog,
   DialogContent,
+  DialogActions,
   ThemeProvider,
   createTheme,
   useTheme,
@@ -23,6 +24,8 @@ import {
 } from "../Fingerprint"
 
 import {Geo} from "../Geo"
+import {Flash} from "../Flash"
+import {Lingua} from "../Lingua"
 
 export function YourTing() {
   const dispatch = usePwaDispatch()
@@ -58,18 +61,24 @@ export function YourTing() {
               fullScreen
               open={dialogOpen}
               onClose={closeDialog}>
-                <DialogContent>
-                  <Geo />
-                  <ForgetMe />
-                  <Box sx={{display: "flex"}}>
-                    <Box sx={{flexGrow: 1}} />
-                    <Box>
-                      <ToggleBar />
-                    </Box>
-                    <Box sx={{flexGrow:1}} />
-                  </Box>
-                  <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre>
+              <DialogContent>
+                <Grid container spacing={1}>
+                  <Grid item xs={12} md={4}>
+                    <Geo />
+                  </Grid>
+                  <Grid item xs={12} md={4}>
+                    <Flash />
+                  </Grid>
+                  <Grid item xs={12} md={4}>
+                    <Lingua />
+                  </Grid>
+                </Grid>
+                <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre>
+                <ForgetMe />
               </DialogContent>
+              <DialogActions>
+                <ToggleBar />
+              </DialogActions>
           </Dialog>       
         </ThemeProvider>   
       </>
