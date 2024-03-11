@@ -1,6 +1,6 @@
-import {ConfigShape} from "./types"
+// import {ConfigShape} from "./types"
 
-export const glConfig: ConfigShape = {
+export const glConfig: any = {
     siteUrl: "https://free.goldlabel.pro",
     siteIcon: "/svg/iOS.svg",
     siteAvatar: "https://free.goldlabel.pro/svg/iOS.svg",
