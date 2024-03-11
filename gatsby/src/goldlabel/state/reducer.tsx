@@ -5,9 +5,12 @@ import {glConfig} from "../../config"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "./store"
 import {coreState} from "./coreState"
+
+// Connect Plugins
 import {fingerprintSlice} from "../plugins/Fingerprint"
 import {tingsSlice} from "../plugins/Fingerprint"
 import {geoState} from "../plugins/Geo"
+import {flashSlice} from "../plugins/Flash"
 
 type CoreReducerShape = {
   bootTime: number
@@ -17,6 +20,7 @@ type CoreReducerShape = {
   geo: any
   tings: any
   fingerprint: any
+  flash: any
 }
 
 const initialState: CoreReducerShape = {
@@ -27,6 +31,7 @@ const initialState: CoreReducerShape = {
   tings: tingsSlice,
   fingerprint: fingerprintSlice,
   geo: geoState,
+  flash: flashSlice,
 }
 
 export const pwaSlice = createSlice({
