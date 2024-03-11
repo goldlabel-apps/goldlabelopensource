@@ -23,7 +23,6 @@ export const saveTing = (
         href: window.location.href,
         docTitle: document.title,
       })
-      console.log("check if this was a new fingerprint", ting)
     }
   } catch (e: any) {
     dispatch(notify("saveTing 500", "error", e.toString()))

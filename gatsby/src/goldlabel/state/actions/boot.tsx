@@ -10,6 +10,7 @@ import {
 
 export const boot = (): any => async (dispatch: any) => {
     try {
+      console.log("check if this was a new fingerprint")
       const uTime = Date.now()
       const sinceBoot = uTime - store.getState().bootTime
       if (sinceBoot > 750) {
