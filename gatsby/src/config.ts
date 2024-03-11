@@ -18,11 +18,11 @@ export const glConfig: ConfigShape = {
         primaryColor: "#C09F52",
         secondaryColor: "#FFFFFF",
     },
-    debuggerEnabled: true,
-    darkmodeEnabled: true,
-    sharing: true,
-    mapbox: {
-        light: "mapbox://styles/listingslab/clmrnpplw00ej01nsfv8l4q25",
-        dark: "mapbox://styles/listingslab/clmrnt68o02a801qxevn0bt6u"
+    geo: {
+        lat: 35,
+        lng: 14,
+        zoom: 8,
+        lightTheme: "mapbox://styles/listingslab/clmrnpplw00ej01nsfv8l4q25",
+        darkTheme: "mapbox://styles/listingslab/clmrnt68o02a801qxevn0bt6u"
     }
 }

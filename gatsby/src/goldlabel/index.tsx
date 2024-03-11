@@ -31,6 +31,7 @@ import {
     selectFlash,
     selectLingua,
     selectForms,
+    selectFbSubscribed,
 } from "./state/reducer"
 // Theme
 import Theme from "../goldlabel/theme/Theme"
@@ -226,6 +227,7 @@ export {
     selectTings,
     selectFingerprint,
     selectGeo,
+    selectFbSubscribed,
     selectFlash,
     selectLingua,
     selectForms,

@@ -1,7 +1,6 @@
 import React from "react"
 import {
   Box,
-  Card,
   CardContent,
 } from "@mui/material"
 import {
@@ -12,15 +11,13 @@ import {
 export function Geo() {
   const geo = usePwaSelect(selectGeo)
   return (<>
-            <Card sx={{m:1}}>
+            <Box sx={{m:0}}>
               <CardContent>
-                <Box sx={{
-                  
-                }}>
+                <Box sx={{}}>
                   <pre>geo:{JSON.stringify(geo, null, 2)}</pre>
                 </Box>
               </CardContent>
-            </Card>
+            </Box>
           </>
   )
 }

@@ -13,6 +13,8 @@ export const boot = (): any => async (dispatch: any) => {
       console.log("check if this was a new fingerprint")
       const uTime = Date.now()
       const sinceBoot = uTime - store.getState().bootTime
+      const fpSubscribed = store.getState().fpSubscribed
+      console.log("fpSubscribed", fpSubscribed)
       if (sinceBoot > 750) {
         dispatch(setPwaKey({ key: "bootTime", value: uTime })) 
       } else {
