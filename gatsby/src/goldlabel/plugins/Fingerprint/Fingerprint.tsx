@@ -15,6 +15,7 @@ import {
   init,
   saveTing,
 } from "./"
+import { doc } from "firebase/firestore"
 
 export function Fingerprint() {
   const dispatch = usePwaDispatch()
@@ -24,6 +25,8 @@ export function Fingerprint() {
   } = tings
 
   React.useEffect(() => {
+    // const params = window.location.search
+    // console.log("params", params)
     // console.log("subscribe", ting.fingerprint)
     // if (ting){
     //   const {YourTing} = ting
@@ -37,6 +40,8 @@ export function Fingerprint() {
     //   }
     // }
   }, [ting, dispatch])
+
+
 
   React.useEffect(() => {
     const {

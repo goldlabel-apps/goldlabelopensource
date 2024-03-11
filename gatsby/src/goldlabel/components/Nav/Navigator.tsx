@@ -60,6 +60,32 @@ export default function Navigator() {
 
   return <>
           <Box sx={{ml: 1}}>
+          <Divider />
+            <Box sx={{m: 1}}>
+              <Tooltip title={<Font color="white">
+                Delete yourself?
+              </Font>}>
+                <IconButton
+                  color="primary"
+                  sx={{}}
+                  onClick={onForgetMe}>
+                  <Icon icon={"forget"} color="primary"/>
+                </IconButton>
+              </Tooltip>
+              <Tooltip title={<Font color="white">
+                Free from GitHub
+              </Font>}>
+                <IconButton
+                  color="primary"
+                  sx={{}}
+                  onClick={openGithubLink}>
+                  <Icon icon={"github"} color="primary"/>
+                </IconButton>
+              </Tooltip>
+              
+              <ShareMenu />
+            </Box>
+            
             <Divider />
             <List dense>
               <ListItemButton
@@ -117,31 +143,7 @@ export default function Navigator() {
               </> : null }
 
             </List>
-            <Divider />
-            <Box sx={{m: 1}}>
-              <Tooltip title={<Font color="white">
-                Delete yourself?
-              </Font>}>
-                <IconButton
-                  color="primary"
-                  sx={{}}
-                  onClick={onForgetMe}>
-                  <Icon icon={"forget"} color="primary"/>
-                </IconButton>
-              </Tooltip>
-              <Tooltip title={<Font color="white">
-                Free from GitHub
-              </Font>}>
-                <IconButton
-                  color="primary"
-                  sx={{}}
-                  onClick={openGithubLink}>
-                  <Icon icon={"github"} color="primary"/>
-                </IconButton>
-              </Tooltip>
-              
-              <ShareMenu />
-            </Box>
+            
           </Box>
       </>
 }

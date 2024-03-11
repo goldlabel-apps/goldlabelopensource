@@ -13,17 +13,21 @@ export const newFingerprintNotify = (
     const {
       host,
       fingerprint,
+      city,
     } = ting
+
+    if (city === "Mountain View") return false
+
     const email = {
       "apiKey": process.env.REACT_APP_API_KEY,
       "to": "listingslab@gmail.com",
       "from": "\"Goldlabel\" <ai@goldlabel.pro>",
-      "subject": `${displayName} on ${host}`,
-      "html": `<div>
-                <a href=https://goldlabel.pro/?fp=${fingerprint}">
-                  ${fingerprint}
+      "subject": `${host} > ${displayName}`,
+      "html": `<p>
+                <a href="https://goldlabel.pro/?fp=${fingerprint}">
+                  View
                 </a>
-              </div>`,
+              </p>`,
       "text": `${fingerprint}`
     }
     axios.post(ep, email)
