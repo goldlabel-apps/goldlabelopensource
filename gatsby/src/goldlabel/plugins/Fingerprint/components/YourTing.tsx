@@ -20,7 +20,9 @@ import {
 import {
   toggleFullScreen,
   ToggleBar,
-} from "../"
+} from "../../Fingerprint"
+
+import {Geo} from "../../Geo"
 
 export function YourTing() {
   const dispatch = usePwaDispatch()
@@ -57,6 +59,7 @@ export function YourTing() {
               open={dialogOpen}
               onClose={closeDialog}>
                 <DialogContent>
+                  <Geo />
                   <ForgetMe />
                   <Box sx={{display: "flex"}}>
                     <Box sx={{flexGrow: 1}} />

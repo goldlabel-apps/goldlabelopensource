@@ -27,6 +27,7 @@ import {
     selectAuth,
     selectTings,
     selectFingerprint,
+    selectGeo,
 } from "./state/reducer"
 // Theme
 import Theme from "../goldlabel/theme/Theme"
@@ -218,6 +219,7 @@ export {
     selectAuth,
     selectTings,
     selectFingerprint,
+    selectGeo,
 }
 // Actions
 export {

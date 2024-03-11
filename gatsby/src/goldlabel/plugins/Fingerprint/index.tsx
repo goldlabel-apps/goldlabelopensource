@@ -1,6 +1,8 @@
 import {Fingerprint} from "./Fingerprint"
-import tingsState from "./slice"
-import fingerprintState from "./sliceFingerprint"
+import {
+    tingsSlice,
+    fingerprintSlice,
+} from "./fingerprintSlice"
 import {YourTing} from "./components/YourTing"
 import {Iconify} from "./components/Iconify"
 import {ToggleBar} from "./components/ToggleBar"
@@ -15,10 +17,11 @@ import {updateTing} from "./actions/updateTing"
 import {updateFbTing} from "./actions/updateFbTing"
 import {saveTing} from "./actions/saveTing"
 import {forgetTing} from "./actions/forgetTing"
+import {postEmail} from "./actions/postEmail"
 
 export {
-    tingsState,
-    fingerprintState,
+    tingsSlice,
+    fingerprintSlice,
     Fingerprint,
     YourTing,
     ForgetMe,
@@ -34,4 +37,5 @@ export {
     deviceMake,
     saveTing,
     forgetTing,
+    postEmail,
 }

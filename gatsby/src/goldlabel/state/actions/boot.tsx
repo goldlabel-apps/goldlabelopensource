@@ -4,14 +4,22 @@ import {
   store,
   notify,
 } from "../../../goldlabel"
+import {
+  postEmail
+} from "../../../goldlabel/plugins/Fingerprint"
 
 export const boot = (): any => async (dispatch: any) => {
     try {
       const uTime = Date.now()
       const sinceBoot = uTime - store.getState().bootTime
       if (sinceBoot > 750) {
-        // console.log("boot.")
         dispatch(setPwaKey({ key: "bootTime", value: uTime })) 
+      } else {
+        setTimeout(() => {
+          const {tings} = store.getState()
+          dispatch(postEmail({fsadkhf:23}))
+          // console.log("postEmail", tings.ting.displayName)
+        }, 750)
       }
     } catch (e: any) {
       dispatch(notify("boot 500","error", e.toString()))
