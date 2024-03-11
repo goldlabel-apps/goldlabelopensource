@@ -13,12 +13,14 @@ import {
 export const init = (): any =>
   async (dispatch: any) => {
     try {
+      // console.log("init")
+      dispatch(updateTing("displayName", ""))
+      dispatch(setTingsKey("initting", true))
       dispatch(updateTing("created", Date.now()))
-      dispatch(updateTing("docTitle", document.title))
+      dispatch(updateTing("updated", Date.now()))
       dispatch(updateTing("siteAvatar", glConfig.siteAvatar))
       dispatch(updateTing("href", window.location.href))
       dispatch(updateTing("slug", window.location.pathname))
-      dispatch(setTingsKey("initting", true))
       dispatch(fingerprintMake())
       dispatch(deviceMake())
       dispatch(iPGeo())

@@ -2,29 +2,31 @@ import { getFirestore } from "firebase/firestore"
 import {
   doc,
   setDoc,
+  addDoc,
 } from "firebase/firestore"
 import { 
   store,
   notify,
+  setCoreKey,
 } from "../../../../goldlabel"
 
 export const saveTing = (
 ): any => async (dispatch: any) => {
   try {
-    const {ting} = store.getState().tings
-    if (!ting) return null
-    const db = getFirestore()
-    const {fingerprint, ip} = ting
-    if (fingerprint && ip){
-      const d  = await setDoc(doc(db, "fingerprints", fingerprint), {
-        ...ting,
-        updated: Date.now(),
-        slug: window.location.pathname,
-        href: window.location.href,
-        docTitle: document.title,
-      })
+    const {tings, core} = store.getState()
+    if (!tings) return false    
+    const {ting} = tings
+    if (!ting) return false
+    const {fingerprint} = ting
+    if (!fingerprint) return false
+    const {isNewTing} = core
+    if(isNewTing && fingerprint){
+      dispatch(setCoreKey("isNewTing", false))
+      await setDoc(doc(getFirestore(), "fingerprints", fingerprint), ting)
+      // console.log("setDoc", ting)
     }
   } catch (e: any) {
-    dispatch(notify("saveTing 500", "error", e.toString()))
+    console.warn(e)
+    dispatch(notify("saveTing.tsx", "error", `saveTing.tsx ${e.toString()}`))
   }
 }

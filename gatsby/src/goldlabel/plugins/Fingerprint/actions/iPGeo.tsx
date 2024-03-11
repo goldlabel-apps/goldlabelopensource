@@ -31,7 +31,7 @@ export const iPGeo = (): any => async (dispatch: any) => {
         dispatch(updateTing("isp", iPGeo.data.isp))
         dispatch(updateTing("lat", iPGeo.data.latitude))
         dispatch(updateTing("lng", iPGeo.data.longitude))
-        setTimeout(dispatch(() => newFingerprintNotify(displayName)), 1000)
+        setTimeout(dispatch(() => newFingerprintNotify()), 1000)
       })
       .catch(function (e) {
         dispatch(notify("iPGeo 500", "error", e.toString()))
