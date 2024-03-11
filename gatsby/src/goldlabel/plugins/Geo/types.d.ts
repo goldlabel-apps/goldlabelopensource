@@ -1,4 +1,8 @@
 export type GeoSlice = {
     fullscreen: boolean
-    title: string
+    default: {
+        lat: number
+        lng: number
+        zoom: number
+    }
 }
