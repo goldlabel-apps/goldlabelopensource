@@ -52,7 +52,7 @@ export function Fingerprint() {
   }, [tings, dispatch])
   
   return <>
-          <ToggleBar />
           <YourTing />
+          <ToggleBar />
         </>
 }

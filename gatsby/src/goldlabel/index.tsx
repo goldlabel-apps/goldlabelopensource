@@ -28,6 +28,8 @@ import {
     selectTings,
     selectFingerprint,
     selectGeo,
+    selectFlash,
+    selectLingua,
 } from "./state/reducer"
 // Theme
 import Theme from "../goldlabel/theme/Theme"
@@ -220,6 +222,8 @@ export {
     selectTings,
     selectFingerprint,
     selectGeo,
+    selectFlash,
+    selectLingua,
 }
 // Actions
 export {
