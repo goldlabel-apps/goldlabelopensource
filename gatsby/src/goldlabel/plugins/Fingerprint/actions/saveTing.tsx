@@ -7,37 +7,26 @@ import {
 import { 
   store,
   notify,
+  setCoreKey,
 } from "../../../../goldlabel"
-
-
 
 export const saveTing = (
 ): any => async (dispatch: any) => {
   try {
-    const {ting} = store.getState().tings
-    const {
-      fingerprint,
-      
-    } = store.getState()
-    if (!ting) return null
-    const db = getFirestore()
-    const {ip} = ting
-
-    if (ip) console.log("new ting here.", ting.fingerprint)
-    // if (ip){
-    //   if (fingerprint){
-    //     await setDoc(doc(db, "fingerprints", fingerprint), {
-    //       ...fingerprint,
-    //       updated: Date.now(),
-    //     })
-    //   } else {
-    //     await setDoc(doc(db, "fingerprints", ting.fingerprint), {
-    //       ...ting,
-    //       updated: Date.now(),
-    //     })
-    //   }
-    // }
+    const {tings, core} = store.getState()
+    if (!tings) return false    
+    const {ting} = tings
+    if (!ting) return false
+    const {fingerprint} = ting
+    if (!fingerprint) return false
+    const {isNewTing} = core
+    if(isNewTing && fingerprint){
+      dispatch(setCoreKey("isNewTing", false))
+      await setDoc(doc(getFirestore(), "fingerprints", fingerprint), ting)
+      // console.log("setDoc", ting)
+    }
   } catch (e: any) {
-    dispatch(notify("saveTing 500", "error", e.toString()))
+    console.warn(e)
+    dispatch(notify("saveTing.tsx", "error", `saveTing.tsx ${e.toString()}`))
   }
 }

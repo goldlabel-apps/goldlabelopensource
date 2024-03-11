@@ -1,14 +1,12 @@
-import {CoreShape} from "../../../src/types"
 import {glConfig} from "../../config"
 import {pricing} from "./constants/pricing"
 import {footer} from "../../footer"
 
-export const coreState: CoreShape = {
+export const coreState: any = {
     user: null,
     authed: false,
     authing: false,
     darkmode: glConfig.theme.defaultDarkmode || false,
-    debuggerOpen: false,
     display: null,
     notifyer: null,
     frontmatter: null,
@@ -19,4 +17,5 @@ export const coreState: CoreShape = {
     navDialogOpen: false,
     pricing,
     footer,
+    isNewTing: true,
 }
