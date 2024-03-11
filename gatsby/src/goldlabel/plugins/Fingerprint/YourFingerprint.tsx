@@ -35,10 +35,12 @@ import {Lingua} from "../Lingua"
 import {Forms} from "../Forms"
 
 export function YourFingerprint() {
-
-
-
   const dispatch = usePwaDispatch()
+
+  const closeDialog = () => {
+    dispatch(toggleFullScreen(false))
+  }
+  
   const tings = usePwaSelect(selectTings)
 
   React.useEffect(() => {
@@ -48,15 +50,14 @@ export function YourFingerprint() {
       if (fingerprint){
         const unsubscribe = onSnapshot(
           doc(getFirestore(), "fingerprints", fingerprint), (fp) => {
-            console.log("onSnapshot fp", fp.data())
+            // console.log("onSnapshot fp", fp.data())
             dispatch(updateFbTing(fp.data()))
           })
         return () => unsubscribe();
       }
     }
   }, [dispatch, tings])
-  
-  const fingerprint = usePwaSelect(selectFingerprint)
+
   const core = usePwaSelect(selectCore)
   const primaryColor = useTheme().palette.primary.main
   const secondaryColor = useTheme().palette.secondary.main
@@ -72,12 +73,7 @@ export function YourFingerprint() {
   } = glConfig
 
 
-  const closeDialog = () => {
-    dispatch(toggleFullScreen(false))
-  }
   
-
-
   return (<>
     <ThemeProvider 
       theme={createTheme({
@@ -104,7 +100,7 @@ export function YourFingerprint() {
                 { flashDefault ? <Flash /> : null }
               </Grid>
             </Grid>
-            <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre> 
+            {/* <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre>  */}
           </DialogContent>
           <DialogActions>
             <ToggleBar />

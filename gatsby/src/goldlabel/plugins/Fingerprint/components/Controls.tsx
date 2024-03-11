@@ -10,7 +10,6 @@ import {
   usePwaDispatch,
   usePwaSelect,
   selectFingerprint,
-  selectFpSubscribed,
 } from "../../../../goldlabel"
 import {
   ForgetMe,
@@ -18,15 +17,14 @@ import {
 } from "../../Fingerprint"
 
 export default function Controls() {
+  const dispatch = usePwaDispatch()
   const closeFingerprint = () => {
     dispatch(toggleFullScreen(false))
-    return true
   }
-  const dispatch = usePwaDispatch()
+
   const fingerprint = usePwaSelect(selectFingerprint)
-  const fpSubscribed = usePwaSelect(selectFpSubscribed)
-  console.log("fpSubscribed, fingerprint", fpSubscribed, fingerprint)
   if (!fingerprint) return null
+
   const {
     displayName,
     ip,
