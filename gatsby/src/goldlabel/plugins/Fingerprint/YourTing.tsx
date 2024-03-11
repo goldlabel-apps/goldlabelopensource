@@ -13,16 +13,16 @@ import {
   selectTings,
   selectCore,
   selectFingerprint,
-} from "../../../../goldlabel"
+} from "../../../goldlabel"
 import {
   ForgetMe,
-} from "../../../plugins/Fingerprint"
+} from "../../plugins/Fingerprint"
 import {
   toggleFullScreen,
   ToggleBar,
-} from "../../Fingerprint"
+} from "../Fingerprint"
 
-import {Geo} from "../../Geo"
+import {Geo} from "../Geo"
 
 export function YourTing() {
   const dispatch = usePwaDispatch()

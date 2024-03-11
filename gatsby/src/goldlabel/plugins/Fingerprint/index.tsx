@@ -3,7 +3,7 @@ import {
     tingsSlice,
     fingerprintSlice,
 } from "./fingerprintSlice"
-import {YourTing} from "./components/YourTing"
+import {YourTing} from "./YourTing"
 import {Iconify} from "./components/Iconify"
 import {ToggleBar} from "./components/ToggleBar"
 import ForgetMe from "./components/ForgetMe"
