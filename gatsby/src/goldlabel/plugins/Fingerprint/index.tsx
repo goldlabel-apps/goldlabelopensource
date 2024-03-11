@@ -5,6 +5,7 @@ import {
 } from "./fingerprintSlice"
 import {YourTing} from "./YourTing"
 import {Iconify} from "./components/Iconify"
+import Controls from "./components/Controls"
 import {ToggleBar} from "./components/ToggleBar"
 import ForgetMe from "./components/ForgetMe"
 import {init} from "./actions/init"
@@ -24,6 +25,7 @@ export {
     fingerprintSlice,
     Fingerprint,
     YourTing,
+    Controls,
     ForgetMe,
     init,
     ToggleBar,

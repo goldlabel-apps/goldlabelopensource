@@ -2,6 +2,7 @@ import React from "react"
 import {
   Grid,
   Dialog,
+  DialogTitle,
   DialogContent,
   DialogActions,
   ThemeProvider,
@@ -17,11 +18,10 @@ import {
 } from "../../../goldlabel"
 import {
   ForgetMe,
-} from "../../plugins/Fingerprint"
-import {
+  Controls,
   toggleFullScreen,
   ToggleBar,
-} from "../Fingerprint"
+} from "../../plugins/Fingerprint"
 
 import {Geo} from "../Geo"
 import {Flash} from "../Flash"
@@ -45,45 +45,48 @@ export function YourTing() {
   }
 
   return (<>
-        <ThemeProvider 
-          theme={createTheme({
-            palette: { 
-              mode: darkmode ? "light" : "dark",
-              primary: {
-                main: secondaryColor,
-              },
-              secondary: {
-                main: primaryColor,
-              },
-              background: {
-                paper: primaryColor
-              }}})}>
-            <Dialog 
-              fullScreen
-              open={dialogOpen}
-              onClose={closeDialog}>
-              <DialogContent>
-                <Grid container spacing={1}>
-                  <Grid item xs={12} md={4}>
-                    <Forms />
-                    <Geo />
-                    
-                  </Grid>
-                  <Grid item xs={12} md={4}>
-                    <Flash />
-                  </Grid>
-                  <Grid item xs={12} md={4}>
-                    <Lingua />
-                  </Grid>
+    <ThemeProvider 
+      theme={createTheme({
+        palette: { 
+          mode: darkmode ? "light" : "dark",
+          primary: {
+            main: secondaryColor,
+          },
+          secondary: {
+            main: primaryColor,
+          },
+          background: {
+            paper: primaryColor
+          }}})}>
+        <Dialog 
+          fullScreen
+          open={dialogOpen}
+          onClose={closeDialog}>
+            <DialogTitle>
+              <Controls />
+            </DialogTitle>
+
+            <DialogContent>
+              <Grid container spacing={1}>
+                <Grid item xs={12} md={8}>
+                  <Forms />
                 </Grid>
-                <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre>
-                <ForgetMe />
-              </DialogContent>
-              <DialogActions>
-                <ToggleBar />
-              </DialogActions>
-          </Dialog>       
-        </ThemeProvider>   
-      </>
+                <Grid item xs={12} md={4}>
+                  <Lingua />
+                  <Geo />
+                  <Flash />
+                </Grid>
+              </Grid>
+            </DialogContent>
+            <DialogActions>
+              <ToggleBar />
+            </DialogActions>
+        </Dialog>       
+      </ThemeProvider>   
+    </>
   )
 }
+
+/* 
+<pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre> 
+*/
