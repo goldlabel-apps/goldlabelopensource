@@ -22,7 +22,7 @@ import {
 } from "../../../goldlabel"
 import {
   forgetTing
-} from "../../plugins/Fingerprint"
+} from "../../Fingerprint"
 
 export default function Navigator() {
   const dispatch = usePwaDispatch()

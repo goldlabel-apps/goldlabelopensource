@@ -2,13 +2,12 @@ import { getFirestore } from "firebase/firestore"
 import {
   doc,
   setDoc,
-  addDoc,
 } from "firebase/firestore"
 import { 
   store,
   notify,
   setCoreKey,
-} from "../../../../goldlabel"
+} from "../../../goldlabel"
 
 export const saveTing = (
 ): any => async (dispatch: any) => {

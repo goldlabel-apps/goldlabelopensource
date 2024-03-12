@@ -10,7 +10,7 @@ import {
   usePwaDispatch,
   usePwaSelect,
   selectFingerprint,
-} from "../../../../goldlabel"
+} from "../../../goldlabel"
 import {
   ForgetMe,
   toggleFullScreen,

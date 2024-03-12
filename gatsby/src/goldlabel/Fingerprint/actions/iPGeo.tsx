@@ -2,7 +2,7 @@ import axios from "axios"
 import { 
   notify,
   namesByLetter,
-} from "../../../../goldlabel"
+} from "../../../goldlabel"
 import {
   updateTing,
   newFingerprintNotify,

@@ -6,7 +6,7 @@ import {
 } from "@mui/material"
 import {
   Icon,
-} from "../../../../goldlabel"
+} from "../../../goldlabel"
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",

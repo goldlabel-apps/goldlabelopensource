@@ -1,21 +1,18 @@
 import React from "react"
 // import { 
 //   getFirestore,
-//   onSnapshot,
-//   doc,
 // } from "firebase/firestore"
 import {
   usePwaDispatch,
   usePwaSelect,
   selectTings,
-} from "../../../goldlabel"
+} from "../../goldlabel"
 import {
   YourFingerprint,
   ToggleBar,
   init,
   saveTing,
 } from "./"
-import { doc } from "firebase/firestore"
 
 export function Fingerprint() {
   const dispatch = usePwaDispatch()

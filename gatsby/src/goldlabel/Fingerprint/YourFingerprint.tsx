@@ -1,10 +1,10 @@
+// import {glConfig} from "../../config"
 import React from "react"
 import { 
   getFirestore,
   doc,
   onSnapshot,
 } from "firebase/firestore"
-import {glConfig} from "../../../config"
 import {
   Grid,
   Dialog,
@@ -21,13 +21,13 @@ import {
   selectTings,
   selectCore,
   selectFingerprint,
-} from "../../../goldlabel"
+} from "../../goldlabel"
 import {
   Controls,
   toggleFullScreen,
   ToggleBar,
   updateFbTing,
-} from "../../plugins/Fingerprint"
+} from "../Fingerprint"
 
 export function YourFingerprint() {
   

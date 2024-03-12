@@ -4,7 +4,7 @@ import {
 } from "@mui/material"
 import {
   Icon,
-} from "../../../../goldlabel"
+} from "../../../goldlabel"
 
 export function Iconify(props: any) {
   const {needle} = props

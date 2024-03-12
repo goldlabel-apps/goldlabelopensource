@@ -11,7 +11,7 @@ import {
   selectFingerprint,
   Icon,
   Font,
-} from "../../../../goldlabel"
+} from "../../../goldlabel"
 import {
     toggleFullScreen,
 } from "../"

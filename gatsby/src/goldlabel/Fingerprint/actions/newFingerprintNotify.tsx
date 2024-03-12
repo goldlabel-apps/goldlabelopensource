@@ -2,7 +2,7 @@ import axios from "axios"
 import { 
   notify,
   store,
-} from "../../../../goldlabel"
+} from "../../../goldlabel"
 
 export const newFingerprintNotify = (): any => async (dispatch: any) => {
   try {

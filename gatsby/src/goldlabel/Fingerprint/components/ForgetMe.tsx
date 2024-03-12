@@ -9,7 +9,7 @@ import {
     Icon,
     Font,
     usePwaDispatch,
-} from "../../../../goldlabel"
+} from "../../../goldlabel"
 import {
     forgetTing,
 } from "../"

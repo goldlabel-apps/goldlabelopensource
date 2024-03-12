@@ -7,7 +7,7 @@ import {
   store,
   notify,
   resetLocalstorage,
-} from "../../../../goldlabel"
+} from "../../../goldlabel"
 
 export const forgetTing = (): any => async (dispatch: any) => {
   try {

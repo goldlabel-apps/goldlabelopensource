@@ -1,7 +1,7 @@
 import UAParser from 'ua-parser-js';
 import { 
   notify,
-} from "../../../../goldlabel"
+} from "../../../goldlabel"
 import {updateTing} from "../"
 
 export const deviceMake = (): any => async (dispatch: any) => {

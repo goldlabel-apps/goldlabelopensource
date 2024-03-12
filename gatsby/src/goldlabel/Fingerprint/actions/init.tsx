@@ -1,7 +1,7 @@
 import { 
   notify,
-} from "../../../../goldlabel"
-import {glConfig} from "../../../../config"
+} from "../../../goldlabel"
+import {glConfig} from "../../../config"
 import {
   fingerprintMake,
   setTingsKey,
