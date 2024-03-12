@@ -13,7 +13,7 @@ firebase-debug.log*
 firebase-debug.*.log*
 .firebase
 .firebaserc
-firebase.json
+# firebase.json
 
 # Logs
 logs
