@@ -5,7 +5,7 @@ parentSlug: "/about"
 title: "AI"
 description: "Meet our Künstliche Intelligenz, Oliver"
 icon: "openai"
-image: "/png/OpenAI.png"
+image: "/webp/chatgpt.webp"
 keywords: "How, AI"
 ---
 ### Meet Oliver, our Artificial Intelligence
