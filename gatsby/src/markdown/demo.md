@@ -17,8 +17,8 @@ Consider these 2 roles; Businessman & Customer
 [Here on pr0](https://goldlabel.pro?demo) you can log into a Demo account using these credentials
 
 ```
-email: demo@goldlabel.pro
-password: gl0149^_
+demo@goldlabel.pro
+gl0149^_
 ```
 
 ### Infrastructure as Code
