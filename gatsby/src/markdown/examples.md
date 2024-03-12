@@ -1,5 +1,5 @@
 ---
-order: 20
+order: 3000
 slug: "/examples"
 parentSlug: "/"
 title: "Examples"
@@ -8,15 +8,9 @@ icon: "examples"
 image: "/webp/coupland/option-paralysis.webp"
 keywords: "Goldlabel, Examples, Dive Malta, Growspy"
 ---
-
-These are some real life examples of Goldlabel Apps which have been created as part of the process of developing our POC and MVP
+> Here are some real life examples of Goldlabel Apps which have been created as part of the process of developing our POC and MVP
 
 > [Open Source](https://free.goldlabel.pro/)
-
 > [Listingslab](https://listingslab.com/)
-
 > [Dive Malta](https://divemalta.app/)
-
-> [Legal World](https://legalweed.world/)
-
 > [Growspy](https://growspy.app/)

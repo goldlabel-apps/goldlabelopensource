@@ -19,7 +19,19 @@ export const footer: Footer = [
     title: "How it works",
     links: [
       {
-        label: "Artificial Intelligence",
+        label: "Isomorphic",
+        path: "/how/isomorphic/",
+      },
+      {
+        label: "Fingerprint",
+        path: "/how/fingerprint/",
+      },
+      {
+        label: "Flash",
+        path: "/how/flash/",
+      },
+      {
+        label: "Open AI",
         path: "/how/ai",
       },
       {
@@ -27,37 +39,12 @@ export const footer: Footer = [
         path: "/how/wordpress/",
       },
       {
-        label: "Terms & Conditions",
+        label: "Cookies",
         path: "/terms",
       },
     ],
   },
-  {
-    title: "5 Goldlabel Ws",
-    links: [
-      {
-        label: "Who?",
-        path: "/who",
-      },
-      {
-        label: "What?",
-        path: "/what",
-      },
-      {
-        label: "When?",
-        path: "/when",
-      },
-      {
-        label: "Where?",
-        path: "/where",
-      },
-      {
-        label: "Why?",
-        path: "/why",
-      },
-    ],
-  },
-
+  
   {
     title: "Company",
     textLines: [
@@ -68,10 +55,5 @@ export const footer: Footer = [
       "UK Ltd Co. 15460545"
     ],
   },
-  {
-    title: "More Like This",
-    populate: "sameKeywords",
-    links: [
-    ],
-  },
+
 ]

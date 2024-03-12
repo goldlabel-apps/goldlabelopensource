@@ -1,5 +1,5 @@
 ---
-order: 5
+order: 500
 draft: false
 slug: "/how/start-coding"
 parentSlug: "/how"
@@ -9,9 +9,9 @@ keywords: "Goldlabel, free, open source, github"
 icon: "github"
 image: "/png/og.png"
 ---
-### Install Goldlabel locally
+### How to install Goldlabel locally
 
-Where will you clone the repository to? Call this `<working-repo>`. Decide on a machine readable name `<your-project>`. Clone the repo and install dependencies
+Decide where you will clone the repository to? Call this `<working-repo>`. Decide on a machine readable name `<your-project>`. Clone the repo and install dependencies
 
 ```bash
 cd <working-dir>

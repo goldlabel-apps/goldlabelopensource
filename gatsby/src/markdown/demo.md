@@ -1,11 +1,10 @@
 ---
-order: 30
-draft: true
+order: 4000
 slug: "/demo"
 parentSlug: "/"
 title: "Demo"
-description: ""
+description: "What will you see?"
 icon: "desktop"
-image: "/webp/desktop_screens.webp"
-keywords: "Goldlabel, Examples,"
+image: "/webp/demo.webp"
+keywords: "Goldlabel, Examples, Demo"
 ---
