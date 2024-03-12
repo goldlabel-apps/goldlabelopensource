@@ -18,10 +18,6 @@ export const glConfig: any = {
         primaryColor: "#C09F52",
         secondaryColor: "#FFFFFF",
     },
-    flashDefault: null,
-    formsDefault: null,
-    linguaDefault: null,
-    geoDefault: null,
     geoDefault_: {
         lat: 35,
         lng: 14,

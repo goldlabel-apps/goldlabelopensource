@@ -29,12 +29,8 @@ import {
   updateFbTing,
 } from "../../plugins/Fingerprint"
 
-import {Geo} from "../Geo"
-import {Flash} from "../Flash"
-import {Lingua} from "../Lingua"
-import {Forms} from "../Forms"
-
 export function YourFingerprint() {
+  
   const dispatch = usePwaDispatch()
 
   const closeDialog = () => {
@@ -59,20 +55,13 @@ export function YourFingerprint() {
   }, [dispatch, tings])
 
   const core = usePwaSelect(selectCore)
+  const fingerprint = usePwaSelect(selectFingerprint)
   const primaryColor = useTheme().palette.primary.main
   const secondaryColor = useTheme().palette.secondary.main
   const {darkmode} = core
   const {
     dialogOpen,
   } = tings
-  const {
-    formsDefault,
-    flashDefault,
-    linguaDefault,
-    geoDefault,
-  } = glConfig
-
-
   
   return (<>
     <ThemeProvider 
@@ -91,16 +80,12 @@ export function YourFingerprint() {
           </DialogTitle>
           <DialogContent>
             <Grid container spacing={1}>
-              <Grid item xs={12} md={8}>
-                {formsDefault ? <Forms /> : null }
-              </Grid>
+              
               <Grid item xs={12} md={4}>
-                { linguaDefault ? <Lingua /> : null }
-                { geoDefault ? <Geo /> : null }
-                { flashDefault ? <Flash /> : null }
+                <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre>
               </Grid>
             </Grid>
-            {/* <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre>  */}
+            {/*   */}
           </DialogContent>
           <DialogActions>
             <ToggleBar />

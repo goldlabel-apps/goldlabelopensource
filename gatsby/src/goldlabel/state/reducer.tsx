@@ -12,24 +12,8 @@ import {tingsSlice} from "../plugins/Fingerprint"
 import {geoState} from "../plugins/Geo"
 import {flashSlice} from "../plugins/Flash"
 import {linguaSlice} from "../plugins/Lingua"
-import {formsSlice} from "../plugins/Forms"
 
-type CoreReducerShape = {
-  bootTime: number
-  config: any
-  core: any
-  auth: any
-  geo: any
-  tings: any
-  fingerprint: any
-  newFingerprint: boolean
-  fpSubscribed: boolean
-  flash: any
-  lingua: any
-  forms: any
-}
-
-const initialState: CoreReducerShape = {
+const initialState: any = {
   bootTime: Date.now(),
   auth: null,
   config: glConfig,
@@ -41,7 +25,6 @@ const initialState: CoreReducerShape = {
   geo: geoState,
   flash: flashSlice,
   lingua: linguaSlice,
-  forms: formsSlice,
 }
 
 export const pwaSlice = createSlice({
