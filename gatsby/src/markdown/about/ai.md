@@ -1,7 +1,7 @@
 ---
 order: 10
-slug: "/how/ai"
-parentSlug: "/how"
+slug: "/about/ai"
+parentSlug: "/about"
 title: "AI"
 description: "Meet our Künstliche Intelligenz, Oliver"
 icon: "openai"

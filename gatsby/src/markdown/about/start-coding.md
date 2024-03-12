@@ -1,8 +1,8 @@
 ---
 order: 500
 draft: false
-slug: "/how/start-coding"
-parentSlug: "/how"
+slug: "/about/start-coding"
+parentSlug: "/about"
 title: "Start coding"
 description: "Where will you clone the repository to?"
 keywords: "Goldlabel, free, open source, github"

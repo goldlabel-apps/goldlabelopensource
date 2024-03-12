@@ -1,8 +1,6 @@
 ---
-draft: true
-website: "https://github.com/listingslab-software/goldlabelopensource"
-slug: "/how/clockwork"
-parentSlug: "/how"
+slug: "/about/clockwork"
+parentSlug: "/about"
 title: "Clockwork"
 description: "useState & useEffect hooks"
 icon: "info"

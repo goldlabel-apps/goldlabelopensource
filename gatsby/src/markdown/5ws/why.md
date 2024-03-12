@@ -1,4 +1,5 @@
 ---
+draft: true
 slug: "/why"
 parentSlug: "/"
 title: "Why?"

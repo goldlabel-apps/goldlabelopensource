@@ -1,7 +1,7 @@
 ---
 order: 150
-slug: "/how/flash"
-parentSlug: "/how"
+slug: "/about/flash"
+parentSlug: "/about"
 title: "Flash"
 description: "Pointless reinvention of MacroMedia Flash in React"
 icon: "flash"
