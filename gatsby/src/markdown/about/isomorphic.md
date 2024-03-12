@@ -8,6 +8,8 @@ image: "/webp/isomorphic.webp"
 keywords: "How, Key Concept, JavaScript, Isomorphic, React"
 order: 200
 ---
+In a world of a million different platforms, frameworks, devices and runtime engines; this code runs on them all. Pure JavaScript. Vanilla ES6 flavoured.
+
 ## Deploy the same JavaScript code everywhere
 
 > In the world of JavaScript the fact code can be shared across devices with a JavaScript runtime could be called "**Isomorphic**"
