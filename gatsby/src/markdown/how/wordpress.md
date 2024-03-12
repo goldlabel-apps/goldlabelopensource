@@ -1,5 +1,5 @@
 ---
-order: 700
+order: 400
 slug: "/how/wordpress"
 parentSlug: "/how"
 title: "WordPress"

@@ -8,6 +8,7 @@ image: "/jpg/cixin.jpg"
 keywords: "5Ws, Why, cixin"
 order: 305
 ---
+
 ### Causes, effects and possible motives
 
 - Because it’s one point oh
