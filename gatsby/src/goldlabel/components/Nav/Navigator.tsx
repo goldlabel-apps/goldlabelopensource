@@ -1,4 +1,5 @@
 import * as React from "react"
+import pJSON from "../../../goldlabel/package.json"
 import {
   List,
   ListItemButton,
@@ -61,7 +62,7 @@ export default function Navigator() {
   return <>
           <Box sx={{ml: 1}}>
           <Divider />
-            <Box sx={{m: 1}}>
+            <Box sx={{m: 1, display: "flex"}}>
               <Tooltip title={<Font color="white">
                 Delete yourself?
               </Font>}>
@@ -84,6 +85,11 @@ export default function Navigator() {
               </Tooltip>
               
               <ShareMenu />
+              <Box sx={{m:1.25}}>
+                <Font variant="small">
+                  vs {pJSON.version}
+                </Font>
+              </Box>
             </Box>
             
             <Divider />
