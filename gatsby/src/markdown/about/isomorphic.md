@@ -1,6 +1,6 @@
 ---
-slug: "/how/isomorphic"
-parentSlug: "/how"
+slug: "/about/isomorphic"
+parentSlug: "/about"
 title: "Isomorphic"
 description: "JavaScript code can be deployed to any device with a JavaScript runtime"
 icon: "isomorphic"

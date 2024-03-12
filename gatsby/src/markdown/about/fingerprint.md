@@ -1,6 +1,6 @@
 ---
-slug: "/how/fingerprint"
-parentSlug: "/how"
+slug: "/about/fingerprint"
+parentSlug: "/about"
 title: "Fingerprint"
 description: ""
 icon: "fingerprint"

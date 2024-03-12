@@ -1,10 +1,10 @@
 ---
 order: 20
-slug: "/how"
+slug: "/about"
 parentSlug: "/"
 title: "About"
 description: "How Goldlabel works"
-icon: "scooter"
+icon: "how"
 image: "/webp/coupland/coupland.webp"
 keywords: "How"
 ---

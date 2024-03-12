@@ -1,4 +1,5 @@
 ---
+order: 30
 slug: "/glossary"
 parentSlug: "/"
 title: "Glossary"
@@ -6,7 +7,7 @@ description: "Nomenclature is important"
 icon: "doc"
 image: "/webp/glossary.webp"
 keywords: "How, Key Concept, Glossary"
-order: 190
+
 ---
 
 ### Affect (verb)

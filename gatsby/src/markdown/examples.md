@@ -1,5 +1,5 @@
 ---
-order: 3000
+order: 50
 slug: "/examples"
 parentSlug: "/"
 title: "Examples"
