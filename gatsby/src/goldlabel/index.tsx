@@ -27,10 +27,6 @@ import {
     selectAuth,
     selectTings,
     selectFingerprint,
-    selectGeo,
-    selectFlash,
-    selectLingua,
-    selectForms,
     selectFpSubscribed,
 } from "./state/reducer"
 // Theme
@@ -110,7 +106,7 @@ import BottomBar from "./components/Nav/BottomBar"
 import {Keywords} from "./components/Nav/Keywords"
 
 // Fingerprint
-import {Fingerprint} from "./plugins/Fingerprint"
+import {Fingerprint} from "./Fingerprint"
 
 import ListingMobile from "./components/Layout/ListingMobile"
 import ListingDesktop from "./components/Layout/ListingDesktop"
@@ -225,11 +221,7 @@ export {
     selectAuth,
     selectTings,
     selectFingerprint,
-    selectGeo,
     selectFpSubscribed,
-    selectFlash,
-    selectLingua,
-    selectForms,
 }
 // Actions
 export {

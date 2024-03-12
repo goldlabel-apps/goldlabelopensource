@@ -35,10 +35,6 @@ export const footer: Footer = [
         path: "/how/ai",
       },
       {
-        label: "WordPress",
-        path: "/how/wordpress/",
-      },
-      {
         label: "Cookies",
         path: "/terms",
       },

@@ -5,31 +5,10 @@ import {glConfig} from "../../config"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "./store"
 import {coreState} from "./coreState"
+import {fingerprintSlice} from "../Fingerprint"
+import {tingsSlice} from "../Fingerprint"
 
-// Connect Plugins
-import {fingerprintSlice} from "../plugins/Fingerprint"
-import {tingsSlice} from "../plugins/Fingerprint"
-import {geoState} from "../plugins/Geo"
-import {flashSlice} from "../plugins/Flash"
-import {linguaSlice} from "../plugins/Lingua"
-import {formsSlice} from "../plugins/Forms"
-
-type CoreReducerShape = {
-  bootTime: number
-  config: any
-  core: any
-  auth: any
-  geo: any
-  tings: any
-  fingerprint: any
-  newFingerprint: boolean
-  fpSubscribed: boolean
-  flash: any
-  lingua: any
-  forms: any
-}
-
-const initialState: CoreReducerShape = {
+const initialState: any = {
   bootTime: Date.now(),
   auth: null,
   config: glConfig,
@@ -38,10 +17,6 @@ const initialState: CoreReducerShape = {
   fingerprint: fingerprintSlice,
   fpSubscribed: false,
   newFingerprint: true,
-  geo: geoState,
-  flash: flashSlice,
-  lingua: linguaSlice,
-  forms: formsSlice,
 }
 
 export const pwaSlice = createSlice({
@@ -65,10 +40,6 @@ export const selectFrontmatter = (state: RootState) => state.core.frontmatter
 export const selectAuth = (state: RootState) => state.auth
 export const selectTings = (state: RootState) => state.tings
 export const selectFingerprint = (state: RootState) => state.fingerprint
-export const selectGeo = (state: RootState) => state.geo
-export const selectLingua = (state: RootState) => state.lingua
-export const selectFlash = (state: RootState) => state.flash
-export const selectForms= (state: RootState) => state.forms
 export const selectFpSubscribed= (state: RootState) => state.fpSubscribed
 export const selectNewFingerprint= (state: RootState) => state.newFingerprint
 
