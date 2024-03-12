@@ -1,11 +1,16 @@
+import {glConfig} from "../../config"
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit"
 import storage from "redux-persist/lib/storage"
 import { persistReducer, persistStore } from "redux-persist"
 import thunk from "redux-thunk"
 import reducer from "./reducer"
 
+// goldlabel-core 
+// reduxSlug
+const {reduxSlug} = glConfig
+
 const persistConfig = {
-  key: 'goldlabel-core',
+  key: reduxSlug,
   storage,
 }
 
