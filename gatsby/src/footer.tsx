@@ -54,7 +54,7 @@ export const footer: Footer = [
       "Chadwell Heath",
       "Essex RM6 6AX",
       "UK Ltd Co. 15460545",
-      "oliver@goldlabel.pro"
+      "ai@goldlabel.pro"
     ],
   },
 

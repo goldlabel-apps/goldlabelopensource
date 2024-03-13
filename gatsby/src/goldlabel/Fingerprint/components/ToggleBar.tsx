@@ -4,6 +4,7 @@ import {
   ButtonBase,
   Box,
   AppBar,
+  Avatar,
 } from "@mui/material"
 import {
   usePwaDispatch,
@@ -24,8 +25,11 @@ export function ToggleBar() {
   const fingerprint = usePwaSelect(selectFingerprint)
   const {dialogOpen, ting} = tings
   let str = ""
-  if (fingerprint) str = fingerprint.displayName
-  
+  let avatarSrc = ""
+  if (fingerprint) {
+    str = fingerprint.displayName
+    avatarSrc = fingerprint.avatarSrc
+  }
   const toggleFullscreen = () => {
     dispatch(toggleFullScreen(!dialogOpen))
   }
@@ -42,9 +46,10 @@ export function ToggleBar() {
             }}>
               <ButtonBase
                 sx={{p:1}}
-                onClick={toggleFullscreen}>
+                // onClick={toggleFullscreen}
+              >
               <Box sx={{mt: 0.5, mr: 1}}>
-                <Icon icon="ting" color="primary"/> 
+                <Avatar src={avatarSrc} alt="Open your fingerprint"/>
               </Box>
               <Box>
                 <Font noWrap>
