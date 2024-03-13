@@ -9,9 +9,11 @@ export const makeEmailHTML = (ting: any) => {
   const {
     fingerprint,
     docTitle,
-    displayName,
+    countryName,
     siteAvatar,
     href,
+    browser,
+    os,
   } = ting
 
   /*
@@ -50,15 +52,17 @@ export const makeEmailHTML = (ting: any) => {
 }
   */
   return `<div>
-            <h2>${displayName}</h2>
-            <a href="https://goldlabel.pro/?fp=${fingerprint}">
-              <img src="${siteAvatar}" width="50" height="50" />
-            </a>
+            
+            <p>${countryName || "countryName"}</p>
+            <p>${os || "os"} ${browser || "browser"}</p>
             <p>
               <a href="${href}">
                 ${docTitle || "view page"}
               </a>
             </p>
+            <a href="https://goldlabel.pro/?fp=${fingerprint}">
+              <img src="${siteAvatar}" width="50" height="50" />
+            </a>
           </div>`
 }
 
@@ -84,7 +88,7 @@ export const newFingerprintNotify = (): any => async (dispatch: any) => {
     }
     axios.post(endpoint, email)
       .then(function (res) {
-        console.log("axios", res)
+        // console.log("axios", res)
         // dispatch(notify("newFingerprintNotify 200", "success", "App owner notified"))
       })
       .catch(function (e) {
