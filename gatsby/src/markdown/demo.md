@@ -8,26 +8,22 @@ icon: "scooter"
 image: "/webp/demo.webp"
 keywords: "Goldlabel, Examples, Demo"
 ---
-### Start with pr0
+### Demo
 
-Consider these 2 roles; Businessman & Customer  
+Consider a Business man & a Potential Customer  
 
 > As an Businessman I want to connect personally to new Customers in real time so that I can improve my app's sales conversion rate. I need [pr0](https://goldlabel.pro)
 
-[Here on pr0](https://goldlabel.pro?demo) you can log into a Demo account using these credentials
+### Part 1) Log into [pr0](https://goldlabel.pro?demo)
+
+Log into the Demo account with these credentials
 
 ```
 demo@goldlabel.pro
 gl0149^_
 ```
 
-### Infrastructure as Code
-
-All Infrastructure such as Authentication, Database etc is handled by Google and is as secure as Google is
-
-So in this case I have set you up with an account using your ceros email and the password... you'll like this... rhinoceros
-
-Part 2
+### Part 2) Create a fingerprint
 
 An anonymous customer lands on a Goldlabel App. As an owner I want to see this event in real time and be able to effect changes to the user's experience and ONLY that user's experience in real time
 

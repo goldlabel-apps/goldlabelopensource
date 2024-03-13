@@ -48,10 +48,14 @@ export function ToggleBar() {
                 sx={{p:1}}
                 // onClick={toggleFullscreen}
               >
-              <Box sx={{mt: 0.5, mr: 1}}>
-                <Avatar src={avatarSrc} alt="Open your fingerprint"/>
+              <Box sx={{mt: 0.5, mr: 1.5}}>
+                <Avatar
+                  sx={{width: 24, height: 24}}
+                  src={avatarSrc} 
+                  alt={str}
+                />
               </Box>
-              <Box>
+              <Box sx={{mt: 0.5}}>
                 <Font noWrap>
                   {str}
                 </Font>

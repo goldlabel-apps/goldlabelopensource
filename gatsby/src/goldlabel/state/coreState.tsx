@@ -1,5 +1,5 @@
 import {glConfig} from "../../config"
-import {pricing} from "./constants/pricing"
+import {pricing} from "../algorithms/pricing"
 import {footer} from "../../footer"
 
 export const coreState: any = {

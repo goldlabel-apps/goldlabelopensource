@@ -43,6 +43,10 @@ The "Allow cookies" pop-up you see on many websites is a result of the European 
 - Icon
 - Iconify
 
+> Infrastructure as Code
+
+All Infrastructure such as Authentication, Database etc is handled by Google and is as secure as Google is
+
 > Isomorphic JavaScript
 Isomorphic JavaScript, aka Universal JavaScript, refers to the ability to write code that can run both on the client-side (in a web browser) and on the server-side (on a server
 
