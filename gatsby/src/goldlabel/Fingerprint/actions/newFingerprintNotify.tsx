@@ -20,7 +20,7 @@ export const newFingerprintNotify = (): any => async (dispatch: any) => {
       "apiKey": process.env.REACT_APP_API_KEY,
       "to": "listingslab@gmail.com",
       "from": "\"Goldlabel\" <ai@goldlabel.pro>",
-      "subject": `${host} > ${displayName || ""}`,
+      "subject": `${host || ""} > ${displayName || ""}`,
       "html": `<p>
                 <a href="https://goldlabel.pro/?fp=${fingerprint}">
                   View

@@ -57,7 +57,6 @@ export const pageQuery = graphql`
       frontmatter {
         draft
         order
-        category
         parentSlug
         slug
         title

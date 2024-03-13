@@ -1,8 +1,9 @@
 ---
 order: 100
 title: "Privacy"
-description: ""
-slug: "/privacy"
+description: "Your trust means everything to us"
+slug: "/legal/privacy"
+parentSlug: "/legal"
 icon: "legal"
 image: "/webp/listingslab/code.webp"
 keywords: "legal"

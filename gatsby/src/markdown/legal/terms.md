@@ -1,8 +1,9 @@
 ---
 order: 1000
 title: "Terms & Conditions"
-description: "Your trust means everything to us."
-slug: "/terms"
+description: "Your trust means everything to us"
+slug: "/legal/terms"
+parentSlug: "/legal"
 icon: "legal"
 image: "/png/town.png"
 keywords: "legal"

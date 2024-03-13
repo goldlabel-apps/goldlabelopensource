@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "gatsby/public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

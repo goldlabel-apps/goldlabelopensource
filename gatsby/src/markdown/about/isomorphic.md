@@ -1,12 +1,12 @@
 ---
+order: 200
 slug: "/about/isomorphic"
 parentSlug: "/about"
 title: "Isomorphic"
 description: "JavaScript code can be deployed to any device with a JavaScript runtime"
-icon: "isomorphic"
+icon: "javascript"
 image: "/webp/isomorphic.webp"
 keywords: "How, Key Concept, JavaScript, Isomorphic, React"
-order: 200
 ---
 > In the world of JavaScript the fact code can be shared across devices with a JavaScript runtime could be called "**Isomorphic**"
 

@@ -2,7 +2,7 @@
 order: 400
 slug: "/about/wordpress"
 parentSlug: "/about"
-title: "WordPress"
+title: "WordPress?"
 description: "Choosing WordPress is easy. But is it the right choice?"
 keywords: "WordPress, Goldlabel"
 icon: "wordpress"

@@ -1,5 +1,5 @@
 ---
-order: 10
+order: 210
 slug: "/about/ai"
 parentSlug: "/about"
 title: "AI"
