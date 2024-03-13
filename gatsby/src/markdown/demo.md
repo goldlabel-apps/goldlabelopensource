@@ -3,7 +3,7 @@ order: 40
 slug: "/demo"
 parentSlug: "/"
 title: "Demo"
-description: "What exactly will you see?"
+description: "What are you looking at?"
 icon: "scooter"
 image: "/webp/demo.webp"
 keywords: "Goldlabel, Examples, Demo"

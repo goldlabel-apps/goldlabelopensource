@@ -1,5 +1,6 @@
 import React from "react"
 import {
+  useTheme,
   ButtonBase,
   Box,
   AppBar,
@@ -17,6 +18,7 @@ import {
 } from "../"
 
 export function ToggleBar() {
+  const primaryColor = useTheme().palette.primary.main
   const dispatch = usePwaDispatch()
   const tings = usePwaSelect(selectTings)
   const fingerprint = usePwaSelect(selectFingerprint)
@@ -32,7 +34,9 @@ export function ToggleBar() {
             color="inherit"
             position="fixed"
             sx={{ 
-              border: 0, boxShadow: 0,
+              border: 0,
+              borderTop: "1px solid " + primaryColor,
+              boxShadow: 0,
               top: 'auto',
               bottom: 0, 
             }}>

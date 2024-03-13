@@ -12,7 +12,6 @@ export const useAllMarkdown = () => {
           frontmatter {
             draft
             order
-            category
             parentSlug
             slug
             title

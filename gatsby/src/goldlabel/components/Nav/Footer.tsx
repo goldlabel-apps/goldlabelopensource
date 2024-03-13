@@ -74,7 +74,7 @@ export default function FeaturedFooter() {
                                     }}>
                                       {icon ? <>
                                       <ListItemIcon>
-                                        <Icon icon={icon} />
+                                        <Icon icon={icon} color="primary"/>
                                       </ListItemIcon>
                                     </> : null }
                                     <ListItemText 

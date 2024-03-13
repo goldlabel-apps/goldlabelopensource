@@ -1,8 +1,9 @@
 ---
 order: 120
 title: "GDPR"
-description: ""
-slug: "/gdpr"
+description: "Your trust means everything to us"
+slug: "/legal/gdpr"
+parentSlug: "/legal"
 icon: "legal"
 image: "/png/town.png"
 keywords: "legal"

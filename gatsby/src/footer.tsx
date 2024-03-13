@@ -16,39 +16,45 @@ export type Footer = Array<FooterColumn>
 
 export const footer: Footer = [
   {
-    title: "How it works",
+    title: "Find out more",
     links: [
-      {
-        label: "Isomorphic",
-        path: "/about/isomorphic/",
-      },
       {
         label: "Fingerprint",
         path: "/about/fingerprint/",
+        icon: "fingerprint",
       },
       {
         label: "Flash",
         path: "/about/flash/",
+        icon: "flash",
       },
       {
-        label: "Open AI",
+        label: "Oliver",
         path: "/about/ai",
+        icon: "oliver",
       },
       {
-        label: "Cookies",
-        path: "/cookies",
+        label: "Listingslab",
+        path: "https://listingslab.com",
+        target: "_blank",
+        icon: "link",
       },
+      {
+        label: "Legal",
+        path: "/legal",
+        icon: "legal",
+      },
+      
     ],
   },
-  
   {
-    title: "Company",
+    title: "Goldlabel Apps Ltd",
     textLines: [
-      "Goldlabel Apps Ltd",
       "321-323 High Road",
       "Chadwell Heath",
       "Essex RM6 6AX",
-      "UK Ltd Co. 15460545"
+      "UK Ltd Co. 15460545",
+      "oliver@goldlabel.pro"
     ],
   },
 

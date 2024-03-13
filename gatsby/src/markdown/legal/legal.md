@@ -1,13 +1,15 @@
 ---
 order: 125
-title: "Cookies"
-description: ""
-slug: "/cookies"
+title: "Legal"
+description: "Your trust means everything to us"
+slug: "/legal"
+parentSlug: "/"
 icon: "legal"
 image: "/webp/listingslab/code.webp"
-keywords: "legal"
+keywords: "legal, GDPR, modern slavery,"
 ---
-We don't use cookies because
+
+> We don't use cookies because... 
 
 While cookies have been a fundamental part of web development for many years and continue to serve important functions, there are some considerations that might lead developers to explore alternative approaches or supplementary technologies. Here are a few reasons why some developers might consider cookies as "old-fashioned" and explore alternatives:
 
