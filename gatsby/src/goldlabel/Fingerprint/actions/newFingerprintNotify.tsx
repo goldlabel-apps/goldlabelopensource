@@ -5,11 +5,13 @@ import {
 } from "../../../goldlabel"
 
 export const makeEmailHTML = (ting: any) => {
-  console.log("makeEmailHTML", ting)
+  // console.log("makeEmailHTML", ting)
   const {
     fingerprint,
+    docTitle,
     displayName,
     siteAvatar,
+    href,
   } = ting
 
   /*
@@ -49,10 +51,14 @@ export const makeEmailHTML = (ting: any) => {
   */
   return `<div>
             <h2>${displayName}</h2>
-            <img src="${siteAvatar}" />
             <a href="https://goldlabel.pro/?fp=${fingerprint}">
-              Goldlabel.pro
+              <img src="${siteAvatar}" width="50" height="50" />
             </a>
+            <p>
+              <a href="${href}">
+                ${docTitle || "view page"}
+              </a>
+            </p>
           </div>`
 }
 
@@ -60,7 +66,6 @@ export const newFingerprintNotify = (): any => async (dispatch: any) => {
   try {
     const {ting} = store.getState().tings
     const {
-      fingerprint,
       city,
       displayName,
       countryEmoji,
@@ -79,7 +84,8 @@ export const newFingerprintNotify = (): any => async (dispatch: any) => {
     }
     axios.post(endpoint, email)
       .then(function (res) {
-        dispatch(notify("newFingerprintNotify 200", "success", "App owner notified"))
+        console.log("axios", res)
+        // dispatch(notify("newFingerprintNotify 200", "success", "App owner notified"))
       })
       .catch(function (e) {
         console.log("postEmail error", e)
