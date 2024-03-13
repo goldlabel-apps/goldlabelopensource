@@ -28,6 +28,8 @@ Means to bring about or cause something to happen. It implies producing a change
 
 > Fingerprint
 
+When you visit a website or use an app, your device sends a request to the server where the website or app is hosted. This request includes information about your device, like what kind of browser you're using or what operating system you have. All of this information together is called your "fingerprint" [more](/about/fingerprint)
+
 > Flash
 
 > Forms

@@ -4,7 +4,7 @@ slug: "/about"
 parentSlug: "/"
 title: "About"
 description: "How Goldlabel works"
-icon: "how"
+icon: "blog"
 image: "/webp/coupland/coupland.webp"
 keywords: "How"
 ---

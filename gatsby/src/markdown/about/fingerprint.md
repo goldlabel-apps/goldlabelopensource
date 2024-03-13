@@ -9,6 +9,9 @@ keywords: "How, Key Concept, Fingerprint"
 order: 100
 ---
 
+> When you visit a website or use an app, your device sends a request to the server where the website or app is hosted. This request includes information about your device, like what kind of browser you're using or what operating system you have. All of this information together is called your "fingerprint"
+
+
 ### What is a ping in the context of software engineering?
 
 > Pings are messages computers use to check another computer is ready
