@@ -14,7 +14,7 @@ import {resetLocalstorage} from "./state/actions/resetLocalstorage"
 
 // State
 import {WrapState} from "./state/WrapState"
-import {namesByLetter} from "./state/constants/namesByLetter"
+import {namesByLetter} from "./algorithms/namesByLetter"
 import {store, persistor} from "./state/store"
 import {
     setPwaKey,
@@ -65,7 +65,7 @@ import {scrollTo} from "./state/actions/scrollTo"
 import Markdown from "./components/Listings/Markdown"
 import CatNav from "./components/Listings/CatNav"
 import Meta from "./components/Listings/Meta"
-import ShareMenu from "./components/Listings/ShareMenu"
+
 import Categories from "../goldlabel/components/Listings/Categories"
 import Children from "../goldlabel/components/Listings/Children"
 import Siblings from "../goldlabel/components/Listings/Siblings"
@@ -87,10 +87,9 @@ import DarkmodeToggle from "./components/System/DarkmodeToggle"
 import NotifyerSnack from "./components/System/NotifyerSnack"
 import ScrollUp from "./components/System/ScrollUp"
 import TogglePaletteMode from "./components/System/TogglePaletteMode"
-
+import ShareMenu from "./components/System/ShareMenu"
 import NotFound from "./components/System/NotFound"
 import WindowResizeListener from "./components/System/WindowResizeListener"
-
 import {Device} from "./components/System/Device"
 import Pricing from "./components/System/Pricing"
 
@@ -110,6 +109,15 @@ import {Fingerprint} from "./Fingerprint"
 
 import ListingMobile from "./components/Layout/ListingMobile"
 import ListingDesktop from "./components/Layout/ListingDesktop"
+
+
+// Algorithms
+import {randomDisplayName} from "./algorithms/randomDisplayName"
+export {
+    randomDisplayName,
+}
+
+
 export {
     ListingMobile,
     ListingDesktop,

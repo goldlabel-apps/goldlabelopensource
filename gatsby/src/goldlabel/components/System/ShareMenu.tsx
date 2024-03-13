@@ -8,6 +8,8 @@ import {
   TwitterIcon,
   WhatsappShareButton,
   WhatsappIcon,
+  EmailShareButton,
+  EmailIcon,
 } from 'react-share';
 import {
   useTheme,
@@ -67,6 +69,28 @@ export default function ShareMenu() {
         MenuListProps={{
           "aria-labelledby": "share-button",
         }}>
+
+        <MenuItem onClick={handleClose}>
+          <EmailShareButton 
+            title={title}
+            url={shareUrl}>
+            <Box sx={{display: "flex"}}>
+                <Box>
+                  <EmailIcon
+                    iconFillColor={iconColor}
+                    bgStyle={{ fill: "none" }}
+                    size={40}
+                    round
+                  />
+                </Box>
+                <Box sx={{m:1.25}}>
+                  <Font variant={"small"}>
+                    Email
+                  </Font>
+                </Box>
+              </Box>
+          </EmailShareButton>
+        </MenuItem>
 
         <MenuItem onClick={handleClose}>
           <WhatsappShareButton 
@@ -158,6 +182,9 @@ export default function ShareMenu() {
               </Box>
           </TwitterShareButton>
         </MenuItem>
+
+        
+
       </Menu>
     </>
   )

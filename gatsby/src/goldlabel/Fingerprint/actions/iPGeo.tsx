@@ -1,7 +1,7 @@
 import axios from "axios"
 import { 
   notify,
-  namesByLetter,
+  randomDisplayName,
 } from "../../../goldlabel"
 import {
   updateTing,
@@ -13,11 +13,10 @@ export const iPGeo = (): any => async (dispatch: any) => {
     const ep = `https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.REACT_APP_IPGEO}`
     axios.get(ep)
       .then(function (iPGeo) {
-        const letter = iPGeo.data.city.substring(0,1).toUpperCase()        
-        const name = namesByLetter[letter][(Math.random() * namesByLetter[letter].length) | 0]
-        const displayName = `${iPGeo.data.city} ${name}`
-        dispatch(notify("displayName", "success", `Hello ${displayName}`))
-        dispatch(updateTing("displayName", displayName))        
+        const {displayName, avatarSrc} = randomDisplayName()
+        dispatch(notify("displayName", "success", `You are ${displayName}`))
+        dispatch(updateTing("displayName", displayName))   
+        dispatch(updateTing("avatarSrc", avatarSrc))        
         dispatch(updateTing("ip", iPGeo.data.ip))
         dispatch(updateTing("languages", iPGeo.data.languages))
         dispatch(updateTing("timeZone", iPGeo.data["time_zone"].name))
