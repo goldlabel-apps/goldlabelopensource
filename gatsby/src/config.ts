@@ -1,6 +1,6 @@
 
 export const glConfig: any = {
-    reduxSlug: "gl_2025_03_12_e",
+    reduxSlug: "gl_2024_03_13",
     siteUrl: "https://free.goldlabel.pro",
     siteIcon: "/svg/iOS.svg",
     siteAvatar: "https://free.goldlabel.pro/svg/iOS.svg",
