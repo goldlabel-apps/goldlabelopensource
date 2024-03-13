@@ -20,23 +20,23 @@ export const footer: Footer = [
     links: [
       {
         label: "Isomorphic",
-        path: "/how/isomorphic/",
+        path: "/about/isomorphic/",
       },
       {
         label: "Fingerprint",
-        path: "/how/fingerprint/",
+        path: "/about/fingerprint/",
       },
       {
         label: "Flash",
-        path: "/how/flash/",
+        path: "/about/flash/",
       },
       {
         label: "Open AI",
-        path: "/how/ai",
+        path: "/about/ai",
       },
       {
         label: "Cookies",
-        path: "/terms",
+        path: "/cookies",
       },
     ],
   },
