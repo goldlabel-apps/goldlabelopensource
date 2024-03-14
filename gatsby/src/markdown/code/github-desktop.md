@@ -1,7 +1,7 @@
 ---
 order: 485
-slug: "/about/github-desktop"
-parentSlug: "/about"
+slug: "/code/github-desktop"
+parentSlug: "/code"
 title: "GitHub Desktop"
 description: "Creating and managing submodules"
 icon: "github"

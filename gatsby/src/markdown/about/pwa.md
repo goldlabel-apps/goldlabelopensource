@@ -2,9 +2,9 @@
 order: 155
 slug: "/about/pwa"
 parentSlug: "/about"
-title: "PWA"
+title: "PWA?"
 description: "Progressive Web Apps"
-icon: "flash"
+icon: "mobile"
 image: "/png/flash.png"
 keywords: "How, Flash"
 ---

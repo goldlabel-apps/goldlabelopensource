@@ -39,26 +39,35 @@ export function ToggleBar() {
             position="fixed"
             sx={{ 
               border: 0,
-              borderTop: "1px solid " + primaryColor,
+              
               boxShadow: 0,
               top: 'auto',
               bottom: 0, 
             }}>
               <ButtonBase
-                sx={{p:1}}
-                // onClick={toggleFullscreen}
+                onClick={toggleFullscreen}
               >
-              <Box sx={{mt: 0.5, mr: 1.5}}>
-                <Avatar
-                  sx={{width: 24, height: 24}}
-                  src={avatarSrc} 
-                  alt={str}
-                />
-              </Box>
-              <Box sx={{mt: 0.5}}>
-                <Font noWrap>
-                  {str}
-                </Font>
+                <Box sx={{
+                  display: "flex",
+                  border: "1px solid " + primaryColor,
+                  p: 1,
+                  m: 1,
+                  borderRadius: 2,
+                }}>
+                  <Box sx={{mr: 1.5}}>
+                    <Font variant="title" noWrap>
+                      {str}
+                    </Font>
+                  </Box>
+                  <Box sx={{
+                    mt: 0.1,      
+                  }}>
+                    <Avatar
+                      sx={{width: 24, height: 24}}
+                      src={avatarSrc} 
+                      alt={str}
+                    />
+                  </Box>
               </Box>
             </ButtonBase>
         </AppBar>

@@ -1,16 +1,17 @@
 ---
 order: 40
-slug: "/demo"
-parentSlug: "/"
-title: "Demo"
-description: "What are you looking at?"
+slug: "/about/demo"
+parentSlug: "/about"
+title: "The Demo"
+description: "What exactly are you looking at?"
 icon: "scooter"
 image: "/webp/demo.webp"
 keywords: "Goldlabel, Examples, Demo"
 ---
-### Demo
 
-Consider a Business man & a Potential Customer  
+Consider this. A Business with both an app and a retail store. Along comes a potential Customer. Compare the experience on an app and in a retail store
+
+This leads to an Agile story...
 
 > As an Businessman I want to connect personally to new Customers in real time so that I can improve my app's sales conversion rate. I need [pr0](https://goldlabel.pro)
 

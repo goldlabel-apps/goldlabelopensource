@@ -1,7 +1,7 @@
 ---
 slug: "/about/fingerprint"
 parentSlug: "/about"
-title: "Fingerprint"
+title: "Fingerprints?"
 description: ""
 icon: "fingerprint"
 image: "/webp/fingerprint.webp"

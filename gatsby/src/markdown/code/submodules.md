@@ -1,7 +1,7 @@
 ---
 order: 480
-slug: "/about/submodules"
-parentSlug: "/about"
+slug: "/code/submodules"
+parentSlug: "/code"
 title: "Git Submodules"
 description: "git submodule add <isomorphic_repository_url>"
 icon: "github"
