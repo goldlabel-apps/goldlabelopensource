@@ -15,6 +15,7 @@ export const init = (): any =>
     try {
       // console.log("init")
       dispatch(updateTing("displayName", ""))
+      dispatch(updateTing("docTitle", document.title))
       dispatch(setTingsKey("initting", true))
       dispatch(updateTing("created", Date.now()))
       dispatch(updateTing("updated", Date.now()))
