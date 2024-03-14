@@ -56,6 +56,7 @@ import {boot} from "./state/actions/boot"
 import {notify} from "./state/actions/notify/notify"
 import {notifyCancel} from "./state/actions/notify/notifyCancel"
 import {setFrontmatter} from "./state/actions/setFrontmatter"
+import {setPaletteMode} from "./state/actions/setPaletteMode"
 import {navigate} from "./state/actions/navigate"
 import {toggleFSDialog} from "./state/actions/toggleFSDialog"
 import {scrollTo} from "./state/actions/scrollTo"
@@ -99,8 +100,8 @@ import {Keywords} from "./components/Nav/Keywords"
 // Fingerprint
 import {Fingerprint} from "./Fingerprint"
 // Layout
-import ListingMobile from "./components/Layout/ListingMobile"
-import ListingDesktop from "./components/Layout/ListingDesktop"
+import Mobile from "./components/Layout/Mobile"
+import Desktop from "./components/Layout/Desktop"
 
 
 // Algorithms
@@ -121,8 +122,8 @@ export {
 }
 
 export {
-    ListingMobile,
-    ListingDesktop,
+    Mobile,
+    Desktop,
 }
 
 export {
@@ -231,6 +232,7 @@ export {
     notify,
     notifyCancel,
     setFrontmatter,
+    setPaletteMode,
     navigate,
     toggleFSDialog,
     firebaseSignin,

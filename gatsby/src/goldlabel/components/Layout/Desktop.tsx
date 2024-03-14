@@ -1,5 +1,4 @@
 import * as React from "react"
-import {glConfig} from "../../../config"
 import {
   Avatar,
   IconButton,
@@ -22,12 +21,12 @@ import {
   Meta,
   Markdown,
   CatNav,
-  ShareMenu,
+  TogglePaletteMode,
   Footer,
   selectDisplay,
 } from "../../../goldlabel"
 
-export default function ListingDesktop(props: any) {
+export default function Desktop(props: any) {
   const dispatch = usePwaDispatch()
   const frontmatter = usePwaSelect(selectFrontmatter)
   const d = usePwaSelect(selectDisplay)

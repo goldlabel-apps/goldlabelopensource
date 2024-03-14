@@ -12,7 +12,7 @@ import {
   Markdown,
   Meta,
   CatNav,
-  ShareMenu,
+  TogglePaletteMode,
   Pricing,
   Footer,
   usePwaSelect,
@@ -21,7 +21,7 @@ import {
   usePwaDispatch,
 } from "../../../goldlabel"
 
-export default function ListingMobile(props: any) {
+export default function Mobile(props: any) {
   const dispatch = usePwaDispatch()
   const {appData, type} = props
   const siteMeta = useSiteMetadata()  
@@ -112,6 +112,7 @@ export default function ListingMobile(props: any) {
                 }}>
                   <Markdown html={html} />
                   <Navigator />
+                  
               </Box>
 
               <Box sx={{mt:3}}>

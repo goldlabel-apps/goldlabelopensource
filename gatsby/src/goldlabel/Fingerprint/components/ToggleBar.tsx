@@ -41,7 +41,7 @@ export function ToggleBar() {
             position="fixed"
             sx={{ 
               border: 0,
-              
+              background: "none",
               boxShadow: 0,
               top: 'auto',
               bottom: 0, 
