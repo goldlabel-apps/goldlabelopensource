@@ -10,7 +10,7 @@ Where will you clone the repository to? Call this `<working-repo>`. Decide on a 
 
 ```bash
 cd <working-dir>
-git clone https://github.com/listingslab-software/goldlabelopensource <your-project>
+git clone https://github.com/GoldlabelPr0/open-source <your-project>
 cd <your-project>
 cd gatsby
 npm install

@@ -17,6 +17,6 @@ export function randomDisplayName(): {
     const name = names[randomIndex]
     const randomDigits = Math.floor(Math.random() * 900) + 100
     const displayName = `${name} ${randomDigits}`
-    const avatarSrc = `/svg/characters/${name.toLowerCase()}.svg`
+    const avatarSrc = `https://free.goldlabel.pro/svg/characters/${name.toLowerCase()}.svg`
     return { avatarSrc, displayName }
 }

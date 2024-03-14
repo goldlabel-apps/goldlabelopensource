@@ -1,5 +1,5 @@
 import * as React from "react"
-import pJSON from "../../../goldlabel/package.json"
+import {glConfig} from "../../../config"
 import {
   List,
   ListItemButton,
@@ -54,7 +54,7 @@ export default function Navigator() {
   const openGithubLink = () => {
     // rel="noopener noreferrer"
     dispatch(navigate(
-      "https://github.com/listingslab-software/goldlabelopensource", 
+      "https://github.com/GoldlabelPr0/open-source", 
       "_blank",
     ))
   }
@@ -83,15 +83,13 @@ export default function Navigator() {
                   <Icon icon={"github"} color="primary"/>
                 </IconButton>
               </Tooltip>
-              
               <ShareMenu />
-              <Box sx={{m:1.25}}>
-                <Font variant="small">
-                  vs {pJSON.version}
+            </Box>
+              <Box sx={{ml: 2.5}}>
+                <Font variant="small" color={"primary"}>
+                  {glConfig.version}
                 </Font>
               </Box>
-            </Box>
-            
             <Divider />
             <List dense>
               <ListItemButton

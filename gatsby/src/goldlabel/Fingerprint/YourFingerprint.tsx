@@ -82,7 +82,7 @@ export function YourFingerprint() {
             <Grid container spacing={1}>
               
               <Grid item xs={12} md={4}>
-                <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre>
+                {/* <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre> */}
               </Grid>
             </Grid>
             {/*   */}

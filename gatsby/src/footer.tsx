@@ -41,7 +41,7 @@ export const footer: Footer = [
       {
         label: "AI",
         path: "/about/ai",
-        icon: "ai",
+        icon: "openai",
       },
       {
         label: "Listingslab",

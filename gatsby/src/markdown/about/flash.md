@@ -2,7 +2,7 @@
 order: 150
 slug: "/about/flash"
 parentSlug: "/about"
-title: "Flash"
+title: "Flash?"
 description: "Pointless reinvention of MacroMedia Flash in React"
 icon: "flash"
 image: "/png/flash.png"

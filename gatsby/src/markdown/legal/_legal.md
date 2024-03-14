@@ -1,5 +1,5 @@
 ---
-order: 125
+order: 1000
 title: "Legal"
 description: "Your trust means everything to us"
 slug: "/legal"

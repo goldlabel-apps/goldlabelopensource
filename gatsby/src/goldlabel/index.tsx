@@ -33,7 +33,6 @@ import {
 import Theme from "../goldlabel/theme/Theme"
 import {Font} from "../goldlabel/theme/Font"
 import Icon from "../goldlabel/theme/Icon"
-
 // Hooks
 import {useSiteMetadata} from "./hooks/useSiteMetadata"
 import {useAllMarkdown} from "./hooks/useAllMarkdown"
@@ -45,7 +44,6 @@ import {useSiblings} from "./hooks/useSiblings"
 import {useDisplay} from "./hooks/useDisplay"
 import {useParent} from "./hooks/useParent"
 import {getIsElementInView} from "./hooks/getIsElementInView"
-
 // Forms
 import {FormButton} from "./components/Inputs/FormButton"
 import {FormIconButton} from "./components/Inputs/FormIconButton"
@@ -65,7 +63,6 @@ import {scrollTo} from "./state/actions/scrollTo"
 import Markdown from "./components/Listings/Markdown"
 import CatNav from "./components/Listings/CatNav"
 import Meta from "./components/Listings/Meta"
-
 import Categories from "../goldlabel/components/Listings/Categories"
 import Children from "../goldlabel/components/Listings/Children"
 import Siblings from "../goldlabel/components/Listings/Siblings"
@@ -73,14 +70,12 @@ import Image from "./components/Listings/Image"
 import ResetBtn from "./components/Listings/ResetBtn"
 import HomeHero from "./components/Listings/HomeHero"
 import ContentCard from "./components/Listings/ContentCard"
-
 // Auth
 import {AuthedDialog} from "./components/Auth/AuthedDialog"
 import {Signin} from "./components/Auth/Signin"
 import {Signup} from "./components/Auth/Signup"
 import {MembersOnly} from "./components/Auth/MembersOnly"
 import {PasswordOnly} from "./components/Auth/PasswordOnly"
-
 // System
 import MultiSelect from "./components/System/MultiSelect"
 import DarkmodeToggle from "./components/System/DarkmodeToggle"
@@ -92,9 +87,7 @@ import NotFound from "./components/System/NotFound"
 import WindowResizeListener from "./components/System/WindowResizeListener"
 import {Device} from "./components/System/Device"
 import Pricing from "./components/System/Pricing"
-
-// Navigator
-
+// Nav
 import NavDialog from "./components/Nav/NavDialog"
 import Footer from "./components/Nav/Footer"
 import Navigator from "./components/Nav/Navigator"
@@ -103,20 +96,29 @@ import SystemMenu from "./components/Nav/SystemMenu"
 import PopupMenu from "./components/Nav/PopupMenu"
 import BottomBar from "./components/Nav/BottomBar"
 import {Keywords} from "./components/Nav/Keywords"
-
 // Fingerprint
 import {Fingerprint} from "./Fingerprint"
-
+// Layout
 import ListingMobile from "./components/Layout/ListingMobile"
 import ListingDesktop from "./components/Layout/ListingDesktop"
 
 
 // Algorithms
 import {randomDisplayName} from "./algorithms/randomDisplayName"
+
+// App
+export {
+    PWA,
+    App,
+    SEO,
+    BackofficeSEO,
+    ChatGPTSEO,
+    GoldlabelSEO,
+}
+
 export {
     randomDisplayName,
 }
-
 
 export {
     ListingMobile,
@@ -135,7 +137,6 @@ export {
     NavDialog,
 }
 
-///////////////////
 // System
 export {
     DarkmodeToggle,
@@ -177,15 +178,7 @@ export {
     PasswordOnly,
 }
 
-// Main
-export {
-    PWA,
-    App,
-    SEO,
-    BackofficeSEO,
-    ChatGPTSEO,
-    GoldlabelSEO,
-}
+
 // Hooks
 export {
     useSiteMetadata,

@@ -1,7 +1,7 @@
 ---
 order: 480
-slug: "/about/submodules"
-parentSlug: "/about"
+slug: "/code/submodules"
+parentSlug: "/code"
 title: "Git Submodules"
 description: "git submodule add <isomorphic_repository_url>"
 icon: "github"
@@ -51,7 +51,7 @@ How to do this? you can use Git submodules or Git subtree. Here's a general outl
    After updating the submodule, you need to commit the changes in the main repository to record the updated reference to the submodule:
 
    ```bash
-   cd /path/to/goldlabelopensource/path/dir/other-repo
+   cd /path/to/open-source/path/dir/other-repo
    git commit -am "Updated other-repo submodule"
    ```
 

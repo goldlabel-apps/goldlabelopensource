@@ -6,11 +6,11 @@ import thunk from "redux-thunk"
 import reducer from "./reducer"
 
 // goldlabel-core 
-// reduxSlug
-const {reduxSlug} = glConfig
+// version
+const {version} = glConfig
 
 const persistConfig = {
-  key: reduxSlug,
+  key: version,
   storage,
 }
 
