@@ -11,7 +11,6 @@ import {
   usePwaSelect,
   selectTings,
   selectFingerprint,
-  Icon,
   Font,
 } from "../../../goldlabel"
 import {
@@ -23,17 +22,20 @@ export function ToggleBar() {
   const dispatch = usePwaDispatch()
   const tings = usePwaSelect(selectTings)
   const fingerprint = usePwaSelect(selectFingerprint)
-  const {dialogOpen, ting} = tings
+  const {dialogOpen} = tings
   let str = ""
   let avatarSrc = ""
+  
   if (fingerprint) {
     str = fingerprint.displayName
     avatarSrc = fingerprint.avatarSrc
   }
+
   const toggleFullscreen = () => {
     dispatch(toggleFullScreen(!dialogOpen))
   }
 
+  if (!fingerprint) return null
   return <AppBar
             color="inherit"
             position="fixed"
