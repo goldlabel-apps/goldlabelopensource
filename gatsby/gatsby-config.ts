@@ -1,6 +1,4 @@
-import pJSON from "./src/goldlabel/package.json"
 import {glConfig} from "./src/config"
-import {GatsbyShape} from "./src/goldlabel/types"
 import type { GatsbyConfig } from "gatsby"
 
 const siteTitle = glConfig.siteTitle
@@ -16,8 +14,8 @@ const siteDefaultLocale = glConfig.siteDefaultLocale
 const siteEmail = glConfig.siteEmail
 const siteDisplayname = glConfig.siteDisplayname
 
-const siteMetadata: GatsbyShape =  {
-  version: pJSON.version,
+const siteMetadata: any =  {
+  version: glConfig.version,
   siteTitle,
   siteEmail,
   siteDisplayname,

@@ -19,7 +19,7 @@ import {
 } from "../"
 
 export function ToggleBar() {
-  const primaryColor = useTheme().palette.primary.main
+  const borderColor = useTheme().palette.text.disabled
   const dispatch = usePwaDispatch()
   const tings = usePwaSelect(selectTings)
   const fingerprint = usePwaSelect(selectFingerprint)
@@ -49,10 +49,13 @@ export function ToggleBar() {
               >
                 <Box sx={{
                   display: "flex",
-                  border: "1px solid " + primaryColor,
-                  p: 1,
-                  m: 1,
                   borderRadius: 2,
+                  border: "1px solid " + borderColor,
+                  p: 0.75,
+                  m: 1,
+                  pl: 2,
+                  pr: 1,
+                  
                 }}>
                   <Box sx={{mr: 1.5}}>
                     <Font variant="title" noWrap>

@@ -83,15 +83,13 @@ export default function Navigator() {
                   <Icon icon={"github"} color="primary"/>
                 </IconButton>
               </Tooltip>
-              
               <ShareMenu />
-              <Box sx={{m:1.25}}>
-                <Font variant="small">
+            </Box>
+              <Box sx={{ml: 2.5}}>
+                <Font variant="small" color={"primary"}>
                   {glConfig.version}
                 </Font>
               </Box>
-            </Box>
-            
             <Divider />
             <List dense>
               <ListItemButton
