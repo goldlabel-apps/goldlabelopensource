@@ -6,13 +6,11 @@ import {
 } from "@mui/material"
 import {
   Icon,
-  Font,
   usePwaDispatch,
   usePwaSelect,
   selectFingerprint,
 } from "../../../goldlabel"
 import {
-  ForgetMe,
   toggleFullScreen,
 } from "../../Fingerprint"
 
@@ -24,11 +22,6 @@ export default function Controls() {
 
   const fingerprint = usePwaSelect(selectFingerprint)
   if (!fingerprint) return null
-
-  const {
-    displayName,
-    ip,
-  } = fingerprint
   
   return <AppBar 
             position="static" 
@@ -38,23 +31,12 @@ export default function Controls() {
               boxShadow: "none"
             }}>
               <CardHeader 
-                avatar={<IconButton onClick={closeFingerprint}
-                          color="primary">
-                          <Icon icon="left" />
-                        </IconButton>}
                 action={<>
-                  <ForgetMe mode="icon"/>
                   <IconButton onClick={closeFingerprint}
                     color="primary">
                     <Icon icon="close" />
                   </IconButton>
                 </>}
-                title={<Font noWrap>
-                        {displayName}
-                      </Font>}
-                subheader={<Font variant="small" noWrap>
-                            IP {ip}
-                          </Font>}
               />
           </AppBar>
 }

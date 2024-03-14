@@ -102,6 +102,7 @@ import {Fingerprint} from "./Fingerprint"
 // Layout
 import Mobile from "./components/Layout/Mobile"
 import Desktop from "./components/Layout/Desktop"
+import ControlBar from "./components/Layout/ControlBar"
 
 
 // Algorithms
@@ -124,6 +125,7 @@ export {
 export {
     Mobile,
     Desktop,
+    ControlBar,
 }
 
 export {

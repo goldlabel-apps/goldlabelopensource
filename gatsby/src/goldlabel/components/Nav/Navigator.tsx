@@ -68,7 +68,7 @@ export default function Navigator() {
               <TogglePaletteMode />
 
               <Tooltip title={<Font color="white">
-                Delete yourself?
+                Forget yourself
               </Font>}>
                 <IconButton
                   color="primary"

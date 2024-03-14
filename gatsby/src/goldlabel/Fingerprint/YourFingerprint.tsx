@@ -1,4 +1,3 @@
-// import {glConfig} from "../../config"
 import React from "react"
 import { 
   getFirestore,
@@ -11,19 +10,14 @@ import {
   DialogTitle,
   DialogContent,
   DialogActions,
-  ThemeProvider,
-  createTheme,
-  useTheme,
 } from "@mui/material"
 import {
   usePwaDispatch,
   usePwaSelect,
   selectTings,
-  selectCore,
-  selectFingerprint,
+  ControlBar,
 } from "../../goldlabel"
 import {
-  Controls,
   toggleFullScreen,
   ToggleBar,
   updateFbTing,
@@ -61,11 +55,10 @@ export function YourFingerprint() {
           open={dialogOpen}
           onClose={closeDialog}>
           <DialogTitle>
-            <Controls />
+            <ControlBar />
           </DialogTitle>
           <DialogContent>
-            <Grid container spacing={1}>
-              
+            <Grid container spacing={1}>              
               <Grid item xs={12} md={4}>
                 {/* <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre> */}
               </Grid>
@@ -79,7 +72,3 @@ export function YourFingerprint() {
     </>
   )
 }
-
-/* 
-<pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre> 
-*/
