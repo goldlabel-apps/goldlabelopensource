@@ -13,6 +13,8 @@ import {
 export const init = (): any =>
   async (dispatch: any) => {
     try {
+
+      console.log("init")
       dispatch(setTingsKey("initting", true))
 
       dispatch(updateTing("created", Date.now()))
