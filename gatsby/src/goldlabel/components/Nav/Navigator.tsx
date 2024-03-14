@@ -1,5 +1,5 @@
 import * as React from "react"
-import pJSON from "../../../goldlabel/package.json"
+import {glConfig} from "../../../config"
 import {
   List,
   ListItemButton,
@@ -87,7 +87,7 @@ export default function Navigator() {
               <ShareMenu />
               <Box sx={{m:1.25}}>
                 <Font variant="small">
-                  vs {pJSON.version}
+                  {glConfig.reduxSlug}
                 </Font>
               </Box>
             </Box>
