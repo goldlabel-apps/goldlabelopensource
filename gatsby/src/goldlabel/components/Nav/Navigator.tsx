@@ -54,7 +54,7 @@ export default function Navigator() {
   const openGithubLink = () => {
     // rel="noopener noreferrer"
     dispatch(navigate(
-      "https://github.com/listingslab-software/goldlabelopensource", 
+      "https://github.com/GoldlabelPr0/open-source", 
       "_blank",
     ))
   }

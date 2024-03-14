@@ -1,9 +1,9 @@
 {
-  "name": "goldlabelopensource",
-  "license": "MIT",
+  "name": "goldlabel-free",
   "repository": {
-    "url": "https://github.com/listingslab-software/goldlabelopensource"
+    "url": "https://github.com/GoldlabelPr0/open-source"
   },
+  "license": "MIT",
   "scripts": {
     "start": "clear && cd gatsby && npm run clean && npm run develop",
     "clean": "clear && cd gatsby && npm run clean",
