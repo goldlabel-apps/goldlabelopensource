@@ -58,3 +58,22 @@ How to do this? you can use Git submodules or Git subtree. Here's a general outl
 With this setup, you can develop `other-repo` separately, and changes made in `other-repo` will be tracked within `your-repo` as a submodule
 
 You can push changes from `other-repo` independently of `your-repo`, and other users who clone `your-repo` will also get the `other-repo` submodule.
+
+___
+
+
+The `.gitmodules` file in a Git repository is used to define submodule configurations. Submodules are essentially nested Git repositories within your main Git repository. They allow you to include external repositories as a subdirectory of your main project. 
+
+Here's how it works:
+
+1. **Adding a submodule**: When you add a submodule to your Git repository using the `git submodule add` command, Git creates an entry in the `.gitmodules` file. This entry contains the URL of the submodule repository and the path where the submodule will be located within your main repository.
+
+2. **`.gitmodules` structure**: The `.gitmodules` file is typically structured like an INI file. Each submodule entry contains configuration details like the submodule's URL, path, and optionally other settings like branch, commit, etc.
+
+3. **Tracking changes**: When you clone a repository with submodules, or when you fetch changes from a repository that contains submodules, Git doesn't automatically update the submodules. Instead, it maintains a reference to a specific commit in each submodule. This means that when you initially clone a repository with submodules, you need to run `git submodule update --init --recursive` to fetch the submodule contents.
+
+4. **Updating submodules**: To update the contents of submodules to the latest commit, you need to navigate to the submodule directory and run `git pull` or `git checkout` commands. Alternatively, you can use `git submodule update --remote` to fetch the latest changes for all submodules.
+
+5. **`.git/config`**: Alongside the `.gitmodules` file, Git also tracks submodule configurations in the `.git/config` file of the main repository. This file contains information about the commit of the submodule currently checked out in your working tree.
+
+In summary, the `.gitmodules` file acts as a configuration file for submodules within a Git repository. It helps Git manage the relationships between the main repository and its submodules, including their URLs, paths, and other relevant settings.
