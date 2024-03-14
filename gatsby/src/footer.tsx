@@ -16,6 +16,16 @@ export type Footer = Array<FooterColumn>
 
 export const footer: Footer = [
   {
+    title: "Goldlabel Apps Ltd",
+    textLines: [
+      "321-323 High Road",
+      "Chadwell Heath",
+      "Essex RM6 6AX",
+      "UK Ltd Co. 15460545",
+      "ai@goldlabel.pro"
+    ],
+  },
+  {
     title: "Find out more",
     links: [
       {
@@ -29,9 +39,9 @@ export const footer: Footer = [
         icon: "flash",
       },
       {
-        label: "Oliver",
+        label: "AI",
         path: "/about/ai",
-        icon: "oliver",
+        icon: "ai",
       },
       {
         label: "Listingslab",
@@ -47,15 +57,4 @@ export const footer: Footer = [
       
     ],
   },
-  {
-    title: "Goldlabel Apps Ltd",
-    textLines: [
-      "321-323 High Road",
-      "Chadwell Heath",
-      "Essex RM6 6AX",
-      "UK Ltd Co. 15460545",
-      "ai@goldlabel.pro"
-    ],
-  },
-
 ]
