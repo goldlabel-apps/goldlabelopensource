@@ -30,13 +30,7 @@ import {
 } from "../Fingerprint"
 
 export function YourFingerprint() {
-  
-  const dispatch = usePwaDispatch()
-
-  const closeDialog = () => {
-    dispatch(toggleFullScreen(false))
-  }
-  
+  const dispatch = usePwaDispatch()  
   const tings = usePwaSelect(selectTings)
 
   React.useEffect(() => {
@@ -46,7 +40,6 @@ export function YourFingerprint() {
       if (fingerprint){
         const unsubscribe = onSnapshot(
           doc(getFirestore(), "fingerprints", fingerprint), (fp) => {
-            // console.log("onSnapshot fp", fp.data())
             dispatch(updateFbTing(fp.data()))
           })
         return () => unsubscribe();
@@ -54,23 +47,15 @@ export function YourFingerprint() {
     }
   }, [dispatch, tings])
 
-  const core = usePwaSelect(selectCore)
-  const fingerprint = usePwaSelect(selectFingerprint)
-  const primaryColor = useTheme().palette.primary.main
-  const secondaryColor = useTheme().palette.secondary.main
-  const {darkmode} = core
+  const closeDialog = () => {
+    dispatch(toggleFullScreen(false))
+  }
+  
   const {
     dialogOpen,
   } = tings
   
   return (<>
-    <ThemeProvider 
-      theme={createTheme({
-        palette: { 
-          mode: darkmode ? "light" : "dark",
-          primary: { main: secondaryColor},
-          secondary: { main: primaryColor },
-          background: { paper: primaryColor}}})}>
         <Dialog 
           fullScreen
           open={dialogOpen}
@@ -90,8 +75,7 @@ export function YourFingerprint() {
           <DialogActions>
             <ToggleBar />
           </DialogActions>
-        </Dialog>       
-      </ThemeProvider>   
+        </Dialog>
     </>
   )
 }

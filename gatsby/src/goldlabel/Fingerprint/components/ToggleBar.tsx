@@ -19,6 +19,7 @@ import {
 
 export function ToggleBar() {
   const borderColor = useTheme().palette.text.disabled
+  const bgColor = useTheme().palette.background.paper
   const dispatch = usePwaDispatch()
   const tings = usePwaSelect(selectTings)
   const fingerprint = usePwaSelect(selectFingerprint)
@@ -53,20 +54,15 @@ export function ToggleBar() {
                   display: "flex",
                   borderRadius: 2,
                   border: "1px solid " + borderColor,
-                  p: 0.75,
-                  m: 1,
-                  pl: 2,
-                  pr: 1,
-                  
+                  background: bgColor,
+                  p: 0.75, m: 1, pl: 2, pr: 1,
                 }}>
                   <Box sx={{mr: 1.5}}>
                     <Font variant="title" noWrap>
                       {str}
                     </Font>
                   </Box>
-                  <Box sx={{
-                    mt: 0.1,      
-                  }}>
+                  <Box sx={{}}>
                     <Avatar
                       sx={{width: 24, height: 24}}
                       src={avatarSrc} 
