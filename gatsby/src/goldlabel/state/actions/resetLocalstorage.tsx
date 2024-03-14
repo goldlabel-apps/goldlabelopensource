@@ -6,8 +6,8 @@ import {
 
 export const resetLocalstorage = (): any => async (dispatch: any) => {
     try {
-        const {reduxSlug} = glConfig
-        localStorage.removeItem(`persist:${reduxSlug}`)
+        const {version} = glConfig
+        localStorage.removeItem(`persist:${version}`)
         dispatch(navigate("https://google.com", "_self"))
     } catch (e: any) {
         dispatch(notify("resetLocalstorage 500","error", e.toString()))

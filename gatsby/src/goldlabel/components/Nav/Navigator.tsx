@@ -87,7 +87,7 @@ export default function Navigator() {
               <ShareMenu />
               <Box sx={{m:1.25}}>
                 <Font variant="small">
-                  {glConfig.reduxSlug}
+                  {glConfig.version}
                 </Font>
               </Box>
             </Box>
