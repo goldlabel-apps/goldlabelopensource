@@ -1,5 +1,5 @@
 export const glConfig: any = {
-    version: "GL4.1.5",
+    version: "4.1.7",
     siteUrl: "https://free.goldlabel.pro",
     siteIcon: "/svg/iOS.svg",
     siteAvatar: "https://free.goldlabel.pro/svg/iOS.svg",

@@ -5,8 +5,8 @@ import {
 } from "@mui/material"
 import {
   boot,
-  ListingDesktop,
-  ListingMobile,
+  Desktop,
+  Mobile,
   NotifyerSnack,
   usePwaDispatch,
   usePwaSelect,
@@ -74,16 +74,16 @@ export default function App(props: any) {
               {type === "markdown" ? <>
                   {passwordOnly ? <>
                     {!user ? <PasswordOnly frontmatter={frontmatter} /> : <>
-                      { mobile ? <ListingMobile type={type} appData={appData} /> 
-                      : <ListingDesktop type={type} appData={appData} /> }
+                      { mobile ? <Mobile type={type} appData={appData} /> 
+                      : <Desktop type={type} appData={appData} /> }
                     </> }
                   </> : <>
-                  { mobile ? <ListingMobile type={type} appData={appData} /> 
-                    : <ListingDesktop type={type} appData={appData} /> }
+                  { mobile ? <Mobile type={type} appData={appData} /> 
+                    : <Desktop type={type} appData={appData} /> }
                     </> }
                 </> : <>
-                  { mobile ? <ListingMobile type={type} appData={appData} /> 
-                    : <ListingDesktop type={type} appData={appData} /> }
+                  { mobile ? <Mobile type={type} appData={appData} /> 
+                    : <Desktop type={type} appData={appData} /> }
                     </>}
             </Container>
           </Box>)

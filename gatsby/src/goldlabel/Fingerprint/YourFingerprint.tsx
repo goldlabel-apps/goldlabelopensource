@@ -1,4 +1,3 @@
-// import {glConfig} from "../../config"
 import React from "react"
 import { 
   getFirestore,
@@ -11,32 +10,21 @@ import {
   DialogTitle,
   DialogContent,
   DialogActions,
-  ThemeProvider,
-  createTheme,
-  useTheme,
 } from "@mui/material"
 import {
   usePwaDispatch,
   usePwaSelect,
   selectTings,
-  selectCore,
-  selectFingerprint,
+  ControlBar,
 } from "../../goldlabel"
 import {
-  Controls,
   toggleFullScreen,
   ToggleBar,
   updateFbTing,
 } from "../Fingerprint"
 
 export function YourFingerprint() {
-  
-  const dispatch = usePwaDispatch()
-
-  const closeDialog = () => {
-    dispatch(toggleFullScreen(false))
-  }
-  
+  const dispatch = usePwaDispatch()  
   const tings = usePwaSelect(selectTings)
 
   React.useEffect(() => {
@@ -46,7 +34,6 @@ export function YourFingerprint() {
       if (fingerprint){
         const unsubscribe = onSnapshot(
           doc(getFirestore(), "fingerprints", fingerprint), (fp) => {
-            // console.log("onSnapshot fp", fp.data())
             dispatch(updateFbTing(fp.data()))
           })
         return () => unsubscribe();
@@ -54,33 +41,24 @@ export function YourFingerprint() {
     }
   }, [dispatch, tings])
 
-  const core = usePwaSelect(selectCore)
-  const fingerprint = usePwaSelect(selectFingerprint)
-  const primaryColor = useTheme().palette.primary.main
-  const secondaryColor = useTheme().palette.secondary.main
-  const {darkmode} = core
+  const closeDialog = () => {
+    dispatch(toggleFullScreen(false))
+  }
+  
   const {
     dialogOpen,
   } = tings
   
   return (<>
-    <ThemeProvider 
-      theme={createTheme({
-        palette: { 
-          mode: darkmode ? "light" : "dark",
-          primary: { main: secondaryColor},
-          secondary: { main: primaryColor },
-          background: { paper: primaryColor}}})}>
         <Dialog 
           fullScreen
           open={dialogOpen}
           onClose={closeDialog}>
           <DialogTitle>
-            <Controls />
+            <ControlBar />
           </DialogTitle>
           <DialogContent>
-            <Grid container spacing={1}>
-              
+            <Grid container spacing={1}>              
               <Grid item xs={12} md={4}>
                 {/* <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre> */}
               </Grid>
@@ -90,12 +68,7 @@ export function YourFingerprint() {
           <DialogActions>
             <ToggleBar />
           </DialogActions>
-        </Dialog>       
-      </ThemeProvider>   
+        </Dialog>
     </>
   )
 }
-
-/* 
-<pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre> 
-*/

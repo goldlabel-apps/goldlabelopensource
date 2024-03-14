@@ -14,10 +14,6 @@ export const setFrontmatter = (
             frontmatter,
         } })) 
     } catch (e: any) {
-        dispatch(notify(
-            "MD 101",
-            "error", 
-            `setFrontmatter ${e.toString()}`
-        ))
+        dispatch(notify("setFrontmatter 500", "error", e.toString()))
     }
 }

@@ -20,6 +20,7 @@ import {
   useAllMarkdown,
   setCoreKey,
   ShareMenu,
+  TogglePaletteMode,
 } from "../../../goldlabel"
 import {
   forgetTing
@@ -63,8 +64,11 @@ export default function Navigator() {
           <Box sx={{ml: 1}}>
           <Divider />
             <Box sx={{m: 1, display: "flex"}}>
+
+              <TogglePaletteMode />
+
               <Tooltip title={<Font color="white">
-                Delete yourself?
+                Forget yourself
               </Font>}>
                 <IconButton
                   color="primary"
@@ -85,11 +89,7 @@ export default function Navigator() {
               </Tooltip>
               <ShareMenu />
             </Box>
-              <Box sx={{ml: 2.5}}>
-                <Font variant="small" color={"primary"}>
-                  {glConfig.version}
-                </Font>
-              </Box>
+          
             <Divider />
             <List dense>
               <ListItemButton
@@ -147,7 +147,12 @@ export default function Navigator() {
               </> : null }
 
             </List>
-            
+            <Divider />
+            <Box sx={{ml: 2.5, my:1, mt: 1.25}}>
+              <Font variant="small" color={"primary"}>
+                {glConfig.version}
+              </Font>
+            </Box>            
           </Box>
       </>
 }

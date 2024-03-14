@@ -1,7 +1,4 @@
 import React from "react"
-// import { 
-//   getFirestore,
-// } from "firebase/firestore"
 import {
   usePwaDispatch,
   usePwaSelect,
@@ -20,25 +17,6 @@ export function Fingerprint() {
   const {
     ting,
   } = tings
-
-  React.useEffect(() => {
-    // const params = window.location.search
-    // console.log("params", params)
-    // console.log("subscribe", ting.fingerprint)
-    // if (ting){
-    //   const {YourFingerprint} = ting
-    //   if (YourFingerprint){
-    //     // const db = getFirestore()
-    //     // const unsubscribe = onSnapshot(doc(db, "YourFingerprints", YourFingerprint), (doc) => {
-    //     //   // console.log("docUpdate", doc.data())
-    //     //   // dispatch(updateFbTing(doc.data()))
-    //     // })
-    //     // return () => unsubscribe()
-    //   }
-    // }
-  }, [ting, dispatch])
-
-
 
   React.useEffect(() => {
     const {
