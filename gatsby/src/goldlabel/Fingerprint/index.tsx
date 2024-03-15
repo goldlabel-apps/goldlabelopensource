@@ -15,7 +15,7 @@ import {iPGeo} from "./actions/iPGeo"
 import {fingerprintMake} from "./actions/fingerprintMake"
 import {deviceMake} from "./actions/deviceMake"
 import {updateTing} from "./actions/updateTing"
-import {updateFbTing} from "./actions/updateFbTing"
+import {updateFingerprint} from "./actions/updateFingerprint"
 import {saveTing} from "./actions/saveTing"
 import {forgetTing} from "./actions/forgetTing"
 import {newFingerprintNotify} from "./actions/newFingerprintNotify"
@@ -34,7 +34,7 @@ export {
     setTingsKey,
     toggleFullScreen,
     updateTing,
-    updateFbTing,
+    updateFingerprint,
     iPGeo,
     fingerprintMake,
     deviceMake,

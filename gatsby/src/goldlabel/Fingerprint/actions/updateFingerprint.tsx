@@ -3,13 +3,13 @@ import {
   setPwaKey,
 } from "../../../goldlabel"
 
-export const updateFbTing = (
+export const updateFingerprint = (
   fingerprint: any,
 ): any =>
   async (dispatch: any) => {
     try {
       dispatch(setPwaKey({key: "fingerprint", value: fingerprint}))
     } catch (e: any) {
-      dispatch(notify("updateFbTing 500", "error", e.toString()))
+      dispatch(notify("updateFingerprint 500", "error", e.toString()))
     }
 }
