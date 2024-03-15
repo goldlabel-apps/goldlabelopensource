@@ -21,8 +21,10 @@ export const saveTing = (
     const {isNewTing} = core
     if(isNewTing && fingerprint){
       dispatch(setCoreKey("isNewTing", false))
+      console.log("save fingerprint")
       await setDoc(doc(getFirestore(), "fingerprints", fingerprint), ting)
-      // console.log("setDoc", ting)
+    }else{
+      console.log("update fingerprint")
     }
   } catch (e: any) {
     console.warn(e)

@@ -5,64 +5,44 @@ import {
 } from "../../../goldlabel"
 
 export const makeEmailHTML = (ting: any) => {
-  // console.log("makeEmailHTML", ting)
   const {
     fingerprint,
-    docTitle,
     countryName,
+    avatarSrc,
+    city,
+    countryCode,
     siteAvatar,
-    href,
+    siteUrl,
     browser,
+    browserEngine,
     os,
+    isp,
+    href,
+    vendor,
+    deviceModel,
+    deviceType,
   } = ting
 
-  /*
-{
-    "displayName": "Hippy 944",
-    "created": 1710352576109,
-    "updated": 1710352576109,
-    "siteAvatar": "https://free.goldlabel.pro/svg/iOS.svg",
-    "href": "http://localhost:8000/",
-    "slug": "/",
-    "bigSmall": "big",
-    "browser": "Chrome",
-    "browserVs": "122.0.0.0",
-    "browserEngine": "Blink",
-    "os": "Mac OS",
-    "osVs": "10.15.7",
-    "vendor": "Apple",
-    "deviceModel": "Macintosh",
-    "deviceType": "",
-    "avatarSrc": "/svg/characters/hippy.svg",
-    "ip": "86.160.136.18",
-    "languages": "en-GB,cy-GB,gd",
-    "timeZone": "Europe/London",
-    "city": "Birmingham",
-    "state": "England",
-    "countryEmoji": "🇬🇧",
-    "countryCode": "gb",
-    "countryName": "United Kingdom",
-    "isEu": false,
-    "currency": "Pound Sterling £",
-    "isp": "BT Public Internet Service",
-    "lat": "52.47387",
-    "lng": "-1.89220",
-    "host": "localhost:8000",
-    "fingerprint": "localhost:8000_e88c7bd93df9597a7d7cf5a2e4b6bdb7"
-}
-  */
   return `<div>
-            
-            <p>${countryName || "countryName"}</p>
-            <p>${os || "os"} ${browser || "browser"}</p>
-            <p>
-              <a href="${href}">
-                ${docTitle || "view page"}
-              </a>
-            </p>
             <a href="https://goldlabel.pro/?fp=${fingerprint}">
-              <img src="${siteAvatar}" width="50" height="50" />
+              <img src="https://goldlabel.pro/iOS.svg" 
+                  width="60" 
+                  height="60" />
             </a>
+            <a href="${href}">
+              <img src="${siteAvatar}" width="60" height="60" />
+            </a>
+            <img 
+              src="${avatarSrc}" 
+              width="60" height="60" />
+            <img 
+              src="${siteUrl}/svg/flags/${countryCode}.svg" 
+              width="60" height="60" />
+            <p>${city || ""} ${countryName || ""}</p>
+            <p>${isp || ""}</p>
+            <p>${os || ""} ${browser || ""} ${browserEngine || ""} 
+            ${vendor || ""} ${deviceType || ""} ${deviceModel || ""}
+            </p>
           </div>`
 }
 
@@ -87,10 +67,7 @@ export const newFingerprintNotify = (): any => async (dispatch: any) => {
       html,
     }
     axios.post(endpoint, email)
-      .then(function (res) {
-        // console.log("axios", res)
-        // dispatch(notify("newFingerprintNotify 200", "success", "App owner notified"))
-      })
+      .then(function (res) {})
       .catch(function (e) {
         console.log("postEmail error", e)
       })
