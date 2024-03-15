@@ -15,7 +15,6 @@ import {
 export const saveTing = (
 ): any => async (dispatch: any) => {
   try {
-    
     const {tings, core} = store.getState()
     if (!tings) return false    
     const {ting} = tings
