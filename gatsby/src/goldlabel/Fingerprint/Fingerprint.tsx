@@ -24,11 +24,11 @@ export function Fingerprint() {
       initDone,
       ting,
     } = tings
-    if (!initted && !initDone) dispatch(init())
-    if (ting){
-      const {ip} = ting
-      if (ip) dispatch(saveTing())
-    }
+    // if (!initted && !initDone) dispatch(init())
+    // if (ting){
+    //   const {ip} = ting
+    //   if (ip) dispatch(saveTing())
+    // }
   }, [tings, dispatch])
   
   return <>
