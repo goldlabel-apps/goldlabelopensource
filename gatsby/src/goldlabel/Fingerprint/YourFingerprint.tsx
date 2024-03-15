@@ -15,17 +15,19 @@ import {
   usePwaDispatch,
   usePwaSelect,
   selectTings,
+  selectFingerprint,
   ControlBar,
 } from "../../goldlabel"
 import {
   toggleFullScreen,
   ToggleBar,
-  updateFbTing,
+  updateFingerprint,
 } from "../Fingerprint"
 
 export function YourFingerprint() {
   const dispatch = usePwaDispatch()  
   const tings = usePwaSelect(selectTings)
+  const fingerprint = usePwaSelect(selectFingerprint)
 
   React.useEffect(() => {
     const {ting} = tings
@@ -34,7 +36,7 @@ export function YourFingerprint() {
       if (fingerprint){
         const unsubscribe = onSnapshot(
           doc(getFirestore(), "fingerprints", fingerprint), (fp) => {
-            dispatch(updateFbTing(fp.data()))
+            dispatch(updateFingerprint(fp.data()))
           })
         return () => unsubscribe();
       }
@@ -60,7 +62,7 @@ export function YourFingerprint() {
           <DialogContent>
             <Grid container spacing={1}>              
               <Grid item xs={12} md={4}>
-                {/* <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre> */}
+                <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre>
               </Grid>
             </Grid>
             {/*   */}

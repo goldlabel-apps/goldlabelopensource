@@ -13,11 +13,11 @@ image: "/png/og.png"
 
 > Where will you clone the repository to?
 
-Decide where you will clone the [repository](https://github.com/GoldlabelPr0/open-source) to? Call this `<working-repo>`. Decide on a machine readable name `<your-project>`. Clone the repo and install dependencies
+Decide where you will clone the [repository](https://github.com/listingslab-software/goldlabelopensource) to? Call this `<working-repo>`. Decide on a machine readable name `<your-project>`. Clone the repo and install dependencies
 
 ```bash
 cd <working-dir>
-git clone https://github.com/GoldlabelPr0/open-source <your-project>
+git clone https://github.com/listingslab-software/goldlabelopensource <your-project>
 cd <your-project>
 cd gatsby
 npm install

@@ -1,7 +1,8 @@
 export const glConfig: any = {
-    version: "4.1.7",
+    version: "4.1.8",
     siteUrl: "https://free.goldlabel.pro",
     siteIcon: "/svg/iOS.svg",
+    siteRepo: "https://github.com/listingslab-software/goldlabelopensource",
     siteAvatar: "https://free.goldlabel.pro/svg/iOS.svg",
     siteTitle: "Goldlabel.",
     siteDescription: "Free & Open Source on Github",

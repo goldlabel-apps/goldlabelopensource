@@ -38,7 +38,7 @@ export default function FeaturedFooter() {
               textLines,
               links,
             } = item
-            return <Grid key={`column_${i}`} item xs={12} sm={6}>
+            return <Grid key={`column_${i}`} item xs={12} sm={6} md={3}>
                       <Font color="primary">
                         {title}
                       </Font>
