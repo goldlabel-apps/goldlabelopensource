@@ -6,7 +6,6 @@ import {
 } from "@mui/material"
 import {
   Image,
-  Fingerprint,
   Font,
   useSiteMetadata,
   Markdown,
@@ -121,7 +120,7 @@ export default function Mobile(props: any) {
             <Box sx={{height: 70}} />
             <div id="bottomAnchor" />
           </Box>
-          <Fingerprint />
+          
         </Container>
       </>
 }

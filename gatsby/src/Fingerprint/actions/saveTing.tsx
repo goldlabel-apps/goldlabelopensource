@@ -7,7 +7,7 @@ import {
   store,
   notify,
   setCoreKey,
-} from "../../../goldlabel"
+} from "../../goldlabel"
 import {
   setFingerprint,
 } from "../"

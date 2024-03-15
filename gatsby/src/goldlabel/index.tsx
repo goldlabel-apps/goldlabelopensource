@@ -97,8 +97,7 @@ import SystemMenu from "./components/Nav/SystemMenu"
 import PopupMenu from "./components/Nav/PopupMenu"
 import BottomBar from "./components/Nav/BottomBar"
 import {Keywords} from "./components/Nav/Keywords"
-// Fingerprint
-import {Fingerprint} from "./Fingerprint"
+
 // Layout
 import Mobile from "./components/Layout/Mobile"
 import Desktop from "./components/Layout/Desktop"
@@ -126,10 +125,6 @@ export {
     Mobile,
     Desktop,
     ControlBar,
-}
-
-export {
-    Fingerprint,
 }
 
 // Navigator

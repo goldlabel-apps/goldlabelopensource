@@ -1,6 +1,6 @@
 import { 
   notify,
-} from "../../../goldlabel"
+} from "../../goldlabel"
 import {
   setTingsKey,
 } from "../"

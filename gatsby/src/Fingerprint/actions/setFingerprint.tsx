@@ -6,7 +6,7 @@ import {
 import { 
   store,
   notify,
-} from "../../../goldlabel"
+} from "../../goldlabel"
 
 export const setFingerprint = (
 ): any => async (dispatch: any) => {

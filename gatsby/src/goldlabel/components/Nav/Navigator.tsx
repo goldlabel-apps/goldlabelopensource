@@ -1,4 +1,4 @@
-import * as React from "react"
+  import * as React from "react"
 import {glConfig} from "../../../config"
 import {
   List,
@@ -24,7 +24,7 @@ import {
 } from "../../../goldlabel"
 import {
   forgetTing
-} from "../../Fingerprint"
+} from "../../../Fingerprint"
 
 export default function Navigator() {
   const dispatch = usePwaDispatch()

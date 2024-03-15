@@ -3,7 +3,7 @@ import {
   usePwaDispatch,
   usePwaSelect,
   selectTings,
-} from "../../goldlabel"
+} from "../goldlabel"
 import {
   YourFingerprint,
   ToggleBar,

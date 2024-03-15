@@ -2,7 +2,7 @@ import axios from "axios"
 import { 
   notify,
   randomDisplayName,
-} from "../../../goldlabel"
+} from "../../goldlabel"
 import {
   updateTing,
   newFingerprintNotify,

@@ -12,7 +12,7 @@ import {
   selectTings,
   selectFingerprint,
   Font,
-} from "../../../goldlabel"
+} from "../../goldlabel"
 import {
     toggleFullScreen,
 } from "../"

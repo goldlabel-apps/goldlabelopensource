@@ -2,7 +2,7 @@ import {
   notify,
   store,
   setPwaKey,
-} from "../../../goldlabel"
+} from "../../goldlabel"
 
 export const updateTing = (
     key: string,

@@ -1,7 +1,7 @@
 import FingerprintJS from "@fingerprintjs/fingerprintjs"
 import { 
   notify,
-} from "../../../goldlabel"
+} from "../../goldlabel"
 import {
   updateTing,
 } from "../"

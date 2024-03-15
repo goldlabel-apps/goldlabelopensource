@@ -1,7 +1,7 @@
 import { 
   notify,
   setPwaKey,
-} from "../../../goldlabel"
+} from "../../goldlabel"
 
 export const updateFingerprint = (
   fingerprint: any,
