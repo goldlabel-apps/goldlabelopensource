@@ -26,35 +26,62 @@ export const footer: Footer = [
     ],
   },
   {
-    title: "Find out more",
+    title: "About",
     links: [
       {
-        label: "Fingerprint",
-        path: "/about/fingerprint/",
-        icon: "fingerprint",
-      },
-      {
-        label: "Flash",
-        path: "/about/flash/",
-        icon: "flash",
-      },
-      {
-        label: "AI",
-        path: "/about/ai",
-        icon: "openai",
-      },
-      {
-        label: "Listingslab",
-        path: "https://listingslab.com",
-        target: "_blank",
-        icon: "link",
+        label: "Contact us",
+        path: "/?cmd=contact",
+        target: "_self",
+        icon: "email",
       },
       {
         label: "Legal",
         path: "/legal",
         icon: "legal",
       },
-      
+    ],
+  },
+  {
+    title: "Learn more",
+    links: [
+      {
+        label: "Fingerprints?",
+        path: "/about/fingerprints",
+        icon: "fingerprint",
+      },
+      {
+        label: "Flash?",
+        path: "/about/flash",
+        icon: "flash",
+      },
+      {
+        label: "AI?",
+        path: "/about/ai",
+        icon: "openai",
+      },
+    ],
+  },
+  {
+    title: "Example Apps",
+    links: [
+      {
+        label: "Listingslab",
+        path: "https://listingslab.com",
+        target: "_blank",
+        icon: "pingpong",
+      },
+      {
+        label: "Growspy",
+        path: "https://growspy.app",
+        target: "_blank",
+        icon: "leaf",
+      },
+      {
+        label: "Dive Malta",
+        path: "https://divemalta.app",
+        target: "_blank",
+        icon: "diving",
+      },
     ],
   },
 ]

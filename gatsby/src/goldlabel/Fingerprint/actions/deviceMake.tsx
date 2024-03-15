@@ -8,7 +8,6 @@ export const deviceMake = (): any => async (dispatch: any) => {
   try {
     const parser = new UAParser()
     const result = parser.getResult()
-    dispatch(updateTing("bigSmall", result.device.type || "big"))
     dispatch(updateTing("browser", result.browser.name || ""))
     dispatch(updateTing("browserVs", result.browser.version || ""))
     dispatch(updateTing("browserEngine", result.engine.name || ""))
