@@ -28,14 +28,11 @@ export const makeEmailHTML = (ting: any) => {
               <img src="https://goldlabel.pro/iOS.svg" 
                   width="60" 
                   height="60" />
-            </a>
-            <a href="${href}">
+            </a><a href="${href}">
               <img src="${siteAvatar}" width="60" height="60" />
-            </a>
-            <img 
+            </a><img 
               src="${avatarSrc}" 
-              width="60" height="60" />
-            <img 
+              width="60" height="60" /><img 
               src="${siteUrl}/svg/flags/${countryCode}.svg" 
               width="60" height="60" />
             <p>${city || ""} ${countryName || ""}</p>

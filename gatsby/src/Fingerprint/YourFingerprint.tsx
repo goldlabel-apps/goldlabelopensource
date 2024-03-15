@@ -17,7 +17,7 @@ import {
   selectTings,
   selectFingerprint,
   ControlBar,
-} from "../../goldlabel"
+} from "../goldlabel"
 import {
   toggleFullScreen,
   ToggleBar,

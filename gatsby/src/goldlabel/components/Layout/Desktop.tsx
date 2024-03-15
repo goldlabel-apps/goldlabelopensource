@@ -9,7 +9,6 @@ import {
 } from "@mui/material"
 import {
   Image,
-  Fingerprint,
   navigate,
   Pricing,
   Font,
@@ -146,7 +145,7 @@ export default function Desktop(props: any) {
       </Box>
       
       {/* <BottomBar /> */}
-      <Fingerprint/>
+
       <div id="bottomAnchor" />
     </Container>
   </>

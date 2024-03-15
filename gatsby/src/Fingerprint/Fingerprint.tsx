@@ -3,7 +3,7 @@ import {
   usePwaDispatch,
   usePwaSelect,
   selectTings,
-} from "../../goldlabel"
+} from "../goldlabel"
 import {
   YourFingerprint,
   ToggleBar,
@@ -21,14 +21,14 @@ export function Fingerprint() {
   React.useEffect(() => {
     const {
       initted,
-      initting,
+      initDone,
       ting,
     } = tings
-    if (!initted && !initting) dispatch(init())
-    if (ting){
-      const {ip} = ting
-      if (ip) dispatch(saveTing())
-    }
+    // if (!initted && !initDone) dispatch(init())
+    // if (ting){
+    //   const {ip} = ting
+    //   if (ip) dispatch(saveTing())
+    // }
   }, [tings, dispatch])
   
   return <>

@@ -100,6 +100,7 @@ import LinuxIcon from "./SVGIcons/devices/LinuxIcon"
 import MacIcon from "./SVGIcons/devices/MacIcon"
 import WindowsIcon from "./SVGIcons/devices/WindowsIcon"
 import XboxIcon from "./SVGIcons/devices/XboxIcon"
+import MacromediaIcon from "./SVGIcons/MacromediaIcon"
 
 export default function Icon({icon, color}: IconShape) {
   if (!color) color = "inherit"
@@ -127,7 +128,7 @@ export default function Icon({icon, color}: IconShape) {
       iconFragment = <FilterIcon color={color} />
       break
     case "flash":
-      iconFragment = <HowIcon color={color} />
+      iconFragment = <MacromediaIcon color={color} />
       break
     case "signup":
       iconFragment = <SignupIcon color={color} />
