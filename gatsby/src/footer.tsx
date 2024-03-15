@@ -43,7 +43,7 @@ export const footer: Footer = [
     ],
   },
   {
-    title: "Learn more",
+    title: "How it works",
     links: [
       {
         label: "Fingerprints?",
