@@ -8,10 +8,14 @@ import {
   notify,
   setCoreKey,
 } from "../../../goldlabel"
+import {
+  setFingerprint,
+} from "../"
 
 export const saveTing = (
 ): any => async (dispatch: any) => {
   try {
+    
     const {tings, core} = store.getState()
     if (!tings) return false    
     const {ting} = tings
@@ -19,15 +23,11 @@ export const saveTing = (
     const {fingerprint} = ting
     if (!fingerprint) return false
     const {isNewTing} = core
-    if(isNewTing && fingerprint){
+    if (isNewTing && fingerprint) {
       dispatch(setCoreKey("isNewTing", false))
-      console.log("save fingerprint")
       await setDoc(doc(getFirestore(), "fingerprints", fingerprint), ting)
-    }else{
-      console.log("update fingerprint")
-    }
+    } else { dispatch(setFingerprint()) }
   } catch (e: any) {
-    console.warn(e)
     dispatch(notify("saveTing.tsx", "error", `saveTing.tsx ${e.toString()}`))
   }
 }

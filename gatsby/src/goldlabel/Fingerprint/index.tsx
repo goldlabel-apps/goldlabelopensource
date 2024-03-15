@@ -19,6 +19,7 @@ import {updateFbTing} from "./actions/updateFbTing"
 import {saveTing} from "./actions/saveTing"
 import {forgetTing} from "./actions/forgetTing"
 import {newFingerprintNotify} from "./actions/newFingerprintNotify"
+import {setFingerprint} from "./actions/setFingerprint"
 
 export {
     tingsSlice,
@@ -40,4 +41,5 @@ export {
     saveTing,
     forgetTing,
     newFingerprintNotify,
+    setFingerprint,
 }
