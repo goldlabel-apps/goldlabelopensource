@@ -27,6 +27,7 @@ import {
 } from "../../../Fingerprint"
 
 export default function Navigator() {
+  const showForget = false
   const dispatch = usePwaDispatch()
   const allMarkdown = useAllMarkdown()
   const frontmatter = usePwaSelect(selectFrontmatter)
@@ -67,8 +68,7 @@ export default function Navigator() {
             <Box sx={{m: 1, display: "flex"}}>
 
               <TogglePaletteMode />
-
-              <Tooltip title={<Font color="white">
+              {showForget ? <Tooltip title={<Font color="white">
                 Forget yourself
               </Font>}>
                 <IconButton
@@ -77,7 +77,8 @@ export default function Navigator() {
                   onClick={onForgetMe}>
                   <Icon icon={"forget"} color="primary"/>
                 </IconButton>
-              </Tooltip>
+              </Tooltip> : null }
+              
               <Tooltip title={<Font color="white">
                 Free from GitHub
               </Font>}>

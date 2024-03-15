@@ -27,7 +27,7 @@ export const footer: Footer = [
     ],
   },
   {
-    title: "About",
+    title: "Company",
     links: [
       {
         label: "Contact us",

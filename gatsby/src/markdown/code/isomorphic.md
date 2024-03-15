@@ -5,7 +5,7 @@ parentSlug: "/code"
 title: "Isomorphic JavaScript"
 description: "Deploy to any device with a JavaScript runtime"
 icon: "javascript"
-image: "/webp/isomorphic.webp"
+image: "/png/git.png"
 keywords: "How, Key Concept, JavaScript, Isomorphic, React"
 ---
 > In the world of JavaScript the fact code can be shared across devices with a JavaScript runtime could be called "**Isomorphic**"

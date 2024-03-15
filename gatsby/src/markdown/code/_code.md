@@ -3,7 +3,7 @@ order: 500
 draft: false
 slug: "/code"
 parentSlug: "/"
-title: "Start Coding"
+title: "Developer"
 description: "Install and run Goldlabel locally"
 keywords: "Goldlabel, free, open source, github"
 icon: "github"

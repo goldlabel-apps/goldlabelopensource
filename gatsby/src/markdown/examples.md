@@ -1,13 +1,14 @@
 ---
 order: 50
-slug: "/examples"
+slug: "/example-apps"
 parentSlug: "/"
-title: "Examples"
-description: "Out in the wild"
+title: "Example Apps"
+description: "Real live apps in the wild"
 icon: "examples"
 image: "/webp/coupland/option-paralysis.webp"
 keywords: "Goldlabel, Examples, Dive Malta, Growspy"
 ---
+
 > Here are some real life examples of Goldlabel Apps which have been created as part of the process of developing our POC and MVP
 
 > [Open Source](https://free.goldlabel.pro/)

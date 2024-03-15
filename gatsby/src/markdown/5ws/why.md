@@ -1,13 +1,12 @@
 ---
-draft: true
+order: 15
 slug: "/why"
 parentSlug: "/"
 title: "Why?"
 description: "is Goldlabel?"
 icon: "why"
-image: "/jpg/cixin.jpg"
+image: "/png/everybody.png"
 keywords: "5Ws, Why, cixin"
-order: 305
 ---
 
 ### Causes, effects and possible motives
