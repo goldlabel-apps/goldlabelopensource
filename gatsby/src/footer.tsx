@@ -1,3 +1,4 @@
+import {glConfig} from "./config"
 export type FooterLink = {
   path: string
   label: string
@@ -30,7 +31,7 @@ export const footer: Footer = [
     links: [
       {
         label: "Contact us",
-        path: "/?cmd=contact",
+        path: `mailto:${glConfig.siteEmail}`,
         target: "_self",
         icon: "email",
       },

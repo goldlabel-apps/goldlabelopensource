@@ -21,10 +21,10 @@ export function Fingerprint() {
   React.useEffect(() => {
     const {
       initted,
-      initting,
+      initDone,
       ting,
     } = tings
-    if (!initted && !initting) dispatch(init())
+    if (!initted && !initDone) dispatch(init())
     if (ting){
       const {ip} = ting
       if (ip) dispatch(saveTing())

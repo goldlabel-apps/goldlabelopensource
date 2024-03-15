@@ -1,39 +1,56 @@
+import axios from "axios"
 import { 
   notify,
+  randomDisplayName,
 } from "../../../goldlabel"
 import {glConfig} from "../../../config"
 import {
   fingerprintMake,
   setTingsKey,
   deviceMake,
-  iPGeo,
   updateTing,
+  // newFingerprintNotify,
 } from "../"
 
 export const init = (): any =>
   async (dispatch: any) => {
     try {
-
-      console.log("init")
-      dispatch(setTingsKey("initting", true))
-
+      dispatch(setTingsKey("initDone", true))
+      const messages = [
+        {
+          time: Date.now(),
+          to: "to name",
+          from: "from name",
+          message: "Lorem Ipsum dolar immet",
+        },
+      ]
+      const history = [
+        {
+          href: window.location.href,
+          slug: window.location.pathname,
+          title: document.title
+        },
+      ]
+      const app = [
+        {
+          version: glConfig.version,
+          appName: glConfig.siteDisplayname,
+          appUrl: glConfig.appUrl,
+          appAvatar: glConfig.siteAvatar,
+          appTitle: glConfig.siteTitle,
+          appColor: glConfig.theme.primaryColor,
+        },
+      ]
       dispatch(updateTing("created", Date.now()))
       dispatch(updateTing("updated", Date.now()))
-      dispatch(updateTing("displayName", ""))
-      dispatch(updateTing("href", window.location.href))
-      dispatch(updateTing("slug", window.location.pathname))
-      dispatch(updateTing("docTitle", document.title))
-
-      dispatch(updateTing("siteDisplayname", glConfig.siteDisplayname))
-      dispatch(updateTing("siteAvatar", glConfig.siteAvatar))
-      dispatch(updateTing("version", glConfig.version))
-      dispatch(updateTing("color", glConfig.theme.primaryColor))
-      dispatch(updateTing("siteTitle", glConfig.siteTitle))
-      dispatch(updateTing("siteUrl", glConfig.siteUrl))
-
+      dispatch(updateTing("messages", messages))
+      dispatch(updateTing("history", history))
+      dispatch(updateTing("app", app))
       dispatch(fingerprintMake())
       dispatch(deviceMake())
-      dispatch(iPGeo())
+      // dispatch(iPGeo())
+
+      
     } catch (e: any) {
       dispatch(notify("init 500", "error", e.toString()))
     }

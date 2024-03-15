@@ -6,7 +6,6 @@ import {
 import { 
   store,
   notify,
-  setCoreKey,
 } from "../../../goldlabel"
 
 export const setFingerprint = (
@@ -17,29 +16,14 @@ export const setFingerprint = (
     const {ting} = tings
     if (!ting) return false
     const {fingerprint} = ting
-    console.log("setFingerprint", fingerprint)
+    const docRef = doc(getFirestore(), "fingerprints", fingerprint)
     const updates: any = {
       updated: Date.now(),
       hidden: false,
     }
-
-    console.log("updates", updates)
-    // 
-    //    
-    // 
-    // 
-    // const {fingerprint} = ting
-    // if (!fingerprint) return false
-    // const {isNewTing} = core
-    // if(isNewTing && fingerprint){
-    //   dispatch(setCoreKey("isNewTing", false))
-    //   console.log("save fingerprint")
-    //   await setDoc(doc(getFirestore(), "fingerprints", fingerprint), ting)
-    // }else{
-    //   console.log("update fingerprint")
-    // }
+    setDoc(docRef, updates, { merge: true })
   } catch (e: any) {
     console.warn(e)
-    dispatch(notify("setFingerprint.tsx", "error", e.toString()))
+    dispatch(notify("setFingerprint", "error", e.toString()))
   }
 }
