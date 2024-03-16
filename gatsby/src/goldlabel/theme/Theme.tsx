@@ -16,7 +16,7 @@ export default function Theme({children}: any) {
   const {darkmode} = core
   const {
     theme
-  } = glConfig
+  } = glConfig.isomorphic
   const {
     primaryColor,
     secondaryColor,

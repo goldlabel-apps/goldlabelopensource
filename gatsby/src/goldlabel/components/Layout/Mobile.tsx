@@ -11,7 +11,6 @@ import {
   Markdown,
   Meta,
   CatNav,
-  TogglePaletteMode,
   Pricing,
   Footer,
   usePwaSelect,

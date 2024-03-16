@@ -24,9 +24,10 @@ import {
 } from "../../../goldlabel"
 import {
   forgetTing
-} from "../../../Fingerprint"
+} from "../../../isomorphic/Fingerprint"
 
 export default function Navigator() {
+  const showForget = false
   const dispatch = usePwaDispatch()
   const allMarkdown = useAllMarkdown()
   const frontmatter = usePwaSelect(selectFrontmatter)
@@ -67,8 +68,7 @@ export default function Navigator() {
             <Box sx={{m: 1, display: "flex"}}>
 
               <TogglePaletteMode />
-
-              <Tooltip title={<Font color="white">
+              {showForget ? <Tooltip title={<Font color="white">
                 Forget yourself
               </Font>}>
                 <IconButton
@@ -77,17 +77,9 @@ export default function Navigator() {
                   onClick={onForgetMe}>
                   <Icon icon={"forget"} color="primary"/>
                 </IconButton>
-              </Tooltip>
-              <Tooltip title={<Font color="white">
-                Free from GitHub
-              </Font>}>
-                <IconButton
-                  color="primary"
-                  sx={{}}
-                  onClick={openGithubLink}>
-                  <Icon icon={"github"} color="primary"/>
-                </IconButton>
-              </Tooltip>
+              </Tooltip> : null }
+              
+              
               <ShareMenu />
             </Box>
           
@@ -149,11 +141,25 @@ export default function Navigator() {
 
             </List>
             <Divider />
-            <Box sx={{ml: 2.5, my:1, mt: 1.25}}>
-              <Font variant="small" color={"primary"}>
-                {glConfig.version}
-              </Font>
-            </Box>            
+            <Box sx={{display:"flex"}}>
+              <Box sx={{ml:1}}>
+                <Tooltip title={<Font color="white">
+                                  Download
+                                </Font>}>
+                  <IconButton
+                    color="primary"
+                    sx={{}}
+                    onClick={openGithubLink}>
+                    <Icon icon={"github"} color="primary"/>
+                  </IconButton>
+                </Tooltip>
+              </Box>
+              <Box sx={{ml: 1, my:1, mt: 1.5}}>
+                <Font variant="small" color={"primary"}>
+                  {glConfig.version}
+                </Font>
+              </Box>            
+            </Box>
           </Box>
       </>
 }

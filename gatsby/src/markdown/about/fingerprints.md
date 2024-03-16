@@ -1,12 +1,13 @@
 ---
+order: 15
 slug: "/about/fingerprints"
 parentSlug: "/about"
-title: "Fingerprints?"
+title: "What is a Fingerprint?"
 description: ""
 icon: "fingerprint"
 image: "/webp/fingerprint.webp"
 keywords: "How, Key Concept, Fingerprint"
-order: 100
+
 ---
 
 > Whenever you visit a website or use an app, your device sends a request to the server where the website or app is hosted. This request includes information about your device, like what kind of browser you're using or what operating system you have. All of this information together and run through an algorithm creates a long string. Unique to that device. This is called your fingerprint and contains the following data

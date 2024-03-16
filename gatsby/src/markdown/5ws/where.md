@@ -1,5 +1,5 @@
 ---
-draft: true
+order: 14
 slug: "/where"
 parentSlug: "/"
 title: "Where?"
@@ -7,5 +7,6 @@ description: "is Goldlabel?"
 icon: "geo"
 image: "/png/everybody.png"
 keywords: "Who, What, When, Where, Why, How,"
-order: 304
+lat: 1.123
+lng: 1.234
 ---

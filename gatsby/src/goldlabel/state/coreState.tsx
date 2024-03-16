@@ -6,7 +6,7 @@ export const coreState: any = {
     user: null,
     authed: false,
     authing: false,
-    darkmode: glConfig.theme.defaultDarkmode || false,
+    darkmode: glConfig.isomorphic.theme.defaultDarkmode || false,
     display: null,
     notifyer: null,
     frontmatter: null,
