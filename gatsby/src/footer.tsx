@@ -27,44 +27,14 @@ export const footer: Footer = [
     ],
   },
   {
-    title: "Company",
-    links: [
-      {
-        label: "Contact us",
-        path: `mailto:${glConfig.siteEmail}`,
-        target: "_self",
-        icon: "email",
-      },
-      {
-        label: "Legal",
-        path: "/legal",
-        icon: "legal",
-      },
-    ],
-  },
-  {
-    title: "How it works",
-    links: [
-      {
-        label: "Fingerprints?",
-        path: "/about/fingerprints",
-        icon: "fingerprint",
-      },
-      {
-        label: "Flash?",
-        path: "/about/flash",
-        icon: "flash",
-      },
-      {
-        label: "AI?",
-        path: "/about/ai",
-        icon: "openai",
-      },
-    ],
-  },
-  {
     title: "Example Apps",
     links: [
+      {
+        label: "Goldlabel",
+        path: "https://free.goldlabel.pro",
+        target: "_blank",
+        icon: "goldlabel",
+      },
       {
         label: "Listingslab",
         path: "https://listingslab.com",
@@ -82,6 +52,56 @@ export const footer: Footer = [
         path: "https://divemalta.app",
         target: "_blank",
         icon: "diving",
+      },
+    ],
+  },
+
+  {
+    title: "How it works",
+    links: [
+      {
+        label: "Fingerprints?",
+        path: "/about/fingerprints",
+        icon: "fingerprint",
+      },
+      {
+        label: "PWA?",
+        path: "/about/pwa",
+        icon: "pwa",
+      },
+      
+      {
+        label: "Flash?",
+        path: "/about/flash",
+        icon: "flash",
+      },
+      {
+        label: "AI?",
+        path: "/about/ai",
+        icon: "openai",
+      },
+    ],
+  },
+
+  {
+    title: "Company",
+    links: [
+      {
+        label: "Contact us",
+        path: `mailto:${glConfig.siteEmail}`,
+        target: "_self",
+        icon: "email",
+      },
+      {
+        label: "Demo",
+        path: `/about/demo`,
+        target: "_self",
+        icon: "demo",
+      },
+      {
+        label: "Legal",
+        path: "/legal",
+        icon: "legal",
       },
     ],
   },

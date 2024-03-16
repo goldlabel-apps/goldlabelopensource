@@ -7,5 +7,6 @@ description: "is Goldlabel?"
 icon: "geo"
 image: "/png/everybody.png"
 keywords: "Who, What, When, Where, Why, How,"
-
+lat: 1.123
+lng: 1.234
 ---

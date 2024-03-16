@@ -5,8 +5,8 @@ import {glConfig} from "../../config"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "./store"
 import {coreState} from "./coreState"
-import {fingerprintSlice} from "../../Fingerprint"
-import {tingsSlice} from "../../Fingerprint"
+import {fingerprintSlice} from "../../isomorphic/Fingerprint"
+import {tingsSlice} from "../../isomorphic/Fingerprint"
 
 const initialState: any = {
   bootTime: Date.now(),

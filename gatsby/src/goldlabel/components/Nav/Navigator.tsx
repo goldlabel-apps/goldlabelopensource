@@ -24,7 +24,7 @@ import {
 } from "../../../goldlabel"
 import {
   forgetTing
-} from "../../../Fingerprint"
+} from "../../../isomorphic/Fingerprint"
 
 export default function Navigator() {
   const showForget = false
@@ -79,16 +79,7 @@ export default function Navigator() {
                 </IconButton>
               </Tooltip> : null }
               
-              <Tooltip title={<Font color="white">
-                Free from GitHub
-              </Font>}>
-                <IconButton
-                  color="primary"
-                  sx={{}}
-                  onClick={openGithubLink}>
-                  <Icon icon={"github"} color="primary"/>
-                </IconButton>
-              </Tooltip>
+              
               <ShareMenu />
             </Box>
           
@@ -150,11 +141,25 @@ export default function Navigator() {
 
             </List>
             <Divider />
-            <Box sx={{ml: 2.5, my:1, mt: 1.25}}>
-              <Font variant="small" color={"primary"}>
-                {glConfig.version}
-              </Font>
-            </Box>            
+            <Box sx={{display:"flex"}}>
+              <Box sx={{ml:1}}>
+                <Tooltip title={<Font color="white">
+                                  Download
+                                </Font>}>
+                  <IconButton
+                    color="primary"
+                    sx={{}}
+                    onClick={openGithubLink}>
+                    <Icon icon={"github"} color="primary"/>
+                  </IconButton>
+                </Tooltip>
+              </Box>
+              <Box sx={{ml: 1, my:1, mt: 1.5}}>
+                <Font variant="small" color={"primary"}>
+                  {glConfig.version}
+                </Font>
+              </Box>            
+            </Box>
           </Box>
       </>
 }

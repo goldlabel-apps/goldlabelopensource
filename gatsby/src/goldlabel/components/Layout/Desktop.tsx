@@ -20,7 +20,6 @@ import {
   Meta,
   Markdown,
   CatNav,
-  TogglePaletteMode,
   Footer,
   selectDisplay,
 } from "../../../goldlabel"

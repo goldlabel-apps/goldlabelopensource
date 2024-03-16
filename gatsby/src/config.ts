@@ -1,5 +1,30 @@
 export const glConfig: any = {
-    version: "4.2.0",
+    version: "4.2.1",
+    isomorphic: {
+        fingerprint: {
+            enabled: true,
+        },
+        flash: {
+            enabled: true,
+        },
+        forms: {
+            enabled: true,
+        },
+        geo: {
+            enabled: true,
+        },
+        lingua: {
+            enabled: true,
+        },
+        theme: {
+            enabled: true,
+            defaultDarkmode: false,
+            font: "noka",
+            primaryColor: "#C09F52",
+            secondaryColor: "#FFFFFF",
+        },
+    },
+
     siteUrl: "https://free.goldlabel.pro",
     siteIcon: "/svg/iOS.svg",
     siteRepo: "https://github.com/listingslab-software/goldlabelopensource",
@@ -13,11 +38,6 @@ export const glConfig: any = {
     siteImage: "/webp/coupland/coupland.webp",
     siteTwitter: "@listingslab",
     siteTheme: "#FFFFFF",
-    theme: {
-        defaultDarkmode: false,
-        primaryColor: "#C09F52",
-        secondaryColor: "#FFFFFF",
-    },
     geoDefault_: {
         lat: 35,
         lng: 14,

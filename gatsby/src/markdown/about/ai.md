@@ -2,7 +2,7 @@
 order: 210
 slug: "/about/ai"
 parentSlug: "/about"
-title: "AI?"
+title: "OpenAi"
 description: "Meet our Künstliche Intelligenz, Oliver"
 icon: "openai"
 image: "/webp/chatgpt.webp"

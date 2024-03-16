@@ -12,7 +12,7 @@ import {
 } from "../../../goldlabel"
 import {
   toggleFullScreen,
-} from "../../../Fingerprint"
+} from "../../../isomorphic/Fingerprint"
 
 export default function Controls() {
   const dispatch = usePwaDispatch()
