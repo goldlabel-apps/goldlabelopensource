@@ -21,6 +21,7 @@ import {
   PasswordOnly,
   selectAuth,
   NavDialog,
+  Keyword,
 } from "../goldlabel"
 
 export default function App(props: any) {
@@ -71,6 +72,11 @@ export default function App(props: any) {
             <AuthedDialog />
             <NavDialog />
             <Container>
+
+              {type === "keyword" ? <>
+                <Keyword appData={appData} />
+              </> : null }
+
               {type === "markdown" ? <>
                   {passwordOnly ? <>
                     {!user ? <PasswordOnly frontmatter={frontmatter} /> : <>

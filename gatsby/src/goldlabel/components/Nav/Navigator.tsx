@@ -1,13 +1,14 @@
-  import * as React from "react"
+import * as React from "react"
 import {glConfig} from "../../../config"
 import {
+  Box,
+  Chip,
   List,
   ListItemButton,
   ListItemIcon,
   ListItemText,
   Tooltip,
   IconButton,
-  Box,
   Divider,
 } from "@mui/material"
 import {
@@ -21,21 +22,37 @@ import {
   setCoreKey,
   ShareMenu,
   TogglePaletteMode,
+  resetLocalstorage,
 } from "../../../goldlabel"
 import {
-  forgetTing
+  FingerprintToggle,
 } from "../../../isomorphic/Fingerprint"
+import {
+  FlashToggle,
+} from "../../../isomorphic/Flash"
 
 export default function Navigator() {
   const showForget = false
+  const showPaletteMode = false
+  const showShare = false
+
   const dispatch = usePwaDispatch()
   const allMarkdown = useAllMarkdown()
   const frontmatter = usePwaSelect(selectFrontmatter)
+  
   if(!frontmatter) return null
+
   let parentDoc: any = null
-  const {slug, parentSlug} = frontmatter
+  const {
+    slug, 
+    parentSlug, 
+    keywords,
+  } = frontmatter
   const siblings: any = []
   const children: any = []
+  let kw: any = []
+  if (keywords) kw = keywords.split(",")
+  for(let i = 0; i< kw.length; i++) kw[i] = kw[i].trim()
   for (let i=0; i<allMarkdown.length; i++){
     if (parentSlug === allMarkdown[i].frontmatter.slug){
       parentDoc = allMarkdown[i]
@@ -47,14 +64,12 @@ export default function Navigator() {
       siblings.push(allMarkdown[i])
     }
   }
-
   const onForgetMe = () => {
     let yehOK = window.confirm("Sure? You'll go away")
-    if (yehOK) dispatch(forgetTing())
+    if (yehOK) dispatch(resetLocalstorage())
   }
 
   const openGithubLink = () => {
-    // rel="noopener noreferrer"
     // "https://github.com/GoldlabelPr0/open-source", 
     dispatch(navigate(
       "https://github.com/listingslab-software/goldlabelopensource", 
@@ -67,7 +82,16 @@ export default function Navigator() {
           <Divider />
             <Box sx={{m: 1, display: "flex"}}>
 
-              <TogglePaletteMode />
+              {glConfig.isomorphic.flash.enabled ? 
+                <FlashToggle />
+              : null}
+
+              {glConfig.isomorphic.fingerprint.enabled ? 
+                <FingerprintToggle />
+              : null}
+
+              {showPaletteMode ? <TogglePaletteMode /> : null }
+              
               {showForget ? <Tooltip title={<Font color="white">
                 Forget yourself
               </Font>}>
@@ -79,8 +103,7 @@ export default function Navigator() {
                 </IconButton>
               </Tooltip> : null }
               
-              
-              <ShareMenu />
+              {showShare ? <ShareMenu /> : null }
             </Box>
           
             <Divider />
@@ -140,7 +163,22 @@ export default function Navigator() {
               </> : null }
 
             </List>
-            <Divider />
+            
+              <Box sx={{ml:1}}>
+                {kw.map((keyword: any, i: number) => {
+                  if (keyword === "") return null
+                  return <Chip 
+                            onClick={() => {
+                              dispatch(navigate(`/keyword?${keyword}`, "_self"))
+                              // console.log("navigate to ", keyword)
+                            }}
+                            key={`keyword_${i}`}
+                            label={<Font variant="small">{keyword}</Font>}
+                            size="small"
+                          />
+                })}
+              </Box>
+
             <Box sx={{display:"flex"}}>
               <Box sx={{ml:1}}>
                 <Tooltip title={<Font color="white">
@@ -154,6 +192,7 @@ export default function Navigator() {
                   </IconButton>
                 </Tooltip>
               </Box>
+              
               <Box sx={{ml: 1, my:1, mt: 1.5}}>
                 <Font variant="small" color={"primary"}>
                   {glConfig.version}

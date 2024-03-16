@@ -3,6 +3,7 @@ import {SEO} from "../goldlabel/components/SEO/SEO"
 import {BackofficeSEO} from "../goldlabel/components/SEO/BackofficeSEO"
 import {ChatGPTSEO} from "../goldlabel/components/SEO/ChatGPTSEO"
 import {GoldlabelSEO} from "../goldlabel/components/SEO/GoldlabelSEO"
+import {KeywordSEO} from "../goldlabel/components/SEO/KeywordSEO"
 import PWA from "../goldlabel/PWA"
 import App from "./App"
 import {Auth} from "./Auth"
@@ -98,11 +99,13 @@ import PopupMenu from "./components/Nav/PopupMenu"
 import BottomBar from "./components/Nav/BottomBar"
 import {Keywords} from "./components/Nav/Keywords"
 
+
 // Layout
 import Mobile from "./components/Layout/Mobile"
 import Desktop from "./components/Layout/Desktop"
 import ControlBar from "./components/Layout/ControlBar"
-
+import Keyword from "./components/Layout/Keyword"
+import Header from "./components/Layout/Header"
 
 // Algorithms
 import {randomDisplayName} from "./algorithms/randomDisplayName"
@@ -115,6 +118,7 @@ export {
     BackofficeSEO,
     ChatGPTSEO,
     GoldlabelSEO,
+    KeywordSEO,
 }
 
 export {
@@ -125,6 +129,8 @@ export {
     Mobile,
     Desktop,
     ControlBar,
+    Keyword,
+    Header,
 }
 
 // Navigator
