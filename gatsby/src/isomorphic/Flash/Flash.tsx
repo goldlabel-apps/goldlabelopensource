@@ -1,6 +1,6 @@
 import React from "react"
 
-export function Flash() {
+export default function Flash() {
   
   return <>
           Flash

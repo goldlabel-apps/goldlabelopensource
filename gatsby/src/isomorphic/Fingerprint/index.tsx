@@ -8,6 +8,7 @@ import {Iconify} from "./components/Iconify"
 import SearchBox from "./components/SearchBox"
 import {ToggleBar} from "./components/ToggleBar"
 import ForgetMe from "./components/ForgetMe"
+import FingerprintToggle from "./components/FingerprintToggle"
 import {init} from "./actions/init"
 import {setTingsKey} from "./actions/setTingsKey"
 import {toggleFullScreen} from "./actions/toggleFullScreen"
@@ -42,4 +43,5 @@ export {
     forgetTing,
     newFingerprintNotify,
     setFingerprint,
+    FingerprintToggle,
 }

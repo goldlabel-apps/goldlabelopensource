@@ -13,7 +13,7 @@ import {
   SEO,
 } from "../goldlabel"
 
-export default function MarkdownPage(data: any) {
+export default function Page(data: any) {
   const { markdownRemark } = data.data
   if(!markdownRemark) return <>
     <Alert

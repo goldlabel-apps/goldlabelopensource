@@ -8,6 +8,7 @@ export const navigate = (
 ): any =>
   async (dispatch: any) => {
     try {
+      // rel="noopener noreferrer"
       setTimeout(() => {
         window.open(url, target)
       }, 180)

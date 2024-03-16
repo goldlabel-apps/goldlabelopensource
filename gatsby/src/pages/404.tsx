@@ -4,7 +4,7 @@ import {
   BackofficeSEO,
 } from "../goldlabel"
 
-export default function NotFoundPage(data: any) {
+export default function Page(data: any) {
 
   return  <>
             <BackofficeSEO />
