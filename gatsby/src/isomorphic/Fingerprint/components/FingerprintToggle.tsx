@@ -1,4 +1,3 @@
-import { PaletteColor } from "@mui/material"
 import * as React from "react"
 import {
   IconButton,
@@ -6,38 +5,29 @@ import {
 } from "@mui/material"
 import {
     Icon,
-    usePwaSelect,
     usePwaDispatch,
-    selectCore,
     Font,
 } from "../../../goldlabel"
+import {
+  FingerprintDialog,
+  toggleDialog,
+} from "../../Fingerprint"
 
 export default function FingerprintToggle() {
   const dispatch = usePwaDispatch()
-  const core = usePwaSelect(selectCore)
-  const {darkmode} = core
 
-  const onToggle = () => {
-    console.log("FingerprintToggle onToggle")
-    return true
+  const onOpen = () => {
+    dispatch(toggleDialog(true))
   }
 
-  return (
-    <React.Fragment>
-      <Tooltip title={<Font color="white">Fingerprint</Font>}>
-        <IconButton 
-          color="primary"
-          onClick={onToggle}>
-          <Icon icon={"fingerprint"} />
-        </IconButton>
-      </Tooltip>
-    </React.Fragment>
-  )
+  return <>
+          <FingerprintDialog />
+          <Tooltip title={<Font color="white">Fingerprint</Font>}>
+            <IconButton 
+              color="primary"
+              onClick={onOpen}>
+              <Icon icon={"fingerprint"} />
+            </IconButton>
+          </Tooltip>
+        </>
 }
-
-/*
-(e: React.MouseEvent) => {
-  e.preventDefault()
-  dispatch(setCoreKey("darkmode", !darkmode))
-}
-*/
