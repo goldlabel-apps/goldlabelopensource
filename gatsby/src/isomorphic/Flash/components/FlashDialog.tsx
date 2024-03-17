@@ -8,30 +8,27 @@ import {
   Button,
   CardHeader,
   Box,
-  Tooltip,
 } from "@mui/material"
 import {
     Icon,
     Font,
     usePwaSelect,
     usePwaDispatch,
-    selectTheme,
     selectDisplay,
+    selectFlash,
 } from "../../../goldlabel"
 import {
   toggleDialog,
-  TogglePaletteMode,
-  ThemedIconBtn,
-} from "../../Theme"
+} from "../../Flash"
 
-export default function ThemeDialog() {
+export default function FlashDialog() {
   const dispatch = usePwaDispatch()
-  const theme = usePwaSelect(selectTheme)
+  const flash = usePwaSelect(selectFlash)
   const display = usePwaSelect(selectDisplay)
   const {mobile} = display
-  const {open} = theme
+  const {open} = flash
 
-  const closeThemeDialog = () => {
+  const closeDialog = () => {
     dispatch(toggleDialog(false))
   }
 
@@ -39,26 +36,20 @@ export default function ThemeDialog() {
             open={open}
             fullWidth
             fullScreen={mobile}
-            onClose={closeThemeDialog}
-          >
+            onClose={closeDialog}>
           <DialogTitle>
             <CardHeader
-              avatar={<Icon icon="theme" color="primary" />} 
-              title={<Font>Theme</Font>}
+              avatar={<Icon icon="flash" color="primary" />} 
+              title={<Font>Flash</Font>}
             />
           </DialogTitle>
           <DialogContent>
-            <TogglePaletteMode />
-            {/* <pre>{JSON.stringify(theme, null, 2)}</pre> */}
+            <pre>{JSON.stringify(flash, null, 2)}</pre>
           </DialogContent>
           <DialogActions>
-            <ThemedIconBtn 
-              onClick={closeThemeDialog}
-              label="adfkshfd"
-            /> 
             <Button 
               variant="outlined"
-              onClick={closeThemeDialog}>
+              onClick={closeDialog}>
                 <Box sx={{mt:0.25}}>
                   <Font variant="small">Close</Font>
                 </Box>

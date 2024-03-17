@@ -49,8 +49,7 @@ export default function FingerprintDialog() {
           </DialogContent>
           <DialogActions>
             <Button 
-              variant="contained"
-              color="inherit"
+              variant="outlined"
               onClick={closeDialog}>
                 <Box sx={{mt:0.25}}>
                   <Font variant="small">Close</Font>

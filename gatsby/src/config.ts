@@ -5,7 +5,7 @@ export const glConfig: any = {
             enabled: true,
         },
         flash: {
-            enabled: false,
+            enabled: true,
         },
         forms: {
             enabled: false,

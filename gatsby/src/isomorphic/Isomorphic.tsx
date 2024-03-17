@@ -5,4 +5,5 @@ export default function Isomorphic() {
   return <>
           Isomorphic
         </>
+        
 }
