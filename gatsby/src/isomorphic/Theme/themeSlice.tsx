@@ -1,7 +1,5 @@
 import {glConfig} from "../../config"
 
-
-
 export const themeSlice: any = {
     slug: "theme",
     open: false,

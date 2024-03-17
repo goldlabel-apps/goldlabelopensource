@@ -1,3 +1,4 @@
 export const flashSlice: any = {
-    dialogOpen: false,
+    slug: "flash",
+    open: false,
 }
