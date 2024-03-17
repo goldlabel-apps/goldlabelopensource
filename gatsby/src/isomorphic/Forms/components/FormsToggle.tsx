@@ -2,13 +2,14 @@ import { PaletteColor } from "@mui/material"
 import * as React from "react"
 import {
   IconButton,
+  Tooltip,
 } from "@mui/material"
 import {
     Icon,
     usePwaSelect,
     usePwaDispatch,
     selectCore,
-    setCoreKey,
+    Font,
 } from "../../../goldlabel"
 
 export default function FormsToggle() {
@@ -23,11 +24,13 @@ export default function FormsToggle() {
 
   return (
     <React.Fragment>
-          <IconButton 
-            color="primary"
-            onClick={onToggle}>
-            <Icon icon={"forms"} />
-          </IconButton>
+      <Tooltip title={<Font color="white">Forms</Font>}>
+        <IconButton 
+          color="primary"
+          onClick={onToggle}>
+          <Icon icon={"forms"} />
+        </IconButton>
+      </Tooltip>
     </React.Fragment>
   )
 }

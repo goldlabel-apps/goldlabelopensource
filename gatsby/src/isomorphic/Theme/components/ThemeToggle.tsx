@@ -12,32 +12,25 @@ import {
     Font,
 } from "../../../goldlabel"
 
-export default function FlashToggle() {
+export default function ThemeToggle() {
   const dispatch = usePwaDispatch()
   const core = usePwaSelect(selectCore)
   const {darkmode} = core
 
   const onToggle = () => {
-    console.log("FlashToggle onToggle")
+    console.log("ThemeToggle onToggle")
     return true
   }
 
   return (
     <React.Fragment>
-      <Tooltip title={<Font color="white">Flash</Font>}>
+      <Tooltip title={<Font color="white">Theme</Font>}>
           <IconButton 
             color="primary"
             onClick={onToggle}>
-            <Icon icon={"flash"} />
+            <Icon icon={"theme"} />
           </IconButton>
-          </Tooltip>
+        </Tooltip>
     </React.Fragment>
   )
 }
-
-/*
-(e: React.MouseEvent) => {
-  e.preventDefault()
-  dispatch(setCoreKey("darkmode", !darkmode))
-}
-*/

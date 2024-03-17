@@ -26,9 +26,7 @@ import {
     selectDisplay,
     selectFrontmatter,
     selectAuth,
-    selectTings,
     selectFingerprint,
-    selectFpSubscribed,
 } from "./state/reducer"
 // Theme
 import Theme from "../goldlabel/theme/Theme"
@@ -224,9 +222,7 @@ export {
     selectDisplay,
     selectFrontmatter,
     selectAuth,
-    selectTings,
     selectFingerprint,
-    selectFpSubscribed,
 }
 // Actions
 export {

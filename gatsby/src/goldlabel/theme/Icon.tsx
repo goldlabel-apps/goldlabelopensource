@@ -1,11 +1,12 @@
 export type IconShape = {
-  icon: "forms" | "demo" | "pwa" | "link" | "fingerprint" | "isomorphic" | "forget" | "filters" | "filter" | "fullscreen" | "examples" | "signup" | "what" | "when" | "who" | "how" | "legal" | "geo" | "docker" | "scuba" | "js" | "javascript" | "oliver" | "life" | "balance" | "bug" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ting" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "openai" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "why" | "iphone" | "safari" | "firefox" | "plugins" | "flash"
+  icon: "theme" | "forms" | "demo" | "pwa" | "link" | "fingerprint" | "isomorphic" | "forget" | "filters" | "filter" | "fullscreen" | "examples" | "signup" | "what" | "when" | "who" | "how" | "legal" | "geo" | "docker" | "scuba" | "js" | "javascript" | "oliver" | "life" | "balance" | "bug" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ting" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "openai" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "why" | "iphone" | "safari" | "firefox" | "plugins" | "flash"
   color?: any
 }
 import * as React from "react"
 import PluginsIcon from "@mui/icons-material/ExtensionOutlined"
 import DemoIcon from "@mui/icons-material/VideoCallOutlined"
 import WhenIcon from "@mui/icons-material/CalendarMonthOutlined"
+import ThemeIcon from "@mui/icons-material/PaletteOutlined"
 import WhatIcon from "@mui/icons-material/HardwareOutlined"
 import FilterIcon from "@mui/icons-material/FilterOutlined"
 import FormsIcon from "@mui/icons-material/IntegrationInstructionsOutlined"
@@ -447,6 +448,9 @@ export default function Icon({icon, color}: IconShape) {
       break
     case "forms":
       iconFragment = <FormsIcon color={color} />
+      break
+    case "theme":
+      iconFragment = <ThemeIcon color={color} />
       break
     default:
       iconFragment = <ErrorIcon color={"warning"} />
