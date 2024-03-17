@@ -1,4 +1,4 @@
-
+import {glConfig} from "../../../config"
 import * as React from "react"
 import {
   Box,
@@ -14,23 +14,25 @@ import {
     usePwaSelect,
     usePwaDispatch,
     selectDisplay,
-    selectFingerprint,
+    selectGeo,
 } from "../../../goldlabel"
 import {
   toggleDialog,
-  Forget,
-} from "../../Fingerprint"
+} from "../../Geo"
 import {
   ThemedIconBtn,
 } from "../../Theme"
 
-export default function FingerprintDialog() {
+export default function GeoDialog() {
   const dispatch = usePwaDispatch()
-  const fingerprint = usePwaSelect(selectFingerprint)
+  const geo = usePwaSelect(selectGeo)
   const display = usePwaSelect(selectDisplay)
   let mobile = true
   if (display) mobile = display.mobile
-  const {open} = fingerprint
+  const {open} = geo
+
+  const {isomorphic} = glConfig
+  const geoConfig = isomorphic.geo
 
   const closeDialog = () => {
     dispatch(toggleDialog(false))
@@ -43,23 +45,23 @@ export default function FingerprintDialog() {
             onClose={closeDialog}>
           <DialogTitle>
             <CardHeader
-              avatar={<Icon icon="fingerprint" color="primary" />} 
-              title={<Font>Fingerprint</Font>}
+              avatar={<Icon icon="geo" color="primary" />} 
+              title={<Font>Geo</Font>}
               action={<Box sx={{mt: 0.5}}>
-                        <ThemedIconBtn 
-                          onClick={closeDialog}
-                          label="Close"
-                          icon="close"
-                          variant="text"
-                        />
-                      </Box>}
+              <ThemedIconBtn 
+                onClick={closeDialog}
+                label="Close"
+                icon="close"
+                variant="text"
+              />
+            </Box>}
             />
           </DialogTitle>
           <DialogContent>
-            <pre>{JSON.stringify(fingerprint, null, 2)}</pre>
+            <pre>geoConfig: {JSON.stringify(geoConfig, null, 2)}</pre>
           </DialogContent>
-          <DialogActions>
-            <Forget />
-          </DialogActions>
+          {/* <DialogActions>
+            
+          </DialogActions> */}
         </Dialog>
 }

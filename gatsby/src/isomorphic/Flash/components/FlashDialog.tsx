@@ -1,13 +1,12 @@
-import { PaletteColor } from "@mui/material"
+import {glConfig} from "../../../config"
 import * as React from "react"
 import {
+  Box,
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogActions,
-  Button,
+  // DialogActions,
   CardHeader,
-  Box,
 } from "@mui/material"
 import {
     Icon,
@@ -28,9 +27,12 @@ export default function FlashDialog() {
   const dispatch = usePwaDispatch()
   const flash = usePwaSelect(selectFlash)
   const display = usePwaSelect(selectDisplay)
-  const {mobile} = display
+  let mobile = true
+  if (display) mobile = display.mobile
   const {open} = flash
-
+  const {isomorphic} = glConfig
+  const flashConfig = isomorphic.flash
+  
   const closeDialog = () => {
     dispatch(toggleDialog(false))
   }
@@ -44,17 +46,25 @@ export default function FlashDialog() {
             <CardHeader
               avatar={<Icon icon="flash" color="primary" />} 
               title={<Font>Flash</Font>}
+              action={<Box sx={{mt: 0.5}}>
+              <ThemedIconBtn 
+                onClick={closeDialog}
+                label="Close"
+                icon="close"
+                variant="text"
+              />
+            </Box>}
             />
           </DialogTitle>
           <DialogContent>
-            {/* <pre>{JSON.stringify(flash, null, 2)}</pre> */}
+            <pre>flashConfig: {JSON.stringify(flashConfig, null, 2)}</pre>
           </DialogContent>
-          <DialogActions>
+          {/* <DialogActions>
             <ThemedIconBtn 
               onClick={closeDialog}
               label="Close"
               icon="close"
             /> 
-          </DialogActions>
+          </DialogActions> */}
         </Dialog>
 }

@@ -1,4 +1,3 @@
-import { PaletteColor } from "@mui/material"
 import * as React from "react"
 import {
   IconButton,
@@ -6,9 +5,7 @@ import {
 } from "@mui/material"
 import {
     Icon,
-    usePwaSelect,
     usePwaDispatch,
-    selectCore,
     Font,
 } from "../../../goldlabel"
 import {
@@ -35,10 +32,3 @@ export default function FlashToggle() {
     </>
   )
 }
-
-/*
-(e: React.MouseEvent) => {
-  e.preventDefault()
-  dispatch(setCoreKey("darkmode", !darkmode))
-}
-*/

@@ -74,6 +74,7 @@ export default function Mobile(props: any) {
           <Box sx={{display: "flex", m:1}}>
           <Box sx={{flexGrow:1}}/>
             <Box sx={{ml:1}}>
+            
               <Meta frontmatter={frontmatter}/>
             </Box>
               <Box sx={{mt: 0.25}}>
@@ -84,6 +85,7 @@ export default function Mobile(props: any) {
               </Box>
           </Box>
           <Container>
+            <Navigator />
             <Box sx={{mt:1}}>
               <Box sx={{}}>     
                 <Box sx={{}}>
@@ -113,8 +115,6 @@ export default function Mobile(props: any) {
                   minHeight: minMdH,
                 }}>
                   <Markdown html={html} />
-                  <Navigator />
-                  
               </Box>
 
               <Box sx={{mt:3}}>

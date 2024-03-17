@@ -5,7 +5,7 @@ export type GoldlabelConfig = {
 }
 
 export const glConfig: any = {
-    version: "4.2.4",
+    version: "4.2.6",
     siteUrl: "https://free.goldlabel.pro",
     siteIcon: "/svg/iOS.svg",
     siteRepo: "https://github.com/listingslab-software/goldlabelopensource",
@@ -22,16 +22,8 @@ export const glConfig: any = {
     isomorphic: {
         forms: { enabled: false },
         lingua: { enabled: false },
-        flash: {
-            enabled: true,
-            playing: false,
-            audio: true,
-            video: null,
-        },
-        fingerprint: {
-            enabled: true,
-            uid: null,
-        },
+        flash: { enabled: true },
+        fingerprint: { enabled: true },
         theme: {
             enabled: true,
             paletteMode: "dark",
@@ -41,7 +33,7 @@ export const glConfig: any = {
             secondaryColor: "#FFF",
         },
         geo: {
-            enabled: false,
+            enabled: true,
             lightTheme: "mapbox://styles/listingslab/clmrnpplw00ej01nsfv8l4q25",
             darkTheme: "mapbox://styles/listingslab/clmrnt68o02a801qxevn0bt6u",
             default: {

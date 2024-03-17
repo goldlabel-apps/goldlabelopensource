@@ -1,4 +1,3 @@
-import { PaletteColor } from "@mui/material"
 import * as React from "react"
 import {
   IconButton,
@@ -6,31 +5,29 @@ import {
 } from "@mui/material"
 import {
     Icon,
-    usePwaSelect,
     usePwaDispatch,
-    selectCore,
     Font,
 } from "../../../goldlabel"
+import {
+  GeoDialog,
+  toggleDialog,
+} from "../../Geo"
 
 export default function GeoToggle() {
   const dispatch = usePwaDispatch()
-  const core = usePwaSelect(selectCore)
-  const {darkmode} = core
 
-  const onToggle = () => {
-    console.log("GeoToggle onToggle")
-    return true
+  const onOpen = () => {
+    dispatch(toggleDialog(true))
   }
 
-  return (
-    <React.Fragment>
-      <Tooltip title={<Font color="white">Geo</Font>}>
-          <IconButton 
-            color="primary"
-            onClick={onToggle}>
-            <Icon icon={"geo"} />
-          </IconButton>
+  return <>
+          <GeoDialog />
+          <Tooltip title={<Font color="white">Geo</Font>}>
+            <IconButton 
+              color="primary"
+              onClick={onOpen}>
+              <Icon icon={"geo"} />
+            </IconButton>
           </Tooltip>
-    </React.Fragment>
-  )
+        </>
 }

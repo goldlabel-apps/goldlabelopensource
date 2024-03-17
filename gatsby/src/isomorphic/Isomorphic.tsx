@@ -10,11 +10,14 @@ import { ThemeToggle } from "./Theme"
 export default function Isomorphic() {
   const im = glConfig.isomorphic
   return <>
+          {im.theme.enabled ? <ThemeToggle /> : null}
           {im.fingerprint.enabled ? <FingerprintToggle /> : null}
           {im.flash.enabled ? <FlashToggle /> : null}
           {im.forms.enabled ? <FormsToggle /> : null}
-          {im.geo.enabled ? <GeoToggle /> : null}
+          
           {im.lingua.enabled ? <LinguaToggle /> : null}
-          {im.theme.enabled ? <ThemeToggle /> : null}
+          
+
+          {im.geo.enabled ? <GeoToggle /> : null}
         </>
 }
