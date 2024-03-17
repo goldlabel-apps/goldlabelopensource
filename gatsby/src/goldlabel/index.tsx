@@ -12,7 +12,6 @@ import {firebaseSignout} from "./state/actions/auth/firebaseSignout"
 import {setDisplay} from "./state/actions/setDisplay"
 import {setCoreKey} from "./state/actions/setCoreKey"
 import {resetLocalstorage} from "./state/actions/resetLocalstorage"
-
 // State
 import {WrapState} from "./state/WrapState"
 import {namesByLetter} from "./algorithms/namesByLetter"
@@ -26,9 +25,8 @@ import {
     selectDisplay,
     selectFrontmatter,
     selectAuth,
-    selectTings,
     selectFingerprint,
-    selectFpSubscribed,
+    selectTheme,
 } from "./state/reducer"
 // Theme
 import Theme from "../goldlabel/theme/Theme"
@@ -57,7 +55,6 @@ import {boot} from "./state/actions/boot"
 import {notify} from "./state/actions/notify/notify"
 import {notifyCancel} from "./state/actions/notify/notifyCancel"
 import {setFrontmatter} from "./state/actions/setFrontmatter"
-import {setPaletteMode} from "./state/actions/setPaletteMode"
 import {navigate} from "./state/actions/navigate"
 import {toggleFSDialog} from "./state/actions/toggleFSDialog"
 import {scrollTo} from "./state/actions/scrollTo"
@@ -83,7 +80,6 @@ import MultiSelect from "./components/System/MultiSelect"
 import DarkmodeToggle from "./components/System/DarkmodeToggle"
 import NotifyerSnack from "./components/System/NotifyerSnack"
 import ScrollUp from "./components/System/ScrollUp"
-import TogglePaletteMode from "./components/System/TogglePaletteMode"
 import ShareMenu from "./components/System/ShareMenu"
 import NotFound from "./components/System/NotFound"
 import WindowResizeListener from "./components/System/WindowResizeListener"
@@ -148,7 +144,6 @@ export {
     NotifyerSnack,
     selectNotifyer,
     ScrollUp,
-    TogglePaletteMode,
     WindowResizeListener,
     NotFound,
     SystemMenu,
@@ -224,9 +219,8 @@ export {
     selectDisplay,
     selectFrontmatter,
     selectAuth,
-    selectTings,
     selectFingerprint,
-    selectFpSubscribed,
+    selectTheme,
 }
 // Actions
 export {
@@ -235,7 +229,6 @@ export {
     notify,
     notifyCancel,
     setFrontmatter,
-    setPaletteMode,
     navigate,
     toggleFSDialog,
     firebaseSignin,

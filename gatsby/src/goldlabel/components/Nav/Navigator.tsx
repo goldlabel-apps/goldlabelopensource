@@ -21,27 +21,23 @@ import {
   useAllMarkdown,
   setCoreKey,
   ShareMenu,
-  TogglePaletteMode,
   resetLocalstorage,
 } from "../../../goldlabel"
-import {
-  FingerprintToggle,
-} from "../../../isomorphic/Fingerprint"
-import {
-  FlashToggle,
-} from "../../../isomorphic/Flash"
+import { FingerprintToggle} from "../../../isomorphic/Fingerprint"
+import { FlashToggle } from "../../../isomorphic/Flash"
+import { FormsToggle } from "../../../isomorphic/Forms"
+import { GeoToggle } from "../../../isomorphic/Geo"
+import { LinguaToggle } from "../../../isomorphic/Lingua"
+import { ThemeToggle } from "../../../isomorphic/Theme"
 
 export default function Navigator() {
   const showForget = false
-  const showPaletteMode = false
   const showShare = false
-
+  const showKeywords = false
   const dispatch = usePwaDispatch()
   const allMarkdown = useAllMarkdown()
   const frontmatter = usePwaSelect(selectFrontmatter)
-  
   if(!frontmatter) return null
-
   let parentDoc: any = null
   const {
     slug, 
@@ -81,17 +77,14 @@ export default function Navigator() {
           <Box sx={{ml: 1}}>
           <Divider />
             <Box sx={{m: 1, display: "flex"}}>
-
-              {glConfig.isomorphic.flash.enabled ? 
-                <FlashToggle />
-              : null}
-
-              {glConfig.isomorphic.fingerprint.enabled ? 
-                <FingerprintToggle />
-              : null}
-
-              {showPaletteMode ? <TogglePaletteMode /> : null }
               
+              {glConfig.isomorphic.fingerprint.enabled ? <FingerprintToggle /> : null}
+              {glConfig.isomorphic.flash.enabled ? <FlashToggle /> : null}
+              {glConfig.isomorphic.forms.enabled ? <FormsToggle /> : null}
+              {glConfig.isomorphic.geo.enabled ? <GeoToggle /> : null}
+              {glConfig.isomorphic.lingua.enabled ? <LinguaToggle /> : null}
+              {glConfig.isomorphic.theme.enabled ? <ThemeToggle /> : null}
+        
               {showForget ? <Tooltip title={<Font color="white">
                 Forget yourself
               </Font>}>
@@ -163,8 +156,8 @@ export default function Navigator() {
               </> : null }
 
             </List>
-            
-              <Box sx={{ml:1}}>
+
+            {showKeywords ? <Box sx={{ml:1}}>
                 {kw.map((keyword: any, i: number) => {
                   if (keyword === "") return null
                   return <Chip 
@@ -177,7 +170,8 @@ export default function Navigator() {
                             size="small"
                           />
                 })}
-              </Box>
+              </Box> : null }
+              
 
             <Box sx={{display:"flex"}}>
               <Box sx={{ml:1}}>

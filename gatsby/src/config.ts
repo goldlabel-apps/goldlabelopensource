@@ -1,30 +1,30 @@
 export const glConfig: any = {
-    version: "4.2.1",
+    version: "4.2.2",
     isomorphic: {
         fingerprint: {
             enabled: true,
         },
         flash: {
-            enabled: true,
+            enabled: false,
         },
         forms: {
-            enabled: true,
+            enabled: false,
         },
         geo: {
-            enabled: true,
+            enabled: false,
         },
         lingua: {
-            enabled: true,
+            enabled: false,
         },
         theme: {
             enabled: true,
-            defaultDarkmode: false,
+            paletteMode: "dark",
             font: "noka",
+            color: "#C09F52",
             primaryColor: "#C09F52",
-            secondaryColor: "#FFFFFF",
+            secondaryColor: "#FFF",
         },
     },
-
     siteUrl: "https://free.goldlabel.pro",
     siteIcon: "/svg/iOS.svg",
     siteRepo: "https://github.com/listingslab-software/goldlabelopensource",

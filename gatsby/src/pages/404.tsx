@@ -1,13 +1,13 @@
 import * as React from "react"
 import {
   PWA,
-  BackofficeSEO,
+  GoldlabelSEO,
 } from "../goldlabel"
 
 export default function Page(data: any) {
 
   return  <>
-            <BackofficeSEO />
+            <GoldlabelSEO />
             <PWA appData={{...data}} type="notfound" />
           </>
 }

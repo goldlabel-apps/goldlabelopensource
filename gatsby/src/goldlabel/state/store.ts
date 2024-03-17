@@ -5,8 +5,6 @@ import { persistReducer, persistStore } from "redux-persist"
 import thunk from "redux-thunk"
 import reducer from "./reducer"
 
-// goldlabel-core 
-// version
 const {version} = glConfig
 
 const persistConfig = {
