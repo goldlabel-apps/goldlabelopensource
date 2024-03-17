@@ -1,7 +1,7 @@
 ---
 order: 13
-slug: "/when"
-parentSlug: "/"
+slug: "/5ws/when"
+parentSlug: "/5ws"
 title: "When?"
 description: "is Goldlabel?"
 icon: "when"

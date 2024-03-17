@@ -5,7 +5,7 @@ export type GoldlabelConfig = {
 }
 
 export const glConfig: any = {
-    version: "4.2.3",
+    version: "4.2.4",
     siteUrl: "https://free.goldlabel.pro",
     siteIcon: "/svg/iOS.svg",
     siteRepo: "https://github.com/listingslab-software/goldlabelopensource",

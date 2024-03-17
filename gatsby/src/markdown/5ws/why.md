@@ -1,7 +1,7 @@
 ---
 order: 15
-slug: "/why"
-parentSlug: "/"
+slug: "/5ws/why"
+parentSlug: "/5ws"
 title: "Why?"
 description: "is Goldlabel?"
 icon: "why"

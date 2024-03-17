@@ -23,16 +23,8 @@ import {
   ShareMenu,
   resetLocalstorage,
 } from "../../../goldlabel"
-import { FingerprintToggle} from "../../../isomorphic/Fingerprint"
-import { FlashToggle } from "../../../isomorphic/Flash"
-import { FormsToggle } from "../../../isomorphic/Forms"
-import { GeoToggle } from "../../../isomorphic/Geo"
-import { LinguaToggle } from "../../../isomorphic/Lingua"
-import { ThemeToggle } from "../../../isomorphic/Theme"
 
 export default function Navigator() {
-  const showForget = true
-  const showShare = false
   const showKeywords = false
   const dispatch = usePwaDispatch()
   const allMarkdown = useAllMarkdown()
@@ -75,20 +67,6 @@ export default function Navigator() {
 
   return <>
           <Box sx={{ml: 1}}>
-          <Divider />
-            <Box sx={{m: 1, display: "flex"}}>
-              
-              {glConfig.isomorphic.fingerprint.enabled ? <FingerprintToggle /> : null}
-              {glConfig.isomorphic.flash.enabled ? <FlashToggle /> : null}
-              {glConfig.isomorphic.forms.enabled ? <FormsToggle /> : null}
-              {glConfig.isomorphic.geo.enabled ? <GeoToggle /> : null}
-              {glConfig.isomorphic.lingua.enabled ? <LinguaToggle /> : null}
-              {glConfig.isomorphic.theme.enabled ? <ThemeToggle /> : null}
-              
-              {showShare ? <ShareMenu /> : null }
-            </Box>
-          
-            <Divider />
             <List dense>
               <ListItemButton
                 disabled={frontmatter.slug === "/"}

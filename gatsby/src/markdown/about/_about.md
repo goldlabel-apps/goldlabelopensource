@@ -2,7 +2,7 @@
 order: 20
 slug: "/about"
 parentSlug: "/"
-title: "How?"
+title: "Features"
 description: "What are fingerprints?"
 icon: "blog"
 image: "/webp/coupland/coupland.webp"

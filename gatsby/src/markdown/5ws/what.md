@@ -1,7 +1,7 @@
 ---
 order: 12
-slug: "/what"
-parentSlug: "/"
+slug: "/5ws/what"
+parentSlug: "/5ws"
 title: "What?"
 description: "is Goldlabel?"
 icon: "what"

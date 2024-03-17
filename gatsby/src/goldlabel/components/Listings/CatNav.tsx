@@ -14,6 +14,7 @@ import {
   usePwaDispatch,
   selectFrontmatter,
   navigate,
+  ShareMenu,
 } from "../../../goldlabel"
 
 export default function CatNav() {
@@ -30,9 +31,7 @@ export default function CatNav() {
     if(parentSlug === allMarkdown[i].frontmatter.slug)
     parent = allMarkdown[i]
   }
-  let isHome = false
-  if (slug === "/") isHome = true
-  if (isHome) return null
+
   
   return (
       <Breadcrumbs aria-label="breadcrumb">
@@ -54,35 +53,22 @@ export default function CatNav() {
           
         </Link>
         
-        {/* <Link
-          underline="hover"
-          sx={{ display: 'flex', alignItems: 'center', cursor: "pointer" }}
-          color="inherit"
-          onClick={(e: React.MouseEvent) => {
-            e.preventDefault()
-          }}
-        >
-            <Box sx={{ pt: 0.5, pr: 1 }}>
-              <Icon icon={"left"} color="primary"  />
-            </Box>
-            {isBig ? <Font variant="small">
-              Thing
-            </Font> : null }
-        </Link> */}
 
         {slug !== "/" ? <Box
-          sx={{ display: 'flex', alignItems: 'center' }}
-        >
+          sx={{ 
+            display: 'flex', 
+            alignItems: 'center' 
+          }}>
             <Box sx={{ pt: 0.5, pr: 1 }}>
               <Icon icon={frontmatter.icon} color="primary"  />
             </Box>
             {isBig ? <Font variant="small">
               {frontmatter.title}
             </Font> : null }
-            
         </Box> : null }
         
-        <Font />
+        <ShareMenu />
+        
       </Breadcrumbs>
   )
 }
