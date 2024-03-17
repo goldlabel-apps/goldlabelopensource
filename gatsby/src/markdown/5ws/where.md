@@ -1,7 +1,7 @@
 ---
 order: 14
-slug: "/where"
-parentSlug: "/"
+slug: "/5ws/where"
+parentSlug: "/5ws"
 title: "Where?"
 description: "is Goldlabel?"
 icon: "geo"

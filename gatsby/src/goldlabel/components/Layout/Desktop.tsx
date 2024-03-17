@@ -23,6 +23,7 @@ import {
   Footer,
   selectDisplay,
 } from "../../../goldlabel"
+import {Isomorphic} from "../../../isomorphic"
 
 export default function Desktop(props: any) {
   const dispatch = usePwaDispatch()
@@ -108,6 +109,9 @@ export default function Desktop(props: any) {
               </Box>
               <Box sx={{}}>
                 <CatNav />
+              </Box>
+              <Box sx={{}}>
+                <Isomorphic />
               </Box>
               <Box sx={{flexGrow:1}}/>
             </Box>

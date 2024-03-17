@@ -7,6 +7,7 @@ import { RootState } from "./store"
 import {coreState} from "./coreState"
 import {fingerprintSlice} from "../../isomorphic/Fingerprint"
 import {themeSlice} from "../../isomorphic/Theme"
+import {flashSlice} from "../../isomorphic/Flash"
 
 const initialState: any = {
   bootTime: Date.now(),
@@ -15,7 +16,7 @@ const initialState: any = {
   core: coreState,
   fingerprint: fingerprintSlice,
   theme: themeSlice,
-  
+  flash: flashSlice,
 }
 
 export const pwaSlice = createSlice({
@@ -39,6 +40,7 @@ export const selectFrontmatter = (state: RootState) => state.core.frontmatter
 export const selectAuth = (state: RootState) => state.auth
 export const selectFingerprint = (state: RootState) => state.fingerprint
 export const selectTheme = (state: RootState) => state.theme
+export const selectFlash = (state: RootState) => state.flash
 
 export const { setPwaKey } = pwaSlice.actions
 export default pwaSlice.reducer

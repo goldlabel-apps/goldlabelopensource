@@ -1,37 +1,37 @@
-import { PaletteColor } from "@mui/material"
+
 import * as React from "react"
 import {
   Dialog,
   DialogTitle,
   DialogContent,
   DialogActions,
-  Button,
   CardHeader,
   Box,
-  Tooltip,
 } from "@mui/material"
 import {
     Icon,
     Font,
     usePwaSelect,
     usePwaDispatch,
-    selectTheme,
     selectDisplay,
+    selectFingerprint,
 } from "../../../goldlabel"
 import {
   toggleDialog,
-  TogglePaletteMode,
+  Forget,
+} from "../../Fingerprint"
+import {
   ThemedIconBtn,
 } from "../../Theme"
 
-export default function ThemeDialog() {
+export default function FingerprintDialog() {
   const dispatch = usePwaDispatch()
-  const theme = usePwaSelect(selectTheme)
+  const fingerprint = usePwaSelect(selectFingerprint)
   const display = usePwaSelect(selectDisplay)
   const {mobile} = display
-  const {open} = theme
+  const {open} = fingerprint
 
-  const closeThemeDialog = () => {
+  const closeDialog = () => {
     dispatch(toggleDialog(false))
   }
 
@@ -39,24 +39,26 @@ export default function ThemeDialog() {
             open={open}
             fullWidth
             fullScreen={mobile}
-            onClose={closeThemeDialog}
-          >
+            onClose={closeDialog}>
           <DialogTitle>
             <CardHeader
-              avatar={<Icon icon="theme" color="primary" />} 
-              title={<Font>Theme</Font>}
+              avatar={<Icon icon="fingerprint" color="primary" />} 
+              title={<Font>Fingerprint</Font>}
+              action={<ThemedIconBtn 
+                onClick={closeDialog}
+                label="Close"
+                icon="close"
+                variant="text"
+              /> }
             />
           </DialogTitle>
           <DialogContent>
-            <TogglePaletteMode />
-            {/* <pre>{JSON.stringify(theme, null, 2)}</pre> */}
+            
+            {/* <pre>{JSON.stringify(fingerprint, null, 2)}</pre> */}
           </DialogContent>
           <DialogActions>
-            <ThemedIconBtn 
-              onClick={closeThemeDialog}
-              label="Close"
-              icon="close"
-            />
+            <Forget /> 
+            
           </DialogActions>
         </Dialog>
 }

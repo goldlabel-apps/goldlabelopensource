@@ -11,27 +11,28 @@ import {
     selectCore,
     Font,
 } from "../../../goldlabel"
+import {
+  toggleDialog,
+  FlashDialog,
+} from "../../Flash"
 
 export default function FlashToggle() {
   const dispatch = usePwaDispatch()
-  const core = usePwaSelect(selectCore)
-  const {darkmode} = core
 
-  const onToggle = () => {
-    console.log("FlashToggle onToggle")
-    return true
+  const onOpen = () => {
+    dispatch(toggleDialog(true))
   }
 
-  return (
-    <React.Fragment>
+  return (<>
+      <FlashDialog />
       <Tooltip title={<Font color="white">Flash</Font>}>
           <IconButton 
             color="primary"
-            onClick={onToggle}>
+            onClick={onOpen}>
             <Icon icon={"flash"} />
           </IconButton>
           </Tooltip>
-    </React.Fragment>
+    </>
   )
 }
 

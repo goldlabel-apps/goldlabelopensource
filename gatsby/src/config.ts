@@ -1,30 +1,11 @@
+export type GoldlabelConfig = {
+    version: string
+    isomorphic: any
+    siteUrl: string
+}
+
 export const glConfig: any = {
-    version: "4.2.2",
-    isomorphic: {
-        fingerprint: {
-            enabled: true,
-        },
-        flash: {
-            enabled: false,
-        },
-        forms: {
-            enabled: false,
-        },
-        geo: {
-            enabled: false,
-        },
-        lingua: {
-            enabled: false,
-        },
-        theme: {
-            enabled: true,
-            paletteMode: "dark",
-            font: "noka",
-            color: "#C09F52",
-            primaryColor: "#C09F52",
-            secondaryColor: "#FFF",
-        },
-    },
+    version: "4.2.4",
     siteUrl: "https://free.goldlabel.pro",
     siteIcon: "/svg/iOS.svg",
     siteRepo: "https://github.com/listingslab-software/goldlabelopensource",
@@ -38,11 +19,38 @@ export const glConfig: any = {
     siteImage: "/webp/coupland/coupland.webp",
     siteTwitter: "@listingslab",
     siteTheme: "#FFFFFF",
-    geoDefault_: {
-        lat: 35,
-        lng: 14,
-        zoom: 8,
-        lightTheme: "mapbox://styles/listingslab/clmrnpplw00ej01nsfv8l4q25",
-        darkTheme: "mapbox://styles/listingslab/clmrnt68o02a801qxevn0bt6u"
-    }
+    isomorphic: {
+        forms: { enabled: false },
+        lingua: { enabled: false },
+        flash: {
+            enabled: true,
+            playing: false,
+            audio: true,
+            video: null,
+        },
+        fingerprint: {
+            enabled: true,
+            uid: null,
+        },
+        theme: {
+            enabled: true,
+            paletteMode: "dark",
+            font: "noka",
+            color: "#C09F52",
+            primaryColor: "#C09F52",
+            secondaryColor: "#FFF",
+        },
+        geo: {
+            enabled: false,
+            lightTheme: "mapbox://styles/listingslab/clmrnpplw00ej01nsfv8l4q25",
+            darkTheme: "mapbox://styles/listingslab/clmrnt68o02a801qxevn0bt6u",
+            default: {
+                lat: 35,
+                lng: 14,
+                zoom: 8,
+                label: "Hello World"
+            }
+        },
+    },
+    
 }

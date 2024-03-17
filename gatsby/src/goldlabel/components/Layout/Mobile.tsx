@@ -18,6 +18,7 @@ import {
   Navigator,
   usePwaDispatch,
 } from "../../../goldlabel"
+import {Isomorphic} from "../../../isomorphic"
 
 export default function Mobile(props: any) {
   const dispatch = usePwaDispatch()
@@ -77,6 +78,9 @@ export default function Mobile(props: any) {
             </Box>
               <Box sx={{mt: 0.25}}>
                 <CatNav />
+              </Box>
+              <Box sx={{}}>
+                <Isomorphic />
               </Box>
           </Box>
           <Container>

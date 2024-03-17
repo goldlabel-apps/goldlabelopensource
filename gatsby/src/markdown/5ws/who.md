@@ -1,7 +1,7 @@
 ---
 order: 11
-slug: "/who"
-parentSlug: "/"
+slug: "/5ws/who"
+parentSlug: "/5ws"
 title: "Who?"
 description: "is Goldlabel?"
 icon: "who"

@@ -27,6 +27,7 @@ import {
     selectAuth,
     selectFingerprint,
     selectTheme,
+    selectFlash,
 } from "./state/reducer"
 // Theme
 import Theme from "../goldlabel/theme/Theme"
@@ -221,6 +222,7 @@ export {
     selectAuth,
     selectFingerprint,
     selectTheme,
+    selectFlash,
 }
 // Actions
 export {
