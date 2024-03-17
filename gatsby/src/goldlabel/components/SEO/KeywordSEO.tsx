@@ -3,7 +3,7 @@ import { GatsbySeo } from 'gatsby-plugin-next-seo'
 
 export const KeywordSEO = () => {
   const seo = {
-    title: `Goldlabel Free`,
+    title: `Keyword`,
     description: "Open Source on Github",
     image: "/webp/goldlabel/era.webp",
     url: "https://free.goldlabel.pro",
