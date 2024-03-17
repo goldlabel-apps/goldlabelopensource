@@ -20,6 +20,9 @@ import {
 import {
   toggleDialog,
 } from "../../Flash"
+import {
+  ThemedIconBtn,
+} from "../../Theme"
 
 export default function FlashDialog() {
   const dispatch = usePwaDispatch()
@@ -44,19 +47,14 @@ export default function FlashDialog() {
             />
           </DialogTitle>
           <DialogContent>
-            <pre>{JSON.stringify(flash, null, 2)}</pre>
+            {/* <pre>{JSON.stringify(flash, null, 2)}</pre> */}
           </DialogContent>
           <DialogActions>
-            <Button 
-              variant="outlined"
-              onClick={closeDialog}>
-                <Box sx={{mt:0.25}}>
-                  <Font variant="small">Close</Font>
-                </Box>
-                <Box sx={{ml: 1, mt:0.5}}>
-                  <Icon icon="close" />
-                </Box>
-            </Button>
+            <ThemedIconBtn 
+              onClick={closeDialog}
+              label="Close"
+              icon="close"
+            /> 
           </DialogActions>
         </Dialog>
 }

@@ -54,18 +54,9 @@ export default function ThemeDialog() {
           <DialogActions>
             <ThemedIconBtn 
               onClick={closeThemeDialog}
-              label="adfkshfd"
-            /> 
-            <Button 
-              variant="outlined"
-              onClick={closeThemeDialog}>
-                <Box sx={{mt:0.25}}>
-                  <Font variant="small">Close</Font>
-                </Box>
-                <Box sx={{ml: 1, mt:0.5}}>
-                  <Icon icon="close" />
-                </Box>
-            </Button>
+              label="Close"
+              icon="close"
+            />
           </DialogActions>
         </Dialog>
 }

@@ -24,11 +24,12 @@ export default function ThemedIconBtn(props: any) {
     label,
     icon,
     onClick,
+    variant,
   } = props
 
   return <>
           <Button 
-              variant="outlined"
+              variant={variant}
               onClick={onClick}>
                 <Box sx={{mt:0.25}}>
                   <Font variant="small">

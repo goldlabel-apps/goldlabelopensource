@@ -31,7 +31,7 @@ import { LinguaToggle } from "../../../isomorphic/Lingua"
 import { ThemeToggle } from "../../../isomorphic/Theme"
 
 export default function Navigator() {
-  const showForget = false
+  const showForget = true
   const showShare = false
   const showKeywords = false
   const dispatch = usePwaDispatch()
@@ -84,17 +84,6 @@ export default function Navigator() {
               {glConfig.isomorphic.geo.enabled ? <GeoToggle /> : null}
               {glConfig.isomorphic.lingua.enabled ? <LinguaToggle /> : null}
               {glConfig.isomorphic.theme.enabled ? <ThemeToggle /> : null}
-        
-              {showForget ? <Tooltip title={<Font color="white">
-                Forget yourself
-              </Font>}>
-                <IconButton
-                  color="primary"
-                  sx={{}}
-                  onClick={onForgetMe}>
-                  <Icon icon={"forget"} color="primary"/>
-                </IconButton>
-              </Tooltip> : null }
               
               {showShare ? <ShareMenu /> : null }
             </Box>

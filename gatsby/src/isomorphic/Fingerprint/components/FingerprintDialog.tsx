@@ -1,14 +1,12 @@
-import { PaletteColor } from "@mui/material"
+
 import * as React from "react"
 import {
   Dialog,
   DialogTitle,
   DialogContent,
   DialogActions,
-  Button,
   CardHeader,
   Box,
-  // Tooltip,
 } from "@mui/material"
 import {
     Icon,
@@ -20,7 +18,11 @@ import {
 } from "../../../goldlabel"
 import {
   toggleDialog,
+  Forget,
 } from "../../Fingerprint"
+import {
+  ThemedIconBtn,
+} from "../../Theme"
 
 export default function FingerprintDialog() {
   const dispatch = usePwaDispatch()
@@ -42,22 +44,21 @@ export default function FingerprintDialog() {
             <CardHeader
               avatar={<Icon icon="fingerprint" color="primary" />} 
               title={<Font>Fingerprint</Font>}
+              action={<ThemedIconBtn 
+                onClick={closeDialog}
+                label="Close"
+                icon="close"
+                variant="text"
+              /> }
             />
           </DialogTitle>
           <DialogContent>
-            <pre>{JSON.stringify(fingerprint, null, 2)}</pre>
+            
+            {/* <pre>{JSON.stringify(fingerprint, null, 2)}</pre> */}
           </DialogContent>
           <DialogActions>
-            <Button 
-              variant="outlined"
-              onClick={closeDialog}>
-                <Box sx={{mt:0.25}}>
-                  <Font variant="small">Close</Font>
-                </Box>
-                <Box sx={{ml: 1, mt:0.5}}>
-                  <Icon icon="close" />
-                </Box>
-            </Button>
+            <Forget /> 
+            
           </DialogActions>
         </Dialog>
 }
