@@ -4,17 +4,17 @@ import {
   setPwaKey,
 } from "../../../goldlabel"
 
-export const setTingsKey = (
+export const setThemeKey = (
     key: string,
     value: any,
 ): any =>
   async (dispatch: any) => {
     try {
-        const tings = store.getState().tings
-        dispatch(setPwaKey({key: "tings", value: { ...tings,
+        const theme = store.getState().theme
+        dispatch(setPwaKey({key: "theme", value: { ...theme,
           [key]: value,
         }}))
     } catch (e: any) {
-      dispatch(notify("setTingsKey 500", "error", e.toString()))
+      dispatch(notify("setThemeKey 500", "error", e.toString()))
     }
 }

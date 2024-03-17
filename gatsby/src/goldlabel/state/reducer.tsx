@@ -6,6 +6,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "./store"
 import {coreState} from "./coreState"
 import {fingerprintSlice} from "../../isomorphic/Fingerprint"
+import {themeSlice} from "../../isomorphic/Theme"
 
 const initialState: any = {
   bootTime: Date.now(),
@@ -13,6 +14,8 @@ const initialState: any = {
   config: glConfig,
   core: coreState,
   fingerprint: fingerprintSlice,
+  theme: themeSlice,
+  
 }
 
 export const pwaSlice = createSlice({
@@ -35,6 +38,7 @@ export const selectDisplay = (state: RootState) => state.core.display
 export const selectFrontmatter = (state: RootState) => state.core.frontmatter
 export const selectAuth = (state: RootState) => state.auth
 export const selectFingerprint = (state: RootState) => state.fingerprint
+export const selectTheme = (state: RootState) => state.theme
 
 export const { setPwaKey } = pwaSlice.actions
 export default pwaSlice.reducer

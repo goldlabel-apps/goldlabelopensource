@@ -10,8 +10,6 @@ import {
     Font,
     usePwaDispatch,
     resetLocalstorage,
-    usePwaSelect,
-    selectTings,
 } from "../../../goldlabel"
 
 export default function ResetBtn(props: any) {
@@ -19,9 +17,6 @@ export default function ResetBtn(props: any) {
     const {mode} = props
     if (mode) iconMode = mode
     const dispatch = usePwaDispatch()
-    const tings = usePwaSelect(selectTings)
-    const {ting} = tings
-    // const {fingerprint} = ting
     
     const onReset = () => {
         dispatch(resetLocalstorage())

@@ -21,7 +21,6 @@ import {
   useAllMarkdown,
   setCoreKey,
   ShareMenu,
-  TogglePaletteMode,
   resetLocalstorage,
 } from "../../../goldlabel"
 import { FingerprintToggle} from "../../../isomorphic/Fingerprint"
@@ -32,17 +31,13 @@ import { LinguaToggle } from "../../../isomorphic/Lingua"
 import { ThemeToggle } from "../../../isomorphic/Theme"
 
 export default function Navigator() {
-  
   const showForget = false
   const showShare = false
   const showKeywords = false
-  
   const dispatch = usePwaDispatch()
   const allMarkdown = useAllMarkdown()
   const frontmatter = usePwaSelect(selectFrontmatter)
-  
   if(!frontmatter) return null
-
   let parentDoc: any = null
   const {
     slug, 

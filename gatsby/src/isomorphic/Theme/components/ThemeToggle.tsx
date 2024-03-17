@@ -11,26 +11,28 @@ import {
     selectCore,
     Font,
 } from "../../../goldlabel"
+import {
+  ThemeDialog,
+  toggleDialog,
+} from "../../Theme"
 
 export default function ThemeToggle() {
   const dispatch = usePwaDispatch()
   const core = usePwaSelect(selectCore)
-  const {darkmode} = core
 
   const onToggle = () => {
-    console.log("ThemeToggle onToggle")
+    dispatch(toggleDialog(true))
     return true
   }
 
-  return (
-    <React.Fragment>
-      <Tooltip title={<Font color="white">Theme</Font>}>
-          <IconButton 
-            color="primary"
-            onClick={onToggle}>
-            <Icon icon={"theme"} />
-          </IconButton>
-        </Tooltip>
-    </React.Fragment>
-  )
+  return <>
+          <ThemeDialog /> 
+          <Tooltip title={<Font color="white">Theme</Font>}>
+            <IconButton 
+              color="primary"
+              onClick={onToggle}>
+              <Icon icon={"theme"} />
+            </IconButton>
+          </Tooltip>
+        </>
 }
