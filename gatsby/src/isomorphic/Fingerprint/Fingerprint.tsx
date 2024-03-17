@@ -1,14 +1,21 @@
 import React from "react"
 import {
   usePwaDispatch,
-  usePwaSelect,
 } from "../../goldlabel"
-import {
-  // YourFingerprint,
-  // ToggleBar,
-  // init,
-  // saveTing,
-} from "./"
+
+export type Fingerprint = {
+  uid: string
+  host: string
+  displayName: string
+  ip: string
+  geo: {
+    lat: number
+    lng: number
+    zoom: number
+  }
+  device: {
+  }
+}
 
 export function Fingerprint() {
   const dispatch = usePwaDispatch()
@@ -17,7 +24,6 @@ export function Fingerprint() {
   }, [dispatch])
   
   return <>
-          {/* <YourFingerprint />
-          <ToggleBar /> */}
+          Fingerprint
         </>
 }

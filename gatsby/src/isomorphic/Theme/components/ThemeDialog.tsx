@@ -1,14 +1,10 @@
-import { PaletteColor } from "@mui/material"
 import * as React from "react"
 import {
   Dialog,
   DialogTitle,
   DialogContent,
   DialogActions,
-  Button,
   CardHeader,
-  Box,
-  Tooltip,
 } from "@mui/material"
 import {
     Icon,
@@ -28,7 +24,8 @@ export default function ThemeDialog() {
   const dispatch = usePwaDispatch()
   const theme = usePwaSelect(selectTheme)
   const display = usePwaSelect(selectDisplay)
-  const {mobile} = display
+  let mobile = true
+  if (display) mobile = display.mobile
   const {open} = theme
 
   const closeThemeDialog = () => {

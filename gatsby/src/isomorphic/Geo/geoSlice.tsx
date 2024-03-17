@@ -1,3 +1,4 @@
 export const geoSlice: any = {
-    dialogOpen: false,
+    slug: "flash",
+    open: false,
 }

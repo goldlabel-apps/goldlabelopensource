@@ -2,14 +2,14 @@ import * as React from "react"
 import {glConfig} from "../../../config"
 import {
   Box,
+  Button,
   Chip,
   List,
   ListItemButton,
   ListItemIcon,
   ListItemText,
   Tooltip,
-  IconButton,
-  Divider,
+  useTheme,
 } from "@mui/material"
 import {
   Font,
@@ -64,7 +64,7 @@ export default function Navigator() {
       "_blank",
     ))
   }
-
+  
   return <>
           <Box sx={{ml: 1}}>
             <List dense>
@@ -83,6 +83,24 @@ export default function Navigator() {
                           </Font>}
                 />
               </ListItemButton>
+              
+              {parentDoc ? <ListItemButton
+                              onClick={() => {
+                                dispatch(navigate(parentDoc.frontmatter.slug, "_self"))
+                              }}>
+                <ListItemIcon>
+                  <Icon icon={parentDoc.frontmatter.icon} color="primary" />
+                </ListItemIcon>
+                <ListItemText 
+                  primary={<Font variant="small">
+                            {parentDoc.frontmatter.title}
+                          </Font>}
+                />
+              </ListItemButton> : null }
+              
+              
+
+
               {children.length ? <>
                 {children.map((item, i) => {
                   const {frontmatter} = item
@@ -141,23 +159,17 @@ export default function Navigator() {
               
 
             <Box sx={{display:"flex"}}>
-              <Box sx={{ml:1}}>
-                <Tooltip title={<Font color="white">
-                                  Download
-                                </Font>}>
-                  <IconButton
-                    color="primary"
-                    sx={{}}
-                    onClick={openGithubLink}>
-                    <Icon icon={"github"} color="primary"/>
-                  </IconButton>
+              <Box sx={{ml: 1, my:1}}>
+                <Tooltip 
+                  title={<Font color="white">
+                            GitHub
+                          </Font>}>
+                  <Button onClick={openGithubLink}>
+                    <Font variant="small" color={useTheme().palette.text.disabled}>
+                      {glConfig.version}
+                    </Font>
+                  </Button>
                 </Tooltip>
-              </Box>
-              
-              <Box sx={{ml: 1, my:1, mt: 1.5}}>
-                <Font variant="small" color={"primary"}>
-                  {glConfig.version}
-                </Font>
               </Box>            
             </Box>
           </Box>
