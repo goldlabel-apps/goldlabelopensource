@@ -6,24 +6,26 @@ import {
 import {
     selectDisplay,
     usePwaSelect,
-    selectFlash,
 } from "../../../goldlabel"
 
 export default function FlashHero() {
-  // const dispatch = usePwaDispatch()
-  const flash = usePwaSelect(selectFlash)
   const display = usePwaSelect(selectDisplay)
-  const {playing} = flash
   const flashConfig = glConfig.isomorphic.flash
-  const {hero} = flashConfig
-  const {mobile} = display
+  const {
+    hero,
+    scenes,
+  } = flashConfig
+  let mobile = true
+  if (display) mobile = display.mobile
+  const sceneSlug = scenes[0]
+  if (!hero) return null
   
   return (<Box 
             sx={{
               border: "1px solid gold",
               height: mobile ? 150 : 300,
             }}>
-            {hero}
+            {sceneSlug}
           </Box>
   )
 }
