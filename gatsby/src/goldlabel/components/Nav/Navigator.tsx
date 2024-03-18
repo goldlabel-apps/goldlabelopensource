@@ -57,13 +57,7 @@ export default function Navigator() {
     if (yehOK) dispatch(resetLocalstorage())
   }
 
-  const openGithubLink = () => {
-    // "https://github.com/GoldlabelPr0/open-source", 
-    dispatch(navigate(
-      "https://github.com/listingslab-software/goldlabelopensource", 
-      "_blank",
-    ))
-  }
+
   
   return <>
           <Box sx={{ml: 1}}>
@@ -84,7 +78,7 @@ export default function Navigator() {
                 />
               </ListItemButton>
               
-              {parentDoc ? <ListItemButton
+              {parentDoc &&  parentDoc.frontmatter.slug !== "/" ? <ListItemButton
                               onClick={() => {
                                 dispatch(navigate(parentDoc.frontmatter.slug, "_self"))
                               }}>
@@ -97,10 +91,7 @@ export default function Navigator() {
                           </Font>}
                 />
               </ListItemButton> : null }
-              
-              
-
-
+            
               {children.length ? <>
                 {children.map((item, i) => {
                   const {frontmatter} = item
@@ -156,22 +147,7 @@ export default function Navigator() {
                           />
                 })}
               </Box> : null }
-              
 
-            <Box sx={{display:"flex"}}>
-              <Box sx={{ml: 1, my:1}}>
-                <Tooltip 
-                  title={<Font color="white">
-                            GitHub
-                          </Font>}>
-                  <Button onClick={openGithubLink}>
-                    <Font variant="small" color={useTheme().palette.text.disabled}>
-                      {glConfig.version}
-                    </Font>
-                  </Button>
-                </Tooltip>
-              </Box>            
-            </Box>
           </Box>
       </>
 }

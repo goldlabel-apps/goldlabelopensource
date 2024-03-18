@@ -1,7 +1,4 @@
-import {
-  FooterLink,
-  FooterColumn,
-} from "../../state/constants/footer"
+import {glConfig} from "../../../config"
 import * as React from "react"
 import {
   Box,
@@ -11,6 +8,9 @@ import {
   ListItemButton,
   ListItemText,
   ListItemIcon,
+  Tooltip,
+  Button,
+  useTheme,
 } from "@mui/material"
 import {
   Icon,
@@ -26,13 +26,20 @@ export default function FeaturedFooter() {
   const core = usePwaSelect(selectCore)
   if (!core.footer) return null
   const columns = core.footer
+  
+  const openGithubLink = () => {
+    dispatch(navigate(
+      glConfig.siteRepo,
+      "_blank",
+    ))
+  }
 
   return (
     <>
       <Container maxWidth="md" component="footer">
 
-        <Grid container spacing={4} justifyContent="space-evenly">
-          {columns.map((item: FooterColumn, i: number) => {
+        <Grid container spacing={1}>
+          {columns.map((item: any, i: number) => {
             const {
               title,
               textLines,
@@ -58,7 +65,7 @@ export default function FeaturedFooter() {
 
                       {links ? <>
                         <List dense>
-                          {links.map((link: FooterLink, i:number) => {
+                          {links.map((link: any, i: number) => {
                             const {
                               label,
                               path,
@@ -88,9 +95,25 @@ export default function FeaturedFooter() {
                           })}
                         </List>
                       </> : null }
-
                     </Grid>
           })}
+        </Grid>
+        <Grid item xs={12}>
+          <Box sx={{display:"flex"}}>
+            <Box sx={{flexGrow:1}} />
+            <Box>
+                <a
+                  title="Download free from GitHub"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  href={glConfig.siteRepo}>
+                  <Font variant="small">
+                    Goldlabel {glConfig.version}
+                  </Font>
+                </a>
+            </Box>
+            <Box sx={{flexGrow:1}} />
+          </Box>
         </Grid>
       </Container>
     </>

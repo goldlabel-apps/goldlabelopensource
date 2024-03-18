@@ -19,6 +19,7 @@ import {
 import {
   toggleDialog,
   Forget,
+  Output,
 } from "../../Fingerprint"
 import {
   ThemedIconBtn,
@@ -30,7 +31,10 @@ export default function FingerprintDialog() {
   const display = usePwaSelect(selectDisplay)
   let mobile = true
   if (display) mobile = display.mobile
-  const {open} = fingerprint
+  const {
+    open,
+    firstFingerprint,
+  } = fingerprint
 
   const closeDialog = () => {
     dispatch(toggleDialog(false))
@@ -56,7 +60,8 @@ export default function FingerprintDialog() {
             />
           </DialogTitle>
           <DialogContent>
-            <pre>{JSON.stringify(fingerprint, null, 2)}</pre>
+            <Output />
+            <pre>firstFingerprint: {JSON.stringify(firstFingerprint, null, 2)}</pre>
           </DialogContent>
           <DialogActions>
             <Forget />

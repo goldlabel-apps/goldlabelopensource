@@ -1,4 +1,5 @@
 import * as React from "react"
+import {glConfig} from "../../../config"
 import {
   Avatar,
   IconButton,
@@ -24,8 +25,12 @@ import {
   selectDisplay,
 } from "../../../goldlabel"
 import {Isomorphic} from "../../../isomorphic"
+import {
+  FlashHero,
+} from "../../../isomorphic/Flash"
 
 export default function Desktop(props: any) {
+  const flashHero = glConfig.isomorphic.flash.hero
   const dispatch = usePwaDispatch()
   const frontmatter = usePwaSelect(selectFrontmatter)
   const d = usePwaSelect(selectDisplay)
@@ -35,7 +40,6 @@ export default function Desktop(props: any) {
     siteTitle,
     siteDescription,
   } = siteMeta
-  let layout: string = "normal"
   let doc: any = null
   let title = siteTitle
   let description = siteDescription
@@ -62,18 +66,11 @@ export default function Desktop(props: any) {
     description = frontmatter.description
     image = frontmatter.image
     icon = frontmatter.icon
-    if (frontmatter.layout) layout = frontmatter.layout
   }
-
+  if (type === "goldlabel") return <Pricing />
   
-  if (type === "goldlabel") return <>
-    <Pricing />
-  </>
-
   return <>
-    <Container maxWidth="md" sx={{
-      mb: "50px",    
-    }}>
+    <Container maxWidth="md" sx={{ mb: "50px" }}>
       <div id="topAnchor" />
       <Grid container spacing={1}>
         <Grid item xs={12}>
@@ -125,11 +122,11 @@ export default function Desktop(props: any) {
         {image ? <Grid item xs={12} sm={8}>
           
           <Box sx={{my:2, mx:1}}>
-            <Image 
-              alt={`${title}. ${description}`}
-              src={image}
-              height={300}
-            />
+          { flashHero ? <FlashHero/> : <Image 
+                alt={`${title}. ${description}`}
+                src={image}
+                height={200}
+          /> }
             
             <Box 
               id="markdown"

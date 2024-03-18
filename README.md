@@ -2,6 +2,8 @@
 
 > This software is Open Source and Free
 
+![Goldlabel](/gatsby/static/png/og.png)
+
 ### Get started
 
 1. Clone & install dependencies

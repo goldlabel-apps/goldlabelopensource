@@ -2,6 +2,7 @@ import * as React from "react"
 import {
   IconButton,
   Tooltip,
+  Badge,
 } from "@mui/material"
 import {
     Icon,
@@ -21,13 +22,20 @@ export default function FingerprintToggle() {
   }
 
   return <>
-          <FingerprintDialog />
-          <Tooltip title={<Font color="white">Fingerprint</Font>}>
-            <IconButton 
-              color="primary"
-              onClick={onOpen}>
-              <Icon icon={"fingerprint"} />
-            </IconButton>
-          </Tooltip>
-        </>
+            <FingerprintDialog />
+            <Tooltip 
+              title={<Font color="white">
+                        Fingerprint
+                      </Font>}>
+                <IconButton 
+                  color="primary"
+                  onClick={onOpen}>
+                    <Badge 
+                      color="secondary"
+                      badgeContent={0}>
+                      <Icon icon={"fingerprint"} />
+                    </Badge>
+                </IconButton>
+            </Tooltip>
+          </>
 }
