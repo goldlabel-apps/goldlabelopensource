@@ -27,17 +27,17 @@ export function Fingerprint() {
     dispatch(reset())
     if (!firstFingerprint && !making && !made) {
       dispatch (makeFirstFingerprint())
-    } else{
-      if (firstFingerprint){
+    } 
+    if (firstFingerprint){
+      if (!subscribed){
         const {uid} = firstFingerprint
-        // if (made && !saved) {
-        //   dispatch(saveFingerprint(uid))
-        // }
-        
-          console.log("subscribed", subscribed)
-        
+        if (!saved) {
+          // dispatch(saveFingerprint(uid))
+        }
+        console.log("subscribe", uid)
       }
     }
+      
   }, [dispatch, firstFingerprint, making, made, saved, saving])
   
   return null

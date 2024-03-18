@@ -18,8 +18,9 @@ export const saveFingerprint = (
 ): any =>
   async (dispatch: any) => {
     try {
-      const frontmatter = store.getState().core.frontmatter
+      console.log("saveFingerprint")
       dispatch(setFingerprintKey("saving", true))
+      const frontmatter = store.getState().core.frontmatter
       const r = doc(getFirestore(), "fingerprints2", uid)
       const s = await getDoc(r)
       if (s.exists()) {
@@ -30,14 +31,12 @@ export const saveFingerprint = (
           frontmatter,
         }
         await setDoc(doc(getFirestore(), "fingerprints2", uid), updatedFingerprint)
+        dispatch(setFingerprintKey("saved", true))
       } else {
         const {firstFingerprint} = store.getState().fingerprint
         await setDoc(doc(getFirestore(), "fingerprints2", uid), firstFingerprint)
+        dispatch(setFingerprintKey("saved", true))
       }
-      
-      dispatch(setFingerprintKey("saved", true))
-      dispatch(addOutput(`subscribe to ${uid}`)) 
-      return true
     } catch (e: any) {
       dispatch(notify("saveFingerprint 500", "error", e.toString()))
       return false
