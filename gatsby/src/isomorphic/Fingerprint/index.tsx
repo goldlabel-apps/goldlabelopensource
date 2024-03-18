@@ -5,8 +5,8 @@ import {setFingerprintKey} from "./actions/setFingerprintKey"
 import {toggleDialog} from "./actions/toggleDialog"
 import {addOutput} from "./actions/addOutput"
 import {resetOutput} from "./actions/resetOutput"
-import {makeFirstFingerprint} from "./actions/makeFirstFingerprint"
-import {saveFingerprint} from "./actions/saveFingerprint"
+import {make} from "./actions/make"
+import {save} from "./actions/save"
 import {incoming} from "./actions/incoming"
 import FingerprintToggle from "./components/FingerprintToggle"
 import FingerprintDialog from "./components/FingerprintDialog"
@@ -22,8 +22,8 @@ export {
     incoming,
     addOutput,
     resetOutput,
-    makeFirstFingerprint,
-    saveFingerprint,
+    make,
+    save,
     FingerprintToggle,
     FingerprintDialog,
     Forget,

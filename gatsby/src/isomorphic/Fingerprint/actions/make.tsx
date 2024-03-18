@@ -7,13 +7,13 @@ import {
 } from "../../../goldlabel"
 import {
   setFingerprintKey,
-  // addOutput,
+  addOutput,
 } from "../../Fingerprint"
 
-export const makeFirstFingerprint = (): any =>
+export const make = (): any =>
   async (dispatch: any) => {
     try {
-      
+      dispatch (addOutput("making."))
       dispatch(setFingerprintKey("making", true))
       const host = window.location.host
       const fp = await FingerprintJS.load()
@@ -42,9 +42,10 @@ export const makeFirstFingerprint = (): any =>
       }
       dispatch(setFingerprintKey("firstFingerprint", firstFingerprint))
       dispatch(setFingerprintKey("made", true))
+      dispatch (addOutput("made."))
       return true
     } catch (e: any) {
-      dispatch(notify("makeFirstFingerprint 500", "error", e.toString()))
+      dispatch(notify("make 500", "error", e.toString()))
       return false
     }
 }

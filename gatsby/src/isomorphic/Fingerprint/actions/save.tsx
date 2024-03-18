@@ -13,12 +13,12 @@ import {
   addOutput,
 } from "../../Fingerprint"
 
-export const saveFingerprint = (
+export const save = (
   uid: string
 ): any =>
   async (dispatch: any) => {
     try {
-      console.log("saveFingerprint")
+      console.log("save")
       dispatch(setFingerprintKey("saving", true))
       const frontmatter = store.getState().core.frontmatter
       const r = doc(getFirestore(), "fingerprints2", uid)
@@ -38,7 +38,7 @@ export const saveFingerprint = (
         dispatch(setFingerprintKey("saved", true))
       }
     } catch (e: any) {
-      dispatch(notify("saveFingerprint 500", "error", e.toString()))
+      dispatch(notify("save 500", "error", e.toString()))
       return false
     }
 }

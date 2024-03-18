@@ -6,37 +6,43 @@ import {
 } from "../../goldlabel"
 import {
   addOutput,
-  makeFirstFingerprint,
+  make,
   reset,
-  saveFingerprint,
+  save,
 } from "../Fingerprint"
 
 export function Fingerprint() {
   const dispatch = usePwaDispatch()
   const fingerprint = usePwaSelect(selectFingerprint)
   const {
+    firstFingerprint,
     making,
     made,
     saving,
     saved,
-    firstFingerprint,
-    subscribed,
+    // subscribing,
+    // subscribed,
   } = fingerprint
   
   React.useEffect(() => {
-    dispatch(reset())
-    if (!firstFingerprint && !making && !made) {
-      dispatch (makeFirstFingerprint())
-    } 
-    if (firstFingerprint){
-      if (!subscribed){
-        const {uid} = firstFingerprint
-        if (!saved) {
-          // dispatch(saveFingerprint(uid))
-        }
-        console.log("subscribe", uid)
-      }
+    // dispatch(reset())
+    if (!making && !made) {
+      dispatch (make())
     }
+    if (!saving && !saved) {
+      // dispatch (save())
+      console.log("save")
+      dispatch(addOutput("save"))
+    }
+    // if (firstFingerprint){
+    //   if (!subscribed){
+    //     const {uid} = firstFingerprint
+    //     if (!saved) {
+    //       // dispatch(saveFingerprint(uid))
+    //     }
+    //     console.log("subscribe", uid)
+    //   }
+    // }
       
   }, [dispatch, firstFingerprint, making, made, saved, saving])
   
