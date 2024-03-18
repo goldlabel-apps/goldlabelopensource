@@ -13,7 +13,7 @@ export type GoldlabelConfig = {
 
 export const glConfig: any = {
     siteTitle: "Goldlabel",
-    version: "4.3.0",
+    version: "4.3.1",
     siteDisplayname: "AI",
     siteEmail: "ai@goldlabel.pro",
     siteUrl: "https://free.goldlabel.pro",

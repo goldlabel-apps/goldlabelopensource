@@ -103,11 +103,12 @@ export default function FeaturedFooter() {
             <Box sx={{flexGrow:1}} />
             <Box>
                 <a
+                  title="Download free from GitHub"
                   target="_blank"
                   rel="noreferrer noopener"
                   href={glConfig.siteRepo}>
                   <Font variant="small">
-                    Powered by Goldlabel {glConfig.version}
+                    Goldlabel {glConfig.version}
                   </Font>
                 </a>
             </Box>
