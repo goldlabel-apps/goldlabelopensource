@@ -33,7 +33,8 @@ export default function FingerprintDialog() {
   if (display) mobile = display.mobile
   const {
     open,
-    firstFingerprint,
+    // firstFingerprint,
+    latestFingerprint,
   } = fingerprint
 
   const closeDialog = () => {
@@ -61,7 +62,7 @@ export default function FingerprintDialog() {
           </DialogTitle>
           <DialogContent>
             <Output />
-            <pre>firstFingerprint: {JSON.stringify(firstFingerprint, null, 2)}</pre>
+            <pre>latestFingerprint: {JSON.stringify(latestFingerprint, null, 2)}</pre>
           </DialogContent>
           <DialogActions>
             <Forget />
