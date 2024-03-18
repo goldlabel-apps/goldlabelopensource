@@ -1,6 +1,6 @@
 export const fingerprintSlice: any = {
     slug: "fingerprint",
-    open: true,
+    open: false,
     uid: null,
     initting: false,
     checking: false,

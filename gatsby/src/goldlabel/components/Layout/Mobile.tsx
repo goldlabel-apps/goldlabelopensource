@@ -3,6 +3,8 @@ import {glConfig} from "../../../config"
 import {
   Box,
   Container,
+  IconButton,
+  Menu,
 } from "@mui/material"
 import {
   Image,
@@ -15,17 +17,28 @@ import {
   Footer,
   usePwaSelect,
   selectDisplay,
+  Icon,
   Navigator,
-  usePwaDispatch,
 } from "../../../goldlabel"
 import {Isomorphic} from "../../../isomorphic"
+import {
+  FlashHero,
+} from "../../../isomorphic/Flash"
 
 export default function Mobile(props: any) {
-  const dispatch = usePwaDispatch()
+
+  const flashHero = glConfig.isomorphic.flash.hero
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+  const open = Boolean(anchorEl)
+  const openMobileMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget)
+  }
+  const closeMenu = () => setAnchorEl(null)
+
+  // const dispatch = usePwaDispatch()
   const {appData, type} = props
   const siteMeta = useSiteMetadata()  
   const d = usePwaSelect(selectDisplay)
-  
   let layout: string = "normal"
   let isHome = false
   if (appData.path === "/")isHome = true
@@ -34,7 +47,6 @@ export default function Mobile(props: any) {
   let doc: any = null
   let frontmatter: any = null
   let html: any = null 
-  let excerpt: any = null 
   let image: any = null
   let lat: any = null
   let lng: any = null
@@ -50,7 +62,6 @@ export default function Mobile(props: any) {
     lng = frontmatter.lng
     image = frontmatter.image
     html = doc.html
-    excerpt = doc.excerpt
     slug = frontmatter.slug
     if (frontmatter.layout) layout = frontmatter.layout
   }
@@ -62,19 +73,16 @@ export default function Mobile(props: any) {
     const rect = el.getBoundingClientRect()
     const sT = document.documentElement.scrollTop
     const eT = rect.top + sT;
-    minMdH = h - eT - 40
+    minMdH = h - eT - 30
   }
 
-  if (type === "goldlabel") return <>
-    <Pricing />
-  </>
+  if (type === "goldlabel") return <Pricing />
 
   return <>
           <div id="topAnchor" />
           <Box sx={{display: "flex", m:1}}>
           <Box sx={{flexGrow:1}}/>
             <Box sx={{ml:1}}>
-            
               <Meta frontmatter={frontmatter}/>
             </Box>
               <Box sx={{mt: 0.25}}>
@@ -83,9 +91,32 @@ export default function Mobile(props: any) {
               <Box sx={{}}>
                 <Isomorphic />
               </Box>
+
+              <Menu
+                id="mobile-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={closeMenu}
+                MenuListProps={{
+                  'aria-labelledby': 'mobile-button',
+                }}>
+                  <Navigator />
+              </Menu>
+
+              <Box sx={{mr: 1}}>
+                <IconButton
+                  color="primary"
+                  id="mobileMenuBtn"
+                  aria-haspopup="true"
+                  aria-controls={open ? 'mobileMenuBtn' : undefined}                  
+                  aria-expanded={open ? 'true' : undefined}
+                  onClick={openMobileMenu}>
+                  <Icon icon="menu" /> 
+                </IconButton>
+              </Box>
           </Box>
           <Container>
-            <Navigator />
+            
             <Box sx={{mt:1}}>
               <Box sx={{}}>     
                 <Box sx={{}}>
@@ -102,16 +133,20 @@ export default function Mobile(props: any) {
               </Box>
               
               <Box sx={{mt:2, mb:2}}>
-                <Image 
-                  alt={`${title}. ${description}`}
-                  src={image}
-                  height={150}
-                />
+                { flashHero ? <>
+                  <FlashHero/>
+                </> : <Image 
+                    alt={`${title}. ${description}`}
+                    src={image}
+                    height={300}
+              /> }
+                
               </Box>
               <Box 
                 id="markdown"
                 sx={{
-                  mt:2,
+                  mt: 1,
+                  mr: 1,
                   minHeight: minMdH,
                 }}>
                   <Markdown html={html} />

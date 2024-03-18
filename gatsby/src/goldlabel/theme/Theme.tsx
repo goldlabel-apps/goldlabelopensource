@@ -9,10 +9,12 @@ import {makeTheme} from "../theme/makeTheme"
 import {
   usePwaSelect,
   selectCore,
+  selectTheme,
 } from "../../goldlabel"
 
 export default function Theme({children}: any) {
   const core = usePwaSelect(selectCore)
+  const mui = usePwaSelect(selectTheme)
   const {darkmode} = core
   const {
     theme

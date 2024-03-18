@@ -18,6 +18,7 @@ import {
 } from "../../../goldlabel"
 import {
   toggleDialog,
+  GeoMap,
 } from "../../Geo"
 import {
   ThemedIconBtn,
@@ -58,7 +59,11 @@ export default function GeoDialog() {
             />
           </DialogTitle>
           <DialogContent>
-            <pre>geoConfig: {JSON.stringify(geoConfig, null, 2)}</pre>
+            <Box sx={{
+              height: 400,
+            }}>
+              <GeoMap />
+            </Box>
           </DialogContent>
           {/* <DialogActions>
             

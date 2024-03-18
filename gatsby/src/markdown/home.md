@@ -1,7 +1,7 @@
 ---
 order: 1
 slug: "/"
-title: "Goldlabel."
+title: "Goldlabel"
 description: "Free & Open Source on Github"
 icon: "goldlabel"
 image: "/png/git.png"
