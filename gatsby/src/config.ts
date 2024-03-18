@@ -56,6 +56,5 @@ export const glConfig: any = {
                 label: "Hello World"
             }
         },
-    },
-    
+    },    
 }

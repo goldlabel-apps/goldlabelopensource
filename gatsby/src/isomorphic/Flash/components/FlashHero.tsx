@@ -22,7 +22,7 @@ export default function FlashHero() {
   const {playing} = flash
   const flashConfig = glConfig.isomorphic.flash
   const {hero} = flashConfig
-  return null
+  
   return (<Box 
             sx={{
               border: "1px solid gold"

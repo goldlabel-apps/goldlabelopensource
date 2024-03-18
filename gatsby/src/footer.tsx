@@ -18,7 +18,7 @@ export type Footer = Array<FooterColumn>
 export const footer: Footer = [
 
   {
-    title: "Example Apps",
+    title: "Goldlabel Apps",
     links: [
       {
         label: "Goldlabel",
