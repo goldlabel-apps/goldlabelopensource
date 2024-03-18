@@ -20,7 +20,7 @@ export function ReinventingFlash() {
   return <>
           <Stage 
             id="reinventingFlashStage"
-            height={300}
+            height={150}
             backgroundColor={"#F2F2F2"}
           >
             

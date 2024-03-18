@@ -31,7 +31,7 @@ export const glConfig: any = {
         lingua: { enabled: false },
         flash: { 
             enabled: true,
-            hero: true,
+            hero: false,
             scenes: [
                 "ReinventingFlash",
                 "NewScene",

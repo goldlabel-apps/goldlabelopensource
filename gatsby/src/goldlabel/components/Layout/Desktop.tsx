@@ -125,7 +125,7 @@ export default function Desktop(props: any) {
           { flashHero ? <FlashHero/> : <Image 
                 alt={`${title}. ${description}`}
                 src={image}
-                height={300}
+                height={150}
           /> }
             
             <Box 

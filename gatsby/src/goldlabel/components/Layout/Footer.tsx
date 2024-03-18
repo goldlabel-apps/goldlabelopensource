@@ -26,6 +26,7 @@ export default function FeaturedFooter() {
   const core = usePwaSelect(selectCore)
   if (!core.footer) return null
   const columns = core.footer
+  
   const openGithubLink = () => {
     dispatch(navigate(
       glConfig.siteRepo,
@@ -37,7 +38,7 @@ export default function FeaturedFooter() {
     <>
       <Container maxWidth="md" component="footer">
 
-        <Grid container spacing={4} justifyContent="space-evenly">
+        <Grid container spacing={1}>
           {columns.map((item: any, i: number) => {
             const {
               title,
@@ -98,16 +99,20 @@ export default function FeaturedFooter() {
           })}
         </Grid>
         <Grid item xs={12}>
-          <Tooltip 
-            title={<Font color="white">
-                      GitHub
-                    </Font>}>
-            <Button onClick={openGithubLink}>
-              <Font variant="small">
-                {glConfig.siteTitle} {glConfig.version}
-              </Font>
-            </Button>
-          </Tooltip>
+          <Box sx={{display:"flex"}}>
+            <Box sx={{flexGrow:1}} />
+            <Box>
+                <a
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  href={glConfig.siteRepo}>
+                  <Font variant="small">
+                    Powered by Goldlabel {glConfig.version}
+                  </Font>
+                </a>
+            </Box>
+            <Box sx={{flexGrow:1}} />
+          </Box>
         </Grid>
       </Container>
     </>
