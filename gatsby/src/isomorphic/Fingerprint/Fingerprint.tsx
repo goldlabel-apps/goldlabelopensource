@@ -1,29 +1,37 @@
 import React from "react"
 import {
   usePwaDispatch,
+  usePwaSelect,
+  selectFingerprint,
 } from "../../goldlabel"
-
-export type Fingerprint = {
-  uid: string
-  host: string
-  displayName: string
-  ip: string
-  geo: {
-    lat: number
-    lng: number
-    zoom: number
-  }
-  device: {
-  }
-}
+import {
+  addOutput,
+  resetOutput,
+  makeFirstFingerprint,
+} from "../Fingerprint"
 
 export function Fingerprint() {
   const dispatch = usePwaDispatch()
-
-  React.useEffect(() => {
-  }, [dispatch])
+  const fingerprint = usePwaSelect(selectFingerprint)
   
-  return <>
-          Fingerprint
-        </>
+  React.useEffect(() => {
+    dispatch(resetOutput())
+    dispatch(addOutput("Fingerprinting..."))
+    const {
+      making,
+      made,
+      checking,
+      checked,
+      firstFingerprint,
+    } = fingerprint
+    if (!firstFingerprint && !making && !made) {
+      dispatch (makeFirstFingerprint())
+    }
+    if (firstFingerprint && !checked && !checking){
+      const {uid} = firstFingerprint
+      dispatch(addOutput(`checking <b>${uid}</b>`))
+    }
+  }, [dispatch])
+
+  return null
 }

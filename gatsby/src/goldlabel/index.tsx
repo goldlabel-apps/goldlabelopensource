@@ -31,6 +31,7 @@ import {
     selectTheme,
     selectFlash,
     selectGeo,
+    selectOutput,
 } from "./state/reducer"
 // Theme
 import Theme from "../goldlabel/theme/Theme"
@@ -223,6 +224,7 @@ export {
     selectTheme,
     selectFlash,
     selectGeo,
+    selectOutput,
 }
 // Actions
 export {

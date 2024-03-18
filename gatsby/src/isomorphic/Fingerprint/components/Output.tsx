@@ -10,9 +10,15 @@ import {
 export default function Output() {
     const fingerprint = usePwaSelect(selectFingerprint)
     const {output} = fingerprint
-    return <Box sx={{p:1, border: "1px solid gold"}}>
-                <pre>
-                    {JSON.stringify(output, null, 2)}
-                </pre>
+    return <Box 
+                sx={{
+                    p:1,
+                    color: "white",
+                    background: "black",
+                }}>
+                <div dangerouslySetInnerHTML={{__html: output}} />
             </Box>
 }
+/*
+
+*/

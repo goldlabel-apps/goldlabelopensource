@@ -41,6 +41,7 @@ export const selectDisplay = (state: RootState) => state.core.display
 export const selectFrontmatter = (state: RootState) => state.core.frontmatter
 export const selectAuth = (state: RootState) => state.auth
 export const selectFingerprint = (state: RootState) => state.fingerprint
+export const selectOutput = (state: RootState) => state.fingerprint.output
 export const selectTheme = (state: RootState) => state.theme
 export const selectFlash = (state: RootState) => state.flash
 export const selectGeo = (state: RootState) => state.geo
