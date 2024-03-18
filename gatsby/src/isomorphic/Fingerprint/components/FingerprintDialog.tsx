@@ -19,6 +19,7 @@ import {
 import {
   toggleDialog,
   Forget,
+  Output,
 } from "../../Fingerprint"
 import {
   ThemedIconBtn,
@@ -56,7 +57,8 @@ export default function FingerprintDialog() {
             />
           </DialogTitle>
           <DialogContent>
-            <pre>{JSON.stringify(fingerprint, null, 2)}</pre>
+            <Output />
+            {/* <pre>{JSON.stringify(fingerprint, null, 2)}</pre> */}
           </DialogContent>
           <DialogActions>
             <Forget />
