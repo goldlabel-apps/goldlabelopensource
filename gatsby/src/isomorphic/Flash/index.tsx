@@ -4,6 +4,8 @@ import FlashDialog from "./components/FlashDialog"
 import FlashHero from "./components/FlashHero"
 import Stage from "./components/Stage"
 import MovieClip from "./components/MovieClip"
+// MovieClips
+import Macromedia from "./MovieClips/Macromedia"
 import {flashSlice} from "./flashSlice"
 import {setFlashKey} from "./actions/setFlashKey"
 import {toggleDialog} from "./actions/toggleDialog"
@@ -22,4 +24,6 @@ export {
     MovieClip,
     // Scenes
     ReinventingFlash,
+    // MovieClips
+    Macromedia,
 }

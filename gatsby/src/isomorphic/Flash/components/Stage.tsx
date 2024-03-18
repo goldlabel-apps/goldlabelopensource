@@ -1,35 +1,23 @@
-import React from "react"
+import React, { ReactNode } from "react"
+import {StageProps} from "../types"
 import {
-  Box,
   Card,
 } from "@mui/material"
-
-interface StageProps {
-  id: string
-  height: number
-  width?: number
-  backgroundColor: string
-  hideOverflow: boolean
-}
 
 export default function Stage({ 
   id,
   children, 
   height,
   backgroundColor,
-  hideOverflow,
-}) {
-  let overflow = "none"
-  if (hideOverflow) overflow = "hidden"
+}: StageProps) {
   return <Card 
             id={id}
             sx={{
+              width: "100%",
               backgroundColor,
               position: "relative",
               zIndex: 1,
-              height, 
-              width: "100%",
-              overflow,
+              height,
           }}>
             {children}
           </Card>

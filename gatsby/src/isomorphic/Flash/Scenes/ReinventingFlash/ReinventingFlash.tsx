@@ -2,9 +2,12 @@ import React from "react"
 import {
   usePwaDispatch,
 } from "../../../../goldlabel"
-
-import {Stage} from "../../../Flash"
-import {reinventingFlashAS} from "./reinventingFlashAS"
+import {
+  Stage,
+  MovieClip,
+  Macromedia,
+} from "../../../Flash"
+import {reinventingFlashAS} from "./"
 
 export function ReinventingFlash() {
   
@@ -19,9 +22,17 @@ export function ReinventingFlash() {
             id="reinventingFlashStage"
             height={300}
             backgroundColor={"#F2F2F2"}
-            hideOverflow={false}
           >
-            Reinventing Flash Stage
+            
+            <MovieClip
+              mcId="macromedia"
+              opacity={1}
+              zIndex={50}
+              mcWidth={100}
+              mcHeight={100}>
+              <Macromedia color="white" />
+            </MovieClip>  
+
           </Stage>
         </>
 }
