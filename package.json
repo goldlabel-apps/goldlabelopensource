@@ -1,12 +1,12 @@
 {
-  "name": "goldlabel-free",
-  "repository": {
-    "url": "https://github.com/GoldlabelPr0/open-source"
-  },
-  "license": "MIT",
+  "name": "goldlabelopensource",
   "scripts": {
     "start": "clear && cd gatsby && npm run clean && npm run develop",
     "clean": "clear && cd gatsby && npm run clean",
     "deploy": "clear && npm run clean && cd gatsby && npm run build && firebase deploy"
-  }
+  },
+  "repository": {
+    "url": "https://github.com/GoldlabelPr0/open-source"
+  },
+  "license": "MIT"
 }

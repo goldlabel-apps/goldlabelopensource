@@ -17,7 +17,7 @@ export default function Output() {
                     borderRadius: 1,
                     background: "black",
                 }}>
-                    <Font color="white">
+                    <Font color="white" variant="small">
                         <div dangerouslySetInnerHTML={{__html: output}} />
                     </Font>
                 
