@@ -32,7 +32,7 @@ export default function FingerprintToggle() {
                   onClick={onOpen}>
                     <Badge 
                       color="secondary"
-                      badgeContent={1}>
+                      badgeContent={0}>
                       <Icon icon={"fingerprint"} />
                     </Badge>
                 </IconButton>

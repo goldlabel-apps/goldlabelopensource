@@ -132,7 +132,7 @@ export default function Mobile(props: any) {
                 <Box sx={{flexGrow:1}}/>
               </Box>
               
-              <Box sx={{mt:2, mb:2}}>
+              <Box sx={{mt:2, mb:1}}>
                 { flashHero ? <>
                   <FlashHero/>
                 </> : <Image 

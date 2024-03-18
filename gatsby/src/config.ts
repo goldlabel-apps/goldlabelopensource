@@ -13,7 +13,7 @@ export type GoldlabelConfig = {
 
 export const glConfig: any = {
     siteTitle: "Goldlabel",
-    version: "4.2.8",
+    version: "4.2.9",
     siteDisplayname: "AI",
     siteEmail: "ai@goldlabel.pro",
     siteUrl: "https://free.goldlabel.pro",
@@ -31,7 +31,7 @@ export const glConfig: any = {
         lingua: { enabled: false },
         flash: { 
             enabled: true,
-            hero: true,
+            hero: "NewScene", 
         },
         fingerprint: { 
             enabled: true,

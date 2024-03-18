@@ -4,31 +4,26 @@ import {
   Box,
 } from "@mui/material"
 import {
-    Icon,
-    usePwaDispatch,
-    Font,
+    selectDisplay,
     usePwaSelect,
     selectFlash,
 } from "../../../goldlabel"
-// import {
-//   toggleDialog,
-//   FlashDialog,
-// } from "../../Flash"
-
 
 export default function FlashHero() {
   // const dispatch = usePwaDispatch()
   const flash = usePwaSelect(selectFlash)
+  const display = usePwaSelect(selectDisplay)
   const {playing} = flash
   const flashConfig = glConfig.isomorphic.flash
   const {hero} = flashConfig
+  const {mobile} = display
   
   return (<Box 
             sx={{
-              border: "1px solid gold"
+              border: "1px solid gold",
+              height: mobile ? 150 : 300,
             }}>
-            playing {playing.toString()}<br />
-            hero {hero.toString()}
+            {hero}
           </Box>
   )
 }
