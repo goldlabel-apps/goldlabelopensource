@@ -11,6 +11,7 @@ export const checkFingerprint = (): any =>
   async (dispatch: any) => {
     try {
       dispatch(setFingerprintKey("checking", true))
+      
       return true
     } catch (e: any) {
       dispatch(notify("checkFingerprint 500", "error", e.toString()))

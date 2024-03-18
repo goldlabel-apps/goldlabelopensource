@@ -5,6 +5,7 @@ import {
 import {
     usePwaSelect,
     selectFingerprint,
+    Font,
 } from "../../../goldlabel"
 
 export default function Output() {
@@ -13,10 +14,13 @@ export default function Output() {
     return <Box 
                 sx={{
                     p:1,
-                    color: "white",
+                    borderRadius: 1,
                     background: "black",
                 }}>
-                <div dangerouslySetInnerHTML={{__html: output}} />
+                    <Font color="white">
+                        <div dangerouslySetInnerHTML={{__html: output}} />
+                    </Font>
+                
             </Box>
 }
 /*

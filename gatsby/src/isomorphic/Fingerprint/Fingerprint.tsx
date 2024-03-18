@@ -31,6 +31,9 @@ export function Fingerprint() {
       const {uid} = firstFingerprint
       dispatch(addOutput(`checking <b>${uid}</b>`))
     }
+    if (made && checked){
+      console.log("setDoc")
+    }
   }, [dispatch])
 
   return null
