@@ -7,7 +7,7 @@ import {
   addOutput,
 } from "../"
 
-export const reset = (): any =>
+export const onBoot = (): any =>
   async (dispatch: any) => {
     try {
       dispatch(resetOutput())
@@ -17,6 +17,6 @@ export const reset = (): any =>
       dispatch(setFingerprintKey("subscribed", false))
       dispatch(setFingerprintKey("subscribing", false))
     } catch (e: any) {
-      dispatch(notify("reset 500", "error", e.toString()))
+      dispatch(notify("onBoot 500", "error", e.toString()))
     }
 }
