@@ -1,30 +1,17 @@
-export type GoldlabelConfig = {
-    version: string
-    isomorphic: any
-    siteUrl: string
-    siteIcon: string
-    siteRepo: string
-    siteAvatar: string
-    siteTitle: string
-    siteDescription: string
-    siteEmail: string
-    siteDisplayname: string
-}
+import {Config} from "./goldlabel/types"
 
-export const glConfig: any = {
+export const glConfig: Config = {
+    version: "4.3.4",
+    siteUrl: "https://free.goldlabel.pro",
     siteTitle: "Goldlabel",
-    version: "4.3.2",
+    siteDescription: "Free & Open Source on Github",
+    siteKeywords: "Goldlabel, Open Source, Free, Github",
     siteDisplayname: "AI",
     siteEmail: "ai@goldlabel.pro",
-    siteUrl: "https://free.goldlabel.pro",
     siteIcon: "/svg/iOS.svg",
     siteImage: "/webp/coupland/coupland.webp",
-    siteRepo: "https://github.com/listingslab-software/goldlabelopensource",
     siteAvatar: "https://free.goldlabel.pro/svg/iOS.svg",
-    siteDescription: "Free & Open Source on Github",
-    siteFacebook: "https://www.facebook.com/goldlabelapps",
-    siteKeywords: "listingslab, Goldlabel, Open Source, Free, Github",
-    siteTwitter: "@listingslab",
+    siteRepo: "https://github.com/listingslab-software/goldlabelopensource",
     siteTheme: "#FFFFFF",
     isomorphic: {
         forms: { enabled: false },

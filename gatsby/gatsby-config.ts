@@ -6,11 +6,8 @@ const siteDescription = glConfig.siteDescription
 const siteUrl = glConfig.siteUrl
 const siteIcon = glConfig.siteIcon
 const siteImage = glConfig.siteImage
-const siteTwitter = glConfig.siteTwitter
-const siteFacebook = glConfig.siteFacebook
 const siteTheme = glConfig.siteTheme
 const siteKeywords = glConfig.siteKeywords
-const siteDefaultLocale = glConfig.siteDefaultLocale
 const siteEmail = glConfig.siteEmail
 const siteDisplayname = glConfig.siteDisplayname
 
@@ -27,11 +24,7 @@ const siteMetadata: any =  {
   siteImage,
   image: siteImage,
   siteKeywords,
-  siteTwitter,
-  twitterUsername: siteTwitter,
-  siteFacebook,
   siteTheme,
-  siteDefaultLocale,
 }
 const config: GatsbyConfig = {
   siteMetadata,
