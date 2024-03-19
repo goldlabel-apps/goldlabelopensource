@@ -13,3 +13,13 @@ export type Config = {
     siteTheme: string
     isomorphic: any
 }
+
+export type Core = {
+    user: any
+    // ...
+}
+
+export type KeyValueShape = {
+    key: string
+    value: any
+}
