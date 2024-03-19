@@ -20,10 +20,10 @@ export default function DisplayMessages() {
   const fingerprint = usePwaSelect(selectFingerprint)
   const {messages} = fingerprint
 
-  return <Box sx={{ pb: "50px" }}>
+  return <Box sx={{ border: "1px dashed blue" }}>
           <List sx={{ mb: 2 }}>
             <ListSubheader>
-              <Font variant="title">
+              <Font>
                 Messages
               </Font>
             </ListSubheader>

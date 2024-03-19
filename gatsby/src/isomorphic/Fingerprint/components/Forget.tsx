@@ -10,16 +10,17 @@ import {
     usePwaDispatch,
     resetLocalstorage,
 } from "../../../goldlabel"
+import {remove} from "../../Fingerprint"
 
 export default function Forget() {
     const dispatch = usePwaDispatch()
     const onForget = () => {
         let yehOK = window.confirm("All traces of your visit will be deleted. Thanks for useing our app")
-        if (yehOK) dispatch(resetLocalstorage())
+        if (yehOK) dispatch(remove())
     }
     return <>
             <Tooltip title={<Font color="white">
-                Forget
+                Delete all traces of your visit
             </Font>}>
                 <Button
                     color="primary"

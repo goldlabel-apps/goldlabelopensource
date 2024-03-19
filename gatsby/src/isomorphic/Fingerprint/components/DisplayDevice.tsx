@@ -2,6 +2,10 @@ import * as React from "react"
 import {
   Box,
   CardHeader,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
 } from "@mui/material"
 import {
   Font,
@@ -13,7 +17,6 @@ import {
 } from "../../Theme"
 
 export default function DisplayDevice() {
-
   const fingerprint = usePwaSelect(selectFingerprint)
   const {
     firstFingerprint,
@@ -30,20 +33,36 @@ export default function DisplayDevice() {
   const osStr = `${os.name} ${os.version}`
   const browserStr = `${browser.name} ${browser.major} ${engine.name}`
 
-  return <Box sx={{}}>
-          <CardHeader 
-            avatar={<DeviceIcon needle={device.vendor}/>}
-            title={<Font>{vendorStr}</Font>}
-          />
-          <CardHeader 
-            avatar={<DeviceIcon needle={os.name}/>}
-            title={<Font>{osStr}</Font>}
-          />
-          <CardHeader 
-            avatar={<DeviceIcon needle={browser.name}/>}
-            title={<Font>{browserStr}</Font>}
-          />
-        </Box>
+  return <List sx={{}}>
+          <ListItem>
+            <ListItemIcon>
+              <DeviceIcon needle={device.vendor}/>
+            </ListItemIcon>
+            <ListItemText 
+              primary={<Font>{vendorStr}</Font>}
+            />
+            
+          </ListItem>
+
+          <ListItem>
+            <ListItemIcon>
+              <DeviceIcon needle={os.name}/>
+            </ListItemIcon>
+            <ListItemText 
+              primary={<Font>{osStr}</Font>}
+            />
+          </ListItem>
+
+          <ListItem>
+            <ListItemIcon>
+              <DeviceIcon needle={browser.name}/>
+            </ListItemIcon>
+            <ListItemText 
+              primary={<Font>{browserStr}</Font>}
+            />
+          </ListItem>
+          
+        </List>
 }
 
 /* 

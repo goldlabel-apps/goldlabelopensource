@@ -66,15 +66,15 @@ export default function FingerprintDialog() {
           </DialogTitle>
           <DialogContent>
             <Grid container spacing={1}>
-              <Grid item xs={12} md={4}>
-                <DisplayDevice />
+              <Grid item xs={12} md={5}>
                 <Output />
+                <DisplayDevice />
               </Grid>
-              <Grid item xs={12} md={8}>
+              <Grid item xs={12} md={7}>
                 
-                {/* <pre>firstFingerprint: 
+                <pre>firstFingerprint: 
                   {JSON.stringify(firstFingerprint, null, 2)}
-                </pre> */}
+                </pre>
                 <DisplayMessages /> 
               </Grid>
               
@@ -83,14 +83,13 @@ export default function FingerprintDialog() {
           </DialogContent>
           <DialogActions>
 
-
-          <Grid container>
-              <Grid item xs={12} md={4}>
+          <Grid container sx={{mx:1}}>
+              <Grid item xs={12} md={5}>
                 <Box sx={{m:2}}>
                   <Forget />
                 </Box>
               </Grid>
-              <Grid item xs={12} md={8}>
+              <Grid item xs={12} md={7}>
                 <Box sx={{mr:1}}>
                   <NewMessage />
                 </Box>

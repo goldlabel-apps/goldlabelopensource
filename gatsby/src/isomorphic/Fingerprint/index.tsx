@@ -6,6 +6,7 @@ import {toggleDialog} from "./actions/toggleDialog"
 import {addOutput} from "./actions/addOutput"
 import {resetOutput} from "./actions/resetOutput"
 import {make} from "./actions/make"
+import {remove} from "./actions/remove"
 import {save} from "./actions/save"
 import {incoming} from "./actions/incoming"
 import FingerprintToggle from "./components/FingerprintToggle"
@@ -26,6 +27,7 @@ export {
     addOutput,
     resetOutput,
     make,
+    remove,
     save,
     FingerprintToggle,
     FingerprintDialog,

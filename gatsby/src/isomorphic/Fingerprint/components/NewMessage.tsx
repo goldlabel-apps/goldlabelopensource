@@ -5,7 +5,6 @@ import {
   IconButton,
   FormControl,
   InputLabel,
-  OutlinedInput,
   FilledInput,
   InputAdornment,
 } from "@mui/material"
@@ -13,8 +12,6 @@ import {
   Icon,
   Font,
   usePwaDispatch,
-  usePwaSelect,
-  // selectAskOliver,
 } from "../../../goldlabel"
 
 
@@ -24,12 +21,12 @@ export default function NewMessage() {
   const validate = () => {
     let valid = false
     if (prompt.length > 5) valid = true
-    console.log("valid", valid)
+    // console.log("valid", valid)
     // dispatch(setAskOliverKey("valid", true))
   }
 
   const onPrompt = () => {
-    console.log("onPrompt", onPrompt)
+    // console.log("onPrompt", onPrompt)
     // dispatch(fetchPrompt())
     return true
   }
@@ -58,7 +55,6 @@ export default function NewMessage() {
           <FilledInput
             id="newMessage"
             autoFocus
-            // label={<Font>New Message</Font>}
             onChange={(e) => {
               // dispatch(setAskOliverKey("prompt", e.target.value))
               validate()
