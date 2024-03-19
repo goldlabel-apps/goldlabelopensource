@@ -1,4 +1,3 @@
-
 import * as React from "react"
 import {
   Box,
@@ -62,7 +61,7 @@ export default function FingerprintDialog() {
           </DialogTitle>
           <DialogContent>
             <Output />
-            <pre>latestFingerprint: {JSON.stringify(latestFingerprint, null, 2)}</pre>
+            {/* <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre> */}
           </DialogContent>
           <DialogActions>
             <Forget />
