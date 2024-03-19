@@ -24,14 +24,13 @@ export default function Forget() {
                 <Button
                     color="primary"
                     onClick={onForget}>
-                        
-                        <Box sx={{mr: 1}}>
+                        <Box sx={{mt:0.25}}>
+                            <Icon icon={"forget"} color="primary"/>
+                        </Box>
+                        <Box sx={{ml: 1}}>
                             <Font variant="small">
                                 Forget
                             </Font>
-                        </Box>
-                        <Box sx={{mt:0.25}}>
-                            <Icon icon={"forget"} color="primary"/>
                         </Box>
                 </Button>
             </Tooltip>

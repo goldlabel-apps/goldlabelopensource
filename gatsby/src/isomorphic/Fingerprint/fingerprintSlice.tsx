@@ -1,3 +1,5 @@
+import {ms} from "./ms"
+
 export const fingerprintSlice: any = {
     slug: "fingerprint",
     open: true,
@@ -10,4 +12,5 @@ export const fingerprintSlice: any = {
     saved: false,
     subscribing: false,
     subscribed: false,
+    messages: ms,
 }

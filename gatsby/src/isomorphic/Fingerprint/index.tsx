@@ -12,6 +12,8 @@ import FingerprintToggle from "./components/FingerprintToggle"
 import FingerprintDialog from "./components/FingerprintDialog"
 import Forget from "./components/Forget"
 import Output from "./components/Output"
+import DisplayMessages from "./components/DisplayMessages"
+import NewMessage from "./components/NewMessage"
 
 export {
     fingerprintSlice,
@@ -28,4 +30,6 @@ export {
     FingerprintDialog,
     Forget,
     Output,
+    DisplayMessages,
+    NewMessage,
 }

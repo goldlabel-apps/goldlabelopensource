@@ -1,6 +1,7 @@
 import * as React from "react"
 import {
   Box,
+  Grid,
   Dialog,
   DialogTitle,
   DialogContent,
@@ -8,17 +9,19 @@ import {
   CardHeader,
 } from "@mui/material"
 import {
-    Icon,
-    Font,
-    usePwaSelect,
-    usePwaDispatch,
-    selectDisplay,
-    selectFingerprint,
+  Icon,
+  Font,
+  usePwaSelect,
+  usePwaDispatch,
+  selectDisplay,
+  selectFingerprint,
 } from "../../../goldlabel"
 import {
   toggleDialog,
   Forget,
   Output,
+  DisplayMessages,
+  NewMessage,
 } from "../../Fingerprint"
 import {
   ThemedIconBtn,
@@ -33,7 +36,7 @@ export default function FingerprintDialog() {
   const {
     open,
     // firstFingerprint,
-    latestFingerprint,
+    // latestFingerprint,
   } = fingerprint
 
   const closeDialog = () => {
@@ -42,6 +45,7 @@ export default function FingerprintDialog() {
 
   return <Dialog 
             open={open}
+            maxWidth="lg"
             fullWidth
             fullScreen={mobile}
             onClose={closeDialog}>
@@ -60,11 +64,32 @@ export default function FingerprintDialog() {
             />
           </DialogTitle>
           <DialogContent>
-            <Output />
+            <Grid container spacing={1}>
+              <Grid item xs={12} md={4}>
+                <Output />
+              </Grid>
+              <Grid item xs={12} md={8}>
+                <DisplayMessages /> 
+              </Grid>
+              
+            </Grid>
             {/* <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre> */}
           </DialogContent>
           <DialogActions>
-            <Forget />
+
+
+          <Grid container>
+              <Grid item xs={12} md={4}>
+                <Box sx={{m:2}}>
+                  <Forget />
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={8}>
+                <Box sx={{mr:1}}>
+                  <NewMessage />
+                </Box>
+              </Grid>
+            </Grid>
           </DialogActions>
         </Dialog>
 }
