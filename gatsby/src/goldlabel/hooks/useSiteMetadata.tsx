@@ -7,7 +7,6 @@ export const useSiteMetadata = () => {
           version,
           title
           description
-          twitterUsername
           image
           siteUrl
           siteDescription
@@ -16,8 +15,6 @@ export const useSiteMetadata = () => {
           siteKeywords
           siteTheme
           siteTitle
-          siteTwitter
-          siteFacebook
           siteEmail
           siteDisplayname
         }
