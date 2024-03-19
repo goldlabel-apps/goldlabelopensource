@@ -14,6 +14,7 @@ import Forget from "./components/Forget"
 import Output from "./components/Output"
 import DisplayMessages from "./components/DisplayMessages"
 import NewMessage from "./components/NewMessage"
+import DisplayDevice from "./components/DisplayDevice"
 
 export {
     fingerprintSlice,
@@ -32,4 +33,5 @@ export {
     Output,
     DisplayMessages,
     NewMessage,
+    DisplayDevice,
 }

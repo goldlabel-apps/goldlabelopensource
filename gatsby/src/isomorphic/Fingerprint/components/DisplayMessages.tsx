@@ -44,10 +44,10 @@ export default function DisplayMessages() {
                   </ListItemAvatar> : null }
                   
                   <ListItemText
-                    primary={<Font>
+                    primary={<Font variant="small">
                                  {moment(time).fromNow()} {displayName} said...
                               </Font>} 
-                    secondary={<Font variant="small">
+                    secondary={<Font>
                                 {message}
                               </Font>}
                     

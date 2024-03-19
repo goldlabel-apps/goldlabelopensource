@@ -7,6 +7,7 @@ import ThemeToggle from "./components/ThemeToggle"
 import ThemeDialog from "./components/ThemeDialog"
 import TogglePaletteMode from "./components/TogglePaletteMode"
 import ThemedIconBtn from "./components/ThemedIconBtn"
+import {DeviceIcon} from "./components/DeviceIcon"
 
 export {
     Theme,
@@ -18,4 +19,5 @@ export {
     ThemeDialog,
     TogglePaletteMode,
     ThemedIconBtn,
+    DeviceIcon,
 }

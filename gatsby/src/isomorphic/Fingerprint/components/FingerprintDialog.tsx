@@ -22,6 +22,7 @@ import {
   Output,
   DisplayMessages,
   NewMessage,
+  DisplayDevice,
 } from "../../Fingerprint"
 import {
   ThemedIconBtn,
@@ -35,7 +36,7 @@ export default function FingerprintDialog() {
   if (display) mobile = display.mobile
   const {
     open,
-    // firstFingerprint,
+    firstFingerprint,
     // latestFingerprint,
   } = fingerprint
 
@@ -66,14 +67,19 @@ export default function FingerprintDialog() {
           <DialogContent>
             <Grid container spacing={1}>
               <Grid item xs={12} md={4}>
+                <DisplayDevice />
                 <Output />
               </Grid>
               <Grid item xs={12} md={8}>
+                
+                {/* <pre>firstFingerprint: 
+                  {JSON.stringify(firstFingerprint, null, 2)}
+                </pre> */}
                 <DisplayMessages /> 
               </Grid>
               
             </Grid>
-            {/* <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre> */}
+            
           </DialogContent>
           <DialogActions>
 
