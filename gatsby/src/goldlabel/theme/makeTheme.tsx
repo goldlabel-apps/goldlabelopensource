@@ -1,3 +1,4 @@
+import {glConfig} from "../../config"
 import { 
   PaletteMode, 
 } from "@mui/material"
@@ -5,19 +6,18 @@ import {
 export function makeTheme(
   mode: PaletteMode,
   primary: string,
-  secondary: string,
 ) {
   return {
     palette: {
       mode,
       primary: {
-        main: mode === "light" ? primary : secondary,
+        main: mode === "light" ? primary : glConfig.siteTheme,
       },
       secondary: {
-        main: mode === "light" ? secondary : primary,
+        main: mode === "light" ? glConfig.siteTheme : primary,
       },
       success: {
-        main: mode === "light" ? primary : secondary,
+        main: mode === "light" ? primary : glConfig.siteTheme,
       },
     },
   }

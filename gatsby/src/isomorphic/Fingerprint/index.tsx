@@ -6,12 +6,16 @@ import {toggleDialog} from "./actions/toggleDialog"
 import {addOutput} from "./actions/addOutput"
 import {resetOutput} from "./actions/resetOutput"
 import {make} from "./actions/make"
+import {remove} from "./actions/remove"
 import {save} from "./actions/save"
 import {incoming} from "./actions/incoming"
 import FingerprintToggle from "./components/FingerprintToggle"
 import FingerprintDialog from "./components/FingerprintDialog"
 import Forget from "./components/Forget"
 import Output from "./components/Output"
+import DisplayMessages from "./components/DisplayMessages"
+import NewMessage from "./components/NewMessage"
+import DisplayDevice from "./components/DisplayDevice"
 
 export {
     fingerprintSlice,
@@ -23,9 +27,13 @@ export {
     addOutput,
     resetOutput,
     make,
+    remove,
     save,
     FingerprintToggle,
     FingerprintDialog,
     Forget,
     Output,
+    DisplayMessages,
+    NewMessage,
+    DisplayDevice,
 }

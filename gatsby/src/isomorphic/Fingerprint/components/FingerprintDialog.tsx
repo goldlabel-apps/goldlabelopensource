@@ -1,6 +1,7 @@
 import * as React from "react"
 import {
   Box,
+  Grid,
   Dialog,
   DialogTitle,
   DialogContent,
@@ -8,21 +9,28 @@ import {
   CardHeader,
 } from "@mui/material"
 import {
-    Icon,
-    Font,
-    usePwaSelect,
-    usePwaDispatch,
-    selectDisplay,
-    selectFingerprint,
+  Icon,
+  Font,
+  usePwaSelect,
+  usePwaDispatch,
+  selectDisplay,
+  selectFingerprint,
 } from "../../../goldlabel"
 import {
   toggleDialog,
   Forget,
   Output,
+  DisplayMessages,
+  NewMessage,
+  DisplayDevice,
 } from "../../Fingerprint"
 import {
   ThemedIconBtn,
 } from "../../Theme"
+import {
+  FlyBetween,
+} from "../../Geo"
+
 
 export default function FingerprintDialog() {
   const dispatch = usePwaDispatch()
@@ -32,8 +40,8 @@ export default function FingerprintDialog() {
   if (display) mobile = display.mobile
   const {
     open,
-    // firstFingerprint,
-    latestFingerprint,
+    firstFingerprint,
+    // latestFingerprint,
   } = fingerprint
 
   const closeDialog = () => {
@@ -42,6 +50,7 @@ export default function FingerprintDialog() {
 
   return <Dialog 
             open={open}
+            maxWidth="lg"
             fullWidth
             fullScreen={mobile}
             onClose={closeDialog}>
@@ -60,11 +69,37 @@ export default function FingerprintDialog() {
             />
           </DialogTitle>
           <DialogContent>
-            <Output />
-            {/* <pre>fingerprint: {JSON.stringify(fingerprint, null, 2)}</pre> */}
+            <Grid container spacing={1}>
+              <Grid item xs={12} md={4}>
+                <Output />
+                <DisplayDevice />
+              </Grid>
+              <Grid item xs={12} md={8}>
+                <FlyBetween />
+                {/* <pre>firstFingerprint: 
+                  {JSON.stringify(firstFingerprint, null, 2)}
+                </pre> */}
+                <Box sx={{mt:2}}>
+                  <DisplayMessages /> 
+                </Box>
+              </Grid>
+            </Grid>
+            
           </DialogContent>
           <DialogActions>
-            <Forget />
+
+          <Grid container sx={{mx:1}}>
+              <Grid item xs={12} md={4}>
+                <Box sx={{m:2}}>
+                  <Forget />
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={8}>
+                <Box sx={{mr:1}}>
+                  <NewMessage />
+                </Box>
+              </Grid>
+            </Grid>
           </DialogActions>
         </Dialog>
 }

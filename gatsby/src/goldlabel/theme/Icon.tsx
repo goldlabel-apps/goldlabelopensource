@@ -1,10 +1,11 @@
 export type IconShape = {
-  icon: "theme" | "forms" | "demo" | "pwa" | "link" | "fingerprint" | "isomorphic" | "forget" | "filters" | "filter" | "fullscreen" | "examples" | "signup" | "what" | "when" | "who" | "how" | "legal" | "geo" | "docker" | "scuba" | "js" | "javascript" | "oliver" | "life" | "balance" | "bug" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ting" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "openai" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "why" | "iphone" | "safari" | "firefox" | "plugins" | "flash"
+  icon: "send" | "theme" | "forms" | "demo" | "pwa" | "link" | "fingerprint" | "isomorphic" | "forget" | "filters" | "filter" | "fullscreen" | "examples" | "signup" | "what" | "when" | "who" | "how" | "legal" | "geo" | "docker" | "scuba" | "js" | "javascript" | "oliver" | "life" | "balance" | "bug" | "geolocator" | "google" | "lingua" | "plugin" | "doc" | "reset" | "accommodation" | "spy" | "seed" | "github" | "members" | "notifyer" | "notifyr" | "pingpong" | "close" | "bus" | "darkmode" | "lightmode" | "pool" | "boat" | "car" | "bar" | "shop" | "home" | "fish" | "mobile"| "blog" | "search" | "cancel" | "delete" | "techstack" | "backoffice" | "edit" | "example" | "goldlabel" | "wordpress" | "where" | "whatsapp" | "expand" | "web" | "twitter" | "facebook" | "ting" | "settings" | "email" | "share" | "leaf" | "star" | "food" | "medical" | "scooter" | "diveshop" | "diving" | "news" | "activities" | "left" | "down" | "up" | "right" | "menu" | "success" | "categories" | "category" | "tings" | "info" | "warning" | "error" | "signout" | "api" | "work" | "signin" | "blokey" | "android" | "openai" | "chrome" | "desktop" | "desktopmac" | "edge" | "linux" | "windows" | "xbox" | "mac" | "why" | "iphone" | "safari" | "firefox" | "plugins" | "flash"
   color?: any
 }
 import * as React from "react"
 import PluginsIcon from "@mui/icons-material/ExtensionOutlined"
 import DemoIcon from "@mui/icons-material/VideoCallOutlined"
+import SendIcon from "@mui/icons-material/SendOutlined"
 import WhenIcon from "@mui/icons-material/CalendarMonthOutlined"
 import ThemeIcon from "@mui/icons-material/PaletteOutlined"
 import WhatIcon from "@mui/icons-material/HardwareOutlined"
@@ -147,6 +148,9 @@ export default function Icon({icon, color}: IconShape) {
       break
     case "when":
       iconFragment = <WhenIcon color={color} />
+      break
+    case "send":
+      iconFragment = <SendIcon color={color} />
       break
     case "who":
       iconFragment = <WhoIcon color={color} />

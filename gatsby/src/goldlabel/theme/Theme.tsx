@@ -14,24 +14,15 @@ import {
 
 export default function Theme({children}: any) {
   const core = usePwaSelect(selectCore)
-  const mui = usePwaSelect(selectTheme)
+  const theme = usePwaSelect(selectTheme)
   const {darkmode} = core
   const {
-    theme
-  } = glConfig.isomorphic
-  const {
-    primaryColor,
+    color,
     secondaryColor,
   } = theme
-  
-  const thisTheme: ThemeShape = {
-    primaryColor,
-    secondaryColor,
-  }
   const customTheme = makeTheme(
     darkmode ? "dark" : "light", 
-    thisTheme.primaryColor, 
-    thisTheme.secondaryColor
+    color,
   )
   return (
     <>

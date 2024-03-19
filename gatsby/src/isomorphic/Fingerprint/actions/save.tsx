@@ -18,8 +18,9 @@ export const save = (
 ): any =>
   async (dispatch: any) => {
     try {
-      console.log("save")
+      console.log("saving")
       dispatch(setFingerprintKey("saving", true))
+      dispatch(addOutput("saving..."))
       const frontmatter = store.getState().core.frontmatter
       const r = doc(getFirestore(), "fingerprints2", uid)
       const s = await getDoc(r)

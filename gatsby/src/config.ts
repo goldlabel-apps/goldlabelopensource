@@ -1,7 +1,7 @@
 import {Config} from "./goldlabel/types"
 
 export const glConfig: Config = {
-    version: "4.3.4",
+    version: "4.3.5",
     siteUrl: "https://free.goldlabel.pro",
     siteTitle: "Goldlabel",
     siteDescription: "Free & Open Source on Github",
@@ -30,6 +30,7 @@ export const glConfig: Config = {
         },
         theme: {
             enabled: true,
+            toggle: true,
             paletteMode: "dark",
             font: "noka",
             color: "#C09F52",
@@ -37,14 +38,15 @@ export const glConfig: Config = {
             secondaryColor: "#FFF",
         },
         geo: {
-            enabled: false,
+            enabled: true,
             lightTheme: "mapbox://styles/listingslab/clmrnpplw00ej01nsfv8l4q25",
             darkTheme: "mapbox://styles/listingslab/clmrnt68o02a801qxevn0bt6u",
             default: {
-                lat: 35,
-                lng: 14,
-                zoom: 8,
-                label: "Hello World"
+                lat: 52.196844,
+                lng: 0.985493,
+                zoom: 6,
+                label: "Hello World",
+                icon: "geo",
             }
         },
     },    

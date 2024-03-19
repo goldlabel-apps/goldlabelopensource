@@ -1,3 +1,0 @@
-[submodule "gatsby/src/isomorphic"]
-	path = gatsby/src/isomorphic
-	url = https://github.com/listingslab-software/isomorphic

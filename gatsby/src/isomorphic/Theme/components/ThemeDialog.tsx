@@ -5,6 +5,10 @@ import {
   DialogContent,
   DialogActions,
   CardHeader,
+  List,
+  ListItemButton,
+  ListItemText,
+  ListItemIcon,
 } from "@mui/material"
 import {
     Icon,
@@ -13,16 +17,22 @@ import {
     usePwaDispatch,
     selectTheme,
     selectDisplay,
+    selectCore,
+    setCoreKey,
 } from "../../../goldlabel"
 import {
   toggleDialog,
-  TogglePaletteMode,
   ThemedIconBtn,
 } from "../../Theme"
+import {
+  PickColor,
+} from "../../Forms"
 
 export default function ThemeDialog() {
   const dispatch = usePwaDispatch()
   const theme = usePwaSelect(selectTheme)
+  const core = usePwaSelect(selectCore)
+  const {darkmode} = core
   const display = usePwaSelect(selectDisplay)
   let mobile = true
   if (display) mobile = display.mobile
@@ -45,9 +55,27 @@ export default function ThemeDialog() {
             />
           </DialogTitle>
           <DialogContent>
-            <TogglePaletteMode />
-            {/* <pre>{JSON.stringify(theme, null, 2)}</pre> */}
+            
+            <List>
+              <ListItemButton
+                aria-label="Palette mode"
+                onClick={(e: React.MouseEvent) => {
+                  e.preventDefault()
+                  dispatch(setCoreKey("darkmode", !darkmode))
+                }}>
+                <ListItemIcon>
+                  <Icon icon={darkmode ? "lightmode" : "darkmode"} />
+                </ListItemIcon>
+                <ListItemText 
+                  primary={<Font>{darkmode ? "Switch to light mode" 
+                  : "Switch to dark mode"}</Font>}
+                />
+              </ListItemButton>
+            </List>
+            
+            <PickColor />
           </DialogContent>
+
           <DialogActions>
             <ThemedIconBtn 
               onClick={closeThemeDialog}
@@ -57,3 +85,7 @@ export default function ThemeDialog() {
           </DialogActions>
         </Dialog>
 }
+
+/* 
+<pre>{JSON.stringify(theme, null, 2)}</pre> 
+*/
