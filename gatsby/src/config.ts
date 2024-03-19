@@ -32,10 +32,8 @@ export const glConfig: Config = {
             enabled: true,
             toggle: true,
             paletteMode: "dark",
-            font: "noka",
             color: "#C09F52",
-            primaryColor: "#C09F52",
-            secondaryColor: "#FFF",
+            font: "noka",
         },
         geo: {
             enabled: true,
