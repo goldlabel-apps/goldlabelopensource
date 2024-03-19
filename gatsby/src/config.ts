@@ -1,7 +1,7 @@
 import {Config} from "./goldlabel/types"
 
 export const glConfig: Config = {
-    version: "4.3.4",
+    version: "4.3.5",
     siteUrl: "https://free.goldlabel.pro",
     siteTitle: "Goldlabel",
     siteDescription: "Free & Open Source on Github",
