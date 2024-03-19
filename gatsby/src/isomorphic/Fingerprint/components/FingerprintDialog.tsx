@@ -27,6 +27,10 @@ import {
 import {
   ThemedIconBtn,
 } from "../../Theme"
+import {
+  FlyBetween,
+} from "../../Geo"
+
 
 export default function FingerprintDialog() {
   const dispatch = usePwaDispatch()
@@ -66,30 +70,31 @@ export default function FingerprintDialog() {
           </DialogTitle>
           <DialogContent>
             <Grid container spacing={1}>
-              <Grid item xs={12} md={5}>
+              <Grid item xs={12} md={4}>
                 <Output />
                 <DisplayDevice />
               </Grid>
-              <Grid item xs={12} md={7}>
-                
-                <pre>firstFingerprint: 
+              <Grid item xs={12} md={8}>
+                <FlyBetween />
+                {/* <pre>firstFingerprint: 
                   {JSON.stringify(firstFingerprint, null, 2)}
-                </pre>
-                <DisplayMessages /> 
+                </pre> */}
+                <Box sx={{mt:2}}>
+                  <DisplayMessages /> 
+                </Box>
               </Grid>
-              
             </Grid>
             
           </DialogContent>
           <DialogActions>
 
           <Grid container sx={{mx:1}}>
-              <Grid item xs={12} md={5}>
+              <Grid item xs={12} md={4}>
                 <Box sx={{m:2}}>
                   <Forget />
                 </Box>
               </Grid>
-              <Grid item xs={12} md={7}>
+              <Grid item xs={12} md={8}>
                 <Box sx={{mr:1}}>
                   <NewMessage />
                 </Box>
