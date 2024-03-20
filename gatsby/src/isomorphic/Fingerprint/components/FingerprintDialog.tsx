@@ -76,7 +76,7 @@ export default function FingerprintDialog() {
               </Grid>
               <Grid item xs={12} md={8}>
                 
-<pre>latestFingerprint: {JSON.stringify(latestFingerprint, null, 2)}</pre>
+
                 
                 <Box sx={{mt:2}}>
                   <DisplayMessages /> 
@@ -102,3 +102,7 @@ export default function FingerprintDialog() {
           </DialogActions>
         </Dialog>
 }
+
+/*
+<pre>latestFingerprint: {JSON.stringify(latestFingerprint, null, 2)}</pre>
+*/
