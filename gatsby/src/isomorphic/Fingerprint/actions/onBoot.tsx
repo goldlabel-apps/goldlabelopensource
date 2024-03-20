@@ -11,12 +11,11 @@ export const onBoot = (): any =>
   async (dispatch: any) => {
     try {
       dispatch(resetOutput())
-      dispatch(addOutput("Fingerprinting..."))
+      dispatch(addOutput("..."))
       dispatch(setFingerprintKey("saved", false))
       dispatch(setFingerprintKey("saving", false))
-      dispatch(setFingerprintKey("subscribed", false))
-      dispatch(setFingerprintKey("subscribing", false))
     } catch (e: any) {
+      console.log("onBoot 500", e.toString())
       dispatch(notify("onBoot 500", "error", e.toString()))
     }
 }

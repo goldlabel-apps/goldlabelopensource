@@ -5,10 +5,8 @@ import {
   selectFingerprint,
 } from "../../goldlabel"
 import {
-  addOutput,
   make,
-  reset,
-  save,
+  // check,
 } from "../Fingerprint"
 
 export function Fingerprint() {
@@ -18,33 +16,24 @@ export function Fingerprint() {
     firstFingerprint,
     making,
     made,
-    saving,
-    saved,
-    // subscribing,
-    // subscribed,
   } = fingerprint
   
+  let uid = ""
+  if (firstFingerprint) uid = firstFingerprint.uid
+  
   React.useEffect(() => {
-    // dispatch(reset())
     if (!making && !made) {
       dispatch (make())
     }
-    if (!saving && !saved) {
-      // dispatch (save())
+    if (uid !== ""){
       console.log("save")
-      dispatch(addOutput("save"))
     }
-    // if (firstFingerprint){
-    //   if (!subscribed){
-    //     const {uid} = firstFingerprint
-    //     if (!saved) {
-    //       // dispatch(saveFingerprint(uid))
-    //     }
-    //     console.log("subscribe", uid)
-    //   }
-    // }
-      
-  }, [dispatch, firstFingerprint, making, made, saved, saving])
+  }, [
+    uid,
+    dispatch,
+    making, 
+    made, 
+  ])
   
   return null
 }

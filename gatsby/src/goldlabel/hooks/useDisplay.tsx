@@ -1,8 +1,4 @@
-
-export const useDisplay = (): any => {
-
-    console.log("useDisplay")
-    
+export const useDisplay = (): any => {   
     let mobile = false
     const w = window.innerWidth
     const h = window.innerHeight
