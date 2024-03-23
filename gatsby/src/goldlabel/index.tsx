@@ -27,7 +27,6 @@ import {
     selectDisplay,
     selectFrontmatter,
     selectAuth,
-    selectFingerprint,
     selectTheme,
     selectFlash,
     selectGeo,
@@ -101,7 +100,6 @@ import {Keywords} from "./components/Nav/Keywords"
 // Layout
 import Mobile from "./components/Layout/Mobile"
 import Desktop from "./components/Layout/Desktop"
-import ControlBar from "./components/Layout/ControlBar"
 import Keyword from "./components/Layout/Keyword"
 import Header from "./components/Layout/Header"
 import Footer from "./components/Layout/Footer"
@@ -125,7 +123,6 @@ export {
 export {
     Mobile,
     Desktop,
-    ControlBar,
     Keyword,
     Header,
 }
@@ -220,7 +217,6 @@ export {
     selectDisplay,
     selectFrontmatter,
     selectAuth,
-    selectFingerprint,
     selectTheme,
     selectFlash,
     selectGeo,

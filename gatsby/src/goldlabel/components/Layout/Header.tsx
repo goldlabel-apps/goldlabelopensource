@@ -6,22 +6,19 @@ import {
 } from "@mui/material"
 import {
   Icon,
-  usePwaDispatch,
-  usePwaSelect,
-  selectFingerprint,
+  // usePwaDispatch,
+  // usePwaSelect,
+
 } from "../../../goldlabel"
-// import {
-//   toggleFullScreen,
-// } from "../../../isomorphic/Fingerprint"
 
 export default function Header() {
-  const dispatch = usePwaDispatch()
-  const closeFingerprint = () => {
-    // dispatch(toggleFullScreen(false))
-  }
+  // const dispatch = usePwaDispatch()
+  // const closeFingerprint = () => {
+  //   // dispatch(toggleFullScreen(false))
+  // }
 
-  const fingerprint = usePwaSelect(selectFingerprint)
-  if (!fingerprint) return null
+  // const fingerprint = usePwaSelect(selectFingerprint)
+  // if (!fingerprint) return null
   
   return <AppBar 
             position="static" 
@@ -33,7 +30,7 @@ export default function Header() {
               <CardHeader 
                 title={"Header"}
                 action={<>
-                  <IconButton onClick={closeFingerprint}
+                  <IconButton
                     color="primary">
                     <Icon icon="close" />
                   </IconButton>
