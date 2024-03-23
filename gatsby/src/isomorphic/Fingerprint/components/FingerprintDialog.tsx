@@ -41,7 +41,7 @@ export default function FingerprintDialog() {
   const {
     open,
     firstFingerprint,
-    // latestFingerprint,
+    latestFingerprint,
   } = fingerprint
 
   const closeDialog = () => {
@@ -50,7 +50,7 @@ export default function FingerprintDialog() {
 
   return <Dialog 
             open={open}
-            maxWidth="lg"
+            maxWidth="md"
             fullWidth
             fullScreen={mobile}
             onClose={closeDialog}>
@@ -75,10 +75,9 @@ export default function FingerprintDialog() {
                 <DisplayDevice />
               </Grid>
               <Grid item xs={12} md={8}>
-                <FlyBetween />
-                {/* <pre>firstFingerprint: 
-                  {JSON.stringify(firstFingerprint, null, 2)}
-                </pre> */}
+                
+
+                
                 <Box sx={{mt:2}}>
                   <DisplayMessages /> 
                 </Box>
@@ -103,3 +102,7 @@ export default function FingerprintDialog() {
           </DialogActions>
         </Dialog>
 }
+
+/*
+<pre>latestFingerprint: {JSON.stringify(latestFingerprint, null, 2)}</pre>
+*/

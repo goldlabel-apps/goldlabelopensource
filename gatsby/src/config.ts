@@ -1,7 +1,7 @@
 import {Config} from "./goldlabel/types"
 
 export const glConfig: Config = {
-    version: "4.3.5",
+    version: "4.3.6",
     siteUrl: "https://free.goldlabel.pro",
     siteTitle: "Goldlabel",
     siteDescription: "Free & Open Source on Github",
@@ -32,10 +32,8 @@ export const glConfig: Config = {
             enabled: true,
             toggle: true,
             paletteMode: "dark",
-            font: "noka",
             color: "#C09F52",
-            primaryColor: "#C09F52",
-            secondaryColor: "#FFF",
+            font: "noka",
         },
         geo: {
             enabled: true,

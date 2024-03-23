@@ -13,12 +13,12 @@ import {
   addOutput,
 } from "../../Fingerprint"
 
-export const save = (
+export const check = (
   uid: string
 ): any =>
   async (dispatch: any) => {
     try {
-      console.log("saving")
+      console.log("check")
       dispatch(setFingerprintKey("saving", true))
       dispatch(addOutput("saving..."))
       const frontmatter = store.getState().core.frontmatter
@@ -39,7 +39,8 @@ export const save = (
         dispatch(setFingerprintKey("saved", true))
       }
     } catch (e: any) {
-      dispatch(notify("save 500", "error", e.toString()))
+      console.log("check 500", e.toString())
+      dispatch(notify("check 500", "error", e.toString()))
       return false
     }
 }

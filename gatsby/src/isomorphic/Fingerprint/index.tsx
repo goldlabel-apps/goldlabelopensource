@@ -7,8 +7,8 @@ import {addOutput} from "./actions/addOutput"
 import {resetOutput} from "./actions/resetOutput"
 import {make} from "./actions/make"
 import {remove} from "./actions/remove"
-import {save} from "./actions/save"
-import {incoming} from "./actions/incoming"
+import {update} from "./actions/update"
+import {check} from "./actions/check"
 import FingerprintToggle from "./components/FingerprintToggle"
 import FingerprintDialog from "./components/FingerprintDialog"
 import Forget from "./components/Forget"
@@ -23,12 +23,12 @@ export {
     onBoot,
     setFingerprintKey,
     toggleDialog,
-    incoming,
     addOutput,
     resetOutput,
     make,
     remove,
-    save,
+    check,
+    update,
     FingerprintToggle,
     FingerprintDialog,
     Forget,

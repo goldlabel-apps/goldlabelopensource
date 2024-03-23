@@ -9,11 +9,15 @@ import {
     Font,
     usePwaDispatch,
     resetLocalstorage,
+    usePwaSelect,
+    selectFingerprint,
 } from "../../../goldlabel"
 import {remove} from "../../Fingerprint"
 
 export default function Forget() {
     const dispatch = usePwaDispatch()
+    const fp = usePwaSelect(selectFingerprint)
+    console.log("fp", fp)
     const onForget = () => {
         let yehOK = window.confirm("All traces of your visit will be deleted. Thanks for useing our app")
         if (yehOK) dispatch(remove())

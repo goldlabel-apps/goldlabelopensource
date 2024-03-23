@@ -19,7 +19,7 @@ export default function DisplayMessages() {
 
   const fingerprint = usePwaSelect(selectFingerprint)
   const {messages} = fingerprint
-  if (!messages.length) return null
+  if (!messages) return null
 
   return <Box sx={{ border: "1px dashed blue" }}>
           <List sx={{ mb: 2 }}>
