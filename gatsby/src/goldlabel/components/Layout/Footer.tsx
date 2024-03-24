@@ -8,9 +8,9 @@ import {
   ListItemButton,
   ListItemText,
   ListItemIcon,
-  Tooltip,
-  Button,
-  useTheme,
+  // Tooltip,
+  // Button,
+  // useTheme,
 } from "@mui/material"
 import {
   Icon,
@@ -99,14 +99,14 @@ export default function FeaturedFooter() {
           })}
         </Grid>
         <Grid item xs={12}>
-          <Box sx={{display:"flex"}}>
+          <Box sx={{display:"flex", mt: 2}}>
             <Box sx={{flexGrow:1}} />
             <Box>
                 <a
-                  title="Download free from GitHub"
+                  title="Go pr0"
                   target="_blank"
                   rel="noreferrer noopener"
-                  href={glConfig.siteRepo}>
+                  href={"https://goldlabel.pro"}>
                   <Font variant="small">
                     Goldlabel {glConfig.version}
                   </Font>
