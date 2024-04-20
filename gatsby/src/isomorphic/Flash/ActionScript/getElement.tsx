@@ -1,4 +1,3 @@
-
 export const getElement = (divId: any) => {
     try {
         const el = document.getElementById(divId)

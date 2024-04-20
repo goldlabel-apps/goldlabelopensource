@@ -1,8 +1,16 @@
 import { ReactNode } from "react"
 
+export type PositionShape = {
+    divId: string
+    position: string
+}
+
 export interface StageProps {
     id: string
     children: ReactNode
-    height: number
-    backgroundColor: string
+}
+
+export type OffsetShape = {
+    x?: number,
+    y?: number
 }

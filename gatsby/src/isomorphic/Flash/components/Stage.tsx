@@ -1,24 +1,21 @@
 import React from "react"
 import {StageProps} from "../types"
 import {
-  Card,
+  Box,
 } from "@mui/material"
 
 export default function Stage({ 
-  id,
-  children, 
-  height,
-  backgroundColor,
+  // id,
+  children,
+
 }: StageProps) {
-  return <Card 
-            id={id}
+  return <Box id={"flashStage"}
             sx={{
+              height: 350,
               width: "100%",
-              backgroundColor,
               position: "relative",
               zIndex: 1,
-              height,
           }}>
             {children}
-          </Card>
+          </Box>
 }

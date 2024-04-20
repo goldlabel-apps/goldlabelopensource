@@ -6,7 +6,7 @@ import {
 import {
     Icon,
     Font,
-    usePwaDispatch,
+    // usePwaDispatch,
 } from "../../../goldlabel"
 
 export type Btn = {
@@ -17,9 +17,8 @@ export type Btn = {
 }
 
 export default function ThemedIconBtn(props: any) {
-
   
-  const dispatch = usePwaDispatch()
+  // const dispatch = usePwaDispatch()
   const {
     label,
     icon,

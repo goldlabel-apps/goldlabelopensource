@@ -1,17 +1,21 @@
-// import {store} from "../../../../goldlabel"
-// import {
-//   setFlashKey,
-// } from "../../../Flash"
+import {
+  store,
+  notify,
+} from "../../../../goldlabel"
+import {
+  setPosition,
+} from "../../../Flash"
 
 const setup = () => {
-  console.log("reinventingFlashAS setup")
-  // console.log(position({mc:"flashLogo", position:"centered"}))
-  // store.dispatch(setFlashKey("setup", true))
+  setPosition({
+    divId: "mcMacromedia",
+    position: "centered"
+  })
 }
 
 const resize = () => {
   console.log("reinventingFlashAS resize")
-};
+}
 
 export const reinventingFlashAS = (
   action: "SETUP" | "RESIZE"
@@ -20,6 +24,6 @@ export const reinventingFlashAS = (
     if (action === "SETUP") setup()
     if (action === "RESIZE") resize()
   } catch (error: any) {
-    // store.dispatch(notify("error", error.message))
+    store.dispatch(notify("reinventingFlashAS", "error", error.toString()))
   }
 }
