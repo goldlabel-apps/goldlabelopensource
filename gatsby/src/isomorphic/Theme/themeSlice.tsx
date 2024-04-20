@@ -2,7 +2,7 @@ const config = {
     enabled: true,
     toggle: true,
     paletteMode: "dark",
-    color: "#26474c",
+    color: "#C09F52",
     font: "noka",
 }
 
