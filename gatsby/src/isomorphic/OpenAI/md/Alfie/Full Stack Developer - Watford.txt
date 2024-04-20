@@ -1,0 +1,26 @@
+Full Stack Developer - Software Development - Watford - Up to £70,000 + Excellent benefits
+
+Overview:
+A leading software development firm based in Watford are currently looking for a Full Stack Developer to join a new technology transformation programme. You will have exposure to the entire software development lifecycle, working with the latest tech stack across front end environments.
+ 
+Roles & Responsibilities:
+	•	Understanding and contributing to the strategy for the management of technical debt within the team
+	•	Ensuring that the solutions developed and deployed are fit for purpose.
+	•	Developing clean, maintainable features and resolving end-to-end issues with an understanding of different possible approaches
+	•	Conducting and participating in code reviews with an emphasis on both functional and non-functional requirements, considering, performance, resiliency, maintainability, and security, to ensure that we build consistently high-quality software for our customers.
+	•	Analysing and defining test approaches and strategies within the team
+ 
+Skills & Experience:
+	•	Solid frontend development experience, working with modern JavaScript frameworks - React & React Native
+	•	5 + years’ experience building modern single-page web and native applications.
+	•	Strong understanding of clean code and clean architecture
+	•	PHP knowledge (desirable)
+	•	Experience analysing, debugging, and solving highly complex problems.
+ 
+Package:
+	•	Up to £70,000 basic salary
+	•	Hybrid working
+	•	+ Excellent benefits
+
+Full Stack Developer - Software Development - Watford - Up to £70,000 + Excellent benefits
+

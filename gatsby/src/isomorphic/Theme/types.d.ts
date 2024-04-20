@@ -1,3 +1,9 @@
 export type ThemeSlice = {
-    fullscreen: boolean
+    config: {
+        enabled: boolean
+        toggle: boolean
+        paletteMode: string
+        color: string
+        font: string
+    }
 }

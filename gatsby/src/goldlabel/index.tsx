@@ -31,6 +31,9 @@ import {
     selectFlash,
     selectGeo,
     selectOutput,
+    selectCollections,
+    selectFingerprint,
+    selectBooted,
 } from "./state/reducer"
 // Theme
 import Theme from "../goldlabel/theme/Theme"
@@ -221,6 +224,9 @@ export {
     selectFlash,
     selectGeo,
     selectOutput,
+    selectCollections,
+    selectFingerprint,
+    selectBooted,
 }
 // Actions
 export {

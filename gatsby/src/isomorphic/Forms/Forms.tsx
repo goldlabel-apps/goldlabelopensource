@@ -1,8 +1,6 @@
 import React from "react"
-
-export function Forms() {
+export default function Forms() {
   
-  return <>
-          Forms
-        </>
+  return <pre>fp: {JSON.stringify(true, null, 2)}</pre> 
+
 }

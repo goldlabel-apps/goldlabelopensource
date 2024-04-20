@@ -1,8 +1,8 @@
-import { getElement } from '../../'
+import { getElement } from './'
 
 export const getSizes = (divId: any) => {
     try {
-        const stage = getElement("widthRuler")
+        const stage = getElement("flashStage")
         if (!stage) {
             console.error('No stage')
             return false

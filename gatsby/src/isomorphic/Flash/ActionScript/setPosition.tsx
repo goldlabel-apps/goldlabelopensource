@@ -1,32 +1,26 @@
 // topleft, topmiddle, topright, centered,
 // bottomleft, bottommiddle, bottomright
-
+import {
+    // OffsetShape, 
+    PositionShape,
+} from "../types"
 import { gsap } from 'gsap'
-import { getElement, getSizes } from '../../'
+import { getElement, getSizes } from './'
 
-export type OffsetShape = {
-    x?: number,
-    y?: number
-}
-
-export type PositionShape = {
-    divId: string
-    position: string
-    offset?: OffsetShape
-}
-
-export const setPosition = ({divId, position, offset}: PositionShape) => {
+export const setPosition = ({divId, position }: PositionShape) => {
     try {
-        console.log ("setPosition", divId)
+        // console.log ("setPosition", divId)
         const el = getElement(divId)
         if (!el) {
             console.error('Movieclip missing', divId)
             return false
         }
-        const sizes = getSizes(divId)
-        // @ts-ignore
+        const sizes: any = getSizes(divId)
         const { stageW, stageH, elW, elH } = sizes
-        let pos
+        let pos = {
+            x: 0,
+            y: 0,
+        }
         if (position === `topleft`)
             pos = {
                 x: 0,
