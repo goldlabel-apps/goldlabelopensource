@@ -1,38 +1,45 @@
 import React from "react"
 import {
-  usePwaDispatch,
-} from "../../../../goldlabel"
+  Box,
+} from "@mui/material"
 import {
-  Stage,
   MovieClip,
   Macromedia,
 } from "../../../Flash"
-import {reinventingFlashAS} from "./"
+import {
+  reinventingFlashAS
+} from "./"
 
 export function ReinventingFlash() {
   
-  const dispatch = usePwaDispatch()
-
   React.useEffect(() => {
-    reinventingFlashAS("SETUP")
-  }, [dispatch])
+    setTimeout(() => {
+      reinventingFlashAS("SETUP")
+    }, 250)
+  }, [])
 
   return <>
-          <Stage 
-            id="reinventingFlashStage"
-            height={150}
-            backgroundColor={"#F2F2F2"}
-          >
+          <Box 
+            id="flashStage"
+            sx={{
+              height: 70,
+              width: "100%",
+              position: "relative",
+              zIndex: 1,
+          }}>
             
             <MovieClip
-              mcId="macromedia"
+              mcId="mcMacromedia"
               opacity={1}
               zIndex={50}
-              mcWidth={100}
-              mcHeight={100}>
-              <Macromedia color="white" />
+              mcWidth={50}
+              mcHeight={50}
+              top={0}
+              left={0}
+            >
+              <Macromedia  />
             </MovieClip>  
 
-          </Stage>
+          </Box>
         </>
 }

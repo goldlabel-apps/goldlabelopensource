@@ -1,6 +1,5 @@
 import React from "react"
-import {glConfig} from "../../config"
-import {ThemeShape} from "../../types"
+// import {glConfig} from "../../config"
 import {
   createTheme,
   ThemeProvider,
@@ -18,7 +17,6 @@ export default function Theme({children}: any) {
   const {darkmode} = core
   const {
     color,
-    secondaryColor,
   } = theme
   const customTheme = makeTheme(
     darkmode ? "dark" : "light", 

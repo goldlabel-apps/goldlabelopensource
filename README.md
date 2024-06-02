@@ -1,8 +1,4 @@
-## Goldlabel Free
-
-> This software is Open Source and Free
-
-![Goldlabel](/gatsby/static/png/og.png)
+## Goldlabel Open Source
 
 ### Get started
 
@@ -12,7 +8,7 @@ Where will you clone the repository to? Call this `<working-repo>`. Decide on a 
 
 ```bash
 cd <working-dir>
-git clone https://github.com/GoldlabelPr0/open-source <your-project>
+git clone https://github.com/listingslab-software/goldlabelopensource <your-project>
 cd <your-project>
 cd gatsby
 npm install
@@ -51,3 +47,5 @@ export const glConfig: ConfigShape = {
 Start with the command `npm start`
 
 Gatsby starts the dev server on http://localhost:8000
+
+![Goldlabel](/gatsby/static/webp/demo.png)

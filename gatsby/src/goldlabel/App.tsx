@@ -23,6 +23,7 @@ import {
   NavDialog,
   Keyword,
 } from "../goldlabel"
+import {Fingerprint} from "../isomorphic"
 
 export default function App(props: any) {
   const {
@@ -72,7 +73,7 @@ export default function App(props: any) {
             <AuthedDialog />
             <NavDialog />
             <Container>
-
+              <Fingerprint />
               {type === "keyword" ? <>
                 <Keyword appData={appData} />
               </> : null }

@@ -55,6 +55,7 @@ export default function MovieClip(props: MovieClipShape) {
     if (!l) l = 0
     let divStyles = {
         position: 'absolute',
+        overflow,
         backgroundColor: bC,
         border: bor,
         zIndex: z,

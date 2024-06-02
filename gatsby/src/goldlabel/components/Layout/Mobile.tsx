@@ -20,10 +20,6 @@ import {
   Icon,
   Navigator,
 } from "../../../goldlabel"
-import {Isomorphic} from "../../../isomorphic"
-import {
-  FlashHero,
-} from "../../../isomorphic/Flash"
 
 export default function Mobile(props: any) {
 
@@ -88,10 +84,6 @@ export default function Mobile(props: any) {
               <Box sx={{mt: 0.25}}>
                 <CatNav />
               </Box>
-              <Box sx={{}}>
-                <Isomorphic />
-              </Box>
-
               <Menu
                 id="mobile-menu"
                 anchorEl={anchorEl}
@@ -133,13 +125,11 @@ export default function Mobile(props: any) {
               </Box>
               
               <Box sx={{mt:2, mb:1}}>
-                { flashHero ? <>
-                  <FlashHero/>
-                </> : <Image 
+              <Image 
                     alt={`${title}. ${description}`}
                     src={image}
                     height={150}
-              /> }
+              />
                 
               </Box>
               <Box 

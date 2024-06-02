@@ -1,21 +1,19 @@
 import {Geo} from "./Geo"
 import {geoSlice} from "./geoSlice"
-import GeoToggle from "./components/GeoToggle"
-import GeoDialog from "./components/GeoDialog"
-import {GeoMarker} from "./components/GeoMarker"
-import FlyBetween from "./components/FlyBetween"
-import GeoMap from "./components/GeoMap"
+// import GeoDialog from "./components/GeoDialog"
+// import {GeoMarker} from "./components/GeoMarker"
+// import FlyBetween from "./components/FlyBetween"
+// import GeoMap from "./components/GeoMap"
 import {toggleDialog} from "./actions/toggleDialog"
 import {setGeoKey} from "./actions/setGeoKey"
 
 export {
     geoSlice,
     Geo,
-    FlyBetween,
-    GeoToggle,
-    GeoDialog,
-    GeoMarker,
-    GeoMap,
+    // FlyBetween,
+    // GeoDialog,
+    // GeoMarker,
+    // GeoMap,
     toggleDialog,
     setGeoKey,
 }

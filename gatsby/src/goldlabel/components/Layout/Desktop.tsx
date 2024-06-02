@@ -24,10 +24,6 @@ import {
   Footer,
   selectDisplay,
 } from "../../../goldlabel"
-import {Isomorphic} from "../../../isomorphic"
-import {
-  FlashHero,
-} from "../../../isomorphic/Flash"
 
 export default function Desktop(props: any) {
   const flashHero = glConfig.isomorphic.flash.hero
@@ -107,9 +103,6 @@ export default function Desktop(props: any) {
               <Box sx={{}}>
                 <CatNav />
               </Box>
-              <Box sx={{}}>
-                <Isomorphic />
-              </Box>
               <Box sx={{flexGrow:1}}/>
             </Box>
             </>}
@@ -122,12 +115,11 @@ export default function Desktop(props: any) {
         {image ? <Grid item xs={12} sm={8}>
           
           <Box sx={{my:2, mx:1}}>
-          { flashHero ? <FlashHero/> : <Image 
-                alt={`${title}. ${description}`}
-                src={image}
-                height={200}
-          /> }
-            
+            <Image 
+                  alt={`${title}. ${description}`}
+                  src={image}
+                  height={200}
+            />
             <Box 
               id="markdown"
               sx={{

@@ -8,9 +8,6 @@ import {
   ListItemButton,
   ListItemText,
   ListItemIcon,
-  Tooltip,
-  Button,
-  useTheme,
 } from "@mui/material"
 import {
   Icon,
@@ -99,7 +96,7 @@ export default function FeaturedFooter() {
           })}
         </Grid>
         <Grid item xs={12}>
-          <Box sx={{display:"flex"}}>
+          <Box sx={{display:"flex", mt: 2}}>
             <Box sx={{flexGrow:1}} />
             <Box>
                 <a
